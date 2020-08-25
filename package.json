@@ -1,7 +1,13 @@
 {
   "name": "tomasz-b-finelf-form-components",
   "version": "1.0.1",
-  "main": "dist/index.ts",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/js/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "tag": "prerelease"
+  },
   "private": false,
   "files": [
     "dist",
@@ -43,8 +49,14 @@
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
+    "build:lib": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js",
+    "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
+    "build:babel:cjs": "BABEL_ENV=cjs babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
+    "build:babel:esm": "BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
+    "build:babel:umd": "BABEL_ENV=umd babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
+    "build:types": "tsc -p tsconfig.gen-dts.json",
     "clean": "rimraf dist",
-    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
+    "develop": "yarn build:types && yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -63,6 +75,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
+    "@babel/plugin-proposal-export-default-from": "^7.10.4",
     "@storybook/addon-actions": "^6.0.17",
     "@storybook/addon-essentials": "^6.0.17",
     "@storybook/addon-links": "^6.0.17",
@@ -70,6 +83,9 @@
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.17",
     "babel-loader": "^8.1.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-plugin-typescript-to-proptypes": "^1.4.0",
+    "concurrently": "^5.3.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5",
