@@ -42,11 +42,11 @@ type Props = {
   type?: 'main' | 'subheader'
 }
 
-const Headaer: React.FC<Props> = ({ text, type = 'main' }) =>
+const Header: React.FC<Props> = ({ text, type = 'main' }) =>
   type === 'main' ? (
     <StyledMainHeader>{text}</StyledMainHeader>
   ) : (
     <StyledSubHeader>{text}</StyledSubHeader>
   )
 
-export default Headaer
+export default Header
