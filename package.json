@@ -1,17 +1,21 @@
 {
-  "name": "finelf-form-components",
+  "name": "tomasz-b-finelf-form-components",
   "version": "1.0.0",
   "main": "dist/index.ts",
   "private": false,
-  "files": [ "dist", "README.md" ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
-      "type": "git",
-      "url": "https://github.com/blueappsgroup/finelf-form-components.git"
+    "type": "git",
+    "url": "https://github.com/blueappsgroup/finelf-form-components.git"
   },
   "dependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@storybook/cli": "^6.0.17",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -26,6 +30,7 @@
     "husky": "^4.2.5",
     "init": "^0.1.2",
     "lint-staged": "^10.2.11",
+    "package.json": "^2.0.1",
     "sb": "^6.0.17",
     "styled-components": "^5.1.1",
     "typescript": "~3.7.2"
@@ -68,15 +73,13 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5",
-    "react-is": "^16.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
     "react-scripts": "3.4.3"
   },
   "husky": {
-    "hooks": {
-      
-    }
+    "hooks": {}
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
