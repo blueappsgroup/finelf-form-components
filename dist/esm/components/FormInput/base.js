@@ -5,9 +5,10 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { device } from '../../consts/sizes';
+import { FormContext, setFormValuesToCache } from '../../utils';
 const StyledRow = styled.div`
   display: flex;
   align-items: center;
@@ -39,7 +40,8 @@ const StyledError = styled.span`
 `;
 const StyledInput = styled.input`
   background: ${props => props.theme.inputBgColor};
-  border: 1px solid ${props => props.theme.inputBorderColor};
+  border: 1px solid
+    ${props => props.theme.inputBorderColor};
   box-sizing: border-box;
   box-shadow: 0px 7px 64px rgba(194, 186, 186, 0.07);
   border-radius: 6px;
@@ -69,14 +71,25 @@ const BaseField = (_ref) => {
     field,
     form: {
       touched,
-      errors
+      errors,
+      values
     }
   } = _ref,
       props = _objectWithoutProperties(_ref, ["field", "form"]);
 
+  const {
+    id
+  } = useContext(FormContext);
+
+  const handleOnBlur = e => {
+    setFormValuesToCache(values, id);
+    field.onBlur && field.onBlur(e);
+  };
+
   return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
   }, props.label), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
+    onBlur: handleOnBlur,
     type: "text",
     value: field.value && field.value || '',
     error: touched[field.name] && errors[field.name],

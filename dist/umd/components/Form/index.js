@@ -1,23 +1,21 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "prop-types", "react", "formik", "styled-components", "../../consts/sizes", "../../consts/theme"], factory);
+    define(["exports", "react", "formik", "styled-components", "../../consts/sizes", "../../consts/theme", "../../utils"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("prop-types"), require("react"), require("formik"), require("styled-components"), require("../../consts/sizes"), require("../../consts/theme"));
+    factory(exports, require("react"), require("formik"), require("styled-components"), require("../../consts/sizes"), require("../../consts/theme"), require("../../utils"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.propTypes, global.react, global.formik, global.styledComponents, global.sizes, global.theme);
+    factory(mod.exports, global.react, global.formik, global.styledComponents, global.sizes, global.theme, global.utils);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _propTypes, _react, _formik, _styledComponents, _sizes, _theme) {
+})(this, function (exports, _react, _formik, _styledComponents, _sizes, _theme, _utils) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-
-  var _propTypes2 = _interopRequireDefault(_propTypes);
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -101,18 +99,41 @@
   const FormWrapper = ({
     children,
     onSubmit,
-    customTheme
-  }) => /*#__PURE__*/_react2.default.createElement(_styledComponents.ThemeProvider, {
-    theme: _objectSpread(_objectSpread({}, _theme.theme), customTheme)
-  }, /*#__PURE__*/_react2.default.createElement(_formik.Formik, {
-    initialValues: {},
-    onSubmit: onSubmit
-  }, /*#__PURE__*/_react2.default.createElement(StyledForm, null, children)));
+    customTheme,
+    id
+  }) => {
+    const [initialValues, setInitialValues] = (0, _react.useState)((0, _utils.getFormValuesFromCache)(id));
 
-  FormWrapper.propTypes = {
-    onSubmit: _propTypes2.default.func.isRequired,
-    children: _propTypes2.default.node.isRequired
+    const handleSubmit = (values, props) => {
+      if (onSubmit) {
+        onSubmit(values, props);
+      }
+
+      props.resetForm();
+      props.setStatus('submited');
+    };
+
+    const handleReset = () => {
+      (0, _utils.resetFormValueCache)(id);
+      setInitialValues({});
+    };
+
+    return /*#__PURE__*/_react2.default.createElement(_utils.FormContext.Provider, {
+      value: {
+        id
+      }
+    }, /*#__PURE__*/_react2.default.createElement(_styledComponents.ThemeProvider, {
+      theme: _objectSpread(_objectSpread({}, _theme.theme), customTheme)
+    }, /*#__PURE__*/_react2.default.createElement(_formik.Formik, {
+      enableReinitialize: true,
+      initialValues: initialValues,
+      onSubmit: handleSubmit,
+      onReset: handleReset
+    }, /*#__PURE__*/_react2.default.createElement(StyledForm, {
+      id: id
+    }, children))));
   };
+
   exports.default = FormWrapper;
 });
 //# sourceMappingURL=index.js.map

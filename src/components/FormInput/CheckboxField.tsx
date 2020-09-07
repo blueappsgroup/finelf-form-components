@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 import { Field } from 'formik'
 
 import CheckboxBase from './CheckBox'
-import { CheckboxFieldProps } from './types'
+import { CheckboxFieldProps } from '../../types'
 import { validateCheckbox } from './validate'
 
 const CheckboxFormField: (props: CheckboxFieldProps) => ReactElement = ({

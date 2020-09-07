@@ -3,7 +3,7 @@ import { Field } from 'formik'
 
 import BaseField from './base'
 import { validateEmail } from './validate'
-import { EmailFieldProps } from './types'
+import { EmailFieldProps } from '../../types'
 
 const EmailField: (props: EmailFieldProps) => ReactElement = ({
   id,

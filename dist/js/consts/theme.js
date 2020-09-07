@@ -33,7 +33,8 @@ var theme = {
   headerBorderColor: colors.errorRed,
   subheaderBorderColor: colors.black,
   submitButtonTextColor: colors.white,
-  submitButtonBgColor: colors.mediumRed
+  submitButtonBgColor: colors.mediumRed,
+  successTextColor: colors.black
 };
 exports.theme = theme;
 //# sourceMappingURL=theme.js.map

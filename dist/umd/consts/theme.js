@@ -44,7 +44,8 @@
     headerBorderColor: colors.errorRed,
     subheaderBorderColor: colors.black,
     submitButtonTextColor: colors.white,
-    submitButtonBgColor: colors.mediumRed
+    submitButtonBgColor: colors.mediumRed,
+    successTextColor: colors.black
   };
 });
 //# sourceMappingURL=theme.js.map

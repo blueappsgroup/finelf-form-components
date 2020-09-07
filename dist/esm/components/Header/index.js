@@ -1,4 +1,3 @@
-import _pt from "prop-types";
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../consts/sizes';
@@ -23,7 +22,8 @@ const StyledMainHeader = styled.h2`
     content: '';
     position: absolute;
     bottom: 0px;
-    border: 3px solid ${props => props.theme.headerBorderColor};
+    border: 3px solid
+      ${props => props.theme.headerBorderColor};
     margin: 0 auto;
   }
 `;
@@ -41,9 +41,5 @@ const Header = ({
   type = 'main'
 }) => type === 'main' ? /*#__PURE__*/React.createElement(StyledMainHeader, null, text) : /*#__PURE__*/React.createElement(StyledSubHeader, null, text);
 
-Header.propTypes = {
-  text: _pt.string.isRequired,
-  type: _pt.oneOf(['main', 'subheader'])
-};
 export default Header;
 //# sourceMappingURL=index.js.map

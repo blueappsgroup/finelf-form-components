@@ -27,4 +27,5 @@ export declare const theme: {
     subheaderBorderColor: string;
     submitButtonTextColor: string;
     submitButtonBgColor: string;
+    successTextColor: string;
 };

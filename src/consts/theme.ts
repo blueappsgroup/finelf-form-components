@@ -28,4 +28,5 @@ export const theme = {
   subheaderBorderColor: colors.black,
   submitButtonTextColor: colors.white,
   submitButtonBgColor: colors.mediumRed,
+  successTextColor: colors.black,
 }

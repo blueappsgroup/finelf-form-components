@@ -1,6 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { device } from '../../consts/sizes'
+import { HeaderProps } from '../../types'
+
+type StyledProps = {
+  theme: {
+    headerTextColor: string
+    headerBorderColor: string
+    subheaderTextColor: string
+  }
+}
 
 const StyledMainHeader = styled.h2`
   font-weight: 600;
@@ -12,7 +21,7 @@ const StyledMainHeader = styled.h2`
   position: relative;
   display: flex;
   justify-content: center;
-  color: ${(props: any): string => props.theme.headerTextColor};
+  color: ${(props: StyledProps): string => props.theme.headerTextColor};
 
   @media ${device.tablet} {
     margin: 0px 0px 30px 0px;
@@ -23,13 +32,14 @@ const StyledMainHeader = styled.h2`
     content: '';
     position: absolute;
     bottom: 0px;
-    border: 3px solid ${(props: any): string => props.theme.headerBorderColor};
+    border: 3px solid
+      ${(props: StyledProps): string => props.theme.headerBorderColor};
     margin: 0 auto;
   }
 `
 
 const StyledSubHeader = styled.h5`
-  color: ${(props: any): string => props.theme.subheaderTextColor};
+  color: ${(props: StyledProps): string => props.theme.subheaderTextColor};
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -37,12 +47,7 @@ const StyledSubHeader = styled.h5`
   margin: 10px 0px 20px 0px;
 `
 
-type Props = {
-  text: string
-  type?: 'main' | 'subheader'
-}
-
-const Header: React.FC<Props> = ({ text, type = 'main' }) =>
+const Header: React.FC<HeaderProps> = ({ text, type = 'main' }) =>
   type === 'main' ? (
     <StyledMainHeader>{text}</StyledMainHeader>
   ) : (

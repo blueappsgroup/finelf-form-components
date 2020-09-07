@@ -1,7 +1,4 @@
 import React from 'react';
-declare type Props = {
-    text: string;
-    type?: 'main' | 'subheader';
-};
-declare const Header: React.FC<Props>;
+import { HeaderProps } from '../../types';
+declare const Header: React.FC<HeaderProps>;
 export default Header;

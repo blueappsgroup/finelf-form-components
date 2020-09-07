@@ -1,11 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { ButtonProps } from '../../types'
+
+type StyledProps = {
+  theme: {
+    submitButtonBgColor: string
+    submitButtonTextColor: string
+  }
+}
+
 const StyledButton = styled.button`
-  background: ${(props: any): string => props.theme.submitButtonBgColor};
+  background: ${(props: StyledProps): string =>
+    props.theme.submitButtonBgColor};
   border-radius: 4px;
   border: none;
-  color: ${(props: any): string => props.theme.submitButtonTextColor};
+  color: ${(props: StyledProps): string => props.theme.submitButtonTextColor};
   outline: 0;
   letter-spacing: 0.5px;
   font-style: normal;
@@ -15,11 +25,8 @@ const StyledButton = styled.button`
   padding: 28px;
   margin-top: 20px;
 `
-type Props = {
-  text: string
-}
 
-const Button: React.FC<Props> = ({ text }) => (
+const Button: React.FC<ButtonProps> = ({ text }) => (
   <StyledButton type="submit">{text}</StyledButton>
 )
 

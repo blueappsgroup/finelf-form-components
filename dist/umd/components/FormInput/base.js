@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react", "styled-components", "../../consts/sizes"], factory);
+    define(["exports", "react", "styled-components", "../../consts/sizes", "../../utils"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"), require("styled-components"), require("../../consts/sizes"));
+    factory(exports, require("react"), require("styled-components"), require("../../consts/sizes"), require("../../utils"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.styledComponents, global.sizes);
+    factory(mod.exports, global.react, global.styledComponents, global.sizes, global.utils);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _react, _styledComponents, _sizes) {
+})(this, function (exports, _react, _styledComponents, _sizes, _utils) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -115,7 +115,8 @@
 `;
   const StyledInput = _styledComponents2.default.input`
   background: ${props => props.theme.inputBgColor};
-  border: 1px solid ${props => props.theme.inputBorderColor};
+  border: 1px solid
+    ${props => props.theme.inputBorderColor};
   box-sizing: border-box;
   box-shadow: 0px 7px 64px rgba(194, 186, 186, 0.07);
   border-radius: 6px;
@@ -145,14 +146,25 @@
       field,
       form: {
         touched,
-        errors
+        errors,
+        values
       }
     } = _ref,
         props = _objectWithoutProperties(_ref, ["field", "form"]);
 
+    const {
+      id
+    } = (0, _react.useContext)(_utils.FormContext);
+
+    const handleOnBlur = e => {
+      (0, _utils.setFormValuesToCache)(values, id);
+      field.onBlur && field.onBlur(e);
+    };
+
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
     }, props.label), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+      onBlur: handleOnBlur,
       type: "text",
       value: field.value && field.value || '',
       error: touched[field.name] && errors[field.name],

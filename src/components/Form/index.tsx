@@ -1,9 +1,14 @@
-import React, { ReactNode, FC } from 'react'
+import React, { FC, useState } from 'react'
 import { Formik, Form } from 'formik'
 import styled, { ThemeProvider } from 'styled-components'
 import { device } from '../../consts/sizes'
 import { theme } from '../../consts/theme'
-import { CustomThemeType } from '../FormInput/types'
+import { FormProps, FormValuesType } from '../../types'
+import {
+  FormContext,
+  getFormValuesFromCache,
+  resetFormValueCache,
+} from '../../utils'
 
 const StyledForm = styled(Form)`
   display: flex;
@@ -25,18 +30,45 @@ const StyledForm = styled(Form)`
   }
 `
 
-type Props = {
-  onSubmit: (values: any, props: any) => void
-  children: ReactNode
-  customTheme?: CustomThemeType
-}
+const FormWrapper: FC<FormProps> = ({
+  children,
+  onSubmit,
+  customTheme,
+  id,
+}) => {
+  const [initialValues, setInitialValues] = useState(getFormValuesFromCache(id))
+  const handleSubmit = (
+    values: FormValuesType,
+    props: {
+      resetForm: () => void
+      setStatus: (status: string) => void
+    }
+  ): void => {
+    if (onSubmit) {
+      onSubmit(values, props)
+    }
+    props.resetForm()
+    props.setStatus('submited')
+  }
+  const handleReset = (): void => {
+    resetFormValueCache(id)
+    setInitialValues({})
+  }
 
-const FormWrapper: FC<Props> = ({ children, onSubmit, customTheme }) => (
-  <ThemeProvider theme={{ ...theme, ...customTheme }}>
-    <Formik initialValues={{}} onSubmit={onSubmit}>
-      <StyledForm>{children}</StyledForm>
-    </Formik>
-  </ThemeProvider>
-)
+  return (
+    <FormContext.Provider value={{ id }}>
+      <ThemeProvider theme={{ ...theme, ...customTheme }}>
+        <Formik
+          enableReinitialize
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          onReset={handleReset}
+        >
+          <StyledForm id={id}>{children}</StyledForm>
+        </Formik>
+      </ThemeProvider>
+    </FormContext.Provider>
+  )
+}
 
 export default FormWrapper

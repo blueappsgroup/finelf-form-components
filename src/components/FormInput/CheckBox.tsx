@@ -1,13 +1,22 @@
 /* eslint-disable indent */
-import React, { ReactElement, useState, useLayoutEffect, useRef } from 'react'
+import React, {
+  ReactElement,
+  useState,
+  useLayoutEffect,
+  useRef,
+  useContext,
+} from 'react'
+import { FormikErrors } from 'formik'
 import styled from 'styled-components'
 
-import { FieldWrapProps } from './types'
+import { FieldWrapProps } from '../../types'
+import { FormContext, setFormValuesToCache } from '../../utils'
 
 type StyledProps = {
   collapsed?: boolean
   hasCollapse?: boolean
-  error?: boolean
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  error?: FormikErrors<any>
   checked?: boolean
   theme: { [k: string]: string }
 }
@@ -18,7 +27,7 @@ const StyledRow = styled.div<StyledProps>`
   margin-bottom: 12px;
   position: relative;
   height: ${(props: StyledProps): string =>
-    props.collapsed ? 'auto' : '21px'};
+    props.collapsed ? 'auto' : '20px'};
   overflow: ${(props: StyledProps): string =>
     props.collapsed ? 'none' : 'hidden'};
 `
@@ -84,7 +93,7 @@ const StyledCheckbox = styled.div<StyledProps>`
 `
 
 const StyledText = styled.span`
-  display: block;
+  display: flex;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -94,7 +103,8 @@ const StyledText = styled.span`
   padding-right: 25px;
 `
 
-const Checkbox = ({ checked, error, ...props }: any) => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Checkbox = ({ checked, error, ...props }: any): ReactElement => (
   <CheckboxContainer>
     <HiddenCheckbox checked={checked} {...props} />
     <StyledCheckbox checked={checked} error={error}>
@@ -105,26 +115,25 @@ const Checkbox = ({ checked, error, ...props }: any) => (
   </CheckboxContainer>
 )
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Wrapper = styled.label<any>`
   display: flex;
 `
 
 export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   field,
-  form: { touched, errors },
+  form: { touched, errors, values },
   ...props
 }) => {
   const targetRef = useRef<HTMLDivElement>(null)
-  const [checked, setChecked] = useState(false)
   const [collapsed, setCollapsed] = useState(false)
   const [hasCollapse, setHasCollapse] = useState(false)
+  const { id } = useContext(FormContext)
 
-  const handleCheckboxChange = (e: any) => {
-    if (field.onChange) {
-      field.onChange(e)
-    }
-    setChecked(!checked)
+  const handleOnMouseOut = (): void => {
+    setFormValuesToCache(values, id)
   }
+
   const onCollapseClick = (): void => setCollapsed(!collapsed)
 
   useLayoutEffect(() => {
@@ -135,14 +144,17 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
 
   return (
     <StyledRow hasCollapse={hasCollapse} collapsed={collapsed}>
-      <Wrapper ref={targetRef}>
+      <Wrapper ref={targetRef} onMouseOut={handleOnMouseOut}>
         <Checkbox
           {...field}
           {...props}
-          checked={checked}
-          value={checked}
-          onChange={handleCheckboxChange}
-          error={touched[field.name] && errors[field.name]}
+          checked={field.value}
+          value={field.value || false}
+          error={
+            (touched[field.name] && errors[field.name]) as  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              | FormikErrors<any>
+              | undefined
+          }
         />
         <StyledText>{props.label}</StyledText>
       </Wrapper>

@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 var _exportNames = {
   Header: true,
   Button: true,
-  Form: true
+  Form: true,
+  SubmitSuccessText: true
 };
 Object.defineProperty(exports, "Header", {
   enumerable: true,
@@ -24,6 +25,12 @@ Object.defineProperty(exports, "Form", {
   enumerable: true,
   get: function get() {
     return _Form.default;
+  }
+});
+Object.defineProperty(exports, "SubmitSuccessText", {
+  enumerable: true,
+  get: function get() {
+    return _SubmitSuccessText.default;
   }
 });
 
@@ -45,6 +52,8 @@ var _Header = _interopRequireDefault(require("./Header"));
 var _Button = _interopRequireDefault(require("./Button"));
 
 var _Form = _interopRequireDefault(require("./Form"));
+
+var _SubmitSuccessText = _interopRequireDefault(require("./SubmitSuccessText"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //# sourceMappingURL=index.js.map

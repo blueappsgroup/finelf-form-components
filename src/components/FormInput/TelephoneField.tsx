@@ -3,7 +3,7 @@ import { Field } from 'formik'
 
 import BaseField from './base'
 import { validateTelNumber } from './validate'
-import { TelephoneFieldProps } from './types'
+import { TelephoneFieldProps } from '../../types'
 
 const TelephoneField: (props: TelephoneFieldProps) => ReactElement = ({
   id,

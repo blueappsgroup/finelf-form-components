@@ -1,17 +1,19 @@
-import React from 'react'; // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-
-import { Header } from './Header';
+import * as React from 'react';
+import { Header } from '../';
 export default {
-  title: 'Example/Header',
+  title: 'Header',
   component: Header
 };
 
 const Template = args => /*#__PURE__*/React.createElement(Header, args);
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {}
+export const Defualt = Template.bind({});
+Defualt.args = {
+  text: 'Text'
 };
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+export const Subheader = Template.bind({});
+Subheader.args = {
+  text: 'Subheader',
+  type: 'subheader'
+};
 //# sourceMappingURL=Header.stories.js.map

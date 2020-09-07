@@ -1,6 +1,4 @@
 import React from 'react';
-declare type Props = {
-    text: string;
-};
-declare const Button: React.FC<Props>;
+import { ButtonProps } from '../../types';
+declare const Button: React.FC<ButtonProps>;
 export default Button;

@@ -1,23 +1,21 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "prop-types", "react", "styled-components", "../../consts/sizes"], factory);
+    define(["exports", "react", "styled-components", "../../consts/sizes"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("prop-types"), require("react"), require("styled-components"), require("../../consts/sizes"));
+    factory(exports, require("react"), require("styled-components"), require("../../consts/sizes"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.propTypes, global.react, global.styledComponents, global.sizes);
+    factory(mod.exports, global.react, global.styledComponents, global.sizes);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _propTypes, _react, _styledComponents, _sizes) {
+})(this, function (exports, _react, _styledComponents, _sizes) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-
-  var _propTypes2 = _interopRequireDefault(_propTypes);
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -50,7 +48,8 @@
     content: '';
     position: absolute;
     bottom: 0px;
-    border: 3px solid ${props => props.theme.headerBorderColor};
+    border: 3px solid
+      ${props => props.theme.headerBorderColor};
     margin: 0 auto;
   }
 `;
@@ -68,10 +67,6 @@
     type = 'main'
   }) => type === 'main' ? /*#__PURE__*/_react2.default.createElement(StyledMainHeader, null, text) : /*#__PURE__*/_react2.default.createElement(StyledSubHeader, null, text);
 
-  Header.propTypes = {
-    text: _propTypes2.default.string.isRequired,
-    type: _propTypes2.default.oneOf(['main', 'subheader'])
-  };
   exports.default = Header;
 });
 //# sourceMappingURL=index.js.map

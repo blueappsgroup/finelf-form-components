@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
@@ -38,9 +36,6 @@ var Button = function Button(_ref) {
   }, text);
 };
 
-Button.propTypes = {
-  text: _propTypes.default.string.isRequired
-};
 var _default = Button;
 exports.default = _default;
 //# sourceMappingURL=index.js.map

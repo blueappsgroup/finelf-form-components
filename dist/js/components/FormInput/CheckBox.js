@@ -11,6 +11,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _utils = require("../../utils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -46,7 +48,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-style: normal;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: 18px;\n  color: ", ";\n  padding-left: 10px;\n  padding-right: 25px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  font-style: normal;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: 18px;\n  color: ", ";\n  padding-left: 10px;\n  padding-right: 25px;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -118,7 +120,7 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var StyledRow = _styledComponents.default.div(_templateObject(), function (props) {
-  return props.collapsed ? 'auto' : '21px';
+  return props.collapsed ? 'auto' : '20px';
 }, function (props) {
   return props.collapsed ? 'none' : 'hidden';
 });
@@ -151,7 +153,8 @@ var StyledCheckbox = _styledComponents.default.div(_templateObject6(), function 
 
 var StyledText = _styledComponents.default.span(_templateObject7(), function (props) {
   return props.theme.checkboxLabelTextColor;
-});
+}); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 
 var Checkbox = function Checkbox(_ref) {
   var checked = _ref.checked,
@@ -168,7 +171,8 @@ var Checkbox = function Checkbox(_ref) {
   }, /*#__PURE__*/_react.default.createElement("polyline", {
     points: "20 6 9 17 4 12"
   }))));
-};
+}; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 
 var Wrapper = _styledComponents.default.label(_templateObject8());
 
@@ -177,31 +181,26 @@ var CheckboxBase = function CheckboxBase(_ref2) {
       _ref2$form = _ref2.form,
       touched = _ref2$form.touched,
       errors = _ref2$form.errors,
+      values = _ref2$form.values,
       props = _objectWithoutProperties(_ref2, ["field", "form"]);
 
   var targetRef = (0, _react.useRef)(null);
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      checked = _useState2[0],
-      setChecked = _useState2[1];
+      collapsed = _useState2[0],
+      setCollapsed = _useState2[1];
 
   var _useState3 = (0, _react.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      collapsed = _useState4[0],
-      setCollapsed = _useState4[1];
+      hasCollapse = _useState4[0],
+      setHasCollapse = _useState4[1];
 
-  var _useState5 = (0, _react.useState)(false),
-      _useState6 = _slicedToArray(_useState5, 2),
-      hasCollapse = _useState6[0],
-      setHasCollapse = _useState6[1];
+  var _useContext = (0, _react.useContext)(_utils.FormContext),
+      id = _useContext.id;
 
-  var handleCheckboxChange = function handleCheckboxChange(e) {
-    if (field.onChange) {
-      field.onChange(e);
-    }
-
-    setChecked(!checked);
+  var handleOnMouseOut = function handleOnMouseOut() {
+    (0, _utils.setFormValuesToCache)(values, id);
   };
 
   var onCollapseClick = function onCollapseClick() {
@@ -217,11 +216,11 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     hasCollapse: hasCollapse,
     collapsed: collapsed
   }, /*#__PURE__*/_react.default.createElement(Wrapper, {
-    ref: targetRef
+    ref: targetRef,
+    onMouseOut: handleOnMouseOut
   }, /*#__PURE__*/_react.default.createElement(Checkbox, _extends({}, field, props, {
-    checked: checked,
-    value: checked,
-    onChange: handleCheckboxChange,
+    checked: field.value,
+    value: field.value || false,
     error: touched[field.name] && errors[field.name]
   })), /*#__PURE__*/_react.default.createElement(StyledText, null, props.label)), /*#__PURE__*/_react.default.createElement(StyledArrow, {
     hasCollapse: hasCollapse,

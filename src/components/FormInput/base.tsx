@@ -1,9 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useContext, ChangeEvent } from 'react'
 import styled from 'styled-components'
-
-import { FieldWrapProps } from './types'
+import { FieldWrapProps } from '../../types'
 import { device } from '../../consts/sizes'
+import { FormContext, setFormValuesToCache } from '../../utils'
+
+type StyledProps = {
+  theme: {
+    inputErrorColor: string
+    inputBgColor: string
+    inputPlaceHolderColor: string
+    inputBorderColor: string
+    inputTextColor: string
+  }
+  error?: string | boolean
+}
 
 const StyledRow = styled.div`
   display: flex;
@@ -31,15 +42,16 @@ export const Row = styled.div`
 `
 
 const StyledError = styled.span`
-  color: ${(props) => props.theme.inputErrorColor};
+  color: ${(props: StyledProps): string => props.theme.inputErrorColor};
   position: absolute;
   font-size: 10px;
   bottom: -14px;
 `
 
 const StyledInput = styled.input<any>`
-  background: ${(props) => props.theme.inputBgColor};
-  border: 1px solid ${(props) => props.theme.inputBorderColor};
+  background: ${(props: StyledProps): string => props.theme.inputBgColor};
+  border: 1px solid
+    ${(props: StyledProps): string => props.theme.inputBorderColor};
   box-sizing: border-box;
   box-shadow: 0px 7px 64px rgba(194, 186, 186, 0.07);
   border-radius: 6px;
@@ -52,13 +64,13 @@ const StyledInput = styled.input<any>`
   font-size: 14px;
   line-height: 24px;
   padding: 0px 20px;
-  border-color: ${(props: any): string =>
+  border-color: ${(props: StyledProps): string =>
     props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${(props: any): string =>
     props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
   &::placeholder {
-    color: ${(props) => props.theme.inputPlaceHolderColor};
+    color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
   }
 
   &:focus {
@@ -68,26 +80,35 @@ const StyledInput = styled.input<any>`
 
 const BaseField: (props: FieldWrapProps) => ReactElement = ({
   field,
-  form: { touched, errors },
+  form: { touched, errors, values },
   ...props
-}) => (
-  <StyledRow>
-    {props.label && <label htmlFor={field.name}>{props.label}</label>}
-    <StyledInput
-      {...field}
-      {...props}
-      type="text"
-      value={(field.value && field.value) || ''}
-      error={touched[field.name] && errors[field.name]}
-      placeholder={
-        props.placeholder &&
-        `${props.placeholder}${(props.required && '*') || ''}`
-      }
-    />
-    {props.showError && touched[field.name] && errors[field.name] && (
-      <StyledError>{errors[field.name]}</StyledError>
-    )}
-  </StyledRow>
-)
+}) => {
+  const { id } = useContext(FormContext)
+  const handleOnBlur = (e: ChangeEvent<HTMLInputElement>): void => {
+    setFormValuesToCache(values, id)
+    field.onBlur && field.onBlur(e)
+  }
+
+  return (
+    <StyledRow>
+      {props.label && <label htmlFor={field.name}>{props.label}</label>}
+      <StyledInput
+        {...field}
+        {...props}
+        onBlur={handleOnBlur}
+        type="text"
+        value={(field.value && field.value) || ''}
+        error={touched[field.name] && errors[field.name]}
+        placeholder={
+          props.placeholder &&
+          `${props.placeholder}${(props.required && '*') || ''}`
+        }
+      />
+      {props.showError && touched[field.name] && errors[field.name] && (
+        <StyledError>{errors[field.name]}</StyledError>
+      )}
+    </StyledRow>
+  )
+}
 
 export default BaseField

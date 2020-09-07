@@ -1,4 +1,3 @@
-import _pt from "prop-types";
 import React from 'react';
 import styled from 'styled-components';
 const StyledButton = styled.button`
@@ -22,8 +21,5 @@ const Button = ({
   type: "submit"
 }, text);
 
-Button.propTypes = {
-  text: _pt.string.isRequired
-};
 export default Button;
 //# sourceMappingURL=index.js.map

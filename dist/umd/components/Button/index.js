@@ -1,23 +1,21 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "prop-types", "react", "styled-components"], factory);
+    define(["exports", "react", "styled-components"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("prop-types"), require("react"), require("styled-components"));
+    factory(exports, require("react"), require("styled-components"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.propTypes, global.react, global.styledComponents);
+    factory(mod.exports, global.react, global.styledComponents);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _propTypes, _react, _styledComponents) {
+})(this, function (exports, _react, _styledComponents) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-
-  var _propTypes2 = _interopRequireDefault(_propTypes);
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -50,9 +48,6 @@
     type: "submit"
   }, text);
 
-  Button.propTypes = {
-    text: _propTypes2.default.string.isRequired
-  };
   exports.default = Button;
 });
 //# sourceMappingURL=index.js.map

@@ -1,29 +1,20 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "./FormInput", "./Header", "./Button", "./Form"], factory);
+    define(["exports", "./FormInput", "./Header", "./Button", "./Form", "./SubmitSuccessText"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"));
+    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"), require("./SubmitSuccessText"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form);
+    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form, global.SubmitSuccessText);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _FormInput, _Header, _Button, _Form) {
+})(this, function (exports, _FormInput, _Header, _Button, _Form, _SubmitSuccessText) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
-  });
-  Object.keys(_FormInput).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    Object.defineProperty(exports, key, {
-      enumerable: true,
-      get: function () {
-        return _FormInput[key];
-      }
-    });
   });
   Object.keys(_FormInput).forEach(function (key) {
     if (key === "default" || key === "__esModule") return;
@@ -50,6 +41,12 @@
     enumerable: true,
     get: function () {
       return _interopRequireDefault(_Form).default;
+    }
+  });
+  Object.defineProperty(exports, "SubmitSuccessText", {
+    enumerable: true,
+    get: function () {
+      return _interopRequireDefault(_SubmitSuccessText).default;
     }
   });
 

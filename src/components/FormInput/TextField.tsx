@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 import { Field } from 'formik'
 
 import BaseField from './base'
-import { TextFieldProps } from './types'
+import { TextFieldProps } from '../../types'
 
 const TextField: (props: TextFieldProps) => ReactElement = ({
   id,

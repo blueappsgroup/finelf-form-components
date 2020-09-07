@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
@@ -26,7 +24,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 25px;\n  line-height: 24px;\n  text-align: center;\n  margin: 0px 0px 20px 0px;\n  padding-bottom: 28px;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n\n  @media ", " {\n    margin: 0px 0px 30px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: 3px solid ", ";\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 25px;\n  line-height: 24px;\n  text-align: center;\n  margin: 0px 0px 20px 0px;\n  padding-bottom: 28px;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n\n  @media ", " {\n    margin: 0px 0px 30px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: 3px solid\n      ", ";\n    margin: 0 auto;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -54,10 +52,6 @@ var Header = function Header(_ref) {
   return type === 'main' ? /*#__PURE__*/_react.default.createElement(StyledMainHeader, null, text) : /*#__PURE__*/_react.default.createElement(StyledSubHeader, null, text);
 };
 
-Header.propTypes = {
-  text: _propTypes.default.string.isRequired,
-  type: _propTypes.default.oneOf(['main', 'subheader'])
-};
 var _default = Header;
 exports.default = _default;
 //# sourceMappingURL=index.js.map

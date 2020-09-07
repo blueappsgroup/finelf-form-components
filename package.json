@@ -4,6 +4,7 @@
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
+  "license": "MIT",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease"
@@ -22,7 +23,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@storybook/cli": "^6.0.17",
+    "@storybook/addon-info": "^5.3.21",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -42,13 +43,7 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
     "build:lib": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js",
     "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
     "build:babel:cjs": "BABEL_ENV=cjs babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
@@ -56,7 +51,9 @@
     "build:babel:umd": "BABEL_ENV=umd babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
     "clean": "rimraf dist",
-    "develop": "yarn build:types && yarn build:babel:esm --skip-initial-build --watch --verbose"
+    "develop": "yarn build:types && yarn build:babel:esm --skip-initial-build --watch --verbose",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -76,12 +73,12 @@
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/plugin-proposal-export-default-from": "^7.10.4",
-    "@storybook/addon-actions": "^6.0.17",
-    "@storybook/addon-essentials": "^6.0.17",
-    "@storybook/addon-links": "^6.0.17",
-    "@storybook/node-logger": "^6.0.17",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/node-logger": "^6.0.21",
     "@storybook/preset-create-react-app": "^3.1.4",
-    "@storybook/react": "^6.0.17",
+    "@storybook/react": "^6.0.21",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^1.4.0",
@@ -95,7 +92,9 @@
     "react-scripts": "3.4.3"
   },
   "husky": {
-    "hooks": {}
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [

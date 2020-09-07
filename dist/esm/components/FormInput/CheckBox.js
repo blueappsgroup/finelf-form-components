@@ -5,14 +5,15 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 /* eslint-disable indent */
-import React, { useState, useLayoutEffect, useRef } from 'react';
+import React, { useState, useLayoutEffect, useRef, useContext } from 'react';
 import styled from 'styled-components';
+import { FormContext, setFormValuesToCache } from '../../utils';
 const StyledRow = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: 12px;
   position: relative;
-  height: ${props => props.collapsed ? 'auto' : '21px'};
+  height: ${props => props.collapsed ? 'auto' : '20px'};
   overflow: ${props => props.collapsed ? 'none' : 'hidden'};
 `;
 const StyledArrow = styled.span`
@@ -64,7 +65,7 @@ const StyledCheckbox = styled.div`
   }
 `;
 const StyledText = styled.span`
-  display: block;
+  display: flex;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -72,7 +73,7 @@ const StyledText = styled.span`
   color: ${props => props.theme.checkboxLabelTextColor};
   padding-left: 10px;
   padding-right: 25px;
-`;
+`; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 const Checkbox = (_ref) => {
   let {
@@ -91,7 +92,8 @@ const Checkbox = (_ref) => {
   }, /*#__PURE__*/React.createElement("polyline", {
     points: "20 6 9 17 4 12"
   }))));
-};
+}; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 
 const Wrapper = styled.label`
   display: flex;
@@ -101,22 +103,21 @@ export const CheckboxBase = (_ref2) => {
     field,
     form: {
       touched,
-      errors
+      errors,
+      values
     }
   } = _ref2,
       props = _objectWithoutProperties(_ref2, ["field", "form"]);
 
   const targetRef = useRef(null);
-  const [checked, setChecked] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
   const [hasCollapse, setHasCollapse] = useState(false);
+  const {
+    id
+  } = useContext(FormContext);
 
-  const handleCheckboxChange = e => {
-    if (field.onChange) {
-      field.onChange(e);
-    }
-
-    setChecked(!checked);
+  const handleOnMouseOut = () => {
+    setFormValuesToCache(values, id);
   };
 
   const onCollapseClick = () => setCollapsed(!collapsed);
@@ -130,11 +131,11 @@ export const CheckboxBase = (_ref2) => {
     hasCollapse: hasCollapse,
     collapsed: collapsed
   }, /*#__PURE__*/React.createElement(Wrapper, {
-    ref: targetRef
+    ref: targetRef,
+    onMouseOut: handleOnMouseOut
   }, /*#__PURE__*/React.createElement(Checkbox, _extends({}, field, props, {
-    checked: checked,
-    value: checked,
-    onChange: handleCheckboxChange,
+    checked: field.value,
+    value: field.value || false,
     error: touched[field.name] && errors[field.name]
   })), /*#__PURE__*/React.createElement(StyledText, null, props.label)), /*#__PURE__*/React.createElement(StyledArrow, {
     hasCollapse: hasCollapse,
