@@ -1,3 +1,16 @@
+export const validateText: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  let error
+  if (!value && required) {
+    error = 'Pole wymagane'
+  }
+
+  return error
+}
+
 export const validateEmail: (
   customErrorMsg: string | undefined,
   required: boolean

@@ -5,6 +5,7 @@ import React, {
   useLayoutEffect,
   useRef,
   useContext,
+  ChangeEvent,
 } from 'react'
 import { FormikErrors } from 'formik'
 import styled from 'styled-components'
@@ -134,6 +135,12 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
     setFormValuesToCache(values, id)
   }
 
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    props.onChange && props.onChange(e)
+    field.onChange && field.onChange(e)
+    setFormValuesToCache(values, id)
+  }
+
   const onCollapseClick = (): void => setCollapsed(!collapsed)
 
   useLayoutEffect(() => {
@@ -148,6 +155,7 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
         <Checkbox
           {...field}
           {...props}
+          onChange={handleOnChange}
           checked={field.value}
           value={field.value || false}
           error={

@@ -8,6 +8,7 @@ import {
   CheckboxField,
   SubmitSuccessText,
   Form,
+  CheckboxesGroup,
 } from '../'
 import { FormProps, FormValuesType } from '../types'
 
@@ -26,7 +27,7 @@ const Template: Story<FormProps> = (args) => (
   <Form {...args}>
     <Header text="Test title" />
     <SubmitSuccessText text="Dziękujemy, twoje dane zostały przesłane." />
-    <TextField required placeholder="Name" name="firstName" />
+    <TextField required showError placeholder="Name" name="firstName" />
     <TextField required placeholder="Surname" name="lastName" />
     <TextField placeholder="City" name="city" />
     <Header text="Test title" type="subheader" />

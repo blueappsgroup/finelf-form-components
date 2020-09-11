@@ -8,6 +8,7 @@ export type CheckboxFieldProps = {
   label?: string
   name: string
   required?: boolean
+  onChange?: Function
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -25,6 +26,7 @@ export type TextFieldProps = {
   name: string
   required?: boolean
   validate?: Function
+  showError?: boolean
 }
 
 export type EmailFieldProps = {
@@ -34,6 +36,7 @@ export type EmailFieldProps = {
   name?: string
   errorMsg?: string
   required?: boolean
+  showError?: boolean
 }
 
 export type TelephoneFieldProps = {
@@ -43,6 +46,7 @@ export type TelephoneFieldProps = {
   name: string
   errorMsg?: string
   required?: boolean
+  showError?: boolean
 }
 
 export type CustomThemeType = {

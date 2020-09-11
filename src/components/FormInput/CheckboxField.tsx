@@ -10,6 +10,7 @@ const CheckboxFormField: (props: CheckboxFieldProps) => ReactElement = ({
   label = 'Text checkbox',
   name = 'text field',
   required = false,
+  onChange,
 }) => (
   <Field
     required={required}
@@ -19,6 +20,7 @@ const CheckboxFormField: (props: CheckboxFieldProps) => ReactElement = ({
     label={label}
     type="checkbox"
     validate={validateCheckbox(required)}
+    onChange={onChange}
   />
 )
 

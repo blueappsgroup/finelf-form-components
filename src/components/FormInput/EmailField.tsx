@@ -12,9 +12,11 @@ const EmailField: (props: EmailFieldProps) => ReactElement = ({
   errorMsg = 'Nie poprawny adres email',
   name = 'email',
   required = false,
+  showError,
 }) => (
   <Field
     required={required}
+    showError={showError}
     id={id}
     name={name}
     component={BaseField}

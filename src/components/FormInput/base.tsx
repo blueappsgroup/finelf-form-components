@@ -45,7 +45,7 @@ const StyledError = styled.span`
   color: ${(props: StyledProps): string => props.theme.inputErrorColor};
   position: absolute;
   font-size: 10px;
-  bottom: -14px;
+  bottom: -12px;
 `
 
 const StyledInput = styled.input<any>`

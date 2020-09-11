@@ -12,9 +12,11 @@ const TelephoneField: (props: TelephoneFieldProps) => ReactElement = ({
   errorMsg = 'Nie poprawny numer telefonu',
   name = 'telepone',
   required = false,
+  showError,
 }) => (
   <Field
     required={required}
+    showError={showError}
     id={id}
     name={name}
     component={BaseField}
