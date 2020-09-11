@@ -25,9 +25,11 @@ var TelephoneField = function TelephoneField(_ref) {
       _ref$name = _ref.name,
       name = _ref$name === void 0 ? 'telepone' : _ref$name,
       _ref$required = _ref.required,
-      required = _ref$required === void 0 ? false : _ref$required;
+      required = _ref$required === void 0 ? false : _ref$required,
+      showError = _ref.showError;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
+    showError: showError,
     id: id,
     name: name,
     component: _base.default,

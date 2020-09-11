@@ -8,6 +8,7 @@ export declare type CheckboxFieldProps = {
     label?: string;
     name: string;
     required?: boolean;
+    onChange?: Function;
 };
 export declare type FieldWrapProps = FieldProps & {
     label?: string;
@@ -23,6 +24,7 @@ export declare type TextFieldProps = {
     name: string;
     required?: boolean;
     validate?: Function;
+    showError?: boolean;
 };
 export declare type EmailFieldProps = {
     id?: string;
@@ -31,6 +33,7 @@ export declare type EmailFieldProps = {
     name?: string;
     errorMsg?: string;
     required?: boolean;
+    showError?: boolean;
 };
 export declare type TelephoneFieldProps = {
     id?: string;
@@ -39,6 +42,7 @@ export declare type TelephoneFieldProps = {
     name: string;
     errorMsg?: string;
     required?: boolean;
+    showError?: boolean;
 };
 export declare type CustomThemeType = {
     formBgColor?: string;

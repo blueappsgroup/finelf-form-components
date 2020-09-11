@@ -9,9 +9,11 @@ const TelephoneField = ({
   placeholder = 'Telefon',
   errorMsg = 'Nie poprawny numer telefonu',
   name = 'telepone',
-  required = false
+  required = false,
+  showError
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
+  showError: showError,
   id: id,
   name: name,
   component: BaseField,

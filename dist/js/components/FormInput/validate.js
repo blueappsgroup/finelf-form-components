@@ -3,7 +3,21 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = void 0;
+exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = void 0;
+
+var validateText = function validateText(required) {
+  return function (value) {
+    var error;
+
+    if (!value && required) {
+      error = 'Pole wymagane';
+    }
+
+    return error;
+  };
+};
+
+exports.validateText = validateText;
 
 var validateEmail = function validateEmail() {
   var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Nie poprawny adres email';

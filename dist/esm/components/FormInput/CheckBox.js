@@ -120,6 +120,12 @@ export const CheckboxBase = (_ref2) => {
     setFormValuesToCache(values, id);
   };
 
+  const handleOnChange = e => {
+    props.onChange && props.onChange(e);
+    field.onChange && field.onChange(e);
+    setFormValuesToCache(values, id);
+  };
+
   const onCollapseClick = () => setCollapsed(!collapsed);
 
   useLayoutEffect(() => {
@@ -134,6 +140,7 @@ export const CheckboxBase = (_ref2) => {
     ref: targetRef,
     onMouseOut: handleOnMouseOut
   }, /*#__PURE__*/React.createElement(Checkbox, _extends({}, field, props, {
+    onChange: handleOnChange,
     checked: field.value,
     value: field.value || false,
     error: touched[field.name] && errors[field.name]

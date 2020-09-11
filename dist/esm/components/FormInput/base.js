@@ -36,7 +36,7 @@ const StyledError = styled.span`
   color: ${props => props.theme.inputErrorColor};
   position: absolute;
   font-size: 10px;
-  bottom: -14px;
+  bottom: -12px;
 `;
 const StyledInput = styled.input`
   background: ${props => props.theme.inputBgColor};

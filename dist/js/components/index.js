@@ -7,6 +7,7 @@ var _exportNames = {
   Header: true,
   Button: true,
   Form: true,
+  CheckboxesGroup: true,
   SubmitSuccessText: true
 };
 Object.defineProperty(exports, "Header", {
@@ -25,6 +26,12 @@ Object.defineProperty(exports, "Form", {
   enumerable: true,
   get: function get() {
     return _Form.default;
+  }
+});
+Object.defineProperty(exports, "CheckboxesGroup", {
+  enumerable: true,
+  get: function get() {
+    return _CheckboxesGroup.default;
   }
 });
 Object.defineProperty(exports, "SubmitSuccessText", {
@@ -52,6 +59,8 @@ var _Header = _interopRequireDefault(require("./Header"));
 var _Button = _interopRequireDefault(require("./Button"));
 
 var _Form = _interopRequireDefault(require("./Form"));
+
+var _CheckboxesGroup = _interopRequireDefault(require("./CheckboxesGroup"));
 
 var _SubmitSuccessText = _interopRequireDefault(require("./SubmitSuccessText"));
 

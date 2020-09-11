@@ -17,6 +17,16 @@
     value: true
   });
 
+  const validateText = exports.validateText = required => value => {
+    let error;
+
+    if (!value && required) {
+      error = 'Pole wymagane';
+    }
+
+    return error;
+  };
+
   const validateEmail = exports.validateEmail = (customErrorMsg = 'Nie poprawny adres email', required) => value => {
     let error;
 

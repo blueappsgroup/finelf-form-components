@@ -23,7 +23,8 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
       _ref$name = _ref.name,
       name = _ref$name === void 0 ? 'text field' : _ref$name,
       _ref$required = _ref.required,
-      required = _ref$required === void 0 ? false : _ref$required;
+      required = _ref$required === void 0 ? false : _ref$required,
+      onChange = _ref.onChange;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     id: id,
@@ -31,7 +32,8 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
     component: _CheckBox.default,
     label: label,
     type: "checkbox",
-    validate: (0, _validate.validateCheckbox)(required)
+    validate: (0, _validate.validateCheckbox)(required),
+    onChange: onChange
   });
 };
 

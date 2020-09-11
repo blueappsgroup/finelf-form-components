@@ -33,9 +33,11 @@
     placeholder = 'Email',
     errorMsg = 'Nie poprawny adres email',
     name = 'email',
-    required = false
+    required = false,
+    showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
+    showError: showError,
     id: id,
     name: name,
     component: _base2.default,

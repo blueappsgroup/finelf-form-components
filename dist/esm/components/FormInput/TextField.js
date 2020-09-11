@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field } from 'formik';
 import BaseField from './base';
+import { validateText } from './validate';
 
 const TextField = ({
   id,
@@ -8,16 +9,18 @@ const TextField = ({
   placeholder = 'Text',
   name = 'text field',
   required = false,
-  validate
+  validate,
+  showError
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
+  showError: showError,
   id: id,
   name: name,
   component: BaseField,
   label: label,
   placeholder: placeholder,
   type: "text",
-  validate: validate
+  validate: validate || validateText(required)
 });
 
 export default TextField;

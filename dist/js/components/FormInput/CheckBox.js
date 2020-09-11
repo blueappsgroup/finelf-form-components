@@ -203,6 +203,12 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     (0, _utils.setFormValuesToCache)(values, id);
   };
 
+  var handleOnChange = function handleOnChange(e) {
+    props.onChange && props.onChange(e);
+    field.onChange && field.onChange(e);
+    (0, _utils.setFormValuesToCache)(values, id);
+  };
+
   var onCollapseClick = function onCollapseClick() {
     return setCollapsed(!collapsed);
   };
@@ -219,6 +225,7 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     ref: targetRef,
     onMouseOut: handleOnMouseOut
   }, /*#__PURE__*/_react.default.createElement(Checkbox, _extends({}, field, props, {
+    onChange: handleOnChange,
     checked: field.value,
     value: field.value || false,
     error: touched[field.name] && errors[field.name]

@@ -34,6 +34,7 @@ var Template = function Template(args) {
     text: "Dzi\u0119kujemy, twoje dane zosta\u0142y przes\u0142ane."
   }), /*#__PURE__*/React.createElement(_.TextField, {
     required: true,
+    showError: true,
     placeholder: "Name",
     name: "firstName"
   }), /*#__PURE__*/React.createElement(_.TextField, {

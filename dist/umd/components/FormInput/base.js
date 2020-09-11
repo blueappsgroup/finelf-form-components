@@ -111,7 +111,7 @@
   color: ${props => props.theme.inputErrorColor};
   position: absolute;
   font-size: 10px;
-  bottom: -14px;
+  bottom: -12px;
 `;
   const StyledInput = _styledComponents2.default.input`
   background: ${props => props.theme.inputBgColor};

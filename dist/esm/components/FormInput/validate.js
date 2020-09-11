@@ -1,3 +1,12 @@
+export const validateText = required => value => {
+  let error;
+
+  if (!value && required) {
+    error = 'Pole wymagane';
+  }
+
+  return error;
+};
 export const validateEmail = (customErrorMsg = 'Nie poprawny adres email', required) => value => {
   let error;
 

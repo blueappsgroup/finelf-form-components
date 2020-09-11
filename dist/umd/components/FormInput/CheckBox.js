@@ -197,6 +197,12 @@
       (0, _utils.setFormValuesToCache)(values, id);
     };
 
+    const handleOnChange = e => {
+      props.onChange && props.onChange(e);
+      field.onChange && field.onChange(e);
+      (0, _utils.setFormValuesToCache)(values, id);
+    };
+
     const onCollapseClick = () => setCollapsed(!collapsed);
 
     (0, _react.useLayoutEffect)(() => {
@@ -211,6 +217,7 @@
       ref: targetRef,
       onMouseOut: handleOnMouseOut
     }, /*#__PURE__*/_react2.default.createElement(Checkbox, _extends({}, field, props, {
+      onChange: handleOnChange,
       checked: field.value,
       value: field.value || false,
       error: touched[field.name] && errors[field.name]

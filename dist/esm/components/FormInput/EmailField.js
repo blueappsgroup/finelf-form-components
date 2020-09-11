@@ -9,9 +9,11 @@ const EmailField = ({
   placeholder = 'Email',
   errorMsg = 'Nie poprawny adres email',
   name = 'email',
-  required = false
+  required = false,
+  showError
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
+  showError: showError,
   id: id,
   name: name,
   component: BaseField,

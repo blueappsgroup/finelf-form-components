@@ -18,6 +18,7 @@ const Template = args => /*#__PURE__*/React.createElement(Form, args, /*#__PURE_
   text: "Dzi\u0119kujemy, twoje dane zosta\u0142y przes\u0142ane."
 }), /*#__PURE__*/React.createElement(TextField, {
   required: true,
+  showError: true,
   placeholder: "Name",
   name: "firstName"
 }), /*#__PURE__*/React.createElement(TextField, {

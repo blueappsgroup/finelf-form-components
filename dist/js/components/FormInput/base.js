@@ -38,7 +38,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  position: absolute;\n  font-size: 10px;\n  bottom: -14px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  position: absolute;\n  font-size: 10px;\n  bottom: -12px;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;

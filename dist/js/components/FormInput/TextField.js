@@ -11,6 +11,8 @@ var _formik = require("formik");
 
 var _base = _interopRequireDefault(require("./base"));
 
+var _validate = require("./validate");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var TextField = function TextField(_ref) {
@@ -22,16 +24,18 @@ var TextField = function TextField(_ref) {
       name = _ref$name === void 0 ? 'text field' : _ref$name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
-      validate = _ref.validate;
+      validate = _ref.validate,
+      showError = _ref.showError;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
+    showError: showError,
     id: id,
     name: name,
     component: _base.default,
     label: label,
     placeholder: placeholder,
     type: "text",
-    validate: validate
+    validate: validate || (0, _validate.validateText)(required)
   });
 };
 

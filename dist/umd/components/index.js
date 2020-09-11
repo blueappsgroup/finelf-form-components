@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "./FormInput", "./Header", "./Button", "./Form", "./SubmitSuccessText"], factory);
+    define(["exports", "./FormInput", "./Header", "./Button", "./Form", "./CheckboxesGroup", "./SubmitSuccessText"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"), require("./SubmitSuccessText"));
+    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"), require("./CheckboxesGroup"), require("./SubmitSuccessText"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form, global.SubmitSuccessText);
+    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form, global.CheckboxesGroup, global.SubmitSuccessText);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _FormInput, _Header, _Button, _Form, _SubmitSuccessText) {
+})(this, function (exports, _FormInput, _Header, _Button, _Form, _CheckboxesGroup, _SubmitSuccessText) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -41,6 +41,12 @@
     enumerable: true,
     get: function () {
       return _interopRequireDefault(_Form).default;
+    }
+  });
+  Object.defineProperty(exports, "CheckboxesGroup", {
+    enumerable: true,
+    get: function () {
+      return _interopRequireDefault(_CheckboxesGroup).default;
     }
   });
   Object.defineProperty(exports, "SubmitSuccessText", {

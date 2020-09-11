@@ -7,7 +7,8 @@ const CheckboxFormField = ({
   id = 'textField',
   label = 'Text checkbox',
   name = 'text field',
-  required = false
+  required = false,
+  onChange
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   id: id,
@@ -15,7 +16,8 @@ const CheckboxFormField = ({
   component: CheckboxBase,
   label: label,
   type: "checkbox",
-  validate: validateCheckbox(required)
+  validate: validateCheckbox(required),
+  onChange: onChange
 });
 
 export default CheckboxFormField;
