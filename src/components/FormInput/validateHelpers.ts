@@ -1,5 +1,4 @@
-export const isRequired = (value: string, required: boolean): boolean =>
-  !value && required
+export const isEmpty = (value: string): boolean => !value
 
 export const isBetweenNumberOfCharacters = (
   value: string,

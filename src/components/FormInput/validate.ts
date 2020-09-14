@@ -1,6 +1,6 @@
 import {
+  isEmpty,
   isBetweenNumberOfCharacters,
-  isRequired,
   isValidEmail,
   isValidPhoneNumber,
 } from './validateHelpers'
@@ -10,7 +10,7 @@ export const validateText: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
-  if (isRequired(value, required)) {
+  if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
 
@@ -26,7 +26,7 @@ export const validateEmail: (
   customErrorMsg = 'Podany email jest nieprawidłowy',
   required: boolean
 ) => (value: string): string | undefined => {
-  if (isRequired(value, required)) {
+  if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
 
@@ -42,7 +42,7 @@ export const validateTelNumber: (
   customErrorMsg = 'Podany numer telefonu jest nieprawidłowy',
   required: boolean
 ) => (value: string): string | undefined => {
-  if (isRequired(value, required)) {
+  if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
 
