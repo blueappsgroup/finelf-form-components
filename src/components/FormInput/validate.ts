@@ -5,7 +5,7 @@ export const validateText: (
 ): string | undefined => {
   let error
   if (!value && required) {
-    error = 'Pole wymagane'
+    error = 'To pole jest wymagane'
   }
 
   return error
@@ -15,42 +15,35 @@ export const validateEmail: (
   customErrorMsg: string | undefined,
   required: boolean
 ) => (value: string) => string | undefined = (
-  customErrorMsg = 'Nie poprawny adres email',
+  customErrorMsg = 'Podany email jest nieprawidłowy',
   required: boolean
 ) => (value: string): string | undefined => {
-  let error
   if (!value && required) {
-    error = 'Pole wymagane'
-  } else if (
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) &&
-    value
-  ) {
-    error = customErrorMsg
+    return 'To pole jest wymagane'
   }
 
-  return error
+  if (!/[a-zA-Z0-9_.+-]+@[a-zAZ0-9-]+\.[a-zA-Z0-9-.]+$/.test(value) && value) {
+    return customErrorMsg
+  }
 }
 
 export const validateTelNumber: (
   customErrorMsg: string | undefined,
   required: boolean
 ) => (value: string) => string | undefined = (
-  customErrorMsg = 'Nie poprawny numer telefonu',
+  customErrorMsg = 'Podany numer telefonu jest nieprawidłowy',
   required: boolean
 ) => (value: string): string | undefined => {
-  let error
   if (!value && required) {
-    error = 'Pole wymagane'
-  } else if (
-    !/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/i.test(
-      value
-    ) &&
-    value
-  ) {
-    error = customErrorMsg
+    return 'To pole jest wymagane'
   }
 
-  return error
+  if (
+    !/^(45|50|51|53|57|60|66|69|72|73|78|79|88)[0-9]{7}$/.test(value) &&
+    value
+  ) {
+    return customErrorMsg
+  }
 }
 
 export const validateCheckbox: (
