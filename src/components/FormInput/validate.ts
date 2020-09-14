@@ -1,8 +1,8 @@
 import {
   isEmpty,
-  isBetweenNumberOfCharacters,
-  isValidEmail,
-  isValidPhoneNumber,
+  isNotValidLength,
+  isNotValidPhoneNumber,
+  isNotValidEmail,
 } from './validateHelpers'
 
 export const validateText: (
@@ -14,7 +14,7 @@ export const validateText: (
     return 'To pole jest wymagane'
   }
 
-  if (isBetweenNumberOfCharacters(value)) {
+  if (isNotValidLength(value)) {
     return 'Pole musi zawierać między 2 - 100 znaków'
   }
 }
@@ -30,7 +30,7 @@ export const validateEmail: (
     return 'To pole jest wymagane'
   }
 
-  if (isValidEmail(value)) {
+  if (isNotValidEmail(value)) {
     return customErrorMsg
   }
 }
@@ -46,7 +46,7 @@ export const validateTelNumber: (
     return 'To pole jest wymagane'
   }
 
-  if (isValidPhoneNumber(value)) {
+  if (isNotValidPhoneNumber(value)) {
     return customErrorMsg
   }
 }
