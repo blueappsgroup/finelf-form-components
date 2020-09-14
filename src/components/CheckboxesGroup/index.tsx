@@ -18,9 +18,9 @@ const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const fieldsToUpdate = checkboxesNames.reduce((acc, item) => {
-      acc[item] = !!e.target.value
+      acc[item] = e.target.value === 'true' ? false : true
       return acc
-    }, {} as { [key: string]: boolean })
+    }, {} as { [key: string]: boolean | undefined })
 
     setValues({ [name]: fieldsToUpdate })
   }
