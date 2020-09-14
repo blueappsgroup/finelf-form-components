@@ -1,4 +1,9 @@
-import { isRequired, isValidEmail, isValidPhoneNumber } from './validateHelpers'
+import {
+  isBetweenNumberOfCharacters,
+  isRequired,
+  isValidEmail,
+  isValidPhoneNumber,
+} from './validateHelpers'
 
 export const validateText: (
   required: boolean
@@ -7,6 +12,10 @@ export const validateText: (
 ): string | undefined => {
   if (isRequired(value, required)) {
     return 'To pole jest wymagane'
+  }
+
+  if (isBetweenNumberOfCharacters(value)) {
+    return 'Pole musi zawierać między 2 - 100 znaków'
   }
 }
 
