@@ -23,7 +23,7 @@ const TextField: (props: TextFieldProps) => ReactElement = ({
     label={label}
     placeholder={placeholder}
     type="text"
-    validate={validate || validateText(required)}
+    validate={(validate && validate(required)) || validateText(required)}
   />
 )
 

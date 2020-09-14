@@ -31,11 +31,16 @@ const Template: Story<FormProps> = (args) => (
     <TextField required placeholder="Surname" name="lastName" />
     <TextField placeholder="City" name="city" />
     <Header text="Test title" type="subheader" />
-    <CheckboxField name="agreement1" label="Test agreement text" />
-    <CheckboxField
-      name="agreement2"
-      label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
-    />
+    <CheckboxesGroup name="agreements">
+      <CheckboxField
+        name="agreement1"
+        label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
+      />
+      <CheckboxField
+        name="agreement2"
+        label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
+      />
+    </CheckboxesGroup>
     <Button text="Send" />
   </Form>
 )
