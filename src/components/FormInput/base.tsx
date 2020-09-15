@@ -154,7 +154,7 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
     field.onBlur && field.onBlur(e)
   }
 
-  const options = (options: []): [] => {
+  const options = (options: []): Array<JSX.Element> => {
     const opts = []
 
     for (const option in options) {
