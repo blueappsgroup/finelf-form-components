@@ -3,6 +3,7 @@ import {
   isNotValidLength,
   isNotValidPhoneNumber,
   isNotValidEmail,
+  isNotLetter,
 } from './validateHelpers'
 
 export const validateText: (
@@ -16,6 +17,10 @@ export const validateText: (
 
   if (isNotValidLength(value)) {
     return 'Pole musi zawierać między 2 - 100 znaków'
+  }
+
+  if (isNotLetter(value)) {
+    return 'Podane dane są nieprawidłowe'
   }
 }
 
