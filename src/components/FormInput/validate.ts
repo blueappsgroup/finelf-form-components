@@ -1,14 +1,22 @@
+import {
+  isEmpty,
+  isNotValidLength,
+  isNotValidPhoneNumber,
+  isNotValidEmail,
+} from './validateHelpers'
+
 export const validateText: (
   required: boolean
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
-  let error
-  if (!value && required) {
-    error = 'To pole jest wymagane'
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
   }
 
-  return error
+  if (isNotValidLength(value)) {
+    return 'Pole musi zawierać między 2 - 100 znaków'
+  }
 }
 
 export const validateEmail: (
@@ -18,11 +26,11 @@ export const validateEmail: (
   customErrorMsg = 'Podany email jest nieprawidłowy',
   required: boolean
 ) => (value: string): string | undefined => {
-  if (!value && required) {
+  if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
 
-  if (!/[a-zA-Z0-9_.+-]+@[a-zAZ0-9-]+\.[a-zA-Z0-9-.]+$/.test(value) && value) {
+  if (isNotValidEmail(value)) {
     return customErrorMsg
   }
 }
@@ -34,14 +42,11 @@ export const validateTelNumber: (
   customErrorMsg = 'Podany numer telefonu jest nieprawidłowy',
   required: boolean
 ) => (value: string): string | undefined => {
-  if (!value && required) {
+  if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
 
-  if (
-    !/^(45|50|51|53|57|60|66|69|72|73|78|79|88)[0-9]{7}$/.test(value) &&
-    value
-  ) {
+  if (isNotValidPhoneNumber(value)) {
     return customErrorMsg
   }
 }
