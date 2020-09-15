@@ -8,3 +8,5 @@ export const isNotValidPhoneNumber = (value: string): boolean =>
 
 export const isNotValidEmail = (value: string): boolean =>
   !/[a-zA-Z0-9_.+-]+@[a-zAZ0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)
+
+export const isNotLetter = (value: string): boolean => !/[A-Za-z]$/.test(value)
