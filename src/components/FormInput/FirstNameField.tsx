@@ -1,7 +1,7 @@
 import React from 'react'
 import TextField from './TextField'
 
-const FirstName = () => (
+const FirstNameField = () => (
   <TextField
     required
     label="Imię"
@@ -11,4 +11,4 @@ const FirstName = () => (
   />
 )
 
-export default FirstName
+export default FirstNameField
