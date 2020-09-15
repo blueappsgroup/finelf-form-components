@@ -4,6 +4,8 @@ import {
   isNotValidPhoneNumber,
   isNotValidEmail,
   isNotLetter,
+  isNotNumber,
+  isValidPesel,
 } from './validateHelpers'
 
 export const validateText: (
@@ -61,3 +63,21 @@ export const validateCheckbox: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => (required && !value && 'required') || undefined
+
+export const validatePesel: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotNumber(value)) {
+    return 'Podany PESEL jest nieprawidłowy'
+  }
+
+  if (!isValidPesel(value)) {
+    return 'Podany PESEL jest nieprawidłowy'
+  }
+}
