@@ -5,10 +5,10 @@ import { validateHouseNumber } from './validate'
 const ApartmentNumberField = () => (
   <TextField
     required
-    label="Numer domu"
-    placeholder="Numer domu"
+    label="Numer mieszkania"
+    placeholder="Numer mieszkania"
     showError
-    name="house_number"
+    name="apartment_number"
     validate={validateHouseNumber}
   />
 )
