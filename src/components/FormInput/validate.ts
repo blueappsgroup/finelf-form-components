@@ -7,6 +7,7 @@ import {
   isNotNumber,
   isValidPesel,
   haveSpecialChars,
+  isNotValidZipCode,
 } from './validateHelpers'
 
 export const validateText: (
@@ -111,6 +112,24 @@ export const validateCityName: (
   }
 
   if (haveSpecialChars(value)) {
+    return 'Podane dane są nieprawidłowe'
+  }
+}
+
+export const validateZipCode: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidLength(value, 1, 10)) {
+    return 'Pole musi zawierać między 1 - 10 znaków'
+  }
+
+  if (isNotValidZipCode(value)) {
     return 'Podane dane są nieprawidłowe'
   }
 }

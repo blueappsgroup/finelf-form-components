@@ -38,3 +38,6 @@ export const isValidPesel = (value: string): boolean => {
 
   return false
 }
+
+export const isNotValidZipCode = (value: string): boolean =>
+  !/^[0-9]{2}-[0-9]{3}$/.test(value)
