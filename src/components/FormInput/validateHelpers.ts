@@ -13,6 +13,9 @@ export const isNotLetter = (value: string): boolean => !/[A-Za-z]$/.test(value)
 
 export const isNotNumber = (value: string): boolean => !/[0-9]$/.test(value)
 
+export const haveSpecialChars = (value: string): boolean =>
+  !/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ0-9 -]*$$/.test(value)
+
 export const isValidPesel = (value: string): boolean => {
   if (value.length === 11) {
     const weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]

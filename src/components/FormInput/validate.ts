@@ -6,6 +6,7 @@ import {
   isNotLetter,
   isNotNumber,
   isValidPesel,
+  haveSpecialChars,
 } from './validateHelpers'
 
 export const validateText: (
@@ -93,5 +94,23 @@ export const validateHouseNumber: (
 
   if (isNotValidLength(value, 1, 10)) {
     return 'Podany numer mieszkania jest nieprawidłowy'
+  }
+}
+
+export const validateCityName: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidLength(value)) {
+    return 'Pole musi zawierać między 2 - 100 znaków'
+  }
+
+  if (haveSpecialChars(value)) {
+    return 'Podane dane są nieprawidłowe'
   }
 }
