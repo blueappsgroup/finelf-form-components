@@ -159,13 +159,19 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
   }
 
   const options = (options: SelectFieldOptions): Array<JSX.Element> => {
-    return Object.keys(options).map((option) => {
-      return (
-        <option key={option} value={option}>
-          {options[option]}
-        </option>
-      )
-    })
+    return [
+      <option key="select" value="select" disabled>
+        wybierz
+      </option>,
+    ].concat(
+      Object.keys(options).map((option) => {
+        return (
+          <option key={option} value={option}>
+            {options[option]}
+          </option>
+        )
+      })
+    )
   }
 
   return (
@@ -176,7 +182,7 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
         {...props}
         onBlur={handleOnBlur}
         type="text"
-        value={(field.value && field.value) || ''}
+        value={(field.value && field.value) || 'select'}
         error={touched[field.name] && errors[field.name]}
         placeholder={
           props.placeholder &&
