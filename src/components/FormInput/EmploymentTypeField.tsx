@@ -15,7 +15,7 @@ const options = {
   pension: 'emeryt/rencista',
   agriculture: 'gospodarstwo rolne',
   student: 'student',
-  housewife: 'pani domu',
+  housewife: 'gospodyni domowa',
   other: 'inne',
   service_contract: 'umowa zlecenie / umowa o dzieło',
 }

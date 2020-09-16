@@ -20,19 +20,22 @@ export type FieldWrapProps = FieldProps & {
   type?: string
 }
 
+export type SelectFieldOptions = {
+  [key: string]: string
+}
+
 export type SelectFieldWrapProps = FieldProps & {
   label?: string
   showError?: boolean
   onChange?: Function
   placeholder?: string
   required?: boolean
-  options: []
+  options: SelectFieldOptions
 }
 
 export type SelectFieldProps = {
   id?: string
   label?: string
-  placeholder?: string
   name?: string
   errorMsg?: string
   required?: boolean

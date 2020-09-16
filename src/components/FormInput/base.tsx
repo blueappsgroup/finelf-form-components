@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ReactElement, useContext, ChangeEvent } from 'react'
 import styled from 'styled-components'
-import { FieldWrapProps, SelectFieldWrapProps } from '../../types'
+import {
+  FieldWrapProps,
+  SelectFieldWrapProps,
+  SelectFieldOptions,
+} from '../../types'
 import { device } from '../../consts/sizes'
 import { FormContext, setFormValuesToCache } from '../../utils'
 
@@ -154,18 +158,20 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
     field.onBlur && field.onBlur(e)
   }
 
-  const options = (options: []): Array<JSX.Element> => {
-    const opts = []
-
-    for (const option in options) {
-      opts.push(
-        <option key={option} value={option}>
-          {options[option]}
-        </option>
-      )
-    }
-
-    return opts
+  const options = (options: SelectFieldOptions): Array<JSX.Element> => {
+    return [
+      <option key="select" value="select" disabled>
+        wybierz
+      </option>,
+    ].concat(
+      Object.keys(options).map((option) => {
+        return (
+          <option key={option} value={option}>
+            {options[option]}
+          </option>
+        )
+      })
+    )
   }
 
   return (
@@ -176,7 +182,7 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
         {...props}
         onBlur={handleOnBlur}
         type="text"
-        value={(field.value && field.value) || ''}
+        value={(field.value && field.value) || 'select'}
         error={touched[field.name] && errors[field.name]}
         placeholder={
           props.placeholder &&
