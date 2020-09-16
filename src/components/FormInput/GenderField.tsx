@@ -5,7 +5,7 @@ import { SelectFieldProps } from '../../types'
 import { BaseSelectField } from './base'
 
 const options = {
-  male: 'mezczyzna',
+  male: 'mężczyzna',
   female: 'kobieta',
 }
 

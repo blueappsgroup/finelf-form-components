@@ -9,10 +9,10 @@ const options = {
   no: 'nie',
 }
 
-const AutoStatusField: (props: SelectFieldProps) => ReactElement = ({
+const CarStatusField: (props: SelectFieldProps) => ReactElement = ({
   id,
   label,
-  name = 'auto_status',
+  name = 'car_status',
   required = false,
   showError,
 }) => (
@@ -28,4 +28,4 @@ const AutoStatusField: (props: SelectFieldProps) => ReactElement = ({
   />
 )
 
-export default AutoStatusField
+export default CarStatusField
