@@ -17,6 +17,7 @@ export type FieldWrapProps = FieldProps & {
   onChange?: Function
   placeholder?: string
   required?: boolean
+  type?: string
 }
 
 export type SelectFieldWrapProps = FieldProps & {
@@ -49,6 +50,16 @@ export type TextFieldProps = {
 }
 
 export type EmailFieldProps = {
+  id?: string
+  label?: string
+  placeholder?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
+  showError?: boolean
+}
+
+export type BirthDateFieldProps = {
   id?: string
   label?: string
   placeholder?: string
