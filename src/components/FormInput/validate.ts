@@ -81,3 +81,17 @@ export const validatePesel: (
     return 'Podany PESEL jest nieprawidłowy'
   }
 }
+
+export const validateHouseNumber: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidLength(value, 1, 10)) {
+    return 'Podany numer mieszkania jest nieprawidłowy'
+  }
+}
