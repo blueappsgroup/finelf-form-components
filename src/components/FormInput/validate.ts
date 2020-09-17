@@ -8,6 +8,7 @@ import {
   isValidPesel,
   haveSpecialChars,
   isNotValidZipCode,
+  isValidNIP,
 } from './validateHelpers'
 
 export const validateText: (
@@ -131,5 +132,26 @@ export const validateZipCode: (
 
   if (isNotValidZipCode(value)) {
     return 'Podane dane są nieprawidłowe'
+  }
+}
+
+export const validateCompanyTax: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotNumber(value)) {
+    return 'Podany NIP jest nieprawidłowy'
+  }
+
+  if (isNotValidLength(value, 10, 10)) {
+    return 'Podany NIP jest nieprawidłowy'
+  }
+  if (!isValidNIP(value)) {
+    return 'Podany NIP jest nieprawidłowy'
   }
 }

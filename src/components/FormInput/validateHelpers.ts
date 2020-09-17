@@ -41,3 +41,20 @@ export const isValidPesel = (value: string): boolean => {
 
 export const isNotValidZipCode = (value: string): boolean =>
   !/^[0-9]{2}-[0-9]{3}$/.test(value)
+
+export const isValidNIP = (nip: string): boolean => {
+  if (nip.length === 10) {
+    const weights = [6, 5, 7, 2, 3, 4, 5, 6, 7]
+    const controlNumber = parseInt(nip.substring(9, 10))
+    let sum = 0
+
+    weights.filter(
+      (weight, index) =>
+        (sum += parseInt(nip.substring(index, index + 1)) * weight)
+    )
+
+    return sum % 11 === controlNumber
+  }
+
+  return false
+}
