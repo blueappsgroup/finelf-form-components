@@ -33,6 +33,21 @@ export type SelectFieldWrapProps = FieldProps & {
   options: SelectFieldOptions
 }
 
+export type RangeFieldWrapProps = FieldProps & {
+  label?: string
+  showError?: boolean
+  onChange?: Function
+  placeholder?: string
+  required?: boolean
+  type?: string
+  min?: number
+  max?: number
+  step?: number
+  value?: number
+  suffix?: string
+  unit?: string
+}
+
 export type SelectFieldProps = {
   id?: string
   label?: string
@@ -49,6 +64,15 @@ export type TextFieldProps = {
   name: string
   required?: boolean
   validate?: Function
+  showError?: boolean
+}
+
+export type RangeFieldProps = {
+  id?: string
+  label?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
   showError?: boolean
 }
 
