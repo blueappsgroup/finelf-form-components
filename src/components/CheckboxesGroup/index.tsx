@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ReactElement, FC, ChangeEvent } from 'react'
+import React, { ReactElement, FC, ChangeEvent, useMemo } from 'react'
 import { FieldArray, useFormikContext } from 'formik'
 
 import CheckboxField from '../FormInput/CheckboxField'
@@ -10,11 +10,15 @@ type CheckboxesGroupTypes = {
 }
 
 const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
-  const { setValues } = useFormikContext()
+  const { values, setValues } = useFormikContext()
   const hasManyCheckboxes = Array.isArray(children)
-  const checkboxesNames: string[] = hasManyCheckboxes
-    ? children && children.map((item: any) => item.props.name)
-    : [children.props.name]
+  const checkboxesNames: string[] = useMemo(
+    () =>
+      hasManyCheckboxes
+        ? children && children.map((item: any) => item.props.name)
+        : [children.props.name],
+    [hasManyCheckboxes, children]
+  )
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const fieldsToUpdate = checkboxesNames.reduce((acc, item) => {
@@ -22,7 +26,7 @@ const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
       return acc
     }, {} as { [key: string]: boolean | undefined })
 
-    setValues({ [name]: fieldsToUpdate })
+    setValues({ ...(values as any), [name]: fieldsToUpdate })
   }
 
   return (

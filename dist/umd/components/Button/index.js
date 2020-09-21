@@ -28,10 +28,10 @@
   }
 
   const StyledButton = _styledComponents2.default.button`
-  background: ${props => props.theme.submitButtonBgColor};
+  background: ${props => props.theme.buttonBgColor};
   border-radius: 4px;
   border: none;
-  color: ${props => props.theme.submitButtonTextColor};
+  color: ${props => props.theme.buttonTextColor};
   outline: 0;
   letter-spacing: 0.5px;
   font-style: normal;

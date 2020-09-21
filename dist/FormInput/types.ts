@@ -58,6 +58,6 @@ export type CustomThemeType = {
   headerTextColor?: string
   headerBorderColor?: string
   subheaderBorderColor?: string
-  submitButtonTextColor?: string
-  submitButtonBgColor?: string
+  buttonTextColor?: string
+  buttonBgColor?: string
 }
