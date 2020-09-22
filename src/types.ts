@@ -19,6 +19,28 @@ export type FieldWrapProps = FieldProps & {
   required?: boolean
 }
 
+export type SelectFieldOptions = {
+  [key: string]: string
+}
+
+export type SelectFieldWrapProps = FieldProps & {
+  label?: string
+  showError?: boolean
+  onChange?: Function
+  placeholder?: string
+  required?: boolean
+  options: SelectFieldOptions
+}
+
+export type SelectFieldProps = {
+  id?: string
+  label?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
+  showError?: boolean
+}
+
 export type TextFieldProps = {
   id?: string
   label?: string
