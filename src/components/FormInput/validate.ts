@@ -9,6 +9,9 @@ import {
   haveSpecialChars,
   isNotValidZipCode,
   isValidNIP,
+  isValidBankAccountNumber,
+  isValidIDCard,
+  isNotValidIDCard,
 } from './validateHelpers'
 
 export const validateText: (
@@ -153,5 +156,48 @@ export const validateCompanyTax: (
   }
   if (!isValidNIP(value)) {
     return 'Podany NIP jest nieprawidłowy'
+  }
+}
+
+export const validateBankAccountNumber: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotNumber(value)) {
+    return 'Podany numer konta jest nieprawidłowy'
+  }
+
+  if (isNotValidLength(value, 26, 26)) {
+    return 'Podany numer konta jest nieprawidłowy'
+  }
+  if (!isValidBankAccountNumber(value)) {
+    return 'Podany numer konta jest nieprawidłowy'
+  }
+}
+
+export const validateIDCardNumber: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidIDCard(value)) {
+    return 'Podany numer dowodu jest nieprawidłowy'
+  }
+
+  if (!isValidIDCard(value)) {
+    return 'Podany numer dowodu jest nieprawidłowy'
+  }
+
+  if (isNotNumber(value)) {
+    return 'Podany numer dowodu jest nieprawidłowy'
   }
 }
