@@ -24,9 +24,9 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var StyledButton = _styledComponents.default.button(_templateObject(), function (props) {
-  return props.theme.submitButtonBgColor;
+  return props.theme.buttonBgColor;
 }, function (props) {
-  return props.theme.submitButtonTextColor;
+  return props.theme.buttonTextColor;
 });
 
 var Button = function Button(_ref) {

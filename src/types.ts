@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { FieldProps } from 'formik'
 
 export type FormValuesType = { [key: string]: string | boolean | undefined }
@@ -9,6 +9,7 @@ export type CheckboxFieldProps = {
   name: string
   required?: boolean
   onChange?: Function
+  children?: ReactElement | ReactElement[]
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -17,6 +18,8 @@ export type FieldWrapProps = FieldProps & {
   onChange?: Function
   placeholder?: string
   required?: boolean
+  children?: ReactElement | ReactElement[]
+  childrenBody?: ReactElement | ReactElement[]
   type?: string
 }
 
@@ -99,17 +102,33 @@ export type CustomThemeType = {
   headerTextColor?: string
   headerBorderColor?: string
   subheaderBorderColor?: string
-  submitButtonTextColor?: string
-  submitButtonBgColor?: string
+  buttonTextColor?: string
+  buttonBgColor?: string
+  buttonBorderColor?: string
+  stepHeaderActiveColor?: string
+  stepHeaderInActiveColor?: string
+  buttonSecondaryTextColor?: string
+  buttonSecondaryBgColor?: string
+  buttonSecondaryBorderColor?: string
+  redirectPageHeaderTextColor?: string
+  redirectPageRedirectTextColor?: string
+  redirectPageCounterTextColor?: string
 }
 
 export type HeaderProps = {
   text: string
   type?: 'main' | 'subheader'
+  withBorder?: boolean
 }
 
 export type ButtonProps = {
   text: string
+  variant?: 'primary' | 'secondary'
+  type?: 'submit' | 'button'
+  size?: 'large | medium | small'
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onClick?: any
+  disabled?: boolean
 }
 
 export type FormProps = {
@@ -121,4 +140,22 @@ export type FormProps = {
   children: ReactNode
   customTheme?: CustomThemeType
   id: string
+  stepsLength?: number
+  stepsTitles?: string[]
+  hasRedirect?: boolean
+  redirectUrl?: string
+  timeToRedirect?: number
+  redirectHeaderText?: string
+  logoImg?: string
+  redirectMainImg?: string
+  redirectBgImg?: string
+}
+
+export type RedirectPagePropsTypes = {
+  headerText?: string
+  backgroundImage?: string
+  mainImg?: string
+  logoImg?: string
+  timeToRedirect?: number
+  redirectUrl?: string
 }

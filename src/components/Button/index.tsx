@@ -5,17 +5,32 @@ import { ButtonProps } from '../../types'
 
 type StyledProps = {
   theme: {
-    submitButtonBgColor: string
-    submitButtonTextColor: string
+    buttonBgColor: string
+    buttonTextColor: string
+    buttonBorderColor: string
+    buttonSecondaryTextColor: string
+    buttonSecondaryBgColor: string
+    buttonSecondaryBorderColor: string
   }
+  variant: 'primary' | 'secondary'
+  size?: 'large | medium | small'
+  onClick?: Function
 }
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<StyledProps>`
   background: ${(props: StyledProps): string =>
-    props.theme.submitButtonBgColor};
+    props.variant === 'primary'
+      ? props.theme.buttonBgColor
+      : props.theme.buttonSecondaryBgColor};
   border-radius: 4px;
-  border: none;
-  color: ${(props: StyledProps): string => props.theme.submitButtonTextColor};
+  border: ${(props: StyledProps): string =>
+    props.variant === 'primary'
+      ? 'none'
+      : `4px solid ${props.theme.buttonSecondaryBorderColor}`};
+  color: ${(props: StyledProps): string =>
+    props.variant === 'primary'
+      ? props.theme.buttonTextColor
+      : props.theme.buttonSecondaryTextColor};
   outline: 0;
   letter-spacing: 0.5px;
   font-style: normal;
@@ -24,10 +39,27 @@ const StyledButton = styled.button`
   line-height: 16px;
   padding: 28px;
   margin-top: 20px;
+
+  &:disabled {
+    background: silver;
+  }
 `
 
-const Button: React.FC<ButtonProps> = ({ text }) => (
-  <StyledButton type="submit">{text}</StyledButton>
+const Button: React.FC<ButtonProps> = ({
+  text,
+  type = 'button',
+  variant = 'primary',
+  onClick,
+  disabled,
+}) => (
+  <StyledButton
+    disabled={disabled}
+    variant={variant}
+    type={type}
+    onClick={onClick}
+  >
+    {text}
+  </StyledButton>
 )
 
 export default Button

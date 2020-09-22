@@ -25,8 +25,8 @@ export const theme = {
   headerTextColor: colors.black,
   headerBorderColor: colors.errorRed,
   subheaderBorderColor: colors.black,
-  submitButtonTextColor: colors.white,
-  submitButtonBgColor: colors.mediumRed,
+  buttonTextColor: colors.white,
+  buttonBgColor: colors.mediumRed,
   successTextColor: colors.black
 };
 //# sourceMappingURL=theme.js.map

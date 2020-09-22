@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 const StyledButton = styled.button`
-  background: ${props => props.theme.submitButtonBgColor};
+  background: ${props => props.theme.buttonBgColor};
   border-radius: 4px;
   border: none;
-  color: ${props => props.theme.submitButtonTextColor};
+  color: ${props => props.theme.buttonTextColor};
   outline: 0;
   letter-spacing: 0.5px;
   font-style: normal;
