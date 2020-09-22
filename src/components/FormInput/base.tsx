@@ -120,7 +120,9 @@ const StyledSpan = styled.span`
   font-weight: bold;
 `
 
-const RangeInputSuffix = styled.span`
+const StyledInputSuffix = styled.span`
+  position: absolute;
+  right: 0;
   display: inline-flex;
   align-items: center;
   height: 63px;
@@ -281,22 +283,20 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
     field.onChange && field.onChange(e)
   }
   const handleOnBlur = (e: ChangeEvent<HTMLInputElement>): void => {
-    field.value = parseInt(e.target.value) || 0
+    let value = parseInt(e.target.value) || 0
 
-    if (props.min && props.min > field.value) {
-      field.value = props.min
+    if (props.min && props.min > value) {
+      value = props.min
     }
 
-    if (props.max && props.max < field.value) {
-      field.value = props.max
+    if (props.max && props.max < value) {
+      value = props.max
     }
 
-    field.value = props.step
-      ? Math.ceil(field.value / props.step) * props.step
-      : field.value
+    value = props.step ? Math.ceil(value / props.step) * props.step : value
 
-    values[field.name] = field.value
-    setValue(field.value)
+    values[field.name] = value
+    setValue(value)
     setFormValuesToCache(values, id)
     field.onBlur && field.onBlur(e)
   }
@@ -318,7 +318,7 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
             `${props.placeholder}${(props.required && '*') || ''}`
           }
         />
-        {props.suffix && <RangeInputSuffix>{props.suffix}</RangeInputSuffix>}
+        {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
       </StyledRow>
       <SliderWrapper>
         <Slider
