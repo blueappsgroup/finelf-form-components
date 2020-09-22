@@ -1,24 +1,22 @@
 import { Meta, Story } from '@storybook/react'
 import * as React from 'react'
 
-import { Form, TelephoneField } from '../'
+import { BirthDateField, Form } from '../'
 import { FormProps } from '../types'
 
-const storyName = 'Telephone'
-
 export default {
-  title: storyName,
+  title: 'BirthDate',
   component: Form,
 } as Meta
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <TelephoneField required showError />
+    <BirthDateField required showError />
   </Form>
 )
 
 export const Default = Template.bind({})
 
 Default.args = {
-  id: storyName,
+  id: 'BirthDate',
 }

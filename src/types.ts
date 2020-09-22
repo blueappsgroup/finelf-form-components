@@ -20,6 +20,29 @@ export type FieldWrapProps = FieldProps & {
   required?: boolean
   children?: ReactElement | ReactElement[]
   childrenBody?: ReactElement | ReactElement[]
+  type?: string
+}
+
+export type SelectFieldOptions = {
+  [key: string]: string
+}
+
+export type SelectFieldWrapProps = FieldProps & {
+  label?: string
+  showError?: boolean
+  onChange?: Function
+  placeholder?: string
+  required?: boolean
+  options: SelectFieldOptions
+}
+
+export type SelectFieldProps = {
+  id?: string
+  label?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
+  showError?: boolean
 }
 
 export type TextFieldProps = {
@@ -33,6 +56,16 @@ export type TextFieldProps = {
 }
 
 export type EmailFieldProps = {
+  id?: string
+  label?: string
+  placeholder?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
+  showError?: boolean
+}
+
+export type BirthDateFieldProps = {
   id?: string
   label?: string
   placeholder?: string
