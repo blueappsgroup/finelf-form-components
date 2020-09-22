@@ -130,7 +130,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
         {...field}
         {...props}
         onBlur={handleOnBlur}
-        type="text"
+        type={props.type}
         value={(field.value && field.value) || ''}
         error={touched[field.name] && errors[field.name]}
         placeholder={
