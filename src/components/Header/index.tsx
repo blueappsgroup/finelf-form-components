@@ -9,9 +9,11 @@ type StyledProps = {
     headerBorderColor: string
     subheaderTextColor: string
   }
+  withBorder?: boolean
 }
 
-const StyledMainHeader = styled.h2`
+// prettier-ignore
+const StyledMainHeader = styled.h2<StyledProps>`
   font-weight: 600;
   font-size: 25px;
   line-height: 24px;
@@ -32,13 +34,12 @@ const StyledMainHeader = styled.h2`
     content: '';
     position: absolute;
     bottom: 0px;
-    border: 3px solid
-      ${(props: StyledProps): string => props.theme.headerBorderColor};
+    border: ${(props: StyledProps): string => props.withBorder ? `3px solid ${props.theme.headerBorderColor}` : 'none'};
     margin: 0 auto;
   }
 `
 
-const StyledSubHeader = styled.h5`
+const StyledSubHeader = styled.h5<StyledProps>`
   color: ${(props: StyledProps): string => props.theme.subheaderTextColor};
   font-style: normal;
   font-weight: 600;
@@ -47,9 +48,9 @@ const StyledSubHeader = styled.h5`
   margin: 10px 0px 20px 0px;
 `
 
-const Header: React.FC<HeaderProps> = ({ text, type = 'main' }) =>
+const Header: React.FC<HeaderProps> = ({ text, type = 'main', withBorder }) =>
   type === 'main' ? (
-    <StyledMainHeader>{text}</StyledMainHeader>
+    <StyledMainHeader withBorder={withBorder}>{text}</StyledMainHeader>
   ) : (
     <StyledSubHeader>{text}</StyledSubHeader>
   )

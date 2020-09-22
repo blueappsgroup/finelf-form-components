@@ -7,10 +7,11 @@ import { validateCheckbox } from './validate'
 
 const CheckboxFormField: (props: CheckboxFieldProps) => ReactElement = ({
   id = 'textField',
-  label = 'Text checkbox',
+  label,
   name = 'text field',
   required = false,
   onChange,
+  children,
 }) => (
   <Field
     required={required}
@@ -21,6 +22,7 @@ const CheckboxFormField: (props: CheckboxFieldProps) => ReactElement = ({
     type="checkbox"
     validate={validateCheckbox(required)}
     onChange={onChange}
+    childrenBody={children}
   />
 )
 

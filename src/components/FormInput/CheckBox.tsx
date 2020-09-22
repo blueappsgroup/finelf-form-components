@@ -164,7 +164,8 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
               | undefined
           }
         />
-        <StyledText>{props.label}</StyledText>
+        {props.label && <StyledText>{props.label}</StyledText>}
+        {props.childrenBody && <StyledText>{props.childrenBody}</StyledText>}
       </Wrapper>
       <StyledArrow
         hasCollapse={hasCollapse}

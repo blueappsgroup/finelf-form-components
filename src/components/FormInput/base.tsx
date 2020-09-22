@@ -145,7 +145,7 @@ const SliderWrapper = styled.div`
   .rangeslider__fill {
    height: 100%;
    background-color: ${(props: StyledProps): string =>
-  props.theme.submitButtonBgColor};
+  props.theme.rangeFillBgColor};
    border-radius: 10px;
   }
   .rangeslider__handle {

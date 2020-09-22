@@ -1,9 +1,11 @@
-import React, { FC, useState } from 'react'
+import React, { FC, ReactElement, useState } from 'react'
 import { Formik, Form } from 'formik'
-import styled, { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
+
+import { ThemeProvider } from '../../consts/theme'
 import { device } from '../../consts/sizes'
-import { theme } from '../../consts/theme'
 import { FormProps, FormValuesType } from '../../types'
+import RedirectPage from '../RedirectPage'
 import {
   FormContext,
   getFormValuesFromCache,
@@ -35,8 +37,19 @@ const FormWrapper: FC<FormProps> = ({
   onSubmit,
   customTheme,
   id,
+  stepsLength,
+  stepsTitles,
+  hasRedirect,
+  redirectUrl,
+  timeToRedirect,
+  redirectHeaderText,
+  logoImg,
+  redirectMainImg,
+  redirectBgImg,
 }) => {
   const [initialValues, setInitialValues] = useState(getFormValuesFromCache(id))
+  const [currentStep, setCurrentStep] = useState(0)
+
   const handleSubmit = (
     values: FormValuesType,
     props: {
@@ -55,16 +68,40 @@ const FormWrapper: FC<FormProps> = ({
     setInitialValues({})
   }
 
+  const prevStep: Function = () => setCurrentStep(currentStep - 1)
+
+  const nextStep: Function = () => setCurrentStep(currentStep + 1)
+
   return (
-    <FormContext.Provider value={{ id }}>
-      <ThemeProvider theme={{ ...theme, ...customTheme }}>
+    <FormContext.Provider
+      value={{
+        id,
+        stepsLength,
+        currentStep,
+        stepsTitleList: stepsTitles,
+        nextStep,
+        prevStep,
+      }}
+    >
+      <ThemeProvider customTheme={{ ...customTheme }}>
         <Formik
           enableReinitialize
           initialValues={initialValues}
           onSubmit={handleSubmit}
           onReset={handleReset}
         >
-          <StyledForm id={id}>{children}</StyledForm>
+          {(props): ReactElement =>
+            (hasRedirect && props.status === 'submited' && (
+              <RedirectPage
+                redirectUrl={redirectUrl}
+                backgroundImage={redirectBgImg}
+                logoImg={logoImg}
+                headerText={redirectHeaderText}
+                timeToRedirect={timeToRedirect}
+                mainImg={redirectMainImg}
+              />
+            )) || <StyledForm id={id}>{children}</StyledForm>
+          }
         </Formik>
       </ThemeProvider>
     </FormContext.Provider>
