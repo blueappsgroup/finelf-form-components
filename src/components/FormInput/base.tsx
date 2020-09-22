@@ -265,40 +265,40 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
 
 export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
   field,
-  form: { touched, errors },
+  form: { touched, errors, values },
   ...props
 }) => {
-  const [value, setValue] = useState(props.value || 0)
-  const [timer, setTimer] = useState(0)
+  const { id } = useContext(FormContext)
+  const [value, setValue] = useState(parseInt(field.value) || props.value || 0)
   const handleOnChangeSlider = (value: number): void => {
+    values[field.name] = value
     setValue(value)
+    setFormValuesToCache(values, id)
   }
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const value = parseInt(e.target.value) || 0
-
-    clearTimeout(timer)
     setValue(value)
-    setTimer(
-      setTimeout(
-        (value: number) => {
-          if (props.min && props.min > value) {
-            return setValue(props.min)
-          }
+    field.onChange && field.onChange(e)
+  }
+  const handleOnBlur = (e: ChangeEvent<HTMLInputElement>): void => {
+    field.value = parseInt(e.target.value) || 0
 
-          if (props.max && props.max < value) {
-            return setValue(props.max)
-          }
+    if (props.min && props.min > field.value) {
+      field.value = props.min
+    }
 
-          value = props.step
-            ? Math.ceil(value / props.step) * props.step
-            : value
+    if (props.max && props.max < field.value) {
+      field.value = props.max
+    }
 
-          return setValue(value)
-        },
-        1000,
-        value
-      )
-    )
+    field.value = props.step
+      ? Math.ceil(field.value / props.step) * props.step
+      : field.value
+
+    values[field.name] = field.value
+    setValue(field.value)
+    setFormValuesToCache(values, id)
+    field.onBlur && field.onBlur(e)
   }
 
   return (
@@ -309,6 +309,7 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
           {...field}
           {...props}
           onChange={handleOnChange}
+          onBlur={handleOnBlur}
           type={props.type}
           value={value}
           error={touched[field.name] && errors[field.name]}
