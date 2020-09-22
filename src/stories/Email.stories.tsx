@@ -4,8 +4,10 @@ import * as React from 'react'
 import { EmailField, Form } from '../'
 import { FormProps } from '../types'
 
+const storyName = 'Email'
+
 export default {
-  title: 'Email',
+  title: storyName,
   component: Form,
 } as Meta
 
@@ -18,5 +20,5 @@ const Template: Story<FormProps> = (args) => (
 export const Default = Template.bind({})
 
 Default.args = {
-  id: 'Email',
+  id: storyName,
 }

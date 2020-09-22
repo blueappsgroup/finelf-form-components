@@ -36,7 +36,7 @@ export const validateEmail: (
   customErrorMsg: string | undefined,
   required: boolean
 ) => (value: string) => string | undefined = (
-  customErrorMsg = 'Podany email jest nieprawidłowy',
+  customErrorMsg = 'Niepoprawny adres email',
   required: boolean
 ) => (value: string): string | undefined => {
   if (required && isEmpty(value)) {
@@ -52,7 +52,7 @@ export const validateTelNumber: (
   customErrorMsg: string | undefined,
   required: boolean
 ) => (value: string) => string | undefined = (
-  customErrorMsg = 'Podany numer telefonu jest nieprawidłowy',
+  customErrorMsg = 'Niepoprawny numer telefonu',
   required: boolean
 ) => (value: string): string | undefined => {
   if (required && isEmpty(value)) {

@@ -1,10 +1,10 @@
 import { Meta, Story } from '@storybook/react'
 import * as React from 'react'
 
-import { Form, TelephoneField } from '../'
+import { EmploymentTypeField, Form } from '../'
 import { FormProps } from '../types'
 
-const storyName = 'Telephone'
+const storyName = 'EmploymentType'
 
 export default {
   title: storyName,
@@ -13,7 +13,7 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <TelephoneField required showError />
+    <EmploymentTypeField required showError />
   </Form>
 )
 

@@ -1,6 +1,13 @@
 import React, { Context } from 'react'
 
-export const FormContext: Context<{ id?: string }> = React.createContext({})
+export const FormContext: Context<{
+  id?: string
+  stepsLength?: number
+  currentStep?: number
+  stepsTitleList?: string[]
+  nextStep?: Function
+  prevStep?: Function
+}> = React.createContext({})
 
 export const setFormValuesToCache = (
   values: { [key: string]: string | boolean | undefined },
