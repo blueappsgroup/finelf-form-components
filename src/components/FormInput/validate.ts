@@ -3,6 +3,7 @@ import {
   isNotValidLength,
   isNotValidPhoneNumber,
   isNotValidEmail,
+  isNotValidOtherLoanAmount,
 } from './validateHelpers'
 
 export const validateText: (
@@ -56,3 +57,19 @@ export const validateCheckbox: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => (required && !value && 'required') || undefined
+
+export const validateOtherLoanAmount: (
+  customErrorMsg: string | undefined,
+  required: boolean
+) => (value: string) => string | undefined = (
+  customErrorMsg = 'Podana kwota jest nieprawidłowa',
+  required: boolean
+) => (value: string): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidOtherLoanAmount(value)) {
+    return customErrorMsg
+  }
+}
