@@ -43,9 +43,7 @@ const Template: Story<FormProps> = (args) => (
         label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
       />
       <CheckboxField name="agreement3">
-        <a href="https://www.czerwona-skarbonka.pl/?source=adwords&keyword=czerwona%20skarbonka&campaign=1503102691&gclid=Cj0KCQjwnqH7BRDdARIsACTSAdtAOoF267kxfg1HdJciN3BsJibLmULBvK1_zufHDFNEZPuLsY7c-k4aAnJ1EALw_wcB">
-          Test link
-        </a>
+        <a href="https://www.czerwona-skarbonka.pl">Test link</a>
       </CheckboxField>
     </CheckboxesGroup>
     <Button type="submit" text="Send" />
