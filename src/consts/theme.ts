@@ -29,4 +29,5 @@ export const theme = {
   submitButtonTextColor: colors.white,
   submitButtonBgColor: colors.mediumRed,
   successTextColor: colors.black,
+  rangeFillBgColor: colors.mediumRed,
 }
