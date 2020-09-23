@@ -274,6 +274,8 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
   const [value, setValue] = useState(parseInt(field.value) || props.value || 0)
   const handleOnChangeSlider = (value: number): void => {
     setValue(value)
+  }
+  const handleOnChangeCompleteSlider = (): void => {
     setFormValuesToCache(
       {
         ...values,
@@ -338,6 +340,7 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
           value={value}
           tooltip={false}
           onChange={handleOnChangeSlider}
+          onChangeComplete={handleOnChangeCompleteSlider}
         />
       </SliderWrapper>
       <StyledRow style={{ justifyContent: 'space-between' }}>
