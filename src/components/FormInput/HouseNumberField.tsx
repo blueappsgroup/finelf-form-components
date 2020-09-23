@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
+import { TextFieldProps } from '../../types'
 import TextField from './TextField'
 import { validateHouseNumber } from './validate'
 
-const HouseNumberField = () => (
+const HouseNumberField: (props: TextFieldProps) => ReactElement = ({
+  id,
+  label = 'Numer domu',
+  placeholder = 'Numer domu',
+  name = 'house_number',
+  required = true,
+  validate = validateHouseNumber,
+  showError = true,
+}) => (
   <TextField
-    required
-    label="Numer domu"
-    placeholder="Numer domu"
-    showError
-    name="house_number"
-    validate={validateHouseNumber}
+    id={id}
+    label={label}
+    placeholder={placeholder}
+    required={required}
+    showError={showError}
+    name={name}
+    validate={validate}
   />
 )
 

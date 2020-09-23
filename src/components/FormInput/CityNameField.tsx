@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
+import { TextFieldProps } from '../../types'
 import TextField from './TextField'
 import { validateCityName } from './validate'
 
-const CityNameField = () => (
+const CityNameField: (props: TextFieldProps) => ReactElement = ({
+  id,
+  label = 'Miasto',
+  placeholder = 'Miasto',
+  name = 'text_city',
+  required = true,
+  validate = validateCityName,
+  showError = true,
+}) => (
   <TextField
-    required
-    label="Miasto"
-    placeholder="Miasto"
-    showError
-    name="text_city"
-    validate={validateCityName}
+    id={id}
+    label={label}
+    placeholder={placeholder}
+    required={required}
+    showError={showError}
+    name={name}
+    validate={validate}
   />
 )
 

@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
+import { TextFieldProps } from '../../types'
 import TextField from './TextField'
+import { validateHouseNumber } from './validate'
 
-const CompanyNameField = () => (
+const CompanyNameField: (props: TextFieldProps) => ReactElement = ({
+  id,
+  label = 'Nazwa pracodawcy',
+  placeholder = 'Nazwa pracodawcy',
+  name = 'company_name',
+  required = true,
+  validate,
+  showError = true,
+}) => (
   <TextField
-    required
-    label="Nazwa pracodawcy"
-    placeholder="Nazwa pracodawcy"
-    showError
-    name="company_name"
+    id={id}
+    label={label}
+    placeholder={placeholder}
+    required={required}
+    showError={showError}
+    name={name}
+    validate={validate}
   />
 )
 

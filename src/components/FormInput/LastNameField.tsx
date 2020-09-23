@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
+import { TextFieldProps } from '../../types'
 import TextField from './TextField'
 
-const LastNameField = () => (
+const LastNameField: (props: TextFieldProps) => ReactElement = ({
+  id,
+  label = 'Nazwisko',
+  placeholder = 'Nazwisko',
+  name = 'last_name',
+  required = true,
+  validate,
+  showError = true,
+}) => (
   <TextField
-    required
-    label="Nazwisko"
-    placeholder="Nazwisko"
-    showError
-    name="last_name"
+    id={id}
+    label={label}
+    placeholder={placeholder}
+    required={required}
+    showError={showError}
+    name={name}
+    validate={validate}
   />
 )
 
