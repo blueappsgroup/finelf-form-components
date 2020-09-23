@@ -297,9 +297,10 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
 
     value = props.step ? Math.ceil(value / props.step) * props.step : value
 
-    values[field.name] = value
+    const newValues = values
+    newValues[field.name] = value
     setValue(value)
-    setFormValuesToCache(values, id)
+    setFormValuesToCache(newValues, id)
     field.onBlur && field.onBlur(e)
   }
 
