@@ -274,9 +274,10 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
   const { id } = useContext(FormContext)
   const [value, setValue] = useState(parseInt(field.value) || props.value || 0)
   const handleOnChangeSlider = (value: number): void => {
-    values[field.name] = value
+    const newValues = values
+    newValues[field.name] = value
     setValue(value)
-    setFormValuesToCache(values, id)
+    setFormValuesToCache(newValues, id)
   }
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const value = parseInt(e.target.value) || 0
