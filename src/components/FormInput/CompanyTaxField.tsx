@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react'
 import { TextFieldProps } from '../../types'
 import TextField from './TextField'
-import { validateCompanyTax, validateHouseNumber } from './validate'
+import { validateCompanyTax } from './validate'
 
-const CompanyNameField: (props: TextFieldProps) => ReactElement = ({
+const CompanyTaxField: (props: TextFieldProps) => ReactElement = ({
   id,
   label = 'NIP firmy',
   placeholder = 'NIP firmy',
@@ -23,4 +23,4 @@ const CompanyNameField: (props: TextFieldProps) => ReactElement = ({
   />
 )
 
-export default CompanyNameField
+export default CompanyTaxField

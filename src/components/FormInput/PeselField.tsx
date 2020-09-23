@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { TextFieldProps } from '../../types'
 import TextField from './TextField'
-import { validateHouseNumber, validatePesel } from './validate'
+import { validatePesel } from './validate'
 
 const PeselField: (props: TextFieldProps) => ReactElement = ({
   id,
