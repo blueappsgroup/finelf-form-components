@@ -11,7 +11,7 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <CompanyTaxField />
+    <CompanyTaxField name="company_tax_id" />
   </Form>
 )
 
