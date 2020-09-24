@@ -6,7 +6,7 @@ import {
   TextField,
   Button,
   CheckboxField,
-  SubmitSuccessText,
+  FormStatusText,
   Form,
   CheckboxesGroup,
   Step,
@@ -28,7 +28,10 @@ export default {
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
     <Header withBorder text="Test title" />
-    <SubmitSuccessText text="Dziękujemy, twoje dane zostały przesłane." />
+    <FormStatusText
+      successText="Dziękujemy, twoje dane zostały przesłane."
+      errorText="Coś poszło nie tak spróbuj ponownie"
+    />
     <TextField required showError placeholder="Name" name="firstName" />
     <TextField required placeholder="Surname" name="lastName" />
     <TextField placeholder="City" name="city" />
@@ -60,7 +63,10 @@ Defualt.args = {
 const TemplateSteps: Story<FormProps> = (args) => (
   <Form {...args}>
     <Header text="Test title" />
-    <SubmitSuccessText text="Dziękujemy, twoje dane zostały przesłane." />
+    <FormStatusText
+      successText="Dziękujemy, twoje dane zostały przesłane."
+      errorText="Coś poszło nie tak spróbuj ponownie"
+    />
     <Step stepIndex={0}>
       <TextField required showError placeholder="Name1" name="firstName1" />
       <TextField required placeholder="Surname1" name="lastName" />
@@ -105,7 +111,10 @@ WithSteps.args = {
 const TemplateWithRedirect: Story<FormProps> = (args) => (
   <Form {...args}>
     <Header withBorder text="Test title" />
-    <SubmitSuccessText text="Dziękujemy, twoje dane zostały przesłane." />
+    <FormStatusText
+      successText="Dziękujemy, twoje dane zostały przesłane."
+      errorText="Coś poszło nie tak spróbuj ponownie"
+    />
     <TextField required showError placeholder="Name" name="firstName" />
     <TextField required placeholder="Surname" name="lastName" />
     <TextField placeholder="City" name="city" />

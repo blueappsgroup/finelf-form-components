@@ -149,6 +149,8 @@ export type CustomThemeType = {
   redirectPageHeaderTextColor?: string
   redirectPageRedirectTextColor?: string
   redirectPageCounterTextColor?: string
+  successStatusTextColor?: string
+  errorStatusTextColor?: string
 }
 
 export type HeaderProps = {
@@ -185,6 +187,8 @@ export type FormProps = {
   logoImg?: string
   redirectMainImg?: string
   redirectBgImg?: string
+  queueUrl?: string
+  sendDataToSQS?: boolean
 }
 
 export type RedirectPagePropsTypes = {
