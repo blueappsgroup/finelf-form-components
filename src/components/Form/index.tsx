@@ -10,7 +10,9 @@ import {
   FormContext,
   getFormValuesFromCache,
   resetFormValueCache,
+  sendDataToAwsSQS,
 } from '../../utils'
+import { formStatuses } from '../../consts/form'
 
 const StyledForm = styled(Form)`
   display: flex;
@@ -46,22 +48,35 @@ const FormWrapper: FC<FormProps> = ({
   logoImg,
   redirectMainImg,
   redirectBgImg,
+  queueUrl,
+  sendDataToSQS,
 }) => {
   const [initialValues, setInitialValues] = useState(getFormValuesFromCache(id))
   const [currentStep, setCurrentStep] = useState(0)
 
-  const handleSubmit = (
+  const handleSubmit = async (
     values: FormValuesType,
     props: {
       resetForm: () => void
       setStatus: (status: string) => void
     }
-  ): void => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ): Promise<any> => {
     if (onSubmit) {
       onSubmit(values, props)
     }
-    props.resetForm()
-    props.setStatus('submited')
+
+    try {
+      if (sendDataToSQS) {
+        await sendDataToAwsSQS(values, queueUrl)
+      }
+
+      props.resetForm()
+      props.setStatus(formStatuses.submited)
+    } catch (e) {
+      console.log(e)
+      props.setStatus(formStatuses.error)
+    }
   }
   const handleReset = (): void => {
     resetFormValueCache(id)
@@ -91,7 +106,7 @@ const FormWrapper: FC<FormProps> = ({
           onReset={handleReset}
         >
           {(props): ReactElement =>
-            (hasRedirect && props.status === 'submited' && (
+            (hasRedirect && props.status === formStatuses.submited && (
               <RedirectPage
                 redirectUrl={redirectUrl}
                 backgroundImage={redirectBgImg}

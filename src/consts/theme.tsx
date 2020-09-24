@@ -46,6 +46,8 @@ export const theme = {
   redirectPageRedirectTextColor: colors.black,
   redirectPageCounterTextColor: colors.mediumRed,
   rangeFillBgColor: colors.mediumRed,
+  successStatusTextColor: colors.black,
+  errorStatusTextColor: colors.errorRed,
 }
 
 type ThemeProviderPops = {
