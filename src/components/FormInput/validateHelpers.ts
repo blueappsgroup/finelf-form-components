@@ -11,3 +11,6 @@ export const isNotValidEmail = (value: string): boolean =>
 
 export const isNotValidOtherLoanAmount = (value: string): boolean =>
   !/^[0-9]{1,10}$/.test(value)
+
+export const isNotValidAmountOfChildren = (value: string): boolean =>
+  !/^[0-9]{1,10}$/.test(value)

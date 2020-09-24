@@ -4,6 +4,7 @@ import {
   isNotValidPhoneNumber,
   isNotValidEmail,
   isNotValidOtherLoanAmount,
+  isNotValidAmountOfChildren,
 } from './validateHelpers'
 
 export const validateText: (
@@ -70,6 +71,22 @@ export const validateOtherLoanAmount: (
   }
 
   if (isNotValidOtherLoanAmount(value)) {
+    return customErrorMsg
+  }
+}
+
+export const validateAmountOfChildren: (
+  customErrorMsg: string | undefined,
+  required: boolean
+) => (value: string) => string | undefined = (
+  customErrorMsg = 'Podana ilość jest nieprawidłowa',
+  required: boolean
+) => (value: string): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidAmountOfChildren(value)) {
     return customErrorMsg
   }
 }

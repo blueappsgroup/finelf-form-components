@@ -90,6 +90,16 @@ export type EmailFieldProps = {
   showError?: boolean
 }
 
+export type AmountOfChildrenFieldProps = {
+  id?: string
+  label?: string
+  placeholder?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
+  showError?: boolean
+}
+
 export type BirthDateFieldProps = {
   id?: string
   label?: string
