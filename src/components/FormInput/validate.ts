@@ -3,6 +3,7 @@ import {
   isNotValidLength,
   isNotValidPhoneNumber,
   isNotValidEmail,
+  isNotValidNumberBetween1And10Digits,
   isNotLetter,
   isNotNumber,
   isValidPesel,
@@ -12,7 +13,6 @@ import {
   isValidBankAccountNumber,
   isValidIDCard,
   isNotValidIDCard,
-  isNotValidOtherLoanAmount,
 } from './validateHelpers'
 
 export const validateText: (
@@ -214,7 +214,39 @@ export const validateOtherLoanAmount: (
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidOtherLoanAmount(value)) {
+  if (isNotValidNumberBetween1And10Digits(value)) {
+    return customErrorMsg
+  }
+}
+
+export const validateAmountOfChildren: (
+  customErrorMsg: string | undefined,
+  required: boolean
+) => (value: string) => string | undefined = (
+  customErrorMsg = 'Podana liczba jest nieprawidłowa',
+  required: boolean
+) => (value: string): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidNumberBetween1And10Digits(value)) {
+    return customErrorMsg
+  }
+}
+
+export const validateIncome: (
+  customErrorMsg: string | undefined,
+  required: boolean
+) => (value: string) => string | undefined = (
+  customErrorMsg = 'Podana kwota jest nieprawidłowa',
+  required: boolean
+) => (value: string): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidNumberBetween1And10Digits(value)) {
     return customErrorMsg
   }
 }

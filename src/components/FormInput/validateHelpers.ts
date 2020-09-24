@@ -9,6 +9,9 @@ export const isNotValidPhoneNumber = (value: string): boolean =>
 export const isNotValidEmail = (value: string): boolean =>
   !/[a-zA-Z0-9_.+-]+@[a-zAZ0-9-]+\.[a-zA-Z0-9-.]+$/.test(value)
 
+export const isNotValidNumberBetween1And10Digits = (value: string): boolean =>
+  !/^[0-9]{1,10}$/.test(value)
+
 export const isNotLetter = (value: string): boolean => !/[A-Za-z]$/.test(value)
 
 export const isNotNumber = (value: string): boolean => !/[0-9]$/.test(value)
@@ -160,6 +163,3 @@ export const isValidIDCard = (value: string): boolean => {
 
 export const isNotValidIDCard = (value: string): boolean =>
   !/^[A-z]{3}[0-9]{6}$/.test(value)
-
-export const isNotValidOtherLoanAmount = (value: string): boolean =>
-  !/^[0-9]{1,10}$/.test(value)
