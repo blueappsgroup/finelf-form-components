@@ -11,7 +11,7 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <PeselField />
+    <PeselField name="id_code" />
   </Form>
 )
 
