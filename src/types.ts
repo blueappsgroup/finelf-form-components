@@ -100,6 +100,16 @@ export type AmountOfChildrenFieldProps = {
   showError?: boolean
 }
 
+export type IncomeFieldProps = {
+  id?: string
+  label?: string
+  placeholder?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
+  showError?: boolean
+}
+
 export type BirthDateFieldProps = {
   id?: string
   label?: string

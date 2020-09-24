@@ -10,7 +10,7 @@ const AmountOfChildrenField: (
 ) => ReactElement = ({
   id,
   label,
-  placeholder = 'AmountOfChildren',
+  placeholder = 'Liczba osób na utrzymaniu',
   errorMsg = 'Podana ilość jest nieprawidłowa',
   name = 'amount_of_children',
   required = false,
