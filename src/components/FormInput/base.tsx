@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ReactElement, useContext, ChangeEvent } from 'react'
+import React, { ChangeEvent, ReactElement, useContext, useState } from 'react'
+import Slider from 'react-rangeslider'
 import styled from 'styled-components'
+import { device } from '../../consts/sizes'
 import {
   FieldWrapProps,
-  SelectFieldWrapProps,
+  RangeFieldWrapProps,
   SelectFieldOptions,
+  SelectFieldWrapProps,
 } from '../../types'
-import { device } from '../../consts/sizes'
 import { FormContext, setFormValuesToCache } from '../../utils'
 
 type StyledProps = {
@@ -16,6 +18,8 @@ type StyledProps = {
     inputPlaceHolderColor: string
     inputBorderColor: string
     inputTextColor: string
+    submitButtonBgColor: string
+    rangeFillBgColor: string
   }
   error?: string | boolean
 }
@@ -112,6 +116,69 @@ const StyledSelect = styled.select<any>`
   }
 `
 
+const StyledSpan = styled.span`
+  font-weight: bold;
+`
+
+const StyledInputSuffix = styled.span`
+  position: absolute;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  height: 63px;
+  background-color: ${(props: StyledProps): string =>
+    props.theme.rangeFillBgColor};
+  border-radius: 5px;
+  padding: 0 15px;
+  font-weight: bold;
+  font-size: 14px;
+  color: ${(props: StyledProps): string => props.theme.inputBgColor};
+`
+
+/* eslint-disable */
+const SliderWrapper = styled.div`
+ .rangeslider {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  border-radius: 10px;
+  background-color: ${(props: StyledProps): string =>
+  props.theme.inputPlaceHolderColor};
+  .rangeslider__fill {
+   height: 100%;
+   background-color: ${(props: StyledProps): string =>
+  props.theme.rangeFillBgColor};
+   border-radius: 10px;
+  }
+  .rangeslider__handle {
+   top: -6px;
+   width: 24px;
+   height: 24px;
+   background-color: ${(props: StyledProps): string =>
+  props.theme.inputBgColor};
+   position: absolute;
+   cursor: pointer;
+   box-shadow: 0px 3px 6px ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
+   border: 1px solid ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
+   border-radius: 50%;
+   &::after {
+    width: 7px;
+    height: 7px;
+    background-color: ${(props: StyledProps): string =>
+  props.theme.rangeFillBgColor};
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+   }
+  }
+ }
+`
+/* eslint-enable */
+
 const BaseField: (props: FieldWrapProps) => ReactElement = ({
   field,
   form: { touched, errors, values },
@@ -138,6 +205,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
           `${props.placeholder}${(props.required && '*') || ''}`
         }
       />
+      {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
       {props.showError && touched[field.name] && errors[field.name] && (
         <StyledError>{errors[field.name]}</StyledError>
       )}
@@ -195,5 +263,95 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
         <StyledError>{errors[field.name]}</StyledError>
       )}
     </StyledRow>
+  )
+}
+
+export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
+  field,
+  form: { touched, errors, values },
+  ...props
+}) => {
+  const { id } = useContext(FormContext)
+  const [value, setValue] = useState(parseInt(field.value) || props.value || 0)
+  const handleOnChangeSlider = (value: number): void => {
+    setValue(value)
+  }
+  const handleOnChangeCompleteSlider = (): void => {
+    setFormValuesToCache(
+      {
+        ...values,
+        [field.name]: value,
+      },
+      id
+    )
+  }
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const value = parseInt(e.target.value) || 0
+    setValue(value)
+    field.onChange && field.onChange(e)
+  }
+  const handleOnBlur = (e: ChangeEvent<HTMLInputElement>): void => {
+    let value = parseInt(e.target.value) || 0
+
+    if (props.min && props.min > value) {
+      value = props.min
+    }
+
+    if (props.max && props.max < value) {
+      value = props.max
+    }
+
+    value = props.step ? Math.ceil(value / props.step) * props.step : value
+
+    setValue(value)
+    setFormValuesToCache(
+      {
+        ...values,
+        [field.name]: value,
+      },
+      id
+    )
+    field.onBlur && field.onBlur(e)
+  }
+
+  return (
+    <div>
+      <StyledRow>
+        {props.label && <label htmlFor={field.name}>{props.label}</label>}
+        <StyledInput
+          {...field}
+          {...props}
+          onChange={handleOnChange}
+          onBlur={handleOnBlur}
+          type={props.type}
+          value={value}
+          error={touched[field.name] && errors[field.name]}
+          placeholder={
+            props.placeholder &&
+            `${props.placeholder}${(props.required && '*') || ''}`
+          }
+        />
+        {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
+      </StyledRow>
+      <SliderWrapper>
+        <Slider
+          min={props.min}
+          max={props.max}
+          step={props.step}
+          value={value}
+          tooltip={false}
+          onChange={handleOnChangeSlider}
+          onChangeComplete={handleOnChangeCompleteSlider}
+        />
+      </SliderWrapper>
+      <StyledRow style={{ justifyContent: 'space-between' }}>
+        <StyledSpan>
+          Min. {props.min} {props.unit}
+        </StyledSpan>
+        <StyledSpan>
+          Max. {props.max} {props.unit}
+        </StyledSpan>
+      </StyledRow>
+    </div>
   )
 }

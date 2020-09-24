@@ -45,7 +45,8 @@ export const theme = {
   redirectPageHeaderTextColor: colors.black,
   redirectPageRedirectTextColor: colors.black,
   redirectPageCounterTextColor: colors.mediumRed,
-  sucessStatusTextColor: colors.black,
+  rangeFillBgColor: colors.mediumRed,
+  successStatusTextColor: colors.black,
   errorStatusTextColor: colors.errorRed,
 }
 

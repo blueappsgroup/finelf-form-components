@@ -21,6 +21,7 @@ export type FieldWrapProps = FieldProps & {
   children?: ReactElement | ReactElement[]
   childrenBody?: ReactElement | ReactElement[]
   type?: string
+  suffix?: string
 }
 
 export type SelectFieldOptions = {
@@ -34,6 +35,21 @@ export type SelectFieldWrapProps = FieldProps & {
   placeholder?: string
   required?: boolean
   options: SelectFieldOptions
+}
+
+export type RangeFieldWrapProps = FieldProps & {
+  label?: string
+  showError?: boolean
+  onChange?: Function
+  placeholder?: string
+  required?: boolean
+  type?: string
+  min?: number
+  max?: number
+  step?: number
+  value?: number
+  suffix?: string
+  unit?: string
 }
 
 export type SelectFieldProps = {
@@ -52,6 +68,15 @@ export type TextFieldProps = {
   name: string
   required?: boolean
   validate?: Function
+  showError?: boolean
+}
+
+export type RangeFieldProps = {
+  id?: string
+  label?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
   showError?: boolean
 }
 
@@ -76,6 +101,17 @@ export type BirthDateFieldProps = {
 }
 
 export type TelephoneFieldProps = {
+  id?: string
+  label?: string
+  placeholder?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
+  showError?: boolean
+  validate?: Function
+}
+
+export type OtherLoanAmountFieldProps = {
   id?: string
   label?: string
   placeholder?: string
@@ -113,7 +149,7 @@ export type CustomThemeType = {
   redirectPageHeaderTextColor?: string
   redirectPageRedirectTextColor?: string
   redirectPageCounterTextColor?: string
-  sucessStatusTextColor?: string
+  successStatusTextColor?: string
   errorStatusTextColor?: string
 }
 
