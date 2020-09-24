@@ -21,6 +21,7 @@ export type FieldWrapProps = FieldProps & {
   children?: ReactElement | ReactElement[]
   childrenBody?: ReactElement | ReactElement[]
   type?: string
+  suffix?: string
 }
 
 export type SelectFieldOptions = {
@@ -100,6 +101,17 @@ export type BirthDateFieldProps = {
 }
 
 export type TelephoneFieldProps = {
+  id?: string
+  label?: string
+  placeholder?: string
+  name?: string
+  errorMsg?: string
+  required?: boolean
+  showError?: boolean
+  validate?: Function
+}
+
+export type OtherLoanAmountFieldProps = {
   id?: string
   label?: string
   placeholder?: string

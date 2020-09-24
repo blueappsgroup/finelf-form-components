@@ -205,6 +205,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
           `${props.placeholder}${(props.required && '*') || ''}`
         }
       />
+      {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
       {props.showError && touched[field.name] && errors[field.name] && (
         <StyledError>{errors[field.name]}</StyledError>
       )}
