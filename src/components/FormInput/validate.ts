@@ -12,6 +12,7 @@ import {
   isValidBankAccountNumber,
   isValidIDCard,
   isNotValidIDCard,
+  isNotValidOtherLoanAmount,
 } from './validateHelpers'
 
 export const validateText: (
@@ -199,5 +200,21 @@ export const validateIDCardNumber: (
 
   if (isNotNumber(value)) {
     return 'Podany numer dowodu jest nieprawidłowy'
+  }
+}
+
+export const validateOtherLoanAmount: (
+  customErrorMsg: string | undefined,
+  required: boolean
+) => (value: string) => string | undefined = (
+  customErrorMsg = 'Podana kwota jest nieprawidłowa',
+  required: boolean
+) => (value: string): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidOtherLoanAmount(value)) {
+    return customErrorMsg
   }
 }

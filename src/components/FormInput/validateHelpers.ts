@@ -160,3 +160,6 @@ export const isValidIDCard = (value: string): boolean => {
 
 export const isNotValidIDCard = (value: string): boolean =>
   !/^[A-z]{3}[0-9]{6}$/.test(value)
+
+export const isNotValidOtherLoanAmount = (value: string): boolean =>
+  !/^[0-9]{1,10}$/.test(value)

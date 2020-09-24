@@ -1,4 +1,5 @@
 import React, { Context } from 'react'
+import { FormValuesType } from './types'
 
 export const FormContext: Context<{
   id?: string
@@ -25,3 +26,34 @@ export const getFormValuesFromCache = (
 
 export const resetFormValueCache = (id: string): void =>
   window.sessionStorage.setItem(`form-${id}`, '{}')
+
+export const encodeData: (data: FormValuesType) => string | undefined = (
+  data
+) => {
+  return Object.keys(data)
+    .map(
+      (key) =>
+        encodeURIComponent(key) + '=' + encodeURIComponent(data[key] as string)
+    )
+    .join('&')
+}
+
+export const sendDataToAwsSQS: (
+  values: FormValuesType,
+  queueUrl?: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+) => Promise<any> = (values, queueUrl) =>
+  fetch(
+    queueUrl ||
+      'https://sqs.eu-central-1.amazonaws.com/031738021372/finelf-users-queue',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: encodeData({
+        Action: 'SendMessage',
+        MessageBody: JSON.stringify(values),
+      }),
+    }
+  )
