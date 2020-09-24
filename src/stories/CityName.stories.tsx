@@ -11,7 +11,7 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <CityNameField />
+    <CityNameField name="text_city" />
   </Form>
 )
 

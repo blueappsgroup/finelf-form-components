@@ -11,7 +11,7 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <IDCardNumberField />
+    <IDCardNumberField name="id_card_number" />
   </Form>
 )
 

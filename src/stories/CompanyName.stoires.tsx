@@ -11,7 +11,7 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <CompanyNameField />
+    <CompanyNameField name="company_name" />
   </Form>
 )
 
