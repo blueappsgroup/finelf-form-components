@@ -10,10 +10,12 @@ const AmountField: (props: RangeFieldProps) => ReactElement = ({
   name = 'amount',
   required = false,
   showError,
+  showMinMax = true,
 }) => (
   <Field
     required={required}
     showError={showError}
+    showMinMax={showMinMax}
     id={id}
     name={name}
     component={BaseRangeField}

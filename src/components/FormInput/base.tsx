@@ -13,23 +13,66 @@ import { FormContext, setFormValuesToCache } from '../../utils'
 
 type StyledProps = {
   theme: {
+    submitButtonBgColor: string
+    inputHeight: string
     inputErrorColor: string
     inputBgColor: string
     inputPlaceHolderColor: string
     inputBorderColor: string
+    inputBorderWidth: string
+    inputBorderStyle: string
+    inputBorderRadius: string
     inputTextColor: string
-    submitButtonBgColor: string
-    rangeFillBgColor: string
+    inputFontSize: string
+    inputFontWeight: string
+    inputFontStyle: string
+    inputBoxShadow: string
+    inputLineHeight: string
+    styledRowFlexWrap: string
+    styledRowLabelPadding: string
+    styledSelectVerticalPadding: string
+    styledSelectHorizontalPadding: string
+    styledSpanFontSize: string
+    styledSpanFontWeight: string
+    styledRowMarginBottom: string
+    sliderHeight: string
+    sliderBorderRadius: string
+    sliderBgColor: string
+    sliderFillBgColor: string
+    sliderHandleBgColor: string
+    sliderHandleBorderColor: string
+    sliderHandleBoxShadow: string
+    sliderHandleBorderWidth: string
+    sliderHandleBorderStyle: string
+    sliderHandleBorderRadius: string
+    sliderHandleWidth: string
+    sliderHandleHeight: string
+    sliderHandleAfterWidth: string
+    sliderHandleAfterHeight: string
+    sliderHandleAfterBorderRadius: string
+    styledInputSuffixBgColor: string
+    styledInputSuffixTextColor: string
+    styledInputSuffixFontSize: string
+    styledInputSuffixFontWeight: string
+    styledInputSuffixBorderRadius: string
+    styledInputSuffixVerticalPadding: string
+    styledInputSuffixHorizontalPadding: string
   }
   error?: string | boolean
 }
 
+/* eslint-disable */
 const StyledRow = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: ${(props: StyledProps): string => props.theme.styledRowMarginBottom};
   position: relative;
+  flex-wrap: ${(props: StyledProps): string => props.theme.styledRowFlexWrap};
+  label {
+    padding: ${(props: StyledProps): string => props.theme.styledRowLabelPadding};
+  }
 `
+/* eslint-enable */
 
 export const Row = styled.div`
   display: flex;
@@ -86,26 +129,27 @@ const StyledInput = styled.input<any>`
   }
 `
 
+/* eslint-disable */
 const StyledSelect = styled.select<any>`
   background: ${(props: StyledProps): string => props.theme.inputBgColor};
-  border: 1px solid
+  border: ${(props: StyledProps): string => props.theme.inputBorderWidth} ${(props: StyledProps): string => props.theme.inputBorderStyle}
     ${(props: StyledProps): string => props.theme.inputBorderColor};
   box-sizing: border-box;
-  box-shadow: 0px 7px 64px rgba(194, 186, 186, 0.07);
-  border-radius: 6px;
+  box-shadow: ${(props: StyledProps): string => props.theme.inputBoxShadow};
+  border-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
   width: 100%;
-  height: 63px;
+  height: ${(props: StyledProps): string => props.theme.inputHeight};
   display: flex;
   align-items: center;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  padding: 0px 20px;
+  font-style: ${(props: StyledProps): string => props.theme.inputFontStyle};
+  font-weight: ${(props: StyledProps): string => props.theme.inputFontWeight};
+  font-size: ${(props: StyledProps): string => props.theme.inputFontSize};
+  line-height: ${(props: StyledProps): string => props.theme.inputLineHeight};
+  padding: ${(props: StyledProps): string => props.theme.styledSelectVerticalPadding} ${(props: StyledProps): string => props.theme.styledSelectHorizontalPadding};
   border-color: ${(props: StyledProps): string =>
-    props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${(props: any): string =>
-    props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+  props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
   &::placeholder {
     color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
@@ -116,8 +160,10 @@ const StyledSelect = styled.select<any>`
   }
 `
 
+
 const StyledSpan = styled.span`
-  font-weight: bold;
+  font-size: ${(props: StyledProps): string => props.theme.styledSpanFontSize};
+  font-weight: ${(props: StyledProps): string => props.theme.styledSpanFontWeight};
 `
 
 const StyledInputSuffix = styled.span`
@@ -125,47 +171,42 @@ const StyledInputSuffix = styled.span`
   right: 0;
   display: inline-flex;
   align-items: center;
-  height: 63px;
-  background-color: ${(props: StyledProps): string =>
-    props.theme.rangeFillBgColor};
-  border-radius: 5px;
-  padding: 0 15px;
-  font-weight: bold;
-  font-size: 14px;
-  color: ${(props: StyledProps): string => props.theme.inputBgColor};
+  height: ${(props: StyledProps): string => props.theme.inputHeight};
+  background-color: ${(props: StyledProps): string => props.theme.styledInputSuffixBgColor};
+  border-radius: ${(props: StyledProps): string => props.theme.styledInputSuffixBorderRadius};
+  padding: ${(props: StyledProps): string => props.theme.styledInputSuffixVerticalPadding} ${(props: StyledProps): string => props.theme.styledInputSuffixHorizontalPadding};
+  font-weight: ${(props: StyledProps): string => props.theme.styledInputSuffixFontWeight};
+  font-size: ${(props: StyledProps): string => props.theme.styledInputSuffixFontSize};
+  color: ${(props: StyledProps): string => props.theme.styledInputSuffixTextColor};
 `
 
-/* eslint-disable */
 const SliderWrapper = styled.div`
  .rangeslider {
   position: relative;
   width: 100%;
-  height: 12px;
-  border-radius: 10px;
-  background-color: ${(props: StyledProps): string =>
-  props.theme.inputPlaceHolderColor};
+  height: ${(props: StyledProps): string => props.theme.sliderHeight};
+  border-radius: ${(props: StyledProps): string => props.theme.sliderBorderRadius};
+  background-color: ${(props: StyledProps): string => props.theme.sliderBgColor};
   .rangeslider__fill {
    height: 100%;
-   background-color: ${(props: StyledProps): string =>
-  props.theme.rangeFillBgColor};
-   border-radius: 10px;
+   background-color: ${(props: StyledProps): string => props.theme.sliderFillBgColor};
+   border-radius: ${(props: StyledProps): string => props.theme.sliderBorderRadius};
   }
   .rangeslider__handle {
    top: -6px;
-   width: 24px;
-   height: 24px;
-   background-color: ${(props: StyledProps): string =>
-  props.theme.inputBgColor};
+   width: ${(props: StyledProps): string => props.theme.sliderHandleWidth};
+   height: ${(props: StyledProps): string => props.theme.sliderHandleHeight};
+   background-color: ${(props: StyledProps): string => props.theme.sliderHandleBgColor};
    position: absolute;
    cursor: pointer;
-   box-shadow: 0px 3px 6px ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
-   border: 1px solid ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
-   border-radius: 50%;
+   box-shadow: ${(props: StyledProps): string => props.theme.sliderHandleBoxShadow};
+   border: ${(props: StyledProps): string => props.theme.sliderHandleBorderWidth} ${(props: StyledProps): string => props.theme.sliderHandleBorderStyle} ${(props: StyledProps): string => props.theme.sliderHandleBorderColor};
+   border-radius: ${(props: StyledProps): string => props.theme.sliderHandleBorderRadius};
    &::after {
-    width: 7px;
-    height: 7px;
-    background-color: ${(props: StyledProps): string =>
-  props.theme.rangeFillBgColor};
+    width: ${(props: StyledProps): string => props.theme.sliderHandleAfterWidth};
+    height: ${(props: StyledProps): string => props.theme.sliderHandleAfterHeight};
+    background-color: ${(props: StyledProps): string => props.theme.sliderFillBgColor};
+    border-radius: ${(props: StyledProps): string => props.theme.sliderHandleAfterBorderRadius};
     position: absolute;
     content: '';
     top: 0;
@@ -344,14 +385,16 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
           onChangeComplete={handleOnChangeCompleteSlider}
         />
       </SliderWrapper>
-      <StyledRow style={{ justifyContent: 'space-between' }}>
-        <StyledSpan>
-          Min. {props.min} {props.unit}
-        </StyledSpan>
-        <StyledSpan>
-          Max. {props.max} {props.unit}
-        </StyledSpan>
-      </StyledRow>
+      {props.showMinMax && (
+        <StyledRow style={{ justifyContent: 'space-between' }}>
+          <StyledSpan>
+            Min. {props.min} {props.unit}
+          </StyledSpan>
+          <StyledSpan>
+            Max. {props.max} {props.unit}
+          </StyledSpan>
+        </StyledRow>
+      )}
     </div>
   )
 }

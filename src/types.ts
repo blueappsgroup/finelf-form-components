@@ -40,6 +40,7 @@ export type SelectFieldWrapProps = FieldProps & {
 export type RangeFieldWrapProps = FieldProps & {
   label?: string
   showError?: boolean
+  showMinMax?: boolean
   onChange?: Function
   placeholder?: string
   required?: boolean
@@ -78,6 +79,7 @@ export type RangeFieldProps = {
   errorMsg?: string
   required?: boolean
   showError?: boolean
+  showMinMax?: boolean
 }
 
 export type EmailFieldProps = {
