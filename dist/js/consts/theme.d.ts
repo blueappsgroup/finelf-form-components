@@ -1,6 +1,9 @@
+import { FC, ReactElement } from 'react';
+import { CustomThemeType } from '../types';
 export declare const colors: {
     mainGrey: string;
     ligthGrey: string;
+    grey: string;
     mediumGrey: string;
     darkGrey: string;
     errorRed: string;
@@ -27,5 +30,25 @@ export declare const theme: {
     subheaderBorderColor: string;
     buttonTextColor: string;
     buttonBgColor: string;
+    buttonBorderColor: string;
     successTextColor: string;
+    stepHeaderActiveColor: string;
+    stepHeaderInActiveColor: string;
+    stepHeaderActiveBorderColor: string;
+    stepHeaderInActiveBorderColor: string;
+    buttonSecondaryTextColor: string;
+    buttonSecondaryBgColor: string;
+    buttonSecondaryBorderColor: string;
+    redirectPageHeaderTextColor: string;
+    redirectPageRedirectTextColor: string;
+    redirectPageCounterTextColor: string;
+    rangeFillBgColor: string;
+    successStatusTextColor: string;
+    errorStatusTextColor: string;
 };
+declare type ThemeProviderPops = {
+    children: ReactElement | ReactElement[];
+    customTheme?: CustomThemeType;
+};
+export declare const ThemeProvider: FC<ThemeProviderPops>;
+export {};

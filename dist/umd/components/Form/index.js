@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react", "formik", "styled-components", "../../consts/sizes", "../../consts/theme", "../../utils"], factory);
+    define(["exports", "react", "formik", "styled-components", "../../consts/theme", "../../consts/sizes", "../RedirectPage", "../../utils", "../../consts/form"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"), require("formik"), require("styled-components"), require("../../consts/sizes"), require("../../consts/theme"), require("../../utils"));
+    factory(exports, require("react"), require("formik"), require("styled-components"), require("../../consts/theme"), require("../../consts/sizes"), require("../RedirectPage"), require("../../utils"), require("../../consts/form"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.formik, global.styledComponents, global.sizes, global.theme, global.utils);
+    factory(mod.exports, global.react, global.formik, global.styledComponents, global.theme, global.sizes, global.RedirectPage, global.utils, global.form);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _react, _formik, _styledComponents, _sizes, _theme, _utils) {
+})(this, function (exports, _react, _formik, _styledComponents, _theme, _sizes, _RedirectPage, _utils, _form) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -20,6 +20,8 @@
   var _react2 = _interopRequireDefault(_react);
 
   var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+  var _RedirectPage2 = _interopRequireDefault(_RedirectPage);
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -100,17 +102,38 @@
     children,
     onSubmit,
     customTheme,
-    id
+    id,
+    stepsLength,
+    stepsTitles,
+    hasRedirect,
+    redirectUrl,
+    timeToRedirect,
+    redirectHeaderText,
+    logoImg,
+    redirectMainImg,
+    redirectBgImg,
+    queueUrl,
+    sendDataToSQS
   }) => {
     const [initialValues, setInitialValues] = (0, _react.useState)((0, _utils.getFormValuesFromCache)(id));
+    const [currentStep, setCurrentStep] = (0, _react.useState)(0);
 
-    const handleSubmit = (values, props) => {
+    const handleSubmit = async (values, props) => {
       if (onSubmit) {
         onSubmit(values, props);
       }
 
-      props.resetForm();
-      props.setStatus('submited');
+      try {
+        if (sendDataToSQS) {
+          await (0, _utils.sendDataToAwsSQS)(values, queueUrl);
+        }
+
+        props.resetForm();
+        props.setStatus(_form.formStatuses.submited);
+      } catch (e) {
+        console.log(e);
+        props.setStatus(_form.formStatuses.error);
+      }
     };
 
     const handleReset = () => {
@@ -118,18 +141,34 @@
       setInitialValues({});
     };
 
+    const prevStep = () => setCurrentStep(currentStep - 1);
+
+    const nextStep = () => setCurrentStep(currentStep + 1);
+
     return /*#__PURE__*/_react2.default.createElement(_utils.FormContext.Provider, {
       value: {
-        id
+        id,
+        stepsLength,
+        currentStep,
+        stepsTitleList: stepsTitles,
+        nextStep,
+        prevStep
       }
-    }, /*#__PURE__*/_react2.default.createElement(_styledComponents.ThemeProvider, {
-      theme: _objectSpread(_objectSpread({}, _theme.theme), customTheme)
+    }, /*#__PURE__*/_react2.default.createElement(_theme.ThemeProvider, {
+      customTheme: _objectSpread({}, customTheme)
     }, /*#__PURE__*/_react2.default.createElement(_formik.Formik, {
       enableReinitialize: true,
       initialValues: initialValues,
       onSubmit: handleSubmit,
       onReset: handleReset
-    }, /*#__PURE__*/_react2.default.createElement(StyledForm, {
+    }, props => hasRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react2.default.createElement(_RedirectPage2.default, {
+      redirectUrl: redirectUrl,
+      backgroundImage: redirectBgImg,
+      logoImg: logoImg,
+      headerText: redirectHeaderText,
+      timeToRedirect: timeToRedirect,
+      mainImg: redirectMainImg
+    }) || /*#__PURE__*/_react2.default.createElement(StyledForm, {
       id: id
     }, children))));
   };

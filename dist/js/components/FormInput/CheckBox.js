@@ -229,7 +229,7 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     checked: field.value,
     value: field.value || false,
     error: touched[field.name] && errors[field.name]
-  })), /*#__PURE__*/_react.default.createElement(StyledText, null, props.label)), /*#__PURE__*/_react.default.createElement(StyledArrow, {
+  })), props.label && /*#__PURE__*/_react.default.createElement(StyledText, null, props.label), props.childrenBody && /*#__PURE__*/_react.default.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/_react.default.createElement(StyledArrow, {
     hasCollapse: hasCollapse,
     collapsed: collapsed,
     onClick: onCollapseClick

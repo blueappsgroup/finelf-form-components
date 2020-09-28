@@ -1,6 +1,12 @@
 import { Context } from 'react';
+import { FormValuesType } from './types';
 export declare const FormContext: Context<{
     id?: string;
+    stepsLength?: number;
+    currentStep?: number;
+    stepsTitleList?: string[];
+    nextStep?: Function;
+    prevStep?: Function;
 }>;
 export declare const setFormValuesToCache: (values: {
     [key: string]: string | boolean;
@@ -9,3 +15,5 @@ export declare const getFormValuesFromCache: (id?: string) => {
     [key: string]: string | boolean;
 };
 export declare const resetFormValueCache: (id: string) => void;
+export declare const encodeData: (data: FormValuesType) => string | undefined;
+export declare const sendDataToAwsSQS: (values: FormValuesType, queueUrl?: string) => Promise<any>;

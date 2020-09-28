@@ -21,7 +21,7 @@ var EmailField = function EmailField(_ref) {
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === void 0 ? 'Email' : _ref$placeholder,
       _ref$errorMsg = _ref.errorMsg,
-      errorMsg = _ref$errorMsg === void 0 ? 'Nie poprawny adres email' : _ref$errorMsg,
+      errorMsg = _ref$errorMsg === void 0 ? 'Podany email jest nieprawidłowy' : _ref$errorMsg,
       _ref$name = _ref.name,
       name = _ref$name === void 0 ? 'email' : _ref$name,
       _ref$required = _ref.required,

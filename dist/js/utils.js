@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.resetFormValueCache = exports.getFormValuesFromCache = exports.setFormValuesToCache = exports.FormContext = void 0;
+exports.sendDataToAwsSQS = exports.encodeData = exports.resetFormValueCache = exports.getFormValuesFromCache = exports.setFormValuesToCache = exports.FormContext = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -30,4 +30,27 @@ var resetFormValueCache = function resetFormValueCache(id) {
 };
 
 exports.resetFormValueCache = resetFormValueCache;
+
+var encodeData = function encodeData(data) {
+  return Object.keys(data).map(function (key) {
+    return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
+  }).join('&');
+};
+
+exports.encodeData = encodeData;
+
+var sendDataToAwsSQS = function sendDataToAwsSQS(values, queueUrl) {
+  return fetch(queueUrl || 'https://sqs.eu-central-1.amazonaws.com/031738021372/finelf-users-queue', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: encodeData({
+      Action: 'SendMessage',
+      MessageBody: JSON.stringify(values)
+    })
+  });
+};
+
+exports.sendDataToAwsSQS = sendDataToAwsSQS;
 //# sourceMappingURL=utils.js.map

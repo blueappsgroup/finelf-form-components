@@ -44,7 +44,7 @@
     label: label,
     placeholder: placeholder,
     type: "text",
-    validate: validate || (0, _validate.validateText)(required)
+    validate: validate && validate(required) || (0, _validate.validateText)(required)
   });
 
   exports.default = TextField;

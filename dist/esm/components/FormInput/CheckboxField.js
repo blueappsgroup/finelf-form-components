@@ -5,10 +5,11 @@ import { validateCheckbox } from './validate';
 
 const CheckboxFormField = ({
   id = 'textField',
-  label = 'Text checkbox',
+  label,
   name = 'text field',
   required = false,
-  onChange
+  onChange,
+  children
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   id: id,
@@ -17,7 +18,8 @@ const CheckboxFormField = ({
   label: label,
   type: "checkbox",
   validate: validateCheckbox(required),
-  onChange: onChange
+  onChange: onChange,
+  childrenBody: children
 });
 
 export default CheckboxFormField;

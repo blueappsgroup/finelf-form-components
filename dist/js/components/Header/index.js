@@ -24,7 +24,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 25px;\n  line-height: 24px;\n  text-align: center;\n  margin: 0px 0px 20px 0px;\n  padding-bottom: 28px;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n\n  @media ", " {\n    margin: 0px 0px 30px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: 3px solid\n      ", ";\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 25px;\n  line-height: 24px;\n  text-align: center;\n  margin: 0px 0px 20px 0px;\n  padding-bottom: 28px;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n\n  @media ", " {\n    margin: 0px 0px 30px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: ", ";\n    margin: 0 auto;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -35,10 +35,11 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+// prettier-ignore
 var StyledMainHeader = _styledComponents.default.h2(_templateObject(), function (props) {
   return props.theme.headerTextColor;
 }, _sizes.device.tablet, function (props) {
-  return props.theme.headerBorderColor;
+  return props.withBorder ? "3px solid ".concat(props.theme.headerBorderColor) : 'none';
 });
 
 var StyledSubHeader = _styledComponents.default.h5(_templateObject2(), function (props) {
@@ -48,8 +49,11 @@ var StyledSubHeader = _styledComponents.default.h5(_templateObject2(), function 
 var Header = function Header(_ref) {
   var text = _ref.text,
       _ref$type = _ref.type,
-      type = _ref$type === void 0 ? 'main' : _ref$type;
-  return type === 'main' ? /*#__PURE__*/_react.default.createElement(StyledMainHeader, null, text) : /*#__PURE__*/_react.default.createElement(StyledSubHeader, null, text);
+      type = _ref$type === void 0 ? 'main' : _ref$type,
+      withBorder = _ref.withBorder;
+  return type === 'main' ? /*#__PURE__*/_react.default.createElement(StyledMainHeader, {
+    withBorder: withBorder
+  }, text) : /*#__PURE__*/_react.default.createElement(StyledSubHeader, null, text);
 };
 
 var _default = Header;

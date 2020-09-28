@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "./FormInput", "./Header", "./Button", "./Form", "./CheckboxesGroup", "./SubmitSuccessText"], factory);
+    define(["exports", "./FormInput", "./Header", "./Button", "./Form", "./CheckboxesGroup", "./FormStatusText", "./Step", "./RedirectPage"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"), require("./CheckboxesGroup"), require("./SubmitSuccessText"));
+    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"), require("./CheckboxesGroup"), require("./FormStatusText"), require("./Step"), require("./RedirectPage"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form, global.CheckboxesGroup, global.SubmitSuccessText);
+    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form, global.CheckboxesGroup, global.FormStatusText, global.Step, global.RedirectPage);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _FormInput, _Header, _Button, _Form, _CheckboxesGroup, _SubmitSuccessText) {
+})(this, function (exports, _FormInput, _Header, _Button, _Form, _CheckboxesGroup, _FormStatusText, _Step, _RedirectPage) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -49,10 +49,22 @@
       return _interopRequireDefault(_CheckboxesGroup).default;
     }
   });
-  Object.defineProperty(exports, "SubmitSuccessText", {
+  Object.defineProperty(exports, "FormStatusText", {
     enumerable: true,
     get: function () {
-      return _interopRequireDefault(_SubmitSuccessText).default;
+      return _interopRequireDefault(_FormStatusText).default;
+    }
+  });
+  Object.defineProperty(exports, "Step", {
+    enumerable: true,
+    get: function () {
+      return _interopRequireDefault(_Step).default;
+    }
+  });
+  Object.defineProperty(exports, "RedirectPage", {
+    enumerable: true,
+    get: function () {
+      return _interopRequireDefault(_RedirectPage).default;
     }
   });
 

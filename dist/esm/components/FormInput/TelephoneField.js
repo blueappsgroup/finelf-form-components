@@ -7,8 +7,8 @@ const TelephoneField = ({
   id,
   label,
   placeholder = 'Telefon',
-  errorMsg = 'Nie poprawny numer telefonu',
-  name = 'telepone',
+  errorMsg = 'Podany numer telefonu jest nieprawidłowy',
+  name = 'telephone',
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {

@@ -11,13 +11,19 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _formik = require("formik");
 
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
-
-var _sizes = require("../../consts/sizes");
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _theme = require("../../consts/theme");
 
+var _sizes = require("../../consts/sizes");
+
+var _RedirectPage = _interopRequireDefault(require("../RedirectPage"));
+
 var _utils = require("../../utils");
+
+var _form = require("../../consts/form");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -28,6 +34,10 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -61,41 +71,115 @@ var FormWrapper = function FormWrapper(_ref) {
   var children = _ref.children,
       onSubmit = _ref.onSubmit,
       customTheme = _ref.customTheme,
-      id = _ref.id;
+      id = _ref.id,
+      stepsLength = _ref.stepsLength,
+      stepsTitles = _ref.stepsTitles,
+      hasRedirect = _ref.hasRedirect,
+      redirectUrl = _ref.redirectUrl,
+      timeToRedirect = _ref.timeToRedirect,
+      redirectHeaderText = _ref.redirectHeaderText,
+      logoImg = _ref.logoImg,
+      redirectMainImg = _ref.redirectMainImg,
+      redirectBgImg = _ref.redirectBgImg,
+      queueUrl = _ref.queueUrl,
+      sendDataToSQS = _ref.sendDataToSQS;
 
   var _useState = (0, _react.useState)((0, _utils.getFormValuesFromCache)(id)),
       _useState2 = _slicedToArray(_useState, 2),
       initialValues = _useState2[0],
       setInitialValues = _useState2[1];
 
-  var handleSubmit = function handleSubmit(values, props) {
-    if (onSubmit) {
-      onSubmit(values, props);
-    }
+  var _useState3 = (0, _react.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      currentStep = _useState4[0],
+      setCurrentStep = _useState4[1];
 
-    props.resetForm();
-    props.setStatus('submited');
-  };
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(values, props) {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (onSubmit) {
+                onSubmit(values, props);
+              }
+
+              _context.prev = 1;
+
+              if (!sendDataToSQS) {
+                _context.next = 5;
+                break;
+              }
+
+              _context.next = 5;
+              return (0, _utils.sendDataToAwsSQS)(values, queueUrl);
+
+            case 5:
+              props.resetForm();
+              props.setStatus(_form.formStatuses.submited);
+              _context.next = 13;
+              break;
+
+            case 9:
+              _context.prev = 9;
+              _context.t0 = _context["catch"](1);
+              console.log(_context.t0);
+              props.setStatus(_form.formStatuses.error);
+
+            case 13:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 9]]);
+    }));
+
+    return function handleSubmit(_x, _x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
 
   var handleReset = function handleReset() {
     (0, _utils.resetFormValueCache)(id);
     setInitialValues({});
   };
 
+  var prevStep = function prevStep() {
+    return setCurrentStep(currentStep - 1);
+  };
+
+  var nextStep = function nextStep() {
+    return setCurrentStep(currentStep + 1);
+  };
+
   return /*#__PURE__*/_react.default.createElement(_utils.FormContext.Provider, {
     value: {
-      id: id
+      id: id,
+      stepsLength: stepsLength,
+      currentStep: currentStep,
+      stepsTitleList: stepsTitles,
+      nextStep: nextStep,
+      prevStep: prevStep
     }
-  }, /*#__PURE__*/_react.default.createElement(_styledComponents.ThemeProvider, {
-    theme: _objectSpread(_objectSpread({}, _theme.theme), customTheme)
+  }, /*#__PURE__*/_react.default.createElement(_theme.ThemeProvider, {
+    customTheme: _objectSpread({}, customTheme)
   }, /*#__PURE__*/_react.default.createElement(_formik.Formik, {
     enableReinitialize: true,
     initialValues: initialValues,
     onSubmit: handleSubmit,
     onReset: handleReset
-  }, /*#__PURE__*/_react.default.createElement(StyledForm, {
-    id: id
-  }, children))));
+  }, function (props) {
+    return hasRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react.default.createElement(_RedirectPage.default, {
+      redirectUrl: redirectUrl,
+      backgroundImage: redirectBgImg,
+      logoImg: logoImg,
+      headerText: redirectHeaderText,
+      timeToRedirect: timeToRedirect,
+      mainImg: redirectMainImg
+    }) || /*#__PURE__*/_react.default.createElement(StyledForm, {
+      id: id
+    }, children);
+  })));
 };
 
 var _default = FormWrapper;

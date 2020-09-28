@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base <BaseField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL ggqeAX"
+  id="baseField"
+  name="baseField"
+  value=""
+/>
+`;
+
+exports[`base <BaseField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="baseField"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ddptCy"
+        id="baseField"
+        label="Test"
+        name="baseField"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`base <BaseField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="baseField"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ggqeAX"
+        id="baseField"
+        label="Test"
+        name="baseField"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;
