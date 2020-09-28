@@ -21,6 +21,7 @@ export const theme = {
   inputTextColor: colors.mainGrey,
   inputPlaceHolderColor: colors.mainGrey,
   inputErrorColor: colors.errorRed,
+  inputErrorTextAlign: 'left',
   inputBorderColor: colors.ligthGrey,
   inputBorderWidth: '1px',
   inputBorderStyle: 'solid',
@@ -31,6 +32,7 @@ export const theme = {
   inputFontWeight: '500',
   inputFontStyle: 'normal',
   inputLineHeight: '24px',
+  inputPadding: '0 20px',
   styledRowFlexWrap: 'no-wrap',
   styledRowLabelPadding: '10px',
   styledSelectVerticalPadding: '0px',
@@ -85,6 +87,7 @@ export const theme = {
   styledInputSuffixBorderRadius: '5px',
   styledInputSuffixVerticalPadding: '0px',
   styledInputSuffixHorizontalPadding: '15px',
+  styledInputPrefixPadding: '0 15px',
 }
 
 type ThemeProviderPops = {

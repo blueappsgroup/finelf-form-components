@@ -22,6 +22,7 @@ export type FieldWrapProps = FieldProps & {
   childrenBody?: ReactElement | ReactElement[]
   type?: string
   suffix?: string
+  prefix?: string
 }
 
 export type SelectFieldOptions = {

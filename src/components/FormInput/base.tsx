@@ -16,6 +16,7 @@ type StyledProps = {
     submitButtonBgColor: string
     inputHeight: string
     inputErrorColor: string
+    inputErrorTextAlign: string
     inputBgColor: string
     inputPlaceHolderColor: string
     inputBorderColor: string
@@ -28,6 +29,7 @@ type StyledProps = {
     inputFontStyle: string
     inputBoxShadow: string
     inputLineHeight: string
+    inputPadding: string
     styledRowFlexWrap: string
     styledRowLabelPadding: string
     styledSelectVerticalPadding: string
@@ -57,6 +59,7 @@ type StyledProps = {
     styledInputSuffixBorderRadius: string
     styledInputSuffixVerticalPadding: string
     styledInputSuffixHorizontalPadding: string
+    styledInputPrefixPadding: string
   }
   error?: string | boolean
 }
@@ -94,7 +97,10 @@ export const Row = styled.div`
 
 const StyledError = styled.span`
   color: ${(props: StyledProps): string => props.theme.inputErrorColor};
+  text-align: ${(props: StyledProps): string =>
+    props.theme.inputErrorTextAlign};
   position: absolute;
+  width: 100%;
   font-size: 10px;
   bottom: -12px;
 `
@@ -104,17 +110,18 @@ const StyledInput = styled.input<any>`
   border: 1px solid
     ${(props: StyledProps): string => props.theme.inputBorderColor};
   box-sizing: border-box;
-  box-shadow: 0px 7px 64px rgba(194, 186, 186, 0.07);
-  border-radius: 6px;
+  box-shadow: ${(props: StyledProps): string => props.theme.inputBoxShadow};
+  border-radius: ${(props: StyledProps): string =>
+    props.theme.inputBorderRadius};
   width: 100%;
-  height: 63px;
+  height: ${(props: StyledProps): string => props.theme.inputHeight};
   display: flex;
   align-items: center;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  padding: 0px 20px;
+  font-style: ${(props: StyledProps): string => props.theme.inputFontStyle};
+  font-weight: ${(props: StyledProps): string => props.theme.inputFontWeight};
+  font-size: ${(props: StyledProps): string => props.theme.inputFontSize};
+  line-height: ${(props: StyledProps): string => props.theme.inputLineHeight};
+  padding: ${(props: StyledProps): string => props.theme.inputPadding};
   border-color: ${(props: StyledProps): string =>
     props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${(props: any): string =>
@@ -180,6 +187,18 @@ const StyledInputSuffix = styled.span`
   color: ${(props: StyledProps): string => props.theme.styledInputSuffixTextColor};
 `
 
+const StyledInputPrefix = styled.span`
+  position: relative;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  height: ${(props: StyledProps): string => props.theme.inputHeight};
+  border: 1px solid ${(props: StyledProps): string => props.theme.inputBorderColor};
+  border-top-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
+  border-bottom-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
+    padding: ${(props: StyledProps): string => props.theme.styledInputPrefixPadding};
+`
+
 const SliderWrapper = styled.div`
  .rangeslider {
   position: relative;
@@ -234,6 +253,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
   return (
     <StyledRow>
       {props.label && <label htmlFor={field.name}>{props.label}</label>}
+      {props.prefix && <StyledInputPrefix>{props.prefix}</StyledInputPrefix>}
       <StyledInput
         {...field}
         {...props}
