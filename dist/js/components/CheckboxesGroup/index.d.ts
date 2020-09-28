@@ -1,6 +1,7 @@
-/// <reference types="react" />
-declare const CheckboxesGroup: ({ name, children }: {
-    name: any;
+import { FC } from 'react';
+declare type CheckboxesGroupTypes = {
+    name: string;
     children: any;
-}) => JSX.Element;
+};
+declare const CheckboxesGroup: FC<CheckboxesGroupTypes>;
 export default CheckboxesGroup;

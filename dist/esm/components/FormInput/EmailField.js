@@ -7,7 +7,7 @@ const EmailField = ({
   id,
   label,
   placeholder = 'Email',
-  errorMsg = 'Nie poprawny adres email',
+  errorMsg = 'Podany email jest nieprawidłowy',
   name = 'email',
   required = false,
   showError

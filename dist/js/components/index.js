@@ -8,7 +8,9 @@ var _exportNames = {
   Button: true,
   Form: true,
   CheckboxesGroup: true,
-  SubmitSuccessText: true
+  FormStatusText: true,
+  Step: true,
+  RedirectPage: true
 };
 Object.defineProperty(exports, "Header", {
   enumerable: true,
@@ -34,10 +36,22 @@ Object.defineProperty(exports, "CheckboxesGroup", {
     return _CheckboxesGroup.default;
   }
 });
-Object.defineProperty(exports, "SubmitSuccessText", {
+Object.defineProperty(exports, "FormStatusText", {
   enumerable: true,
   get: function get() {
-    return _SubmitSuccessText.default;
+    return _FormStatusText.default;
+  }
+});
+Object.defineProperty(exports, "Step", {
+  enumerable: true,
+  get: function get() {
+    return _Step.default;
+  }
+});
+Object.defineProperty(exports, "RedirectPage", {
+  enumerable: true,
+  get: function get() {
+    return _RedirectPage.default;
   }
 });
 
@@ -62,7 +76,11 @@ var _Form = _interopRequireDefault(require("./Form"));
 
 var _CheckboxesGroup = _interopRequireDefault(require("./CheckboxesGroup"));
 
-var _SubmitSuccessText = _interopRequireDefault(require("./SubmitSuccessText"));
+var _FormStatusText = _interopRequireDefault(require("./FormStatusText"));
+
+var _Step = _interopRequireDefault(require("./Step"));
+
+var _RedirectPage = _interopRequireDefault(require("./RedirectPage"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //# sourceMappingURL=index.js.map

@@ -18,13 +18,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CheckboxFormField = function CheckboxFormField(_ref) {
   var _ref$id = _ref.id,
       id = _ref$id === void 0 ? 'textField' : _ref$id,
-      _ref$label = _ref.label,
-      label = _ref$label === void 0 ? 'Text checkbox' : _ref$label,
+      label = _ref.label,
       _ref$name = _ref.name,
       name = _ref$name === void 0 ? 'text field' : _ref$name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
-      onChange = _ref.onChange;
+      onChange = _ref.onChange,
+      children = _ref.children;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     id: id,
@@ -33,7 +33,8 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
     label: label,
     type: "checkbox",
     validate: (0, _validate.validateCheckbox)(required),
-    onChange: onChange
+    onChange: onChange,
+    childrenBody: children
   });
 };
 

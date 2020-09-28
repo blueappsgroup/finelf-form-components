@@ -31,8 +31,8 @@
     id,
     label,
     placeholder = 'Telefon',
-    errorMsg = 'Nie poprawny numer telefonu',
-    name = 'telepone',
+    errorMsg = 'Podany numer telefonu jest nieprawidłowy',
+    name = 'telephone',
     required = false,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {

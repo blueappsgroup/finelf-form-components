@@ -29,10 +29,11 @@
 
   const CheckboxFormField = ({
     id = 'textField',
-    label = 'Text checkbox',
+    label,
     name = 'text field',
     required = false,
-    onChange
+    onChange,
+    children
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     id: id,
@@ -41,7 +42,8 @@
     label: label,
     type: "checkbox",
     validate: (0, _validate.validateCheckbox)(required),
-    onChange: onChange
+    onChange: onChange,
+    childrenBody: children
   });
 
   exports.default = CheckboxFormField;

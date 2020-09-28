@@ -20,7 +20,7 @@ const TextField = ({
   label: label,
   placeholder: placeholder,
   type: "text",
-  validate: validate || validateText(required)
+  validate: validate && validate(required) || validateText(required)
 });
 
 export default TextField;
