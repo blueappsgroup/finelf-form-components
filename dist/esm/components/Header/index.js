@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../consts/sizes';
+// prettier-ignore
 const StyledMainHeader = styled.h2`
   font-weight: 600;
   font-size: 25px;
@@ -22,8 +23,7 @@ const StyledMainHeader = styled.h2`
     content: '';
     position: absolute;
     bottom: 0px;
-    border: 3px solid
-      ${props => props.theme.headerBorderColor};
+    border: ${props => props.withBorder ? `3px solid ${props.theme.headerBorderColor}` : 'none'};
     margin: 0 auto;
   }
 `;
@@ -38,8 +38,11 @@ const StyledSubHeader = styled.h5`
 
 const Header = ({
   text,
-  type = 'main'
-}) => type === 'main' ? /*#__PURE__*/React.createElement(StyledMainHeader, null, text) : /*#__PURE__*/React.createElement(StyledSubHeader, null, text);
+  type = 'main',
+  withBorder
+}) => type === 'main' ? /*#__PURE__*/React.createElement(StyledMainHeader, {
+  withBorder: withBorder
+}, text) : /*#__PURE__*/React.createElement(StyledSubHeader, null, text);
 
 export default Header;
 //# sourceMappingURL=index.js.map

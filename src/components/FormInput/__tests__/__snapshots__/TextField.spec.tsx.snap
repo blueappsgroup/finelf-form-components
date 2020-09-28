@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> input field with cutom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <input
+        class="sc-kEqYlL ddptCy"
+        id="textField"
+        name="name"
+        placeholder="Text"
+        type="text"
+        value="test"
+      />
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        Bad name
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<TextField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL ggqeAX"
+  id="textField"
+  name="name"
+  placeholder="Text"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`<TextField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ddptCy"
+        id="textField"
+        label="Test"
+        name="name"
+        placeholder="Text*"
+        required=""
+        type="text"
+        value=""
+      />
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<TextField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ggqeAX"
+        id="textField"
+        label="Test"
+        name="name"
+        placeholder="Text"
+        type="text"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

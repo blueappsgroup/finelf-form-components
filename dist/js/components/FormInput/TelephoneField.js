@@ -21,9 +21,9 @@ var TelephoneField = function TelephoneField(_ref) {
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === void 0 ? 'Telefon' : _ref$placeholder,
       _ref$errorMsg = _ref.errorMsg,
-      errorMsg = _ref$errorMsg === void 0 ? 'Nie poprawny numer telefonu' : _ref$errorMsg,
+      errorMsg = _ref$errorMsg === void 0 ? 'Podany numer telefonu jest nieprawidłowy' : _ref$errorMsg,
       _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'telepone' : _ref$name,
+      name = _ref$name === void 0 ? 'telephone' : _ref$name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       showError = _ref.showError;

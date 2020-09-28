@@ -27,6 +27,7 @@
     };
   }
 
+  // prettier-ignore
   const StyledMainHeader = _styledComponents2.default.h2`
   font-weight: 600;
   font-size: 25px;
@@ -48,8 +49,7 @@
     content: '';
     position: absolute;
     bottom: 0px;
-    border: 3px solid
-      ${props => props.theme.headerBorderColor};
+    border: ${props => props.withBorder ? `3px solid ${props.theme.headerBorderColor}` : 'none'};
     margin: 0 auto;
   }
 `;
@@ -64,8 +64,11 @@
 
   const Header = ({
     text,
-    type = 'main'
-  }) => type === 'main' ? /*#__PURE__*/_react2.default.createElement(StyledMainHeader, null, text) : /*#__PURE__*/_react2.default.createElement(StyledSubHeader, null, text);
+    type = 'main',
+    withBorder
+  }) => type === 'main' ? /*#__PURE__*/_react2.default.createElement(StyledMainHeader, {
+    withBorder: withBorder
+  }, text) : /*#__PURE__*/_react2.default.createElement(StyledSubHeader, null, text);
 
   exports.default = Header;
 });

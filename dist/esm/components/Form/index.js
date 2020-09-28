@@ -6,10 +6,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
+import { ThemeProvider } from '../../consts/theme';
 import { device } from '../../consts/sizes';
-import { theme } from '../../consts/theme';
-import { FormContext, getFormValuesFromCache, resetFormValueCache } from '../../utils';
+import RedirectPage from '../RedirectPage';
+import { FormContext, getFormValuesFromCache, resetFormValueCache, sendDataToAwsSQS } from '../../utils';
+import { formStatuses } from '../../consts/form';
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
@@ -34,17 +36,38 @@ const FormWrapper = ({
   children,
   onSubmit,
   customTheme,
-  id
+  id,
+  stepsLength,
+  stepsTitles,
+  hasRedirect,
+  redirectUrl,
+  timeToRedirect,
+  redirectHeaderText,
+  logoImg,
+  redirectMainImg,
+  redirectBgImg,
+  queueUrl,
+  sendDataToSQS
 }) => {
   const [initialValues, setInitialValues] = useState(getFormValuesFromCache(id));
+  const [currentStep, setCurrentStep] = useState(0);
 
-  const handleSubmit = (values, props) => {
+  const handleSubmit = async (values, props) => {
     if (onSubmit) {
       onSubmit(values, props);
     }
 
-    props.resetForm();
-    props.setStatus('submited');
+    try {
+      if (sendDataToSQS) {
+        await sendDataToAwsSQS(values, queueUrl);
+      }
+
+      props.resetForm();
+      props.setStatus(formStatuses.submited);
+    } catch (e) {
+      console.log(e);
+      props.setStatus(formStatuses.error);
+    }
   };
 
   const handleReset = () => {
@@ -52,18 +75,34 @@ const FormWrapper = ({
     setInitialValues({});
   };
 
+  const prevStep = () => setCurrentStep(currentStep - 1);
+
+  const nextStep = () => setCurrentStep(currentStep + 1);
+
   return /*#__PURE__*/React.createElement(FormContext.Provider, {
     value: {
-      id
+      id,
+      stepsLength,
+      currentStep,
+      stepsTitleList: stepsTitles,
+      nextStep,
+      prevStep
     }
   }, /*#__PURE__*/React.createElement(ThemeProvider, {
-    theme: _objectSpread(_objectSpread({}, theme), customTheme)
+    customTheme: _objectSpread({}, customTheme)
   }, /*#__PURE__*/React.createElement(Formik, {
     enableReinitialize: true,
     initialValues: initialValues,
     onSubmit: handleSubmit,
     onReset: handleReset
-  }, /*#__PURE__*/React.createElement(StyledForm, {
+  }, props => hasRedirect && props.status === formStatuses.submited && /*#__PURE__*/React.createElement(RedirectPage, {
+    redirectUrl: redirectUrl,
+    backgroundImage: redirectBgImg,
+    logoImg: logoImg,
+    headerText: redirectHeaderText,
+    timeToRedirect: timeToRedirect,
+    mainImg: redirectMainImg
+  }) || /*#__PURE__*/React.createElement(StyledForm, {
     id: id
   }, children))));
 };

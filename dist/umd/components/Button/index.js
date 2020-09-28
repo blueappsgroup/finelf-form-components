@@ -28,10 +28,10 @@
   }
 
   const StyledButton = _styledComponents2.default.button`
-  background: ${props => props.theme.buttonBgColor};
+  background: ${props => props.variant === 'primary' ? props.theme.buttonBgColor : props.theme.buttonSecondaryBgColor};
   border-radius: 4px;
-  border: none;
-  color: ${props => props.theme.buttonTextColor};
+  border: ${props => props.variant === 'primary' ? 'none' : `4px solid ${props.theme.buttonSecondaryBorderColor}`};
+  color: ${props => props.variant === 'primary' ? props.theme.buttonTextColor : props.theme.buttonSecondaryTextColor};
   outline: 0;
   letter-spacing: 0.5px;
   font-style: normal;
@@ -40,12 +40,23 @@
   line-height: 16px;
   padding: 28px;
   margin-top: 20px;
+
+  &:disabled {
+    background: silver;
+  }
 `;
 
   const Button = ({
-    text
+    text,
+    type = 'button',
+    variant = 'primary',
+    onClick,
+    disabled
   }) => /*#__PURE__*/_react2.default.createElement(StyledButton, {
-    type: "submit"
+    disabled: disabled,
+    variant: variant,
+    type: type,
+    onClick: onClick
   }, text);
 
   exports.default = Button;

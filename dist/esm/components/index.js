@@ -3,5 +3,7 @@ export { default as Header } from './Header';
 export { default as Button } from './Button';
 export { default as Form } from './Form';
 export { default as CheckboxesGroup } from './CheckboxesGroup';
-export { default as SubmitSuccessText } from './SubmitSuccessText';
+export { default as FormStatusText } from './FormStatusText';
+export { default as Step } from './Step';
+export { default as RedirectPage } from './RedirectPage';
 //# sourceMappingURL=index.js.map
