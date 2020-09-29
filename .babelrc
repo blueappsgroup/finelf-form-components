@@ -1,6 +1,12 @@
 {
   "presets": ["@babel/react"],
-  "ignore": ["*/node_modules", "**/__snapshots__", "**/*.spec.d.ts", "**/*.d.ts", "**/**/*.test.*", "**/**/*.spec.*", "**/**/*.spec.*.*",  "**/stories", "**/__tests__/**"],
+  "ignore": [
+    "*/node_modules", 
+    "**/__snapshots__", 
+    "**/*.d.ts",
+    "**/stories", 
+    "**/__tests__"
+  ],
   "plugins": [
     "@babel/plugin-transform-typescript",
     "babel-plugin-typescript-to-proptypes",

@@ -10,3 +10,5 @@ export declare const validateCompanyTax: (required: boolean) => (value: string) 
 export declare const validateBankAccountNumber: (required: boolean) => (value: string) => string | undefined;
 export declare const validateIDCardNumber: (required: boolean) => (value: string) => string | undefined;
 export declare const validateOtherLoanAmount: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
+export declare const validateAmountOfChildren: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
+export declare const validateIncome: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = void 0;
+exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = void 0;
 
 var _validateHelpers = require("./validateHelpers");
 
@@ -207,11 +207,43 @@ var validateOtherLoanAmount = function validateOtherLoanAmount() {
       return 'To pole jest wymagane';
     }
 
-    if ((0, _validateHelpers.isNotValidOtherLoanAmount)(value)) {
+    if ((0, _validateHelpers.isNotValidNumberBetween1And10Digits)(value)) {
       return customErrorMsg;
     }
   };
 };
 
 exports.validateOtherLoanAmount = validateOtherLoanAmount;
+
+var validateAmountOfChildren = function validateAmountOfChildren() {
+  var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Podana liczba jest nieprawidłowa';
+  var required = arguments.length > 1 ? arguments[1] : undefined;
+  return function (value) {
+    if (required && (0, _validateHelpers.isEmpty)(value)) {
+      return 'To pole jest wymagane';
+    }
+
+    if ((0, _validateHelpers.isNotValidNumberBetween1And10Digits)(value)) {
+      return customErrorMsg;
+    }
+  };
+};
+
+exports.validateAmountOfChildren = validateAmountOfChildren;
+
+var validateIncome = function validateIncome() {
+  var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Podana kwota jest nieprawidłowa';
+  var required = arguments.length > 1 ? arguments[1] : undefined;
+  return function (value) {
+    if (required && (0, _validateHelpers.isEmpty)(value)) {
+      return 'To pole jest wymagane';
+    }
+
+    if ((0, _validateHelpers.isNotValidNumberBetween1And10Digits)(value)) {
+      return customErrorMsg;
+    }
+  };
+};
+
+exports.validateIncome = validateIncome;
 //# sourceMappingURL=validate.js.map

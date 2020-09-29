@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "./EmailField", "./TextField", "./TelephoneField", "./CheckboxField", "./FirstNameField", "./LastNameField", "./PeselField", "./HouseNumberField", "./ApartmentNumberField", "./CityNameField", "./StreetNameField", "./ZipCodeField", "./CompanyNameField", "./CompanyTaxField", "./BankAccountNumberField", "./IDCardNumberField", "./GenderField", "./EducationField", "./MaritalStatusField", "./HousingStatusField", "./EmploymentTypeField", "./LoanReasonField", "./BirthDateField", "./CarStatusField", "./AmountField", "./PeriodField", "./OtherLoanAmountField", "./base"], factory);
+    define(["exports", "./EmailField", "./TextField", "./TelephoneField", "./CheckboxField", "./FirstNameField", "./LastNameField", "./PeselField", "./HouseNumberField", "./ApartmentNumberField", "./CityNameField", "./StreetNameField", "./ZipCodeField", "./CompanyNameField", "./CompanyTaxField", "./BankAccountNumberField", "./IDCardNumberField", "./GenderField", "./EducationField", "./MaritalStatusField", "./HousingStatusField", "./EmploymentTypeField", "./LoanReasonField", "./BirthDateField", "./CarStatusField", "./AmountField", "./PeriodField", "./OtherLoanAmountField", "./AmountOfChildrenField", "./IncomeField", "./base"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("./EmailField"), require("./TextField"), require("./TelephoneField"), require("./CheckboxField"), require("./FirstNameField"), require("./LastNameField"), require("./PeselField"), require("./HouseNumberField"), require("./ApartmentNumberField"), require("./CityNameField"), require("./StreetNameField"), require("./ZipCodeField"), require("./CompanyNameField"), require("./CompanyTaxField"), require("./BankAccountNumberField"), require("./IDCardNumberField"), require("./GenderField"), require("./EducationField"), require("./MaritalStatusField"), require("./HousingStatusField"), require("./EmploymentTypeField"), require("./LoanReasonField"), require("./BirthDateField"), require("./CarStatusField"), require("./AmountField"), require("./PeriodField"), require("./OtherLoanAmountField"), require("./base"));
+    factory(exports, require("./EmailField"), require("./TextField"), require("./TelephoneField"), require("./CheckboxField"), require("./FirstNameField"), require("./LastNameField"), require("./PeselField"), require("./HouseNumberField"), require("./ApartmentNumberField"), require("./CityNameField"), require("./StreetNameField"), require("./ZipCodeField"), require("./CompanyNameField"), require("./CompanyTaxField"), require("./BankAccountNumberField"), require("./IDCardNumberField"), require("./GenderField"), require("./EducationField"), require("./MaritalStatusField"), require("./HousingStatusField"), require("./EmploymentTypeField"), require("./LoanReasonField"), require("./BirthDateField"), require("./CarStatusField"), require("./AmountField"), require("./PeriodField"), require("./OtherLoanAmountField"), require("./AmountOfChildrenField"), require("./IncomeField"), require("./base"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.EmailField, global.TextField, global.TelephoneField, global.CheckboxField, global.FirstNameField, global.LastNameField, global.PeselField, global.HouseNumberField, global.ApartmentNumberField, global.CityNameField, global.StreetNameField, global.ZipCodeField, global.CompanyNameField, global.CompanyTaxField, global.BankAccountNumberField, global.IDCardNumberField, global.GenderField, global.EducationField, global.MaritalStatusField, global.HousingStatusField, global.EmploymentTypeField, global.LoanReasonField, global.BirthDateField, global.CarStatusField, global.AmountField, global.PeriodField, global.OtherLoanAmountField, global.base);
+    factory(mod.exports, global.EmailField, global.TextField, global.TelephoneField, global.CheckboxField, global.FirstNameField, global.LastNameField, global.PeselField, global.HouseNumberField, global.ApartmentNumberField, global.CityNameField, global.StreetNameField, global.ZipCodeField, global.CompanyNameField, global.CompanyTaxField, global.BankAccountNumberField, global.IDCardNumberField, global.GenderField, global.EducationField, global.MaritalStatusField, global.HousingStatusField, global.EmploymentTypeField, global.LoanReasonField, global.BirthDateField, global.CarStatusField, global.AmountField, global.PeriodField, global.OtherLoanAmountField, global.AmountOfChildrenField, global.IncomeField, global.base);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _EmailField, _TextField, _TelephoneField, _CheckboxField, _FirstNameField, _LastNameField, _PeselField, _HouseNumberField, _ApartmentNumberField, _CityNameField, _StreetNameField, _ZipCodeField, _CompanyNameField, _CompanyTaxField, _BankAccountNumberField, _IDCardNumberField, _GenderField, _EducationField, _MaritalStatusField, _HousingStatusField, _EmploymentTypeField, _LoanReasonField, _BirthDateField, _CarStatusField, _AmountField, _PeriodField, _OtherLoanAmountField, _base) {
+})(this, function (exports, _EmailField, _TextField, _TelephoneField, _CheckboxField, _FirstNameField, _LastNameField, _PeselField, _HouseNumberField, _ApartmentNumberField, _CityNameField, _StreetNameField, _ZipCodeField, _CompanyNameField, _CompanyTaxField, _BankAccountNumberField, _IDCardNumberField, _GenderField, _EducationField, _MaritalStatusField, _HousingStatusField, _EmploymentTypeField, _LoanReasonField, _BirthDateField, _CarStatusField, _AmountField, _PeriodField, _OtherLoanAmountField, _AmountOfChildrenField, _IncomeField, _base) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -176,6 +176,18 @@
     enumerable: true,
     get: function () {
       return _interopRequireDefault(_OtherLoanAmountField).default;
+    }
+  });
+  Object.defineProperty(exports, "AmountOfChildrenField", {
+    enumerable: true,
+    get: function () {
+      return _interopRequireDefault(_AmountOfChildrenField).default;
+    }
+  });
+  Object.defineProperty(exports, "IncomeField", {
+    enumerable: true,
+    get: function () {
+      return _interopRequireDefault(_IncomeField).default;
     }
   });
   Object.defineProperty(exports, "Row", {

@@ -2,6 +2,7 @@ export const isEmpty = value => !value;
 export const isNotValidLength = (value, from = 2, to = 100) => value.length < from || value.length > to;
 export const isNotValidPhoneNumber = value => !/^(45|50|51|53|57|60|66|69|72|73|78|79|88)[0-9]{7}$/.test(value);
 export const isNotValidEmail = value => !/[a-zA-Z0-9_.+-]+@[a-zAZ0-9-]+\.[a-zA-Z0-9-.]+$/.test(value);
+export const isNotValidNumberBetween1And10Digits = value => !/^[0-9]{1,10}$/.test(value);
 export const isNotLetter = value => !/[A-Za-z]$/.test(value);
 export const isNotNumber = value => !/[0-9]$/.test(value);
 export const haveSpecialChars = value => !/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ0-9 -]*$$/.test(value);
@@ -69,5 +70,4 @@ export const isValidIDCard = value => {
   return false;
 };
 export const isNotValidIDCard = value => !/^[A-z]{3}[0-9]{6}$/.test(value);
-export const isNotValidOtherLoanAmount = value => !/^[0-9]{1,10}$/.test(value);
 //# sourceMappingURL=validateHelpers.js.map
