@@ -165,6 +165,18 @@ Object.defineProperty(exports, "OtherLoanAmountField", {
     return _OtherLoanAmountField.default;
   }
 });
+Object.defineProperty(exports, "AmountOfChildrenField", {
+  enumerable: true,
+  get: function get() {
+    return _AmountOfChildrenField.default;
+  }
+});
+Object.defineProperty(exports, "IncomeField", {
+  enumerable: true,
+  get: function get() {
+    return _IncomeField.default;
+  }
+});
 Object.defineProperty(exports, "Row", {
   enumerable: true,
   get: function get() {
@@ -225,6 +237,10 @@ var _AmountField = _interopRequireDefault(require("./AmountField"));
 var _PeriodField = _interopRequireDefault(require("./PeriodField"));
 
 var _OtherLoanAmountField = _interopRequireDefault(require("./OtherLoanAmountField"));
+
+var _AmountOfChildrenField = _interopRequireDefault(require("./AmountOfChildrenField"));
+
+var _IncomeField = _interopRequireDefault(require("./IncomeField"));
 
 var _base = require("./base");
 

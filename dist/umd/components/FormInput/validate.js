@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = undefined;
+  exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = undefined;
 
   const validateText = exports.validateText = required => value => {
     if (required && (0, _validateHelpers.isEmpty)(value)) {
@@ -165,7 +165,27 @@
       return 'To pole jest wymagane';
     }
 
-    if ((0, _validateHelpers.isNotValidOtherLoanAmount)(value)) {
+    if ((0, _validateHelpers.isNotValidNumberBetween1And10Digits)(value)) {
+      return customErrorMsg;
+    }
+  };
+
+  const validateAmountOfChildren = exports.validateAmountOfChildren = (customErrorMsg = 'Podana liczba jest nieprawidłowa', required) => value => {
+    if (required && (0, _validateHelpers.isEmpty)(value)) {
+      return 'To pole jest wymagane';
+    }
+
+    if ((0, _validateHelpers.isNotValidNumberBetween1And10Digits)(value)) {
+      return customErrorMsg;
+    }
+  };
+
+  const validateIncome = exports.validateIncome = (customErrorMsg = 'Podana kwota jest nieprawidłowa', required) => value => {
+    if (required && (0, _validateHelpers.isEmpty)(value)) {
+      return 'To pole jest wymagane';
+    }
+
+    if ((0, _validateHelpers.isNotValidNumberBetween1And10Digits)(value)) {
       return customErrorMsg;
     }
   };

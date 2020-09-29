@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Story, Meta } from '@storybook/react'
 
-import { Form, CompanyNameField } from '../'
+import { Form, CompanyNameField } from '..'
 import { FormProps } from '../types'
 
 export default {

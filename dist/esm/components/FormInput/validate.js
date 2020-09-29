@@ -1,4 +1,4 @@
-import { isEmpty, isNotValidLength, isNotValidPhoneNumber, isNotValidEmail, isNotLetter, isNotNumber, isValidPesel, haveSpecialChars, isNotValidZipCode, isValidNIP, isValidBankAccountNumber, isValidIDCard, isNotValidIDCard, isNotValidOtherLoanAmount } from './validateHelpers';
+import { isEmpty, isNotValidLength, isNotValidPhoneNumber, isNotValidEmail, isNotValidNumberBetween1And10Digits, isNotLetter, isNotNumber, isValidPesel, haveSpecialChars, isNotValidZipCode, isValidNIP, isValidBankAccountNumber, isValidIDCard, isNotValidIDCard } from './validateHelpers';
 export const validateText = required => value => {
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
@@ -135,7 +135,25 @@ export const validateOtherLoanAmount = (customErrorMsg = 'Podana kwota jest niep
     return 'To pole jest wymagane';
   }
 
-  if (isNotValidOtherLoanAmount(value)) {
+  if (isNotValidNumberBetween1And10Digits(value)) {
+    return customErrorMsg;
+  }
+};
+export const validateAmountOfChildren = (customErrorMsg = 'Podana liczba jest nieprawidłowa', required) => value => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane';
+  }
+
+  if (isNotValidNumberBetween1And10Digits(value)) {
+    return customErrorMsg;
+  }
+};
+export const validateIncome = (customErrorMsg = 'Podana kwota jest nieprawidłowa', required) => value => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane';
+  }
+
+  if (isNotValidNumberBetween1And10Digits(value)) {
     return customErrorMsg;
   }
 };

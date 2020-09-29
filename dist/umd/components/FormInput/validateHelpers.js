@@ -25,6 +25,8 @@
 
   const isNotValidEmail = exports.isNotValidEmail = value => !/[a-zA-Z0-9_.+-]+@[a-zAZ0-9-]+\.[a-zA-Z0-9-.]+$/.test(value);
 
+  const isNotValidNumberBetween1And10Digits = exports.isNotValidNumberBetween1And10Digits = value => !/^[0-9]{1,10}$/.test(value);
+
   const isNotLetter = exports.isNotLetter = value => !/[A-Za-z]$/.test(value);
 
   const isNotNumber = exports.isNotNumber = value => !/[0-9]$/.test(value);
@@ -100,7 +102,5 @@
   };
 
   const isNotValidIDCard = exports.isNotValidIDCard = value => !/^[A-z]{3}[0-9]{6}$/.test(value);
-
-  const isNotValidOtherLoanAmount = exports.isNotValidOtherLoanAmount = value => !/^[0-9]{1,10}$/.test(value);
 });
 //# sourceMappingURL=validateHelpers.js.map

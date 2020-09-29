@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.isNotValidOtherLoanAmount = exports.isNotValidIDCard = exports.isValidIDCard = exports.isValidBankAccountNumber = exports.isValidNIP = exports.isNotValidZipCode = exports.isValidPesel = exports.haveSpecialChars = exports.isNotNumber = exports.isNotLetter = exports.isNotValidEmail = exports.isNotValidPhoneNumber = exports.isNotValidLength = exports.isEmpty = void 0;
+exports.isNotValidIDCard = exports.isValidIDCard = exports.isValidBankAccountNumber = exports.isValidNIP = exports.isNotValidZipCode = exports.isValidPesel = exports.haveSpecialChars = exports.isNotNumber = exports.isNotLetter = exports.isNotValidNumberBetween1And10Digits = exports.isNotValidEmail = exports.isNotValidPhoneNumber = exports.isNotValidLength = exports.isEmpty = void 0;
 
 var isEmpty = function isEmpty(value) {
   return !value;
@@ -30,6 +30,12 @@ var isNotValidEmail = function isNotValidEmail(value) {
 };
 
 exports.isNotValidEmail = isNotValidEmail;
+
+var isNotValidNumberBetween1And10Digits = function isNotValidNumberBetween1And10Digits(value) {
+  return !/^[0-9]{1,10}$/.test(value);
+};
+
+exports.isNotValidNumberBetween1And10Digits = isNotValidNumberBetween1And10Digits;
 
 var isNotLetter = function isNotLetter(value) {
   return !/[A-Za-z]$/.test(value);
@@ -140,10 +146,4 @@ var isNotValidIDCard = function isNotValidIDCard(value) {
 };
 
 exports.isNotValidIDCard = isNotValidIDCard;
-
-var isNotValidOtherLoanAmount = function isNotValidOtherLoanAmount(value) {
-  return !/^[0-9]{1,10}$/.test(value);
-};
-
-exports.isNotValidOtherLoanAmount = isNotValidOtherLoanAmount;
 //# sourceMappingURL=validateHelpers.js.map
