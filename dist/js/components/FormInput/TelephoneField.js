@@ -35,6 +35,7 @@ var TelephoneField = function TelephoneField(_ref) {
     component: _base.default,
     label: label,
     placeholder: placeholder,
+    prefix: "+48",
     type: "tel",
     validate: (0, _validate.validateTelNumber)(errorMsg, required)
   });

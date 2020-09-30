@@ -21,6 +21,7 @@ export declare type FieldWrapProps = FieldProps & {
     childrenBody?: ReactElement | ReactElement[];
     type?: string;
     suffix?: string;
+    prefix?: string;
 };
 export declare type SelectFieldOptions = {
     [key: string]: string;
@@ -36,6 +37,7 @@ export declare type SelectFieldWrapProps = FieldProps & {
 export declare type RangeFieldWrapProps = FieldProps & {
     label?: string;
     showError?: boolean;
+    showMinMax?: boolean;
     onChange?: Function;
     placeholder?: string;
     required?: boolean;
@@ -71,6 +73,7 @@ export declare type RangeFieldProps = {
     errorMsg?: string;
     required?: boolean;
     showError?: boolean;
+    showMinMax?: boolean;
 };
 export declare type EmailFieldProps = {
     id?: string;

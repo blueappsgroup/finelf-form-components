@@ -43,6 +43,7 @@
     component: _base2.default,
     label: label,
     placeholder: placeholder,
+    prefix: "+48",
     type: "tel",
     validate: (0, _validate.validateTelNumber)(errorMsg, required)
   });

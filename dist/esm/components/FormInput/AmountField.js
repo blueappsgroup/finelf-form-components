@@ -7,10 +7,12 @@ const AmountField = ({
   label = 'Kwota pożyczki',
   name = 'amount',
   required = false,
-  showError
+  showError,
+  showMinMax = true
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,
+  showMinMax: showMinMax,
   id: id,
   name: name,
   component: BaseRangeField,

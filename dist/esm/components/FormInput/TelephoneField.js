@@ -19,6 +19,7 @@ const TelephoneField = ({
   component: BaseField,
   label: label,
   placeholder: placeholder,
+  prefix: "+48",
   type: "tel",
   validate: validateTelNumber(errorMsg, required)
 });
