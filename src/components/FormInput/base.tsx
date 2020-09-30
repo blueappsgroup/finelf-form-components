@@ -17,6 +17,8 @@ type StyledProps = {
     inputHeight: string
     inputErrorColor: string
     inputErrorTextAlign: string
+    inputErrorFontSize: string
+    inputErrorBottom: string
     inputBgColor: string
     inputPlaceHolderColor: string
     inputBorderColor: string
@@ -32,6 +34,22 @@ type StyledProps = {
     inputPadding: string
     styledRowFlexWrap: string
     styledRowLabelPadding: string
+    styledSelectHeight: string
+    styledSelectErrorColor: string
+    styledSelectErrorTextAlign: string
+    styledSelectBgColor: string
+    styledSelectPlaceHolderColor: string
+    styledSelectBorderColor: string
+    styledSelectBorderWidth: string
+    styledSelectBorderStyle: string
+    styledSelectBorderRadius: string
+    styledSelectTextColor: string
+    styledSelectFontSize: string
+    styledSelectFontWeight: string
+    styledSelectFontStyle: string
+    styledSelectBoxShadow: string
+    styledSelectLineHeight: string
+    styledSelectPadding: string
     styledSelectVerticalPadding: string
     styledSelectHorizontalPadding: string
     styledSpanFontSize: string
@@ -101,8 +119,8 @@ const StyledError = styled.span`
     props.theme.inputErrorTextAlign};
   position: absolute;
   width: 100%;
-  font-size: 10px;
-  bottom: -12px;
+  font-size: ${(props: StyledProps): string => props.theme.inputErrorFontSize};
+  bottom: ${(props: StyledProps): string => props.theme.inputErrorBottom};
 `
 
 const StyledInput = styled.input<any>`
@@ -138,28 +156,28 @@ const StyledInput = styled.input<any>`
 
 /* eslint-disable */
 const StyledSelect = styled.select<any>`
-  background: ${(props: StyledProps): string => props.theme.inputBgColor};
-  border: ${(props: StyledProps): string => props.theme.inputBorderWidth} ${(props: StyledProps): string => props.theme.inputBorderStyle}
-    ${(props: StyledProps): string => props.theme.inputBorderColor};
+  background: ${(props: StyledProps): string => props.theme.styledSelectBgColor};
+  border: ${(props: StyledProps): string => props.theme.styledSelectBorderWidth} ${(props: StyledProps): string => props.theme.styledSelectBorderStyle}
+    ${(props: StyledProps): string => props.theme.styledSelectBorderColor};
   box-sizing: border-box;
-  box-shadow: ${(props: StyledProps): string => props.theme.inputBoxShadow};
-  border-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
+  box-shadow: ${(props: StyledProps): string => props.theme.styledSelectBoxShadow};
+  border-radius: ${(props: StyledProps): string => props.theme.styledSelectBorderRadius};
   width: 100%;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
+  height: ${(props: StyledProps): string => props.theme.styledSelectHeight};
   display: flex;
   align-items: center;
-  font-style: ${(props: StyledProps): string => props.theme.inputFontStyle};
-  font-weight: ${(props: StyledProps): string => props.theme.inputFontWeight};
-  font-size: ${(props: StyledProps): string => props.theme.inputFontSize};
-  line-height: ${(props: StyledProps): string => props.theme.inputLineHeight};
+  font-style: ${(props: StyledProps): string => props.theme.styledSelectFontStyle};
+  font-weight: ${(props: StyledProps): string => props.theme.styledSelectFontWeight};
+  font-size: ${(props: StyledProps): string => props.theme.styledSelectFontSize};
+  line-height: ${(props: StyledProps): string => props.theme.styledSelectLineHeight};
   padding: ${(props: StyledProps): string => props.theme.styledSelectVerticalPadding} ${(props: StyledProps): string => props.theme.styledSelectHorizontalPadding};
   border-color: ${(props: StyledProps): string =>
-  props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
   color: ${(props: any): string =>
-  props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+  props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
 
   &::placeholder {
-    color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
+    color: ${(props: StyledProps): string => props.theme.styledSelectPlaceHolderColor};
   }
 
   &:focus {
@@ -174,7 +192,7 @@ const StyledSpan = styled.span`
 `
 
 const StyledInputSuffix = styled.span`
-  position: absolute;
+  position: relative;
   right: 0;
   display: inline-flex;
   align-items: center;

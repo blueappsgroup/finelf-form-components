@@ -13,7 +13,7 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <GenderField required showError label={'Płeć'} />
+    <GenderField required showError label="Płeć" />
   </Form>
 )
 
