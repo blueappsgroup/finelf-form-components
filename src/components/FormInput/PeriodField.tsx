@@ -1,13 +1,13 @@
+import React, { FC } from 'react'
 import { Field } from 'formik'
-import React, { ReactElement } from 'react'
-import { RangeFieldProps } from '../../types'
 
+import { RangeFieldProps } from '../../types'
 import { BaseRangeField } from './base'
 
-const PeriodField: (props: RangeFieldProps) => ReactElement = ({
+const PeriodField: FC<RangeFieldProps> = ({
   id,
   label = 'Okres spłaty',
-  name = 'application_period',
+  name,
   required = false,
   showError,
 }) => (
@@ -27,5 +27,9 @@ const PeriodField: (props: RangeFieldProps) => ReactElement = ({
     unit={'Dni'}
   />
 )
+
+PeriodField.defaultProps = {
+  name: 'application_period',
+}
 
 export default PeriodField

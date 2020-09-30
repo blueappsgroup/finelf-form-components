@@ -20,6 +20,10 @@ export const validateText: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -40,6 +44,10 @@ export const validateEmail: (
   customErrorMsg = 'Niepoprawny adres email',
   required: boolean
 ) => (value: string): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -56,6 +64,10 @@ export const validateTelNumber: (
   customErrorMsg = 'Niepoprawny numer telefonu',
   required: boolean
 ) => (value: string): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -76,6 +88,10 @@ export const validatePesel: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -94,6 +110,10 @@ export const validateHouseNumber: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -108,6 +128,10 @@ export const validateCityName: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -126,6 +150,10 @@ export const validateZipCode: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -144,6 +172,10 @@ export const validateCompanyTax: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -165,6 +197,10 @@ export const validateBankAccountNumber: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -186,6 +222,10 @@ export const validateIDCardNumber: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -210,6 +250,10 @@ export const validateOtherLoanAmount: (
   customErrorMsg = 'Podana kwota jest nieprawidłowa',
   required: boolean
 ) => (value: string): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -226,6 +270,10 @@ export const validateAmountOfChildren: (
   customErrorMsg = 'Podana liczba jest nieprawidłowa',
   required: boolean
 ) => (value: string): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -242,6 +290,10 @@ export const validateIncome: (
   customErrorMsg = 'Podana kwota jest nieprawidłowa',
   required: boolean
 ) => (value: string): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }

@@ -1,13 +1,13 @@
+import React, { FC } from 'react'
 import { Field } from 'formik'
-import React, { ReactElement } from 'react'
-import { RangeFieldProps } from '../../types'
 
+import { RangeFieldProps } from '../../types'
 import { BaseRangeField } from './base'
 
-const AmountField: (props: RangeFieldProps) => ReactElement = ({
+const AmountField: FC<RangeFieldProps> = ({
   id,
   label = 'Kwota pożyczki',
-  name = 'amount',
+  name,
   required = false,
   showError,
   showMinMax = true,
@@ -29,5 +29,9 @@ const AmountField: (props: RangeFieldProps) => ReactElement = ({
     unit={'zł'}
   />
 )
+
+AmountField.defaultProps = {
+  name: 'amount',
+}
 
 export default AmountField

@@ -1,7 +1,7 @@
+import React, { FC } from 'react'
 import { Field } from 'formik'
-import React, { ReactElement } from 'react'
-import { SelectFieldProps } from '../../types'
 
+import { SelectFieldProps } from '../../types'
 import { BaseSelectField } from './base'
 
 const options = {
@@ -9,10 +9,10 @@ const options = {
   female: 'kobieta',
 }
 
-const GenderField: (props: SelectFieldProps) => ReactElement = ({
+const GenderField: FC<SelectFieldProps> = ({
   id,
   label,
-  name = 'gender',
+  name,
   required = false,
   showError,
 }) => (
@@ -27,5 +27,9 @@ const GenderField: (props: SelectFieldProps) => ReactElement = ({
     options={options}
   />
 )
+
+GenderField.defaultProps = {
+  name: 'gender',
+}
 
 export default GenderField

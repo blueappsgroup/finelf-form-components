@@ -1,17 +1,18 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
 import { Field } from 'formik'
 
 import BaseField from './base'
 import { validateTelNumber } from './validate'
 import { TelephoneFieldProps } from '../../types'
 
-const TelephoneField: (props: TelephoneFieldProps) => ReactElement = ({
+const TelephoneField: FC<TelephoneFieldProps> = ({
   id,
   label,
   placeholder = 'Telefon',
   errorMsg = 'Podany numer telefonu jest nieprawidłowy',
-  name = 'telephone',
+  name,
   required = false,
+  validate = validateTelNumber,
   showError,
 }) => (
   <Field
@@ -24,8 +25,12 @@ const TelephoneField: (props: TelephoneFieldProps) => ReactElement = ({
     placeholder={placeholder}
     prefix="+48"
     type="tel"
-    validate={validateTelNumber(errorMsg, required)}
+    validate={validate(errorMsg, required)}
   />
 )
+
+TelephoneField.defaultProps = {
+  name: 'telephone',
+}
 
 export default TelephoneField

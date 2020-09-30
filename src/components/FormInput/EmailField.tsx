@@ -1,16 +1,16 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
 import { Field } from 'formik'
 
 import BaseField from './base'
 import { validateEmail } from './validate'
 import { EmailFieldProps } from '../../types'
 
-const EmailField: (props: EmailFieldProps) => ReactElement = ({
+const EmailField: FC<EmailFieldProps> = ({
   id,
   label,
   placeholder = 'Email',
   errorMsg = 'Podany email jest nieprawidłowy',
-  name = 'email',
+  name,
   required = false,
   showError,
 }) => (
@@ -26,5 +26,9 @@ const EmailField: (props: EmailFieldProps) => ReactElement = ({
     validate={validateEmail(errorMsg, required)}
   />
 )
+
+EmailField.defaultProps = {
+  name: 'email',
+}
 
 export default EmailField

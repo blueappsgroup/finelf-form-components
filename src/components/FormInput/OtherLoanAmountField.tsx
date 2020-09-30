@@ -1,20 +1,18 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
 import { Field } from 'formik'
 
 import BaseField from './base'
 import { OtherLoanAmountFieldProps } from '../../types'
 import { validateOtherLoanAmount } from './validate'
 
-const OtherLoanAmountField: (
-  props: OtherLoanAmountFieldProps
-) => ReactElement = ({
+const OtherLoanAmountField: FC<OtherLoanAmountFieldProps> = ({
   id,
   label,
   placeholder = 'Kwota obecnych zobowiązań finansowych',
   errorMsg = 'Podany kwota jest nieprawidłowa',
-  name = 'other_loans_amount',
+  name,
   required = false,
-  validate,
+  validate = validateOtherLoanAmount,
   showError,
 }) => (
   <Field
@@ -27,11 +25,12 @@ const OtherLoanAmountField: (
     placeholder={placeholder}
     type="text"
     suffix={'PLN'}
-    validate={
-      (validate && validate(required)) ||
-      validateOtherLoanAmount(errorMsg, required)
-    }
+    validate={validate(errorMsg, required)}
   />
 )
+
+OtherLoanAmountField.defaultProps = {
+  name: 'other_loans_amount',
+}
 
 export default OtherLoanAmountField

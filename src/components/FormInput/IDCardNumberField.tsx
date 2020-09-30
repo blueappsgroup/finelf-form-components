@@ -1,26 +1,33 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
+import { Field } from 'formik'
+
 import { TextFieldProps } from '../../types'
-import TextField from './TextField'
+import BaseField from './base'
 import { validateIDCardNumber } from './validate'
 
-const IDCardNumberField: (props: TextFieldProps) => ReactElement = ({
+const IDCardNumberField: FC<TextFieldProps> = ({
   id,
   label = 'Numer dowodu osobistego',
   placeholder = 'Numer dowodu osobistego',
-  name = 'id_card_number',
-  required = true,
+  name,
+  required = false,
   validate = validateIDCardNumber,
   showError = true,
 }) => (
-  <TextField
+  <Field
     id={id}
     label={label}
     placeholder={placeholder}
+    component={BaseField}
     required={required}
     showError={showError}
     name={name}
-    validate={validate}
+    validate={validate(required)}
   />
 )
+
+IDCardNumberField.defaultProps = {
+  name: 'id_card_number',
+}
 
 export default IDCardNumberField

@@ -1,7 +1,7 @@
+import React, { FC } from 'react'
 import { Field } from 'formik'
-import React, { ReactElement } from 'react'
-import { SelectFieldProps } from '../../types'
 
+import { SelectFieldProps } from '../../types'
 import { BaseSelectField } from './base'
 
 const options = {
@@ -9,7 +9,7 @@ const options = {
   no: 'nie',
 }
 
-const CarStatusField: (props: SelectFieldProps) => ReactElement = ({
+const CarStatusField: FC<SelectFieldProps> = ({
   id,
   label,
   name = 'car_status',
@@ -27,5 +27,9 @@ const CarStatusField: (props: SelectFieldProps) => ReactElement = ({
     options={options}
   />
 )
+
+CarStatusField.defaultProps = {
+  name: 'car_status',
+}
 
 export default CarStatusField

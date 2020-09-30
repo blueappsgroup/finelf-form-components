@@ -1,17 +1,17 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
 import { Field } from 'formik'
 
 import BaseField from './base'
 import { TextFieldProps } from '../../types'
 import { validateText } from './validate'
 
-const TextField: (props: TextFieldProps) => ReactElement = ({
+const TextField: FC<TextFieldProps> = ({
   id,
   label,
   placeholder = 'Text',
-  name = 'text field',
+  name,
   required = false,
-  validate,
+  validate = validateText,
   showError,
 }) => (
   <Field
@@ -23,8 +23,12 @@ const TextField: (props: TextFieldProps) => ReactElement = ({
     label={label}
     placeholder={placeholder}
     type="text"
-    validate={(validate && validate(required)) || validateText(required)}
+    validate={validate(required)}
   />
 )
+
+TextField.defaultProps = {
+  name: 'text_field',
+}
 
 export default TextField

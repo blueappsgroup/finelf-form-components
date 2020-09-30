@@ -1,14 +1,14 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
 import { Field } from 'formik'
 
 import CheckboxBase from './CheckBox'
 import { CheckboxFieldProps } from '../../types'
 import { validateCheckbox } from './validate'
 
-const CheckboxFormField: (props: CheckboxFieldProps) => ReactElement = ({
+const CheckboxFormField: FC<CheckboxFieldProps> = ({
   id = 'textField',
   label,
-  name = 'text field',
+  name = 'checkbox_field',
   required = false,
   onChange,
   children,
@@ -25,5 +25,9 @@ const CheckboxFormField: (props: CheckboxFieldProps) => ReactElement = ({
     childrenBody={children}
   />
 )
+
+CheckboxFormField.defaultProps = {
+  name: 'checkbox_field',
+}
 
 export default CheckboxFormField

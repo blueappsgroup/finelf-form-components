@@ -1,16 +1,16 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
 import { Field } from 'formik'
 
 import BaseField from './base'
 import { validateIncome } from './validate'
 import { IncomeFieldProps } from '../../types'
 
-const IncomeField: (props: IncomeFieldProps) => ReactElement = ({
+const IncomeField: FC<IncomeFieldProps> = ({
   id,
   label,
   placeholder = 'Dochód',
   errorMsg = 'Podana kwota jest nieprawidłowa',
-  name = 'income',
+  name,
   required = false,
   showError,
 }) => (
@@ -26,5 +26,9 @@ const IncomeField: (props: IncomeFieldProps) => ReactElement = ({
     validate={validateIncome(errorMsg, required)}
   />
 )
+
+IncomeField.defaultProps = {
+  name: 'income',
+}
 
 export default IncomeField
