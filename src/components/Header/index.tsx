@@ -24,7 +24,8 @@ const StyledMainHeader = styled.h2<StyledProps>`
   display: flex;
   justify-content: center;
   color: ${(props: StyledProps): string => props.theme.headerTextColor};
-
+  position: relative;
+  
   @media ${device.tablet} {
     margin: 0px 0px 30px 0px;
   }
