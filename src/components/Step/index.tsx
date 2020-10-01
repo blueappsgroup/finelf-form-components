@@ -69,6 +69,7 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
   } = useContext(FormContext)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { values, errors } = useFormikContext<any>()
+
   const mappedFields = useMemo(
     () =>
       (Array.isArray(children) ? children : [children]).reduce((acc, item) => {
