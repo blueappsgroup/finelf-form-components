@@ -20,7 +20,7 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
       id = _ref$id === void 0 ? 'textField' : _ref$id,
       label = _ref.label,
       _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'text field' : _ref$name,
+      name = _ref$name === void 0 ? 'checkbox_field' : _ref$name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       onChange = _ref.onChange,
@@ -38,6 +38,9 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
   });
 };
 
+CheckboxFormField.defaultProps = {
+  name: 'checkbox_field'
+};
 var _default = CheckboxFormField;
 exports.default = _default;
 //# sourceMappingURL=CheckboxField.js.map

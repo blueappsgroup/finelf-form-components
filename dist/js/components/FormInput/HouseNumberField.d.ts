@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { TextFieldProps } from '../../types';
-declare const HouseNumberField: (props: TextFieldProps) => ReactElement;
+declare const HouseNumberField: FC<TextFieldProps>;
 export default HouseNumberField;

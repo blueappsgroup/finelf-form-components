@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _formik = require("formik");
-
 var _react = _interopRequireDefault(require("react"));
+
+var _formik = require("formik");
 
 var _base = require("./base");
 
@@ -24,8 +24,7 @@ var options = {
 var HousingStatusField = function HousingStatusField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'housing_status' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       showError = _ref.showError;
@@ -41,6 +40,9 @@ var HousingStatusField = function HousingStatusField(_ref) {
   });
 };
 
+HousingStatusField.defaultProps = {
+  name: 'housing_status'
+};
 var _default = HousingStatusField;
 exports.default = _default;
 //# sourceMappingURL=HousingStatusField.js.map

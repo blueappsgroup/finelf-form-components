@@ -32,9 +32,9 @@
     label,
     placeholder = 'Kwota obecnych zobowiązań finansowych',
     errorMsg = 'Podany kwota jest nieprawidłowa',
-    name = 'other_loans_amount',
+    name,
     required = false,
-    validate,
+    validate = _validate.validateOtherLoanAmount,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
@@ -46,9 +46,12 @@
     placeholder: placeholder,
     type: "text",
     suffix: 'PLN',
-    validate: validate && validate(required) || (0, _validate.validateOtherLoanAmount)(errorMsg, required)
+    validate: validate(errorMsg, required)
   });
 
+  OtherLoanAmountField.defaultProps = {
+    name: 'other_loans_amount'
+  };
   exports.default = OtherLoanAmountField;
 });
 //# sourceMappingURL=OtherLoanAmountField.js.map

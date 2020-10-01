@@ -32,7 +32,7 @@
     label,
     placeholder = 'Email',
     errorMsg = 'Podany email jest nieprawidłowy',
-    name = 'email',
+    name,
     required = false,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
@@ -47,6 +47,9 @@
     validate: (0, _validate.validateEmail)(errorMsg, required)
   });
 
+  EmailField.defaultProps = {
+    name: 'email'
+  };
   exports.default = EmailField;
 });
 //# sourceMappingURL=EmailField.js.map

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { OtherLoanAmountFieldProps } from '../../types';
-declare const OtherLoanAmountField: (props: OtherLoanAmountFieldProps) => ReactElement;
+declare const OtherLoanAmountField: FC<OtherLoanAmountFieldProps>;
 export default OtherLoanAmountField;

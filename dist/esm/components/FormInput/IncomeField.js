@@ -8,7 +8,7 @@ const IncomeField = ({
   label,
   placeholder = 'Dochód',
   errorMsg = 'Podana kwota jest nieprawidłowa',
-  name = 'income',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -23,5 +23,8 @@ const IncomeField = ({
   validate: validateIncome(errorMsg, required)
 });
 
+IncomeField.defaultProps = {
+  name: 'income'
+};
 export default IncomeField;
 //# sourceMappingURL=IncomeField.js.map

@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _formik = require("formik");
-
 var _react = _interopRequireDefault(require("react"));
+
+var _formik = require("formik");
 
 var _base = require("./base");
 
@@ -42,6 +42,9 @@ var MaritalStatusField = function MaritalStatusField(_ref) {
   });
 };
 
+MaritalStatusField.defaultProps = {
+  name: 'amount_of_children'
+};
 var _default = MaritalStatusField;
 exports.default = _default;
 //# sourceMappingURL=MaritalStatusField.js.map

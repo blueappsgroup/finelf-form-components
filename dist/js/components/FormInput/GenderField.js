@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _formik = require("formik");
-
 var _react = _interopRequireDefault(require("react"));
+
+var _formik = require("formik");
 
 var _base = require("./base");
 
@@ -21,8 +21,7 @@ var options = {
 var GenderField = function GenderField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'gender' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       showError = _ref.showError;
@@ -38,6 +37,9 @@ var GenderField = function GenderField(_ref) {
   });
 };
 
+GenderField.defaultProps = {
+  name: 'gender'
+};
 var _default = GenderField;
 exports.default = _default;
 //# sourceMappingURL=GenderField.js.map

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { SelectFieldProps } from '../../types';
-declare const EducationField: (props: SelectFieldProps) => ReactElement;
+declare const EducationField: FC<SelectFieldProps>;
 export default EducationField;

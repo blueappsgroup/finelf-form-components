@@ -31,9 +31,9 @@
     id,
     label,
     placeholder = 'Text',
-    name = 'text field',
+    name,
     required = false,
-    validate,
+    validate = _validate.validateText,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
@@ -44,9 +44,12 @@
     label: label,
     placeholder: placeholder,
     type: "text",
-    validate: validate && validate(required) || (0, _validate.validateText)(required)
+    validate: validate(required)
   });
 
+  TextField.defaultProps = {
+    name: 'text_field'
+  };
   exports.default = TextField;
 });
 //# sourceMappingURL=TextField.js.map

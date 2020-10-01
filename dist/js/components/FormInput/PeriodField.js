@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _formik = require("formik");
-
 var _react = _interopRequireDefault(require("react"));
+
+var _formik = require("formik");
 
 var _base = require("./base");
 
@@ -17,8 +17,7 @@ var PeriodField = function PeriodField(_ref) {
   var id = _ref.id,
       _ref$label = _ref.label,
       label = _ref$label === void 0 ? 'Okres spłaty' : _ref$label,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'application_period' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       showError = _ref.showError;
@@ -39,6 +38,9 @@ var PeriodField = function PeriodField(_ref) {
   });
 };
 
+PeriodField.defaultProps = {
+  name: 'application_period'
+};
 var _default = PeriodField;
 exports.default = _default;
 //# sourceMappingURL=PeriodField.js.map

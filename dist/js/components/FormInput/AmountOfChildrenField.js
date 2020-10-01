@@ -22,8 +22,7 @@ var AmountOfChildrenField = function AmountOfChildrenField(_ref) {
       placeholder = _ref$placeholder === void 0 ? 'Liczba osób na utrzymaniu' : _ref$placeholder,
       _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'Podana ilość jest nieprawidłowa' : _ref$errorMsg,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'amount_of_children' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       showError = _ref.showError;
@@ -40,6 +39,9 @@ var AmountOfChildrenField = function AmountOfChildrenField(_ref) {
   });
 };
 
+AmountOfChildrenField.defaultProps = {
+  name: 'amount_of_children'
+};
 var _default = AmountOfChildrenField;
 exports.default = _default;
 //# sourceMappingURL=AmountOfChildrenField.js.map

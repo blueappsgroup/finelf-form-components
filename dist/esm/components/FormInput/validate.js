@@ -1,5 +1,9 @@
 import { isEmpty, isNotValidLength, isNotValidPhoneNumber, isNotValidEmail, isNotValidNumberBetween1And10Digits, isNotLetter, isNotNumber, isValidPesel, haveSpecialChars, isNotValidZipCode, isValidNIP, isValidBankAccountNumber, isValidIDCard, isNotValidIDCard } from './validateHelpers';
 export const validateText = required => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -13,6 +17,10 @@ export const validateText = required => value => {
   }
 };
 export const validateEmail = (customErrorMsg = 'Niepoprawny adres email', required) => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -22,6 +30,10 @@ export const validateEmail = (customErrorMsg = 'Niepoprawny adres email', requir
   }
 };
 export const validateTelNumber = (customErrorMsg = 'Niepoprawny numer telefonu', required) => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -32,6 +44,10 @@ export const validateTelNumber = (customErrorMsg = 'Niepoprawny numer telefonu',
 };
 export const validateCheckbox = required => value => required && !value && 'required' || undefined;
 export const validatePesel = required => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -45,6 +61,10 @@ export const validatePesel = required => value => {
   }
 };
 export const validateHouseNumber = required => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -54,6 +74,10 @@ export const validateHouseNumber = required => value => {
   }
 };
 export const validateCityName = required => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -67,6 +91,10 @@ export const validateCityName = required => value => {
   }
 };
 export const validateZipCode = required => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -80,6 +108,10 @@ export const validateZipCode = required => value => {
   }
 };
 export const validateCompanyTax = required => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -97,6 +129,10 @@ export const validateCompanyTax = required => value => {
   }
 };
 export const validateBankAccountNumber = required => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -114,6 +150,10 @@ export const validateBankAccountNumber = required => value => {
   }
 };
 export const validateIDCardNumber = required => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -131,6 +171,10 @@ export const validateIDCardNumber = required => value => {
   }
 };
 export const validateOtherLoanAmount = (customErrorMsg = 'Podana kwota jest nieprawidłowa', required) => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -140,6 +184,10 @@ export const validateOtherLoanAmount = (customErrorMsg = 'Podana kwota jest niep
   }
 };
 export const validateAmountOfChildren = (customErrorMsg = 'Podana liczba jest nieprawidłowa', required) => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }
@@ -149,6 +197,10 @@ export const validateAmountOfChildren = (customErrorMsg = 'Podana liczba jest ni
   }
 };
 export const validateIncome = (customErrorMsg = 'Podana kwota jest nieprawidłowa', required) => value => {
+  if (!required && !value) {
+    return;
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane';
   }

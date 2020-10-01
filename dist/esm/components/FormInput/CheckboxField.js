@@ -6,7 +6,7 @@ import { validateCheckbox } from './validate';
 const CheckboxFormField = ({
   id = 'textField',
   label,
-  name = 'text field',
+  name = 'checkbox_field',
   required = false,
   onChange,
   children
@@ -22,5 +22,8 @@ const CheckboxFormField = ({
   childrenBody: children
 });
 
+CheckboxFormField.defaultProps = {
+  name: 'checkbox_field'
+};
 export default CheckboxFormField;
 //# sourceMappingURL=CheckboxField.js.map

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { SelectFieldProps } from '../../types';
-declare const LoanReasonField: (props: SelectFieldProps) => ReactElement;
+declare const LoanReasonField: FC<SelectFieldProps>;
 export default LoanReasonField;

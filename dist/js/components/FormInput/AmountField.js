@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _formik = require("formik");
-
 var _react = _interopRequireDefault(require("react"));
+
+var _formik = require("formik");
 
 var _base = require("./base");
 
@@ -17,8 +17,7 @@ var AmountField = function AmountField(_ref) {
   var id = _ref.id,
       _ref$label = _ref.label,
       label = _ref$label === void 0 ? 'Kwota pożyczki' : _ref$label,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'amount' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       showError = _ref.showError,
@@ -42,6 +41,9 @@ var AmountField = function AmountField(_ref) {
   });
 };
 
+AmountField.defaultProps = {
+  name: 'amount'
+};
 var _default = AmountField;
 exports.default = _default;
 //# sourceMappingURL=AmountField.js.map

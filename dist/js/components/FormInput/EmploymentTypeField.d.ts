@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { SelectFieldProps } from '../../types';
-declare const EmploymentTypeField: (props: SelectFieldProps) => ReactElement;
+declare const EmploymentTypeField: FC<SelectFieldProps>;
 export default EmploymentTypeField;

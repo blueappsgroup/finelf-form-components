@@ -32,7 +32,7 @@
     label,
     placeholder = 'Dochód',
     errorMsg = 'Podana kwota jest nieprawidłowa',
-    name = 'income',
+    name,
     required = false,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
@@ -47,6 +47,9 @@
     validate: (0, _validate.validateIncome)(errorMsg, required)
   });
 
+  IncomeField.defaultProps = {
+    name: 'income'
+  };
   exports.default = IncomeField;
 });
 //# sourceMappingURL=IncomeField.js.map

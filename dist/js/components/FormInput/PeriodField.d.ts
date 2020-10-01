@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { RangeFieldProps } from '../../types';
-declare const PeriodField: (props: RangeFieldProps) => ReactElement;
+declare const PeriodField: FC<RangeFieldProps>;
 export default PeriodField;

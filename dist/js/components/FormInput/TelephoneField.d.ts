@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { TelephoneFieldProps } from '../../types';
-declare const TelephoneField: (props: TelephoneFieldProps) => ReactElement;
+declare const TelephoneField: FC<TelephoneFieldProps>;
 export default TelephoneField;

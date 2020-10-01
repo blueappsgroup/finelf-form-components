@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _formik = require("formik");
-
 var _react = _interopRequireDefault(require("react"));
+
+var _formik = require("formik");
 
 var _base = require("./base");
 
@@ -38,6 +38,9 @@ var CarStatusField = function CarStatusField(_ref) {
   });
 };
 
+CarStatusField.defaultProps = {
+  name: 'car_status'
+};
 var _default = CarStatusField;
 exports.default = _default;
 //# sourceMappingURL=CarStatusField.js.map

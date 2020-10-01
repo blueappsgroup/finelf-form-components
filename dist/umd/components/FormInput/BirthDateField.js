@@ -31,8 +31,7 @@
     id,
     label,
     placeholder = 'BirthDate',
-    errorMsg = 'Podana data urodzenia jest nieprawidłowa',
-    name = 'date_of_birth',
+    name,
     required = false,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
@@ -46,6 +45,9 @@
     type: "date"
   });
 
+  BirthDateField.defaultProps = {
+    name: 'date_of_birth'
+  };
   exports.default = BirthDateField;
 });
 //# sourceMappingURL=BirthDateField.js.map

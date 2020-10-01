@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { Field } from 'formik';
 import React from 'react';
+import { Field } from 'formik';
 import { BaseSelectField } from './base';
 const options = {
   propety: 'mieszkanie własne',
@@ -12,7 +12,7 @@ const options = {
 const HousingStatusField = ({
   id,
   label,
-  name = 'housing_status',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -26,5 +26,8 @@ const HousingStatusField = ({
   options: options
 });
 
+HousingStatusField.defaultProps = {
+  name: 'housing_status'
+};
 export default HousingStatusField;
 //# sourceMappingURL=HousingStatusField.js.map

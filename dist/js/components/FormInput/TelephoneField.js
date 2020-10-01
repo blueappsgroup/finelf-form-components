@@ -22,10 +22,11 @@ var TelephoneField = function TelephoneField(_ref) {
       placeholder = _ref$placeholder === void 0 ? 'Telefon' : _ref$placeholder,
       _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'Podany numer telefonu jest nieprawidłowy' : _ref$errorMsg,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'telephone' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
+      _ref$validate = _ref.validate,
+      validate = _ref$validate === void 0 ? _validate.validateTelNumber : _ref$validate,
       showError = _ref.showError;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
@@ -37,10 +38,13 @@ var TelephoneField = function TelephoneField(_ref) {
     placeholder: placeholder,
     prefix: "+48",
     type: "tel",
-    validate: (0, _validate.validateTelNumber)(errorMsg, required)
+    validate: validate(errorMsg, required)
   });
 };
 
+TelephoneField.defaultProps = {
+  name: 'telephone'
+};
 var _default = TelephoneField;
 exports.default = _default;
 //# sourceMappingURL=TelephoneField.js.map

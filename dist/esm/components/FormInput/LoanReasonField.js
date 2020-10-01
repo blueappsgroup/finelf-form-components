@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { Field } from 'formik';
 import React from 'react';
+import { Field } from 'formik';
 import { BaseSelectField } from './base';
 const options = {
   bills: 'rachunki',
@@ -20,7 +20,7 @@ const options = {
 const LoanReasonField = ({
   id,
   label,
-  name = 'loan_reason',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -34,5 +34,8 @@ const LoanReasonField = ({
   options: options
 });
 
+LoanReasonField.defaultProps = {
+  name: 'loan_reason'
+};
 export default LoanReasonField;
 //# sourceMappingURL=LoanReasonField.js.map

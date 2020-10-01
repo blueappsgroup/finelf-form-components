@@ -30,7 +30,7 @@
   const CheckboxFormField = ({
     id = 'textField',
     label,
-    name = 'text field',
+    name = 'checkbox_field',
     required = false,
     onChange,
     children
@@ -46,6 +46,9 @@
     childrenBody: children
   });
 
+  CheckboxFormField.defaultProps = {
+    name: 'checkbox_field'
+  };
   exports.default = CheckboxFormField;
 });
 //# sourceMappingURL=CheckboxField.js.map

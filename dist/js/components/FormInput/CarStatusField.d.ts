@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { SelectFieldProps } from '../../types';
-declare const CarStatusField: (props: SelectFieldProps) => ReactElement;
+declare const CarStatusField: FC<SelectFieldProps>;
 export default CarStatusField;

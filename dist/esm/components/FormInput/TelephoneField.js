@@ -8,8 +8,9 @@ const TelephoneField = ({
   label,
   placeholder = 'Telefon',
   errorMsg = 'Podany numer telefonu jest nieprawidłowy',
-  name = 'telephone',
+  name,
   required = false,
+  validate = validateTelNumber,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
@@ -21,8 +22,11 @@ const TelephoneField = ({
   placeholder: placeholder,
   prefix: "+48",
   type: "tel",
-  validate: validateTelNumber(errorMsg, required)
+  validate: validate(errorMsg, required)
 });
 
+TelephoneField.defaultProps = {
+  name: 'telephone'
+};
 export default TelephoneField;
 //# sourceMappingURL=TelephoneField.js.map

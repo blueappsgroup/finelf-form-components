@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { Field } from 'formik';
 import React from 'react';
+import { Field } from 'formik';
 import { BaseSelectField } from './base';
 const options = {
   unmarried: 'panna/kawaler',
@@ -27,5 +27,8 @@ const MaritalStatusField = ({
   options: options
 });
 
+MaritalStatusField.defaultProps = {
+  name: 'amount_of_children'
+};
 export default MaritalStatusField;
 //# sourceMappingURL=MaritalStatusField.js.map

@@ -6,8 +6,7 @@ const BirthDateField = ({
   id,
   label,
   placeholder = 'BirthDate',
-  errorMsg = 'Podana data urodzenia jest nieprawidłowa',
-  name = 'date_of_birth',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -21,5 +20,8 @@ const BirthDateField = ({
   type: "date"
 });
 
+BirthDateField.defaultProps = {
+  name: 'date_of_birth'
+};
 export default BirthDateField;
 //# sourceMappingURL=BirthDateField.js.map

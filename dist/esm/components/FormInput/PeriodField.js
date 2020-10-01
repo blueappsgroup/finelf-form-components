@@ -1,11 +1,11 @@
-import { Field } from 'formik';
 import React from 'react';
+import { Field } from 'formik';
 import { BaseRangeField } from './base';
 
 const PeriodField = ({
   id,
   label = 'Okres spłaty',
-  name = 'application_period',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -24,5 +24,8 @@ const PeriodField = ({
   unit: 'Dni'
 });
 
+PeriodField.defaultProps = {
+  name: 'application_period'
+};
 export default PeriodField;
 //# sourceMappingURL=PeriodField.js.map

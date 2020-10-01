@@ -20,11 +20,11 @@ var TextField = function TextField(_ref) {
       label = _ref.label,
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === void 0 ? 'Text' : _ref$placeholder,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'text field' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
-      validate = _ref.validate,
+      _ref$validate = _ref.validate,
+      validate = _ref$validate === void 0 ? _validate.validateText : _ref$validate,
       showError = _ref.showError;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
@@ -35,10 +35,13 @@ var TextField = function TextField(_ref) {
     label: label,
     placeholder: placeholder,
     type: "text",
-    validate: validate && validate(required) || (0, _validate.validateText)(required)
+    validate: validate(required)
   });
 };
 
+TextField.defaultProps = {
+  name: 'text_field'
+};
 var _default = TextField;
 exports.default = _default;
 //# sourceMappingURL=TextField.js.map

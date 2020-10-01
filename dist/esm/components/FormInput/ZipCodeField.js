@@ -1,24 +1,29 @@
 import React from 'react';
-import TextField from './TextField';
+import { Field } from 'formik';
+import BaseField from './base';
 import { validateZipCode } from './validate';
 
 const ZipCodeField = ({
   id,
   label = 'Kod pocztowy',
   placeholder = 'Kod pocztowy',
-  name = 'text_zip',
-  required = true,
+  name,
+  required = false,
   validate = validateZipCode,
   showError = true
-}) => /*#__PURE__*/React.createElement(TextField, {
+}) => /*#__PURE__*/React.createElement(Field, {
   id: id,
   label: label,
   placeholder: placeholder,
+  component: BaseField,
   required: required,
   showError: showError,
   name: name,
-  validate: validate
+  validate: validate(required)
 });
 
+ZipCodeField.defaultProps = {
+  name: 'text_zip'
+};
 export default ZipCodeField;
 //# sourceMappingURL=ZipCodeField.js.map

@@ -8,7 +8,7 @@ const EmailField = ({
   label,
   placeholder = 'Email',
   errorMsg = 'Podany email jest nieprawidłowy',
-  name = 'email',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -23,5 +23,8 @@ const EmailField = ({
   validate: validateEmail(errorMsg, required)
 });
 
+EmailField.defaultProps = {
+  name: 'email'
+};
 export default EmailField;
 //# sourceMappingURL=EmailField.js.map

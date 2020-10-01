@@ -8,9 +8,9 @@ const OtherLoanAmountField = ({
   label,
   placeholder = 'Kwota obecnych zobowiązań finansowych',
   errorMsg = 'Podany kwota jest nieprawidłowa',
-  name = 'other_loans_amount',
+  name,
   required = false,
-  validate,
+  validate = validateOtherLoanAmount,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
@@ -22,8 +22,11 @@ const OtherLoanAmountField = ({
   placeholder: placeholder,
   type: "text",
   suffix: 'PLN',
-  validate: validate && validate(required) || validateOtherLoanAmount(errorMsg, required)
+  validate: validate(errorMsg, required)
 });
 
+OtherLoanAmountField.defaultProps = {
+  name: 'other_loans_amount'
+};
 export default OtherLoanAmountField;
 //# sourceMappingURL=OtherLoanAmountField.js.map

@@ -32,8 +32,9 @@
     label,
     placeholder = 'Telefon',
     errorMsg = 'Podany numer telefonu jest nieprawidłowy',
-    name = 'telephone',
+    name,
     required = false,
+    validate = _validate.validateTelNumber,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
@@ -45,9 +46,12 @@
     placeholder: placeholder,
     prefix: "+48",
     type: "tel",
-    validate: (0, _validate.validateTelNumber)(errorMsg, required)
+    validate: validate(errorMsg, required)
   });
 
+  TelephoneField.defaultProps = {
+    name: 'telephone'
+  };
   exports.default = TelephoneField;
 });
 //# sourceMappingURL=TelephoneField.js.map

@@ -22,8 +22,7 @@ var IncomeField = function IncomeField(_ref) {
       placeholder = _ref$placeholder === void 0 ? 'Dochód' : _ref$placeholder,
       _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'Podana kwota jest nieprawidłowa' : _ref$errorMsg,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'income' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       showError = _ref.showError;
@@ -40,6 +39,9 @@ var IncomeField = function IncomeField(_ref) {
   });
 };
 
+IncomeField.defaultProps = {
+  name: 'income'
+};
 var _default = IncomeField;
 exports.default = _default;
 //# sourceMappingURL=IncomeField.js.map

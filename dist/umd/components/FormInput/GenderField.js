@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "formik", "react", "./base"], factory);
+    define(["exports", "react", "formik", "./base"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("formik"), require("react"), require("./base"));
+    factory(exports, require("react"), require("formik"), require("./base"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.formik, global.react, global.base);
+    factory(mod.exports, global.react, global.formik, global.base);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _formik, _react, _base) {
+})(this, function (exports, _react, _formik, _base) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -33,7 +33,7 @@
   const GenderField = ({
     id,
     label,
-    name = 'gender',
+    name,
     required = false,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
@@ -47,6 +47,9 @@
     options: options
   });
 
+  GenderField.defaultProps = {
+    name: 'gender'
+  };
   exports.default = GenderField;
 });
 //# sourceMappingURL=GenderField.js.map

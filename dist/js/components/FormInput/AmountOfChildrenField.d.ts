@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { AmountOfChildrenFieldProps } from '../../types';
-declare const AmountOfChildrenField: (props: AmountOfChildrenFieldProps) => ReactElement;
+declare const AmountOfChildrenField: FC<AmountOfChildrenFieldProps>;
 export default AmountOfChildrenField;

@@ -1,11 +1,11 @@
-import { Field } from 'formik';
 import React from 'react';
+import { Field } from 'formik';
 import { BaseRangeField } from './base';
 
 const AmountField = ({
   id,
   label = 'Kwota pożyczki',
-  name = 'amount',
+  name,
   required = false,
   showError,
   showMinMax = true
@@ -26,5 +26,8 @@ const AmountField = ({
   unit: 'zł'
 });
 
+AmountField.defaultProps = {
+  name: 'amount'
+};
 export default AmountField;
 //# sourceMappingURL=AmountField.js.map

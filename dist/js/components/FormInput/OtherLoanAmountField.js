@@ -22,11 +22,11 @@ var OtherLoanAmountField = function OtherLoanAmountField(_ref) {
       placeholder = _ref$placeholder === void 0 ? 'Kwota obecnych zobowiązań finansowych' : _ref$placeholder,
       _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'Podany kwota jest nieprawidłowa' : _ref$errorMsg,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'other_loans_amount' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
-      validate = _ref.validate,
+      _ref$validate = _ref.validate,
+      validate = _ref$validate === void 0 ? _validate.validateOtherLoanAmount : _ref$validate,
       showError = _ref.showError;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
@@ -38,10 +38,13 @@ var OtherLoanAmountField = function OtherLoanAmountField(_ref) {
     placeholder: placeholder,
     type: "text",
     suffix: 'PLN',
-    validate: validate && validate(required) || (0, _validate.validateOtherLoanAmount)(errorMsg, required)
+    validate: validate(errorMsg, required)
   });
 };
 
+OtherLoanAmountField.defaultProps = {
+  name: 'other_loans_amount'
+};
 var _default = OtherLoanAmountField;
 exports.default = _default;
 //# sourceMappingURL=OtherLoanAmountField.js.map

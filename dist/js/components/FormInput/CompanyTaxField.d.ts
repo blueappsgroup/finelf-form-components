@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { TextFieldProps } from '../../types';
-declare const CompanyTaxField: (props: TextFieldProps) => ReactElement;
+declare const CompanyTaxField: FC<TextFieldProps>;
 export default CompanyTaxField;

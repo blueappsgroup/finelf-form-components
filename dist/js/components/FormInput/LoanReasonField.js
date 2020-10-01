@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _formik = require("formik");
-
 var _react = _interopRequireDefault(require("react"));
+
+var _formik = require("formik");
 
 var _base = require("./base");
 
@@ -32,8 +32,7 @@ var options = {
 var LoanReasonField = function LoanReasonField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'loan_reason' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       showError = _ref.showError;
@@ -49,6 +48,9 @@ var LoanReasonField = function LoanReasonField(_ref) {
   });
 };
 
+LoanReasonField.defaultProps = {
+  name: 'loan_reason'
+};
 var _default = LoanReasonField;
 exports.default = _default;
 //# sourceMappingURL=LoanReasonField.js.map

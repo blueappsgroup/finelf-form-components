@@ -1,5 +1,5 @@
-import { Field } from 'formik';
 import React from 'react';
+import { Field } from 'formik';
 import { BaseSelectField } from './base';
 const options = {
   yes: 'tak',
@@ -23,5 +23,8 @@ const CarStatusField = ({
   options: options
 });
 
+CarStatusField.defaultProps = {
+  name: 'car_status'
+};
 export default CarStatusField;
 //# sourceMappingURL=CarStatusField.js.map

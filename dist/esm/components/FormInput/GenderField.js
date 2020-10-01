@@ -1,5 +1,5 @@
-import { Field } from 'formik';
 import React from 'react';
+import { Field } from 'formik';
 import { BaseSelectField } from './base';
 const options = {
   male: 'mężczyzna',
@@ -9,7 +9,7 @@ const options = {
 const GenderField = ({
   id,
   label,
-  name = 'gender',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -23,5 +23,8 @@ const GenderField = ({
   options: options
 });
 
+GenderField.defaultProps = {
+  name: 'gender'
+};
 export default GenderField;
 //# sourceMappingURL=GenderField.js.map

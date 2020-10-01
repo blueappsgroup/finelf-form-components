@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { CheckboxFieldProps } from '../../types';
-declare const CheckboxFormField: (props: CheckboxFieldProps) => ReactElement;
+declare const CheckboxFormField: FC<CheckboxFieldProps>;
 export default CheckboxFormField;

@@ -8,7 +8,7 @@ const AmountOfChildrenField = ({
   label,
   placeholder = 'Liczba osób na utrzymaniu',
   errorMsg = 'Podana ilość jest nieprawidłowa',
-  name = 'amount_of_children',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -23,5 +23,8 @@ const AmountOfChildrenField = ({
   validate: validateAmountOfChildren(errorMsg, required)
 });
 
+AmountOfChildrenField.defaultProps = {
+  name: 'amount_of_children'
+};
 export default AmountOfChildrenField;
 //# sourceMappingURL=AmountOfChildrenField.js.map

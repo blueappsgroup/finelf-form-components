@@ -1,24 +1,29 @@
 import React from 'react';
-import TextField from './TextField';
+import { Field } from 'formik';
+import BaseField from './base';
 import { validateCityName } from './validate';
 
 const StreetNameField = ({
   id,
   label = 'Ulica',
   placeholder = 'Ulica',
-  name = 'street',
-  required = true,
+  name,
+  required = false,
   validate = validateCityName,
   showError = true
-}) => /*#__PURE__*/React.createElement(TextField, {
+}) => /*#__PURE__*/React.createElement(Field, {
   id: id,
   label: label,
   placeholder: placeholder,
+  component: BaseField,
   required: required,
   showError: showError,
   name: name,
-  validate: validate
+  validate: validate(required)
 });
 
+StreetNameField.defaultProps = {
+  name: 'street'
+};
 export default StreetNameField;
 //# sourceMappingURL=StreetNameField.js.map

@@ -39,7 +39,8 @@
   display: flex;
   justify-content: center;
   color: ${props => props.theme.headerTextColor};
-
+  position: relative;
+  
   @media ${_sizes.device.tablet} {
     margin: 0px 0px 30px 0px;
   }

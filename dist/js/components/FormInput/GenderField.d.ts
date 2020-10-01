@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { SelectFieldProps } from '../../types';
-declare const GenderField: (props: SelectFieldProps) => ReactElement;
+declare const GenderField: FC<SelectFieldProps>;
 export default GenderField;

@@ -1,5 +1,6 @@
 import React from 'react';
-import TextField from './TextField';
+import { Field } from 'formik';
+import BaseField from './base';
 import { validatePesel } from './validate';
 
 const PeselField = ({
@@ -7,17 +8,18 @@ const PeselField = ({
   label = 'Pesel',
   placeholder = 'Pesel',
   name = 'id_code',
-  required = true,
+  required = false,
   validate = validatePesel,
   showError = true
-}) => /*#__PURE__*/React.createElement(TextField, {
+}) => /*#__PURE__*/React.createElement(Field, {
   id: id,
   label: label,
   placeholder: placeholder,
+  component: BaseField,
   required: required,
   showError: showError,
   name: name,
-  validate: validate
+  validate: validate(required)
 });
 
 export default PeselField;

@@ -32,7 +32,7 @@
     label,
     placeholder = 'Liczba osób na utrzymaniu',
     errorMsg = 'Podana ilość jest nieprawidłowa',
-    name = 'amount_of_children',
+    name,
     required = false,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
@@ -47,6 +47,9 @@
     validate: (0, _validate.validateAmountOfChildren)(errorMsg, required)
   });
 
+  AmountOfChildrenField.defaultProps = {
+    name: 'amount_of_children'
+  };
   exports.default = AmountOfChildrenField;
 });
 //# sourceMappingURL=AmountOfChildrenField.js.map

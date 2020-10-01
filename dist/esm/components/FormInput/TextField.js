@@ -7,9 +7,9 @@ const TextField = ({
   id,
   label,
   placeholder = 'Text',
-  name = 'text field',
+  name,
   required = false,
-  validate,
+  validate = validateText,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
@@ -20,8 +20,11 @@ const TextField = ({
   label: label,
   placeholder: placeholder,
   type: "text",
-  validate: validate && validate(required) || validateText(required)
+  validate: validate(required)
 });
 
+TextField.defaultProps = {
+  name: 'text_field'
+};
 export default TextField;
 //# sourceMappingURL=TextField.js.map

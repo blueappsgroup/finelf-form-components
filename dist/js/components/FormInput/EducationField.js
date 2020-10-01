@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _formik = require("formik");
-
 var _react = _interopRequireDefault(require("react"));
+
+var _formik = require("formik");
 
 var _base = require("./base");
 
@@ -26,8 +26,7 @@ var options = {
 var EducationField = function EducationField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'education' : _ref$name,
+      name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       showError = _ref.showError;
@@ -43,6 +42,9 @@ var EducationField = function EducationField(_ref) {
   });
 };
 
+EducationField.defaultProps = {
+  name: 'education'
+};
 var _default = EducationField;
 exports.default = _default;
 //# sourceMappingURL=EducationField.js.map

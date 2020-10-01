@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { Field } from 'formik';
 import React from 'react';
+import { Field } from 'formik';
 import { BaseSelectField } from './base';
 const options = {
   fixed: 'umowa o pracę na czas nieokreślony',
@@ -20,7 +20,7 @@ const options = {
 const EmploymentTypeField = ({
   id,
   label,
-  name = 'employment_type',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -34,5 +34,8 @@ const EmploymentTypeField = ({
   options: options
 });
 
+EmploymentTypeField.defaultProps = {
+  name: 'employment_type'
+};
 export default EmploymentTypeField;
 //# sourceMappingURL=EmploymentTypeField.js.map

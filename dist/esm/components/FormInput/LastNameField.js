@@ -1,23 +1,29 @@
 import React from 'react';
-import TextField from './TextField';
+import { Field } from 'formik';
+import BaseField from './base';
+import { validateText } from './validate';
 
 const LastNameField = ({
   id,
   label = 'Nazwisko',
   placeholder = 'Nazwisko',
-  name = 'last_name',
-  required = true,
-  validate,
+  name,
+  required = false,
+  validate = validateText,
   showError = true
-}) => /*#__PURE__*/React.createElement(TextField, {
+}) => /*#__PURE__*/React.createElement(Field, {
   id: id,
   label: label,
   placeholder: placeholder,
+  component: BaseField,
   required: required,
   showError: showError,
   name: name,
-  validate: validate
+  validate: validate(required)
 });
 
+LastNameField.defaultProps = {
+  name: 'last_name'
+};
 export default LastNameField;
 //# sourceMappingURL=LastNameField.js.map

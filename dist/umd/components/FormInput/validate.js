@@ -19,6 +19,10 @@
   exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = undefined;
 
   const validateText = exports.validateText = required => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -33,6 +37,10 @@
   };
 
   const validateEmail = exports.validateEmail = (customErrorMsg = 'Niepoprawny adres email', required) => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -43,6 +51,10 @@
   };
 
   const validateTelNumber = exports.validateTelNumber = (customErrorMsg = 'Niepoprawny numer telefonu', required) => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -55,6 +67,10 @@
   const validateCheckbox = exports.validateCheckbox = required => value => required && !value && 'required' || undefined;
 
   const validatePesel = exports.validatePesel = required => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -69,6 +85,10 @@
   };
 
   const validateHouseNumber = exports.validateHouseNumber = required => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -79,6 +99,10 @@
   };
 
   const validateCityName = exports.validateCityName = required => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -93,6 +117,10 @@
   };
 
   const validateZipCode = exports.validateZipCode = required => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -107,6 +135,10 @@
   };
 
   const validateCompanyTax = exports.validateCompanyTax = required => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -125,6 +157,10 @@
   };
 
   const validateBankAccountNumber = exports.validateBankAccountNumber = required => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -143,6 +179,10 @@
   };
 
   const validateIDCardNumber = exports.validateIDCardNumber = required => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -161,6 +201,10 @@
   };
 
   const validateOtherLoanAmount = exports.validateOtherLoanAmount = (customErrorMsg = 'Podana kwota jest nieprawidłowa', required) => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -171,6 +215,10 @@
   };
 
   const validateAmountOfChildren = exports.validateAmountOfChildren = (customErrorMsg = 'Podana liczba jest nieprawidłowa', required) => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -181,6 +229,10 @@
   };
 
   const validateIncome = exports.validateIncome = (customErrorMsg = 'Podana kwota jest nieprawidłowa', required) => value => {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }

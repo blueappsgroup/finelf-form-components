@@ -1,5 +1,5 @@
-import { Field } from 'formik';
 import React from 'react';
+import { Field } from 'formik';
 import { BaseSelectField } from './base';
 const options = {
   none: 'brak',
@@ -14,7 +14,7 @@ const options = {
 const EducationField = ({
   id,
   label,
-  name = 'education',
+  name,
   required = false,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
@@ -28,5 +28,8 @@ const EducationField = ({
   options: options
 });
 
+EducationField.defaultProps = {
+  name: 'education'
+};
 export default EducationField;
 //# sourceMappingURL=EducationField.js.map

@@ -9,6 +9,10 @@ var _validateHelpers = require("./validateHelpers");
 
 var validateText = function validateText(required) {
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -29,6 +33,10 @@ var validateEmail = function validateEmail() {
   var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Niepoprawny adres email';
   var required = arguments.length > 1 ? arguments[1] : undefined;
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -45,6 +53,10 @@ var validateTelNumber = function validateTelNumber() {
   var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Niepoprawny numer telefonu';
   var required = arguments.length > 1 ? arguments[1] : undefined;
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -67,6 +79,10 @@ exports.validateCheckbox = validateCheckbox;
 
 var validatePesel = function validatePesel(required) {
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -85,6 +101,10 @@ exports.validatePesel = validatePesel;
 
 var validateHouseNumber = function validateHouseNumber(required) {
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -99,6 +119,10 @@ exports.validateHouseNumber = validateHouseNumber;
 
 var validateCityName = function validateCityName(required) {
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -117,6 +141,10 @@ exports.validateCityName = validateCityName;
 
 var validateZipCode = function validateZipCode(required) {
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -135,6 +163,10 @@ exports.validateZipCode = validateZipCode;
 
 var validateCompanyTax = function validateCompanyTax(required) {
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -157,6 +189,10 @@ exports.validateCompanyTax = validateCompanyTax;
 
 var validateBankAccountNumber = function validateBankAccountNumber(required) {
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -179,6 +215,10 @@ exports.validateBankAccountNumber = validateBankAccountNumber;
 
 var validateIDCardNumber = function validateIDCardNumber(required) {
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -203,6 +243,10 @@ var validateOtherLoanAmount = function validateOtherLoanAmount() {
   var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Podana kwota jest nieprawidłowa';
   var required = arguments.length > 1 ? arguments[1] : undefined;
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -219,6 +263,10 @@ var validateAmountOfChildren = function validateAmountOfChildren() {
   var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Podana liczba jest nieprawidłowa';
   var required = arguments.length > 1 ? arguments[1] : undefined;
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }
@@ -235,6 +283,10 @@ var validateIncome = function validateIncome() {
   var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Podana kwota jest nieprawidłowa';
   var required = arguments.length > 1 ? arguments[1] : undefined;
   return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
     if (required && (0, _validateHelpers.isEmpty)(value)) {
       return 'To pole jest wymagane';
     }

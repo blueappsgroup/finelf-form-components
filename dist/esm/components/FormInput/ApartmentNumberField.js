@@ -1,24 +1,29 @@
 import React from 'react';
-import TextField from './TextField';
+import { Field } from 'formik';
+import BaseField from './base';
 import { validateHouseNumber } from './validate';
 
 const ApartmentNumberField = ({
   id,
   label = 'Numer mieszkania',
   placeholder = 'Numer mieszkania',
-  name = 'apartment_number',
-  required = true,
+  name,
+  required = false,
   validate = validateHouseNumber,
   showError = true
-}) => /*#__PURE__*/React.createElement(TextField, {
+}) => /*#__PURE__*/React.createElement(Field, {
   id: id,
   label: label,
   placeholder: placeholder,
+  component: BaseField,
   required: required,
   showError: showError,
   name: name,
-  validate: validate
+  validate: validate(required)
 });
 
+ApartmentNumberField.defaultProps = {
+  name: 'apartment_number'
+};
 export default ApartmentNumberField;
 //# sourceMappingURL=ApartmentNumberField.js.map

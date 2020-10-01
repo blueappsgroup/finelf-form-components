@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { RangeFieldProps } from '../../types';
-declare const AmountField: (props: RangeFieldProps) => ReactElement;
+declare const AmountField: FC<RangeFieldProps>;
 export default AmountField;

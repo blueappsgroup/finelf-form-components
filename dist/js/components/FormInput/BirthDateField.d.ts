@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { BirthDateFieldProps } from '../../types';
-declare const BirthDateField: (props: BirthDateFieldProps) => ReactElement;
+declare const BirthDateField: FC<BirthDateFieldProps>;
 export default BirthDateField;
