@@ -319,7 +319,7 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, props.label), props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+    }, `${props.label}${props.required && '*' || ''}`), props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
       onBlur: handleOnBlur,
       type: props.type,
       value: field.value && field.value || '',
@@ -355,7 +355,7 @@
         key: "select",
         value: "select",
         disabled: true
-      }, "wybierz")].concat(Object.keys(options).map(option => {
+      }, `wybierz ${props.required && '*' || ''}`)].concat(Object.keys(options).map(option => {
         return /*#__PURE__*/_react2.default.createElement("option", {
           key: option,
           value: option
@@ -365,7 +365,7 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, props.label), /*#__PURE__*/_react2.default.createElement(StyledSelect, _extends({}, field, props, {
+    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(StyledSelect, _extends({}, field, props, {
       onBlur: handleOnBlur,
       type: "text",
       value: field.value && field.value || 'select',
@@ -380,7 +380,8 @@
       form: {
         touched,
         errors,
-        values
+        values,
+        setFieldValue
       }
     } = _ref3,
         props = _objectWithoutProperties(_ref3, ["field", "form"]);
@@ -425,6 +426,9 @@
       field.onBlur && field.onBlur(e);
     };
 
+    (0, _react.useLayoutEffect)(() => {
+      setFieldValue(field.name, value);
+    }, [field.name, value, setFieldValue]);
     return /*#__PURE__*/_react2.default.createElement("div", null, /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
     }, props.label), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
