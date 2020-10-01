@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/camelcase */
+import React, { FC } from 'react'
 import { Field } from 'formik'
-import React, { ReactElement } from 'react'
-import { SelectFieldProps } from '../../types'
 
+import { SelectFieldProps } from '../../types'
 import { BaseSelectField } from './base'
 
 const options = {
@@ -13,7 +13,7 @@ const options = {
   with_parents: 'z rodzicami',
 }
 
-const MaritalStatusField: (props: SelectFieldProps) => ReactElement = ({
+const MaritalStatusField: FC<SelectFieldProps> = ({
   id,
   label,
   name = 'marital_status',
@@ -31,5 +31,9 @@ const MaritalStatusField: (props: SelectFieldProps) => ReactElement = ({
     options={options}
   />
 )
+
+MaritalStatusField.defaultProps = {
+  name: 'amount_of_children',
+}
 
 export default MaritalStatusField

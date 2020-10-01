@@ -1,25 +1,33 @@
-import React, { ReactElement } from 'react'
-import { TextFieldProps } from '../../types'
-import TextField from './TextField'
+import React, { FC } from 'react'
+import { Field } from 'formik'
 
-const FirstNameField: (props: TextFieldProps) => ReactElement = ({
+import { TextFieldProps } from '../../types'
+import BaseField from './base'
+import { validateText } from './validate'
+
+const FirstNameField: FC<TextFieldProps> = ({
   id,
   label = 'Imię',
   placeholder = 'Imię',
-  name = 'first_name',
-  required = true,
-  validate,
+  name,
+  required = false,
+  validate = validateText,
   showError = true,
 }) => (
-  <TextField
+  <Field
     id={id}
     label={label}
     placeholder={placeholder}
+    component={BaseField}
     required={required}
     showError={showError}
     name={name}
-    validate={validate}
+    validate={validate(required)}
   />
 )
+
+FirstNameField.defaultProps = {
+  name: 'first_name',
+}
 
 export default FirstNameField

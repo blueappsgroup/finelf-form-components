@@ -1,26 +1,33 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
+import { Field } from 'formik'
+
 import { TextFieldProps } from '../../types'
-import TextField from './TextField'
+import BaseField from './base'
 import { validateBankAccountNumber } from './validate'
 
-const BankAccountNumberField: (props: TextFieldProps) => ReactElement = ({
+const BankAccountNumberField: FC<TextFieldProps> = ({
   id,
   label = 'Numer konta bankowego',
   placeholder = 'Numer konta bankowego',
-  name = 'bank_account_number',
-  required = true,
+  name,
+  required = false,
   validate = validateBankAccountNumber,
   showError = true,
 }) => (
-  <TextField
+  <Field
     id={id}
     label={label}
     placeholder={placeholder}
+    component={BaseField}
     required={required}
     showError={showError}
     name={name}
-    validate={validate}
+    validate={validate(required)}
   />
 )
+
+BankAccountNumberField.defaultProps = {
+  name: 'bank_account_number',
+}
 
 export default BankAccountNumberField

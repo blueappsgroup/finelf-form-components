@@ -1,15 +1,14 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
 import { Field } from 'formik'
 
 import BaseField from './base'
 import { BirthDateFieldProps } from '../../types'
 
-const BirthDateField: (props: BirthDateFieldProps) => ReactElement = ({
+const BirthDateField: FC<BirthDateFieldProps> = ({
   id,
   label,
   placeholder = 'BirthDate',
-  errorMsg = 'Podana data urodzenia jest nieprawidłowa',
-  name = 'date_of_birth',
+  name,
   required = false,
   showError,
 }) => (
@@ -24,5 +23,9 @@ const BirthDateField: (props: BirthDateFieldProps) => ReactElement = ({
     type="date"
   />
 )
+
+BirthDateField.defaultProps = {
+  name: 'date_of_birth',
+}
 
 export default BirthDateField

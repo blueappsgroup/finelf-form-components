@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react'
+import { Field } from 'formik'
+
 import { TextFieldProps } from '../../types'
-import TextField from './TextField'
+import BaseField from './base'
 import { validatePesel } from './validate'
 
 const PeselField: (props: TextFieldProps) => ReactElement = ({
@@ -8,18 +10,19 @@ const PeselField: (props: TextFieldProps) => ReactElement = ({
   label = 'Pesel',
   placeholder = 'Pesel',
   name = 'id_code',
-  required = true,
+  required = false,
   validate = validatePesel,
   showError = true,
 }) => (
-  <TextField
+  <Field
     id={id}
     label={label}
     placeholder={placeholder}
+    component={BaseField}
     required={required}
     showError={showError}
     name={name}
-    validate={validate}
+    validate={validate(required)}
   />
 )
 

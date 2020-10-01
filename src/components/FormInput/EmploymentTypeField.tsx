@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/camelcase */
+import React, { FC } from 'react'
 import { Field } from 'formik'
-import React, { ReactElement } from 'react'
-import { SelectFieldProps } from '../../types'
 
+import { SelectFieldProps } from '../../types'
 import { BaseSelectField } from './base'
 
 const options = {
@@ -20,10 +20,10 @@ const options = {
   service_contract: 'umowa zlecenie / umowa o dzieło',
 }
 
-const EmploymentTypeField: (props: SelectFieldProps) => ReactElement = ({
+const EmploymentTypeField: FC<SelectFieldProps> = ({
   id,
   label,
-  name = 'employment_type',
+  name,
   required = false,
   showError,
 }) => (
@@ -38,5 +38,9 @@ const EmploymentTypeField: (props: SelectFieldProps) => ReactElement = ({
     options={options}
   />
 )
+
+EmploymentTypeField.defaultProps = {
+  name: 'employment_type',
+}
 
 export default EmploymentTypeField

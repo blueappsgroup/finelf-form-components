@@ -1,26 +1,33 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
+import { Field } from 'formik'
+
 import { TextFieldProps } from '../../types'
-import TextField from './TextField'
+import BaseField from './base'
 import { validateHouseNumber } from './validate'
 
-const HouseNumberField: (props: TextFieldProps) => ReactElement = ({
+const HouseNumberField: FC<TextFieldProps> = ({
   id,
   label = 'Numer domu',
   placeholder = 'Numer domu',
-  name = 'house_number',
-  required = true,
+  name,
+  required = false,
   validate = validateHouseNumber,
   showError = true,
 }) => (
-  <TextField
+  <Field
     id={id}
     label={label}
     placeholder={placeholder}
+    component={BaseField}
     required={required}
     showError={showError}
     name={name}
-    validate={validate}
+    validate={validate(required)}
   />
 )
+
+HouseNumberField.defaultProps = {
+  name: 'house_number',
+}
 
 export default HouseNumberField

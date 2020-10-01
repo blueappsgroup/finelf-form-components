@@ -2,6 +2,7 @@
 import React, { ChangeEvent, ReactElement, useContext, useState } from 'react'
 import Slider from 'react-rangeslider'
 import styled from 'styled-components'
+
 import { device } from '../../consts/sizes'
 import {
   FieldWrapProps,
@@ -184,7 +185,6 @@ const StyledSelect = styled.select<any>`
     outline: none;
   }
 `
-
 
 const StyledSpan = styled.span`
   font-size: ${(props: StyledProps): string => props.theme.styledSpanFontSize};

@@ -1,18 +1,16 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
 import { Field } from 'formik'
 
 import BaseField from './base'
 import { validateAmountOfChildren } from './validate'
 import { AmountOfChildrenFieldProps } from '../../types'
 
-const AmountOfChildrenField: (
-  props: AmountOfChildrenFieldProps
-) => ReactElement = ({
+const AmountOfChildrenField: FC<AmountOfChildrenFieldProps> = ({
   id,
   label,
   placeholder = 'Liczba osób na utrzymaniu',
   errorMsg = 'Podana ilość jest nieprawidłowa',
-  name = 'amount_of_children',
+  name,
   required = false,
   showError,
 }) => (
@@ -28,5 +26,9 @@ const AmountOfChildrenField: (
     validate={validateAmountOfChildren(errorMsg, required)}
   />
 )
+
+AmountOfChildrenField.defaultProps = {
+  name: 'amount_of_children',
+}
 
 export default AmountOfChildrenField
