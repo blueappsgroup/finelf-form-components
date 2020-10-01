@@ -1,5 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ChangeEvent, ReactElement, useContext, useState } from 'react'
+import React, {
+  ChangeEvent,
+  ReactElement,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from 'react'
 import Slider from 'react-rangeslider'
 import styled from 'styled-components'
 
@@ -270,7 +276,11 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
 
   return (
     <StyledRow>
-      {props.label && <label htmlFor={field.name}>{props.label}</label>}
+      {props.label && (
+        <label htmlFor={field.name}>{`${props.label}${
+          (props.required && '*') || ''
+        }`}</label>
+      )}
       {props.prefix && <StyledInputPrefix>{props.prefix}</StyledInputPrefix>}
       <StyledInput
         {...field}
@@ -308,7 +318,7 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
   const options = (options: SelectFieldOptions): Array<JSX.Element> => {
     return [
       <option key="select" value="select" disabled>
-        wybierz
+        {`wybierz ${(props.required && '*') || ''}`}
       </option>,
     ].concat(
       Object.keys(options).map((option) => {
@@ -323,7 +333,11 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
 
   return (
     <StyledRow>
-      {props.label && <label htmlFor={field.name}>{props.label}</label>}
+      {props.label && (
+        <label htmlFor={field.name}>{`${props.label}${
+          (props.required && '*') || ''
+        }`}</label>
+      )}
       <StyledSelect
         {...field}
         {...props}
@@ -347,7 +361,7 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
 
 export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
   field,
-  form: { touched, errors, values },
+  form: { touched, errors, values, setFieldValue },
   ...props
 }) => {
   const { id } = useContext(FormContext)
@@ -392,6 +406,10 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
     )
     field.onBlur && field.onBlur(e)
   }
+
+  useLayoutEffect(() => {
+    setFieldValue(field.name, value)
+  }, [field.name, value, setFieldValue])
 
   return (
     <div>
