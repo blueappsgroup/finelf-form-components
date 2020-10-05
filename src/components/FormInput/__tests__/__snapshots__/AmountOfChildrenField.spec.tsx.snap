@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AmountOfChildrenField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <input
+        class="sc-kEqYlL ddptCy"
+        id="amountOfChildrenField"
+        name="name"
+        placeholder="Liczba osób na utrzymaniu"
+        type="text"
+        value="test"
+      />
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        Podana ilość jest nieprawidłowa
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<AmountOfChildrenField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL ggqeAX"
+  id="amountOfChildrenField"
+  name="name"
+  placeholder="Liczba osób na utrzymaniu"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`<AmountOfChildrenField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ddptCy"
+        id="amountOfChildrenField"
+        label="Test"
+        name="name"
+        placeholder="Liczba osób na utrzymaniu*"
+        required=""
+        type="text"
+        value=""
+      />
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<AmountOfChildrenField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ggqeAX"
+        id="amountOfChildrenField"
+        label="Test"
+        name="name"
+        placeholder="Liczba osób na utrzymaniu"
+        type="text"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

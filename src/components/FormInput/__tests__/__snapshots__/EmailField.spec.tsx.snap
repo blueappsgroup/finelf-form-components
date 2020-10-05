@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EmailField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <input
+        class="sc-kEqYlL ddptCy"
+        id="emailField"
+        name="name"
+        placeholder="Email"
+        type="email"
+        value="test"
+      />
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        Podany email jest nieprawidłowy
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<EmailField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL ggqeAX"
+  id="emailField"
+  name="name"
+  placeholder="Email"
+  type="email"
+  value=""
+/>
+`;
+
+exports[`<EmailField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ddptCy"
+        id="emailField"
+        label="Test"
+        name="name"
+        placeholder="Email*"
+        required=""
+        type="email"
+        value=""
+      />
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<EmailField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ggqeAX"
+        id="emailField"
+        label="Test"
+        name="name"
+        placeholder="Email"
+        type="email"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GenderField /> matches snapshot 1`] = `
+<select
+  class="sc-iqAbSa hSYmLs"
+  id="genderField"
+  name="name"
+  type="text"
+>
+  <option
+    disabled=""
+    value="select"
+  >
+    wybierz
+  </option>
+  <option
+    value="male"
+  >
+    mężczyzna
+  </option>
+  <option
+    value="female"
+  >
+    kobieta
+  </option>
+</select>
+`;
+
+exports[`<GenderField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa hSYmLs"
+        id="genderField"
+        label="Test"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz
+        </option>
+        <option
+          value="male"
+        >
+          mężczyzna
+        </option>
+        <option
+          value="female"
+        >
+          kobieta
+        </option>
+      </select>
+    </div>
+  </form>
+</div>
+`;

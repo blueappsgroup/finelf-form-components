@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MaritalStatusField /> matches snapshot 1`] = `
+<select
+  class="sc-iqAbSa hSYmLs"
+  id="maritalStatusField"
+  name="name"
+  type="text"
+>
+  <option
+    disabled=""
+    value="select"
+  >
+    wybierz
+  </option>
+  <option
+    value="unmarried"
+  >
+    panna/kawaler
+  </option>
+  <option
+    value="married"
+  >
+    mężatka/żonaty
+  </option>
+  <option
+    value="divorced"
+  >
+    rozwiedziona/rozwiedziony
+  </option>
+  <option
+    value="widower"
+  >
+    wdowa/wdowiec
+  </option>
+  <option
+    value="with_parents"
+  >
+    z rodzicami
+  </option>
+</select>
+`;
+
+exports[`<MaritalStatusField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa hSYmLs"
+        id="maritalStatusField"
+        label="Test"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz
+        </option>
+        <option
+          value="unmarried"
+        >
+          panna/kawaler
+        </option>
+        <option
+          value="married"
+        >
+          mężatka/żonaty
+        </option>
+        <option
+          value="divorced"
+        >
+          rozwiedziona/rozwiedziony
+        </option>
+        <option
+          value="widower"
+        >
+          wdowa/wdowiec
+        </option>
+        <option
+          value="with_parents"
+        >
+          z rodzicami
+        </option>
+      </select>
+    </div>
+  </form>
+</div>
+`;
