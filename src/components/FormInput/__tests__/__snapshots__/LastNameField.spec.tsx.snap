@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LastNameField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd dnsgCl"
+    >
+      <label
+        for="last_name"
+      >
+        Nazwisko
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="Nazwisko"
+        name="last_name"
+        placeholder="Nazwisko"
+        value="3232"
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        Podane dane są nieprawidłowe
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<LastNameField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL honwIS"
+  id="testId"
+  label="Nazwisko"
+  name="last_name"
+  placeholder="Nazwisko"
+  value=""
+/>
+`;
+
+exports[`<LastNameField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd dnsgCl"
+    >
+      <label
+        for="last_name"
+      >
+        LastName
+      </label>
+      <input
+        class="sc-kEqYlL honwIS"
+        id="testId"
+        label="LastName"
+        name="last_name"
+        placeholder="Nazwisko"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

@@ -1,15 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base <BaseField /> matches snapshot 1`] = `
-<input
-  class="sc-kEqYlL honwIS"
-  id="baseField"
-  name="baseField"
-  value=""
-/>
-`;
-
-exports[`base <BaseField /> matches snapshot with error 1`] = `
+exports[`<PeselField/> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
@@ -20,29 +11,40 @@ exports[`base <BaseField /> matches snapshot with error 1`] = `
       class="sc-fujyUd dnsgCl"
     >
       <label
-        for="baseField"
+        for="id_code"
       >
-        Test*
+        Pesel
       </label>
       <input
         class="sc-kEqYlL jzZEFj"
-        id="baseField"
-        label="Test"
-        name="baseField"
-        required=""
-        value=""
+        id="testId"
+        label="Pesel"
+        name="id_code"
+        placeholder="Pesel"
+        value="2312"
       />
       <span
         class="sc-jrsJCI djVSvf"
       >
-        To pole jest wymagane
+        Podany PESEL jest nieprawidłowy
       </span>
     </div>
   </form>
 </div>
 `;
 
-exports[`base <BaseField /> matches snapshot with label 1`] = `
+exports[`<PeselField/> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL honwIS"
+  id="testId"
+  label="Pesel"
+  name="id_code"
+  placeholder="Pesel"
+  value=""
+/>
+`;
+
+exports[`<PeselField/> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
@@ -53,15 +55,16 @@ exports[`base <BaseField /> matches snapshot with label 1`] = `
       class="sc-fujyUd dnsgCl"
     >
       <label
-        for="baseField"
+        for="id_code"
       >
-        Test
+        Pesel
       </label>
       <input
         class="sc-kEqYlL honwIS"
-        id="baseField"
-        label="Test"
-        name="baseField"
+        id="testId"
+        label="Pesel"
+        name="id_code"
+        placeholder="Pesel"
         value=""
       />
     </div>

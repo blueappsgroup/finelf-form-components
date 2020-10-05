@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ApartmentNumberField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd dnsgCl"
+    >
+      <label
+        for="apartment_number"
+      >
+        Numer mieszkania
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="Numer mieszkania"
+        name="apartment_number"
+        placeholder="Numer mieszkania"
+        value="12345678900"
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        Podany numer mieszkania jest nieprawidłowy
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<ApartmentNumberField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL honwIS"
+  id="testId"
+  label="Numer mieszkania"
+  name="apartment_number"
+  placeholder="Numer mieszkania"
+  value=""
+/>
+`;
+
+exports[`<ApartmentNumberField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd dnsgCl"
+    >
+      <label
+        for="apartment_number"
+      >
+        ApartmentNumber
+      </label>
+      <input
+        class="sc-kEqYlL honwIS"
+        id="testId"
+        label="ApartmentNumber"
+        name="apartment_number"
+        placeholder="Numer mieszkania"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

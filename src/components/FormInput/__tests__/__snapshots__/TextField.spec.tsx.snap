@@ -8,10 +8,10 @@ exports[`<TextField /> input field with cutom validation 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd dnsgCl"
     >
       <input
-        class="sc-kEqYlL ddptCy"
+        class="sc-kEqYlL jzZEFj"
         id="textField"
         name="name"
         placeholder="Text"
@@ -19,7 +19,7 @@ exports[`<TextField /> input field with cutom validation 1`] = `
         value="test"
       />
       <span
-        class="sc-jrsJCI eQDYwE"
+        class="sc-jrsJCI djVSvf"
       >
         Bad name
       </span>
@@ -30,7 +30,7 @@ exports[`<TextField /> input field with cutom validation 1`] = `
 
 exports[`<TextField /> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL ggqeAX"
+  class="sc-kEqYlL honwIS"
   id="textField"
   name="name"
   placeholder="Text"
@@ -47,15 +47,15 @@ exports[`<TextField /> matches snapshot with error 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd dnsgCl"
     >
       <label
         for="name"
       >
-        Test
+        Test*
       </label>
       <input
-        class="sc-kEqYlL ddptCy"
+        class="sc-kEqYlL jzZEFj"
         id="textField"
         label="Test"
         name="name"
@@ -65,7 +65,7 @@ exports[`<TextField /> matches snapshot with error 1`] = `
         value=""
       />
       <span
-        class="sc-jrsJCI eQDYwE"
+        class="sc-jrsJCI djVSvf"
       >
         To pole jest wymagane
       </span>
@@ -82,7 +82,7 @@ exports[`<TextField /> matches snapshot with label 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd dnsgCl"
     >
       <label
         for="name"
@@ -90,7 +90,7 @@ exports[`<TextField /> matches snapshot with label 1`] = `
         Test
       </label>
       <input
-        class="sc-kEqYlL ggqeAX"
+        class="sc-kEqYlL honwIS"
         id="textField"
         label="Test"
         name="name"

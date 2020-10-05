@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IDCardNumberField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd dnsgCl"
+    >
+      <label
+        for="id_card_number"
+      >
+        Numer dowodu osobistego
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="Numer dowodu osobistego"
+        name="id_card_number"
+        placeholder="Numer dowodu osobistego"
+        value="48801213439233148617383842"
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        Podany numer dowodu jest nieprawidłowy
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<IDCardNumberField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL honwIS"
+  id="testId"
+  label="Numer dowodu osobistego"
+  name="id_card_number"
+  placeholder="Numer dowodu osobistego"
+  value=""
+/>
+`;
+
+exports[`<IDCardNumberField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd dnsgCl"
+    >
+      <label
+        for="id_card_number"
+      >
+        IDCard
+      </label>
+      <input
+        class="sc-kEqYlL honwIS"
+        id="testId"
+        label="IDCard"
+        name="id_card_number"
+        placeholder="Numer dowodu osobistego"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

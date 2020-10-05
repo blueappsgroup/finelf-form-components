@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CompanyTaxField/> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd dnsgCl"
+    >
+      <label
+        for="company_tax_id"
+      >
+        NIP firmy
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="NIP firmy"
+        name="company_tax_id"
+        placeholder="NIP firmy"
+        value="948167873"
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        Podany NIP jest nieprawidłowy
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<CompanyTaxField/> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL honwIS"
+  id="testId"
+  label="NIP firmy"
+  name="company_tax_id"
+  placeholder="NIP firmy"
+  value=""
+/>
+`;
+
+exports[`<CompanyTaxField/> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd dnsgCl"
+    >
+      <label
+        for="company_tax_id"
+      >
+        Company Tax
+      </label>
+      <input
+        class="sc-kEqYlL honwIS"
+        id="testId"
+        label="Company Tax"
+        name="company_tax_id"
+        placeholder="NIP firmy"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;
