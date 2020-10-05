@@ -2,14 +2,14 @@ import * as React from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 
 import Form from '../../Form'
-import TextField from '../TextField'
+import EmailField from '../EmailField'
 
-describe('<TextField />', () => {
+describe('<EmailField />', () => {
   const onSubmit = jest.fn()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const setupWrapper: (config: any) => any = ({
     formId = 'testForm',
-    inputId = 'textField',
+    inputId = 'emailField',
     inputName = 'name',
     required = false,
     validate,
@@ -17,7 +17,7 @@ describe('<TextField />', () => {
   }) => {
     const wrapper = render(
       <Form id={formId} onSubmit={onSubmit}>
-        <TextField
+        <EmailField
           id={inputId}
           name={inputName}
           validate={validate}
@@ -61,11 +61,11 @@ describe('<TextField />', () => {
     const { container, input } = wrapper
 
     await act(async () => {
-      fireEvent.focus(input, { target: { value: 'test' } })
+      fireEvent.focus(input, { target: { value: 'test@test.pl' } })
     })
 
     await act(async () => {
-      fireEvent.blur(input, { target: { value: 'test' } })
+      fireEvent.blur(input, { target: { value: 'test@test.pl' } })
     })
 
     expect(wrapper.getByText('To pole jest wymagane')).toBeTruthy()
@@ -76,33 +76,33 @@ describe('<TextField />', () => {
     const { input } = setupWrapper({})
 
     await act(async () => {
-      fireEvent.change(input, { target: { value: 'test' } })
+      fireEvent.change(input, { target: { value: 'test@test.pl' } })
     })
 
-    expect(input.value).toBe('test')
+    expect(input.value).toBe('test@test.pl')
   })
 
   it('input field onBlur save value to sessionStorage', async () => {
     const { input } = setupWrapper({})
 
     await act(async () => {
-      fireEvent.change(input, { target: { value: 'test' } })
+      fireEvent.change(input, { target: { value: 'test@test.pl' } })
     })
 
     await act(async () => {
-      fireEvent.blur(input, { target: { value: 'test' } })
+      fireEvent.blur(input, { target: { value: 'test@test.pl' } })
     })
 
     expect(
       JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
-    ).toBe('test')
-    expect(input.value).toBe('test')
+    ).toBe('test@test.pl')
+    expect(input.value).toBe('test@test.pl')
   })
 
   it('input field with custom validation', async () => {
     const customValidate = () => (value: string): string => {
       if (value === 'test') {
-        return 'Bad name'
+        return 'Podany email jest nieprawidłowy'
       }
     }
     const wrapper = setupWrapper({
@@ -120,6 +120,6 @@ describe('<TextField />', () => {
     })
 
     expect(container).toMatchSnapshot()
-    expect(wrapper.getByText('Bad name')).toBeTruthy()
+    expect(wrapper.getByText('Podany email jest nieprawidłowy')).toBeTruthy()
   })
 })

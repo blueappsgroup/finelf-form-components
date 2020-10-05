@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextField /> input field with cutom validation 1`] = `
+exports[`<TextField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
