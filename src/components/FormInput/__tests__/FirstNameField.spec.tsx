@@ -78,7 +78,8 @@ describe('<FirstNameField />', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
+        .first_name
     ).toBe('Name')
     expect(input.value).toBe('Name')
   })

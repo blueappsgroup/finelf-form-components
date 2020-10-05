@@ -78,7 +78,8 @@ describe('<IDCardNumberField />', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
+        .id_card_number
     ).toBe('48800210439233148617383844')
     expect(input.value).toBe('48800210439233148617383844')
   })

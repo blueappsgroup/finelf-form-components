@@ -78,7 +78,8 @@ describe('<ApartmentNumberField />', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
+        .apartment_number
     ).toBe('12')
     expect(input.value).toBe('12')
   })

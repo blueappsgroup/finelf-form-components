@@ -78,7 +78,8 @@ describe('<CityNameField />', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
+        .text_city
     ).toBe('Warsaw')
     expect(input.value).toBe('Warsaw')
   })

@@ -78,7 +78,8 @@ describe('<StreetNameField />', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
+        .street_name
     ).toBe('Street 21')
     expect(input.value).toBe('Street 21')
   })

@@ -1,72 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FirstNameField /> input field with custom validation 1`] = `
-<div>
-  <form
-    action="#"
-    class="sc-iCoHVE gQzhKx"
-    id="testForm"
-  >
-    <div
-      class="sc-fujyUd dnsgCl"
-    >
-      <label
-        for="telephone"
-      >
-        Imię
-      </label>
-      <input
-        class="sc-kEqYlL honwIS"
-        id="testId"
-        label="Imię"
-        name="telephone"
-        placeholder="Imię"
-        value="3232"
-      />
-    </div>
-  </form>
-</div>
-`;
-
-exports[`<FirstNameField /> matches snapshot 1`] = `
-<input
-  class="sc-kEqYlL honwIS"
-  id="testId"
-  label="Imię"
-  name="telephone"
-  placeholder="Imię"
-  value=""
-/>
-`;
-
-exports[`<FirstNameField /> matches snapshot with label 1`] = `
-<div>
-  <form
-    action="#"
-    class="sc-iCoHVE gQzhKx"
-    id="testForm"
-  >
-    <div
-      class="sc-fujyUd dnsgCl"
-    >
-      <label
-        for="telephone"
-      >
-        Telephone
-      </label>
-      <input
-        class="sc-kEqYlL honwIS"
-        id="testId"
-        label="Telephone"
-        name="telephone"
-        placeholder="Imię"
-        value=""
-      />
-    </div>
-  </form>
-</div>
-`;
-
 exports[`<TelephoneField /> input field with custom validation 1`] = `
 <div>
   <form
@@ -75,7 +8,7 @@ exports[`<TelephoneField /> input field with custom validation 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <span
         class="sc-bqGHjH pDiJM"
@@ -121,7 +54,7 @@ exports[`<TelephoneField /> matches snapshot with label 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="telephone"

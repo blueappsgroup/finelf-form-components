@@ -78,7 +78,7 @@ describe('<IncomeField/>', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).income
     ).toBe('200')
     expect(input.value).toBe('200')
   })

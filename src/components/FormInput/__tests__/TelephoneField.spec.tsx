@@ -78,7 +78,8 @@ describe('<TelephoneField />', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
+        .telephone
     ).toBe('500500500')
     expect(input.value).toBe('500500500')
   })

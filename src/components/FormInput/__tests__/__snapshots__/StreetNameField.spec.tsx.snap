@@ -8,7 +8,7 @@ exports[`<StreetNameField /> input field with custom validation 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="street_name"
@@ -52,7 +52,7 @@ exports[`<StreetNameField /> matches snapshot with label 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="street_name"

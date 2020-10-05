@@ -8,7 +8,7 @@ exports[`<ApartmentNumberField /> input field with custom validation 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="apartment_number"
@@ -52,7 +52,7 @@ exports[`<ApartmentNumberField /> matches snapshot with label 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="apartment_number"

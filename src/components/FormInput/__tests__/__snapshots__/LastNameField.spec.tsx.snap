@@ -8,19 +8,20 @@ exports[`<LastNameField /> input field with custom validation 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="last_name"
       >
-        Nazwisko
+        Nazwisko*
       </label>
       <input
         class="sc-kEqYlL jzZEFj"
         id="testId"
         label="Nazwisko"
         name="last_name"
-        placeholder="Nazwisko"
+        placeholder="Nazwisko*"
+        required=""
         value="3232"
       />
       <span
@@ -39,7 +40,8 @@ exports[`<LastNameField /> matches snapshot 1`] = `
   id="testId"
   label="Nazwisko"
   name="last_name"
-  placeholder="Nazwisko"
+  placeholder="Nazwisko*"
+  required=""
   value=""
 />
 `;
@@ -52,7 +54,7 @@ exports[`<LastNameField /> matches snapshot with label 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="last_name"

@@ -78,7 +78,7 @@ describe('<ZipCodeField/>', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).text_zip
     ).toBe('15-800')
     expect(input.value).toBe('15-800')
   })

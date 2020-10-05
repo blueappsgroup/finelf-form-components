@@ -78,7 +78,8 @@ describe('<CompanyNameField />', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
+        .company_name
     ).toBe('Name')
     expect(input.value).toBe('Name')
   })

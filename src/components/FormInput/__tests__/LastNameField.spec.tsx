@@ -78,7 +78,8 @@ describe('<LastNameField />', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
+        .last_name
     ).toBe('Name')
     expect(input.value).toBe('Name')
   })

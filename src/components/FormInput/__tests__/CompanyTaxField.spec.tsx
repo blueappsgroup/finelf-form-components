@@ -78,7 +78,8 @@ describe('<CompanyTaxField/>', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
+        .company_tax_id
     ).toBe('9481678742')
     expect(input.value).toBe('9481678742')
   })

@@ -8,7 +8,7 @@ exports[`<CompanyTaxField/> input field with custom validation 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="company_tax_id"
@@ -52,7 +52,7 @@ exports[`<CompanyTaxField/> matches snapshot with label 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd dnsgCl"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="company_tax_id"

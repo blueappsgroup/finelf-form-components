@@ -78,7 +78,7 @@ describe('<PeselField/>', () => {
     })
 
     expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
+      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).id_code
     ).toBe('22222222221')
     expect(input.value).toBe('22222222221')
   })
