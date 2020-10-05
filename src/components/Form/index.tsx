@@ -6,6 +6,7 @@ import { ThemeProvider } from '../../consts/theme'
 import { device } from '../../consts/sizes'
 import { FormProps, FormValuesType } from '../../types'
 import RedirectPage from '../RedirectPage'
+import TransactionId from '../TransactionId'
 import {
   FormContext,
   getFormValuesFromCache,
@@ -50,8 +51,17 @@ const FormWrapper: FC<FormProps> = ({
   redirectBgImg,
   queueUrl,
   sendDataToSQS,
+  transactionName,
 }) => {
-  const [initialValues, setInitialValues] = useState(getFormValuesFromCache(id))
+  const trasationIdValue =
+    transactionName &&
+    new URLSearchParams(window.location.search).get(transactionName)
+  console.log(trasationIdValue)
+  const [initialValues, setInitialValues] = useState({
+    ...getFormValuesFromCache(id),
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    trasaction_id: trasationIdValue,
+  })
   const [currentStep, setCurrentStep] = useState(0)
 
   const handleSubmit = async (
@@ -80,7 +90,8 @@ const FormWrapper: FC<FormProps> = ({
   }
   const handleReset = (): void => {
     resetFormValueCache(id)
-    setInitialValues({})
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setInitialValues({} as any)
   }
 
   const prevStep: Function = () => setCurrentStep(currentStep - 1)
@@ -115,7 +126,12 @@ const FormWrapper: FC<FormProps> = ({
                 timeToRedirect={timeToRedirect}
                 mainImg={redirectMainImg}
               />
-            )) || <StyledForm id={id}>{children}</StyledForm>
+            )) || (
+              <StyledForm id={id}>
+                <TransactionId />
+                {children}
+              </StyledForm>
+            )
           }
         </Formik>
       </ThemeProvider>

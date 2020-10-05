@@ -58,6 +58,7 @@ export const Defualt = Template.bind({})
 Defualt.args = {
   id: 'testForm',
   onSubmit,
+  transactionName: 'name',
 }
 
 const TemplateSteps: Story<FormProps> = (args) => (
