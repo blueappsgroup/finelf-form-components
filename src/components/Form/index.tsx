@@ -11,7 +11,7 @@ import {
   FormContext,
   getFormValuesFromCache,
   resetFormValueCache,
-  sendDataToAwsSQS,
+  handleSendDataToApi,
 } from '../../utils'
 import { formStatuses } from '../../consts/form'
 
@@ -49,14 +49,14 @@ const FormWrapper: FC<FormProps> = ({
   logoImg,
   redirectMainImg,
   redirectBgImg,
-  queueUrl,
-  sendDataToSQS,
+  sendDataToApi,
+  apiUrl,
   transactionName,
 }) => {
   const trasationIdValue =
     transactionName &&
     new URLSearchParams(window.location.search).get(transactionName)
-  console.log(trasationIdValue)
+
   const [initialValues, setInitialValues] = useState({
     ...getFormValuesFromCache(id),
     // eslint-disable-next-line @typescript-eslint/camelcase
@@ -77,8 +77,8 @@ const FormWrapper: FC<FormProps> = ({
     }
 
     try {
-      if (sendDataToSQS) {
-        await sendDataToAwsSQS(values, queueUrl)
+      if (sendDataToApi && apiUrl) {
+        await handleSendDataToApi(values, apiUrl, id)
       }
 
       props.resetForm()
@@ -102,6 +102,7 @@ const FormWrapper: FC<FormProps> = ({
     <FormContext.Provider
       value={{
         id,
+        apiUrl,
         stepsLength,
         currentStep,
         stepsTitleList: stepsTitles,

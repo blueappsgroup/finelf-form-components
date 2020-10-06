@@ -11,6 +11,7 @@ export type CheckboxFieldProps = {
   required?: boolean
   onChange?: Function
   children?: ReactElement | ReactElement[]
+  HTMLcontent?: string
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -24,6 +25,7 @@ export type FieldWrapProps = FieldProps & {
   type?: string
   suffix?: string
   prefix?: string
+  HTMLcontent?: string
 }
 
 export type SelectFieldOptions = {
@@ -213,6 +215,8 @@ export type FormProps = {
   redirectBgImg?: string
   queueUrl?: string
   sendDataToSQS?: boolean
+  sendDataToApi?: boolean
+  apiUrl?: string
   transactionName?: string
 }
 
