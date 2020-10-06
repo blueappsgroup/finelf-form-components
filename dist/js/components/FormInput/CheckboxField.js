@@ -24,7 +24,8 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       onChange = _ref.onChange,
-      children = _ref.children;
+      children = _ref.children,
+      HTMLcontent = _ref.HTMLcontent;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     id: id,
@@ -34,7 +35,8 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
     type: "checkbox",
     validate: (0, _validate.validateCheckbox)(required),
     onChange: onChange,
-    childrenBody: children
+    childrenBody: children,
+    HTMLcontent: HTMLcontent
   });
 };
 

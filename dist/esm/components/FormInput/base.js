@@ -74,6 +74,9 @@ const StyledInput = styled.input`
   border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
+  ${props => props.hasPrefix && 'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
+  ${props => props.hasSufix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
+
   &::placeholder {
     color: ${props => props.theme.inputPlaceHolderColor};
   }
@@ -117,7 +120,9 @@ const StyledSpan = styled.span`
 `;
 const StyledInputSuffix = styled.span`
   position: relative;
-  right: 0;
+  right: 0px;
+  height: ${props => props.theme.inputHeight};
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
@@ -130,7 +135,9 @@ const StyledInputSuffix = styled.span`
 `;
 const StyledInputPrefix = styled.span`
   position: relative;
-  left: 0;
+  left: 0px;
+  height: ${props => props.theme.inputHeight};
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
@@ -177,6 +184,11 @@ const SliderWrapper = styled.div`
   }
  }
 `;
+const InputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  width:100%;
+`;
 /* eslint-enable */
 
 const BaseField = (_ref) => {
@@ -202,6 +214,8 @@ const BaseField = (_ref) => {
   return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
   }, `${props.label}${props.required && '*' || ''}`), props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
+    hasPrefix: !!props.prefix,
+    hasSufix: !!props.suffix,
     onBlur: handleOnBlur,
     type: props.type,
     value: field.value && field.value || '',
@@ -311,14 +325,14 @@ export const BaseRangeField = (_ref3) => {
   }, [field.name, value, setFieldValue]);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
-  }, props.label), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
+  }, props.label), /*#__PURE__*/React.createElement(InputWrapper, null, /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
     onChange: handleOnChange,
     onBlur: handleOnBlur,
     type: props.type,
     value: value,
     error: touched[field.name] && errors[field.name],
     placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
-  })), props.suffix && /*#__PURE__*/React.createElement(StyledInputSuffix, null, props.suffix)), /*#__PURE__*/React.createElement(SliderWrapper, null, /*#__PURE__*/React.createElement(Slider, {
+  })), props.suffix && /*#__PURE__*/React.createElement(StyledInputSuffix, null, props.suffix))), /*#__PURE__*/React.createElement(SliderWrapper, null, /*#__PURE__*/React.createElement(Slider, {
     min: props.min,
     max: props.max,
     step: props.step,
