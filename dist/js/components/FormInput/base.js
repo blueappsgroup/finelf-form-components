@@ -320,7 +320,7 @@ var BaseField = function BaseField(_ref) {
 
   return /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
-  }, props.label), props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+  }, "".concat(props.label).concat(props.required && '*' || '')), props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
     onBlur: handleOnBlur,
     type: props.type,
     value: field.value && field.value || '',
@@ -353,7 +353,7 @@ var BaseSelectField = function BaseSelectField(_ref2) {
       key: "select",
       value: "select",
       disabled: true
-    }, "wybierz")].concat(Object.keys(_options).map(function (option) {
+    }, "wybierz ".concat(props.required && '*' || ''))].concat(Object.keys(_options).map(function (option) {
       return /*#__PURE__*/_react.default.createElement("option", {
         key: option,
         value: option
@@ -363,7 +363,7 @@ var BaseSelectField = function BaseSelectField(_ref2) {
 
   return /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
-  }, props.label), /*#__PURE__*/_react.default.createElement(StyledSelect, _extends({}, field, props, {
+  }, "".concat(props.label).concat(props.required && '*' || '')), /*#__PURE__*/_react.default.createElement(StyledSelect, _extends({}, field, props, {
     onBlur: handleOnBlur,
     type: "text",
     value: field.value && field.value || 'select',
@@ -380,6 +380,7 @@ var BaseRangeField = function BaseRangeField(_ref3) {
       touched = _ref3$form.touched,
       errors = _ref3$form.errors,
       values = _ref3$form.values,
+      setFieldValue = _ref3$form.setFieldValue,
       props = _objectWithoutProperties(_ref3, ["field", "form"]);
 
   var _useContext3 = (0, _react.useContext)(_utils.FormContext),
@@ -421,6 +422,9 @@ var BaseRangeField = function BaseRangeField(_ref3) {
     field.onBlur && field.onBlur(e);
   };
 
+  (0, _react.useLayoutEffect)(function () {
+    setFieldValue(field.name, value);
+  }, [field.name, value, setFieldValue]);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
   }, props.label), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {

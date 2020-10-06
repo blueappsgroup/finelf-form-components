@@ -11,7 +11,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useLayoutEffect, useState } from 'react';
 import Slider from 'react-rangeslider';
 import styled from 'styled-components';
 import { device } from '../../consts/sizes';
@@ -201,7 +201,7 @@ const BaseField = (_ref) => {
 
   return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
-  }, props.label), props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
+  }, `${props.label}${props.required && '*' || ''}`), props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
     onBlur: handleOnBlur,
     type: props.type,
     value: field.value && field.value || '',
@@ -236,7 +236,7 @@ export const BaseSelectField = (_ref2) => {
       key: "select",
       value: "select",
       disabled: true
-    }, "wybierz")].concat(Object.keys(options).map(option => {
+    }, `wybierz ${props.required && '*' || ''}`)].concat(Object.keys(options).map(option => {
       return /*#__PURE__*/React.createElement("option", {
         key: option,
         value: option
@@ -246,7 +246,7 @@ export const BaseSelectField = (_ref2) => {
 
   return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
-  }, props.label), /*#__PURE__*/React.createElement(StyledSelect, _extends({}, field, props, {
+  }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(StyledSelect, _extends({}, field, props, {
     onBlur: handleOnBlur,
     type: "text",
     value: field.value && field.value || 'select',
@@ -260,7 +260,8 @@ export const BaseRangeField = (_ref3) => {
     form: {
       touched,
       errors,
-      values
+      values,
+      setFieldValue
     }
   } = _ref3,
       props = _objectWithoutProperties(_ref3, ["field", "form"]);
@@ -305,6 +306,9 @@ export const BaseRangeField = (_ref3) => {
     field.onBlur && field.onBlur(e);
   };
 
+  useLayoutEffect(() => {
+    setFieldValue(field.name, value);
+  }, [field.name, value, setFieldValue]);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
   }, props.label), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
