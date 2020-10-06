@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BirthDateField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL honwIS"
+  id="birthDateField"
+  name="name"
+  placeholder="BirthDate"
+  type="date"
+  value=""
+/>
+`;
+
+exports[`<BirthDateField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL honwIS"
+        id="birthDateField"
+        label="Test"
+        name="name"
+        placeholder="BirthDate"
+        type="date"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

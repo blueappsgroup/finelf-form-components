@@ -2,25 +2,24 @@ import * as React from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 
 import Form from '../../Form'
-import TextField from '../TextField'
+import GenderField from '../GenderField'
+import { isNotValidOption } from '../validateHelpers'
 
-describe('<TextField />', () => {
+describe('<GenderField />', () => {
   const onSubmit = jest.fn()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const setupWrapper: (config: any) => any = ({
     formId = 'testForm',
-    inputId = 'textField',
-    inputName = 'name',
+    selectId = 'genderField',
+    selectName = 'name',
     required = false,
-    validate,
     ...rest
   }) => {
     const wrapper = render(
       <Form id={formId} onSubmit={onSubmit}>
-        <TextField
-          id={inputId}
-          name={inputName}
-          validate={validate}
+        <GenderField
+          id={selectId}
+          name={selectName}
           required={required}
           {...rest}
         />
@@ -28,19 +27,19 @@ describe('<TextField />', () => {
     )
     const { container } = wrapper
 
-    const input = container.querySelector(`[name="${inputName}"]`)
+    const select = container.querySelector(`[name="${selectName}"]`)
 
     return {
-      input,
+      select,
       ...wrapper,
     }
   }
 
   it('matches snapshot', () => {
-    const { input } = setupWrapper({})
+    const { select } = setupWrapper({})
 
-    expect(input).toBeTruthy()
-    expect(input).toMatchSnapshot()
+    expect(select).toBeTruthy()
+    expect(select).toMatchSnapshot()
   })
 
   it('matches snapshot with label', () => {
@@ -58,68 +57,73 @@ describe('<TextField />', () => {
       required: true,
       error: 'true',
     })
-    const { container, input } = wrapper
+    const { container, select } = wrapper
 
     await act(async () => {
-      fireEvent.focus(input, { target: { value: 'test' } })
+      fireEvent.focus(select, { target: { value: 'female' } })
     })
 
     await act(async () => {
-      fireEvent.blur(input, { target: { value: 'test' } })
+      fireEvent.blur(select, { target: { value: 'female' } })
     })
 
     expect(wrapper.getByText('To pole jest wymagane')).toBeTruthy()
     expect(container).toMatchSnapshot()
   })
 
-  it('changes input field', async () => {
-    const { input } = setupWrapper({})
+  it('changes select field', async () => {
+    const { select } = setupWrapper({})
 
     await act(async () => {
-      fireEvent.change(input, { target: { value: 'test' } })
+      fireEvent.change(select, { target: { value: 'female' } })
     })
 
-    expect(input.value).toBe('test')
+    expect(select.value).toBe('female')
   })
 
-  it('input field onBlur save value to sessionStorage', async () => {
-    const { input } = setupWrapper({})
+  it('select field onBlur save value to sessionStorage', async () => {
+    const { select } = setupWrapper({})
 
     await act(async () => {
-      fireEvent.change(input, { target: { value: 'test' } })
+      fireEvent.change(select, { target: { value: 'female' } })
     })
 
     await act(async () => {
-      fireEvent.blur(input, { target: { value: 'test' } })
+      fireEvent.blur(select, { target: { value: 'female' } })
     })
 
     expect(
       JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
-    ).toBe('test')
-    expect(input.value).toBe('test')
+    ).toBe('female')
+    expect(select.value).toBe('female')
   })
 
-  it('input field with custom validation', async () => {
+  it('select field with custom validation', async () => {
     const customValidate = () => (value: string): string => {
-      if (value === 'test') {
-        return 'Bad name'
+      if (
+        isNotValidOption(value, {
+          male: 'mężczyzna',
+          female: 'kobieta',
+        })
+      ) {
+        return 'Podane dane są nieprawidłowe'
       }
     }
     const wrapper = setupWrapper({
       validate: customValidate,
       showError: true,
     })
-    const { input, container } = wrapper
+    const { select, container } = wrapper
 
     await act(async () => {
-      fireEvent.change(input, { target: { value: 'test' } })
+      fireEvent.change(select, { target: { value: 'test' } })
     })
 
     await act(async () => {
-      fireEvent.blur(input, { target: { value: 'test' } })
+      fireEvent.blur(select, { target: { value: 'test' } })
     })
 
     expect(container).toMatchSnapshot()
-    expect(wrapper.getByText('Bad name')).toBeTruthy()
+    expect(wrapper.getByText('Podane dane są nieprawidłowe')).toBeTruthy()
   })
 })

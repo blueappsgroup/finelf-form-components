@@ -4,6 +4,7 @@ import { Field } from 'formik'
 
 import { SelectFieldProps } from '../../types'
 import { BaseSelectField } from './base'
+import { validateSelect } from './validate'
 
 const options = {
   bills: 'rachunki',
@@ -25,6 +26,7 @@ const LoanReasonField: FC<SelectFieldProps> = ({
   label,
   name,
   required = false,
+  validate,
   showError,
 }) => (
   <Field
@@ -36,6 +38,9 @@ const LoanReasonField: FC<SelectFieldProps> = ({
     label={label}
     type="select"
     options={options}
+    validate={
+      (validate && validate(required)) || validateSelect(required, options)
+    }
   />
 )
 

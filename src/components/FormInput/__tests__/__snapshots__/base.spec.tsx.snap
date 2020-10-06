@@ -2,7 +2,7 @@
 
 exports[`base <BaseField /> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL ggqeAX"
+  class="sc-kEqYlL honwIS"
   id="baseField"
   name="baseField"
   value=""
@@ -17,15 +17,15 @@ exports[`base <BaseField /> matches snapshot with error 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="baseField"
       >
-        Test
+        Test*
       </label>
       <input
-        class="sc-kEqYlL ddptCy"
+        class="sc-kEqYlL jzZEFj"
         id="baseField"
         label="Test"
         name="baseField"
@@ -33,7 +33,7 @@ exports[`base <BaseField /> matches snapshot with error 1`] = `
         value=""
       />
       <span
-        class="sc-jrsJCI eQDYwE"
+        class="sc-jrsJCI djVSvf"
       >
         To pole jest wymagane
       </span>
@@ -50,7 +50,7 @@ exports[`base <BaseField /> matches snapshot with label 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="baseField"
@@ -58,12 +58,159 @@ exports[`base <BaseField /> matches snapshot with label 1`] = `
         Test
       </label>
       <input
-        class="sc-kEqYlL ggqeAX"
+        class="sc-kEqYlL honwIS"
         id="baseField"
         label="Test"
         name="baseField"
         value=""
       />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`base <BaseRangeField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL honwIS"
+  id="baseRangeField"
+  max="10000"
+  min="300"
+  name="baseRangeField"
+  step="100"
+  value="2000"
+/>
+`;
+
+exports[`base <BaseRangeField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div>
+      <div
+        class="sc-fujyUd gdvYxl"
+      >
+        <label
+          for="baseRangeField"
+        >
+          Test
+        </label>
+        <input
+          class="sc-kEqYlL honwIS"
+          id="baseRangeField"
+          label="Test"
+          max="10000"
+          min="300"
+          name="baseRangeField"
+          step="100"
+          value="2000"
+        />
+        <span
+          class="sc-dIsAE idqcHK"
+        >
+          PLN
+        </span>
+      </div>
+      <div
+        class="sc-ksluoS lgnNyZ"
+      >
+        <div
+          aria-orientation="horizontal"
+          aria-valuemax="10000"
+          aria-valuemin="300"
+          aria-valuenow="2000"
+          class="rangeslider rangeslider-horizontal"
+        >
+          <div
+            class="rangeslider__fill"
+            style="width: 0px;"
+          />
+          <div
+            class="rangeslider__handle"
+            style="left: 0px;"
+            tabindex="0"
+          >
+            <div
+              class="rangeslider__handle-label"
+            />
+          </div>
+          <ul
+            class="rangeslider__labels"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`base <BaseSelectField /> matches snapshot 1`] = `
+<select
+  class="sc-iqAbSa kItNyh"
+  id="baseSelectField"
+  name="baseSelectField"
+  type="text"
+>
+  <option
+    disabled=""
+    value="select"
+  >
+    wybierz 
+  </option>
+  <option
+    value="test1"
+  >
+    test1
+  </option>
+  <option
+    value="test2"
+  >
+    test2
+  </option>
+</select>
+`;
+
+exports[`base <BaseSelectField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="baseSelectField"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa kItNyh"
+        id="baseSelectField"
+        label="Test"
+        name="baseSelectField"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz 
+        </option>
+        <option
+          value="test1"
+        >
+          test1
+        </option>
+        <option
+          value="test2"
+        >
+          test2
+        </option>
+      </select>
     </div>
   </form>
 </div>
