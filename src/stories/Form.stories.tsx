@@ -37,25 +37,6 @@ const Template: Story<FormProps> = (args) => (
     <TextField required placeholder="Surname" name="lastName" />
     <TextField placeholder="City" name="city" />
     <Header text="Test title" type="subheader" />
-    <CheckboxField
-      name="agreement13"
-      label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
-      required
-    />
-    <CheckboxesGroup name="agreements2">
-      <CheckboxField
-        name="agreement1"
-        label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
-        required
-      />
-      <CheckboxField
-        name="agreement2"
-        label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
-      />
-      <CheckboxField name="agreement3">
-        <a href="https://www.czerwona-skarbonka.pl">Test link</a>
-      </CheckboxField>
-    </CheckboxesGroup>
     <Agreements />
     <Button type="submit" text="Send" />
   </Form>
