@@ -70,4 +70,5 @@ export const isValidIDCard = value => {
   return false;
 };
 export const isNotValidIDCard = value => !/^[A-z]{3}[0-9]{6}$/.test(value);
+export const isNotValidOption = (value, options) => !options.hasOwnProperty(value);
 //# sourceMappingURL=validateHelpers.js.map

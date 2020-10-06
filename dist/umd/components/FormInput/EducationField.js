@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react", "formik", "./base"], factory);
+    define(["exports", "react", "formik", "./base", "./validate"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"), require("formik"), require("./base"));
+    factory(exports, require("react"), require("formik"), require("./base"), require("./validate"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.formik, global.base);
+    factory(mod.exports, global.react, global.formik, global.base, global.validate);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _react, _formik, _base) {
+})(this, function (exports, _react, _formik, _base, _validate) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -40,6 +40,7 @@
     label,
     name,
     required = false,
+    validate,
     showError
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
@@ -49,7 +50,8 @@
     component: _base.BaseSelectField,
     label: label,
     type: "select",
-    options: options
+    options: options,
+    validate: validate && validate(required) || (0, _validate.validateSelect)(required, options)
   });
 
   EducationField.defaultProps = {
