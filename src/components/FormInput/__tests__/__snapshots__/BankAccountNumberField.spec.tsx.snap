@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextField /> input field with custom validation 1`] = `
+exports[`<BankAccountNumberField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
@@ -10,36 +10,41 @@ exports[`<TextField /> input field with custom validation 1`] = `
     <div
       class="sc-fujyUd gdvYxl"
     >
+      <label
+        for="name"
+      >
+        Numer konta bankowego
+      </label>
       <input
         class="sc-kEqYlL jzZEFj"
-        id="textField"
+        id="bankAccountNumberField"
+        label="Numer konta bankowego"
         name="name"
-        placeholder="Text"
-        type="text"
+        placeholder="Numer konta bankowego"
         value="test"
       />
       <span
         class="sc-jrsJCI djVSvf"
       >
-        Bad name
+        Podany numer konta jest nieprawidłowy
       </span>
     </div>
   </form>
 </div>
 `;
 
-exports[`<TextField /> matches snapshot 1`] = `
+exports[`<BankAccountNumberField /> matches snapshot 1`] = `
 <input
   class="sc-kEqYlL honwIS"
-  id="textField"
+  id="bankAccountNumberField"
+  label="Numer konta bankowego"
   name="name"
-  placeholder="Text"
-  type="text"
+  placeholder="Numer konta bankowego"
   value=""
 />
 `;
 
-exports[`<TextField /> matches snapshot with error 1`] = `
+exports[`<BankAccountNumberField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
@@ -56,12 +61,11 @@ exports[`<TextField /> matches snapshot with error 1`] = `
       </label>
       <input
         class="sc-kEqYlL jzZEFj"
-        id="textField"
+        id="bankAccountNumberField"
         label="Test"
         name="name"
-        placeholder="Text*"
+        placeholder="Numer konta bankowego*"
         required=""
-        type="text"
         value=""
       />
       <span
@@ -74,7 +78,7 @@ exports[`<TextField /> matches snapshot with error 1`] = `
 </div>
 `;
 
-exports[`<TextField /> matches snapshot with label 1`] = `
+exports[`<BankAccountNumberField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
@@ -91,11 +95,10 @@ exports[`<TextField /> matches snapshot with label 1`] = `
       </label>
       <input
         class="sc-kEqYlL honwIS"
-        id="textField"
+        id="bankAccountNumberField"
         label="Test"
         name="name"
-        placeholder="Text"
-        type="text"
+        placeholder="Numer konta bankowego"
         value=""
       />
     </div>

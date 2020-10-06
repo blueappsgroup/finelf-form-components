@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EducationField /> matches snapshot 1`] = `
+<select
+  class="sc-iqAbSa kItNyh"
+  id="educationField"
+  name="name"
+  type="text"
+>
+  <option
+    disabled=""
+    value="select"
+  >
+    wybierz 
+  </option>
+  <option
+    value="none"
+  >
+    brak
+  </option>
+  <option
+    value="primary"
+  >
+    podstawowe
+  </option>
+  <option
+    value="vocational"
+  >
+    zawodowe
+  </option>
+  <option
+    value="secondary"
+  >
+    średnie
+  </option>
+  <option
+    value="higher"
+  >
+    wyższe licencjackie
+  </option>
+  <option
+    value="masters"
+  >
+    wyższe magisterskie
+  </option>
+  <option
+    value="phd"
+  >
+    wyższe doktorskie
+  </option>
+</select>
+`;
+
+exports[`<EducationField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="name"
+      >
+        Test*
+      </label>
+      <select
+        class="sc-iqAbSa ebhXIE"
+        id="educationField"
+        label="Test"
+        name="name"
+        required=""
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz *
+        </option>
+        <option
+          value="none"
+        >
+          brak
+        </option>
+        <option
+          value="primary"
+        >
+          podstawowe
+        </option>
+        <option
+          value="vocational"
+        >
+          zawodowe
+        </option>
+        <option
+          value="secondary"
+        >
+          średnie
+        </option>
+        <option
+          value="higher"
+        >
+          wyższe licencjackie
+        </option>
+        <option
+          value="masters"
+        >
+          wyższe magisterskie
+        </option>
+        <option
+          value="phd"
+        >
+          wyższe doktorskie
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<EducationField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa kItNyh"
+        id="educationField"
+        label="Test"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz 
+        </option>
+        <option
+          value="none"
+        >
+          brak
+        </option>
+        <option
+          value="primary"
+        >
+          podstawowe
+        </option>
+        <option
+          value="vocational"
+        >
+          zawodowe
+        </option>
+        <option
+          value="secondary"
+        >
+          średnie
+        </option>
+        <option
+          value="higher"
+        >
+          wyższe licencjackie
+        </option>
+        <option
+          value="masters"
+        >
+          wyższe magisterskie
+        </option>
+        <option
+          value="phd"
+        >
+          wyższe doktorskie
+        </option>
+      </select>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<EducationField /> select field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <select
+        class="sc-iqAbSa ebhXIE"
+        id="educationField"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz 
+        </option>
+        <option
+          value="none"
+        >
+          brak
+        </option>
+        <option
+          value="primary"
+        >
+          podstawowe
+        </option>
+        <option
+          value="vocational"
+        >
+          zawodowe
+        </option>
+        <option
+          value="secondary"
+        >
+          średnie
+        </option>
+        <option
+          value="higher"
+        >
+          wyższe licencjackie
+        </option>
+        <option
+          value="masters"
+        >
+          wyższe magisterskie
+        </option>
+        <option
+          value="phd"
+        >
+          wyższe doktorskie
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        Podane dane są nieprawidłowe
+      </span>
+    </div>
+  </form>
+</div>
+`;

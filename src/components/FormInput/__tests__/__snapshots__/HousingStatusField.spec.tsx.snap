@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HousingStatusField /> matches snapshot 1`] = `
+<select
+  class="sc-iqAbSa kItNyh"
+  id="housingStatusField"
+  name="name"
+  type="text"
+>
+  <option
+    disabled=""
+    value="select"
+  >
+    wybierz 
+  </option>
+  <option
+    value="propety"
+  >
+    mieszkanie własne
+  </option>
+  <option
+    value="with_parent"
+  >
+    mieszkanie rodziców
+  </option>
+  <option
+    value="rental"
+  >
+    mieszkanie wynajmowane
+  </option>
+  <option
+    value="room"
+  >
+    pokój
+  </option>
+</select>
+`;
+
+exports[`<HousingStatusField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="name"
+      >
+        Test*
+      </label>
+      <select
+        class="sc-iqAbSa ebhXIE"
+        id="housingStatusField"
+        label="Test"
+        name="name"
+        required=""
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz *
+        </option>
+        <option
+          value="propety"
+        >
+          mieszkanie własne
+        </option>
+        <option
+          value="with_parent"
+        >
+          mieszkanie rodziców
+        </option>
+        <option
+          value="rental"
+        >
+          mieszkanie wynajmowane
+        </option>
+        <option
+          value="room"
+        >
+          pokój
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<HousingStatusField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa kItNyh"
+        id="housingStatusField"
+        label="Test"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz 
+        </option>
+        <option
+          value="propety"
+        >
+          mieszkanie własne
+        </option>
+        <option
+          value="with_parent"
+        >
+          mieszkanie rodziców
+        </option>
+        <option
+          value="rental"
+        >
+          mieszkanie wynajmowane
+        </option>
+        <option
+          value="room"
+        >
+          pokój
+        </option>
+      </select>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<HousingStatusField /> select field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <select
+        class="sc-iqAbSa ebhXIE"
+        id="housingStatusField"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz 
+        </option>
+        <option
+          value="propety"
+        >
+          mieszkanie własne
+        </option>
+        <option
+          value="with_parent"
+        >
+          mieszkanie rodziców
+        </option>
+        <option
+          value="rental"
+        >
+          mieszkanie wynajmowane
+        </option>
+        <option
+          value="room"
+        >
+          pokój
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        Podane dane są nieprawidłowe
+      </span>
+    </div>
+  </form>
+</div>
+`;

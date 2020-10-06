@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextField /> input field with custom validation 1`] = `
+exports[`<OtherLoanAmountField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
@@ -12,34 +12,39 @@ exports[`<TextField /> input field with custom validation 1`] = `
     >
       <input
         class="sc-kEqYlL jzZEFj"
-        id="textField"
+        id="otherLoanAmountField"
         name="name"
-        placeholder="Text"
+        placeholder="Kwota obecnych zobowiązań finansowych"
         type="text"
         value="test"
       />
       <span
+        class="sc-dIsAE idqcHK"
+      >
+        PLN
+      </span>
+      <span
         class="sc-jrsJCI djVSvf"
       >
-        Bad name
+        Podany kwota jest nieprawidłowa
       </span>
     </div>
   </form>
 </div>
 `;
 
-exports[`<TextField /> matches snapshot 1`] = `
+exports[`<OtherLoanAmountField /> matches snapshot 1`] = `
 <input
   class="sc-kEqYlL honwIS"
-  id="textField"
+  id="otherLoanAmountField"
   name="name"
-  placeholder="Text"
+  placeholder="Kwota obecnych zobowiązań finansowych"
   type="text"
   value=""
 />
 `;
 
-exports[`<TextField /> matches snapshot with error 1`] = `
+exports[`<OtherLoanAmountField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
@@ -56,14 +61,19 @@ exports[`<TextField /> matches snapshot with error 1`] = `
       </label>
       <input
         class="sc-kEqYlL jzZEFj"
-        id="textField"
+        id="otherLoanAmountField"
         label="Test"
         name="name"
-        placeholder="Text*"
+        placeholder="Kwota obecnych zobowiązań finansowych*"
         required=""
         type="text"
         value=""
       />
+      <span
+        class="sc-dIsAE idqcHK"
+      >
+        PLN
+      </span>
       <span
         class="sc-jrsJCI djVSvf"
       >
@@ -74,7 +84,7 @@ exports[`<TextField /> matches snapshot with error 1`] = `
 </div>
 `;
 
-exports[`<TextField /> matches snapshot with label 1`] = `
+exports[`<OtherLoanAmountField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
@@ -91,13 +101,18 @@ exports[`<TextField /> matches snapshot with label 1`] = `
       </label>
       <input
         class="sc-kEqYlL honwIS"
-        id="textField"
+        id="otherLoanAmountField"
         label="Test"
         name="name"
-        placeholder="Text"
+        placeholder="Kwota obecnych zobowiązań finansowych"
         type="text"
         value=""
       />
+      <span
+        class="sc-dIsAE idqcHK"
+      >
+        PLN
+      </span>
     </div>
   </form>
 </div>

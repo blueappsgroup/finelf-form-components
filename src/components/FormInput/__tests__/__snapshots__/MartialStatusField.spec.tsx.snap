@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MaritalStatusField /> matches snapshot 1`] = `
+<select
+  class="sc-iqAbSa kItNyh"
+  id="maritalStatusField"
+  name="name"
+  type="text"
+>
+  <option
+    disabled=""
+    value="select"
+  >
+    wybierz 
+  </option>
+  <option
+    value="unmarried"
+  >
+    panna/kawaler
+  </option>
+  <option
+    value="married"
+  >
+    mężatka/żonaty
+  </option>
+  <option
+    value="divorced"
+  >
+    rozwiedziona/rozwiedziony
+  </option>
+  <option
+    value="widower"
+  >
+    wdowa/wdowiec
+  </option>
+  <option
+    value="with_parents"
+  >
+    z rodzicami
+  </option>
+</select>
+`;
+
+exports[`<MaritalStatusField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="name"
+      >
+        Test*
+      </label>
+      <select
+        class="sc-iqAbSa ebhXIE"
+        id="maritalStatusField"
+        label="Test"
+        name="name"
+        required=""
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz *
+        </option>
+        <option
+          value="unmarried"
+        >
+          panna/kawaler
+        </option>
+        <option
+          value="married"
+        >
+          mężatka/żonaty
+        </option>
+        <option
+          value="divorced"
+        >
+          rozwiedziona/rozwiedziony
+        </option>
+        <option
+          value="widower"
+        >
+          wdowa/wdowiec
+        </option>
+        <option
+          value="with_parents"
+        >
+          z rodzicami
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<MaritalStatusField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa kItNyh"
+        id="maritalStatusField"
+        label="Test"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz 
+        </option>
+        <option
+          value="unmarried"
+        >
+          panna/kawaler
+        </option>
+        <option
+          value="married"
+        >
+          mężatka/żonaty
+        </option>
+        <option
+          value="divorced"
+        >
+          rozwiedziona/rozwiedziony
+        </option>
+        <option
+          value="widower"
+        >
+          wdowa/wdowiec
+        </option>
+        <option
+          value="with_parents"
+        >
+          z rodzicami
+        </option>
+      </select>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<MaritalStatusField /> select field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <select
+        class="sc-iqAbSa ebhXIE"
+        id="maritalStatusField"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz 
+        </option>
+        <option
+          value="unmarried"
+        >
+          panna/kawaler
+        </option>
+        <option
+          value="married"
+        >
+          mężatka/żonaty
+        </option>
+        <option
+          value="divorced"
+        >
+          rozwiedziona/rozwiedziony
+        </option>
+        <option
+          value="widower"
+        >
+          wdowa/wdowiec
+        </option>
+        <option
+          value="with_parents"
+        >
+          z rodzicami
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        Podane dane są nieprawidłowe
+      </span>
+    </div>
+  </form>
+</div>
+`;
