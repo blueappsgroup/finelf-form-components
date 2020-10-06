@@ -8,10 +8,10 @@ exports[`<OtherLoanAmountField /> input field with custom validation 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd gdvYxl"
     >
       <input
-        class="sc-kEqYlL ddptCy"
+        class="sc-kEqYlL jzZEFj"
         id="otherLoanAmountField"
         name="name"
         placeholder="Kwota obecnych zobowiązań finansowych"
@@ -19,12 +19,12 @@ exports[`<OtherLoanAmountField /> input field with custom validation 1`] = `
         value="test"
       />
       <span
-        class="sc-dIsAE ccvseT"
+        class="sc-dIsAE idqcHK"
       >
         PLN
       </span>
       <span
-        class="sc-jrsJCI eQDYwE"
+        class="sc-jrsJCI djVSvf"
       >
         Podany kwota jest nieprawidłowa
       </span>
@@ -35,7 +35,7 @@ exports[`<OtherLoanAmountField /> input field with custom validation 1`] = `
 
 exports[`<OtherLoanAmountField /> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL ggqeAX"
+  class="sc-kEqYlL honwIS"
   id="otherLoanAmountField"
   name="name"
   placeholder="Kwota obecnych zobowiązań finansowych"
@@ -52,15 +52,15 @@ exports[`<OtherLoanAmountField /> matches snapshot with error 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="name"
       >
-        Test
+        Test*
       </label>
       <input
-        class="sc-kEqYlL ddptCy"
+        class="sc-kEqYlL jzZEFj"
         id="otherLoanAmountField"
         label="Test"
         name="name"
@@ -70,12 +70,12 @@ exports[`<OtherLoanAmountField /> matches snapshot with error 1`] = `
         value=""
       />
       <span
-        class="sc-dIsAE ccvseT"
+        class="sc-dIsAE idqcHK"
       >
         PLN
       </span>
       <span
-        class="sc-jrsJCI eQDYwE"
+        class="sc-jrsJCI djVSvf"
       >
         To pole jest wymagane
       </span>
@@ -92,7 +92,7 @@ exports[`<OtherLoanAmountField /> matches snapshot with label 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="name"
@@ -100,7 +100,7 @@ exports[`<OtherLoanAmountField /> matches snapshot with label 1`] = `
         Test
       </label>
       <input
-        class="sc-kEqYlL ggqeAX"
+        class="sc-kEqYlL honwIS"
         id="otherLoanAmountField"
         label="Test"
         name="name"
@@ -109,7 +109,7 @@ exports[`<OtherLoanAmountField /> matches snapshot with label 1`] = `
         value=""
       />
       <span
-        class="sc-dIsAE ccvseT"
+        class="sc-dIsAE idqcHK"
       >
         PLN
       </span>

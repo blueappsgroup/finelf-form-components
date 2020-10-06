@@ -2,7 +2,7 @@
 
 exports[`<HousingStatusField /> matches snapshot 1`] = `
 <select
-  class="sc-iqAbSa hSYmLs"
+  class="sc-iqAbSa kItNyh"
   id="housingStatusField"
   name="name"
   type="text"
@@ -11,7 +11,7 @@ exports[`<HousingStatusField /> matches snapshot 1`] = `
     disabled=""
     value="select"
   >
-    wybierz
+    wybierz 
   </option>
   <option
     value="propety"
@@ -44,15 +44,15 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="name"
       >
-        Test
+        Test*
       </label>
       <select
-        class="sc-iqAbSa cTqqfZ"
+        class="sc-iqAbSa ebhXIE"
         id="housingStatusField"
         label="Test"
         name="name"
@@ -63,7 +63,7 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
           disabled=""
           value="select"
         >
-          wybierz
+          wybierz *
         </option>
         <option
           value="propety"
@@ -87,7 +87,7 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
         </option>
       </select>
       <span
-        class="sc-jrsJCI eQDYwE"
+        class="sc-jrsJCI djVSvf"
       >
         To pole jest wymagane
       </span>
@@ -104,7 +104,7 @@ exports[`<HousingStatusField /> matches snapshot with label 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd gdvYxl"
     >
       <label
         for="name"
@@ -112,7 +112,7 @@ exports[`<HousingStatusField /> matches snapshot with label 1`] = `
         Test
       </label>
       <select
-        class="sc-iqAbSa hSYmLs"
+        class="sc-iqAbSa kItNyh"
         id="housingStatusField"
         label="Test"
         name="name"
@@ -122,7 +122,7 @@ exports[`<HousingStatusField /> matches snapshot with label 1`] = `
           disabled=""
           value="select"
         >
-          wybierz
+          wybierz 
         </option>
         <option
           value="propety"
@@ -158,10 +158,10 @@ exports[`<HousingStatusField /> select field with custom validation 1`] = `
     id="testForm"
   >
     <div
-      class="sc-fujyUd curuhY"
+      class="sc-fujyUd gdvYxl"
     >
       <select
-        class="sc-iqAbSa cTqqfZ"
+        class="sc-iqAbSa ebhXIE"
         id="housingStatusField"
         name="name"
         type="text"
@@ -170,7 +170,7 @@ exports[`<HousingStatusField /> select field with custom validation 1`] = `
           disabled=""
           value="select"
         >
-          wybierz
+          wybierz 
         </option>
         <option
           value="propety"
@@ -194,7 +194,7 @@ exports[`<HousingStatusField /> select field with custom validation 1`] = `
         </option>
       </select>
       <span
-        class="sc-jrsJCI eQDYwE"
+        class="sc-jrsJCI djVSvf"
       >
         Podane dane są nieprawidłowe
       </span>
