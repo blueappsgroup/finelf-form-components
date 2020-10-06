@@ -1,7 +1,8 @@
 import { ReactElement, ReactNode } from 'react'
 import { FieldProps } from 'formik'
 
-export type FormValuesType = { [key: string]: string | boolean | undefined }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type FormValuesType = any
 
 export type CheckboxFieldProps = {
   id?: string
@@ -10,6 +11,7 @@ export type CheckboxFieldProps = {
   required?: boolean
   onChange?: Function
   children?: ReactElement | ReactElement[]
+  HTMLcontent?: string
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -23,6 +25,7 @@ export type FieldWrapProps = FieldProps & {
   type?: string
   suffix?: string
   prefix?: string
+  HTMLcontent?: string
 }
 
 export type SelectFieldOptions = {
@@ -213,6 +216,9 @@ export type FormProps = {
   redirectBgImg?: string
   queueUrl?: string
   sendDataToSQS?: boolean
+  sendDataToApi?: boolean
+  apiUrl?: string
+  transactionName?: string
 }
 
 export type RedirectPagePropsTypes = {

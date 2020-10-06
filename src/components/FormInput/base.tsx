@@ -152,6 +152,13 @@ const StyledInput = styled.input<any>`
   color: ${(props: any): string =>
     props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
+  ${(props: any) =>
+    props.hasPrefix &&
+    'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
+  ${(props: any) =>
+    props.hasSufix &&
+    'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
+
   &::placeholder {
     color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
   }
@@ -199,7 +206,9 @@ const StyledSpan = styled.span`
 
 const StyledInputSuffix = styled.span`
   position: relative;
-  right: 0;
+  right: 0px;
+  height: ${(props: StyledProps): string => props.theme.inputHeight};
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   height: ${(props: StyledProps): string => props.theme.inputHeight};
@@ -213,7 +222,9 @@ const StyledInputSuffix = styled.span`
 
 const StyledInputPrefix = styled.span`
   position: relative;
-  left: 0;
+  left: 0px;
+  height: ${(props: StyledProps): string => props.theme.inputHeight};
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   height: ${(props: StyledProps): string => props.theme.inputHeight};
@@ -261,6 +272,12 @@ const SliderWrapper = styled.div`
   }
  }
 `
+
+const InputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  width:100%;
+`
 /* eslint-enable */
 
 const BaseField: (props: FieldWrapProps) => ReactElement = ({
@@ -285,6 +302,8 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
       <StyledInput
         {...field}
         {...props}
+        hasPrefix={!!props.prefix}
+        hasSufix={!!props.suffix}
         onBlur={handleOnBlur}
         type={props.type}
         value={(field.value && field.value) || ''}
@@ -415,20 +434,24 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
     <div>
       <StyledRow>
         {props.label && <label htmlFor={field.name}>{props.label}</label>}
-        <StyledInput
-          {...field}
-          {...props}
-          onChange={handleOnChange}
-          onBlur={handleOnBlur}
-          type={props.type}
-          value={value}
-          error={touched[field.name] && errors[field.name]}
-          placeholder={
-            props.placeholder &&
-            `${props.placeholder}${(props.required && '*') || ''}`
-          }
-        />
-        {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
+        <InputWrapper>
+          <StyledInput
+            {...field}
+            {...props}
+            onChange={handleOnChange}
+            onBlur={handleOnBlur}
+            type={props.type}
+            value={value}
+            error={touched[field.name] && errors[field.name]}
+            placeholder={
+              props.placeholder &&
+              `${props.placeholder}${(props.required && '*') || ''}`
+            }
+          />
+          {props.suffix && (
+            <StyledInputSuffix>{props.suffix}</StyledInputSuffix>
+          )}
+        </InputWrapper>
       </StyledRow>
       <SliderWrapper>
         <Slider
