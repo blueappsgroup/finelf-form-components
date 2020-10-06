@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GenderField /> matches snapshot 1`] = `
+<select
+  class="sc-iqAbSa hSYmLs"
+  id="genderField"
+  name="name"
+  type="text"
+>
+  <option
+    disabled=""
+    value="select"
+  >
+    wybierz
+  </option>
+  <option
+    value="male"
+  >
+    mężczyzna
+  </option>
+  <option
+    value="female"
+  >
+    kobieta
+  </option>
+</select>
+`;
+
+exports[`<GenderField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa cTqqfZ"
+        id="genderField"
+        label="Test"
+        name="name"
+        required=""
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz
+        </option>
+        <option
+          value="male"
+        >
+          mężczyzna
+        </option>
+        <option
+          value="female"
+        >
+          kobieta
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<GenderField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa hSYmLs"
+        id="genderField"
+        label="Test"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz
+        </option>
+        <option
+          value="male"
+        >
+          mężczyzna
+        </option>
+        <option
+          value="female"
+        >
+          kobieta
+        </option>
+      </select>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<GenderField /> select field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <select
+        class="sc-iqAbSa cTqqfZ"
+        id="genderField"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz
+        </option>
+        <option
+          value="male"
+        >
+          mężczyzna
+        </option>
+        <option
+          value="female"
+        >
+          kobieta
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        Podane dane są nieprawidłowe
+      </span>
+    </div>
+  </form>
+</div>
+`;

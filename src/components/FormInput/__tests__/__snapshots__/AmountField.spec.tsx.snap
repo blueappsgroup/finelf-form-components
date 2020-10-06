@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AmountField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL ggqeAX"
+  id="amountField"
+  label="Kwota pożyczki"
+  max="10000"
+  min="300"
+  name="name"
+  step="100"
+  type="text"
+  value="2000"
+/>
+`;
+
+exports[`<AmountField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div>
+      <div
+        class="sc-fujyUd curuhY"
+      >
+        <label
+          for="name"
+        >
+          Test
+        </label>
+        <input
+          class="sc-kEqYlL ggqeAX"
+          id="amountField"
+          label="Test"
+          max="10000"
+          min="300"
+          name="name"
+          step="100"
+          type="text"
+          value="2000"
+        />
+        <span
+          class="sc-dIsAE ccvseT"
+        >
+          PLN
+        </span>
+      </div>
+      <div
+        class="sc-bqGHjH jmumwd"
+      >
+        <div
+          aria-orientation="horizontal"
+          aria-valuemax="10000"
+          aria-valuemin="300"
+          aria-valuenow="2000"
+          class="rangeslider rangeslider-horizontal"
+        >
+          <div
+            class="rangeslider__fill"
+            style="width: 0px;"
+          />
+          <div
+            class="rangeslider__handle"
+            style="left: 0px;"
+            tabindex="0"
+          >
+            <div
+              class="rangeslider__handle-label"
+            />
+          </div>
+          <ul
+            class="rangeslider__labels"
+          />
+        </div>
+      </div>
+      <div
+        class="sc-fujyUd curuhY"
+        style="justify-content: space-between;"
+      >
+        <span
+          class="sc-crzoUp gOcYBO"
+        >
+          Min. 
+          300
+           
+          zł
+        </span>
+        <span
+          class="sc-crzoUp gOcYBO"
+        >
+          Max. 
+          10000
+           
+          zł
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;

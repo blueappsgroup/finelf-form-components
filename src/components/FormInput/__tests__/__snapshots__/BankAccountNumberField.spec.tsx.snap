@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BankAccountNumberField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Numer konta bankowego
+      </label>
+      <input
+        class="sc-kEqYlL ddptCy"
+        id="bankAccountNumberField"
+        label="Numer konta bankowego"
+        name="name"
+        placeholder="Numer konta bankowego"
+        type="text"
+        value="test"
+      />
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        Podany numer konta jest nieprawidłowy
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<BankAccountNumberField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL ggqeAX"
+  id="bankAccountNumberField"
+  label="Numer konta bankowego"
+  name="name"
+  placeholder="Numer konta bankowego"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`<BankAccountNumberField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ddptCy"
+        id="bankAccountNumberField"
+        label="Test"
+        name="name"
+        placeholder="Numer konta bankowego*"
+        required=""
+        type="text"
+        value=""
+      />
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<BankAccountNumberField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <input
+        class="sc-kEqYlL ggqeAX"
+        id="bankAccountNumberField"
+        label="Test"
+        name="name"
+        placeholder="Numer konta bankowego"
+        type="text"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;
