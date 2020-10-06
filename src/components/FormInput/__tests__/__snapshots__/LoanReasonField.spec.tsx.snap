@@ -76,6 +76,106 @@ exports[`<LoanReasonField /> matches snapshot 1`] = `
 </select>
 `;
 
+exports[`<LoanReasonField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa cTqqfZ"
+        id="loanReasonField"
+        label="Test"
+        name="name"
+        required=""
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz
+        </option>
+        <option
+          value="bills"
+        >
+          rachunki
+        </option>
+        <option
+          value="other_loans"
+        >
+          inne pożyczki
+        </option>
+        <option
+          value="vacation"
+        >
+          wakacje
+        </option>
+        <option
+          value="education"
+        >
+          edukacja
+        </option>
+        <option
+          value="car"
+        >
+          samochód
+        </option>
+        <option
+          value="medical_expenses"
+        >
+          wydatki zdrowotne
+        </option>
+        <option
+          value="renovation"
+        >
+          renowacja
+        </option>
+        <option
+          value="electronics"
+        >
+          elektronika
+        </option>
+        <option
+          value="furniture"
+        >
+          meble
+        </option>
+        <option
+          value="other"
+        >
+          inne
+        </option>
+        <option
+          value="investment"
+        >
+          inwestycja
+        </option>
+        <option
+          value="tax_payment"
+        >
+          spłata podatków
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`<LoanReasonField /> matches snapshot with label 1`] = `
 <div>
   <form
@@ -165,6 +265,99 @@ exports[`<LoanReasonField /> matches snapshot with label 1`] = `
           spłata podatków
         </option>
       </select>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<LoanReasonField /> select field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <select
+        class="sc-iqAbSa cTqqfZ"
+        id="loanReasonField"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz
+        </option>
+        <option
+          value="bills"
+        >
+          rachunki
+        </option>
+        <option
+          value="other_loans"
+        >
+          inne pożyczki
+        </option>
+        <option
+          value="vacation"
+        >
+          wakacje
+        </option>
+        <option
+          value="education"
+        >
+          edukacja
+        </option>
+        <option
+          value="car"
+        >
+          samochód
+        </option>
+        <option
+          value="medical_expenses"
+        >
+          wydatki zdrowotne
+        </option>
+        <option
+          value="renovation"
+        >
+          renowacja
+        </option>
+        <option
+          value="electronics"
+        >
+          elektronika
+        </option>
+        <option
+          value="furniture"
+        >
+          meble
+        </option>
+        <option
+          value="other"
+        >
+          inne
+        </option>
+        <option
+          value="investment"
+        >
+          inwestycja
+        </option>
+        <option
+          value="tax_payment"
+        >
+          spłata podatków
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        Podane dane są nieprawidłowe
+      </span>
     </div>
   </form>
 </div>

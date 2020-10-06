@@ -81,6 +81,24 @@ export declare type EmailFieldProps = {
     required?: boolean;
     showError?: boolean;
 };
+export declare type AmountOfChildrenFieldProps = {
+    id?: string;
+    label?: string;
+    placeholder?: string;
+    name?: string;
+    errorMsg?: string;
+    required?: boolean;
+    showError?: boolean;
+};
+export declare type IncomeFieldProps = {
+    id?: string;
+    label?: string;
+    placeholder?: string;
+    name?: string;
+    errorMsg?: string;
+    required?: boolean;
+    showError?: boolean;
+};
 export declare type BirthDateFieldProps = {
     id?: string;
     label?: string;

@@ -4,6 +4,7 @@ import React, { ReactElement } from 'react'
 import { SelectFieldProps } from '../../types'
 
 import { BaseSelectField } from './base'
+import { validateSelect } from './validate'
 
 const options = {
   unmarried: 'panna/kawaler',
@@ -18,6 +19,7 @@ const MaritalStatusField: (props: SelectFieldProps) => ReactElement = ({
   label,
   name = 'marital_status',
   required = false,
+  validate,
   showError,
 }) => (
   <Field
@@ -29,6 +31,9 @@ const MaritalStatusField: (props: SelectFieldProps) => ReactElement = ({
     label={label}
     type="select"
     options={options}
+    validate={
+      (validate && validate(required)) || validateSelect(required, options)
+    }
   />
 )
 

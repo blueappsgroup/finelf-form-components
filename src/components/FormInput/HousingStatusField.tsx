@@ -4,6 +4,7 @@ import React, { ReactElement } from 'react'
 import { SelectFieldProps } from '../../types'
 
 import { BaseSelectField } from './base'
+import { validateSelect } from './validate'
 
 const options = {
   propety: 'mieszkanie własne',
@@ -17,6 +18,7 @@ const HousingStatusField: (props: SelectFieldProps) => ReactElement = ({
   label,
   name = 'housing_status',
   required = false,
+  validate,
   showError,
 }) => (
   <Field
@@ -28,6 +30,9 @@ const HousingStatusField: (props: SelectFieldProps) => ReactElement = ({
     label={label}
     type="select"
     options={options}
+    validate={
+      (validate && validate(required)) || validateSelect(required, options)
+    }
   />
 )
 

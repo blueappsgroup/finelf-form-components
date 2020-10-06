@@ -163,3 +163,6 @@ export const isValidIDCard = (value: string): boolean => {
 
 export const isNotValidIDCard = (value: string): boolean =>
   !/^[A-z]{3}[0-9]{6}$/.test(value)
+
+export const isNotValidOption = (value: string, options: object): boolean =>
+  !options.hasOwnProperty(value)

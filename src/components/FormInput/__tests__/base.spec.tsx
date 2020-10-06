@@ -222,9 +222,11 @@ describe('base <BaseRangeField />', () => {
     const { container } = wrapper
 
     const input = container.querySelector(`[name="${inputName}"]`)
+    const slider = container.querySelector('.rangeslider')
 
     return {
       input,
+      slider,
       ...wrapper,
     }
   }

@@ -4,6 +4,7 @@ import React, { ReactElement } from 'react'
 import { SelectFieldProps } from '../../types'
 
 import { BaseSelectField } from './base'
+import { validateSelect } from './validate'
 
 const options = {
   fixed: 'umowa o pracę na czas nieokreślony',
@@ -25,6 +26,7 @@ const EmploymentTypeField: (props: SelectFieldProps) => ReactElement = ({
   label,
   name = 'employment_type',
   required = false,
+  validate,
   showError,
 }) => (
   <Field
@@ -36,6 +38,9 @@ const EmploymentTypeField: (props: SelectFieldProps) => ReactElement = ({
     label={label}
     type="select"
     options={options}
+    validate={
+      (validate && validate(required)) || validateSelect(required, options)
+    }
   />
 )
 

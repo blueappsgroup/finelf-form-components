@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react'
 import { SelectFieldProps } from '../../types'
 
 import { BaseSelectField } from './base'
+import { validateSelect } from './validate'
 
 const options = {
   male: 'mężczyzna',
@@ -14,6 +15,7 @@ const GenderField: (props: SelectFieldProps) => ReactElement = ({
   label,
   name = 'gender',
   required = false,
+  validate,
   showError,
 }) => (
   <Field
@@ -25,6 +27,9 @@ const GenderField: (props: SelectFieldProps) => ReactElement = ({
     label={label}
     type="select"
     options={options}
+    validate={
+      (validate && validate(required)) || validateSelect(required, options)
+    }
   />
 )
 

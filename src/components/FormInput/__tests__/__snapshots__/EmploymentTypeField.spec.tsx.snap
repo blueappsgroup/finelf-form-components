@@ -76,6 +76,106 @@ exports[`<EmploymentTypeField /> matches snapshot 1`] = `
 </select>
 `;
 
+exports[`<EmploymentTypeField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <label
+        for="name"
+      >
+        Test
+      </label>
+      <select
+        class="sc-iqAbSa cTqqfZ"
+        id="employmentTypeField"
+        label="Test"
+        name="name"
+        required=""
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz
+        </option>
+        <option
+          value="fixed"
+        >
+          umowa o pracę na czas nieokreślony
+        </option>
+        <option
+          value="temporary"
+        >
+          umowa o pracę na czas określony
+        </option>
+        <option
+          value="self_employed"
+        >
+          samozatrudnienie
+        </option>
+        <option
+          value="fixed_partial"
+        >
+          wdowa/wdowiec
+        </option>
+        <option
+          value="government"
+        >
+          stanowisko rządowe
+        </option>
+        <option
+          value="unemployed"
+        >
+          bezrobotny
+        </option>
+        <option
+          value="pension"
+        >
+          emeryt/rencista
+        </option>
+        <option
+          value="agriculture"
+        >
+          gospodarstwo rolne
+        </option>
+        <option
+          value="student"
+        >
+          student
+        </option>
+        <option
+          value="housewife"
+        >
+          gospodyni domowa
+        </option>
+        <option
+          value="other"
+        >
+          inne
+        </option>
+        <option
+          value="service_contract"
+        >
+          umowa zlecenie / umowa o dzieło
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`<EmploymentTypeField /> matches snapshot with label 1`] = `
 <div>
   <form
@@ -165,6 +265,99 @@ exports[`<EmploymentTypeField /> matches snapshot with label 1`] = `
           umowa zlecenie / umowa o dzieło
         </option>
       </select>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<EmploymentTypeField /> select field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd curuhY"
+    >
+      <select
+        class="sc-iqAbSa cTqqfZ"
+        id="employmentTypeField"
+        name="name"
+        type="text"
+      >
+        <option
+          disabled=""
+          value="select"
+        >
+          wybierz
+        </option>
+        <option
+          value="fixed"
+        >
+          umowa o pracę na czas nieokreślony
+        </option>
+        <option
+          value="temporary"
+        >
+          umowa o pracę na czas określony
+        </option>
+        <option
+          value="self_employed"
+        >
+          samozatrudnienie
+        </option>
+        <option
+          value="fixed_partial"
+        >
+          wdowa/wdowiec
+        </option>
+        <option
+          value="government"
+        >
+          stanowisko rządowe
+        </option>
+        <option
+          value="unemployed"
+        >
+          bezrobotny
+        </option>
+        <option
+          value="pension"
+        >
+          emeryt/rencista
+        </option>
+        <option
+          value="agriculture"
+        >
+          gospodarstwo rolne
+        </option>
+        <option
+          value="student"
+        >
+          student
+        </option>
+        <option
+          value="housewife"
+        >
+          gospodyni domowa
+        </option>
+        <option
+          value="other"
+        >
+          inne
+        </option>
+        <option
+          value="service_contract"
+        >
+          umowa zlecenie / umowa o dzieło
+        </option>
+      </select>
+      <span
+        class="sc-jrsJCI eQDYwE"
+      >
+        Podane dane są nieprawidłowe
+      </span>
     </div>
   </form>
 </div>

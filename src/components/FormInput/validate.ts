@@ -1,3 +1,4 @@
+import { object } from 'prop-types'
 import {
   isEmpty,
   isNotValidLength,
@@ -13,6 +14,7 @@ import {
   isValidBankAccountNumber,
   isValidIDCard,
   isNotValidIDCard,
+  isNotValidOption,
 } from './validateHelpers'
 
 export const validateText: (
@@ -248,5 +250,21 @@ export const validateIncome: (
 
   if (isNotValidNumberBetween1And10Digits(value)) {
     return customErrorMsg
+  }
+}
+
+export const validateSelect: (
+  required: boolean,
+  options: object
+) => (value: string) => string | undefined = (
+  required: boolean,
+  options: object
+) => (value: string): string | undefined => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (isNotValidOption(value, options)) {
+    return 'Podane dane są nieprawidłowe'
   }
 }

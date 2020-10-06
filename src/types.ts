@@ -58,6 +58,7 @@ export type SelectFieldProps = {
   name?: string
   errorMsg?: string
   required?: boolean
+  validate?: Function
   showError?: boolean
 }
 

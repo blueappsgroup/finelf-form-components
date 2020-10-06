@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react'
 import { SelectFieldProps } from '../../types'
 
 import { BaseSelectField } from './base'
+import { validateSelect } from './validate'
 
 const options = {
   none: 'brak',
@@ -19,6 +20,7 @@ const EducationField: (props: SelectFieldProps) => ReactElement = ({
   label,
   name = 'education',
   required = false,
+  validate,
   showError,
 }) => (
   <Field
@@ -30,6 +32,9 @@ const EducationField: (props: SelectFieldProps) => ReactElement = ({
     label={label}
     type="select"
     options={options}
+    validate={
+      (validate && validate(required)) || validateSelect(required, options)
+    }
   />
 )
 

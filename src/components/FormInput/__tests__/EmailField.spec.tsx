@@ -3,6 +3,7 @@ import { render, fireEvent, act } from '@testing-library/react'
 
 import Form from '../../Form'
 import EmailField from '../EmailField'
+import { isNotValidEmail } from '../validateHelpers'
 
 describe('<EmailField />', () => {
   const onSubmit = jest.fn()
@@ -101,7 +102,7 @@ describe('<EmailField />', () => {
 
   it('input field with custom validation', async () => {
     const customValidate = () => (value: string): string => {
-      if (value === 'test') {
+      if (isNotValidEmail(value)) {
         return 'Podany email jest nieprawidłowy'
       }
     }
