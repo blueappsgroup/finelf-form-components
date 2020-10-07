@@ -2,7 +2,7 @@
 
 exports[`<BirthDateField /> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL honwIS"
+  class="sc-iqAbSa jrHUfY"
   id="birthDateField"
   name="name"
   placeholder="BirthDate"
@@ -15,11 +15,15 @@ exports[`<BirthDateField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="name"
@@ -27,7 +31,7 @@ exports[`<BirthDateField /> matches snapshot with label 1`] = `
         Test
       </label>
       <input
-        class="sc-kEqYlL honwIS"
+        class="sc-iqAbSa jrHUfY"
         id="birthDateField"
         label="Test"
         name="name"
