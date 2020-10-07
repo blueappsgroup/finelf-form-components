@@ -26,6 +26,10 @@ const StyledArrow = styled.span`
   border-style: solid;
   border-width: ${props => props.collapsed ? '0px 6px 9px 6px' : '9px 6px 0 6px'};
   border-color: ${props => props.collapsed ? `transparent transparent ${props.theme.checkboxLabelArrowColor} transparent` : `${props.theme.checkboxLabelArrowColor} transparent transparent transparent`};
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const CheckboxContainer = styled.div`
   display: inline-block;
@@ -110,6 +114,10 @@ const Checkbox = (_ref) => {
 
 const Wrapper = styled.label`
   display: flex;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 export const CheckboxBase = (_ref2) => {
   let {

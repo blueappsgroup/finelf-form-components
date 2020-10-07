@@ -44,6 +44,10 @@
   &:disabled {
     background: silver;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
   const Button = ({

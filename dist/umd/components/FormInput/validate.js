@@ -50,7 +50,7 @@
     }
   };
 
-  const validateTelNumber = exports.validateTelNumber = (customErrorMsg = 'Niepoprawny numer telefonu', required) => value => {
+  const validateTelNumber = exports.validateTelNumber = (required, customErrorMsg) => value => {
     if (!required && !value) {
       return;
     }

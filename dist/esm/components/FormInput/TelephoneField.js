@@ -11,7 +11,7 @@ const TelephoneField = ({
   name,
   required = false,
   validate = validateTelNumber,
-  showError
+  showError = true
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,
@@ -22,7 +22,7 @@ const TelephoneField = ({
   placeholder: placeholder,
   prefix: "+48",
   type: "tel",
-  validate: validate(errorMsg, required)
+  validate: validate(required, errorMsg)
 });
 
 TelephoneField.defaultProps = {

@@ -102,6 +102,10 @@
   border-style: solid;
   border-width: ${props => props.collapsed ? '0px 6px 9px 6px' : '9px 6px 0 6px'};
   border-color: ${props => props.collapsed ? `transparent transparent ${props.theme.checkboxLabelArrowColor} transparent` : `${props.theme.checkboxLabelArrowColor} transparent transparent transparent`};
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
   const CheckboxContainer = _styledComponents2.default.div`
   display: inline-block;
@@ -186,6 +190,10 @@
 
   const Wrapper = _styledComponents2.default.label`
   display: flex;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
   const CheckboxBase = exports.CheckboxBase = _ref2 => {

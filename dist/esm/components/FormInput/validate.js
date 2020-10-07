@@ -29,7 +29,7 @@ export const validateEmail = (customErrorMsg = 'Niepoprawny adres email', requir
     return customErrorMsg;
   }
 };
-export const validateTelNumber = (customErrorMsg = 'Niepoprawny numer telefonu', required) => value => {
+export const validateTelNumber = (required, customErrorMsg) => value => {
   if (!required && !value) {
     return;
   }

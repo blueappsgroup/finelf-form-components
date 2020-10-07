@@ -39,7 +39,7 @@
     name,
     required = false,
     validate,
-    showError
+    showError = true
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,

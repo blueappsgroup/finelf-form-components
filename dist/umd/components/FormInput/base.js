@@ -262,7 +262,10 @@
   border: 1px solid ${props => props.theme.inputBorderColor};
   border-top-left-radius: ${props => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${props => props.theme.inputBorderRadius};
-    padding: ${props => props.theme.styledInputPrefixPadding};
+  padding: ${props => props.theme.styledInputPrefixPadding};
+  border-top-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-bottom-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-left-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
 `;
   const SliderWrapper = _styledComponents2.default.div`
  .rangeslider {
@@ -331,7 +334,10 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, `${props.label}${props.required && '*' || ''}`), props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+    }, `${props.label}${props.required && '*' || ''}`), props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, {
+      error: touched[field.name] && errors[field.name]
+    }, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+      required: props.required,
       hasPrefix: !!props.prefix,
       hasSufix: !!props.suffix,
       onBlur: handleOnBlur,

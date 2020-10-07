@@ -68,7 +68,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  left: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n    padding: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  left: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n  padding: ", ";\n  border-top-color: ", ";\n  border-bottom-color: ", ";\n  border-left-color: ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -280,6 +280,12 @@ var StyledInputPrefix = _styledComponents.default.span(_templateObject8(), funct
   return props.theme.inputBorderRadius;
 }, function (props) {
   return props.theme.styledInputPrefixPadding;
+}, function (props) {
+  return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
+}, function (props) {
+  return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
+}, function (props) {
+  return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
 });
 
 var SliderWrapper = _styledComponents.default.div(_templateObject9(), function (props) {
@@ -340,7 +346,10 @@ var BaseField = function BaseField(_ref) {
 
   return /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
-  }, "".concat(props.label).concat(props.required && '*' || '')), props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+  }, "".concat(props.label).concat(props.required && '*' || '')), props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, {
+    error: touched[field.name] && errors[field.name]
+  }, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+    required: props.required,
     hasPrefix: !!props.prefix,
     hasSufix: !!props.suffix,
     onBlur: handleOnBlur,

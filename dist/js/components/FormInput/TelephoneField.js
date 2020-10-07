@@ -27,7 +27,8 @@ var TelephoneField = function TelephoneField(_ref) {
       required = _ref$required === void 0 ? false : _ref$required,
       _ref$validate = _ref.validate,
       validate = _ref$validate === void 0 ? _validate.validateTelNumber : _ref$validate,
-      showError = _ref.showError;
+      _ref$showError = _ref.showError,
+      showError = _ref$showError === void 0 ? true : _ref$showError;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -38,7 +39,7 @@ var TelephoneField = function TelephoneField(_ref) {
     placeholder: placeholder,
     prefix: "+48",
     type: "tel",
-    validate: validate(errorMsg, required)
+    validate: validate(required, errorMsg)
   });
 };
 

@@ -32,7 +32,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n\n  &:hover {\n    cursor: pointer;\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -98,7 +98,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: ", ";\n  position: absolute;\n  right: 5px;\n  top: 5px;\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: ", ";\n  border-color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: ", ";\n  position: absolute;\n  right: 5px;\n  top: 5px;\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: ", ";\n  border-color: ", ";\n\n  &:hover {\n    cursor: pointer;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
