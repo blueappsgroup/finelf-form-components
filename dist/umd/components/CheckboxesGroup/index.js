@@ -130,7 +130,8 @@
         name: `${name}.${children.props.name}`
       })), children && hasManyCheckboxes && children.map(item => /*#__PURE__*/_react2.default.createElement(_CheckboxField2.default, _extends({}, item.props, {
         key: item.props.name,
-        name: `${name}.${item.props.name}`
+        name: `${name}.${item.props.name}`,
+        id: `${name}.${item.props.name}`
       }))))
     });
   };

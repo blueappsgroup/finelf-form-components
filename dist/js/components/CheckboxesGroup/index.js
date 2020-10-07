@@ -65,7 +65,8 @@ var CheckboxesGroup = function CheckboxesGroup(_ref) {
       })), children && hasManyCheckboxes && children.map(function (item) {
         return /*#__PURE__*/_react.default.createElement(_CheckboxField.default, _extends({}, item.props, {
           key: item.props.name,
-          name: "".concat(name, ".").concat(item.props.name)
+          name: "".concat(name, ".").concat(item.props.name),
+          id: "".concat(name, ".").concat(item.props.name)
         }));
       }));
     }

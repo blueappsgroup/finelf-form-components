@@ -53,6 +53,7 @@ const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
                 {...item.props}
                 key={item.props.name}
                 name={`${name}.${item.props.name}`}
+                id={`${name}.${item.props.name}`}
               />
             ))}
         </>
