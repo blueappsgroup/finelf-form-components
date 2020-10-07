@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RedirectPage /> matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bdnylx eYlpll"
+    >
+      <div
+        class="sc-gtssRu bNNyTY"
+      >
+        <h1
+          class="sc-dlnjPT kaHCaK"
+        >
+          thank you text
+        </h1>
+        <h3
+          class="sc-hKFyIo fItDnD"
+        >
+          Zostaniesz przekierowany za 
+          <span
+            class="sc-eCApGN eAXOzQ"
+          >
+            5
+            s
+          </span>
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -4,12 +4,12 @@ import { device } from '../../consts/sizes'
 import { HeaderProps } from '../../types'
 
 type StyledProps = {
-  theme: {
-    headerTextColor: string
-    headerBorderColor: string
-    subheaderTextColor: string
-  }
-  withBorder?: boolean
+    theme: {
+        headerTextColor: string
+        headerBorderColor: string
+        subheaderTextColor: string
+    }
+    withBorder?: boolean
 }
 
 // prettier-ignore
@@ -49,11 +49,6 @@ const StyledSubHeader = styled.h5<StyledProps>`
   margin: 10px 0px 20px 0px;
 `
 
-const Header: React.FC<HeaderProps> = ({ text, type = 'main', withBorder }) =>
-  type === 'main' ? (
-    <StyledMainHeader withBorder={withBorder}>{text}</StyledMainHeader>
-  ) : (
-    <StyledSubHeader>{text}</StyledSubHeader>
-  )
+const Header: React.FC<HeaderProps> = ({ text, type = 'main', withBorder }) => type === 'main' ? <StyledMainHeader withBorder={withBorder}>{text}</StyledMainHeader> : <StyledSubHeader>{text}</StyledSubHeader>
 
 export default Header
