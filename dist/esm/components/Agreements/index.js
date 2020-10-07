@@ -51,7 +51,7 @@ const Agreemnets = ({
     key: item.id,
     name: `${item.id}`,
     HTMLcontent: item.content,
-    required: true
+    required: item.required
   })));
 };
 

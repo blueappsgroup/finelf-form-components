@@ -113,7 +113,7 @@ var Agreemnets = function Agreemnets(_ref) {
       key: item.id,
       name: "".concat(item.id),
       HTMLcontent: item.content,
-      required: true
+      required: item.required
     });
   }));
 };
