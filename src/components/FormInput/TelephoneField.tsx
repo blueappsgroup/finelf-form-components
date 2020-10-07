@@ -13,7 +13,7 @@ const TelephoneField: FC<TelephoneFieldProps> = ({
   name,
   required = false,
   validate = validateTelNumber,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}
@@ -25,7 +25,7 @@ const TelephoneField: FC<TelephoneFieldProps> = ({
     placeholder={placeholder}
     prefix="+48"
     type="tel"
-    validate={validate(errorMsg, required)}
+    validate={validate(required, errorMsg)}
   />
 )
 

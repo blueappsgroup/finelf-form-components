@@ -10,7 +10,7 @@ const BirthDateField: FC<BirthDateFieldProps> = ({
   placeholder = 'BirthDate',
   name,
   required = false,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

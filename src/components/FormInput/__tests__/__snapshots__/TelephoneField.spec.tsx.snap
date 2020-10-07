@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TelephoneField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <span
+        class="sc-bqGHjH pDiJM"
+      >
+        +48
+      </span>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        name="telephone"
+        placeholder="Telefon"
+        prefix="+48"
+        type="tel"
+        value="3232a"
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        Podany numer telefonu jest nieprawidłowy
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<TelephoneField /> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL honwIS"
+  id="testId"
+  name="telephone"
+  placeholder="Telefon"
+  prefix="+48"
+  type="tel"
+  value=""
+/>
+`;
+
+exports[`<TelephoneField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="telephone"
+      >
+        FirstName*
+      </label>
+      <span
+        class="sc-bqGHjH pDiJM"
+      >
+        +48
+      </span>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="FirstName"
+        name="telephone"
+        placeholder="Telefon*"
+        prefix="+48"
+        required=""
+        type="tel"
+        value=""
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<TelephoneField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="telephone"
+      >
+        Telephone
+      </label>
+      <span
+        class="sc-bqGHjH pDiJM"
+      >
+        +48
+      </span>
+      <input
+        class="sc-kEqYlL honwIS"
+        id="testId"
+        label="Telephone"
+        name="telephone"
+        placeholder="Telefon"
+        prefix="+48"
+        type="tel"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

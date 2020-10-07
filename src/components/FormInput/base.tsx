@@ -302,6 +302,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
       <StyledInput
         {...field}
         {...props}
+        required={props.required}
         hasPrefix={!!props.prefix}
         hasSufix={!!props.suffix}
         onBlur={handleOnBlur}

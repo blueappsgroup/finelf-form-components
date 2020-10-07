@@ -16,7 +16,7 @@ const CarStatusField: FC<SelectFieldProps> = ({
   name = 'car_status',
   required = false,
   validate,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}
