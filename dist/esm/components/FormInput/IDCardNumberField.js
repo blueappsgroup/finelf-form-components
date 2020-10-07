@@ -6,7 +6,7 @@ import { validateIDCardNumber } from './validate';
 const IDCardNumberField = ({
   id,
   label = 'Numer dowodu osobistego',
-  placeholder = 'Numer dowodu osobistego',
+  placeholder,
   name,
   required = false,
   validate = validateIDCardNumber,

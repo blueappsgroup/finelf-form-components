@@ -18,8 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var AmountOfChildrenField = function AmountOfChildrenField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      _ref$placeholder = _ref.placeholder,
-      placeholder = _ref$placeholder === void 0 ? 'Liczba osób na utrzymaniu' : _ref$placeholder,
+      placeholder = _ref.placeholder,
       _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'Podana ilość jest nieprawidłowa' : _ref$errorMsg,
       name = _ref.name,

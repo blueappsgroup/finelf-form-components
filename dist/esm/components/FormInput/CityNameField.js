@@ -6,7 +6,7 @@ import { validateCityName } from './validate';
 const CityNameField = ({
   id,
   label = 'Miasto',
-  placeholder = 'Miasto',
+  placeholder,
   name,
   required = false,
   validate = validateCityName,

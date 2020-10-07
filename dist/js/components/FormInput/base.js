@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.BaseRangeField = exports.BaseSelectField = exports.default = exports.Row = void 0;
+exports.BaseRangeField = exports.BaseSelectField = exports.default = exports.SliderRow = exports.Row = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -47,8 +47,38 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n padding-bottom: 25px;\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: 0;\n   bottom: 0;\n   margin: auto;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  box-sizing: border-box;\n  left: 0;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n    padding: ", ";\n  color: ", ";\n  font-weight: ", ";  \n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  height: ", ";\n  width: ", ";\n  box-sizing: border-box;\n  background-color: ", ";\n  border-radius: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n  justify-content: center;\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: -6px;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  height: ", ";\n  width: ", ";\n  box-sizing: border-box;\n  background-color: ", ";\n  border-radius: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n  justify-content: center;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -58,7 +88,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  left: 0;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n    padding: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  font-weight: ", ";\n  color: ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -68,7 +98,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  right: 0;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  background-color: ", ";\n  border-radius: ", ";\n  padding: ", " ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: ", " ", "\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", " ", ";\n  border-color: ", ";\n  color: ", ";\n\n  option:disabled {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -78,7 +108,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  font-weight: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100px;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -88,7 +118,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: ", " ", "\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", " ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  padding: 25px 0;\n  flex-direction: row;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -98,7 +128,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n    font-size: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -118,7 +148,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n\n  @media ", " {\n    flex-direction: row;\n    & ", ":first-of-type {\n      flex-grow: 1;\n      margin-right: 5px;\n    }\n\n    & ", ":last-child {\n      flex-grow: 1;\n      margin-left: 5px;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  flex-direction: column;\n\n  @media ", " {\n    flex-direction: row;\n    justify-content: space-between;\n    & ", ":first-of-type {\n      flex-grow: 1;\n      margin-right: 5px;\n    }\n\n    & ", ":last-child {\n      flex-grow: 1;\n      margin-left: 5px;\n    }\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -128,7 +158,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-bottom: ", ";\n  position: relative;\n  flex-wrap: ", ";\n  label {\n    padding: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-bottom: ", ";\n  position: relative;\n  flex-wrap: ", ";\n  label {\n    font-size: ", ";\n    padding: ", ";\n    color: ", ";\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -145,7 +175,11 @@ var StyledRow = _styledComponents.default.div(_templateObject(), function (props
 }, function (props) {
   return props.theme.styledRowFlexWrap;
 }, function (props) {
+  return props.theme.labelFontSize;
+}, function (props) {
   return props.theme.styledRowLabelPadding;
+}, function (props) {
+  return props.theme.styledRowLabelFontColor;
 });
 /* eslint-enable */
 
@@ -183,6 +217,44 @@ var StyledInput = _styledComponents.default.input(_templateObject4(), function (
 }, function (props) {
   return props.theme.inputLineHeight;
 }, function (props) {
+  return props.theme.inputTextAlign;
+}, function (props) {
+  return props.theme.inputPadding;
+}, function (props) {
+  return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
+}, function (props) {
+  return props.error ? props.theme.inputErrorColor : props.theme.inputTextColor;
+}, function (props) {
+  return props.theme.inputPlaceHolderColor;
+}, function (props) {
+  return props.theme.inputFontSize;
+});
+
+var SliderRow = _styledComponents.default.div(_templateObject5());
+
+exports.SliderRow = SliderRow;
+
+var SliderInput = _styledComponents.default.input(_templateObject6(), function (props) {
+  return props.theme.inputBgColor;
+}, function (props) {
+  return props.theme.inputBorderColor;
+}, function (props) {
+  return props.theme.inputBoxShadow;
+}, function (props) {
+  return props.theme.inputBorderRadius;
+}, function (props) {
+  return props.theme.sliderInputHeight;
+}, function (props) {
+  return props.theme.inputFontStyle;
+}, function (props) {
+  return props.theme.inputFontWeight;
+}, function (props) {
+  return props.theme.inputFontSize;
+}, function (props) {
+  return props.theme.inputLineHeight;
+}, function (props) {
+  return props.theme.sliderInputTextAlign;
+}, function (props) {
   return props.theme.inputPadding;
 }, function (props) {
   return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
@@ -194,7 +266,7 @@ var StyledInput = _styledComponents.default.input(_templateObject4(), function (
 /* eslint-disable */
 
 
-var StyledSelect = _styledComponents.default.select(_templateObject5(), function (props) {
+var StyledSelect = _styledComponents.default.select(_templateObject7(), function (props) {
   return props.theme.styledSelectBgColor;
 }, function (props) {
   return props.theme.styledSelectBorderWidth;
@@ -228,22 +300,22 @@ var StyledSelect = _styledComponents.default.select(_templateObject5(), function
   return props.theme.styledSelectPlaceHolderColor;
 });
 
-var StyledSpan = _styledComponents.default.span(_templateObject6(), function (props) {
+var StyledSpan = _styledComponents.default.span(_templateObject8(), function (props) {
   return props.theme.styledSpanFontSize;
 }, function (props) {
   return props.theme.styledSpanFontWeight;
+}, function (props) {
+  return props.theme.styledSpanFontColor;
 });
 
-var StyledInputSuffix = _styledComponents.default.span(_templateObject7(), function (props) {
+var StyledInputSuffix = _styledComponents.default.span(_templateObject9(), function (props) {
+  return props.theme.inputHeight;
+}, function (props) {
   return props.theme.inputHeight;
 }, function (props) {
   return props.theme.styledInputSuffixBgColor;
 }, function (props) {
   return props.theme.styledInputSuffixBorderRadius;
-}, function (props) {
-  return props.theme.styledInputSuffixVerticalPadding;
-}, function (props) {
-  return props.theme.styledInputSuffixHorizontalPadding;
 }, function (props) {
   return props.theme.styledInputSuffixFontWeight;
 }, function (props) {
@@ -252,7 +324,23 @@ var StyledInputSuffix = _styledComponents.default.span(_templateObject7(), funct
   return props.theme.styledInputSuffixTextColor;
 });
 
-var StyledInputPrefix = _styledComponents.default.span(_templateObject8(), function (props) {
+var StyledSliderInputSuffix = _styledComponents.default.span(_templateObject10(), function (props) {
+  return props.theme.sliderInputHeight;
+}, function (props) {
+  return props.theme.sliderInputHeight;
+}, function (props) {
+  return props.theme.styledInputSuffixBgColor;
+}, function (props) {
+  return props.theme.styledInputSuffixBorderRadius;
+}, function (props) {
+  return props.theme.styledInputSuffixFontWeight;
+}, function (props) {
+  return props.theme.styledInputSuffixFontSize;
+}, function (props) {
+  return props.theme.styledInputSuffixTextColor;
+});
+
+var StyledInputPrefix = _styledComponents.default.span(_templateObject11(), function (props) {
   return props.theme.inputHeight;
 }, function (props) {
   return props.theme.inputBorderColor;
@@ -262,9 +350,13 @@ var StyledInputPrefix = _styledComponents.default.span(_templateObject8(), funct
   return props.theme.inputBorderRadius;
 }, function (props) {
   return props.theme.styledInputPrefixPadding;
+}, function (props) {
+  return props.error ? props.theme.inputErrorColor : props.theme.inputTextColor;
+}, function (props) {
+  return props.theme.inputFontWeight;
 });
 
-var SliderWrapper = _styledComponents.default.div(_templateObject9(), function (props) {
+var SliderWrapper = _styledComponents.default.div(_templateObject12(), function (props) {
   return props.theme.sliderHeight;
 }, function (props) {
   return props.theme.sliderBorderRadius;
@@ -320,13 +412,21 @@ var BaseField = function BaseField(_ref) {
 
   return /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
-  }, props.label), props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+  }, "".concat(props.label).concat(props.required && '*' || '')), /*#__PURE__*/_react.default.createElement(Row, {
+    style: {
+      flexDirection: 'row'
+    }
+  }, props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
     onBlur: handleOnBlur,
     type: props.type,
     value: field.value && field.value || '',
     error: touched[field.name] && errors[field.name],
-    placeholder: props.placeholder && "".concat(props.placeholder).concat(props.required && '*' || '')
-  })), props.suffix && /*#__PURE__*/_react.default.createElement(StyledInputSuffix, null, props.suffix), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react.default.createElement(StyledError, null, errors[field.name]));
+    placeholder: props.placeholder && "".concat(props.placeholder).concat(props.required && '*' || ''),
+    style: props.prefix && {
+      borderBottomLeftRadius: '0px',
+      borderTopLeftRadius: '0px'
+    }
+  })), props.suffix && /*#__PURE__*/_react.default.createElement(StyledInputSuffix, null, props.suffix)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react.default.createElement(StyledError, null, errors[field.name]));
 };
 
 var _default = BaseField;
@@ -353,7 +453,7 @@ var BaseSelectField = function BaseSelectField(_ref2) {
       key: "select",
       value: "select",
       disabled: true
-    }, "wybierz")].concat(Object.keys(_options).map(function (option) {
+    }, "wybierz ".concat(props.required && '*' || ''))].concat(Object.keys(_options).map(function (option) {
       return /*#__PURE__*/_react.default.createElement("option", {
         key: option,
         value: option
@@ -363,7 +463,7 @@ var BaseSelectField = function BaseSelectField(_ref2) {
 
   return /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
-  }, props.label), /*#__PURE__*/_react.default.createElement(StyledSelect, _extends({}, field, props, {
+  }, "".concat(props.label).concat(props.required && '*' || '')), /*#__PURE__*/_react.default.createElement(StyledSelect, _extends({}, field, props, {
     onBlur: handleOnBlur,
     type: "text",
     value: field.value && field.value || 'select',
@@ -380,6 +480,7 @@ var BaseRangeField = function BaseRangeField(_ref3) {
       touched = _ref3$form.touched,
       errors = _ref3$form.errors,
       values = _ref3$form.values,
+      setFieldValue = _ref3$form.setFieldValue,
       props = _objectWithoutProperties(_ref3, ["field", "form"]);
 
   var _useContext3 = (0, _react.useContext)(_utils.FormContext),
@@ -421,16 +522,23 @@ var BaseRangeField = function BaseRangeField(_ref3) {
     field.onBlur && field.onBlur(e);
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
+  (0, _react.useLayoutEffect)(function () {
+    setFieldValue(field.name, value);
+  }, [field.name, value, setFieldValue]);
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(StyledRow, {
+    style: {
+      justifyContent: 'space-between'
+    }
+  }, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
-  }, props.label), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+  }, props.label), /*#__PURE__*/_react.default.createElement(SliderRow, null, /*#__PURE__*/_react.default.createElement(SliderInput, _extends({}, field, props, {
     onChange: handleOnChange,
     onBlur: handleOnBlur,
     type: props.type,
     value: value,
     error: touched[field.name] && errors[field.name],
     placeholder: props.placeholder && "".concat(props.placeholder).concat(props.required && '*' || '')
-  })), props.suffix && /*#__PURE__*/_react.default.createElement(StyledInputSuffix, null, props.suffix)), /*#__PURE__*/_react.default.createElement(SliderWrapper, null, /*#__PURE__*/_react.default.createElement(_reactRangeslider.default, {
+  })), props.suffix && /*#__PURE__*/_react.default.createElement(StyledSliderInputSuffix, null, props.suffix))), /*#__PURE__*/_react.default.createElement(SliderWrapper, null, /*#__PURE__*/_react.default.createElement(_reactRangeslider.default, {
     min: props.min,
     max: props.max,
     step: props.step,

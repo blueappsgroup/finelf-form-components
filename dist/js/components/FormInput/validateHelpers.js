@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.isNotValidIDCard = exports.isValidIDCard = exports.isValidBankAccountNumber = exports.isValidNIP = exports.isNotValidZipCode = exports.isValidPesel = exports.haveSpecialChars = exports.isNotNumber = exports.isNotLetter = exports.isNotValidNumberBetween1And10Digits = exports.isNotValidEmail = exports.isNotValidPhoneNumber = exports.isNotValidLength = exports.isEmpty = void 0;
+exports.isNotValidOption = exports.isNotValidIDCard = exports.isValidIDCard = exports.isValidBankAccountNumber = exports.isValidNIP = exports.isNotValidZipCode = exports.isValidPesel = exports.haveSpecialChars = exports.isNotNumber = exports.isNotLetter = exports.isNotValidNumberBetween1And10Digits = exports.isNotValidEmail = exports.isNotValidPhoneNumber = exports.isNotValidLength = exports.isEmpty = void 0;
 
 var isEmpty = function isEmpty(value) {
   return !value;
@@ -146,4 +146,10 @@ var isNotValidIDCard = function isNotValidIDCard(value) {
 };
 
 exports.isNotValidIDCard = isNotValidIDCard;
+
+var isNotValidOption = function isNotValidOption(value, options) {
+  return !options.hasOwnProperty(value);
+};
+
+exports.isNotValidOption = isNotValidOption;
 //# sourceMappingURL=validateHelpers.js.map

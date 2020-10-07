@@ -102,5 +102,7 @@
   };
 
   const isNotValidIDCard = exports.isNotValidIDCard = value => !/^[A-z]{3}[0-9]{6}$/.test(value);
+
+  const isNotValidOption = exports.isNotValidOption = (value, options) => !options.hasOwnProperty(value);
 });
 //# sourceMappingURL=validateHelpers.js.map

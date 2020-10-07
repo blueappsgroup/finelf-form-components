@@ -48,7 +48,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  font-style: normal;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: 18px;\n  color: ", ";\n  padding-left: 10px;\n  padding-right: 25px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  font-style: normal;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: calc(16px + 2 * ", ");\n  color: ", ";\n  padding-left: 10px;\n  padding-right: 25px;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -58,7 +58,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  width: 18px;\n  height: 18px;\n  background: ", ";\n  border-radius: 3px;\n  border: 1px solid;\n  border-color: ", ";\n  transition: all 150ms;\n\n  ", " {\n    visibility: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  width: 18px;\n  height: 18px;\n  background: ", ";\n  border-radius: 3px;\n  border: ", " solid;\n  border-color: ", ";\n  transition: all 150ms;\n\n  ", " {\n    visibility: ", ";\n  }\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -98,7 +98,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: ", ";\n  position: absolute;\n  right: 5px;\n  top: 5px;\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: ", ";\n  border-color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: ", ";\n  position: absolute;\n  right: 5px;\n  top: calc(5px + 2 * ", ");\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: ", ";\n  border-color: ", ";\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -120,13 +120,15 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var StyledRow = _styledComponents.default.div(_templateObject(), function (props) {
-  return props.collapsed ? 'auto' : '20px';
+  return props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')';
 }, function (props) {
   return props.collapsed ? 'none' : 'hidden';
 });
 
 var StyledArrow = _styledComponents.default.span(_templateObject2(), function (props) {
   return props.hasCollapse ? 'flex' : 'none';
+}, function (props) {
+  return props.theme.checkboxBorderWidth;
 }, function (props) {
   return props.collapsed ? '0px 6px 9px 6px' : '9px 6px 0 6px';
 }, function (props) {
@@ -146,12 +148,16 @@ var HiddenCheckbox = _styledComponents.default.input.attrs({
 var StyledCheckbox = _styledComponents.default.div(_templateObject6(), function (props) {
   return props.theme.checkboxBgColor;
 }, function (props) {
+  return props.theme.checkboxBorderWidth;
+}, function (props) {
   return props.error ? props.theme.checkboxBorderErrorColor : props.theme.checkboxBorderColor;
 }, Icon, function (props) {
   return props.checked ? 'visible' : 'hidden';
 });
 
 var StyledText = _styledComponents.default.span(_templateObject7(), function (props) {
+  return props.theme.checkboxBorderWidth;
+}, function (props) {
   return props.theme.checkboxLabelTextColor;
 }); // eslint-disable-next-line @typescript-eslint/no-explicit-any
 

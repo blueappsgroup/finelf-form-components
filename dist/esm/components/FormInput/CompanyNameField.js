@@ -6,7 +6,7 @@ import { validateText } from './validate';
 const CompanyNameField = ({
   id,
   label = 'Nazwa pracodawcy',
-  placeholder = 'Nazwa pracodawcy',
+  placeholder,
   name,
   required = false,
   validate = validateText,

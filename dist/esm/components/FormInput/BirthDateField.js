@@ -5,7 +5,7 @@ import BaseField from './base';
 const BirthDateField = ({
   id,
   label,
-  placeholder = 'BirthDate',
+  placeholder,
   name,
   required = false,
   showError

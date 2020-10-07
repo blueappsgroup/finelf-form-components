@@ -13,14 +13,14 @@ const StyledRow = styled.div`
   align-items: flex-start;
   margin-bottom: 12px;
   position: relative;
-  height: ${props => props.collapsed ? 'auto' : '20px'};
+  height: ${props => props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${props => props.collapsed ? 'none' : 'hidden'};
 `;
 const StyledArrow = styled.span`
   display: ${props => props.hasCollapse ? 'flex' : 'none'};
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: calc(5px + 2 * ${props => props.theme.checkboxBorderWidth});
   width: 0;
   height: 0;
   border-style: solid;
@@ -56,7 +56,7 @@ const StyledCheckbox = styled.div`
   height: 18px;
   background: ${props => props.theme.checkboxBgColor};
   border-radius: 3px;
-  border: 1px solid;
+  border: ${props => props.theme.checkboxBorderWidth} solid;
   border-color: ${props => props.error ? props.theme.checkboxBorderErrorColor : props.theme.checkboxBorderColor};
   transition: all 150ms;
 
@@ -69,7 +69,7 @@ const StyledText = styled.span`
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 18px;
+  line-height: calc(16px + 2 * ${props => props.theme.checkboxBorderWidth});
   color: ${props => props.theme.checkboxLabelTextColor};
   padding-left: 10px;
   padding-right: 25px;

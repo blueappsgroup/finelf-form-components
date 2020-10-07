@@ -8,7 +8,7 @@ import { validateCityName } from './validate'
 const StreetNameField: FC<TextFieldProps> = ({
   id,
   label = 'Ulica',
-  placeholder = 'Ulica',
+  placeholder,
   name,
   required = false,
   validate = validateCityName,

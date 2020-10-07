@@ -31,9 +31,12 @@ export declare const theme: {
     inputFontWeight: string;
     inputFontStyle: string;
     inputLineHeight: string;
+    inputTextAlign: string;
     inputPadding: string;
+    labelFontSize: string;
     styledRowFlexWrap: string;
     styledRowLabelPadding: string;
+    styledRowLabelFontColor: string;
     styledSelectHeight: string;
     styledSelectTextColor: string;
     styledSelectPlaceHolderColor: string;
@@ -52,17 +55,23 @@ export declare const theme: {
     styledSelectVerticalPadding: string;
     styledSelectHorizontalPadding: string;
     styledSpanFontSize: string;
+    styledSpanFontColor: string;
     styledSpanFontWeight: string;
     styledRowMarginBottom: string;
     checkboxLabelArrowColor: string;
     checkboxBgColor: string;
     checkboxBorderColor: string;
+    checkboxBorderWidth: string;
     checkboxBorderErrorColor: string;
     checkboxLabelTextColor: string;
     checkboxMarkColor: string;
     headerTextColor: string;
     headerBorderColor: string;
+    headerFontSize: string;
+    headerMargin: string;
     subheaderBorderColor: string;
+    subheaderFontSize: string;
+    subheaderMargin: string;
     buttonTextColor: string;
     buttonBgColor: string;
     buttonBorderColor: string;
@@ -80,6 +89,8 @@ export declare const theme: {
     successStatusTextColor: string;
     errorStatusTextColor: string;
     sliderHeight: string;
+    sliderInputHeight: string;
+    sliderInputTextAlign: string;
     sliderBorderRadius: string;
     sliderBgColor: string;
     sliderFillBgColor: string;
@@ -99,8 +110,6 @@ export declare const theme: {
     styledInputSuffixFontSize: string;
     styledInputSuffixFontWeight: string;
     styledInputSuffixBorderRadius: string;
-    styledInputSuffixVerticalPadding: string;
-    styledInputSuffixHorizontalPadding: string;
     styledInputPrefixPadding: string;
 };
 declare type ThemeProviderPops = {

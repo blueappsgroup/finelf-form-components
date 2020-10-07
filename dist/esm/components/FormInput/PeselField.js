@@ -6,7 +6,7 @@ import { validatePesel } from './validate';
 const PeselField = ({
   id,
   label = 'Pesel',
-  placeholder = 'Pesel',
+  placeholder,
   name = 'id_code',
   required = false,
   validate = validatePesel,

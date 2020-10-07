@@ -16,8 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var BirthDateField = function BirthDateField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      _ref$placeholder = _ref.placeholder,
-      placeholder = _ref$placeholder === void 0 ? 'BirthDate' : _ref$placeholder,
+      placeholder = _ref.placeholder,
       name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,

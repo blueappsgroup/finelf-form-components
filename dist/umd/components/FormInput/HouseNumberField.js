@@ -30,7 +30,7 @@
   const HouseNumberField = ({
     id,
     label = 'Numer domu',
-    placeholder = 'Numer domu',
+    placeholder,
     name,
     required = false,
     validate = _validate.validateHouseNumber,

@@ -30,7 +30,7 @@
   const ApartmentNumberField = ({
     id,
     label = 'Numer mieszkania',
-    placeholder = 'Numer mieszkania',
+    placeholder,
     name,
     required = false,
     validate = _validate.validateHouseNumber,

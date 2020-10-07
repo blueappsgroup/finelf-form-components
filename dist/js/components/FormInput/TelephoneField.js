@@ -18,8 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var TelephoneField = function TelephoneField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      _ref$placeholder = _ref.placeholder,
-      placeholder = _ref$placeholder === void 0 ? 'Telefon' : _ref$placeholder,
+      placeholder = _ref.placeholder,
       _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'Podany numer telefonu jest nieprawidłowy' : _ref$errorMsg,
       name = _ref.name,

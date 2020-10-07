@@ -8,7 +8,7 @@ import { AmountOfChildrenFieldProps } from '../../types'
 const AmountOfChildrenField: FC<AmountOfChildrenFieldProps> = ({
   id,
   label,
-  placeholder = 'Liczba osób na utrzymaniu',
+  placeholder,
   errorMsg = 'Podana ilość jest nieprawidłowa',
   name,
   required = false,

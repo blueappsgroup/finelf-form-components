@@ -12,3 +12,4 @@ export declare const isValidNIP: (nip: string) => boolean;
 export declare const isValidBankAccountNumber: (value: string) => boolean;
 export declare const isValidIDCard: (value: string) => boolean;
 export declare const isNotValidIDCard: (value: string) => boolean;
+export declare const isNotValidOption: (value: string, options: object) => boolean;

@@ -7,7 +7,7 @@ import { BirthDateFieldProps } from '../../types'
 const BirthDateField: FC<BirthDateFieldProps> = ({
   id,
   label,
-  placeholder = 'BirthDate',
+  placeholder,
   name,
   required = false,
   showError,

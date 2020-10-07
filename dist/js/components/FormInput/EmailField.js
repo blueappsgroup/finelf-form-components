@@ -18,8 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var EmailField = function EmailField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      _ref$placeholder = _ref.placeholder,
-      placeholder = _ref$placeholder === void 0 ? 'Email' : _ref$placeholder,
+      placeholder = _ref.placeholder,
       _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'Podany email jest nieprawidłowy' : _ref$errorMsg,
       name = _ref.name,

@@ -8,7 +8,7 @@ import { TelephoneFieldProps } from '../../types'
 const TelephoneField: FC<TelephoneFieldProps> = ({
   id,
   label,
-  placeholder = 'Telefon',
+  placeholder,
   errorMsg = 'Podany numer telefonu jest nieprawidłowy',
   name,
   required = false,

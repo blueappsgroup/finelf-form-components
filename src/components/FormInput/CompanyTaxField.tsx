@@ -8,7 +8,7 @@ import { validateCompanyTax } from './validate'
 const CompanyTaxField: FC<TextFieldProps> = ({
   id,
   label = 'NIP firmy',
-  placeholder = 'NIP firmy',
+  placeholder,
   name,
   required = false,
   validate = validateCompanyTax,

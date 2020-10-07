@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.BaseRangeField = exports.BaseSelectField = exports.Row = undefined;
+  exports.BaseRangeField = exports.BaseSelectField = exports.SliderRow = exports.Row = undefined;
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -143,17 +143,21 @@
   position: relative;
   flex-wrap: ${props => props.theme.styledRowFlexWrap};
   label {
+    font-size: ${props => props.theme.labelFontSize};
     padding: ${props => props.theme.styledRowLabelPadding};
+    color: ${props => props.theme.styledRowLabelFontColor};
   }
 `;
   /* eslint-enable */
 
   const Row = exports.Row = _styledComponents2.default.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
 
   @media ${_sizes.device.tablet} {
     flex-direction: row;
+    justify-content: space-between;
     & ${StyledRow}:first-of-type {
       flex-grow: 1;
       margin-right: 5px;
@@ -188,6 +192,41 @@
   font-weight: ${props => props.theme.inputFontWeight};
   font-size: ${props => props.theme.inputFontSize};
   line-height: ${props => props.theme.inputLineHeight};
+  text-align: ${props => props.theme.inputTextAlign};
+  padding: ${props => props.theme.inputPadding};
+  border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+
+  &::placeholder {
+    color: ${props => props.theme.inputPlaceHolderColor};
+    font-size: ${props => props.theme.inputFontSize};
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+  const SliderRow = exports.SliderRow = _styledComponents2.default.div`
+  display: flex;
+  padding: 25px 0;
+  flex-direction: row;
+`;
+  const SliderInput = _styledComponents2.default.input`
+  background: ${props => props.theme.inputBgColor};
+  border: 1px solid
+    ${props => props.theme.inputBorderColor};
+  box-sizing: border-box;
+  box-shadow: ${props => props.theme.inputBoxShadow};
+  border-radius: ${props => props.theme.inputBorderRadius};
+  width: 100px;
+  height: ${props => props.theme.sliderInputHeight};
+  display: flex;
+  align-items: center;
+  font-style: ${props => props.theme.inputFontStyle};
+  font-weight: ${props => props.theme.inputFontWeight};
+  font-size: ${props => props.theme.inputFontSize};
+  line-height: ${props => props.theme.inputLineHeight};
+  text-align: ${props => props.theme.sliderInputTextAlign};
   padding: ${props => props.theme.inputPadding};
   border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
@@ -221,7 +260,7 @@
   border-color: ${props => props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
   color: ${props => props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
 
-  &::placeholder {
+  option:disabled {
     color: ${props => props.theme.styledSelectPlaceHolderColor};
   }
 
@@ -232,22 +271,37 @@
   const StyledSpan = _styledComponents2.default.span`
   font-size: ${props => props.theme.styledSpanFontSize};
   font-weight: ${props => props.theme.styledSpanFontWeight};
+  color: ${props => props.theme.styledSpanFontColor};
 `;
   const StyledInputSuffix = _styledComponents2.default.span`
-  position: relative;
-  right: 0;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
+  width: ${props => props.theme.inputHeight};
+  box-sizing: border-box;
   background-color: ${props => props.theme.styledInputSuffixBgColor};
   border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
-  padding: ${props => props.theme.styledInputSuffixVerticalPadding} ${props => props.theme.styledInputSuffixHorizontalPadding};
   font-weight: ${props => props.theme.styledInputSuffixFontWeight};
   font-size: ${props => props.theme.styledInputSuffixFontSize};
   color: ${props => props.theme.styledInputSuffixTextColor};
+  justify-content: center;
+`;
+  const StyledSliderInputSuffix = _styledComponents2.default.span`
+  display: flex;
+  align-items: center;
+  height: ${props => props.theme.sliderInputHeight};
+  width: ${props => props.theme.sliderInputHeight};
+  box-sizing: border-box;
+  background-color: ${props => props.theme.styledInputSuffixBgColor};
+  border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
+  font-weight: ${props => props.theme.styledInputSuffixFontWeight};
+  font-size: ${props => props.theme.styledInputSuffixFontSize};
+  color: ${props => props.theme.styledInputSuffixTextColor};
+  justify-content: center;
 `;
   const StyledInputPrefix = _styledComponents2.default.span`
   position: relative;
+  box-sizing: border-box;
   left: 0;
   display: inline-flex;
   align-items: center;
@@ -256,8 +310,11 @@
   border-top-left-radius: ${props => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${props => props.theme.inputBorderRadius};
     padding: ${props => props.theme.styledInputPrefixPadding};
+  color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+  font-weight: ${props => props.theme.inputFontWeight};  
 `;
   const SliderWrapper = _styledComponents2.default.div`
+ padding-bottom: 25px;
  .rangeslider {
   position: relative;
   width: 100%;
@@ -270,7 +327,9 @@
    border-radius: ${props => props.theme.sliderBorderRadius};
   }
   .rangeslider__handle {
-   top: -6px;
+   top: 0;
+   bottom: 0;
+   margin: auto;
    width: ${props => props.theme.sliderHandleWidth};
    height: ${props => props.theme.sliderHandleHeight};
    background-color: ${props => props.theme.sliderHandleBgColor};
@@ -319,13 +378,21 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, props.label), props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(Row, {
+      style: {
+        flexDirection: 'row'
+      }
+    }, props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
       onBlur: handleOnBlur,
       type: props.type,
       value: field.value && field.value || '',
       error: touched[field.name] && errors[field.name],
-      placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
-    })), props.suffix && /*#__PURE__*/_react2.default.createElement(StyledInputSuffix, null, props.suffix), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react2.default.createElement(StyledError, null, errors[field.name]));
+      placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`,
+      style: props.prefix && {
+        borderBottomLeftRadius: '0px',
+        borderTopLeftRadius: '0px'
+      }
+    })), props.suffix && /*#__PURE__*/_react2.default.createElement(StyledInputSuffix, null, props.suffix)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react2.default.createElement(StyledError, null, errors[field.name]));
   };
 
   exports.default = BaseField;
@@ -355,7 +422,7 @@
         key: "select",
         value: "select",
         disabled: true
-      }, "wybierz")].concat(Object.keys(options).map(option => {
+      }, `wybierz ${props.required && '*' || ''}`)].concat(Object.keys(options).map(option => {
         return /*#__PURE__*/_react2.default.createElement("option", {
           key: option,
           value: option
@@ -365,7 +432,7 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, props.label), /*#__PURE__*/_react2.default.createElement(StyledSelect, _extends({}, field, props, {
+    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(StyledSelect, _extends({}, field, props, {
       onBlur: handleOnBlur,
       type: "text",
       value: field.value && field.value || 'select',
@@ -380,7 +447,8 @@
       form: {
         touched,
         errors,
-        values
+        values,
+        setFieldValue
       }
     } = _ref3,
         props = _objectWithoutProperties(_ref3, ["field", "form"]);
@@ -425,16 +493,23 @@
       field.onBlur && field.onBlur(e);
     };
 
-    return /*#__PURE__*/_react2.default.createElement("div", null, /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
+    (0, _react.useLayoutEffect)(() => {
+      setFieldValue(field.name, value);
+    }, [field.name, value, setFieldValue]);
+    return /*#__PURE__*/_react2.default.createElement("div", null, /*#__PURE__*/_react2.default.createElement(StyledRow, {
+      style: {
+        justifyContent: 'space-between'
+      }
+    }, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, props.label), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+    }, props.label), /*#__PURE__*/_react2.default.createElement(SliderRow, null, /*#__PURE__*/_react2.default.createElement(SliderInput, _extends({}, field, props, {
       onChange: handleOnChange,
       onBlur: handleOnBlur,
       type: props.type,
       value: value,
       error: touched[field.name] && errors[field.name],
       placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
-    })), props.suffix && /*#__PURE__*/_react2.default.createElement(StyledInputSuffix, null, props.suffix)), /*#__PURE__*/_react2.default.createElement(SliderWrapper, null, /*#__PURE__*/_react2.default.createElement(_reactRangeslider2.default, {
+    })), props.suffix && /*#__PURE__*/_react2.default.createElement(StyledSliderInputSuffix, null, props.suffix))), /*#__PURE__*/_react2.default.createElement(SliderWrapper, null, /*#__PURE__*/_react2.default.createElement(_reactRangeslider2.default, {
       min: props.min,
       max: props.max,
       step: props.step,

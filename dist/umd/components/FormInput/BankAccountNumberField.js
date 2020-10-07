@@ -30,7 +30,7 @@
   const BankAccountNumberField = ({
     id,
     label = 'Numer konta bankowego',
-    placeholder = 'Numer konta bankowego',
+    placeholder,
     name,
     required = false,
     validate = _validate.validateBankAccountNumber,

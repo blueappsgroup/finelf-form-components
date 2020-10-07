@@ -2,6 +2,7 @@
 import React from 'react';
 import { Field } from 'formik';
 import { BaseSelectField } from './base';
+import { validateSelect } from './validate';
 const options = {
   propety: 'mieszkanie własne',
   with_parent: 'mieszkanie rodziców',
@@ -14,6 +15,7 @@ const HousingStatusField = ({
   label,
   name,
   required = false,
+  validate,
   showError
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
@@ -23,7 +25,8 @@ const HousingStatusField = ({
   component: BaseSelectField,
   label: label,
   type: "select",
-  options: options
+  options: options,
+  validate: validate && validate(required) || validateSelect(required, options)
 });
 
 HousingStatusField.defaultProps = {

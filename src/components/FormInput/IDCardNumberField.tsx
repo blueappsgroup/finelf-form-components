@@ -8,7 +8,7 @@ import { validateIDCardNumber } from './validate'
 const IDCardNumberField: FC<TextFieldProps> = ({
   id,
   label = 'Numer dowodu osobistego',
-  placeholder = 'Numer dowodu osobistego',
+  placeholder,
   name,
   required = false,
   validate = validateIDCardNumber,

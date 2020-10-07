@@ -6,7 +6,7 @@ import { validateText } from './validate';
 const TextField = ({
   id,
   label,
-  placeholder = 'Text',
+  placeholder,
   name,
   required = false,
   validate = validateText,
