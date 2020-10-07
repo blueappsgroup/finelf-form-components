@@ -49,6 +49,10 @@ const StyledArrow = styled.span<StyledProps>`
     props.collapsed
       ? `transparent transparent ${props.theme.checkboxLabelArrowColor} transparent`
       : `${props.theme.checkboxLabelArrowColor} transparent transparent transparent`};
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const CheckboxContainer = styled.div`
@@ -134,6 +138,10 @@ const Checkbox = ({ checked, error, ...props }: any): ReactElement => (
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Wrapper = styled.label<any>`
   display: flex;
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
