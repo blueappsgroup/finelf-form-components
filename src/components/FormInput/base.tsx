@@ -231,7 +231,10 @@ const StyledInputPrefix = styled.span`
   border: 1px solid ${(props: StyledProps): string => props.theme.inputBorderColor};
   border-top-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
-    padding: ${(props: StyledProps): string => props.theme.styledInputPrefixPadding};
+  padding: ${(props: StyledProps): string => props.theme.styledInputPrefixPadding};
+  border-top-color: ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-bottom-color: ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-left-color: ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
 `
 
 const SliderWrapper = styled.div`
@@ -298,7 +301,11 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
           (props.required && '*') || ''
         }`}</label>
       )}
-      {props.prefix && <StyledInputPrefix>{props.prefix}</StyledInputPrefix>}
+      {props.prefix && (
+        <StyledInputPrefix error={touched[field.name] && errors[field.name]}>
+          {props.prefix}
+        </StyledInputPrefix>
+      )}
       <StyledInput
         {...field}
         {...props}
