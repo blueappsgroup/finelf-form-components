@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Field } from 'formik'
 
-import BaseField from './base'
+import { BaseDateField } from './base'
 import { BirthDateFieldProps } from '../../types'
 
 const BirthDateField: FC<BirthDateFieldProps> = ({
@@ -17,10 +17,9 @@ const BirthDateField: FC<BirthDateFieldProps> = ({
     showError={showError}
     id={id}
     name={name}
-    component={BaseField}
+    component={BaseDateField}
     label={label}
     placeholder={placeholder}
-    type="date"
   />
 )
 

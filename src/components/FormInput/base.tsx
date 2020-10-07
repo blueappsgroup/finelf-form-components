@@ -7,11 +7,14 @@ import React, {
   useState,
 } from 'react'
 import Slider from 'react-rangeslider'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 import styled from 'styled-components'
 
 import { device } from '../../consts/sizes'
 import {
   FieldWrapProps,
+  FieldDateWrapProps,
   RangeFieldWrapProps,
   SelectFieldOptions,
   SelectFieldWrapProps,
@@ -161,6 +164,37 @@ const StyledInput = styled.input<any>`
   }
 `
 
+const StyledDatePicker = styled(DatePicker)`
+  background: ${(props: StyledProps): string => props.theme.inputBgColor};
+  border: 1px solid
+    ${(props: StyledProps): string => props.theme.inputBorderColor};
+  box-sizing: border-box;
+  box-shadow: ${(props: StyledProps): string => props.theme.inputBoxShadow};
+  border-radius: ${(props: StyledProps): string =>
+    props.theme.inputBorderRadius};
+  width: 100%;
+  height: ${(props: StyledProps): string => props.theme.inputHeight};
+  display: flex;
+  align-items: center;
+  font-style: ${(props: StyledProps): string => props.theme.inputFontStyle};
+  font-weight: ${(props: StyledProps): string => props.theme.inputFontWeight};
+  font-size: ${(props: StyledProps): string => props.theme.inputFontSize};
+  line-height: ${(props: StyledProps): string => props.theme.inputLineHeight};
+  padding: ${(props: StyledProps): string => props.theme.inputPadding};
+  border-color: ${(props: StyledProps): string =>
+    props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  color: ${(props: any): string =>
+    props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+
+  &::placeholder {
+    color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
+  }
+
+  &:focus {
+    outline: none;
+  }
+`
+
 /* eslint-disable */
 const StyledSelect = styled.select<any>`
   background: ${(props: StyledProps): string => props.theme.styledSelectBgColor};
@@ -179,9 +213,9 @@ const StyledSelect = styled.select<any>`
   line-height: ${(props: StyledProps): string => props.theme.styledSelectLineHeight};
   padding: ${(props: StyledProps): string => props.theme.styledSelectVerticalPadding} ${(props: StyledProps): string => props.theme.styledSelectHorizontalPadding};
   border-color: ${(props: StyledProps): string =>
-  props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
+    props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
   color: ${(props: any): string =>
-  props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
+    props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
 
   &::placeholder {
     color: ${(props: StyledProps): string => props.theme.styledSelectPlaceHolderColor};
@@ -303,6 +337,43 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
 }
 
 export default BaseField
+
+export const BaseDateField: (props: FieldDateWrapProps) => ReactElement = ({
+  field,
+  form: { touched, errors, values },
+  ...props
+}) => {
+  const { id } = useContext(FormContext)
+  const handleOnBlur = (e: ChangeEvent<HTMLInputElement>): void => {
+    setFormValuesToCache(values, id)
+    field.onBlur && field.onBlur(e)
+  }
+
+  return (
+    <StyledRow>
+      {props.label && (
+        <label htmlFor={field.name}>{`${props.label}${
+          (props.required && '*') || ''
+        }`}</label>
+      )}
+      {props.prefix && <StyledInputPrefix>{props.prefix}</StyledInputPrefix>}
+      <StyledDatePicker
+        {...field}
+        {...props}
+        selected={(field.value && new Date(field.value)) || new Date()}
+        onBlur={handleOnBlur}
+        onChange={(e) => {
+          setFormValuesToCache(values, id)
+          field.onBlur && field.onBlur(e)
+        }}
+      />
+      {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
+      {props.showError && touched[field.name] && errors[field.name] && (
+        <StyledError>{errors[field.name]}</StyledError>
+      )}
+    </StyledRow>
+  )
+}
 
 export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
   field,
