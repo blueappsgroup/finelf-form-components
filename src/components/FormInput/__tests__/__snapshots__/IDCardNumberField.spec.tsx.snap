@@ -44,6 +44,40 @@ exports[`<IDCardNumberField /> matches snapshot 1`] = `
 />
 `;
 
+exports[`<IDCardNumberField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="id_card_number"
+      >
+        IDcard*
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="IDcard"
+        name="id_card_number"
+        placeholder="Numer dowodu osobistego*"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`<IDCardNumberField /> matches snapshot with label 1`] = `
 <div>
   <form

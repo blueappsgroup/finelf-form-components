@@ -46,6 +46,47 @@ exports[`<TelephoneField /> matches snapshot 1`] = `
 />
 `;
 
+exports[`<TelephoneField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="telephone"
+      >
+        FirstName*
+      </label>
+      <span
+        class="sc-bqGHjH pDiJM"
+      >
+        +48
+      </span>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="FirstName"
+        name="telephone"
+        placeholder="Telefon*"
+        prefix="+48"
+        required=""
+        type="tel"
+        value=""
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`<TelephoneField /> matches snapshot with label 1`] = `
 <div>
   <form

@@ -44,6 +44,40 @@ exports[`<PeselField/> matches snapshot 1`] = `
 />
 `;
 
+exports[`<PeselField/> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="id_code"
+      >
+        Pesel*
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="Pesel"
+        name="id_code"
+        placeholder="Pesel*"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`<PeselField/> matches snapshot with label 1`] = `
 <div>
   <form

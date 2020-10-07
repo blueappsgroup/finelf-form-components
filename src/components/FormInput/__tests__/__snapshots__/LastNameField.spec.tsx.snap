@@ -13,15 +13,14 @@ exports[`<LastNameField /> input field with custom validation 1`] = `
       <label
         for="last_name"
       >
-        Nazwisko*
+        Nazwisko
       </label>
       <input
         class="sc-kEqYlL jzZEFj"
         id="testId"
         label="Nazwisko"
         name="last_name"
-        placeholder="Nazwisko*"
-        required=""
+        placeholder="Nazwisko"
         value="3232"
       />
       <span
@@ -40,10 +39,43 @@ exports[`<LastNameField /> matches snapshot 1`] = `
   id="testId"
   label="Nazwisko"
   name="last_name"
-  placeholder="Nazwisko*"
-  required=""
+  placeholder="Nazwisko"
   value=""
 />
+`;
+
+exports[`<LastNameField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="last_name"
+      >
+        LastName*
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="LastName"
+        name="last_name"
+        placeholder="Nazwisko*"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
 `;
 
 exports[`<LastNameField /> matches snapshot with label 1`] = `

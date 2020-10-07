@@ -86,7 +86,7 @@ describe('<FirstNameField />', () => {
 
   it('matches snapshot with error', async () => {
     const wrapper = setupWrapper({
-      label: 'FirstName',
+      label: 'FirstName1',
       showError: true,
       required: true,
       error: 'true',

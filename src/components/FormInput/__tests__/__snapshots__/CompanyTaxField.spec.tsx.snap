@@ -44,6 +44,40 @@ exports[`<CompanyTaxField/> matches snapshot 1`] = `
 />
 `;
 
+exports[`<CompanyTaxField/> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="company_tax_id"
+      >
+        CompanyTax*
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="CompanyTax"
+        name="company_tax_id"
+        placeholder="NIP firmy*"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`<CompanyTaxField/> matches snapshot with label 1`] = `
 <div>
   <form

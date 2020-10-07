@@ -69,19 +69,19 @@ describe('<HouseNumberField />', () => {
 
     await act(async () => {
       fireEvent.change(input, {
-        target: { value: '12' },
+        target: { value: '13' },
       })
     })
 
     await act(async () => {
-      fireEvent.blur(input, { target: { value: '12' } })
+      fireEvent.blur(input, { target: { value: '13' } })
     })
 
     expect(
       JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
         .house_number
-    ).toBe('12')
-    expect(input.value).toBe('12')
+    ).toBe('13')
+    expect(input.value).toBe('13')
   })
 
   it('matches snapshot with error', async () => {
@@ -95,12 +95,12 @@ describe('<HouseNumberField />', () => {
 
     await act(async () => {
       fireEvent.focus(input, {
-        target: { value: '12' },
+        target: { value: '' },
       })
     })
 
     await act(async () => {
-      fireEvent.blur(input, { target: { value: '12' } })
+      fireEvent.blur(input, { target: { value: '' } })
     })
 
     expect(wrapper.getByText('To pole jest wymagane')).toBeTruthy()

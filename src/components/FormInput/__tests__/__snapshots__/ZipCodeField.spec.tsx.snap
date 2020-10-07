@@ -44,6 +44,40 @@ exports[`<ZipCodeField/> matches snapshot 1`] = `
 />
 `;
 
+exports[`<ZipCodeField/> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="text_zip"
+      >
+        Zip Code*
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="Zip Code"
+        name="text_zip"
+        placeholder="Kod pocztowy*"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`<ZipCodeField/> matches snapshot with label 1`] = `
 <div>
   <form

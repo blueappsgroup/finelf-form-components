@@ -285,6 +285,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
       <StyledInput
         {...field}
         {...props}
+        required={props.required}
         onBlur={handleOnBlur}
         type={props.type}
         value={(field.value && field.value) || ''}

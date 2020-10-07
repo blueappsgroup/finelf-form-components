@@ -44,6 +44,40 @@ exports[`<FirstNameField /> matches snapshot 1`] = `
 />
 `;
 
+exports[`<FirstNameField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="first_name"
+      >
+        FirstName1*
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="FirstName1"
+        name="first_name"
+        placeholder="Imię*"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`<FirstNameField /> matches snapshot with label 1`] = `
 <div>
   <form
