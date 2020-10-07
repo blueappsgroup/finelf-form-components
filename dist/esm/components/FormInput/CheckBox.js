@@ -52,6 +52,7 @@ const HiddenCheckbox = styled.input.attrs({
 `;
 const StyledCheckbox = styled.div`
   display: inline-block;
+  position: relative;
   width: 18px;
   height: 18px;
   background: ${props => props.theme.checkboxBgColor};
@@ -63,15 +64,26 @@ const StyledCheckbox = styled.div`
   ${Icon} {
     visibility: ${props => props.checked ? 'visible' : 'hidden'};
   }
-`;
+
+  &::after {
+    display: ${props => props.required ? 'block' : 'none'};
+    position: absolute;
+    content: '*';
+    top: 0px;
+    right: -13px;
+    font-size: 15px;
+    color: ${props => props.theme.checkboxBorderErrorColor};
+  }
+`; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 const StyledText = styled.span`
-  display: flex;
+  display: inline;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
   color: ${props => props.theme.checkboxLabelTextColor};
-  padding-left: 10px;
+  padding-left: 15px;
   padding-right: 25px;
 `; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
@@ -86,7 +98,8 @@ const Checkbox = (_ref) => {
     checked: checked
   }, props)), /*#__PURE__*/React.createElement(StyledCheckbox, {
     checked: checked,
-    error: error
+    error: error,
+    required: props.required
   }, /*#__PURE__*/React.createElement(Icon, {
     viewBox: "0 0 24 24"
   }, /*#__PURE__*/React.createElement("polyline", {
@@ -144,7 +157,11 @@ export const CheckboxBase = (_ref2) => {
     checked: field.value,
     value: field.value || false,
     error: touched[field.name] && errors[field.name]
-  })), props.label && /*#__PURE__*/React.createElement(StyledText, null, props.label), props.childrenBody && /*#__PURE__*/React.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/React.createElement(StyledArrow, {
+  })), props.label && /*#__PURE__*/React.createElement(StyledText, null, props.label), props.HTMLcontent && /*#__PURE__*/React.createElement(StyledText, {
+    dangerouslySetInnerHTML: {
+      __html: props.HTMLcontent
+    }
+  }), props.childrenBody && /*#__PURE__*/React.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/React.createElement(StyledArrow, {
     hasCollapse: hasCollapse,
     collapsed: collapsed,
     onClick: onCollapseClick

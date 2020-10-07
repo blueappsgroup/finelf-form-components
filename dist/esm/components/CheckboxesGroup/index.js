@@ -39,7 +39,7 @@ const CheckboxesGroup = ({
     render: () => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CheckboxField, {
       id: `${name}.selectAll`,
       name: `${name}.selectAll`,
-      label: "Select all",
+      label: "Zaznacz wszystkie zgody",
       onChange: handleOnChange
     }), children && !hasManyCheckboxes && /*#__PURE__*/React.createElement(CheckboxField, _extends({}, children.props, {
       name: `${name}.${children.props.name}`

@@ -1,8 +1,6 @@
 import { ReactElement, ReactNode } from 'react';
 import { FieldProps } from 'formik';
-export declare type FormValuesType = {
-    [key: string]: string | boolean | undefined;
-};
+export declare type FormValuesType = any;
 export declare type CheckboxFieldProps = {
     id?: string;
     label?: string;
@@ -10,6 +8,7 @@ export declare type CheckboxFieldProps = {
     required?: boolean;
     onChange?: Function;
     children?: ReactElement | ReactElement[];
+    HTMLcontent?: string;
 };
 export declare type FieldWrapProps = FieldProps & {
     label?: string;
@@ -22,6 +21,7 @@ export declare type FieldWrapProps = FieldProps & {
     type?: string;
     suffix?: string;
     prefix?: string;
+    HTMLcontent?: string;
 };
 export declare type SelectFieldOptions = {
     [key: string]: string;
@@ -55,6 +55,7 @@ export declare type SelectFieldProps = {
     name?: string;
     errorMsg?: string;
     required?: boolean;
+    validate?: Function;
     showError?: boolean;
 };
 export declare type TextFieldProps = {
@@ -190,6 +191,9 @@ export declare type FormProps = {
     redirectBgImg?: string;
     queueUrl?: string;
     sendDataToSQS?: boolean;
+    sendDataToApi?: boolean;
+    apiUrl?: string;
+    transactionName?: string;
 };
 export declare type RedirectPagePropsTypes = {
     headerText?: string;

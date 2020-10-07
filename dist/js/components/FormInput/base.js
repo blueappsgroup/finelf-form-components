@@ -47,6 +47,16 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  width:100%;\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject9() {
   var data = _taggedTemplateLiteral(["\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: -6px;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
 
@@ -58,7 +68,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  left: 0;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n    padding: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  left: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n    padding: ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -68,7 +78,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  right: 0;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  background-color: ", ";\n  border-radius: ", ";\n  padding: ", " ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  right: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  background-color: ", ";\n  border-radius: ", ";\n  padding: ", " ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -98,7 +108,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  ", "\n  ", "\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -189,6 +199,10 @@ var StyledInput = _styledComponents.default.input(_templateObject4(), function (
 }, function (props) {
   return props.error ? props.theme.inputErrorColor : props.theme.inputTextColor;
 }, function (props) {
+  return props.hasPrefix && 'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;';
+}, function (props) {
+  return props.hasSufix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;';
+}, function (props) {
   return props.theme.inputPlaceHolderColor;
 });
 /* eslint-disable */
@@ -237,6 +251,8 @@ var StyledSpan = _styledComponents.default.span(_templateObject6(), function (pr
 var StyledInputSuffix = _styledComponents.default.span(_templateObject7(), function (props) {
   return props.theme.inputHeight;
 }, function (props) {
+  return props.theme.inputHeight;
+}, function (props) {
   return props.theme.styledInputSuffixBgColor;
 }, function (props) {
   return props.theme.styledInputSuffixBorderRadius;
@@ -253,6 +269,8 @@ var StyledInputSuffix = _styledComponents.default.span(_templateObject7(), funct
 });
 
 var StyledInputPrefix = _styledComponents.default.span(_templateObject8(), function (props) {
+  return props.theme.inputHeight;
+}, function (props) {
   return props.theme.inputHeight;
 }, function (props) {
   return props.theme.inputBorderColor;
@@ -299,6 +317,8 @@ var SliderWrapper = _styledComponents.default.div(_templateObject9(), function (
 }, function (props) {
   return props.theme.sliderHandleAfterBorderRadius;
 });
+
+var InputWrapper = _styledComponents.default.div(_templateObject10());
 /* eslint-enable */
 
 
@@ -320,7 +340,9 @@ var BaseField = function BaseField(_ref) {
 
   return /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
-  }, props.label), props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+  }, "".concat(props.label).concat(props.required && '*' || '')), props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+    hasPrefix: !!props.prefix,
+    hasSufix: !!props.suffix,
     onBlur: handleOnBlur,
     type: props.type,
     value: field.value && field.value || '',
@@ -353,7 +375,7 @@ var BaseSelectField = function BaseSelectField(_ref2) {
       key: "select",
       value: "select",
       disabled: true
-    }, "wybierz")].concat(Object.keys(_options).map(function (option) {
+    }, "wybierz ".concat(props.required && '*' || ''))].concat(Object.keys(_options).map(function (option) {
       return /*#__PURE__*/_react.default.createElement("option", {
         key: option,
         value: option
@@ -363,7 +385,7 @@ var BaseSelectField = function BaseSelectField(_ref2) {
 
   return /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
-  }, props.label), /*#__PURE__*/_react.default.createElement(StyledSelect, _extends({}, field, props, {
+  }, "".concat(props.label).concat(props.required && '*' || '')), /*#__PURE__*/_react.default.createElement(StyledSelect, _extends({}, field, props, {
     onBlur: handleOnBlur,
     type: "text",
     value: field.value && field.value || 'select',
@@ -380,6 +402,7 @@ var BaseRangeField = function BaseRangeField(_ref3) {
       touched = _ref3$form.touched,
       errors = _ref3$form.errors,
       values = _ref3$form.values,
+      setFieldValue = _ref3$form.setFieldValue,
       props = _objectWithoutProperties(_ref3, ["field", "form"]);
 
   var _useContext3 = (0, _react.useContext)(_utils.FormContext),
@@ -421,16 +444,19 @@ var BaseRangeField = function BaseRangeField(_ref3) {
     field.onBlur && field.onBlur(e);
   };
 
+  (0, _react.useLayoutEffect)(function () {
+    setFieldValue(field.name, value);
+  }, [field.name, value, setFieldValue]);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
-  }, props.label), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+  }, props.label), /*#__PURE__*/_react.default.createElement(InputWrapper, null, /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
     onChange: handleOnChange,
     onBlur: handleOnBlur,
     type: props.type,
     value: value,
     error: touched[field.name] && errors[field.name],
     placeholder: props.placeholder && "".concat(props.placeholder).concat(props.required && '*' || '')
-  })), props.suffix && /*#__PURE__*/_react.default.createElement(StyledInputSuffix, null, props.suffix)), /*#__PURE__*/_react.default.createElement(SliderWrapper, null, /*#__PURE__*/_react.default.createElement(_reactRangeslider.default, {
+  })), props.suffix && /*#__PURE__*/_react.default.createElement(StyledInputSuffix, null, props.suffix))), /*#__PURE__*/_react.default.createElement(SliderWrapper, null, /*#__PURE__*/_react.default.createElement(_reactRangeslider.default, {
     min: props.min,
     max: props.max,
     step: props.step,

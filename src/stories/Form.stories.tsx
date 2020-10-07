@@ -11,6 +11,7 @@ import {
   CheckboxesGroup,
   Step,
   Row,
+  Agreements,
 } from '../'
 import { FormProps, FormValuesType } from '../types'
 
@@ -36,19 +37,7 @@ const Template: Story<FormProps> = (args) => (
     <TextField required placeholder="Surname" name="lastName" />
     <TextField placeholder="City" name="city" />
     <Header text="Test title" type="subheader" />
-    <CheckboxesGroup name="agreements">
-      <CheckboxField
-        name="agreement1"
-        label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
-      />
-      <CheckboxField
-        name="agreement2"
-        label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
-      />
-      <CheckboxField name="agreement3">
-        <a href="https://www.czerwona-skarbonka.pl">Test link</a>
-      </CheckboxField>
-    </CheckboxesGroup>
+    <Agreements />
     <Button type="submit" text="Send" />
   </Form>
 )
@@ -58,6 +47,9 @@ export const Defualt = Template.bind({})
 Defualt.args = {
   id: 'testForm',
   onSubmit,
+  transactionName: 'name',
+  apiUrl: 'http://localhost:3000/api',
+  sendDataToApi: true,
 }
 
 const TemplateSteps: Story<FormProps> = (args) => (

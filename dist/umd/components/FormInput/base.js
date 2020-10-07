@@ -192,6 +192,9 @@
   border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
+  ${props => props.hasPrefix && 'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
+  ${props => props.hasSufix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
+
   &::placeholder {
     color: ${props => props.theme.inputPlaceHolderColor};
   }
@@ -235,7 +238,9 @@
 `;
   const StyledInputSuffix = _styledComponents2.default.span`
   position: relative;
-  right: 0;
+  right: 0px;
+  height: ${props => props.theme.inputHeight};
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
@@ -248,7 +253,9 @@
 `;
   const StyledInputPrefix = _styledComponents2.default.span`
   position: relative;
-  left: 0;
+  left: 0px;
+  height: ${props => props.theme.inputHeight};
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
@@ -295,6 +302,11 @@
   }
  }
 `;
+  const InputWrapper = _styledComponents2.default.div`
+  position: relative;
+  display: flex;
+  width:100%;
+`;
   /* eslint-enable */
 
   const BaseField = _ref => {
@@ -319,7 +331,9 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, props.label), props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+    }, `${props.label}${props.required && '*' || ''}`), props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+      hasPrefix: !!props.prefix,
+      hasSufix: !!props.suffix,
       onBlur: handleOnBlur,
       type: props.type,
       value: field.value && field.value || '',
@@ -355,7 +369,7 @@
         key: "select",
         value: "select",
         disabled: true
-      }, "wybierz")].concat(Object.keys(options).map(option => {
+      }, `wybierz ${props.required && '*' || ''}`)].concat(Object.keys(options).map(option => {
         return /*#__PURE__*/_react2.default.createElement("option", {
           key: option,
           value: option
@@ -365,7 +379,7 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, props.label), /*#__PURE__*/_react2.default.createElement(StyledSelect, _extends({}, field, props, {
+    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(StyledSelect, _extends({}, field, props, {
       onBlur: handleOnBlur,
       type: "text",
       value: field.value && field.value || 'select',
@@ -380,7 +394,8 @@
       form: {
         touched,
         errors,
-        values
+        values,
+        setFieldValue
       }
     } = _ref3,
         props = _objectWithoutProperties(_ref3, ["field", "form"]);
@@ -425,16 +440,19 @@
       field.onBlur && field.onBlur(e);
     };
 
+    (0, _react.useLayoutEffect)(() => {
+      setFieldValue(field.name, value);
+    }, [field.name, value, setFieldValue]);
     return /*#__PURE__*/_react2.default.createElement("div", null, /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, props.label), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+    }, props.label), /*#__PURE__*/_react2.default.createElement(InputWrapper, null, /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
       onChange: handleOnChange,
       onBlur: handleOnBlur,
       type: props.type,
       value: value,
       error: touched[field.name] && errors[field.name],
       placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
-    })), props.suffix && /*#__PURE__*/_react2.default.createElement(StyledInputSuffix, null, props.suffix)), /*#__PURE__*/_react2.default.createElement(SliderWrapper, null, /*#__PURE__*/_react2.default.createElement(_reactRangeslider2.default, {
+    })), props.suffix && /*#__PURE__*/_react2.default.createElement(StyledInputSuffix, null, props.suffix))), /*#__PURE__*/_react2.default.createElement(SliderWrapper, null, /*#__PURE__*/_react2.default.createElement(_reactRangeslider2.default, {
       min: props.min,
       max: props.max,
       step: props.step,

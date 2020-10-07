@@ -48,7 +48,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  font-style: normal;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: 18px;\n  color: ", ";\n  padding-left: 10px;\n  padding-right: 25px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline;\n  font-style: normal;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: 18px;\n  color: ", ";\n  padding-left: 15px;\n  padding-right: 25px;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -58,7 +58,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  width: 18px;\n  height: 18px;\n  background: ", ";\n  border-radius: 3px;\n  border: 1px solid;\n  border-color: ", ";\n  transition: all 150ms;\n\n  ", " {\n    visibility: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  position: relative;\n  width: 18px;\n  height: 18px;\n  background: ", ";\n  border-radius: 3px;\n  border: 1px solid;\n  border-color: ", ";\n  transition: all 150ms;\n\n  ", " {\n    visibility: ", ";\n  }\n\n  &::after {\n    display: ", ";\n    position: absolute;\n    content: '*';\n    top: 0px;\n    right: -13px;\n    font-size: 15px;\n    color: ", ";\n  }\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -149,7 +149,12 @@ var StyledCheckbox = _styledComponents.default.div(_templateObject6(), function 
   return props.error ? props.theme.checkboxBorderErrorColor : props.theme.checkboxBorderColor;
 }, Icon, function (props) {
   return props.checked ? 'visible' : 'hidden';
-});
+}, function (props) {
+  return props.required ? 'block' : 'none';
+}, function (props) {
+  return props.theme.checkboxBorderErrorColor;
+}); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 
 var StyledText = _styledComponents.default.span(_templateObject7(), function (props) {
   return props.theme.checkboxLabelTextColor;
@@ -165,7 +170,8 @@ var Checkbox = function Checkbox(_ref) {
     checked: checked
   }, props)), /*#__PURE__*/_react.default.createElement(StyledCheckbox, {
     checked: checked,
-    error: error
+    error: error,
+    required: props.required
   }, /*#__PURE__*/_react.default.createElement(Icon, {
     viewBox: "0 0 24 24"
   }, /*#__PURE__*/_react.default.createElement("polyline", {
@@ -229,7 +235,11 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     checked: field.value,
     value: field.value || false,
     error: touched[field.name] && errors[field.name]
-  })), props.label && /*#__PURE__*/_react.default.createElement(StyledText, null, props.label), props.childrenBody && /*#__PURE__*/_react.default.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/_react.default.createElement(StyledArrow, {
+  })), props.label && /*#__PURE__*/_react.default.createElement(StyledText, null, props.label), props.HTMLcontent && /*#__PURE__*/_react.default.createElement(StyledText, {
+    dangerouslySetInnerHTML: {
+      __html: props.HTMLcontent
+    }
+  }), props.childrenBody && /*#__PURE__*/_react.default.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/_react.default.createElement(StyledArrow, {
     hasCollapse: hasCollapse,
     collapsed: collapsed,
     onClick: onCollapseClick

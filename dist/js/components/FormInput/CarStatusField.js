@@ -11,6 +11,8 @@ var _formik = require("formik");
 
 var _base = require("./base");
 
+var _validate = require("./validate");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var options = {
@@ -25,6 +27,7 @@ var CarStatusField = function CarStatusField(_ref) {
       name = _ref$name === void 0 ? 'car_status' : _ref$name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
+      validate = _ref.validate,
       showError = _ref.showError;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
@@ -34,7 +37,8 @@ var CarStatusField = function CarStatusField(_ref) {
     component: _base.BaseSelectField,
     label: label,
     type: "select",
-    options: options
+    options: options,
+    validate: validate && validate(required) || (0, _validate.validateSelect)(required, options)
   });
 };
 

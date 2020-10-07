@@ -12,3 +12,4 @@ export declare const validateIDCardNumber: (required: boolean) => (value: string
 export declare const validateOtherLoanAmount: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
 export declare const validateAmountOfChildren: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
 export declare const validateIncome: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
+export declare const validateSelect: (required: boolean, options: object) => (value: string) => string | undefined;
