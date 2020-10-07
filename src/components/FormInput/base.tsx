@@ -220,7 +220,7 @@ const StyledInputSuffix = styled.span`
   color: ${(props: StyledProps): string => props.theme.styledInputSuffixTextColor};
 `
 
-const StyledInputPrefix = styled.span`
+const StyledInputPrefix = styled.span<any>`
   position: relative;
   left: 0px;
   height: ${(props: StyledProps): string => props.theme.inputHeight};
