@@ -69,7 +69,7 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
           key={item.id}
           name={`${item.id}`}
           HTMLcontent={item.content}
-          required
+          required={item.required}
         />
       ))}
     </CheckboxesGroup>
