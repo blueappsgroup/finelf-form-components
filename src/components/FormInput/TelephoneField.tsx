@@ -13,7 +13,7 @@ const TelephoneField: FC<TelephoneFieldProps> = ({
   name,
   required = false,
   validate = validateTelNumber,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

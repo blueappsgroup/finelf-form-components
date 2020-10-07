@@ -1,4 +1,3 @@
-import { object } from 'prop-types'
 import {
   isEmpty,
   isNotValidLength,
@@ -73,7 +72,7 @@ export const validateTelNumber: (
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
-  console.log('x')
+
   if (isNotValidPhoneNumber(value)) {
     return customErrorMsg
   }
