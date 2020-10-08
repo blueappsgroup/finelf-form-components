@@ -7,7 +7,7 @@ import { BaseSelectField } from './base'
 import { validateSelect } from './validate'
 
 const options = {
-  propety: 'mieszkanie własne',
+  property: 'mieszkanie własne',
   with_parent: 'mieszkanie rodziców',
   rental: 'mieszkanie wynajmowane',
   room: 'pokój',
