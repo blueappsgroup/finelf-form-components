@@ -10,7 +10,8 @@ import styled from 'styled-components';
 import { ThemeProvider } from '../../consts/theme';
 import { device } from '../../consts/sizes';
 import RedirectPage from '../RedirectPage';
-import { FormContext, getFormValuesFromCache, resetFormValueCache, sendDataToAwsSQS } from '../../utils';
+import TransactionId from '../TransactionId';
+import { FormContext, getFormValuesFromCache, resetFormValueCache, handleSendDataToApi } from '../../utils';
 import { formStatuses } from '../../consts/form';
 const StyledForm = styled(Form)`
   display: flex;
@@ -46,10 +47,15 @@ const FormWrapper = ({
   logoImg,
   redirectMainImg,
   redirectBgImg,
-  queueUrl,
-  sendDataToSQS
+  sendDataToApi,
+  apiUrl,
+  transactionName
 }) => {
-  const [initialValues, setInitialValues] = useState(getFormValuesFromCache(id));
+  const trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
+  const [initialValues, setInitialValues] = useState(_objectSpread(_objectSpread({}, getFormValuesFromCache(id)), {}, {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    trasaction_id: trasationIdValue
+  }));
   const [currentStep, setCurrentStep] = useState(0);
 
   const handleSubmit = async (values, props) => {
@@ -58,8 +64,8 @@ const FormWrapper = ({
     }
 
     try {
-      if (sendDataToSQS) {
-        await sendDataToAwsSQS(values, queueUrl);
+      if (sendDataToApi && apiUrl) {
+        await handleSendDataToApi(values, apiUrl, id);
       }
 
       props.resetForm();
@@ -71,7 +77,8 @@ const FormWrapper = ({
   };
 
   const handleReset = () => {
-    resetFormValueCache(id);
+    resetFormValueCache(id); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     setInitialValues({});
   };
 
@@ -82,6 +89,7 @@ const FormWrapper = ({
   return /*#__PURE__*/React.createElement(FormContext.Provider, {
     value: {
       id,
+      apiUrl,
       stepsLength,
       currentStep,
       stepsTitleList: stepsTitles,
@@ -104,7 +112,7 @@ const FormWrapper = ({
     mainImg: redirectMainImg
   }) || /*#__PURE__*/React.createElement(StyledForm, {
     id: id
-  }, children))));
+  }, /*#__PURE__*/React.createElement(TransactionId, null), children))));
 };
 
 export default FormWrapper;

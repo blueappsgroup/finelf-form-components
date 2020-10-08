@@ -34,7 +34,7 @@
     errorMsg = 'Podany email jest nieprawidłowy',
     name,
     required = false,
-    showError
+    showError = true
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,

@@ -47,6 +47,16 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  width:100%;\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject12() {
   var data = _taggedTemplateLiteral(["\n padding-bottom: 25px;\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: 0;\n   bottom: 0;\n   margin: auto;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
 
@@ -58,7 +68,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  box-sizing: border-box;\n  left: 0;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n    padding: ", ";\n  color: ", ";\n  font-weight: ", ";  \n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  left: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n  padding: ", ";\n  color: ", ";\n  font-weight: ", ";  \n  border-top-color: ", ";\n  border-bottom-color: ", ";\n  border-left-color: ", ";\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -108,7 +118,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100px;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100px;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  ", "\n  ", "\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -261,6 +271,10 @@ var SliderInput = _styledComponents.default.input(_templateObject6(), function (
 }, function (props) {
   return props.error ? props.theme.inputErrorColor : props.theme.inputTextColor;
 }, function (props) {
+  return props.hasPrefix && 'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;';
+}, function (props) {
+  return props.hasSufix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;';
+}, function (props) {
   return props.theme.inputPlaceHolderColor;
 });
 /* eslint-disable */
@@ -343,6 +357,8 @@ var StyledSliderInputSuffix = _styledComponents.default.span(_templateObject10()
 var StyledInputPrefix = _styledComponents.default.span(_templateObject11(), function (props) {
   return props.theme.inputHeight;
 }, function (props) {
+  return props.theme.inputHeight;
+}, function (props) {
   return props.theme.inputBorderColor;
 }, function (props) {
   return props.theme.inputBorderRadius;
@@ -354,6 +370,12 @@ var StyledInputPrefix = _styledComponents.default.span(_templateObject11(), func
   return props.error ? props.theme.inputErrorColor : props.theme.inputTextColor;
 }, function (props) {
   return props.theme.inputFontWeight;
+}, function (props) {
+  return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
+}, function (props) {
+  return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
+}, function (props) {
+  return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
 });
 
 var SliderWrapper = _styledComponents.default.div(_templateObject12(), function (props) {
@@ -391,6 +413,8 @@ var SliderWrapper = _styledComponents.default.div(_templateObject12(), function 
 }, function (props) {
   return props.theme.sliderHandleAfterBorderRadius;
 });
+
+var InputWrapper = _styledComponents.default.div(_templateObject13());
 /* eslint-enable */
 
 
@@ -416,7 +440,12 @@ var BaseField = function BaseField(_ref) {
     style: {
       flexDirection: 'row'
     }
-  }, props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+  }, props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, {
+    error: touched[field.name] && errors[field.name]
+  }, props.prefix), /*#__PURE__*/_react.default.createElement(StyledInput, _extends({}, field, props, {
+    required: props.required,
+    hasPrefix: !!props.prefix,
+    hasSufix: !!props.suffix,
     onBlur: handleOnBlur,
     type: props.type,
     value: field.value && field.value || '',

@@ -9,7 +9,7 @@ const PeriodField: FC<RangeFieldProps> = ({
   label = 'Okres spłaty',
   name,
   required = false,
-  showError,
+  showError = true,
   showMinMax = true,
 }) => (
   <Field

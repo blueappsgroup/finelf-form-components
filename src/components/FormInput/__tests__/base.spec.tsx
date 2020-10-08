@@ -178,8 +178,8 @@ describe('base <BaseSelectField />', () => {
 
     expect(
       JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
-        .baseField
-    ).toBe('test')
+        .baseSelectField
+    ).toBe('test1')
     expect(input.value).toBe('test1')
   })
 })
@@ -269,8 +269,8 @@ describe('base <BaseRangeField />', () => {
 
     expect(
       JSON.parse(global.window.sessionStorage.getItem('form-testForm'))
-        .baseField
-    ).toBe('test')
+        .baseRangeField
+    ).toBe(400)
     expect(input.value).toBe('400')
   })
 })

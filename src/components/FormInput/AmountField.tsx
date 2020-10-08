@@ -9,7 +9,7 @@ const AmountField: FC<RangeFieldProps> = ({
   label = 'Kwota pożyczki',
   name,
   required = false,
-  showError,
+  showError = true,
   showMinMax = true,
 }) => (
   <Field

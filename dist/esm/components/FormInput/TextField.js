@@ -10,7 +10,7 @@ const TextField = ({
   name,
   required = false,
   validate = validateText,
-  showError
+  showError = true
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,

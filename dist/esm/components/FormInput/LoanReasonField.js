@@ -24,7 +24,7 @@ const LoanReasonField = ({
   name,
   required = false,
   validate,
-  showError
+  showError = true
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,

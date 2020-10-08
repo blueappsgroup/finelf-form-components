@@ -7,6 +7,7 @@ export declare const FormContext: Context<{
     stepsTitleList?: string[];
     nextStep?: Function;
     prevStep?: Function;
+    apiUrl?: string;
 }>;
 export declare const setFormValuesToCache: (values: {
     [key: string]: string | boolean;
@@ -17,3 +18,4 @@ export declare const getFormValuesFromCache: (id?: string) => {
 export declare const resetFormValueCache: (id: string) => void;
 export declare const encodeData: (data: FormValuesType) => string | undefined;
 export declare const sendDataToAwsSQS: (values: FormValuesType, queueUrl?: string) => Promise<any>;
+export declare const handleSendDataToApi: (values: FormValuesType, apiUrl: string, formId: string) => Promise<any>;

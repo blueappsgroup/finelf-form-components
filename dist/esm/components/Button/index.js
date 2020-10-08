@@ -17,6 +17,10 @@ const StyledButton = styled.button`
   &:disabled {
     background: silver;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Button = ({

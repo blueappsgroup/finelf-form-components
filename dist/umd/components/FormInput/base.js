@@ -231,6 +231,9 @@
   border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
+  ${props => props.hasPrefix && 'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
+  ${props => props.hasSufix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
+
   &::placeholder {
     color: ${props => props.theme.inputPlaceHolderColor};
   }
@@ -301,17 +304,21 @@
 `;
   const StyledInputPrefix = _styledComponents2.default.span`
   position: relative;
+  left: 0px;
+  height: ${props => props.theme.inputHeight};
   box-sizing: border-box;
-  left: 0;
   display: inline-flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
   border: 1px solid ${props => props.theme.inputBorderColor};
   border-top-left-radius: ${props => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${props => props.theme.inputBorderRadius};
-    padding: ${props => props.theme.styledInputPrefixPadding};
+  padding: ${props => props.theme.styledInputPrefixPadding};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
   font-weight: ${props => props.theme.inputFontWeight};  
+  border-top-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-bottom-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-left-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
 `;
   const SliderWrapper = _styledComponents2.default.div`
  padding-bottom: 25px;
@@ -354,6 +361,11 @@
   }
  }
 `;
+  const InputWrapper = _styledComponents2.default.div`
+  position: relative;
+  display: flex;
+  width:100%;
+`;
   /* eslint-enable */
 
   const BaseField = _ref => {
@@ -382,7 +394,12 @@
       style: {
         flexDirection: 'row'
       }
-    }, props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+    }, props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, {
+      error: touched[field.name] && errors[field.name]
+    }, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+      required: props.required,
+      hasPrefix: !!props.prefix,
+      hasSufix: !!props.suffix,
       onBlur: handleOnBlur,
       type: props.type,
       value: field.value && field.value || '',

@@ -34,7 +34,7 @@
     errorMsg = 'Podana kwota jest nieprawidłowa',
     name,
     required = false,
-    showError
+    showError = true
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,

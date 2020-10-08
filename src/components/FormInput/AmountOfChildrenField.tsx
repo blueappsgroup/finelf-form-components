@@ -12,7 +12,7 @@ const AmountOfChildrenField: FC<AmountOfChildrenFieldProps> = ({
   errorMsg = 'Podana ilość jest nieprawidłowa',
   name,
   required = false,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

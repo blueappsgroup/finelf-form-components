@@ -13,7 +13,7 @@ const OtherLoanAmountField: FC<OtherLoanAmountFieldProps> = ({
   name,
   required = false,
   validate = validateOtherLoanAmount,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

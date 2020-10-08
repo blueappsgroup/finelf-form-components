@@ -11,7 +11,7 @@ const OtherLoanAmountField = ({
   name,
   required = false,
   validate = validateOtherLoanAmount,
-  showError
+  showError = true
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,

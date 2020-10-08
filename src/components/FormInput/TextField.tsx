@@ -12,7 +12,7 @@ const TextField: FC<TextFieldProps> = ({
   name,
   required = false,
   validate = validateText,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

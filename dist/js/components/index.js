@@ -10,7 +10,9 @@ var _exportNames = {
   CheckboxesGroup: true,
   FormStatusText: true,
   Step: true,
-  RedirectPage: true
+  RedirectPage: true,
+  TrasactionId: true,
+  Agreements: true
 };
 Object.defineProperty(exports, "Header", {
   enumerable: true,
@@ -54,6 +56,18 @@ Object.defineProperty(exports, "RedirectPage", {
     return _RedirectPage.default;
   }
 });
+Object.defineProperty(exports, "TrasactionId", {
+  enumerable: true,
+  get: function get() {
+    return _TransactionId.default;
+  }
+});
+Object.defineProperty(exports, "Agreements", {
+  enumerable: true,
+  get: function get() {
+    return _Agreements.default;
+  }
+});
 
 var _FormInput = require("./FormInput");
 
@@ -81,6 +95,10 @@ var _FormStatusText = _interopRequireDefault(require("./FormStatusText"));
 var _Step = _interopRequireDefault(require("./Step"));
 
 var _RedirectPage = _interopRequireDefault(require("./RedirectPage"));
+
+var _TransactionId = _interopRequireDefault(require("./TransactionId"));
+
+var _Agreements = _interopRequireDefault(require("./Agreements"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //# sourceMappingURL=index.js.map

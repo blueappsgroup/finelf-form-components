@@ -49,9 +49,7 @@ var validateEmail = function validateEmail() {
 
 exports.validateEmail = validateEmail;
 
-var validateTelNumber = function validateTelNumber() {
-  var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Niepoprawny numer telefonu';
-  var required = arguments.length > 1 ? arguments[1] : undefined;
+var validateTelNumber = function validateTelNumber(required, customErrorMsg) {
   return function (value) {
     if (!required && !value) {
       return;

@@ -201,6 +201,13 @@ const SliderInput = styled.input<any>`
   color: ${(props: any): string =>
     props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
+  ${(props: any) =>
+    props.hasPrefix &&
+    'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
+  ${(props: any) =>
+    props.hasSufix &&
+    'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
+
   &::placeholder {
     color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
   }
@@ -275,20 +282,24 @@ const StyledSliderInputSuffix = styled.span`
   justify-content: center;
 `
 
-const StyledInputPrefix = styled.span`
+const StyledInputPrefix = styled.span<any>`
   position: relative;
+  left: 0px;
+  height: ${(props: StyledProps): string => props.theme.inputHeight};
   box-sizing: border-box;
-  left: 0;
   display: inline-flex;
   align-items: center;
   height: ${(props: StyledProps): string => props.theme.inputHeight};
   border: 1px solid ${(props: StyledProps): string => props.theme.inputBorderColor};
   border-top-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
-    padding: ${(props: StyledProps): string => props.theme.styledInputPrefixPadding};
+  padding: ${(props: StyledProps): string => props.theme.styledInputPrefixPadding};
   color: ${(props: any): string =>
     props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
   font-weight: ${(props: StyledProps): string => props.theme.inputFontWeight};  
+  border-top-color: ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-bottom-color: ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-left-color: ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
 `
 
 const SliderWrapper = styled.div`
@@ -332,6 +343,12 @@ const SliderWrapper = styled.div`
   }
  }
 `
+
+const InputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  width:100%;
+`
 /* eslint-enable */
 
 const BaseField: (props: FieldWrapProps) => ReactElement = ({
@@ -353,10 +370,17 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
         }`}</label>
       )}
       <Row style={{ flexDirection: 'row' }}>
-        {props.prefix && <StyledInputPrefix>{props.prefix}</StyledInputPrefix>}
+        {props.prefix && (
+          <StyledInputPrefix error={touched[field.name] && errors[field.name]}>
+            {props.prefix}
+          </StyledInputPrefix>
+        )}
         <StyledInput
           {...field}
           {...props}
+          required={props.required}
+          hasPrefix={!!props.prefix}
+          hasSufix={!!props.suffix}
           onBlur={handleOnBlur}
           type={props.type}
           value={(field.value && field.value) || ''}

@@ -19,7 +19,7 @@ const HousingStatusField: FC<SelectFieldProps> = ({
   name,
   required = false,
   validate,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

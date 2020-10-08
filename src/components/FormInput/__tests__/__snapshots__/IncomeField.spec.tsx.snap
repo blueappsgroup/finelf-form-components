@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IncomeField/> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        name="income"
+        placeholder="Dochód"
+        type="text"
+        value="1234567890a"
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        Podana kwota jest nieprawidłowa
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<IncomeField/> matches snapshot 1`] = `
+<input
+  class="sc-kEqYlL honwIS"
+  id="testId"
+  name="income"
+  placeholder="Dochód"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`<IncomeField/> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="income"
+      >
+        Income*
+      </label>
+      <input
+        class="sc-kEqYlL jzZEFj"
+        id="testId"
+        label="Income"
+        name="income"
+        placeholder="Dochód*"
+        required=""
+        type="text"
+        value=""
+      />
+      <span
+        class="sc-jrsJCI djVSvf"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<IncomeField/> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE gQzhKx"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gdvYxl"
+    >
+      <label
+        for="income"
+      >
+        Income
+      </label>
+      <input
+        class="sc-kEqYlL honwIS"
+        id="testId"
+        label="Income"
+        name="income"
+        placeholder="Dochód"
+        type="text"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

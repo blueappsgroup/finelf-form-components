@@ -6,11 +6,12 @@ import { ThemeProvider } from '../../consts/theme'
 import { device } from '../../consts/sizes'
 import { FormProps, FormValuesType } from '../../types'
 import RedirectPage from '../RedirectPage'
+import TransactionId from '../TransactionId'
 import {
   FormContext,
   getFormValuesFromCache,
   resetFormValueCache,
-  sendDataToAwsSQS,
+  handleSendDataToApi,
 } from '../../utils'
 import { formStatuses } from '../../consts/form'
 
@@ -48,10 +49,19 @@ const FormWrapper: FC<FormProps> = ({
   logoImg,
   redirectMainImg,
   redirectBgImg,
-  queueUrl,
-  sendDataToSQS,
+  sendDataToApi,
+  apiUrl,
+  transactionName,
 }) => {
-  const [initialValues, setInitialValues] = useState(getFormValuesFromCache(id))
+  const trasationIdValue =
+    transactionName &&
+    new URLSearchParams(window.location.search).get(transactionName)
+
+  const [initialValues, setInitialValues] = useState({
+    ...getFormValuesFromCache(id),
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    trasaction_id: trasationIdValue,
+  })
   const [currentStep, setCurrentStep] = useState(0)
 
   const handleSubmit = async (
@@ -67,8 +77,8 @@ const FormWrapper: FC<FormProps> = ({
     }
 
     try {
-      if (sendDataToSQS) {
-        await sendDataToAwsSQS(values, queueUrl)
+      if (sendDataToApi && apiUrl) {
+        await handleSendDataToApi(values, apiUrl, id)
       }
 
       props.resetForm()
@@ -80,7 +90,8 @@ const FormWrapper: FC<FormProps> = ({
   }
   const handleReset = (): void => {
     resetFormValueCache(id)
-    setInitialValues({})
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setInitialValues({} as any)
   }
 
   const prevStep: Function = () => setCurrentStep(currentStep - 1)
@@ -91,6 +102,7 @@ const FormWrapper: FC<FormProps> = ({
     <FormContext.Provider
       value={{
         id,
+        apiUrl,
         stepsLength,
         currentStep,
         stepsTitleList: stepsTitles,
@@ -115,7 +127,12 @@ const FormWrapper: FC<FormProps> = ({
                 timeToRedirect={timeToRedirect}
                 mainImg={redirectMainImg}
               />
-            )) || <StyledForm id={id}>{children}</StyledForm>
+            )) || (
+              <StyledForm id={id}>
+                <TransactionId />
+                {children}
+              </StyledForm>
+            )
           }
         </Formik>
       </ThemeProvider>
