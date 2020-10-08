@@ -10,10 +10,12 @@ const PeriodField: FC<RangeFieldProps> = ({
   name,
   required = false,
   showError = true,
+  showMinMax = true,
 }) => (
   <Field
     required={required}
     showError={showError}
+    showMinMax={showMinMax}
     id={id}
     name={name}
     component={BaseRangeField}

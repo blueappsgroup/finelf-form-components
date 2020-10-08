@@ -25,17 +25,34 @@ const StyledRow = styled.div`
   position: relative;
   flex-wrap: ${props => props.theme.styledRowFlexWrap};
   label {
+    font-size: ${props => props.theme.labelFontSize};
     padding: ${props => props.theme.styledRowLabelPadding};
+    color: ${props => props.theme.styledRowLabelFontColor};
+  }
+`;
+const StyledRowRangeField = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: ${props => props.theme.styledRowMarginBottom};
+  position: relative;
+  flex-wrap: ${props => props.theme.styledRowFlexWrap};
+  justify-content: space-between;
+  label {
+    font-size: ${props => props.theme.labelFontSize};
+    padding: ${props => props.theme.styledRowLabelPadding};
+    color: ${props => props.theme.styledRowLabelFontColor};
   }
 `;
 /* eslint-enable */
 
 export const Row = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
 
   @media ${device.tablet} {
     flex-direction: row;
+    justify-content: space-between;
     & ${StyledRow}:first-of-type {
       flex-grow: 1;
       margin-right: 5px;
@@ -70,6 +87,41 @@ const StyledInput = styled.input`
   font-weight: ${props => props.theme.inputFontWeight};
   font-size: ${props => props.theme.inputFontSize};
   line-height: ${props => props.theme.inputLineHeight};
+  text-align: ${props => props.theme.inputTextAlign};
+  padding: ${props => props.theme.inputPadding};
+  border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+
+  &::placeholder {
+    color: ${props => props.theme.inputPlaceHolderColor};
+    font-size: ${props => props.theme.inputFontSize};
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+export const SliderRow = styled.div`
+  display: flex;
+  padding: 25px 0;
+  flex-direction: row;
+`;
+const SliderInput = styled.input`
+  background: ${props => props.theme.inputBgColor};
+  border: 1px solid
+    ${props => props.theme.inputBorderColor};
+  box-sizing: border-box;
+  box-shadow: ${props => props.theme.inputBoxShadow};
+  border-radius: ${props => props.theme.inputBorderRadius};
+  width: 100px;
+  height: ${props => props.theme.sliderInputHeight};
+  display: flex;
+  align-items: center;
+  font-style: ${props => props.theme.inputFontStyle};
+  font-weight: ${props => props.theme.inputFontWeight};
+  font-size: ${props => props.theme.inputFontSize};
+  line-height: ${props => props.theme.inputLineHeight};
+  text-align: ${props => props.theme.sliderInputTextAlign};
   padding: ${props => props.theme.inputPadding};
   border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
@@ -106,7 +158,7 @@ const StyledSelect = styled.select`
   border-color: ${props => props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
   color: ${props => props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
 
-  &::placeholder {
+  option:disabled {
     color: ${props => props.theme.styledSelectPlaceHolderColor};
   }
 
@@ -117,21 +169,33 @@ const StyledSelect = styled.select`
 const StyledSpan = styled.span`
   font-size: ${props => props.theme.styledSpanFontSize};
   font-weight: ${props => props.theme.styledSpanFontWeight};
+  color: ${props => props.theme.styledSpanFontColor};
 `;
 const StyledInputSuffix = styled.span`
-  position: relative;
-  right: 0px;
-  height: ${props => props.theme.inputHeight};
-  box-sizing: border-box;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
+  width: ${props => props.theme.inputHeight};
+  box-sizing: border-box;
   background-color: ${props => props.theme.styledInputSuffixBgColor};
   border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
-  padding: ${props => props.theme.styledInputSuffixVerticalPadding} ${props => props.theme.styledInputSuffixHorizontalPadding};
   font-weight: ${props => props.theme.styledInputSuffixFontWeight};
   font-size: ${props => props.theme.styledInputSuffixFontSize};
   color: ${props => props.theme.styledInputSuffixTextColor};
+  justify-content: center;
+`;
+const StyledSliderInputSuffix = styled.span`
+  display: flex;
+  align-items: center;
+  height: ${props => props.theme.sliderInputHeight};
+  width: ${props => props.theme.sliderInputHeight};
+  box-sizing: border-box;
+  background-color: ${props => props.theme.styledInputSuffixBgColor};
+  border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
+  font-weight: ${props => props.theme.styledInputSuffixFontWeight};
+  font-size: ${props => props.theme.styledInputSuffixFontSize};
+  color: ${props => props.theme.styledInputSuffixTextColor};
+  justify-content: center;
 `;
 const StyledInputPrefix = styled.span`
   position: relative;
@@ -145,11 +209,14 @@ const StyledInputPrefix = styled.span`
   border-top-left-radius: ${props => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${props => props.theme.inputBorderRadius};
   padding: ${props => props.theme.styledInputPrefixPadding};
+  color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+  font-weight: ${props => props.theme.inputFontWeight};  
   border-top-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   border-bottom-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   border-left-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
 `;
 const SliderWrapper = styled.div`
+ padding-bottom: 25px;
  .rangeslider {
   position: relative;
   width: 100%;
@@ -162,7 +229,9 @@ const SliderWrapper = styled.div`
    border-radius: ${props => props.theme.sliderBorderRadius};
   }
   .rangeslider__handle {
-   top: -6px;
+   top: 0;
+   bottom: 0;
+   margin: auto;
    width: ${props => props.theme.sliderHandleWidth};
    height: ${props => props.theme.sliderHandleHeight};
    background-color: ${props => props.theme.sliderHandleBgColor};
@@ -191,6 +260,7 @@ const InputWrapper = styled.div`
   position: relative;
   display: flex;
   width:100%;
+  flex-direction: row;
 `;
 /* eslint-enable */
 
@@ -216,7 +286,7 @@ const BaseField = (_ref) => {
 
   return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
-  }, `${props.label}${props.required && '*' || ''}`), props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, {
+  }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(InputWrapper, null, props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, {
     error: touched[field.name] && errors[field.name]
   }, props.prefix), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
     required: props.required,
@@ -226,8 +296,12 @@ const BaseField = (_ref) => {
     type: props.type,
     value: field.value && field.value || '',
     error: touched[field.name] && errors[field.name],
-    placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
-  })), props.suffix && /*#__PURE__*/React.createElement(StyledInputSuffix, null, props.suffix), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/React.createElement(StyledError, null, errors[field.name]));
+    placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`,
+    style: props.prefix && {
+      borderBottomLeftRadius: '0px',
+      borderTopLeftRadius: '0px'
+    }
+  })), props.suffix && /*#__PURE__*/React.createElement(StyledInputSuffix, null, props.suffix)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/React.createElement(StyledError, null, errors[field.name]));
 };
 
 export default BaseField;
@@ -329,16 +403,16 @@ export const BaseRangeField = (_ref3) => {
   useLayoutEffect(() => {
     setFieldValue(field.name, value);
   }, [field.name, value, setFieldValue]);
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledRowRangeField, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
-  }, props.label), /*#__PURE__*/React.createElement(InputWrapper, null, /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
+  }, props.label), /*#__PURE__*/React.createElement(SliderRow, null, /*#__PURE__*/React.createElement(SliderInput, _extends({}, field, props, {
     onChange: handleOnChange,
     onBlur: handleOnBlur,
     type: props.type,
     value: value,
     error: touched[field.name] && errors[field.name],
     placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
-  })), props.suffix && /*#__PURE__*/React.createElement(StyledInputSuffix, null, props.suffix))), /*#__PURE__*/React.createElement(SliderWrapper, null, /*#__PURE__*/React.createElement(Slider, {
+  })), props.suffix && /*#__PURE__*/React.createElement(StyledSliderInputSuffix, null, props.suffix))), /*#__PURE__*/React.createElement(SliderWrapper, null, /*#__PURE__*/React.createElement(Slider, {
     min: props.min,
     max: props.max,
     step: props.step,
@@ -346,10 +420,6 @@ export const BaseRangeField = (_ref3) => {
     tooltip: false,
     onChange: handleOnChangeSlider,
     onChangeComplete: handleOnChangeCompleteSlider
-  })), props.showMinMax && /*#__PURE__*/React.createElement(StyledRow, {
-    style: {
-      justifyContent: 'space-between'
-    }
-  }, /*#__PURE__*/React.createElement(StyledSpan, null, "Min. ", props.min, " ", props.unit), /*#__PURE__*/React.createElement(StyledSpan, null, "Max. ", props.max, " ", props.unit)));
+  })), props.showMinMax && /*#__PURE__*/React.createElement(StyledRowRangeField, null, /*#__PURE__*/React.createElement(StyledSpan, null, "Min. ", props.min, " ", props.unit), /*#__PURE__*/React.createElement(StyledSpan, null, "Max. ", props.max, " ", props.unit)));
 };
 //# sourceMappingURL=base.js.map

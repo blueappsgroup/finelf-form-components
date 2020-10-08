@@ -30,7 +30,7 @@
   const BirthDateField = ({
     id,
     label,
-    placeholder = 'BirthDate',
+    placeholder = 'Data urodzenia',
     name,
     required = false,
     showError = true

@@ -6,7 +6,7 @@ import { validateTelNumber } from './validate';
 const TelephoneField = ({
   id,
   label,
-  placeholder = 'Telefon',
+  placeholder = 'Numer telefonu',
   errorMsg = 'Podany numer telefonu jest nieprawidłowy',
   name,
   required = false,

@@ -21,10 +21,13 @@ var PeriodField = function PeriodField(_ref) {
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       _ref$showError = _ref.showError,
-      showError = _ref$showError === void 0 ? true : _ref$showError;
+      showError = _ref$showError === void 0 ? true : _ref$showError,
+      _ref$showMinMax = _ref.showMinMax,
+      showMinMax = _ref$showMinMax === void 0 ? true : _ref$showMinMax;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
+    showMinMax: showMinMax,
     id: id,
     name: name,
     component: _base.BaseRangeField,
