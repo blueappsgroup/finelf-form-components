@@ -30,7 +30,7 @@
   const IncomeField = ({
     id,
     label,
-    placeholder,
+    placeholder = 'Dochód',
     errorMsg = 'Podana kwota jest nieprawidłowa',
     name,
     required = false,

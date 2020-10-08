@@ -30,7 +30,7 @@
   const ZipCodeField = ({
     id,
     label = 'Kod pocztowy',
-    placeholder,
+    placeholder = 'Kod pocztowy',
     name,
     required = false,
     validate = _validate.validateZipCode,

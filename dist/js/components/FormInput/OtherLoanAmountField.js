@@ -18,7 +18,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var OtherLoanAmountField = function OtherLoanAmountField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      placeholder = _ref.placeholder,
+      _ref$placeholder = _ref.placeholder,
+      placeholder = _ref$placeholder === void 0 ? 'Kwota obecnych zobowiązań finansowych' : _ref$placeholder,
       _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'Podany kwota jest nieprawidłowa' : _ref$errorMsg,
       name = _ref.name,

@@ -30,7 +30,7 @@
   const CityNameField = ({
     id,
     label = 'Miasto',
-    placeholder,
+    placeholder = 'Miasto',
     name,
     required = false,
     validate = _validate.validateCityName,

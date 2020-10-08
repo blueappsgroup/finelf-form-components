@@ -148,6 +148,19 @@
     color: ${props => props.theme.styledRowLabelFontColor};
   }
 `;
+  const StyledRowRangeField = _styledComponents2.default.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: ${props => props.theme.styledRowMarginBottom};
+  position: relative;
+  flex-wrap: ${props => props.theme.styledRowFlexWrap};
+  justify-content: space-between;
+  label {
+    font-size: ${props => props.theme.labelFontSize};
+    padding: ${props => props.theme.styledRowLabelPadding};
+    color: ${props => props.theme.styledRowLabelFontColor};
+  }
+`;
   /* eslint-enable */
 
   const Row = exports.Row = _styledComponents2.default.div`
@@ -365,6 +378,7 @@
   position: relative;
   display: flex;
   width:100%;
+  flex-direction: row;
 `;
   /* eslint-enable */
 
@@ -390,11 +404,7 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(Row, {
-      style: {
-        flexDirection: 'row'
-      }
-    }, props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, {
+    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(InputWrapper, null, props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, {
       error: touched[field.name] && errors[field.name]
     }, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
       required: props.required,
@@ -513,11 +523,7 @@
     (0, _react.useLayoutEffect)(() => {
       setFieldValue(field.name, value);
     }, [field.name, value, setFieldValue]);
-    return /*#__PURE__*/_react2.default.createElement("div", null, /*#__PURE__*/_react2.default.createElement(StyledRow, {
-      style: {
-        justifyContent: 'space-between'
-      }
-    }, props.label && /*#__PURE__*/_react2.default.createElement("label", {
+    return /*#__PURE__*/_react2.default.createElement("div", null, /*#__PURE__*/_react2.default.createElement(StyledRowRangeField, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
     }, props.label), /*#__PURE__*/_react2.default.createElement(SliderRow, null, /*#__PURE__*/_react2.default.createElement(SliderInput, _extends({}, field, props, {
       onChange: handleOnChange,
@@ -534,11 +540,7 @@
       tooltip: false,
       onChange: handleOnChangeSlider,
       onChangeComplete: handleOnChangeCompleteSlider
-    })), props.showMinMax && /*#__PURE__*/_react2.default.createElement(StyledRow, {
-      style: {
-        justifyContent: 'space-between'
-      }
-    }, /*#__PURE__*/_react2.default.createElement(StyledSpan, null, "Min. ", props.min, " ", props.unit), /*#__PURE__*/_react2.default.createElement(StyledSpan, null, "Max. ", props.max, " ", props.unit)));
+    })), props.showMinMax && /*#__PURE__*/_react2.default.createElement(StyledRowRangeField, null, /*#__PURE__*/_react2.default.createElement(StyledSpan, null, "Min. ", props.min, " ", props.unit), /*#__PURE__*/_react2.default.createElement(StyledSpan, null, "Max. ", props.max, " ", props.unit)));
   };
 });
 //# sourceMappingURL=base.js.map

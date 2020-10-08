@@ -8,7 +8,7 @@ import { validateText } from './validate'
 const CompanyNameField: FC<TextFieldProps> = ({
   id,
   label = 'Nazwa pracodawcy',
-  placeholder,
+  placeholder = 'Nazwa pracodawcy',
   name,
   required = false,
   validate = validateText,

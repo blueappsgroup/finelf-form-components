@@ -8,7 +8,7 @@ import { IncomeFieldProps } from '../../types'
 const IncomeField: FC<IncomeFieldProps> = ({
   id,
   label,
-  placeholder,
+  placeholder = 'Dochód',
   errorMsg = 'Podana kwota jest nieprawidłowa',
   name,
   required = false,

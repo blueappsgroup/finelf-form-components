@@ -6,7 +6,7 @@ import { validateZipCode } from './validate';
 const ZipCodeField = ({
   id,
   label = 'Kod pocztowy',
-  placeholder,
+  placeholder = 'Kod pocztowy',
   name,
   required = false,
   validate = validateZipCode,

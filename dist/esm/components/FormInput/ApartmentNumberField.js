@@ -6,7 +6,7 @@ import { validateHouseNumber } from './validate';
 const ApartmentNumberField = ({
   id,
   label = 'Numer mieszkania',
-  placeholder,
+  placeholder = 'Numer mieszkania',
   name,
   required = false,
   validate = validateHouseNumber,

@@ -8,7 +8,7 @@ import { validatePesel } from './validate'
 const PeselField: (props: TextFieldProps) => ReactElement = ({
   id,
   label = 'Pesel',
-  placeholder,
+  placeholder = 'Pesel',
   name = 'id_code',
   required = false,
   validate = validatePesel,

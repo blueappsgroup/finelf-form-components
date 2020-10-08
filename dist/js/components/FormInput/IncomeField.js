@@ -18,7 +18,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var IncomeField = function IncomeField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      placeholder = _ref.placeholder,
+      _ref$placeholder = _ref.placeholder,
+      placeholder = _ref$placeholder === void 0 ? 'Dochód' : _ref$placeholder,
       _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'Podana kwota jest nieprawidłowa' : _ref$errorMsg,
       name = _ref.name,

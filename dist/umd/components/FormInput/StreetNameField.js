@@ -30,7 +30,7 @@
   const StreetNameField = ({
     id,
     label = 'Ulica',
-    placeholder,
+    placeholder = 'Ulica',
     name,
     required = false,
     validate = _validate.validateCityName,

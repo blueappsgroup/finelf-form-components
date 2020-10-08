@@ -30,7 +30,7 @@
   const CompanyTaxField = ({
     id,
     label = 'NIP firmy',
-    placeholder,
+    placeholder = 'NIP firmy',
     name,
     required = false,
     validate = _validate.validateCompanyTax,

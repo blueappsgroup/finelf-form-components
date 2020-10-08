@@ -6,7 +6,7 @@ import { validateText } from './validate';
 const LastNameField = ({
   id,
   label = 'Nazwisko',
-  placeholder,
+  placeholder = 'Nazwisko',
   name,
   required = false,
   validate = validateText,

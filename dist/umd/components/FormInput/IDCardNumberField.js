@@ -30,7 +30,7 @@
   const IDCardNumberField = ({
     id,
     label = 'Numer dowodu osobistego',
-    placeholder,
+    placeholder = 'Numer dowodu osobistego',
     name,
     required = false,
     validate = _validate.validateIDCardNumber,

@@ -30,7 +30,7 @@
   const AmountOfChildrenField = ({
     id,
     label,
-    placeholder,
+    placeholder = 'Liczba osób na utrzymaniu',
     errorMsg = 'Podana ilość jest nieprawidłowa',
     name,
     required = false,

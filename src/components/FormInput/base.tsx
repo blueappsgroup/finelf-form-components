@@ -106,6 +106,20 @@ const StyledRow = styled.div`
     color: ${(props: StyledProps): string => props.theme.styledRowLabelFontColor};
   }
 `
+
+const StyledRowRangeField = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: ${(props: StyledProps): string => props.theme.styledRowMarginBottom};
+  position: relative;
+  flex-wrap: ${(props: StyledProps): string => props.theme.styledRowFlexWrap};
+  justify-content: space-between;
+  label {
+    font-size: ${(props: StyledProps): string => props.theme.labelFontSize};
+    padding: ${(props: StyledProps): string => props.theme.styledRowLabelPadding};
+    color: ${(props: StyledProps): string => props.theme.styledRowLabelFontColor};
+  }
+`
 /* eslint-enable */
 
 export const Row = styled.div`
@@ -348,7 +362,9 @@ const InputWrapper = styled.div`
   position: relative;
   display: flex;
   width:100%;
+  flex-direction: row;
 `
+
 /* eslint-enable */
 
 const BaseField: (props: FieldWrapProps) => ReactElement = ({
@@ -369,7 +385,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
           (props.required && '*') || ''
         }`}</label>
       )}
-      <Row style={{ flexDirection: 'row' }}>
+      <InputWrapper>
         {props.prefix && (
           <StyledInputPrefix error={touched[field.name] && errors[field.name]}>
             {props.prefix}
@@ -397,7 +413,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
           }
         />
         {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
-      </Row>
+      </InputWrapper>
       {props.showError && touched[field.name] && errors[field.name] && (
         <StyledError>{errors[field.name]}</StyledError>
       )}
@@ -516,7 +532,7 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
 
   return (
     <div>
-      <StyledRow style={{ justifyContent: 'space-between' }}>
+      <StyledRowRangeField>
         {props.label && <label htmlFor={field.name}>{props.label}</label>}
         <SliderRow>
           <SliderInput
@@ -536,7 +552,7 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
             <StyledSliderInputSuffix>{props.suffix}</StyledSliderInputSuffix>
           )}
         </SliderRow>
-      </StyledRow>
+      </StyledRowRangeField>
       <SliderWrapper>
         <Slider
           min={props.min}
@@ -549,14 +565,14 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
         />
       </SliderWrapper>
       {props.showMinMax && (
-        <StyledRow style={{ justifyContent: 'space-between' }}>
+        <StyledRowRangeField>
           <StyledSpan>
             Min. {props.min} {props.unit}
           </StyledSpan>
           <StyledSpan>
             Max. {props.max} {props.unit}
           </StyledSpan>
-        </StyledRow>
+        </StyledRowRangeField>
       )}
     </div>
   )

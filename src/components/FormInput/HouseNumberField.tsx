@@ -8,7 +8,7 @@ import { validateHouseNumber } from './validate'
 const HouseNumberField: FC<TextFieldProps> = ({
   id,
   label = 'Numer domu',
-  placeholder,
+  placeholder = 'Numer domu',
   name,
   required = false,
   validate = validateHouseNumber,

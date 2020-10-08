@@ -8,7 +8,7 @@ import { validateOtherLoanAmount } from './validate'
 const OtherLoanAmountField: FC<OtherLoanAmountFieldProps> = ({
   id,
   label,
-  placeholder,
+  placeholder = 'Kwota obecnych zobowiązań finansowych',
   errorMsg = 'Podany kwota jest nieprawidłowa',
   name,
   required = false,

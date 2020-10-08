@@ -30,7 +30,7 @@
   const PeselField = ({
     id,
     label = 'Pesel',
-    placeholder,
+    placeholder = 'Pesel',
     name = 'id_code',
     required = false,
     validate = _validate.validatePesel,

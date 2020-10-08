@@ -6,7 +6,7 @@ import { validateOtherLoanAmount } from './validate';
 const OtherLoanAmountField = ({
   id,
   label,
-  placeholder,
+  placeholder = 'Kwota obecnych zobowiązań finansowych',
   errorMsg = 'Podany kwota jest nieprawidłowa',
   name,
   required = false,

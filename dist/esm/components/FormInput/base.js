@@ -30,6 +30,19 @@ const StyledRow = styled.div`
     color: ${props => props.theme.styledRowLabelFontColor};
   }
 `;
+const StyledRowRangeField = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: ${props => props.theme.styledRowMarginBottom};
+  position: relative;
+  flex-wrap: ${props => props.theme.styledRowFlexWrap};
+  justify-content: space-between;
+  label {
+    font-size: ${props => props.theme.labelFontSize};
+    padding: ${props => props.theme.styledRowLabelPadding};
+    color: ${props => props.theme.styledRowLabelFontColor};
+  }
+`;
 /* eslint-enable */
 
 export const Row = styled.div`
@@ -247,6 +260,7 @@ const InputWrapper = styled.div`
   position: relative;
   display: flex;
   width:100%;
+  flex-direction: row;
 `;
 /* eslint-enable */
 
@@ -272,11 +286,7 @@ const BaseField = (_ref) => {
 
   return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
-  }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(Row, {
-    style: {
-      flexDirection: 'row'
-    }
-  }, props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, {
+  }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(InputWrapper, null, props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, {
     error: touched[field.name] && errors[field.name]
   }, props.prefix), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
     required: props.required,
@@ -393,11 +403,7 @@ export const BaseRangeField = (_ref3) => {
   useLayoutEffect(() => {
     setFieldValue(field.name, value);
   }, [field.name, value, setFieldValue]);
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledRow, {
-    style: {
-      justifyContent: 'space-between'
-    }
-  }, props.label && /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledRowRangeField, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
   }, props.label), /*#__PURE__*/React.createElement(SliderRow, null, /*#__PURE__*/React.createElement(SliderInput, _extends({}, field, props, {
     onChange: handleOnChange,
@@ -414,10 +420,6 @@ export const BaseRangeField = (_ref3) => {
     tooltip: false,
     onChange: handleOnChangeSlider,
     onChangeComplete: handleOnChangeCompleteSlider
-  })), props.showMinMax && /*#__PURE__*/React.createElement(StyledRow, {
-    style: {
-      justifyContent: 'space-between'
-    }
-  }, /*#__PURE__*/React.createElement(StyledSpan, null, "Min. ", props.min, " ", props.unit), /*#__PURE__*/React.createElement(StyledSpan, null, "Max. ", props.max, " ", props.unit)));
+  })), props.showMinMax && /*#__PURE__*/React.createElement(StyledRowRangeField, null, /*#__PURE__*/React.createElement(StyledSpan, null, "Min. ", props.min, " ", props.unit), /*#__PURE__*/React.createElement(StyledSpan, null, "Max. ", props.max, " ", props.unit)));
 };
 //# sourceMappingURL=base.js.map

@@ -8,7 +8,7 @@ import { validateBankAccountNumber } from './validate'
 const BankAccountNumberField: FC<TextFieldProps> = ({
   id,
   label = 'Numer konta bankowego',
-  placeholder,
+  placeholder = 'Numer konta bankowego',
   name,
   required = false,
   validate = validateBankAccountNumber,

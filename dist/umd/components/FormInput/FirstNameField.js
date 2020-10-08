@@ -30,7 +30,7 @@
   const FirstNameField = ({
     id,
     label = 'Imię',
-    placeholder,
+    placeholder = 'Imię',
     name,
     required = false,
     validate = _validate.validateText,

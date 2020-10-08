@@ -8,7 +8,7 @@ import { validateZipCode } from './validate'
 const ZipCodeField: FC<TextFieldProps> = ({
   id,
   label = 'Kod pocztowy',
-  placeholder,
+  placeholder = 'Kod pocztowy',
   name,
   required = false,
   validate = validateZipCode,

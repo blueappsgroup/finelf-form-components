@@ -30,7 +30,7 @@
   const CompanyNameField = ({
     id,
     label = 'Nazwa pracodawcy',
-    placeholder,
+    placeholder = 'Nazwa pracodawcy',
     name,
     required = false,
     validate = _validate.validateText,

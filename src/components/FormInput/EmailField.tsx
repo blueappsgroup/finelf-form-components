@@ -8,7 +8,7 @@ import { EmailFieldProps } from '../../types'
 const EmailField: FC<EmailFieldProps> = ({
   id,
   label,
-  placeholder,
+  placeholder = 'Email',
   errorMsg = 'Podany email jest nieprawidłowy',
   name,
   required = false,
