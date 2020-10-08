@@ -2,7 +2,7 @@
 
 exports[`<AmountField /> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL honwIS"
+  class="sc-iqAbSa jrHUfY"
   id="amountField"
   label="Kwota pożyczki"
   max="10000"
@@ -18,37 +18,45 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div>
       <div
-        class="sc-fujyUd gdvYxl"
+        class="sc-pNWxx guHpUh"
       >
         <label
           for="name"
         >
           Test
         </label>
-        <input
-          class="sc-kEqYlL honwIS"
-          id="amountField"
-          label="Test"
-          max="10000"
-          min="300"
-          name="name"
-          step="100"
-          type="text"
-          value="2000"
-        />
-        <span
-          class="sc-dIsAE idqcHK"
+        <div
+          class="sc-fnVYJo bUypog"
         >
-          PLN
-        </span>
+          <input
+            class="sc-iqAbSa jrHUfY"
+            id="amountField"
+            label="Test"
+            max="10000"
+            min="300"
+            name="name"
+            step="100"
+            type="text"
+            value="2000"
+          />
+          <span
+            class="sc-bqGHjH hLEuSv"
+          >
+            PLN
+          </span>
+        </div>
       </div>
       <div
-        class="sc-ksluoS lgnNyZ"
+        class="sc-hBMVcZ hTCfag"
       >
         <div
           aria-orientation="horizontal"
@@ -76,11 +84,11 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
         </div>
       </div>
       <div
-        class="sc-fujyUd gdvYxl"
+        class="sc-pNWxx guHpUh"
         style="justify-content: space-between;"
       >
         <span
-          class="sc-crzoUp ecHmNZ"
+          class="sc-dIsAE fSWrvq"
         >
           Min. 
           300
@@ -88,7 +96,7 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
           zł
         </span>
         <span
-          class="sc-crzoUp ecHmNZ"
+          class="sc-dIsAE fSWrvq"
         >
           Max. 
           10000

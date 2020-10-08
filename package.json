@@ -101,6 +101,15 @@
       "pre-commit": "lint-staged"
     }
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.stories.{ts,tsx}",
+      "!src/index.ts",
+      "!src/type.ts",
+      "!src/react-app-env.d.ts"
+    ]
+  },
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "eslint --fix"

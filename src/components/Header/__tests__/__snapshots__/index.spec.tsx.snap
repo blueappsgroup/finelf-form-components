@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> main header matches snapshot 1`] = `
+<body>
+  <div>
+    <h2
+      class="sc-bdnylx iVcZXZ"
+    >
+      Header
+    </h2>
+  </div>
+</body>
+`;
+
+exports[`<Header /> main header with border matches snapshot 1`] = `
+<body>
+  <div>
+    <h2
+      class="sc-bdnylx fJQCaH"
+    >
+      Header
+    </h2>
+  </div>
+</body>
+`;
+
+exports[`<Header /> subheader matches snapshot 1`] = `
+<body>
+  <div>
+    <h5
+      class="sc-gtssRu kjEzcb"
+    >
+      Header
+    </h5>
+  </div>
+</body>
+`;

@@ -6,7 +6,7 @@ const StyledInput = styled.input`
   display: none;
 `
 
-const TrasactionId: FC<{}> = () => (
+const TrasactionId: FC = () => (
   <Field name="trasaction_id" component={StyledInput} />
 )
 
