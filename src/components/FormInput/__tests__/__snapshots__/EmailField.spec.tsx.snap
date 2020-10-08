@@ -4,14 +4,18 @@ exports[`<EmailField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="emailField"
         name="name"
         placeholder="Email"
@@ -19,7 +23,7 @@ exports[`<EmailField /> input field with custom validation 1`] = `
         value="test"
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         Podany email jest nieprawidłowy
       </span>
@@ -30,7 +34,7 @@ exports[`<EmailField /> input field with custom validation 1`] = `
 
 exports[`<EmailField /> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL honwIS"
+  class="sc-iqAbSa jrHUfY"
   id="emailField"
   name="name"
   placeholder="Email"
@@ -43,11 +47,15 @@ exports[`<EmailField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="name"
@@ -55,7 +63,7 @@ exports[`<EmailField /> matches snapshot with error 1`] = `
         Test*
       </label>
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="emailField"
         label="Test"
         name="name"
@@ -65,7 +73,7 @@ exports[`<EmailField /> matches snapshot with error 1`] = `
         value=""
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         To pole jest wymagane
       </span>
@@ -78,11 +86,15 @@ exports[`<EmailField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="name"
@@ -90,7 +102,7 @@ exports[`<EmailField /> matches snapshot with label 1`] = `
         Test
       </label>
       <input
-        class="sc-kEqYlL honwIS"
+        class="sc-iqAbSa jrHUfY"
         id="emailField"
         label="Test"
         name="name"

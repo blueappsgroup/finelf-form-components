@@ -4,11 +4,15 @@ exports[`<PeselField/> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="id_code"
@@ -16,7 +20,7 @@ exports[`<PeselField/> input field with custom validation 1`] = `
         Pesel
       </label>
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="testId"
         label="Pesel"
         name="id_code"
@@ -24,7 +28,7 @@ exports[`<PeselField/> input field with custom validation 1`] = `
         value="2312"
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         Podany PESEL jest nieprawidłowy
       </span>
@@ -35,7 +39,7 @@ exports[`<PeselField/> input field with custom validation 1`] = `
 
 exports[`<PeselField/> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL honwIS"
+  class="sc-iqAbSa jrHUfY"
   id="testId"
   label="Pesel"
   name="id_code"
@@ -48,11 +52,15 @@ exports[`<PeselField/> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="id_code"
@@ -60,7 +68,7 @@ exports[`<PeselField/> matches snapshot with error 1`] = `
         Pesel*
       </label>
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="testId"
         label="Pesel"
         name="id_code"
@@ -69,7 +77,7 @@ exports[`<PeselField/> matches snapshot with error 1`] = `
         value=""
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         To pole jest wymagane
       </span>
@@ -82,11 +90,15 @@ exports[`<PeselField/> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="id_code"
@@ -94,7 +106,7 @@ exports[`<PeselField/> matches snapshot with label 1`] = `
         Pesel
       </label>
       <input
-        class="sc-kEqYlL honwIS"
+        class="sc-iqAbSa jrHUfY"
         id="testId"
         label="Pesel"
         name="id_code"

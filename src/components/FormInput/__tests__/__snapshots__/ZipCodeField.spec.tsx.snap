@@ -4,11 +4,15 @@ exports[`<ZipCodeField/> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="text_zip"
@@ -16,7 +20,7 @@ exports[`<ZipCodeField/> input field with custom validation 1`] = `
         Kod pocztowy
       </label>
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="testId"
         label="Kod pocztowy"
         name="text_zip"
@@ -24,7 +28,7 @@ exports[`<ZipCodeField/> input field with custom validation 1`] = `
         value="50600"
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         Podane dane są nieprawidłowe
       </span>
@@ -35,7 +39,7 @@ exports[`<ZipCodeField/> input field with custom validation 1`] = `
 
 exports[`<ZipCodeField/> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL honwIS"
+  class="sc-iqAbSa jrHUfY"
   id="testId"
   label="Kod pocztowy"
   name="text_zip"
@@ -48,11 +52,15 @@ exports[`<ZipCodeField/> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="text_zip"
@@ -60,7 +68,7 @@ exports[`<ZipCodeField/> matches snapshot with error 1`] = `
         Zip Code*
       </label>
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="testId"
         label="Zip Code"
         name="text_zip"
@@ -69,7 +77,7 @@ exports[`<ZipCodeField/> matches snapshot with error 1`] = `
         value=""
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         To pole jest wymagane
       </span>
@@ -82,11 +90,15 @@ exports[`<ZipCodeField/> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="text_zip"
@@ -94,7 +106,7 @@ exports[`<ZipCodeField/> matches snapshot with label 1`] = `
         ZipCode
       </label>
       <input
-        class="sc-kEqYlL honwIS"
+        class="sc-iqAbSa jrHUfY"
         id="testId"
         label="ZipCode"
         name="text_zip"

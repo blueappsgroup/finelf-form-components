@@ -2,7 +2,7 @@
 
 exports[`<PeriodField /> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL honwIS"
+  class="sc-iqAbSa jrHUfY"
   id="periodField"
   label="Okres spłaty"
   max="60"
@@ -18,37 +18,45 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div>
       <div
-        class="sc-fujyUd gdvYxl"
+        class="sc-pNWxx guHpUh"
       >
         <label
           for="name"
         >
           Test
         </label>
-        <input
-          class="sc-kEqYlL honwIS"
-          id="periodField"
-          label="Test"
-          max="60"
-          min="3"
-          name="name"
-          step="1"
-          type="text"
-          value="12"
-        />
-        <span
-          class="sc-dIsAE idqcHK"
+        <div
+          class="sc-fnVYJo bUypog"
         >
-          Dni
-        </span>
+          <input
+            class="sc-iqAbSa jrHUfY"
+            id="periodField"
+            label="Test"
+            max="60"
+            min="3"
+            name="name"
+            step="1"
+            type="text"
+            value="12"
+          />
+          <span
+            class="sc-bqGHjH hLEuSv"
+          >
+            Dni
+          </span>
+        </div>
       </div>
       <div
-        class="sc-ksluoS lgnNyZ"
+        class="sc-hBMVcZ hTCfag"
       >
         <div
           aria-orientation="horizontal"

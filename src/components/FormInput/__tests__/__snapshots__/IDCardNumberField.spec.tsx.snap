@@ -4,11 +4,15 @@ exports[`<IDCardNumberField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="id_card_number"
@@ -16,7 +20,7 @@ exports[`<IDCardNumberField /> input field with custom validation 1`] = `
         Numer dowodu osobistego
       </label>
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="testId"
         label="Numer dowodu osobistego"
         name="id_card_number"
@@ -24,7 +28,7 @@ exports[`<IDCardNumberField /> input field with custom validation 1`] = `
         value="48801213439233148617383842"
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         Podany numer dowodu jest nieprawidłowy
       </span>
@@ -35,7 +39,7 @@ exports[`<IDCardNumberField /> input field with custom validation 1`] = `
 
 exports[`<IDCardNumberField /> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL honwIS"
+  class="sc-iqAbSa jrHUfY"
   id="testId"
   label="Numer dowodu osobistego"
   name="id_card_number"
@@ -48,11 +52,15 @@ exports[`<IDCardNumberField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="id_card_number"
@@ -60,7 +68,7 @@ exports[`<IDCardNumberField /> matches snapshot with error 1`] = `
         IDcard*
       </label>
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="testId"
         label="IDcard"
         name="id_card_number"
@@ -69,7 +77,7 @@ exports[`<IDCardNumberField /> matches snapshot with error 1`] = `
         value=""
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         To pole jest wymagane
       </span>
@@ -82,11 +90,15 @@ exports[`<IDCardNumberField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="id_card_number"
@@ -94,7 +106,7 @@ exports[`<IDCardNumberField /> matches snapshot with label 1`] = `
         IDCard
       </label>
       <input
-        class="sc-kEqYlL honwIS"
+        class="sc-iqAbSa jrHUfY"
         id="testId"
         label="IDCard"
         name="id_card_number"
