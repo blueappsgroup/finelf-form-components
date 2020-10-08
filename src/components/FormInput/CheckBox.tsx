@@ -138,6 +138,7 @@ const Checkbox = ({ checked, error, ...props }: any): ReactElement => (
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Wrapper = styled.label<any>`
   display: flex;
+  line-height: 18px;
 
   &:hover {
     cursor: pointer;
