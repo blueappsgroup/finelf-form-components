@@ -119,6 +119,7 @@ const Checkbox = (_ref) => {
 
 const Wrapper = styled.label`
   display: flex;
+  line-height: 18px;
 
   &:hover {
     cursor: pointer;

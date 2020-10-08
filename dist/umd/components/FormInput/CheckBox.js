@@ -195,6 +195,7 @@
 
   const Wrapper = _styledComponents2.default.label`
   display: flex;
+  line-height: 18px;
 
   &:hover {
     cursor: pointer;
