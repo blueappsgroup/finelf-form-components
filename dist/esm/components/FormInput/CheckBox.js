@@ -15,10 +15,10 @@ const StyledRow = styled.div`
   position: relative;
   height: ${props => props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${props => props.collapsed ? 'none' : 'hidden'};
-    
+
   a {
-    color: ${props => props.theme.checkboxLinkColor}
-  }  
+    color: ${props => props.theme.checkboxLinkColor};
+  }
 `;
 const StyledArrow = styled.span`
   display: ${props => props.hasCollapse ? 'flex' : 'none'};

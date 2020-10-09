@@ -44,31 +44,29 @@ const StyledRowRangeField = styled.div`
     color: ${props => props.theme.styledRowLabelFontColor};
   }
 `;
-/* eslint-enable */
-
 export const Row = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  > * {
+      flex-basis: 0;
+      flex-grow: 1;
+  }
 
   @media ${device.tablet} {
     flex-direction: row;
     justify-content: space-between;
-    & ${StyledRow} {
-      flex-basis: 0;
-    }
-    
-    & ${StyledRow}:first-of-type {
-      flex-grow: 1;
+    & ${StyledRow}:first-of-type:not(:last-child) {
       margin-right: ${props => props.theme.marginBetweenRowChildren};
     }
 
-    & ${StyledRow}:last-child {
-      flex-grow: 1;
+    & ${StyledRow}:last-child:not(:first-of-type) {
       margin-left: ${props => props.theme.marginBetweenRowChildren};
     }
   }
 `;
+/* eslint-enable */
+
 const StyledError = styled.span`
   color: ${props => props.theme.inputErrorColor};
   text-align: ${props => props.theme.inputErrorTextAlign};

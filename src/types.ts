@@ -122,6 +122,7 @@ export type IncomeFieldProps = {
   errorMsg?: string
   required?: boolean
   showError?: boolean
+  suffix?: string
 }
 
 export type BirthDateFieldProps = {
@@ -302,4 +303,5 @@ export type RedirectPagePropsTypes = {
 export type ImageProps = {
   src: string
   alt: string
+  hideOnMobile?: boolean
 }

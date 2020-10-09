@@ -14,7 +14,7 @@ var _sizes = require("../../consts/sizes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  font-style: normal;\n  font-weight: 600;\n  font-size: ", ";\n  line-height: 18px;\n  margin: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  font-style: normal;\n  font-weight: 600;\n  font-size: ", ";\n  line-height: ", ";\n  margin: ", ";\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -24,7 +24,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: ", ";\n  line-height: 24px;\n  text-align: center;\n  margin: ", ";\n  padding-bottom: 28px;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n  position: relative;\n  \n  @media ", " {\n    margin: 0px 0px 30px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: ", ";\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: ", ";\n  line-height: ", ";\n  text-align: center;\n  margin: ", ";\n  padding-bottom: 28px;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n  position: relative;\n  \n  @media ", " {\n    margin: 0px 0px 30px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: ", ";\n    margin: 0 auto;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -39,6 +39,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var StyledMainHeader = _styledComponents.default.h2(_templateObject(), function (props) {
   return props.theme.headerFontSize;
 }, function (props) {
+  return props.theme.headerLineHeight;
+}, function (props) {
   return props.theme.headerMargin;
 }, function (props) {
   return props.theme.headerTextColor;
@@ -50,6 +52,8 @@ var StyledSubHeader = _styledComponents.default.h5(_templateObject2(), function 
   return props.theme.subheaderTextColor;
 }, function (props) {
   return props.theme.subheaderFontSize;
+}, function (props) {
+  return props.theme.subheaderLineHeight;
 }, function (props) {
   return props.theme.subheaderMargin;
 });

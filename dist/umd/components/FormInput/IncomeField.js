@@ -34,7 +34,8 @@
     errorMsg = 'Podana kwota jest nieprawidłowa',
     name,
     required = false,
-    showError = true
+    showError = true,
+    suffix
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -44,7 +45,8 @@
     label: label,
     placeholder: placeholder,
     type: "text",
-    validate: (0, _validate.validateIncome)(errorMsg, required)
+    validate: (0, _validate.validateIncome)(errorMsg, required),
+    suffix: suffix
   });
 
   IncomeField.defaultProps = {

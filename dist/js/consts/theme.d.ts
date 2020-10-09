@@ -71,9 +71,11 @@ export declare const theme: {
     headerTextColor: string;
     headerBorderColor: string;
     headerFontSize: string;
+    headerLineHeight: string;
     headerMargin: string;
     subheaderBorderColor: string;
     subheaderFontSize: string;
+    subheaderLineHeight: string;
     subheaderMargin: string;
     buttonTextColor: string;
     buttonBgColor: string;

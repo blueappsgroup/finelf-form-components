@@ -108,6 +108,7 @@ export declare type IncomeFieldProps = {
     errorMsg?: string;
     required?: boolean;
     showError?: boolean;
+    suffix?: string;
 };
 export declare type BirthDateFieldProps = {
     id?: string;
@@ -274,4 +275,5 @@ export declare type RedirectPagePropsTypes = {
 export declare type ImageProps = {
     src: string;
     alt: string;
+    hideOnMobile?: boolean;
 };

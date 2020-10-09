@@ -31,7 +31,7 @@
   const StyledMainHeader = _styledComponents2.default.h2`
   font-weight: 600;
   font-size: ${props => props.theme.headerFontSize};
-  line-height: 24px;
+  line-height: ${props => props.theme.headerLineHeight};
   text-align: center;
   margin: ${props => props.theme.headerMargin};
   padding-bottom: 28px;
@@ -59,7 +59,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: ${props => props.theme.subheaderFontSize};
-  line-height: 18px;
+  line-height: ${props => props.theme.subheaderLineHeight};
   margin: ${props => props.theme.subheaderMargin};
 `;
 

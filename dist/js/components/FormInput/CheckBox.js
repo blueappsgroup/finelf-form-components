@@ -108,7 +108,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: flex-start;\n  margin-bottom: 12px;\n  position: relative;\n  height: ", ";\n  overflow: ", ";\n    \n  a {\n    color: ", "\n  }  \n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: flex-start;\n  margin-bottom: 12px;\n  position: relative;\n  height: ", ";\n  overflow: ", ";\n\n  a {\n    color: ", ";\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
