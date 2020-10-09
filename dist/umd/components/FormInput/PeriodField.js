@@ -31,7 +31,13 @@
     name,
     required = false,
     showError = true,
-    showMinMax = true
+    showMinMax = true,
+    min = 3,
+    max = 60,
+    step = 1,
+    value = 12,
+    suffix = 'Dni',
+    unit = 'Dni'
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -41,12 +47,12 @@
     component: _base.BaseRangeField,
     label: label,
     type: "text",
-    min: 3,
-    max: 60,
-    step: 1,
-    value: 12,
-    suffix: 'Dni',
-    unit: 'Dni'
+    min: min,
+    max: max,
+    step: step,
+    value: value,
+    suffix: suffix,
+    unit: unit
   });
 
   PeriodField.defaultProps = {

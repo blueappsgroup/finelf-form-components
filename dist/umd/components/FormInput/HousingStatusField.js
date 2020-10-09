@@ -27,7 +27,7 @@
 
   /* eslint-disable @typescript-eslint/camelcase */
   const options = {
-    propety: 'mieszkanie własne',
+    property: 'mieszkanie własne',
     with_parent: 'mieszkanie rodziców',
     rental: 'mieszkanie wynajmowane',
     room: 'pokój'

@@ -16,6 +16,7 @@ export const colors = {
 }
 
 export const theme = {
+  formMaxWidth: '600px',
   formBgColor: colors.white,
   inputHeight: '63px',
   inputTextColor: colors.mainGrey,
@@ -65,6 +66,8 @@ export const theme = {
   checkboxBgColor: colors.white,
   checkboxBorderColor: colors.black,
   checkboxBorderWidth: '1px',
+  checkboxLabelFontSize: '12px',
+  checkboxLinkColor: colors.mediumRed,
   checkboxBorderErrorColor: colors.errorRed,
   checkboxLabelTextColor: colors.darkGrey,
   checkboxMarkColor: colors.lightRed,
@@ -114,6 +117,7 @@ export const theme = {
   styledInputSuffixFontWeight: 'bold',
   styledInputSuffixBorderRadius: '0 5px 5px 0',
   styledInputPrefixPadding: '0 15px',
+  marginBetweenRowChildren: '5px',
 }
 
 type ThemeProviderPops = {

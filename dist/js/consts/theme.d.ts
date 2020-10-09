@@ -13,6 +13,7 @@ export declare const colors: {
     black: string;
 };
 export declare const theme: {
+    formMaxWidth: string;
     formBgColor: string;
     inputHeight: string;
     inputTextColor: string;
@@ -62,6 +63,8 @@ export declare const theme: {
     checkboxBgColor: string;
     checkboxBorderColor: string;
     checkboxBorderWidth: string;
+    checkboxLabelFontSize: string;
+    checkboxLinkColor: string;
     checkboxBorderErrorColor: string;
     checkboxLabelTextColor: string;
     checkboxMarkColor: string;
@@ -111,6 +114,7 @@ export declare const theme: {
     styledInputSuffixFontWeight: string;
     styledInputSuffixBorderRadius: string;
     styledInputPrefixPadding: string;
+    marginBetweenRowChildren: string;
 };
 declare type ThemeProviderPops = {
     children: ReactElement | ReactElement[];

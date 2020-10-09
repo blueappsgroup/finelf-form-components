@@ -75,6 +75,12 @@ export declare type RangeFieldProps = {
     required?: boolean;
     showError?: boolean;
     showMinMax?: boolean;
+    min?: number;
+    max?: number;
+    step?: number;
+    value?: number;
+    suffix?: string;
+    unit?: string;
 };
 export declare type EmailFieldProps = {
     id?: string;
@@ -133,6 +139,7 @@ export declare type OtherLoanAmountFieldProps = {
     validate?: Function;
 };
 export declare type CustomThemeType = {
+    formMaxWidth?: string;
     formBgColor?: string;
     inputHeight?: string;
     inputTextColor?: string;
@@ -263,4 +270,8 @@ export declare type RedirectPagePropsTypes = {
     logoImg?: string;
     timeToRedirect?: number;
     redirectUrl?: string;
+};
+export declare type ImageProps = {
+    src: string;
+    alt: string;
 };

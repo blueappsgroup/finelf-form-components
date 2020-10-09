@@ -11,6 +11,12 @@ const PeriodField: FC<RangeFieldProps> = ({
   required = false,
   showError = true,
   showMinMax = true,
+  min = 3,
+  max = 60,
+  step = 1,
+  value = 12,
+  suffix = 'Dni',
+  unit = 'Dni',
 }) => (
   <Field
     required={required}
@@ -21,12 +27,12 @@ const PeriodField: FC<RangeFieldProps> = ({
     component={BaseRangeField}
     label={label}
     type="text"
-    min={3}
-    max={60}
-    step={1}
-    value={12}
-    suffix={'Dni'}
-    unit={'Dni'}
+    min={min}
+    max={max}
+    step={step}
+    value={value}
+    suffix={suffix}
+    unit={unit}
   />
 )
 

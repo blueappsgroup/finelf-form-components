@@ -11,7 +11,7 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <ZipCodeField name="tax_zip" />
+    <ZipCodeField name="text_zip" />
   </Form>
 )
 

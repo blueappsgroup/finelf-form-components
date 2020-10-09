@@ -33,6 +33,7 @@ var colors = {
 };
 exports.colors = colors;
 var theme = {
+  formMaxWidth: '600px',
   formBgColor: colors.white,
   inputHeight: '63px',
   inputTextColor: colors.mainGrey,
@@ -82,6 +83,8 @@ var theme = {
   checkboxBgColor: colors.white,
   checkboxBorderColor: colors.black,
   checkboxBorderWidth: '1px',
+  checkboxLabelFontSize: '12px',
+  checkboxLinkColor: colors.mediumRed,
   checkboxBorderErrorColor: colors.errorRed,
   checkboxLabelTextColor: colors.darkGrey,
   checkboxMarkColor: colors.lightRed,
@@ -130,7 +133,8 @@ var theme = {
   styledInputSuffixFontSize: '14px',
   styledInputSuffixFontWeight: 'bold',
   styledInputSuffixBorderRadius: '0 5px 5px 0',
-  styledInputPrefixPadding: '0 15px'
+  styledInputPrefixPadding: '0 15px',
+  marginBetweenRowChildren: '5px'
 };
 exports.theme = theme;
 

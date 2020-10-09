@@ -31,7 +31,13 @@
     name,
     required = false,
     showError = true,
-    showMinMax = true
+    showMinMax = true,
+    min = 300,
+    max = 10000,
+    step = 100,
+    value = 2000,
+    suffix = 'PLN',
+    unit = 'zł'
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -41,12 +47,12 @@
     component: _base.BaseRangeField,
     label: label,
     type: "text",
-    min: 300,
-    max: 10000,
-    step: 100,
-    value: 2000,
-    suffix: 'PLN',
-    unit: 'zł'
+    min: min,
+    max: max,
+    step: step,
+    value: value,
+    suffix: suffix,
+    unit: unit
   });
 
   AmountField.defaultProps = {

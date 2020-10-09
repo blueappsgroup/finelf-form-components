@@ -153,7 +153,8 @@
   align-items: center;
   margin-bottom: ${props => props.theme.styledRowMarginBottom};
   position: relative;
-  flex-wrap: ${props => props.theme.styledRowFlexWrap};
+  flex-wrap: nowrap;
+  width: 100%;
   justify-content: space-between;
   label {
     font-size: ${props => props.theme.labelFontSize};
@@ -171,14 +172,18 @@
   @media ${_sizes.device.tablet} {
     flex-direction: row;
     justify-content: space-between;
+    & ${StyledRow} {
+      flex-basis: 0;
+    }
+    
     & ${StyledRow}:first-of-type {
       flex-grow: 1;
-      margin-right: 5px;
+      margin-right: ${props => props.theme.marginBetweenRowChildren};
     }
 
     & ${StyledRow}:last-child {
       flex-grow: 1;
-      margin-left: 5px;
+      margin-left: ${props => props.theme.marginBetweenRowChildren};
     }
   }
 `;
@@ -316,6 +321,7 @@
   justify-content: center;
 `;
   const StyledInputPrefix = _styledComponents2.default.span`
+  background: ${props => props.theme.inputBgColor};
   position: relative;
   left: 0px;
   height: ${props => props.theme.inputHeight};
@@ -335,6 +341,7 @@
 `;
   const SliderWrapper = _styledComponents2.default.div`
  padding-bottom: 25px;
+ width: 100%;
  .rangeslider {
   position: relative;
   width: 100%;
@@ -523,7 +530,7 @@
     (0, _react.useLayoutEffect)(() => {
       setFieldValue(field.name, value);
     }, [field.name, value, setFieldValue]);
-    return /*#__PURE__*/_react2.default.createElement("div", null, /*#__PURE__*/_react2.default.createElement(StyledRowRangeField, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
+    return /*#__PURE__*/_react2.default.createElement(StyledRow, null, /*#__PURE__*/_react2.default.createElement(StyledRowRangeField, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
     }, props.label), /*#__PURE__*/_react2.default.createElement(SliderRow, null, /*#__PURE__*/_react2.default.createElement(SliderInput, _extends({}, field, props, {
       onChange: handleOnChange,
