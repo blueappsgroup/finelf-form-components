@@ -19,7 +19,7 @@ import { formStatuses } from '../../consts/form'
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: ${(props): string => props.theme.formMaxWidth};
   justify-self: center;
   margin: 0 10px;
   background: ${(props): string => props.theme.formBgColor};

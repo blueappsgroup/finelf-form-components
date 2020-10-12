@@ -7,10 +7,12 @@ type StyledProps = {
   theme: {
     headerTextColor: string
     headerFontSize: string
+    headerLineHeight: string
     headerBorderColor: string
     headerMargin: string
     subheaderTextColor: string
     subheaderFontSize: string
+    subheaderLineHeight: string
     subheaderMargin: string
   }
   withBorder?: boolean
@@ -20,7 +22,7 @@ type StyledProps = {
 const StyledMainHeader = styled.h2<StyledProps>`
   font-weight: 600;
   font-size: ${(props: StyledProps): string => props.theme.headerFontSize};
-  line-height: 24px;
+  line-height: ${(props: StyledProps): string => props.theme.headerLineHeight};
   text-align: center;
   margin: ${(props: StyledProps): string => props.theme.headerMargin};
   padding-bottom: 28px;
@@ -49,7 +51,8 @@ const StyledSubHeader = styled.h5<StyledProps>`
   font-style: normal;
   font-weight: 600;
   font-size: ${(props: StyledProps): string => props.theme.subheaderFontSize};
-  line-height: 18px;
+  line-height: ${(props: StyledProps): string =>
+    props.theme.subheaderLineHeight};
   margin: ${(props: StyledProps): string => props.theme.subheaderMargin};
 `
 

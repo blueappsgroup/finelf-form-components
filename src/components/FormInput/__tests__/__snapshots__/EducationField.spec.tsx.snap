@@ -55,7 +55,7 @@ exports[`<EducationField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -134,7 +134,7 @@ exports[`<EducationField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -207,7 +207,7 @@ exports[`<EducationField /> select field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input

@@ -14,7 +14,7 @@ exports[`<HousingStatusField /> matches snapshot 1`] = `
     wybierz 
   </option>
   <option
-    value="propety"
+    value="property"
   >
     mieszkanie własne
   </option>
@@ -40,7 +40,7 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -70,7 +70,7 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
           wybierz *
         </option>
         <option
-          value="propety"
+          value="property"
         >
           mieszkanie własne
         </option>
@@ -104,7 +104,7 @@ exports[`<HousingStatusField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -133,7 +133,7 @@ exports[`<HousingStatusField /> matches snapshot with label 1`] = `
           wybierz 
         </option>
         <option
-          value="propety"
+          value="property"
         >
           mieszkanie własne
         </option>
@@ -162,7 +162,7 @@ exports[`<HousingStatusField /> select field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -185,7 +185,7 @@ exports[`<HousingStatusField /> select field with custom validation 1`] = `
           wybierz 
         </option>
         <option
-          value="propety"
+          value="property"
         >
           mieszkanie własne
         </option>

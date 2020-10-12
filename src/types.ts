@@ -87,6 +87,12 @@ export type RangeFieldProps = {
   required?: boolean
   showError?: boolean
   showMinMax?: boolean
+  min?: number
+  max?: number
+  step?: number
+  value?: number
+  suffix?: string
+  unit?: string
 }
 
 export type EmailFieldProps = {
@@ -117,6 +123,7 @@ export type IncomeFieldProps = {
   errorMsg?: string
   required?: boolean
   showError?: boolean
+  suffix?: string
 }
 
 export type BirthDateFieldProps = {
@@ -152,6 +159,7 @@ export type OtherLoanAmountFieldProps = {
 }
 
 export type CustomThemeType = {
+  formMaxWidth?: string
   formBgColor?: string
   inputHeight?: string
   inputTextColor?: string
@@ -292,4 +300,10 @@ export type RedirectPagePropsTypes = {
   logoImg?: string
   timeToRedirect?: number
   redirectUrl?: string
+}
+
+export type ImageProps = {
+  src: string
+  alt: string
+  hideOnMobile?: boolean
 }

@@ -89,6 +89,7 @@ type StyledProps = {
     styledInputSuffixFontWeight: string
     styledInputSuffixBorderRadius: string
     styledInputPrefixPadding: string
+    marginBetweenRowChildren: string
   }
   error?: string | boolean
 }
@@ -112,7 +113,8 @@ const StyledRowRangeField = styled.div`
   align-items: center;
   margin-bottom: ${(props: StyledProps): string => props.theme.styledRowMarginBottom};
   position: relative;
-  flex-wrap: ${(props: StyledProps): string => props.theme.styledRowFlexWrap};
+  flex-wrap: nowrap;
+  width: 100%;
   justify-content: space-between;
   label {
     font-size: ${(props: StyledProps): string => props.theme.labelFontSize};
@@ -120,27 +122,30 @@ const StyledRowRangeField = styled.div`
     color: ${(props: StyledProps): string => props.theme.styledRowLabelFontColor};
   }
 `
-/* eslint-enable */
 
 export const Row = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  > * {
+      flex-basis: 0;
+      flex-grow: 1;
+      width: 0 !important;
+  }
 
   @media ${device.tablet} {
     flex-direction: row;
     justify-content: space-between;
-    & ${StyledRow}:first-of-type {
-      flex-grow: 1;
-      margin-right: 5px;
+    & ${StyledRow}:first-of-type:not(:last-child) {
+      margin-right: ${(props: StyledProps): string => props.theme.marginBetweenRowChildren};
     }
 
-    & ${StyledRow}:last-child {
-      flex-grow: 1;
-      margin-left: 5px;
+    & ${StyledRow}:last-child:not(:first-of-type) {
+      margin-left: ${(props: StyledProps): string => props.theme.marginBetweenRowChildren};
     }
   }
 `
+/* eslint-enable */
 
 const StyledError = styled.span`
   color: ${(props: StyledProps): string => props.theme.inputErrorColor};
@@ -297,6 +302,7 @@ const StyledSliderInputSuffix = styled.span`
 `
 
 const StyledInputPrefix = styled.span<any>`
+  background: ${(props: StyledProps): string => props.theme.inputBgColor};
   position: relative;
   left: 0px;
   height: ${(props: StyledProps): string => props.theme.inputHeight};
@@ -318,6 +324,7 @@ const StyledInputPrefix = styled.span<any>`
 
 const SliderWrapper = styled.div`
  padding-bottom: 25px;
+ width: 100%;
  .rangeslider {
   position: relative;
   width: 100%;
@@ -531,7 +538,7 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
   }, [field.name, value, setFieldValue])
 
   return (
-    <div>
+    <StyledRow>
       <StyledRowRangeField>
         {props.label && <label htmlFor={field.name}>{props.label}</label>}
         <SliderRow>
@@ -574,6 +581,6 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
           </StyledSpan>
         </StyledRowRangeField>
       )}
-    </div>
+    </StyledRow>
   )
 }

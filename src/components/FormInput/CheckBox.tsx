@@ -35,6 +35,10 @@ const StyledRow = styled.div<StyledProps>`
       : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${(props: StyledProps): string =>
     props.collapsed ? 'none' : 'hidden'};
+
+  a {
+    color: ${(props: StyledProps): string => props.theme.checkboxLinkColor};
+  }
 `
 
 const StyledArrow = styled.span<StyledProps>`
@@ -121,7 +125,8 @@ const StyledText = styled.span<any>`
   display: inline;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: ${(props: StyledProps): string =>
+    props.theme.checkboxLabelFontSize};
   line-height: calc(
     16px + 2 *
       ${(props: StyledProps): string => props.theme.checkboxBorderWidth}
