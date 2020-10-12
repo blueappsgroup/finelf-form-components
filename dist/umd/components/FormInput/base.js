@@ -169,6 +169,7 @@
   > * {
       flex-basis: 0;
       flex-grow: 1;
+      width: 0 !important;
   }
 
   @media ${_sizes.device.tablet} {

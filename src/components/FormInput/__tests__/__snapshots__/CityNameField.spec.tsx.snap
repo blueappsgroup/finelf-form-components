@@ -4,7 +4,7 @@ exports[`<CityNameField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -12,23 +12,27 @@ exports[`<CityNameField /> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="text_city"
       >
         Miasto
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="Miasto"
-        name="text_city"
-        placeholder="Miasto"
-        value="$%Wars_aw"
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="Miasto"
+          name="text_city"
+          placeholder="Miasto"
+          value="$%Wars_aw"
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         Podane dane są nieprawidłowe
       </span>
@@ -39,7 +43,7 @@ exports[`<CityNameField /> input field with custom validation 1`] = `
 
 exports[`<CityNameField /> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-crzoUp kUQhja"
   id="testId"
   label="Miasto"
   name="text_city"
@@ -52,7 +56,7 @@ exports[`<CityNameField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -60,24 +64,28 @@ exports[`<CityNameField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="text_city"
       >
         CityName*
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="CityName"
-        name="text_city"
-        placeholder="Miasto*"
-        required=""
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="CityName"
+          name="text_city"
+          placeholder="Miasto*"
+          required=""
+          value=""
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         To pole jest wymagane
       </span>
@@ -90,7 +98,7 @@ exports[`<CityNameField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -98,21 +106,25 @@ exports[`<CityNameField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="text_city"
       >
         City
       </label>
-      <input
-        class="sc-iqAbSa jrHUfY"
-        id="testId"
-        label="City"
-        name="text_city"
-        placeholder="Miasto"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp kUQhja"
+          id="testId"
+          label="City"
+          name="text_city"
+          placeholder="Miasto"
+          value=""
+        />
+      </div>
     </div>
   </form>
 </div>

@@ -158,7 +158,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  flex-direction: column;\n  > * {\n      flex-basis: 0;\n      flex-grow: 1;\n  }\n\n  @media ", " {\n    flex-direction: row;\n    justify-content: space-between;\n    & ", ":first-of-type:not(:last-child) {\n      margin-right: ", ";\n    }\n\n    & ", ":last-child:not(:first-of-type) {\n      margin-left: ", ";\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  flex-direction: column;\n  > * {\n      flex-basis: 0;\n      flex-grow: 1;\n      width: 0 !important;\n  }\n\n  @media ", " {\n    flex-direction: row;\n    justify-content: space-between;\n    & ", ":first-of-type:not(:last-child) {\n      margin-right: ", ";\n    }\n\n    & ", ":last-child:not(:first-of-type) {\n      margin-left: ", ";\n    }\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;

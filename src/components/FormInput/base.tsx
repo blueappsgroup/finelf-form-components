@@ -130,6 +130,7 @@ export const Row = styled.div`
   > * {
       flex-basis: 0;
       flex-grow: 1;
+      width: 0 !important;
   }
 
   @media ${device.tablet} {

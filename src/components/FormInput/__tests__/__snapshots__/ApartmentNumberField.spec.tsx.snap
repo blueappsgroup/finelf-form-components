@@ -4,7 +4,7 @@ exports[`<ApartmentNumberField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -12,23 +12,27 @@ exports[`<ApartmentNumberField /> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="apartment_number"
       >
         Numer mieszkania
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="Numer mieszkania"
-        name="apartment_number"
-        placeholder="Numer mieszkania"
-        value="12345678900"
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="Numer mieszkania"
+          name="apartment_number"
+          placeholder="Numer mieszkania"
+          value="12345678900"
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         Podany numer mieszkania jest nieprawidłowy
       </span>
@@ -39,7 +43,7 @@ exports[`<ApartmentNumberField /> input field with custom validation 1`] = `
 
 exports[`<ApartmentNumberField /> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-crzoUp kUQhja"
   id="testId"
   label="Numer mieszkania"
   name="apartment_number"
@@ -52,7 +56,7 @@ exports[`<ApartmentNumberField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -60,24 +64,28 @@ exports[`<ApartmentNumberField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="apartment_number"
       >
         ApartmentNumber*
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="ApartmentNumber"
-        name="apartment_number"
-        placeholder="Numer mieszkania*"
-        required=""
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="ApartmentNumber"
+          name="apartment_number"
+          placeholder="Numer mieszkania*"
+          required=""
+          value=""
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         To pole jest wymagane
       </span>
@@ -90,7 +98,7 @@ exports[`<ApartmentNumberField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -98,21 +106,25 @@ exports[`<ApartmentNumberField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="apartment_number"
       >
         ApartmentNumber
       </label>
-      <input
-        class="sc-iqAbSa jrHUfY"
-        id="testId"
-        label="ApartmentNumber"
-        name="apartment_number"
-        placeholder="Numer mieszkania"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp kUQhja"
+          id="testId"
+          label="ApartmentNumber"
+          name="apartment_number"
+          placeholder="Numer mieszkania"
+          value=""
+        />
+      </div>
     </div>
   </form>
 </div>

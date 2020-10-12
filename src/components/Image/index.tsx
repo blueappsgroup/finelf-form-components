@@ -15,6 +15,10 @@ const StyledContainer = styled.div<StyledProps>`
   margin: 0 auto 15px;
   align-items: flex-start;
   
+  img {
+    max-width: 100%;  
+  }
+  
   @media ${device.tablet} { 
     display: flex;
   }

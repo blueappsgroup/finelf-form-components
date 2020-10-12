@@ -4,7 +4,7 @@ exports[`<IDCardNumberField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -12,23 +12,27 @@ exports[`<IDCardNumberField /> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="id_card_number"
       >
         Numer dowodu osobistego
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="Numer dowodu osobistego"
-        name="id_card_number"
-        placeholder="Numer dowodu osobistego"
-        value="48801213439233148617383842"
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="Numer dowodu osobistego"
+          name="id_card_number"
+          placeholder="Numer dowodu osobistego"
+          value="48801213439233148617383842"
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         Podany numer dowodu jest nieprawidłowy
       </span>
@@ -39,7 +43,7 @@ exports[`<IDCardNumberField /> input field with custom validation 1`] = `
 
 exports[`<IDCardNumberField /> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-crzoUp kUQhja"
   id="testId"
   label="Numer dowodu osobistego"
   name="id_card_number"
@@ -52,7 +56,7 @@ exports[`<IDCardNumberField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -60,24 +64,28 @@ exports[`<IDCardNumberField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="id_card_number"
       >
         IDcard*
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="IDcard"
-        name="id_card_number"
-        placeholder="Numer dowodu osobistego*"
-        required=""
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="IDcard"
+          name="id_card_number"
+          placeholder="Numer dowodu osobistego*"
+          required=""
+          value=""
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         To pole jest wymagane
       </span>
@@ -90,7 +98,7 @@ exports[`<IDCardNumberField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
@@ -98,21 +106,25 @@ exports[`<IDCardNumberField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="id_card_number"
       >
         IDCard
       </label>
-      <input
-        class="sc-iqAbSa jrHUfY"
-        id="testId"
-        label="IDCard"
-        name="id_card_number"
-        placeholder="Numer dowodu osobistego"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp kUQhja"
+          id="testId"
+          label="IDCard"
+          name="id_card_number"
+          placeholder="Numer dowodu osobistego"
+          value=""
+        />
+      </div>
     </div>
   </form>
 </div>

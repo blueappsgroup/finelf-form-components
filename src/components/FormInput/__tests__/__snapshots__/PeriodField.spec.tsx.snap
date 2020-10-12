@@ -2,7 +2,7 @@
 
 exports[`<PeriodField /> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-bqGHjH bZbIfE"
   id="periodField"
   label="Okres spłaty"
   max="60"
@@ -18,16 +18,18 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd horYMd"
     id="testForm"
   >
     <input
       class="sc-iCoHVE gEjxKq"
       form="[object Object]"
     />
-    <div>
+    <div
+      class="sc-pNWxx iTQnTB"
+    >
       <div
-        class="sc-pNWxx guHpUh"
+        class="sc-jrsJCI gRaWaU"
       >
         <label
           for="name"
@@ -35,10 +37,10 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
           Test
         </label>
         <div
-          class="sc-fnVYJo bUypog"
+          class="sc-dIsAE esAFLE"
         >
           <input
-            class="sc-iqAbSa jrHUfY"
+            class="sc-bqGHjH bZbIfE"
             id="periodField"
             label="Test"
             max="60"
@@ -49,14 +51,14 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
             value="12"
           />
           <span
-            class="sc-bqGHjH hLEuSv"
+            class="sc-fFSRdu bULHRF"
           >
             Dni
           </span>
         </div>
       </div>
       <div
-        class="sc-hBMVcZ hTCfag"
+        class="sc-iemXMA ijBKWi"
       >
         <div
           aria-orientation="horizontal"
@@ -82,6 +84,26 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
             class="rangeslider__labels"
           />
         </div>
+      </div>
+      <div
+        class="sc-jrsJCI gRaWaU"
+      >
+        <span
+          class="sc-hBMVcZ kVKZky"
+        >
+          Min. 
+          3
+           
+          Dni
+        </span>
+        <span
+          class="sc-hBMVcZ kVKZky"
+        >
+          Max. 
+          60
+           
+          Dni
+        </span>
       </div>
     </div>
   </form>
