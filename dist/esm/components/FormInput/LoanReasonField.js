@@ -2,6 +2,7 @@
 import React from 'react';
 import { Field } from 'formik';
 import { BaseSelectField } from './base';
+import { validateSelect } from './validate';
 const options = {
   bills: 'rachunki',
   other_loans: 'inne pożyczki',
@@ -22,7 +23,8 @@ const LoanReasonField = ({
   label,
   name,
   required = false,
-  showError
+  validate,
+  showError = true
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,
@@ -31,7 +33,8 @@ const LoanReasonField = ({
   component: BaseSelectField,
   label: label,
   type: "select",
-  options: options
+  options: options,
+  validate: validate && validate(required) || validateSelect(required, options)
 });
 
 LoanReasonField.defaultProps = {

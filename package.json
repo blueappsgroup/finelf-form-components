@@ -1,6 +1,6 @@
 {
   "name": "tomasz-b-finelf-form-components",
-  "version": "1.7.5",
+  "version": "1.8.2",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
@@ -102,6 +102,15 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.stories.{ts,tsx}",
+      "!src/index.ts",
+      "!src/type.ts",
+      "!src/react-app-env.d.ts"
+    ]
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [

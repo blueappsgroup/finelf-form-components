@@ -30,10 +30,10 @@
   // prettier-ignore
   const StyledMainHeader = _styledComponents2.default.h2`
   font-weight: 600;
-  font-size: 25px;
+  font-size: ${props => props.theme.headerFontSize};
   line-height: 24px;
   text-align: center;
-  margin: 0px 0px 20px 0px;
+  margin: ${props => props.theme.headerMargin};
   padding-bottom: 28px;
   position: relative;
   display: flex;
@@ -58,9 +58,9 @@
   color: ${props => props.theme.subheaderTextColor};
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: ${props => props.theme.subheaderFontSize};
   line-height: 18px;
-  margin: 10px 0px 20px 0px;
+  margin: ${props => props.theme.subheaderMargin};
 `;
 
   const Header = ({

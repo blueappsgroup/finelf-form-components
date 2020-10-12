@@ -60,11 +60,11 @@ describe('<HousingStatusField />', () => {
     const { container, select } = wrapper
 
     await act(async () => {
-      fireEvent.focus(select, { target: { value: 'propety' } })
+      fireEvent.focus(select, { target: { value: 'property' } })
     })
 
     await act(async () => {
-      fireEvent.blur(select, { target: { value: 'propety' } })
+      fireEvent.blur(select, { target: { value: 'property' } })
     })
 
     expect(wrapper.getByText('To pole jest wymagane')).toBeTruthy()
@@ -75,27 +75,27 @@ describe('<HousingStatusField />', () => {
     const { select } = setupWrapper({})
 
     await act(async () => {
-      fireEvent.change(select, { target: { value: 'propety' } })
+      fireEvent.change(select, { target: { value: 'property' } })
     })
 
-    expect(select.value).toBe('propety')
+    expect(select.value).toBe('property')
   })
 
   it('select field onBlur save value to sessionStorage', async () => {
     const { select } = setupWrapper({})
 
     await act(async () => {
-      fireEvent.change(select, { target: { value: 'propety' } })
+      fireEvent.change(select, { target: { value: 'property' } })
     })
 
     await act(async () => {
-      fireEvent.blur(select, { target: { value: 'propety' } })
+      fireEvent.blur(select, { target: { value: 'property' } })
     })
 
     expect(
       JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
-    ).toBe('propety')
-    expect(select.value).toBe('propety')
+    ).toBe('property')
+    expect(select.value).toBe('property')
   })
 
   it('select field with custom validation', async () => {
@@ -103,7 +103,7 @@ describe('<HousingStatusField />', () => {
       /* eslint-disable @typescript-eslint/camelcase */
       if (
         isNotValidOption(value, {
-          propety: 'mieszkanie własne',
+          property: 'mieszkanie własne',
           with_parent: 'mieszkanie rodziców',
           rental: 'mieszkanie wynajmowane',
           room: 'pokój',

@@ -7,10 +7,12 @@ const PeriodField = ({
   label = 'Okres spłaty',
   name,
   required = false,
-  showError
+  showError = true,
+  showMinMax = true
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,
+  showMinMax: showMinMax,
   id: id,
   name: name,
   component: BaseRangeField,

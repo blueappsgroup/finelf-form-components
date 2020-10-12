@@ -6,11 +6,11 @@ import { validateText } from './validate';
 const TextField = ({
   id,
   label,
-  placeholder = 'Text',
+  placeholder,
   name,
   required = false,
   validate = validateText,
-  showError
+  showError = true
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,

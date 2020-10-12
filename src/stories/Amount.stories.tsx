@@ -21,4 +21,8 @@ export const Default = Template.bind({})
 
 Default.args = {
   id: storyName,
+  customTheme: {
+    styledRowLabelPadding: '10px 10px 10px 0px',
+    styledRowFlexWrap: 'wrap',
+  },
 }

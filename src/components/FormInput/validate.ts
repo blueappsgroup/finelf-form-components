@@ -1,4 +1,3 @@
-import { object } from 'prop-types'
 import {
   isEmpty,
   isNotValidLength,
@@ -60,11 +59,11 @@ export const validateEmail: (
 }
 
 export const validateTelNumber: (
-  customErrorMsg: string | undefined,
-  required: boolean
+  required: boolean,
+  customErrorMsg: string | undefined
 ) => (value: string) => string | undefined = (
-  customErrorMsg = 'Niepoprawny numer telefonu',
-  required: boolean
+  required: boolean,
+  customErrorMsg
 ) => (value: string): string | undefined => {
   if (!required && !value) {
     return

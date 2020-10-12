@@ -30,10 +30,12 @@
     label = 'Okres spłaty',
     name,
     required = false,
-    showError
+    showError = true,
+    showMinMax = true
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
+    showMinMax: showMinMax,
     id: id,
     name: name,
     component: _base.BaseRangeField,

@@ -8,6 +8,7 @@ export const FormContext: Context<{
   stepsTitleList?: string[]
   nextStep?: Function
   prevStep?: Function
+  apiUrl?: string
 }> = React.createContext({})
 
 export const setFormValuesToCache = (
@@ -57,3 +58,32 @@ export const sendDataToAwsSQS: (
       }),
     }
   )
+
+export const handleSendDataToApi: (
+  values: FormValuesType,
+  apiUrl: string,
+  formId: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+) => Promise<any> = (values, apiUrl, formId) => {
+  const { agreements, ...rest } = values
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mappedAgreements = Object.keys(agreements).reduce<any>((acc, key) => {
+    if (key !== 'selectAll' && agreements[key]) {
+      acc.push(key)
+    }
+    return acc
+  }, [])
+
+  return fetch(`${apiUrl}/forms/${formId}/data`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      formName: formId,
+      data: rest,
+      agreements: mappedAgreements,
+    }),
+  })
+}

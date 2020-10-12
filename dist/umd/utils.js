@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.sendDataToAwsSQS = exports.encodeData = exports.resetFormValueCache = exports.getFormValuesFromCache = exports.setFormValuesToCache = exports.FormContext = undefined;
+  exports.handleSendDataToApi = exports.sendDataToAwsSQS = exports.encodeData = exports.resetFormValueCache = exports.getFormValuesFromCache = exports.setFormValuesToCache = exports.FormContext = undefined;
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -24,6 +24,42 @@
     return obj && obj.__esModule ? obj : {
       default: obj
     };
+  }
+
+  function _objectWithoutProperties(source, excluded) {
+    if (source == null) return {};
+
+    var target = _objectWithoutPropertiesLoose(source, excluded);
+
+    var key, i;
+
+    if (Object.getOwnPropertySymbols) {
+      var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+      for (i = 0; i < sourceSymbolKeys.length; i++) {
+        key = sourceSymbolKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+        target[key] = source[key];
+      }
+    }
+
+    return target;
+  }
+
+  function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+
+    for (i = 0; i < sourceKeys.length; i++) {
+      key = sourceKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+
+    return target;
   }
 
   const FormContext = exports.FormContext = _react2.default.createContext({});
@@ -50,5 +86,33 @@
       MessageBody: JSON.stringify(values)
     })
   });
+
+  const handleSendDataToApi = exports.handleSendDataToApi = (values, apiUrl, formId) => {
+    const {
+      agreements
+    } = values,
+          rest = _objectWithoutProperties(values, ["agreements"]); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+    const mappedAgreements = Object.keys(agreements).reduce((acc, key) => {
+      if (key !== 'selectAll' && agreements[key]) {
+        acc.push(key);
+      }
+
+      return acc;
+    }, []);
+    return fetch(`${apiUrl}/forms/${formId}/data`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        formName: formId,
+        data: rest,
+        agreements: mappedAgreements
+      })
+    });
+  };
 });
 //# sourceMappingURL=utils.js.map

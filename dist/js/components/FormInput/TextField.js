@@ -18,14 +18,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var TextField = function TextField(_ref) {
   var id = _ref.id,
       label = _ref.label,
-      _ref$placeholder = _ref.placeholder,
-      placeholder = _ref$placeholder === void 0 ? 'Text' : _ref$placeholder,
+      placeholder = _ref.placeholder,
       name = _ref.name,
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       _ref$validate = _ref.validate,
       validate = _ref$validate === void 0 ? _validate.validateText : _ref$validate,
-      showError = _ref.showError;
+      _ref$showError = _ref.showError,
+      showError = _ref$showError === void 0 ? true : _ref$showError;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     showError: showError,

@@ -37,7 +37,7 @@ const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
           <CheckboxField
             id={`${name}.selectAll`}
             name={`${name}.selectAll`}
-            label="Select all"
+            label="Zaznacz wszystkie zgody"
             onChange={handleOnChange}
           />
           {children && !hasManyCheckboxes && (
@@ -53,6 +53,7 @@ const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
                 {...item.props}
                 key={item.props.name}
                 name={`${name}.${item.props.name}`}
+                id={`${name}.${item.props.name}`}
               />
             ))}
         </>

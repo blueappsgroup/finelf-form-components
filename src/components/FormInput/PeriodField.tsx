@@ -9,11 +9,13 @@ const PeriodField: FC<RangeFieldProps> = ({
   label = 'Okres spłaty',
   name,
   required = false,
-  showError,
+  showError = true,
+  showMinMax = true,
 }) => (
   <Field
     required={required}
     showError={showError}
+    showMinMax={showMinMax}
     id={id}
     name={name}
     component={BaseRangeField}

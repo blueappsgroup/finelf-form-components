@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = void 0;
+exports.validateSelect = exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = void 0;
 
 var _validateHelpers = require("./validateHelpers");
 
@@ -49,9 +49,7 @@ var validateEmail = function validateEmail() {
 
 exports.validateEmail = validateEmail;
 
-var validateTelNumber = function validateTelNumber() {
-  var customErrorMsg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Niepoprawny numer telefonu';
-  var required = arguments.length > 1 ? arguments[1] : undefined;
+var validateTelNumber = function validateTelNumber(required, customErrorMsg) {
   return function (value) {
     if (!required && !value) {
       return;
@@ -298,4 +296,18 @@ var validateIncome = function validateIncome() {
 };
 
 exports.validateIncome = validateIncome;
+
+var validateSelect = function validateSelect(required, options) {
+  return function (value) {
+    if (required && (0, _validateHelpers.isEmpty)(value)) {
+      return 'To pole jest wymagane';
+    }
+
+    if ((0, _validateHelpers.isNotValidOption)(value, options)) {
+      return 'Podane dane są nieprawidłowe';
+    }
+  };
+};
+
+exports.validateSelect = validateSelect;
 //# sourceMappingURL=validate.js.map

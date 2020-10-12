@@ -30,12 +30,12 @@
   const TelephoneField = ({
     id,
     label,
-    placeholder = 'Telefon',
+    placeholder = 'Numer telefonu',
     errorMsg = 'Podany numer telefonu jest nieprawidłowy',
     name,
     required = false,
     validate = _validate.validateTelNumber,
-    showError
+    showError = true
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -46,7 +46,7 @@
     placeholder: placeholder,
     prefix: "+48",
     type: "tel",
-    validate: validate(errorMsg, required)
+    validate: validate(required, errorMsg)
   });
 
   TelephoneField.defaultProps = {

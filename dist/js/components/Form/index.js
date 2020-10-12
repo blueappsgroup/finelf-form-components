@@ -19,6 +19,8 @@ var _sizes = require("../../consts/sizes");
 
 var _RedirectPage = _interopRequireDefault(require("../RedirectPage"));
 
+var _TransactionId = _interopRequireDefault(require("../TransactionId"));
+
 var _utils = require("../../utils");
 
 var _form = require("../../consts/form");
@@ -29,15 +31,15 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -81,10 +83,15 @@ var FormWrapper = function FormWrapper(_ref) {
       logoImg = _ref.logoImg,
       redirectMainImg = _ref.redirectMainImg,
       redirectBgImg = _ref.redirectBgImg,
-      queueUrl = _ref.queueUrl,
-      sendDataToSQS = _ref.sendDataToSQS;
+      sendDataToApi = _ref.sendDataToApi,
+      apiUrl = _ref.apiUrl,
+      transactionName = _ref.transactionName;
+  var trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
 
-  var _useState = (0, _react.useState)((0, _utils.getFormValuesFromCache)(id)),
+  var _useState = (0, _react.useState)(_objectSpread(_objectSpread({}, (0, _utils.getFormValuesFromCache)(id)), {}, {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    trasaction_id: trasationIdValue
+  })),
       _useState2 = _slicedToArray(_useState, 2),
       initialValues = _useState2[0],
       setInitialValues = _useState2[1];
@@ -106,13 +113,13 @@ var FormWrapper = function FormWrapper(_ref) {
 
               _context.prev = 1;
 
-              if (!sendDataToSQS) {
+              if (!(sendDataToApi && apiUrl)) {
                 _context.next = 5;
                 break;
               }
 
               _context.next = 5;
-              return (0, _utils.sendDataToAwsSQS)(values, queueUrl);
+              return (0, _utils.handleSendDataToApi)(values, apiUrl, id);
 
             case 5:
               props.resetForm();
@@ -140,7 +147,8 @@ var FormWrapper = function FormWrapper(_ref) {
   }();
 
   var handleReset = function handleReset() {
-    (0, _utils.resetFormValueCache)(id);
+    (0, _utils.resetFormValueCache)(id); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     setInitialValues({});
   };
 
@@ -155,6 +163,7 @@ var FormWrapper = function FormWrapper(_ref) {
   return /*#__PURE__*/_react.default.createElement(_utils.FormContext.Provider, {
     value: {
       id: id,
+      apiUrl: apiUrl,
       stepsLength: stepsLength,
       currentStep: currentStep,
       stepsTitleList: stepsTitles,
@@ -178,7 +187,7 @@ var FormWrapper = function FormWrapper(_ref) {
       mainImg: redirectMainImg
     }) || /*#__PURE__*/_react.default.createElement(StyledForm, {
       id: id
-    }, children);
+    }, /*#__PURE__*/_react.default.createElement(_TransactionId.default, null), children);
   })));
 };
 

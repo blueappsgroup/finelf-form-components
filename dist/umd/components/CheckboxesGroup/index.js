@@ -124,13 +124,14 @@
       render: () => /*#__PURE__*/_react2.default.createElement(_react2.default.Fragment, null, /*#__PURE__*/_react2.default.createElement(_CheckboxField2.default, {
         id: `${name}.selectAll`,
         name: `${name}.selectAll`,
-        label: "Select all",
+        label: "Zaznacz wszystkie zgody",
         onChange: handleOnChange
       }), children && !hasManyCheckboxes && /*#__PURE__*/_react2.default.createElement(_CheckboxField2.default, _extends({}, children.props, {
         name: `${name}.${children.props.name}`
       })), children && hasManyCheckboxes && children.map(item => /*#__PURE__*/_react2.default.createElement(_CheckboxField2.default, _extends({}, item.props, {
         key: item.props.name,
-        name: `${name}.${item.props.name}`
+        name: `${name}.${item.props.name}`,
+        id: `${name}.${item.props.name}`
       }))))
     });
   };

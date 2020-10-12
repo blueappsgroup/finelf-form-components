@@ -30,7 +30,7 @@
     label = 'Kwota pożyczki',
     name,
     required = false,
-    showError,
+    showError = true,
     showMinMax = true
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,

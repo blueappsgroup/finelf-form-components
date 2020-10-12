@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HouseNumberField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd caNEXe"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx guHpUh"
+    >
+      <label
+        for="house_number"
+      >
+        Numer domu
+      </label>
+      <input
+        class="sc-iqAbSa fdLqwF"
+        id="testId"
+        label="Numer domu"
+        name="house_number"
+        placeholder="Numer domu"
+        value="12345678900"
+      />
+      <span
+        class="sc-kEqYlL lmrtkS"
+      >
+        Podany numer mieszkania jest nieprawidłowy
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<HouseNumberField /> matches snapshot 1`] = `
+<input
+  class="sc-iqAbSa jrHUfY"
+  id="testId"
+  label="Numer domu"
+  name="house_number"
+  placeholder="Numer domu"
+  value=""
+/>
+`;
+
+exports[`<HouseNumberField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd caNEXe"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx guHpUh"
+    >
+      <label
+        for="house_number"
+      >
+        HouseNumber*
+      </label>
+      <input
+        class="sc-iqAbSa fdLqwF"
+        id="testId"
+        label="HouseNumber"
+        name="house_number"
+        placeholder="Numer domu*"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-kEqYlL lmrtkS"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<HouseNumberField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd caNEXe"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx guHpUh"
+    >
+      <label
+        for="house_number"
+      >
+        HouseNumber
+      </label>
+      <input
+        class="sc-iqAbSa jrHUfY"
+        id="testId"
+        label="HouseNumber"
+        name="house_number"
+        placeholder="Numer domu"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

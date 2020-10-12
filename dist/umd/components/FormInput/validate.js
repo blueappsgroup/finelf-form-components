@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = undefined;
+  exports.validateSelect = exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = undefined;
 
   const validateText = exports.validateText = required => value => {
     if (!required && !value) {
@@ -50,7 +50,7 @@
     }
   };
 
-  const validateTelNumber = exports.validateTelNumber = (customErrorMsg = 'Niepoprawny numer telefonu', required) => value => {
+  const validateTelNumber = exports.validateTelNumber = (required, customErrorMsg) => value => {
     if (!required && !value) {
       return;
     }
@@ -239,6 +239,16 @@
 
     if ((0, _validateHelpers.isNotValidNumberBetween1And10Digits)(value)) {
       return customErrorMsg;
+    }
+  };
+
+  const validateSelect = exports.validateSelect = (required, options) => value => {
+    if (required && (0, _validateHelpers.isEmpty)(value)) {
+      return 'To pole jest wymagane';
+    }
+
+    if ((0, _validateHelpers.isNotValidOption)(value, options)) {
+      return 'Podane dane są nieprawidłowe';
     }
   };
 });

@@ -1,4 +1,4 @@
-import { isEmpty, isNotValidLength, isNotValidPhoneNumber, isNotValidEmail, isNotValidNumberBetween1And10Digits, isNotLetter, isNotNumber, isValidPesel, haveSpecialChars, isNotValidZipCode, isValidNIP, isValidBankAccountNumber, isValidIDCard, isNotValidIDCard } from './validateHelpers';
+import { isEmpty, isNotValidLength, isNotValidPhoneNumber, isNotValidEmail, isNotValidNumberBetween1And10Digits, isNotLetter, isNotNumber, isValidPesel, haveSpecialChars, isNotValidZipCode, isValidNIP, isValidBankAccountNumber, isValidIDCard, isNotValidIDCard, isNotValidOption } from './validateHelpers';
 export const validateText = required => value => {
   if (!required && !value) {
     return;
@@ -29,7 +29,7 @@ export const validateEmail = (customErrorMsg = 'Niepoprawny adres email', requir
     return customErrorMsg;
   }
 };
-export const validateTelNumber = (customErrorMsg = 'Niepoprawny numer telefonu', required) => value => {
+export const validateTelNumber = (required, customErrorMsg) => value => {
   if (!required && !value) {
     return;
   }
@@ -207,6 +207,15 @@ export const validateIncome = (customErrorMsg = 'Podana kwota jest nieprawidłow
 
   if (isNotValidNumberBetween1And10Digits(value)) {
     return customErrorMsg;
+  }
+};
+export const validateSelect = (required, options) => value => {
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane';
+  }
+
+  if (isNotValidOption(value, options)) {
+    return 'Podane dane są nieprawidłowe';
   }
 };
 //# sourceMappingURL=validate.js.map

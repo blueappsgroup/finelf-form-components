@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CompanyNameField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd caNEXe"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx guHpUh"
+    >
+      <label
+        for="company_name"
+      >
+        Nazwa pracodawcy
+      </label>
+      <input
+        class="sc-iqAbSa fdLqwF"
+        id="testId"
+        label="Nazwa pracodawcy"
+        name="company_name"
+        placeholder="Nazwa pracodawcy"
+        value="3232"
+      />
+      <span
+        class="sc-kEqYlL lmrtkS"
+      >
+        Podane dane są nieprawidłowe
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<CompanyNameField /> matches snapshot 1`] = `
+<input
+  class="sc-iqAbSa jrHUfY"
+  id="testId"
+  label="Nazwa pracodawcy"
+  name="company_name"
+  placeholder="Nazwa pracodawcy"
+  value=""
+/>
+`;
+
+exports[`<CompanyNameField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd caNEXe"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx guHpUh"
+    >
+      <label
+        for="company_name"
+      >
+        CompanyName*
+      </label>
+      <input
+        class="sc-iqAbSa fdLqwF"
+        id="testId"
+        label="CompanyName"
+        name="company_name"
+        placeholder="Nazwa pracodawcy*"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-kEqYlL lmrtkS"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<CompanyNameField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd caNEXe"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx guHpUh"
+    >
+      <label
+        for="company_name"
+      >
+        CompanyName
+      </label>
+      <input
+        class="sc-iqAbSa jrHUfY"
+        id="testId"
+        label="CompanyName"
+        name="company_name"
+        placeholder="Nazwa pracodawcy"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

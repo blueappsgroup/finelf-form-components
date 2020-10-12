@@ -12,6 +12,7 @@ const CheckboxFormField: FC<CheckboxFieldProps> = ({
   required = false,
   onChange,
   children,
+  HTMLcontent,
 }) => (
   <Field
     required={required}
@@ -23,6 +24,7 @@ const CheckboxFormField: FC<CheckboxFieldProps> = ({
     validate={validateCheckbox(required)}
     onChange={onChange}
     childrenBody={children}
+    HTMLcontent={HTMLcontent}
   />
 )
 

@@ -8,12 +8,12 @@ import { TelephoneFieldProps } from '../../types'
 const TelephoneField: FC<TelephoneFieldProps> = ({
   id,
   label,
-  placeholder = 'Telefon',
+  placeholder = 'Numer telefonu',
   errorMsg = 'Podany numer telefonu jest nieprawidłowy',
   name,
   required = false,
   validate = validateTelNumber,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}
@@ -25,7 +25,7 @@ const TelephoneField: FC<TelephoneFieldProps> = ({
     placeholder={placeholder}
     prefix="+48"
     type="tel"
-    validate={validate(errorMsg, required)}
+    validate={validate(required, errorMsg)}
   />
 )
 

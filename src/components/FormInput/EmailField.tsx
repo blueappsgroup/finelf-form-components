@@ -12,7 +12,7 @@ const EmailField: FC<EmailFieldProps> = ({
   errorMsg = 'Podany email jest nieprawidłowy',
   name,
   required = false,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

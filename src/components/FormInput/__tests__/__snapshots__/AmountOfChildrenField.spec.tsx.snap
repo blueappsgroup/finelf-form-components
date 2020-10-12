@@ -4,14 +4,18 @@ exports[`<AmountOfChildrenField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="amountOfChildrenField"
         name="name"
         placeholder="Liczba osób na utrzymaniu"
@@ -19,7 +23,7 @@ exports[`<AmountOfChildrenField /> input field with custom validation 1`] = `
         value="test"
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         Podana ilość jest nieprawidłowa
       </span>
@@ -30,7 +34,7 @@ exports[`<AmountOfChildrenField /> input field with custom validation 1`] = `
 
 exports[`<AmountOfChildrenField /> matches snapshot 1`] = `
 <input
-  class="sc-kEqYlL honwIS"
+  class="sc-iqAbSa jrHUfY"
   id="amountOfChildrenField"
   name="name"
   placeholder="Liczba osób na utrzymaniu"
@@ -43,11 +47,15 @@ exports[`<AmountOfChildrenField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="name"
@@ -55,7 +63,7 @@ exports[`<AmountOfChildrenField /> matches snapshot with error 1`] = `
         Test*
       </label>
       <input
-        class="sc-kEqYlL jzZEFj"
+        class="sc-iqAbSa fdLqwF"
         id="amountOfChildrenField"
         label="Test"
         name="name"
@@ -65,7 +73,7 @@ exports[`<AmountOfChildrenField /> matches snapshot with error 1`] = `
         value=""
       />
       <span
-        class="sc-jrsJCI djVSvf"
+        class="sc-kEqYlL lmrtkS"
       >
         To pole jest wymagane
       </span>
@@ -78,11 +86,15 @@ exports[`<AmountOfChildrenField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE gQzhKx"
+    class="sc-fujyUd caNEXe"
     id="testForm"
   >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
     <div
-      class="sc-fujyUd gdvYxl"
+      class="sc-pNWxx guHpUh"
     >
       <label
         for="name"
@@ -90,7 +102,7 @@ exports[`<AmountOfChildrenField /> matches snapshot with label 1`] = `
         Test
       </label>
       <input
-        class="sc-kEqYlL honwIS"
+        class="sc-iqAbSa jrHUfY"
         id="amountOfChildrenField"
         label="Test"
         name="name"

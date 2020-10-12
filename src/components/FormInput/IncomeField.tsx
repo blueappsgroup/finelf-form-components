@@ -12,7 +12,7 @@ const IncomeField: FC<IncomeFieldProps> = ({
   errorMsg = 'Podana kwota jest nieprawidłowa',
   name,
   required = false,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

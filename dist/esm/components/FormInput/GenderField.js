@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field } from 'formik';
 import { BaseSelectField } from './base';
+import { validateSelect } from './validate';
 const options = {
   male: 'mężczyzna',
   female: 'kobieta'
@@ -11,7 +12,8 @@ const GenderField = ({
   label,
   name,
   required = false,
-  showError
+  validate,
+  showError = true
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,
@@ -20,7 +22,8 @@ const GenderField = ({
   component: BaseSelectField,
   label: label,
   type: "select",
-  options: options
+  options: options,
+  validate: validate && validate(required) || validateSelect(required, options)
 });
 
 GenderField.defaultProps = {

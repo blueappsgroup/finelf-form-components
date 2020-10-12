@@ -6,8 +6,12 @@ import { HeaderProps } from '../../types'
 type StyledProps = {
   theme: {
     headerTextColor: string
+    headerFontSize: string
     headerBorderColor: string
+    headerMargin: string
     subheaderTextColor: string
+    subheaderFontSize: string
+    subheaderMargin: string
   }
   withBorder?: boolean
 }
@@ -15,10 +19,10 @@ type StyledProps = {
 // prettier-ignore
 const StyledMainHeader = styled.h2<StyledProps>`
   font-weight: 600;
-  font-size: 25px;
+  font-size: ${(props: StyledProps): string => props.theme.headerFontSize};
   line-height: 24px;
   text-align: center;
-  margin: 0px 0px 20px 0px;
+  margin: ${(props: StyledProps): string => props.theme.headerMargin};
   padding-bottom: 28px;
   position: relative;
   display: flex;
@@ -44,9 +48,9 @@ const StyledSubHeader = styled.h5<StyledProps>`
   color: ${(props: StyledProps): string => props.theme.subheaderTextColor};
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: ${(props: StyledProps): string => props.theme.subheaderFontSize};
   line-height: 18px;
-  margin: 10px 0px 20px 0px;
+  margin: ${(props: StyledProps): string => props.theme.subheaderMargin};
 `
 
 const Header: React.FC<HeaderProps> = ({ text, type = 'main', withBorder }) =>

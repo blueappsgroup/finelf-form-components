@@ -7,7 +7,7 @@ import { BaseSelectField } from './base'
 import { validateSelect } from './validate'
 
 const options = {
-  propety: 'mieszkanie własne',
+  property: 'mieszkanie własne',
   with_parent: 'mieszkanie rodziców',
   rental: 'mieszkanie wynajmowane',
   room: 'pokój',
@@ -19,7 +19,7 @@ const HousingStatusField: FC<SelectFieldProps> = ({
   name,
   required = false,
   validate,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "./FormInput", "./Header", "./Button", "./Form", "./CheckboxesGroup", "./FormStatusText", "./Step", "./RedirectPage"], factory);
+    define(["exports", "./FormInput", "./Header", "./Button", "./Form", "./CheckboxesGroup", "./FormStatusText", "./Step", "./RedirectPage", "./TransactionId", "./Agreements"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"), require("./CheckboxesGroup"), require("./FormStatusText"), require("./Step"), require("./RedirectPage"));
+    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"), require("./CheckboxesGroup"), require("./FormStatusText"), require("./Step"), require("./RedirectPage"), require("./TransactionId"), require("./Agreements"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form, global.CheckboxesGroup, global.FormStatusText, global.Step, global.RedirectPage);
+    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form, global.CheckboxesGroup, global.FormStatusText, global.Step, global.RedirectPage, global.TransactionId, global.Agreements);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _FormInput, _Header, _Button, _Form, _CheckboxesGroup, _FormStatusText, _Step, _RedirectPage) {
+})(this, function (exports, _FormInput, _Header, _Button, _Form, _CheckboxesGroup, _FormStatusText, _Step, _RedirectPage, _TransactionId, _Agreements) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -65,6 +65,18 @@
     enumerable: true,
     get: function () {
       return _interopRequireDefault(_RedirectPage).default;
+    }
+  });
+  Object.defineProperty(exports, "TrasactionId", {
+    enumerable: true,
+    get: function () {
+      return _interopRequireDefault(_TransactionId).default;
+    }
+  });
+  Object.defineProperty(exports, "Agreements", {
+    enumerable: true,
+    get: function () {
+      return _interopRequireDefault(_Agreements).default;
     }
   });
 

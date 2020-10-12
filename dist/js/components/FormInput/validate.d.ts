@@ -1,6 +1,6 @@
 export declare const validateText: (required: boolean) => (value: string) => string | undefined;
 export declare const validateEmail: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
-export declare const validateTelNumber: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
+export declare const validateTelNumber: (required: boolean, customErrorMsg: string | undefined) => (value: string) => string | undefined;
 export declare const validateCheckbox: (required: boolean) => (value: string) => string | undefined;
 export declare const validatePesel: (required: boolean) => (value: string) => string | undefined;
 export declare const validateHouseNumber: (required: boolean) => (value: string) => string | undefined;
@@ -12,3 +12,4 @@ export declare const validateIDCardNumber: (required: boolean) => (value: string
 export declare const validateOtherLoanAmount: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
 export declare const validateAmountOfChildren: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
 export declare const validateIncome: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
+export declare const validateSelect: (required: boolean, options: object) => (value: string) => string | undefined;

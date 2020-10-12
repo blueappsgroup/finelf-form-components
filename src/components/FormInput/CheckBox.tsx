@@ -20,6 +20,7 @@ type StyledProps = {
   error?: FormikErrors<any>
   checked?: boolean
   theme: { [k: string]: string }
+  required?: boolean
 }
 
 const StyledRow = styled.div<StyledProps>`
@@ -28,7 +29,9 @@ const StyledRow = styled.div<StyledProps>`
   margin-bottom: 12px;
   position: relative;
   height: ${(props: StyledProps): string =>
-    props.collapsed ? 'auto' : '20px'};
+    props.collapsed
+      ? 'auto'
+      : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${(props: StyledProps): string =>
     props.collapsed ? 'none' : 'hidden'};
 `
@@ -38,7 +41,9 @@ const StyledArrow = styled.span<StyledProps>`
     props.hasCollapse ? 'flex' : 'none'};
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: calc(
+    5px + 2 * ${(props: StyledProps): string => props.theme.checkboxBorderWidth}
+  );
   width: 0;
   height: 0;
   border-style: solid;
@@ -48,6 +53,10 @@ const StyledArrow = styled.span<StyledProps>`
     props.collapsed
       ? `transparent transparent ${props.theme.checkboxLabelArrowColor} transparent`
       : `${props.theme.checkboxLabelArrowColor} transparent transparent transparent`};
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const CheckboxContainer = styled.div`
@@ -76,11 +85,12 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 
 const StyledCheckbox = styled.div<StyledProps>`
   display: inline-block;
+  position: relative;
   width: 18px;
   height: 18px;
   background: ${(props): string => props.theme.checkboxBgColor};
   border-radius: 3px;
-  border: 1px solid;
+  border: ${(props): string => props.theme.checkboxBorderWidth} solid;
   border-color: ${(props: StyledProps): string =>
     props.error
       ? props.theme.checkboxBorderErrorColor
@@ -91,16 +101,32 @@ const StyledCheckbox = styled.div<StyledProps>`
     visibility: ${(props: StyledProps): string =>
       props.checked ? 'visible' : 'hidden'};
   }
+
+  &::after {
+    display: ${(props: StyledProps): string =>
+      props.required ? 'block' : 'none'};
+    position: absolute;
+    content: '*';
+    top: 0px;
+    right: -13px;
+    font-size: 15px;
+    color: ${(props: StyledProps): string =>
+      props.theme.checkboxBorderErrorColor};
+  }
 `
 
-const StyledText = styled.span`
-  display: flex;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const StyledText = styled.span<any>`
+  display: inline;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 18px;
+  line-height: calc(
+    16px + 2 *
+      ${(props: StyledProps): string => props.theme.checkboxBorderWidth}
+  );
   color: ${(props: StyledProps): string => props.theme.checkboxLabelTextColor};
-  padding-left: 10px;
+  padding-left: 15px;
   padding-right: 25px;
 `
 
@@ -108,7 +134,7 @@ const StyledText = styled.span`
 const Checkbox = ({ checked, error, ...props }: any): ReactElement => (
   <CheckboxContainer>
     <HiddenCheckbox checked={checked} {...props} />
-    <StyledCheckbox checked={checked} error={error}>
+    <StyledCheckbox checked={checked} error={error} required={props.required}>
       <Icon viewBox="0 0 24 24">
         <polyline points="20 6 9 17 4 12" />
       </Icon>
@@ -119,6 +145,11 @@ const Checkbox = ({ checked, error, ...props }: any): ReactElement => (
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Wrapper = styled.label<any>`
   display: flex;
+  line-height: 18px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
@@ -165,6 +196,9 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
           }
         />
         {props.label && <StyledText>{props.label}</StyledText>}
+        {props.HTMLcontent && (
+          <StyledText dangerouslySetInnerHTML={{ __html: props.HTMLcontent }} />
+        )}
         {props.childrenBody && <StyledText>{props.childrenBody}</StyledText>}
       </Wrapper>
       <StyledArrow

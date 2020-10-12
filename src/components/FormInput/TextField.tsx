@@ -8,11 +8,11 @@ import { validateText } from './validate'
 const TextField: FC<TextFieldProps> = ({
   id,
   label,
-  placeholder = 'Text',
+  placeholder,
   name,
   required = false,
   validate = validateText,
-  showError,
+  showError = true,
 }) => (
   <Field
     required={required}

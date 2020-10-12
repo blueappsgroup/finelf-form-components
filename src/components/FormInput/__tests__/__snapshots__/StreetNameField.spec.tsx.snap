@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StreetNameField /> input field with custom validation 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd caNEXe"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx guHpUh"
+    >
+      <label
+        for="street_name"
+      >
+        Ulica
+      </label>
+      <input
+        class="sc-iqAbSa fdLqwF"
+        id="testId"
+        label="Ulica"
+        name="street_name"
+        placeholder="Ulica"
+        value="#$Street Name"
+      />
+      <span
+        class="sc-kEqYlL lmrtkS"
+      >
+        Podane dane są nieprawidłowe
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<StreetNameField /> matches snapshot 1`] = `
+<input
+  class="sc-iqAbSa jrHUfY"
+  id="testId"
+  label="Ulica"
+  name="street_name"
+  placeholder="Ulica"
+  value=""
+/>
+`;
+
+exports[`<StreetNameField /> matches snapshot with error 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd caNEXe"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx guHpUh"
+    >
+      <label
+        for="street_name"
+      >
+        HouseNumber*
+      </label>
+      <input
+        class="sc-iqAbSa fdLqwF"
+        id="testId"
+        label="HouseNumber"
+        name="street_name"
+        placeholder="Ulica*"
+        required=""
+        value=""
+      />
+      <span
+        class="sc-kEqYlL lmrtkS"
+      >
+        To pole jest wymagane
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<StreetNameField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd caNEXe"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx guHpUh"
+    >
+      <label
+        for="street_name"
+      >
+        Street
+      </label>
+      <input
+        class="sc-iqAbSa jrHUfY"
+        id="testId"
+        label="Street"
+        name="street_name"
+        placeholder="Ulica"
+        value=""
+      />
+    </div>
+  </form>
+</div>
+`;

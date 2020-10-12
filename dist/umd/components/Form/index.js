@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react", "formik", "styled-components", "../../consts/theme", "../../consts/sizes", "../RedirectPage", "../../utils", "../../consts/form"], factory);
+    define(["exports", "react", "formik", "styled-components", "../../consts/theme", "../../consts/sizes", "../RedirectPage", "../TransactionId", "../../utils", "../../consts/form"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"), require("formik"), require("styled-components"), require("../../consts/theme"), require("../../consts/sizes"), require("../RedirectPage"), require("../../utils"), require("../../consts/form"));
+    factory(exports, require("react"), require("formik"), require("styled-components"), require("../../consts/theme"), require("../../consts/sizes"), require("../RedirectPage"), require("../TransactionId"), require("../../utils"), require("../../consts/form"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.formik, global.styledComponents, global.theme, global.sizes, global.RedirectPage, global.utils, global.form);
+    factory(mod.exports, global.react, global.formik, global.styledComponents, global.theme, global.sizes, global.RedirectPage, global.TransactionId, global.utils, global.form);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _react, _formik, _styledComponents, _theme, _sizes, _RedirectPage, _utils, _form) {
+})(this, function (exports, _react, _formik, _styledComponents, _theme, _sizes, _RedirectPage, _TransactionId, _utils, _form) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -22,6 +22,8 @@
   var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
   var _RedirectPage2 = _interopRequireDefault(_RedirectPage);
+
+  var _TransactionId2 = _interopRequireDefault(_TransactionId);
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -112,10 +114,15 @@
     logoImg,
     redirectMainImg,
     redirectBgImg,
-    queueUrl,
-    sendDataToSQS
+    sendDataToApi,
+    apiUrl,
+    transactionName
   }) => {
-    const [initialValues, setInitialValues] = (0, _react.useState)((0, _utils.getFormValuesFromCache)(id));
+    const trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
+    const [initialValues, setInitialValues] = (0, _react.useState)(_objectSpread(_objectSpread({}, (0, _utils.getFormValuesFromCache)(id)), {}, {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      trasaction_id: trasationIdValue
+    }));
     const [currentStep, setCurrentStep] = (0, _react.useState)(0);
 
     const handleSubmit = async (values, props) => {
@@ -124,8 +131,8 @@
       }
 
       try {
-        if (sendDataToSQS) {
-          await (0, _utils.sendDataToAwsSQS)(values, queueUrl);
+        if (sendDataToApi && apiUrl) {
+          await (0, _utils.handleSendDataToApi)(values, apiUrl, id);
         }
 
         props.resetForm();
@@ -137,7 +144,8 @@
     };
 
     const handleReset = () => {
-      (0, _utils.resetFormValueCache)(id);
+      (0, _utils.resetFormValueCache)(id); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
       setInitialValues({});
     };
 
@@ -148,6 +156,7 @@
     return /*#__PURE__*/_react2.default.createElement(_utils.FormContext.Provider, {
       value: {
         id,
+        apiUrl,
         stepsLength,
         currentStep,
         stepsTitleList: stepsTitles,
@@ -170,7 +179,7 @@
       mainImg: redirectMainImg
     }) || /*#__PURE__*/_react2.default.createElement(StyledForm, {
       id: id
-    }, children))));
+    }, /*#__PURE__*/_react2.default.createElement(_TransactionId2.default, null), children))));
   };
 
   exports.default = FormWrapper;

@@ -1,7 +1,9 @@
 import { ReactElement, ReactNode } from 'react'
 import { FieldProps } from 'formik'
+import { colors } from './consts/theme'
 
-export type FormValuesType = { [key: string]: string | boolean | undefined }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type FormValuesType = any
 
 export type CheckboxFieldProps = {
   id?: string
@@ -10,6 +12,7 @@ export type CheckboxFieldProps = {
   required?: boolean
   onChange?: Function
   children?: ReactElement | ReactElement[]
+  HTMLcontent?: string
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -23,6 +26,7 @@ export type FieldWrapProps = FieldProps & {
   type?: string
   suffix?: string
   prefix?: string
+  HTMLcontent?: string
 }
 
 export type FieldDateWrapProps = FieldProps & {
@@ -161,11 +165,46 @@ export type OtherLoanAmountFieldProps = {
 
 export type CustomThemeType = {
   formBgColor?: string
+  inputHeight?: string
   inputTextColor?: string
   inputPlaceHolderColor?: string
   inputErrorColor?: string
+  inputErrorTextAlign?: string
+  inputErrorFontSize?: string
+  inputErrorBottom?: string
   inputBorderColor?: string
+  inputBorderWidth?: string
+  inputBorderStyle?: string
+  inputBorderRadius?: string
   inputBgColor?: string
+  inputBoxShadow?: string
+  inputFontSize?: string
+  inputFontWeight?: string
+  inputFontStyle?: string
+  inputLineHeight?: string
+  inputPadding?: string
+  styledRowFlexWrap?: string
+  styledRowLabelPadding?: string
+  styledSelectHeight?: string
+  styledSelectTextColor?: string
+  styledSelectPlaceHolderColor?: string
+  styledSelectErrorColor?: string
+  styledSelectErrorTextAlign?: string
+  styledSelectBorderColor?: string
+  styledSelectBorderWidth?: string
+  styledSelectBorderStyle?: string
+  styledSelectBorderRadius?: string
+  styledSelectBgColor?: string
+  styledSelectBoxShadow?: string
+  styledSelectFontSize?: string
+  styledSelectFontWeight?: string
+  styledSelectFontStyle?: string
+  styledSelectLineHeight?: string
+  styledSelectVerticalPadding?: string
+  styledSelectHorizontalPadding?: string
+  styledSpanFontSize?: string
+  styledSpanFontWeight?: string
+  styledRowMarginBottom?: string
   checkboxLabelArrowColor?: string
   checkboxBgColor?: string
   checkboxBorderColor?: string
@@ -178,8 +217,11 @@ export type CustomThemeType = {
   buttonTextColor?: string
   buttonBgColor?: string
   buttonBorderColor?: string
+  successTextColor?: string
   stepHeaderActiveColor?: string
   stepHeaderInActiveColor?: string
+  stepHeaderActiveBorderColor?: string
+  stepHeaderInActiveBorderColor?: string
   buttonSecondaryTextColor?: string
   buttonSecondaryBgColor?: string
   buttonSecondaryBorderColor?: string
@@ -188,6 +230,29 @@ export type CustomThemeType = {
   redirectPageCounterTextColor?: string
   successStatusTextColor?: string
   errorStatusTextColor?: string
+  sliderHeight?: string
+  sliderBorderRadius?: string
+  sliderBgColor?: string
+  sliderFillBgColor?: string
+  sliderHandleBgColor?: string
+  sliderHandleBorderColor?: string
+  sliderHandleBoxShadow?: string
+  sliderHandleBorderWidth?: string
+  sliderHandleBorderStyle?: string
+  sliderHandleBorderRadius?: string
+  sliderHandleWidth?: string
+  sliderHandleHeight?: string
+  sliderHandleAfterWidth?: string
+  sliderHandleAfterHeight?: string
+  sliderHandleAfterBorderRadius?: string
+  styledInputSuffixBgColor?: string
+  styledInputSuffixTextColor?: string
+  styledInputSuffixFontSize?: string
+  styledInputSuffixFontWeight?: string
+  styledInputSuffixBorderRadius?: string
+  styledInputSuffixVerticalPadding?: string
+  styledInputSuffixHorizontalPadding?: string
+  styledInputPrefixPadding?: string
 }
 
 export type HeaderProps = {
@@ -226,6 +291,9 @@ export type FormProps = {
   redirectBgImg?: string
   queueUrl?: string
   sendDataToSQS?: boolean
+  sendDataToApi?: boolean
+  apiUrl?: string
+  transactionName?: string
 }
 
 export type RedirectPagePropsTypes = {

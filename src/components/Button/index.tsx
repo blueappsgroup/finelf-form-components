@@ -43,6 +43,10 @@ const StyledButton = styled.button<StyledProps>`
   &:disabled {
     background: silver;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const Button: React.FC<ButtonProps> = ({
