@@ -12,18 +12,22 @@ exports[`<IncomeField/> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        name="income"
-        placeholder="Dochód"
-        type="text"
-        value="1234567890a"
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          name="income"
+          placeholder="Dochód"
+          type="text"
+          value="1234567890a"
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         Podana kwota jest nieprawidłowa
       </span>
@@ -34,7 +38,7 @@ exports[`<IncomeField/> input field with custom validation 1`] = `
 
 exports[`<IncomeField/> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-crzoUp kUQhja"
   id="testId"
   name="income"
   placeholder="Dochód"
@@ -55,25 +59,29 @@ exports[`<IncomeField/> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="income"
       >
         Income*
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="Income"
-        name="income"
-        placeholder="Dochód*"
-        required=""
-        type="text"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="Income"
+          name="income"
+          placeholder="Dochód*"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         To pole jest wymagane
       </span>
@@ -94,22 +102,26 @@ exports[`<IncomeField/> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="income"
       >
         Income
       </label>
-      <input
-        class="sc-iqAbSa jrHUfY"
-        id="testId"
-        label="Income"
-        name="income"
-        placeholder="Dochód"
-        type="text"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp kUQhja"
+          id="testId"
+          label="Income"
+          name="income"
+          placeholder="Dochód"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </form>
 </div>

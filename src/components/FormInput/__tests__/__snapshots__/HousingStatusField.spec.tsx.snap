@@ -2,7 +2,7 @@
 
 exports[`<HousingStatusField /> matches snapshot 1`] = `
 <select
-  class="sc-crzoUp fPuniV"
+  class="sc-ksluoS cwGMZt"
   id="housingStatusField"
   name="name"
   type="text"
@@ -48,7 +48,7 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="name"
@@ -56,7 +56,7 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
         Test*
       </label>
       <select
-        class="sc-crzoUp cfXqdc"
+        class="sc-ksluoS cjitXk"
         id="housingStatusField"
         label="Test"
         name="name"
@@ -91,7 +91,7 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
         </option>
       </select>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         To pole jest wymagane
       </span>
@@ -112,7 +112,7 @@ exports[`<HousingStatusField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="name"
@@ -120,7 +120,7 @@ exports[`<HousingStatusField /> matches snapshot with label 1`] = `
         Test
       </label>
       <select
-        class="sc-crzoUp fPuniV"
+        class="sc-ksluoS cwGMZt"
         id="housingStatusField"
         label="Test"
         name="name"
@@ -170,10 +170,10 @@ exports[`<HousingStatusField /> select field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <select
-        class="sc-crzoUp cfXqdc"
+        class="sc-ksluoS cjitXk"
         id="housingStatusField"
         name="name"
         type="text"
@@ -206,7 +206,7 @@ exports[`<HousingStatusField /> select field with custom validation 1`] = `
         </option>
       </select>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         Podane dane są nieprawidłowe
       </span>

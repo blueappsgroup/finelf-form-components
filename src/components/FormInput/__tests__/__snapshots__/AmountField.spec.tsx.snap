@@ -2,7 +2,7 @@
 
 exports[`<AmountField /> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-bqGHjH bZbIfE"
   id="amountField"
   label="Kwota pożyczki"
   max="10000"
@@ -27,7 +27,7 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
     />
     <div>
       <div
-        class="sc-pNWxx guHpUh"
+        class="sc-jrsJCI draGaV"
       >
         <label
           for="name"
@@ -35,10 +35,10 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
           Test
         </label>
         <div
-          class="sc-fnVYJo bUypog"
+          class="sc-dIsAE esAFLE"
         >
           <input
-            class="sc-iqAbSa jrHUfY"
+            class="sc-bqGHjH bZbIfE"
             id="amountField"
             label="Test"
             max="10000"
@@ -49,14 +49,14 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
             value="2000"
           />
           <span
-            class="sc-bqGHjH hLEuSv"
+            class="sc-fFSRdu bULHRF"
           >
             PLN
           </span>
         </div>
       </div>
       <div
-        class="sc-hBMVcZ hTCfag"
+        class="sc-iemXMA gvFkIP"
       >
         <div
           aria-orientation="horizontal"
@@ -84,11 +84,10 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
         </div>
       </div>
       <div
-        class="sc-pNWxx guHpUh"
-        style="justify-content: space-between;"
+        class="sc-jrsJCI draGaV"
       >
         <span
-          class="sc-dIsAE fSWrvq"
+          class="sc-hBMVcZ kVKZky"
         >
           Min. 
           300
@@ -96,7 +95,7 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
           zł
         </span>
         <span
-          class="sc-dIsAE fSWrvq"
+          class="sc-hBMVcZ kVKZky"
         >
           Max. 
           10000

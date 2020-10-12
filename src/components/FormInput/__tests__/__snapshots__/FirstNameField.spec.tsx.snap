@@ -12,23 +12,27 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="first_name"
       >
         Imię
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="Imię"
-        name="first_name"
-        placeholder="Imię"
-        value="3232"
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="Imię"
+          name="first_name"
+          placeholder="Imię"
+          value="3232"
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         Podane dane są nieprawidłowe
       </span>
@@ -39,7 +43,7 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
 
 exports[`<FirstNameField /> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-crzoUp kUQhja"
   id="testId"
   label="Imię"
   name="first_name"
@@ -60,24 +64,28 @@ exports[`<FirstNameField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="first_name"
       >
         FirstName1*
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="FirstName1"
-        name="first_name"
-        placeholder="Imię*"
-        required=""
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="FirstName1"
+          name="first_name"
+          placeholder="Imię*"
+          required=""
+          value=""
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         To pole jest wymagane
       </span>
@@ -98,21 +106,25 @@ exports[`<FirstNameField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="first_name"
       >
         FirstName
       </label>
-      <input
-        class="sc-iqAbSa jrHUfY"
-        id="testId"
-        label="FirstName"
-        name="first_name"
-        placeholder="Imię"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp kUQhja"
+          id="testId"
+          label="FirstName"
+          name="first_name"
+          placeholder="Imię"
+          value=""
+        />
+      </div>
     </div>
   </form>
 </div>
