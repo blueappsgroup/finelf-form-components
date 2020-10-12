@@ -22,12 +22,19 @@ export const sendDataToAwsSQS = (values, queueUrl) => fetch(queueUrl || 'https:/
     MessageBody: JSON.stringify(values)
   })
 });
-export const handleSendDataToApi = (values, apiUrl, formId) => {
+export const handleSendDataToApi = (values, apiUrl, formId, fieldsForSkip) => {
   const {
     agreements
   } = values,
-        rest = _objectWithoutProperties(values, ["agreements"]); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        rest = _objectWithoutProperties(values, ["agreements"]);
 
+  const filteredValues = Object.keys(rest).reduce((acc, key) => {
+    if (!fieldsForSkip.includes(key)) {
+      acc[key] = rest[key];
+    }
+
+    return acc; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  }, {}); // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   const mappedAgreements = Object.keys(agreements).reduce((acc, key) => {
     if (key !== 'selectAll' && agreements[key]) {
@@ -44,9 +51,18 @@ export const handleSendDataToApi = (values, apiUrl, formId) => {
     },
     body: JSON.stringify({
       formName: formId,
-      data: rest,
+      data: filteredValues,
       agreements: mappedAgreements
     })
   });
 };
+export const getFieldsValuesFromUrl = paramsList => paramsList.reduce((acc, item) => {
+  const itemValue = new URLSearchParams(window.location.search).get(item);
+
+  if (itemValue !== null) {
+    acc[item] = itemValue;
+  }
+
+  return acc;
+}, {});
 //# sourceMappingURL=utils.js.map

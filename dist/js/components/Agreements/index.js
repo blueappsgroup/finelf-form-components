@@ -82,31 +82,39 @@ var Agreemnets = function Agreemnets(_ref) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
+            _context.prev = 0;
+            _context.next = 3;
             return fetch("".concat(apiUrl, "/forms/").concat(id, "/agreements"));
 
-          case 2:
+          case 3:
             response = _context.sent;
-            _context.next = 5;
+            _context.next = 6;
             return response.json();
 
-          case 5:
+          case 6:
             data = _context.sent;
             setAgreements(linksForReplace && replaceLinkInAgreements(data) || data);
+            _context.next = 13;
+            break;
 
-          case 7:
+          case 10:
+            _context.prev = 10;
+            _context.t0 = _context["catch"](0);
+            console.log(_context.t0);
+
+          case 13:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee);
+    }, _callee, null, [[0, 10]]);
   })), [linksForReplace, apiUrl, replaceLinkInAgreements, id]);
   (0, _react.useLayoutEffect)(function () {
     if (agreements.length === 0) {
       fetchAgreements();
     }
   }, [agreements, fetchAgreements]);
-  return /*#__PURE__*/_react.default.createElement(_CheckboxesGroup.default, {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, Array.isArray(agreements) && agreements.length > 0 && /*#__PURE__*/_react.default.createElement(_CheckboxesGroup.default, {
     name: name
   }, agreements.map(function (item) {
     return /*#__PURE__*/_react.default.createElement(_.CheckboxField, {
@@ -115,7 +123,7 @@ var Agreemnets = function Agreemnets(_ref) {
       HTMLcontent: item.content,
       required: item.required
     });
-  }));
+  })));
 };
 
 Agreemnets.propTypes = {

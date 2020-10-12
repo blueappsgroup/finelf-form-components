@@ -76,6 +76,9 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
         if (item.props.name && item.props.required) {
           acc[item.props.name] = true
         }
+        if (item.props && item.props.name === 'agreements') {
+          acc[item.props.name] = true
+        }
         if (item.props.children) {
           const mappedChildrens = Array.isArray(item.props.children)
             ? item.props.children
@@ -108,6 +111,11 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
 
     Object.keys(mappedFields).some((key: string) => {
       if (!values[key] || values[key] === '' || errors[key]) {
+        hasError = true
+        return true
+      }
+
+      if (key === 'agreements' && errors[key]) {
         hasError = true
         return true
       }

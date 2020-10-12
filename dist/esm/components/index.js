@@ -9,4 +9,5 @@ export { default as RedirectPage } from './RedirectPage';
 export { default as TrasactionId } from './TransactionId';
 export { default as Agreements } from './Agreements';
 export { default as Image } from './Image';
+export { default as OptionalGroup } from './OptionalGroup';
 //# sourceMappingURL=index.js.map

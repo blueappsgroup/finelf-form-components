@@ -36,23 +36,27 @@ const Agreemnets = ({
   }, [linksForReplace]); // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   const fetchAgreements = useCallback(async () => {
-    const response = await fetch(`${apiUrl}/forms/${id}/agreements`);
-    const data = await response.json();
-    setAgreements(linksForReplace && replaceLinkInAgreements(data) || data);
+    try {
+      const response = await fetch(`${apiUrl}/forms/${id}/agreements`);
+      const data = await response.json();
+      setAgreements(linksForReplace && replaceLinkInAgreements(data) || data);
+    } catch (e) {
+      console.log(e);
+    }
   }, [linksForReplace, apiUrl, replaceLinkInAgreements, id]);
   useLayoutEffect(() => {
     if (agreements.length === 0) {
       fetchAgreements();
     }
   }, [agreements, fetchAgreements]);
-  return /*#__PURE__*/React.createElement(CheckboxesGroup, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, Array.isArray(agreements) && agreements.length > 0 && /*#__PURE__*/React.createElement(CheckboxesGroup, {
     name: name
   }, agreements.map(item => /*#__PURE__*/React.createElement(CheckboxField, {
     key: item.id,
     name: `${item.id}`,
     HTMLcontent: item.content,
     required: item.required
-  })));
+  }))));
 };
 
 Agreemnets.propTypes = {

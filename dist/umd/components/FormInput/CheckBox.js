@@ -221,7 +221,8 @@
     const [collapsed, setCollapsed] = (0, _react.useState)(false);
     const [hasCollapse, setHasCollapse] = (0, _react.useState)(false);
     const {
-      id
+      id,
+      addFieldForSkip
     } = (0, _react.useContext)(_utils.FormContext);
 
     const handleOnMouseOut = () => {
@@ -241,6 +242,9 @@
         setHasCollapse(true);
       }
     }, [targetRef]);
+    (0, _react.useEffect)(() => {
+      props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     return /*#__PURE__*/_react2.default.createElement(StyledRow, {
       hasCollapse: hasCollapse,
       collapsed: collapsed

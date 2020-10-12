@@ -213,7 +213,8 @@ var CheckboxBase = function CheckboxBase(_ref2) {
       setHasCollapse = _useState4[1];
 
   var _useContext = (0, _react.useContext)(_utils.FormContext),
-      id = _useContext.id;
+      id = _useContext.id,
+      addFieldForSkip = _useContext.addFieldForSkip;
 
   var handleOnMouseOut = function handleOnMouseOut() {
     (0, _utils.setFormValuesToCache)(values, id);
@@ -234,6 +235,9 @@ var CheckboxBase = function CheckboxBase(_ref2) {
       setHasCollapse(true);
     }
   }, [targetRef]);
+  (0, _react.useEffect)(function () {
+    props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return /*#__PURE__*/_react.default.createElement(StyledRow, {
     hasCollapse: hasCollapse,
     collapsed: collapsed

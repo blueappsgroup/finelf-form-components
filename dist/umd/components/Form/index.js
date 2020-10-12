@@ -116,14 +116,19 @@
     redirectBgImg,
     sendDataToApi,
     apiUrl,
-    transactionName
+    transactionName,
+    propertyNamesFromUrl
   }) => {
     const trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
-    const [initialValues, setInitialValues] = (0, _react.useState)(_objectSpread(_objectSpread({}, (0, _utils.getFormValuesFromCache)(id)), {}, {
+    const intialValuesFromUrl = (0, _react.useMemo)(() => propertyNamesFromUrl && propertyNamesFromUrl.length > 0 && (0, _utils.getFieldsValuesFromUrl)(propertyNamesFromUrl) || {}, [propertyNamesFromUrl]);
+    const [initialValues, setInitialValues] = (0, _react.useState)(_objectSpread(_objectSpread(_objectSpread({}, intialValuesFromUrl), (0, _utils.getFormValuesFromCache)(id)), {}, {
       // eslint-disable-next-line @typescript-eslint/camelcase
       trasaction_id: trasationIdValue
     }));
     const [currentStep, setCurrentStep] = (0, _react.useState)(0);
+    const [fieldsForSkip, setFieldsForSkip] = (0, _react.useState)([]);
+
+    const addFieldForSkip = key => setFieldsForSkip([...fieldsForSkip, key]);
 
     const handleSubmit = async (values, props) => {
       if (onSubmit) {
@@ -132,7 +137,7 @@
 
       try {
         if (sendDataToApi && apiUrl) {
-          await (0, _utils.handleSendDataToApi)(values, apiUrl, id);
+          await (0, _utils.handleSendDataToApi)(values, apiUrl, id, fieldsForSkip);
         }
 
         props.resetForm();
@@ -161,7 +166,9 @@
         currentStep,
         stepsTitleList: stepsTitles,
         nextStep,
-        prevStep
+        prevStep,
+        fieldsForSkip,
+        addFieldForSkip
       }
     }, /*#__PURE__*/_react2.default.createElement(_theme.ThemeProvider, {
       customTheme: _objectSpread({}, customTheme)

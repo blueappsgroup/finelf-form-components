@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.handleSendDataToApi = exports.sendDataToAwsSQS = exports.encodeData = exports.resetFormValueCache = exports.getFormValuesFromCache = exports.setFormValuesToCache = exports.FormContext = undefined;
+  exports.getFieldsValuesFromUrl = exports.handleSendDataToApi = exports.sendDataToAwsSQS = exports.encodeData = exports.resetFormValueCache = exports.getFormValuesFromCache = exports.setFormValuesToCache = exports.FormContext = undefined;
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -87,12 +87,19 @@
     })
   });
 
-  const handleSendDataToApi = exports.handleSendDataToApi = (values, apiUrl, formId) => {
+  const handleSendDataToApi = exports.handleSendDataToApi = (values, apiUrl, formId, fieldsForSkip) => {
     const {
       agreements
     } = values,
-          rest = _objectWithoutProperties(values, ["agreements"]); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          rest = _objectWithoutProperties(values, ["agreements"]);
 
+    const filteredValues = Object.keys(rest).reduce((acc, key) => {
+      if (!fieldsForSkip.includes(key)) {
+        acc[key] = rest[key];
+      }
+
+      return acc; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    }, {}); // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
     const mappedAgreements = Object.keys(agreements).reduce((acc, key) => {
       if (key !== 'selectAll' && agreements[key]) {
@@ -109,10 +116,20 @@
       },
       body: JSON.stringify({
         formName: formId,
-        data: rest,
+        data: filteredValues,
         agreements: mappedAgreements
       })
     });
   };
+
+  const getFieldsValuesFromUrl = exports.getFieldsValuesFromUrl = paramsList => paramsList.reduce((acc, item) => {
+    const itemValue = new URLSearchParams(window.location.search).get(item);
+
+    if (itemValue !== null) {
+      acc[item] = itemValue;
+    }
+
+    return acc;
+  }, {});
 });
 //# sourceMappingURL=utils.js.map

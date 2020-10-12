@@ -13,7 +13,8 @@ var _exportNames = {
   RedirectPage: true,
   TrasactionId: true,
   Agreements: true,
-  Image: true
+  Image: true,
+  OptionalGroup: true
 };
 Object.defineProperty(exports, "Header", {
   enumerable: true,
@@ -75,6 +76,12 @@ Object.defineProperty(exports, "Image", {
     return _Image.default;
   }
 });
+Object.defineProperty(exports, "OptionalGroup", {
+  enumerable: true,
+  get: function get() {
+    return _OptionalGroup.default;
+  }
+});
 
 var _FormInput = require("./FormInput");
 
@@ -108,6 +115,8 @@ var _TransactionId = _interopRequireDefault(require("./TransactionId"));
 var _Agreements = _interopRequireDefault(require("./Agreements"));
 
 var _Image = _interopRequireDefault(require("./Image"));
+
+var _OptionalGroup = _interopRequireDefault(require("./OptionalGroup"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //# sourceMappingURL=index.js.map

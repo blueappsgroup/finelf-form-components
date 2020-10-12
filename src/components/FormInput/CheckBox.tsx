@@ -6,6 +6,7 @@ import React, {
   useRef,
   useContext,
   ChangeEvent,
+  useEffect,
 } from 'react'
 import { FormikErrors } from 'formik'
 import styled from 'styled-components'
@@ -165,7 +166,7 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   const targetRef = useRef<HTMLDivElement>(null)
   const [collapsed, setCollapsed] = useState(false)
   const [hasCollapse, setHasCollapse] = useState(false)
-  const { id } = useContext(FormContext)
+  const { id, addFieldForSkip } = useContext(FormContext)
 
   const handleOnMouseOut = (): void => {
     setFormValuesToCache(values, id)
@@ -184,6 +185,11 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
       setHasCollapse(true)
     }
   }, [targetRef])
+
+  useEffect(() => {
+    props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <StyledRow hasCollapse={hasCollapse} collapsed={collapsed}>
