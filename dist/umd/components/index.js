@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "./FormInput", "./Header", "./Button", "./Form", "./CheckboxesGroup", "./FormStatusText", "./Step", "./RedirectPage", "./TransactionId", "./Agreements", "./OptionalGroup"], factory);
+    define(["exports", "./FormInput", "./Header", "./Button", "./Form", "./CheckboxesGroup", "./FormStatusText", "./Step", "./RedirectPage", "./TransactionId", "./Agreements", "./Image", "./OptionalGroup"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"), require("./CheckboxesGroup"), require("./FormStatusText"), require("./Step"), require("./RedirectPage"), require("./TransactionId"), require("./Agreements"), require("./OptionalGroup"));
+    factory(exports, require("./FormInput"), require("./Header"), require("./Button"), require("./Form"), require("./CheckboxesGroup"), require("./FormStatusText"), require("./Step"), require("./RedirectPage"), require("./TransactionId"), require("./Agreements"), require("./Image"), require("./OptionalGroup"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form, global.CheckboxesGroup, global.FormStatusText, global.Step, global.RedirectPage, global.TransactionId, global.Agreements, global.OptionalGroup);
+    factory(mod.exports, global.FormInput, global.Header, global.Button, global.Form, global.CheckboxesGroup, global.FormStatusText, global.Step, global.RedirectPage, global.TransactionId, global.Agreements, global.Image, global.OptionalGroup);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _FormInput, _Header, _Button, _Form, _CheckboxesGroup, _FormStatusText, _Step, _RedirectPage, _TransactionId, _Agreements, _OptionalGroup) {
+})(this, function (exports, _FormInput, _Header, _Button, _Form, _CheckboxesGroup, _FormStatusText, _Step, _RedirectPage, _TransactionId, _Agreements, _Image, _OptionalGroup) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -77,6 +77,12 @@
     enumerable: true,
     get: function () {
       return _interopRequireDefault(_Agreements).default;
+    }
+  });
+  Object.defineProperty(exports, "Image", {
+    enumerable: true,
+    get: function () {
+      return _interopRequireDefault(_Image).default;
     }
   });
   Object.defineProperty(exports, "OptionalGroup", {

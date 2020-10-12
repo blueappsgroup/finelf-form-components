@@ -48,7 +48,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: inline;\n  font-style: normal;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: calc(\n    16px + 2 *\n      ", "\n  );\n  color: ", ";\n  padding-left: 15px;\n  padding-right: 25px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline;\n  font-style: normal;\n  font-weight: 500;\n  font-size: ", ";\n  line-height: calc(\n    16px + 2 *\n      ", "\n  );\n  color: ", ";\n  padding-left: 15px;\n  padding-right: 25px;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -108,7 +108,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: flex-start;\n  margin-bottom: 12px;\n  position: relative;\n  height: ", ";\n  overflow: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: flex-start;\n  margin-bottom: 12px;\n  position: relative;\n  height: ", ";\n  overflow: ", ";\n\n  a {\n    color: ", ";\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -123,6 +123,8 @@ var StyledRow = _styledComponents.default.div(_templateObject(), function (props
   return props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')';
 }, function (props) {
   return props.collapsed ? 'none' : 'hidden';
+}, function (props) {
+  return props.theme.checkboxLinkColor;
 });
 
 var StyledArrow = _styledComponents.default.span(_templateObject2(), function (props) {
@@ -161,6 +163,8 @@ var StyledCheckbox = _styledComponents.default.div(_templateObject6(), function 
 
 
 var StyledText = _styledComponents.default.span(_templateObject7(), function (props) {
+  return props.theme.checkboxLabelFontSize;
+}, function (props) {
   return props.theme.checkboxBorderWidth;
 }, function (props) {
   return props.theme.checkboxLabelTextColor;
