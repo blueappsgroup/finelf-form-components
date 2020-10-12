@@ -12,23 +12,27 @@ exports[`<StreetNameField /> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="street_name"
       >
         Ulica
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="Ulica"
-        name="street_name"
-        placeholder="Ulica"
-        value="#$Street Name"
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="Ulica"
+          name="street_name"
+          placeholder="Ulica"
+          value="#$Street Name"
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         Podane dane są nieprawidłowe
       </span>
@@ -39,7 +43,7 @@ exports[`<StreetNameField /> input field with custom validation 1`] = `
 
 exports[`<StreetNameField /> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-crzoUp kUQhja"
   id="testId"
   label="Ulica"
   name="street_name"
@@ -60,24 +64,28 @@ exports[`<StreetNameField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="street_name"
       >
         HouseNumber*
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="testId"
-        label="HouseNumber"
-        name="street_name"
-        placeholder="Ulica*"
-        required=""
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="testId"
+          label="HouseNumber"
+          name="street_name"
+          placeholder="Ulica*"
+          required=""
+          value=""
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         To pole jest wymagane
       </span>
@@ -98,21 +106,25 @@ exports[`<StreetNameField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="street_name"
       >
         Street
       </label>
-      <input
-        class="sc-iqAbSa jrHUfY"
-        id="testId"
-        label="Street"
-        name="street_name"
-        placeholder="Ulica"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp kUQhja"
+          id="testId"
+          label="Street"
+          name="street_name"
+          placeholder="Ulica"
+          value=""
+        />
+      </div>
     </div>
   </form>
 </div>

@@ -12,18 +12,22 @@ exports[`<AmountOfChildrenField /> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="amountOfChildrenField"
-        name="name"
-        placeholder="Liczba osób na utrzymaniu"
-        type="text"
-        value="test"
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="amountOfChildrenField"
+          name="name"
+          placeholder="Liczba osób na utrzymaniu"
+          type="text"
+          value="test"
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         Podana ilość jest nieprawidłowa
       </span>
@@ -34,7 +38,7 @@ exports[`<AmountOfChildrenField /> input field with custom validation 1`] = `
 
 exports[`<AmountOfChildrenField /> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-crzoUp kUQhja"
   id="amountOfChildrenField"
   name="name"
   placeholder="Liczba osób na utrzymaniu"
@@ -55,25 +59,29 @@ exports[`<AmountOfChildrenField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="name"
       >
         Test*
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="amountOfChildrenField"
-        label="Test"
-        name="name"
-        placeholder="Liczba osób na utrzymaniu*"
-        required=""
-        type="text"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="amountOfChildrenField"
+          label="Test"
+          name="name"
+          placeholder="Liczba osób na utrzymaniu*"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         To pole jest wymagane
       </span>
@@ -94,22 +102,26 @@ exports[`<AmountOfChildrenField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="name"
       >
         Test
       </label>
-      <input
-        class="sc-iqAbSa jrHUfY"
-        id="amountOfChildrenField"
-        label="Test"
-        name="name"
-        placeholder="Liczba osób na utrzymaniu"
-        type="text"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp kUQhja"
+          id="amountOfChildrenField"
+          label="Test"
+          name="name"
+          placeholder="Liczba osób na utrzymaniu"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </form>
 </div>

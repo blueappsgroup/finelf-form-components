@@ -9,6 +9,8 @@ export const FormContext: Context<{
   nextStep?: Function
   prevStep?: Function
   apiUrl?: string
+  fieldsForSkip?: string[]
+  addFieldForSkip?: (key: string) => void
 }> = React.createContext({})
 
 export const setFormValuesToCache = (
@@ -62,10 +64,18 @@ export const sendDataToAwsSQS: (
 export const handleSendDataToApi: (
   values: FormValuesType,
   apiUrl: string,
-  formId: string
+  formId: string,
+  fieldsForSkip: string[]
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-) => Promise<any> = (values, apiUrl, formId) => {
+) => Promise<any> = (values, apiUrl, formId, fieldsForSkip) => {
   const { agreements, ...rest } = values
+  const filteredValues = Object.keys(rest).reduce((acc, key) => {
+    if (!fieldsForSkip.includes(key)) {
+      acc[key] = rest[key]
+    }
+    return acc
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  }, {} as { [key: string]: any })
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const mappedAgreements = Object.keys(agreements).reduce<any>((acc, key) => {
     if (key !== 'selectAll' && agreements[key]) {
@@ -82,8 +92,19 @@ export const handleSendDataToApi: (
     },
     body: JSON.stringify({
       formName: formId,
-      data: rest,
+      data: filteredValues,
       agreements: mappedAgreements,
     }),
   })
 }
+
+export const getFieldsValuesFromUrl = (
+  paramsList: string[]
+): { [key: string]: string | null } =>
+  paramsList.reduce((acc, item) => {
+    const itemValue = new URLSearchParams(window.location.search).get(item)
+    if (itemValue !== null) {
+      acc[item] = itemValue
+    }
+    return acc
+  }, {} as { [key: string]: string | null })

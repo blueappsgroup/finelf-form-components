@@ -1,6 +1,5 @@
 import { ReactElement, ReactNode } from 'react'
 import { FieldProps } from 'formik'
-import { colors } from './consts/theme'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type FormValuesType = any
@@ -13,6 +12,7 @@ export type CheckboxFieldProps = {
   onChange?: Function
   children?: ReactElement | ReactElement[]
   HTMLcontent?: string
+  skipFieldForApi?: boolean
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -27,6 +27,7 @@ export type FieldWrapProps = FieldProps & {
   suffix?: string
   prefix?: string
   HTMLcontent?: string
+  skipFieldForApi?: boolean
 }
 
 export type SelectFieldOptions = {
@@ -281,6 +282,7 @@ export type FormProps = {
   sendDataToApi?: boolean
   apiUrl?: string
   transactionName?: string
+  propertyNamesFromUrl?: string[]
 }
 
 export type RedirectPagePropsTypes = {
