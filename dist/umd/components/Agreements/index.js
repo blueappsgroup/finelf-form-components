@@ -103,23 +103,27 @@
     }, [linksForReplace]); // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
     const fetchAgreements = (0, _react.useCallback)(async () => {
-      const response = await fetch(`${apiUrl}/forms/${id}/agreements`);
-      const data = await response.json();
-      setAgreements(linksForReplace && replaceLinkInAgreements(data) || data);
+      try {
+        const response = await fetch(`${apiUrl}/forms/${id}/agreements`);
+        const data = await response.json();
+        setAgreements(linksForReplace && replaceLinkInAgreements(data) || data);
+      } catch (e) {
+        console.log(e);
+      }
     }, [linksForReplace, apiUrl, replaceLinkInAgreements, id]);
     (0, _react.useLayoutEffect)(() => {
       if (agreements.length === 0) {
         fetchAgreements();
       }
     }, [agreements, fetchAgreements]);
-    return /*#__PURE__*/_react2.default.createElement(_CheckboxesGroup2.default, {
+    return /*#__PURE__*/_react2.default.createElement(_react2.default.Fragment, null, Array.isArray(agreements) && agreements.length > 0 && /*#__PURE__*/_react2.default.createElement(_CheckboxesGroup2.default, {
       name: name
     }, agreements.map(item => /*#__PURE__*/_react2.default.createElement(_.CheckboxField, {
       key: item.id,
       name: `${item.id}`,
       HTMLcontent: item.content,
       required: item.required
-    })));
+    }))));
   };
 
   Agreemnets.propTypes = {

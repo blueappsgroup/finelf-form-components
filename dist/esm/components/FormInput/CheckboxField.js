@@ -10,7 +10,8 @@ const CheckboxFormField = ({
   required = false,
   onChange,
   children,
-  HTMLcontent
+  HTMLcontent,
+  skipFieldForApi
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   id: id,
@@ -21,7 +22,8 @@ const CheckboxFormField = ({
   validate: validateCheckbox(required),
   onChange: onChange,
   childrenBody: children,
-  HTMLcontent: HTMLcontent
+  HTMLcontent: HTMLcontent,
+  skipFieldForApi: skipFieldForApi
 });
 
 CheckboxFormField.defaultProps = {

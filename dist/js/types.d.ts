@@ -9,6 +9,7 @@ export declare type CheckboxFieldProps = {
     onChange?: Function;
     children?: ReactElement | ReactElement[];
     HTMLcontent?: string;
+    skipFieldForApi?: boolean;
 };
 export declare type FieldWrapProps = FieldProps & {
     label?: string;
@@ -22,6 +23,7 @@ export declare type FieldWrapProps = FieldProps & {
     suffix?: string;
     prefix?: string;
     HTMLcontent?: string;
+    skipFieldForApi?: boolean;
 };
 export declare type SelectFieldOptions = {
     [key: string]: string;
@@ -255,6 +257,7 @@ export declare type FormProps = {
     sendDataToApi?: boolean;
     apiUrl?: string;
     transactionName?: string;
+    propertyNamesFromUrl?: string[];
 };
 export declare type RedirectPagePropsTypes = {
     headerText?: string;

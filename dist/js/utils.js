@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.handleSendDataToApi = exports.sendDataToAwsSQS = exports.encodeData = exports.resetFormValueCache = exports.getFormValuesFromCache = exports.setFormValuesToCache = exports.FormContext = void 0;
+exports.getFieldsValuesFromUrl = exports.handleSendDataToApi = exports.sendDataToAwsSQS = exports.encodeData = exports.resetFormValueCache = exports.getFormValuesFromCache = exports.setFormValuesToCache = exports.FormContext = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -58,10 +58,17 @@ var sendDataToAwsSQS = function sendDataToAwsSQS(values, queueUrl) {
 
 exports.sendDataToAwsSQS = sendDataToAwsSQS;
 
-var handleSendDataToApi = function handleSendDataToApi(values, apiUrl, formId) {
+var handleSendDataToApi = function handleSendDataToApi(values, apiUrl, formId, fieldsForSkip) {
   var agreements = values.agreements,
-      rest = _objectWithoutProperties(values, ["agreements"]); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      rest = _objectWithoutProperties(values, ["agreements"]);
 
+  var filteredValues = Object.keys(rest).reduce(function (acc, key) {
+    if (!fieldsForSkip.includes(key)) {
+      acc[key] = rest[key];
+    }
+
+    return acc; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  }, {}); // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   var mappedAgreements = Object.keys(agreements).reduce(function (acc, key) {
     if (key !== 'selectAll' && agreements[key]) {
@@ -78,11 +85,25 @@ var handleSendDataToApi = function handleSendDataToApi(values, apiUrl, formId) {
     },
     body: JSON.stringify({
       formName: formId,
-      data: rest,
+      data: filteredValues,
       agreements: mappedAgreements
     })
   });
 };
 
 exports.handleSendDataToApi = handleSendDataToApi;
+
+var getFieldsValuesFromUrl = function getFieldsValuesFromUrl(paramsList) {
+  return paramsList.reduce(function (acc, item) {
+    var itemValue = new URLSearchParams(window.location.search).get(item);
+
+    if (itemValue !== null) {
+      acc[item] = itemValue;
+    }
+
+    return acc;
+  }, {});
+};
+
+exports.getFieldsValuesFromUrl = getFieldsValuesFromUrl;
 //# sourceMappingURL=utils.js.map

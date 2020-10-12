@@ -8,3 +8,4 @@ export { default as Step } from './Step';
 export { default as RedirectPage } from './RedirectPage';
 export { default as TrasactionId } from './TransactionId';
 export { default as Agreements } from './Agreements';
+export { default as OptionalGroup } from './OptionalGroup';

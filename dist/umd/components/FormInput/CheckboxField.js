@@ -34,7 +34,8 @@
     required = false,
     onChange,
     children,
-    HTMLcontent
+    HTMLcontent,
+    skipFieldForApi
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     id: id,
@@ -45,7 +46,8 @@
     validate: (0, _validate.validateCheckbox)(required),
     onChange: onChange,
     childrenBody: children,
-    HTMLcontent: HTMLcontent
+    HTMLcontent: HTMLcontent,
+    skipFieldForApi: skipFieldForApi
   });
 
   CheckboxFormField.defaultProps = {
