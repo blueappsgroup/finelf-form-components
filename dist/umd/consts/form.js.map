@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/consts/form.ts"],"names":["formStatuses","submited","error"],"mappings":";;;;;;;;;;;;;;;;;;AAAO,QAAMA,YAAY,WAAZA,YAAY,GAAG;AAC1BC,IAAAA,QAAQ,EADkB,UAAA;AAE1BC,IAAAA,KAAK,EAAE;AAFmB,GAArB","sourcesContent":["export const formStatuses = {\n  submited: 'submited',\n  error: 'error',\n}\n"],"file":"form.js"}
