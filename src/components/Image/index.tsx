@@ -5,6 +5,14 @@ import { ImageProps } from '../../types'
 
 type StyledProps = {
   hideOnMobile?: boolean
+  disableShadow?: boolean
+  theme: {
+    imageContainerPadding: string
+    imageBoxShadow: string
+    imageContainerTextTopPosition: string
+    imageContainerTextFontSize: string
+    imageContainerTextFontWeight: string
+  }
 }
 
 // prettier-ignore
@@ -12,11 +20,20 @@ const StyledContainer = styled.div<StyledProps>`
   display: ${(props: StyledProps): string => props.hideOnMobile ? 'none' : 'flex'};
   justify-content: center;
   width: 100%;
-  margin: 0 auto 15px;
+  padding: ${(props): string => props.theme.imageContainerPadding};
+  margin: 0 auto;
   align-items: flex-start;
   
   img {
     max-width: 100%;  
+    box-shadow: ${(props: StyledProps): string => props.disableShadow ? 'none' : props.theme.imageBoxShadow};
+  }
+  
+  span {
+    position: absolute;
+    top: ${(props): string => props.theme.imageContainerTextTopPosition};
+    font-size: ${(props): string => props.theme.imageContainerTextFontSize};
+    font-weight: ${(props): string => props.theme.imageContainerTextFontWeight};
   }
   
   @media ${device.tablet} { 
@@ -24,9 +41,16 @@ const StyledContainer = styled.div<StyledProps>`
   }
 `
 
-const Image: React.FC<ImageProps> = ({ src, alt, hideOnMobile }) => (
-  <StyledContainer hideOnMobile={hideOnMobile}>
+const Image: React.FC<ImageProps> = ({
+  src,
+  alt,
+  text,
+  hideOnMobile,
+  disableShadow,
+}) => (
+  <StyledContainer hideOnMobile={hideOnMobile} disableShadow={disableShadow}>
     <img src={src} alt={alt} />
+    {text && <span>{text}</span>}
   </StyledContainer>
 )
 

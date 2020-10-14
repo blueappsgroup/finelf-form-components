@@ -126,11 +126,11 @@ const StyledRowRangeField = styled.div`
 export const Row = styled.div`
   display: flex;
   width: 100%;
+  margin: 15px auto;
   flex-direction: column;
   > * {
       flex-basis: 0;
       flex-grow: 1;
-      width: 0 !important;
   }
 
   @media ${device.tablet} {

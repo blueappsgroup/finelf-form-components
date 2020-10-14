@@ -159,6 +159,7 @@ export type OtherLoanAmountFieldProps = {
 }
 
 export type CustomThemeType = {
+  formBoxShadow?: string
   formMaxWidth?: string
   formBgColor?: string
   inputHeight?: string
@@ -305,5 +306,7 @@ export type RedirectPagePropsTypes = {
 export type ImageProps = {
   src: string
   alt: string
+  text?: string
   hideOnMobile?: boolean
+  disableShadow?: boolean
 }

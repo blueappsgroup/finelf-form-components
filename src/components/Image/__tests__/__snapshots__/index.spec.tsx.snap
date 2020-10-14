@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Image /> main header matches snapshot 1`] = `
+exports[`<Image /> image matches snapshot 1`] = `
 <body>
   <div>
     <div
-      class="sc-bdnylx bHerHJ"
+      class="sc-bdnylx jioHna"
     >
       <img
         alt="image"

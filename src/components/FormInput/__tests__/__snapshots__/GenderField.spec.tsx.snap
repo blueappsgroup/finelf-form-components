@@ -30,7 +30,7 @@ exports[`<GenderField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd horYMd"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input
@@ -84,7 +84,7 @@ exports[`<GenderField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd horYMd"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input
@@ -132,7 +132,7 @@ exports[`<GenderField /> select field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd horYMd"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input
