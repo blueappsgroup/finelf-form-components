@@ -8,12 +8,19 @@ type Props = {
   children: any
   label: string
   groupType?: string
+  hideChecked?: boolean
 }
 
-const OptionalGroup: React.FC<Props> = ({ name, label, children }) => {
+const OptionalGroup: React.FC<Props> = ({
+  name,
+  label,
+  children,
+  hideChecked,
+}) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { values } = useFormikContext<any>()
-  const groupVisible = !!values[name]
+  const groupVisible =
+    (hideChecked && !values[name]) || (!hideChecked && values[name])
 
   return (
     <>

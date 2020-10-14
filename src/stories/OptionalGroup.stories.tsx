@@ -11,7 +11,15 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <OptionalGroup name="nameGroup" label="Additional name">
+    <OptionalGroup name="nameGroup" label="Additional name (show if checked)">
+      <FirstNameField name="fName" />
+      <LastNameField name="lName" />
+    </OptionalGroup>
+    <OptionalGroup
+      name="nameGroup2"
+      label="Additional name (hide if checked)"
+      hideChecked
+    >
       <FirstNameField name="fName" />
       <LastNameField name="lName" />
     </OptionalGroup>
