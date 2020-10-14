@@ -7,6 +7,7 @@ type Props = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any
   label: string
+  groupType?: string
 }
 
 const OptionalGroup: React.FC<Props> = ({ name, label, children }) => {
@@ -20,6 +21,10 @@ const OptionalGroup: React.FC<Props> = ({ name, label, children }) => {
       {groupVisible && <>{children}</>}
     </>
   )
+}
+
+OptionalGroup.defaultProps = {
+  groupType: 'optionalGroup',
 }
 
 export default OptionalGroup

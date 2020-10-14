@@ -15,7 +15,11 @@ import {
   OptionalGroup,
 } from '../'
 import { FormProps, FormValuesType } from '../types'
-import { FirstNameField } from '../components'
+import {
+  CompanyNameField,
+  EmploymentTypeField,
+  FirstNameField,
+} from '../components'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const onSubmit = (values: FormValuesType, props: any): void => {
@@ -65,15 +69,19 @@ const TemplateSteps: Story<FormProps> = (args) => (
       <TextField required showError placeholder="Name1" name="firstName1" />
       <TextField required placeholder="Surname1" name="lastName" />
       <OptionalGroup name="help_improve" label="Fill fild to improve">
-        <FirstNameField name="fName" />
+        <FirstNameField required name="fName" />
       </OptionalGroup>
     </Step>
     <Step stepIndex={1}>
       <TextField required showError placeholder="Name2" name="firstName2" />
       <TextField placeholder="City" name="city" />
-      <Row>
+      {/* <Row>
         <TextField required showError placeholder="Name4" name="firstName4" />
         <TextField placeholder="City2" name="city2" />
+      </Row> */}
+      <Row>
+        <EmploymentTypeField />
+        <CompanyNameField />
       </Row>
     </Step>
     <Step stepIndex={2}>

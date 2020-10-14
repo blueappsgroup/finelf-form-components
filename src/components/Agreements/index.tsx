@@ -18,6 +18,7 @@ type AgreementType = {
 type AgreementsPropTypes = {
   linksForReplace?: { [key: string]: string }
   name?: string
+  groupType?: string
 }
 
 const Agreemnets: React.FC<AgreementsPropTypes> = ({
@@ -84,6 +85,7 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
 
 Agreemnets.defaultProps = {
   name: 'agreements',
+  groupType: 'checkboxGroup',
 }
 
 export default Agreemnets
