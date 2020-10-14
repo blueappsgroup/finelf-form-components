@@ -13,7 +13,7 @@ exports[`base <BaseField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd horYMd"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input
@@ -54,7 +54,7 @@ exports[`base <BaseField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd horYMd"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input
@@ -101,7 +101,7 @@ exports[`base <BaseRangeField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd horYMd"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input
@@ -202,7 +202,7 @@ exports[`base <BaseSelectField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd horYMd"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input

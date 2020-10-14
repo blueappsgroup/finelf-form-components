@@ -124,6 +124,9 @@ export const theme = {
   hrColor: colors.mainGrey,
   hrSize: '1px',
   imageContainerPadding: '0px',
+  imageContainerTextTopPosition: '25%',
+  imageContainerTextFontSize: '45px',
+  imageContainerTextFontWeight: '900',
   imageBoxShadow: 'none',
 }
 

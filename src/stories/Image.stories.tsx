@@ -30,4 +30,5 @@ Defualt.args = {
   hideOnMobile: true,
   src: '',
   alt: 'obrazek',
+  text: 'testowy tekst',
 }
