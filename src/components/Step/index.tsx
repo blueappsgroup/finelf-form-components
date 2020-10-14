@@ -83,6 +83,7 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
           if (item.props && item.props.name === 'agreements') {
             acc.requiredFields[item.props.name] = true
           }
+
           if (item.props.children) {
             const mappedChildrens = Array.isArray(item.props.children)
               ? item.props.children
