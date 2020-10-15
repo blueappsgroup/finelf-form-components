@@ -75,13 +75,9 @@ const TemplateSteps: Story<FormProps> = (args) => (
     <Step stepIndex={1}>
       <TextField required showError placeholder="Name2" name="firstName2" />
       <TextField placeholder="City" name="city" />
-      {/* <Row>
-        <TextField required showError placeholder="Name4" name="firstName4" />
-        <TextField placeholder="City2" name="city2" />
-      </Row> */}
       <Row>
         <EmploymentTypeField />
-        <CompanyNameField />
+        <CompanyNameField name="company_name" />
       </Row>
     </Step>
     <Step stepIndex={2}>
