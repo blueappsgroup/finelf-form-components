@@ -54,6 +54,7 @@ const FormWrapper: FC<FormProps> = ({
   apiUrl,
   transactionName,
   propertyNamesFromUrl,
+  dataWithUserAgent,
 }) => {
   const trasationIdValue =
     transactionName &&
@@ -66,7 +67,7 @@ const FormWrapper: FC<FormProps> = ({
       {},
     [propertyNamesFromUrl]
   )
-
+  const [redirectUrlPath, setRedirectUrlPath] = useState(redirectUrl)
   const [initialValues, setInitialValues] = useState({
     ...intialValuesFromUrl,
     ...getFormValuesFromCache(id),
@@ -93,7 +94,16 @@ const FormWrapper: FC<FormProps> = ({
 
     try {
       if (sendDataToApi && apiUrl) {
-        await handleSendDataToApi(values, apiUrl, id, fieldsForSkip)
+        const response = await handleSendDataToApi(
+          values,
+          apiUrl,
+          id,
+          fieldsForSkip,
+          dataWithUserAgent
+        )
+        const { redirectUrl: urlFromApi } = await response.json()
+
+        urlFromApi && setRedirectUrlPath(urlFromApi)
       }
 
       props.resetForm()
@@ -137,7 +147,7 @@ const FormWrapper: FC<FormProps> = ({
           {(props): ReactElement =>
             (hasRedirect && props.status === formStatuses.submited && (
               <RedirectPage
-                redirectUrl={redirectUrl}
+                redirectUrl={redirectUrlPath}
                 backgroundImage={redirectBgImg}
                 logoImg={logoImg}
                 headerText={redirectHeaderText}
