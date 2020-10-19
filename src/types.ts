@@ -310,6 +310,7 @@ export type FormProps = {
   apiUrl?: string
   transactionName?: string
   propertyNamesFromUrl?: string[]
+  dataWithUserAgent?: boolean
 }
 
 export type RedirectPagePropsTypes = {

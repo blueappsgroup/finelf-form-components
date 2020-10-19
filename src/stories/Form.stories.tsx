@@ -20,6 +20,7 @@ import {
   EmploymentTypeField,
   FirstNameField,
 } from '../components'
+import Agreemnets from '../components/Agreements'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const onSubmit = (values: FormValuesType, props: any): void => {
@@ -43,6 +44,7 @@ const Template: Story<FormProps> = (args) => (
     <TextField required placeholder="Surname" name="lastName" />
     <TextField placeholder="City" name="city" />
     <Header text="Test title" type="subheader" />
+    <Agreemnets />
     <Button type="submit" text="Send" />
   </Form>
 )
@@ -50,12 +52,14 @@ const Template: Story<FormProps> = (args) => (
 export const Defualt = Template.bind({})
 
 Defualt.args = {
-  id: 'zwrot-prowizji-bankowej1',
+  id: 'kdz',
   onSubmit,
   transactionName: 'name',
   apiUrl: 'http://localhost:3000/api',
   sendDataToApi: true,
   propertyNamesFromUrl: ['firstName'],
+  hasRedirect: true,
+  dataWithUserAgent: true,
 }
 
 const TemplateSteps: Story<FormProps> = (args) => (
