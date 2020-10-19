@@ -1,7 +1,15 @@
 import * as React from 'react'
 import { Story, Meta } from '@storybook/react'
 
-import { Header, TextField, FormStatusText, Form, Step, Row } from '../'
+import {
+  Header,
+  TextField,
+  FormStatusText,
+  Form,
+  Step,
+  Row,
+  BirthDateField,
+} from '../'
 import { FormProps, FormValuesType } from '../types'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25,6 +33,7 @@ const Template: Story<FormProps> = (args) => (
     <Step stepIndex={0}>
       <TextField required showError placeholder="Name1" name="firstName1" />
       <TextField required placeholder="Surname1" name="lastName" />
+      <BirthDateField required showError />
     </Step>
     <Step stepIndex={1}>
       <TextField required showError placeholder="Name2" name="firstName2" />

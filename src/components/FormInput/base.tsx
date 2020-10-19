@@ -3,6 +3,7 @@ import React, {
   ChangeEvent,
   ReactElement,
   useContext,
+  useEffect,
   useLayoutEffect,
   useState,
 } from 'react'
@@ -12,13 +13,15 @@ import styled from 'styled-components'
 import { device } from '../../consts/sizes'
 import {
   FieldWrapProps,
+  FieldDateWrapProps,
   RangeFieldWrapProps,
   SelectFieldOptions,
   SelectFieldWrapProps,
 } from '../../types'
 import { FormContext, setFormValuesToCache } from '../../utils'
+import DatePickerCore from './DatePickerCore'
 
-type StyledProps = {
+export type StyledProps = {
   theme: {
     submitButtonBgColor: string
     inputHeight: string
@@ -40,6 +43,20 @@ type StyledProps = {
     inputLineHeight: string
     inputTextAlign: string
     inputPadding: string
+    datePickerHeight: string
+    datePickerTextColor: string
+    datePickerPlaceHolderColor: string
+    datePickerBorderColor: string
+    datePickerBorderWidth: string
+    datePickerBorderStyle: string
+    datePickerBorderRadius: string
+    datePickerBgColor: string
+    datePickerBoxShadow: string
+    datePickerFontSize: string
+    datePickerFontWeight: string
+    datePickerFontStyle: string
+    datePickerLineHeight: string
+    datePickerPadding: string
     labelFontSize: string
     styledRowFlexWrap: string
     styledRowLabelPadding: string
@@ -254,9 +271,9 @@ const StyledSelect = styled.select<any>`
   line-height: ${(props: StyledProps): string => props.theme.styledSelectLineHeight};
   padding: ${(props: StyledProps): string => props.theme.styledSelectVerticalPadding} ${(props: StyledProps): string => props.theme.styledSelectHorizontalPadding};
   border-color: ${(props: StyledProps): string =>
-  props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
+    props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
   color: ${(props: any): string =>
-  props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
+    props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
 
   option:disabled {
     color: ${(props: StyledProps): string => props.theme.styledSelectPlaceHolderColor};
@@ -429,6 +446,56 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
 }
 
 export default BaseField
+
+export const BaseDateField: (props: FieldDateWrapProps) => ReactElement = ({
+  field,
+  form: { touched, errors, values, setFieldValue, setFieldTouched },
+  ...props
+}) => {
+  const { id } = useContext(FormContext)
+  const [currntValue, setCurrentValue] = useState(values[field.name])
+  const handleChange = (value: Date): void => {
+    setFormValuesToCache(
+      {
+        ...values,
+        [field.name]: value.toString(),
+      },
+      id
+    )
+    setCurrentValue(value)
+    setFieldTouched(field.name, true)
+  }
+  const handleBlur = (): void => {
+    setFieldTouched(field.name, true)
+  }
+
+  useEffect(() => {
+    setFieldValue(field.name, currntValue)
+  }, [currntValue, field.name, setFieldValue])
+
+  return (
+    <StyledRow>
+      {props.label && (
+        <label htmlFor={field.name}>{`${props.label}${
+          (props.required && '*') || ''
+        }`}</label>
+      )}
+      {props.prefix && <StyledInputPrefix>{props.prefix}</StyledInputPrefix>}
+      <DatePickerCore
+        placeholderText={props.placeholder}
+        required={props.required}
+        name={field.name}
+        selected={field.value ? new Date(field.value) : null}
+        onBlur={handleBlur}
+        onChange={handleChange}
+      />
+      {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
+      {props.showError && touched[field.name] && errors[field.name] && (
+        <StyledError>{errors[field.name]}</StyledError>
+      )}
+    </StyledRow>
+  )
+}
 
 export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
   field,

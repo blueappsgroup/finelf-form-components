@@ -319,3 +319,17 @@ export const validateSelect: (
     return 'Podane dane są nieprawidłowe'
   }
 }
+
+export const validateDate: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+}

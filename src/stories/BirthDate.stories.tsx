@@ -6,12 +6,17 @@ import { FormProps } from '../types'
 
 export default {
   title: 'BirthDate',
-  component: Form,
+  component: BirthDateField,
 } as Meta
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <BirthDateField required showError />
+    <BirthDateField
+      required
+      showError
+      label="Data urodzenia"
+      placeholder="DD/MM/YYYY"
+    />
   </Form>
 )
 

@@ -30,6 +30,19 @@ export type FieldWrapProps = FieldProps & {
   skipFieldForApi?: boolean
 }
 
+export type FieldDateWrapProps = FieldProps & {
+  label?: string
+  showError?: boolean
+  onChange?: Function
+  placeholder?: string
+  required?: boolean
+  children?: ReactElement | ReactElement[]
+  childrenBody?: ReactElement | ReactElement[]
+  type?: string
+  suffix?: string
+  prefix?: string
+}
+
 export type SelectFieldOptions = {
   [key: string]: string
 }
