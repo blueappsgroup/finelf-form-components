@@ -4,6 +4,7 @@ declare type AgreementsPropTypes = {
         [key: string]: string;
     };
     name?: string;
+    groupType?: string;
 };
 declare const Agreemnets: React.FC<AgreementsPropTypes>;
 export default Agreemnets;

@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.validateSelect = exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = undefined;
+  exports.validateDate = exports.validateSelect = exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = undefined;
 
   const validateText = exports.validateText = required => value => {
     if (!required && !value) {
@@ -249,6 +249,16 @@
 
     if ((0, _validateHelpers.isNotValidOption)(value, options)) {
       return 'Podane dane są nieprawidłowe';
+    }
+  };
+
+  const validateDate = exports.validateDate = required => value => {
+    if (!required && !value) {
+      return;
+    }
+
+    if (required && (0, _validateHelpers.isEmpty)(value)) {
+      return 'To pole jest wymagane';
     }
   };
 });

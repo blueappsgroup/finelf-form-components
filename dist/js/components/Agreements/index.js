@@ -128,10 +128,12 @@ var Agreemnets = function Agreemnets(_ref) {
 
 Agreemnets.propTypes = {
   linksForReplace: _propTypes.default.objectOf(_propTypes.default.string),
-  name: _propTypes.default.string
+  name: _propTypes.default.string,
+  groupType: _propTypes.default.string
 };
 Agreemnets.defaultProps = {
-  name: 'agreements'
+  name: 'agreements',
+  groupType: 'checkboxGroup'
 };
 var _default = Agreemnets;
 exports.default = _default;

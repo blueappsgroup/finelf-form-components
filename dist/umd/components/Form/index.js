@@ -92,7 +92,7 @@
     'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   padding: 20px 15px;
   border-radius: 6px;
-  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: ${props => props.theme.formBoxShadow};
 
   @media ${_sizes.device.tablet} {
     padding: 20px 30px;

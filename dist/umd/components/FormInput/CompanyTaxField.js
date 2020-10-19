@@ -31,10 +31,14 @@
     id,
     label = 'NIP firmy',
     placeholder = 'NIP firmy',
-    name,
+    name = 'company_tax_id',
     required = false,
     validate = _validate.validateCompanyTax,
-    showError = true
+    showError = true,
+    requiredCondition = {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      employment_type: ['self_employed']
+    }
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     id: id,
     label: label,
@@ -43,7 +47,8 @@
     required: required,
     showError: showError,
     name: name,
-    validate: validate(required)
+    validate: validate,
+    requiredCondition: requiredCondition
   });
 
   CompanyTaxField.defaultProps = {

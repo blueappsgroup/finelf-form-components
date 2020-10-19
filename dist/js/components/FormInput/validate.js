@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateSelect = exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = void 0;
+exports.validateDate = exports.validateSelect = exports.validateIncome = exports.validateAmountOfChildren = exports.validateOtherLoanAmount = exports.validateIDCardNumber = exports.validateBankAccountNumber = exports.validateCompanyTax = exports.validateZipCode = exports.validateCityName = exports.validateHouseNumber = exports.validatePesel = exports.validateCheckbox = exports.validateTelNumber = exports.validateEmail = exports.validateText = void 0;
 
 var _validateHelpers = require("./validateHelpers");
 
@@ -310,4 +310,18 @@ var validateSelect = function validateSelect(required, options) {
 };
 
 exports.validateSelect = validateSelect;
+
+var validateDate = function validateDate(required) {
+  return function (value) {
+    if (!required && !value) {
+      return;
+    }
+
+    if (required && (0, _validateHelpers.isEmpty)(value)) {
+      return 'To pole jest wymagane';
+    }
+  };
+};
+
+exports.validateDate = validateDate;
 //# sourceMappingURL=validate.js.map

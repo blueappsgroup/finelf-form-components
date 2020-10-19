@@ -1,17 +1,21 @@
 import React from 'react';
-import { Field } from 'formik';
 import BaseField from './base';
 import { validateText } from './validate';
+import CustomFieldWithCondition from './CustomFieldWithCondition';
 
 const CompanyNameField = ({
   id,
   label = 'Nazwa pracodawcy',
   placeholder = 'Nazwa pracodawcy',
-  name,
+  name = 'company_name',
   required = false,
   validate = validateText,
-  showError = true
-}) => /*#__PURE__*/React.createElement(Field, {
+  showError = true,
+  requiredCondition = {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    employment_type: ['fixed', 'temporary', 'fixed_partial', 'government', 'agriculture', 'service_contract']
+  }
+}) => /*#__PURE__*/React.createElement(CustomFieldWithCondition, {
   id: id,
   label: label,
   placeholder: placeholder,
@@ -19,7 +23,8 @@ const CompanyNameField = ({
   required: required,
   showError: showError,
   name: name,
-  validate: validate(required)
+  validate: validate,
+  requiredCondition: requiredCondition
 });
 
 CompanyNameField.defaultProps = {

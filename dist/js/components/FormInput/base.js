@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.BaseRangeField = exports.BaseSelectField = exports.default = exports.SliderRow = exports.Row = void 0;
+exports.BaseRangeField = exports.BaseSelectField = exports.BaseDateField = exports.default = exports.SliderRow = exports.Row = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -16,6 +16,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _sizes = require("../../consts/sizes");
 
 var _utils = require("../../utils");
+
+var _DatePickerCore = _interopRequireDefault(require("./DatePickerCore"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -158,7 +160,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  flex-direction: column;\n  > * {\n      flex-basis: 0;\n      flex-grow: 1;\n      width: 0 !important;\n  }\n\n  @media ", " {\n    flex-direction: row;\n    justify-content: space-between;\n    & ", ":first-of-type:not(:last-child) {\n      margin-right: ", ";\n    }\n\n    & ", ":last-child:not(:first-of-type) {\n      margin-left: ", ";\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  margin: 15px auto;\n  flex-direction: column;\n  > * {\n      flex-basis: 0;\n      flex-grow: 1;\n  }\n\n  @media ", " {\n    flex-direction: row;\n    justify-content: space-between;\n    & ", ":first-of-type:not(:last-child) {\n      margin-right: ", ";\n    }\n\n    & ", ":last-child:not(:first-of-type) {\n      margin-left: ", ";\n    }\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -483,16 +485,61 @@ var BaseField = function BaseField(_ref) {
 var _default = BaseField;
 exports.default = _default;
 
-var BaseSelectField = function BaseSelectField(_ref2) {
+var BaseDateField = function BaseDateField(_ref2) {
   var field = _ref2.field,
       _ref2$form = _ref2.form,
       touched = _ref2$form.touched,
       errors = _ref2$form.errors,
       values = _ref2$form.values,
+      setFieldValue = _ref2$form.setFieldValue,
+      setFieldTouched = _ref2$form.setFieldTouched,
       props = _objectWithoutProperties(_ref2, ["field", "form"]);
 
   var _useContext2 = (0, _react.useContext)(_utils.FormContext),
       id = _useContext2.id;
+
+  var _useState = (0, _react.useState)(values[field.name]),
+      _useState2 = _slicedToArray(_useState, 2),
+      currntValue = _useState2[0],
+      setCurrentValue = _useState2[1];
+
+  var handleChange = function handleChange(value) {
+    (0, _utils.setFormValuesToCache)(_objectSpread(_objectSpread({}, values), {}, _defineProperty({}, field.name, value.toString())), id);
+    setCurrentValue(value);
+    setFieldTouched(field.name, true);
+  };
+
+  var handleBlur = function handleBlur() {
+    setFieldTouched(field.name, true);
+  };
+
+  (0, _react.useEffect)(function () {
+    setFieldValue(field.name, currntValue);
+  }, [currntValue, field.name, setFieldValue]);
+  return /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: field.name
+  }, "".concat(props.label).concat(props.required && '*' || '')), props.prefix && /*#__PURE__*/_react.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react.default.createElement(_DatePickerCore.default, {
+    placeholderText: props.placeholder,
+    required: props.required,
+    name: field.name,
+    selected: field.value ? new Date(field.value) : null,
+    onBlur: handleBlur,
+    onChange: handleChange
+  }), props.suffix && /*#__PURE__*/_react.default.createElement(StyledInputSuffix, null, props.suffix), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react.default.createElement(StyledError, null, errors[field.name]));
+};
+
+exports.BaseDateField = BaseDateField;
+
+var BaseSelectField = function BaseSelectField(_ref3) {
+  var field = _ref3.field,
+      _ref3$form = _ref3.form,
+      touched = _ref3$form.touched,
+      errors = _ref3$form.errors,
+      values = _ref3$form.values,
+      props = _objectWithoutProperties(_ref3, ["field", "form"]);
+
+  var _useContext3 = (0, _react.useContext)(_utils.FormContext),
+      id = _useContext3.id;
 
   var handleOnBlur = function handleOnBlur(e) {
     (0, _utils.setFormValuesToCache)(values, id);
@@ -525,22 +572,22 @@ var BaseSelectField = function BaseSelectField(_ref2) {
 
 exports.BaseSelectField = BaseSelectField;
 
-var BaseRangeField = function BaseRangeField(_ref3) {
-  var field = _ref3.field,
-      _ref3$form = _ref3.form,
-      touched = _ref3$form.touched,
-      errors = _ref3$form.errors,
-      values = _ref3$form.values,
-      setFieldValue = _ref3$form.setFieldValue,
-      props = _objectWithoutProperties(_ref3, ["field", "form"]);
+var BaseRangeField = function BaseRangeField(_ref4) {
+  var field = _ref4.field,
+      _ref4$form = _ref4.form,
+      touched = _ref4$form.touched,
+      errors = _ref4$form.errors,
+      values = _ref4$form.values,
+      setFieldValue = _ref4$form.setFieldValue,
+      props = _objectWithoutProperties(_ref4, ["field", "form"]);
 
-  var _useContext3 = (0, _react.useContext)(_utils.FormContext),
-      id = _useContext3.id;
+  var _useContext4 = (0, _react.useContext)(_utils.FormContext),
+      id = _useContext4.id;
 
-  var _useState = (0, _react.useState)(parseInt(field.value) || props.value || 0),
-      _useState2 = _slicedToArray(_useState, 2),
-      value = _useState2[0],
-      setValue = _useState2[1];
+  var _useState3 = (0, _react.useState)(parseInt(field.value) || props.value || 0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      value = _useState4[0],
+      setValue = _useState4[1];
 
   var handleOnChangeSlider = function handleOnChangeSlider(value) {
     setValue(value);

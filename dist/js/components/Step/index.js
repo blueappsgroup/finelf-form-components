@@ -110,12 +110,16 @@ var Step = function Step(_ref) {
 
   var mappedFields = (0, _react.useMemo)(function () {
     return (Array.isArray(children) ? children : [children]).reduce(function (acc, item) {
-      if (item.props.name && item.props.required) {
+      if (item.props.name && !item.props.children) {
         acc[item.props.name] = true;
       }
 
+      if (item.props.name && item.props.required) {
+        acc.requiredFields[item.props.name] = true;
+      }
+
       if (item.props && item.props.name === 'agreements') {
-        acc[item.props.name] = true;
+        acc.requiredFields[item.props.name] = true;
       }
 
       if (item.props.children) {
@@ -123,18 +127,25 @@ var Step = function Step(_ref) {
 
         mappedChildrens.forEach(function (child) {
           if (child.props.name && child.props.required) {
-            if (item.props.name) {
-              acc[item.props.name][child.props.name] = true;
+            if (item.props.type === 'checkboxGroup') {
+              !acc.requiredFields[item.props.name] && (acc.requiredFields[item.props.name] = {});
+              acc.requiredFields[item.props.name][child.props.name] = true;
               return;
             }
 
+            acc.requiredFields[child.props.name] = true;
+          }
+
+          if (child.props.name) {
             acc[child.props.name] = true;
           }
         });
       }
 
       return acc;
-    }, {});
+    }, {
+      requiredFields: {}
+    });
   }, [children]);
 
   var _useState = (0, _react.useState)(JSON.stringify(mappedFields) !== JSON.stringify({})),
@@ -145,7 +156,7 @@ var Step = function Step(_ref) {
   var lastStepIndex = stepsLength ? stepsLength - 1 : 0;
   (0, _react.useEffect)(function () {
     var hasError;
-    Object.keys(mappedFields).some(function (key) {
+    Object.keys(mappedFields.requiredFields).some(function (key) {
       if (!values[key] || values[key] === '' || errors[key]) {
         hasError = true;
         return true;
@@ -159,6 +170,17 @@ var Step = function Step(_ref) {
       return false;
     });
 
+    if (!hasError) {
+      Object.keys(mappedFields).some(function (key) {
+        if (errors[key]) {
+          hasError = true;
+          return true;
+        }
+
+        return false;
+      });
+    }
+
     if (hasError) {
       setNextButtonDisabled(true);
     }
@@ -171,7 +193,7 @@ var Step = function Step(_ref) {
     visible: stepIndex === currentStep
   }, /*#__PURE__*/_react.default.createElement(StepHeaderWrapper, null, currentStep !== 0 && /*#__PURE__*/_react.default.createElement(_StepHeader.default, null, stepsTitleList && stepsTitleList[currentStep - 1]), stepIndex === currentStep && /*#__PURE__*/_react.default.createElement(_StepHeader.default, {
     activeStep: true
-  }, stepsTitleList && stepsTitleList[currentStep]), currentStep === 0 && stepsLength > 1 && /*#__PURE__*/_react.default.createElement(_StepHeader.default, null, stepsTitleList && stepsTitleList[currentStep + 1])), children, /*#__PURE__*/_react.default.createElement(ButtonsWrapper, {
+  }, stepsTitleList && stepsTitleList[currentStep]), currentStep === 0 && stepsLength > 1 && /*#__PURE__*/_react.default.createElement(_StepHeader.default, null, stepsTitleList && stepsTitleList[currentStep + 1])), stepIndex === currentStep && children, /*#__PURE__*/_react.default.createElement(ButtonsWrapper, {
     isFirstStep: currentStep === 0
   }, currentStep !== 0 && /*#__PURE__*/_react.default.createElement(_Button.default, {
     type: "button",

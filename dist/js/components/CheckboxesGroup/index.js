@@ -75,7 +75,11 @@ var CheckboxesGroup = function CheckboxesGroup(_ref) {
 
 CheckboxesGroup.propTypes = {
   name: _propTypes.default.string.isRequired,
-  children: _propTypes.default.any.isRequired
+  children: _propTypes.default.any.isRequired,
+  groupType: _propTypes.default.string
+};
+CheckboxesGroup.defaultProps = {
+  groupType: 'checkboxGroup'
 };
 var _default = CheckboxesGroup;
 exports.default = _default;

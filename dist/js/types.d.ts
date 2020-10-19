@@ -25,6 +25,18 @@ export declare type FieldWrapProps = FieldProps & {
     HTMLcontent?: string;
     skipFieldForApi?: boolean;
 };
+export declare type FieldDateWrapProps = FieldProps & {
+    label?: string;
+    showError?: boolean;
+    onChange?: Function;
+    placeholder?: string;
+    required?: boolean;
+    children?: ReactElement | ReactElement[];
+    childrenBody?: ReactElement | ReactElement[];
+    type?: string;
+    suffix?: string;
+    prefix?: string;
+};
 export declare type SelectFieldOptions = {
     [key: string]: string;
 };
@@ -60,7 +72,7 @@ export declare type SelectFieldProps = {
     validate?: Function;
     showError?: boolean;
 };
-export declare type TextFieldProps = {
+export interface TextFieldProps {
     id?: string;
     label?: string;
     placeholder?: string;
@@ -68,7 +80,12 @@ export declare type TextFieldProps = {
     required?: boolean;
     validate?: Function;
     showError?: boolean;
-};
+}
+export interface TextFieldWithConditonProps extends TextFieldProps {
+    requiredCondition?: {
+        [key: string]: string[];
+    };
+}
 export declare type RangeFieldProps = {
     id?: string;
     label?: string;
@@ -142,6 +159,7 @@ export declare type OtherLoanAmountFieldProps = {
     validate?: Function;
 };
 export declare type CustomThemeType = {
+    formBoxShadow?: string;
     formMaxWidth?: string;
     formBgColor?: string;
     inputHeight?: string;
@@ -278,5 +296,7 @@ export declare type RedirectPagePropsTypes = {
 export declare type ImageProps = {
     src: string;
     alt: string;
+    text?: string;
     hideOnMobile?: boolean;
+    disableShadow?: boolean;
 };

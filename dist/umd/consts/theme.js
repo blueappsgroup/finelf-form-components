@@ -90,6 +90,7 @@
     black: '#000'
   };
   const theme = exports.theme = {
+    formBoxShadow: '0px 20px 60px rgba(0, 0, 0, 0.08)',
     formMaxWidth: '600px',
     formBgColor: colors.white,
     inputHeight: '63px',
@@ -112,7 +113,21 @@
     inputTextAlign: 'left',
     inputPadding: '0 20px',
     labelFontSize: '16px',
-    styledRowFlexWrap: 'nowrap',
+    datePickerHeight: '63px',
+    datePickerTextColor: colors.mainGrey,
+    datePickerPlaceHolderColor: colors.mainGrey,
+    datePickerBorderColor: colors.ligthGrey,
+    datePickerBorderWidth: '1px',
+    datePickerBorderStyle: 'solid',
+    datePickerBorderRadius: '6px',
+    datePickerBgColor: colors.white,
+    datePickerBoxShadow: '0px 7px 64px rgba(194, 186, 186, 0.07)',
+    datePickerFontSize: '14px',
+    datePickerFontWeight: '500',
+    datePickerFontStyle: 'normal',
+    datePickerLineHeight: '24px',
+    datePickerPadding: '0 20px',
+    styledRowFlexWrap: 'no-wrap',
     styledRowLabelPadding: '10px',
     styledRowLabelFontColor: colors.black,
     styledSelectHeight: '63px',
@@ -193,7 +208,14 @@
     styledInputSuffixFontWeight: 'bold',
     styledInputSuffixBorderRadius: '0 5px 5px 0',
     styledInputPrefixPadding: '0 15px',
-    marginBetweenRowChildren: '5px'
+    marginBetweenRowChildren: '5px',
+    hrColor: colors.mainGrey,
+    hrSize: '1px',
+    imageContainerPadding: '0px',
+    imageContainerTextTopPosition: '25%',
+    imageContainerTextFontSize: '45px',
+    imageContainerTextFontWeight: '900',
+    imageBoxShadow: 'none'
   };
 
   const ThemeProvider = exports.ThemeProvider = ({

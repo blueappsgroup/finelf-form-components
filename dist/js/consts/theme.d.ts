@@ -13,6 +13,7 @@ export declare const colors: {
     black: string;
 };
 export declare const theme: {
+    formBoxShadow: string;
     formMaxWidth: string;
     formBgColor: string;
     inputHeight: string;
@@ -35,6 +36,20 @@ export declare const theme: {
     inputTextAlign: string;
     inputPadding: string;
     labelFontSize: string;
+    datePickerHeight: string;
+    datePickerTextColor: string;
+    datePickerPlaceHolderColor: string;
+    datePickerBorderColor: string;
+    datePickerBorderWidth: string;
+    datePickerBorderStyle: string;
+    datePickerBorderRadius: string;
+    datePickerBgColor: string;
+    datePickerBoxShadow: string;
+    datePickerFontSize: string;
+    datePickerFontWeight: string;
+    datePickerFontStyle: string;
+    datePickerLineHeight: string;
+    datePickerPadding: string;
     styledRowFlexWrap: string;
     styledRowLabelPadding: string;
     styledRowLabelFontColor: string;
@@ -117,6 +132,13 @@ export declare const theme: {
     styledInputSuffixBorderRadius: string;
     styledInputPrefixPadding: string;
     marginBetweenRowChildren: string;
+    hrColor: string;
+    hrSize: string;
+    imageContainerPadding: string;
+    imageContainerTextTopPosition: string;
+    imageContainerTextFontSize: string;
+    imageContainerTextFontWeight: string;
+    imageBoxShadow: string;
 };
 declare type ThemeProviderPops = {
     children: ReactElement | ReactElement[];

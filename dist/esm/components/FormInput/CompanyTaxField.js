@@ -7,10 +7,14 @@ const CompanyTaxField = ({
   id,
   label = 'NIP firmy',
   placeholder = 'NIP firmy',
-  name,
+  name = 'company_tax_id',
   required = false,
   validate = validateCompanyTax,
-  showError = true
+  showError = true,
+  requiredCondition = {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    employment_type: ['self_employed']
+  }
 }) => /*#__PURE__*/React.createElement(Field, {
   id: id,
   label: label,
@@ -19,7 +23,8 @@ const CompanyTaxField = ({
   required: required,
   showError: showError,
   name: name,
-  validate: validate(required)
+  validate: validate,
+  requiredCondition: requiredCondition
 });
 
 CompanyTaxField.defaultProps = {

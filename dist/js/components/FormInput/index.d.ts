@@ -27,4 +27,5 @@ export { default as PeriodField } from './PeriodField';
 export { default as OtherLoanAmountField } from './OtherLoanAmountField';
 export { default as AmountOfChildrenField } from './AmountOfChildrenField';
 export { default as IncomeField } from './IncomeField';
+export { default as CustomFieldWithCondition } from './CustomFieldWithCondition';
 export { Row } from './base';

@@ -61,10 +61,12 @@ const Agreemnets = ({
 
 Agreemnets.propTypes = {
   linksForReplace: _pt.objectOf(_pt.string),
-  name: _pt.string
+  name: _pt.string,
+  groupType: _pt.string
 };
 Agreemnets.defaultProps = {
-  name: 'agreements'
+  name: 'agreements',
+  groupType: 'checkboxGroup'
 };
 export default Agreemnets;
 //# sourceMappingURL=index.js.map

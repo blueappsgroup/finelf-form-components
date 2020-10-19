@@ -218,4 +218,13 @@ export const validateSelect = (required, options) => value => {
     return 'Podane dane są nieprawidłowe';
   }
 };
+export const validateDate = required => value => {
+  if (!required && !value) {
+    return;
+  }
+
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane';
+  }
+};
 //# sourceMappingURL=validate.js.map

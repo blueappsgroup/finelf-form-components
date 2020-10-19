@@ -53,7 +53,11 @@ const CheckboxesGroup = ({
 
 CheckboxesGroup.propTypes = {
   name: _pt.string.isRequired,
-  children: _pt.any.isRequired
+  children: _pt.any.isRequired,
+  groupType: _pt.string
+};
+CheckboxesGroup.defaultProps = {
+  groupType: 'checkboxGroup'
 };
 export default CheckboxesGroup;
 //# sourceMappingURL=index.js.map

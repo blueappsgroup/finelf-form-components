@@ -92,12 +92,16 @@
       errors
     } = (0, _formik.useFormikContext)();
     const mappedFields = (0, _react.useMemo)(() => (Array.isArray(children) ? children : [children]).reduce((acc, item) => {
-      if (item.props.name && item.props.required) {
+      if (item.props.name && !item.props.children) {
         acc[item.props.name] = true;
       }
 
+      if (item.props.name && item.props.required) {
+        acc.requiredFields[item.props.name] = true;
+      }
+
       if (item.props && item.props.name === 'agreements') {
-        acc[item.props.name] = true;
+        acc.requiredFields[item.props.name] = true;
       }
 
       if (item.props.children) {
@@ -105,23 +109,30 @@
 
         mappedChildrens.forEach(child => {
           if (child.props.name && child.props.required) {
-            if (item.props.name) {
-              acc[item.props.name][child.props.name] = true;
+            if (item.props.type === 'checkboxGroup') {
+              !acc.requiredFields[item.props.name] && (acc.requiredFields[item.props.name] = {});
+              acc.requiredFields[item.props.name][child.props.name] = true;
               return;
             }
 
+            acc.requiredFields[child.props.name] = true;
+          }
+
+          if (child.props.name) {
             acc[child.props.name] = true;
           }
         });
       }
 
       return acc;
-    }, {}), [children]);
+    }, {
+      requiredFields: {}
+    }), [children]);
     const [nextButtonDisabled, setNextButtonDisabled] = (0, _react.useState)(JSON.stringify(mappedFields) !== JSON.stringify({}));
     const lastStepIndex = stepsLength ? stepsLength - 1 : 0;
     (0, _react.useEffect)(() => {
       let hasError;
-      Object.keys(mappedFields).some(key => {
+      Object.keys(mappedFields.requiredFields).some(key => {
         if (!values[key] || values[key] === '' || errors[key]) {
           hasError = true;
           return true;
@@ -135,6 +146,17 @@
         return false;
       });
 
+      if (!hasError) {
+        Object.keys(mappedFields).some(key => {
+          if (errors[key]) {
+            hasError = true;
+            return true;
+          }
+
+          return false;
+        });
+      }
+
       if (hasError) {
         setNextButtonDisabled(true);
       }
@@ -147,7 +169,7 @@
       visible: stepIndex === currentStep
     }, /*#__PURE__*/_react2.default.createElement(StepHeaderWrapper, null, currentStep !== 0 && /*#__PURE__*/_react2.default.createElement(_StepHeader2.default, null, stepsTitleList && stepsTitleList[currentStep - 1]), stepIndex === currentStep && /*#__PURE__*/_react2.default.createElement(_StepHeader2.default, {
       activeStep: true
-    }, stepsTitleList && stepsTitleList[currentStep]), currentStep === 0 && stepsLength > 1 && /*#__PURE__*/_react2.default.createElement(_StepHeader2.default, null, stepsTitleList && stepsTitleList[currentStep + 1])), children, /*#__PURE__*/_react2.default.createElement(ButtonsWrapper, {
+    }, stepsTitleList && stepsTitleList[currentStep]), currentStep === 0 && stepsLength > 1 && /*#__PURE__*/_react2.default.createElement(_StepHeader2.default, null, stepsTitleList && stepsTitleList[currentStep + 1])), stepIndex === currentStep && children, /*#__PURE__*/_react2.default.createElement(ButtonsWrapper, {
       isFirstStep: currentStep === 0
     }, currentStep !== 0 && /*#__PURE__*/_react2.default.createElement(_Button2.default, {
       type: "button",

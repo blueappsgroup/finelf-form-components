@@ -62,7 +62,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  margin: 0 10px;\n  background: ", ";\n  font-family: 'Manrope', BlinkMacSystemFont, -apple-system, 'Segoe UI',\n    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;\n  padding: 20px 15px;\n  border-radius: 6px;\n  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);\n\n  @media ", " {\n    padding: 20px 30px;\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  margin: 0 10px;\n  background: ", ";\n  font-family: 'Manrope', BlinkMacSystemFont, -apple-system, 'Segoe UI',\n    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;\n  padding: 20px 15px;\n  border-radius: 6px;\n  box-shadow: ", ";\n\n  @media ", " {\n    padding: 20px 30px;\n    margin: 0 auto;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -77,6 +77,8 @@ var StyledForm = (0, _styledComponents.default)(_formik.Form)(_templateObject(),
   return props.theme.formMaxWidth;
 }, function (props) {
   return props.theme.formBgColor;
+}, function (props) {
+  return props.theme.formBoxShadow;
 }, _sizes.device.tablet);
 
 var FormWrapper = function FormWrapper(_ref) {

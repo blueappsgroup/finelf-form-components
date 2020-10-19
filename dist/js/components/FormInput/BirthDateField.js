@@ -9,7 +9,9 @@ var _react = _interopRequireDefault(require("react"));
 
 var _formik = require("formik");
 
-var _base = _interopRequireDefault(require("./base"));
+var _base = require("./base");
+
+var _validate = require("./validate");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27,11 +29,11 @@ var BirthDateField = function BirthDateField(_ref) {
     required: required,
     showError: showError,
     id: id,
+    component: _base.BaseDateField,
     name: name,
-    component: _base.default,
     label: label,
     placeholder: placeholder,
-    type: "date"
+    validate: (0, _validate.validateDate)(required)
   });
 };
 

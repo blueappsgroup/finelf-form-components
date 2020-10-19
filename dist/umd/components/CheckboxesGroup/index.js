@@ -138,7 +138,11 @@
 
   CheckboxesGroup.propTypes = {
     name: _propTypes2.default.string.isRequired,
-    children: _propTypes2.default.any.isRequired
+    children: _propTypes2.default.any.isRequired,
+    groupType: _propTypes2.default.string
+  };
+  CheckboxesGroup.defaultProps = {
+    groupType: 'checkboxGroup'
   };
   exports.default = CheckboxesGroup;
 });

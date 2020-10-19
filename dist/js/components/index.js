@@ -14,7 +14,8 @@ var _exportNames = {
   TrasactionId: true,
   Agreements: true,
   Image: true,
-  OptionalGroup: true
+  OptionalGroup: true,
+  Hr: true
 };
 Object.defineProperty(exports, "Header", {
   enumerable: true,
@@ -82,12 +83,19 @@ Object.defineProperty(exports, "OptionalGroup", {
     return _OptionalGroup.default;
   }
 });
+Object.defineProperty(exports, "Hr", {
+  enumerable: true,
+  get: function get() {
+    return _Hr.default;
+  }
+});
 
 var _FormInput = require("./FormInput");
 
 Object.keys(_FormInput).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _FormInput[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
@@ -117,6 +125,8 @@ var _Agreements = _interopRequireDefault(require("./Agreements"));
 var _Image = _interopRequireDefault(require("./Image"));
 
 var _OptionalGroup = _interopRequireDefault(require("./OptionalGroup"));
+
+var _Hr = _interopRequireDefault(require("./Hr"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //# sourceMappingURL=index.js.map

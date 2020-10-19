@@ -1,4 +1,4 @@
 import { FC } from 'react';
-import { TextFieldProps } from '../../types';
-declare const CompanyNameField: FC<TextFieldProps>;
+import { TextFieldWithConditonProps } from '../../types';
+declare const CompanyNameField: FC<TextFieldWithConditonProps>;
 export default CompanyNameField;

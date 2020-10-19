@@ -11,11 +11,12 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useContext, useLayoutEffect, useState } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react';
 import Slider from 'react-rangeslider';
 import styled from 'styled-components';
 import { device } from '../../consts/sizes';
 import { FormContext, setFormValuesToCache } from '../../utils';
+import DatePickerCore from './DatePickerCore';
 
 /* eslint-disable */
 const StyledRow = styled.div`
@@ -47,11 +48,11 @@ const StyledRowRangeField = styled.div`
 export const Row = styled.div`
   display: flex;
   width: 100%;
+  margin: 15px auto;
   flex-direction: column;
   > * {
       flex-basis: 0;
       flex-grow: 1;
-      width: 0 !important;
   }
 
   @media ${device.tablet} {
@@ -311,7 +312,51 @@ const BaseField = (_ref) => {
 };
 
 export default BaseField;
-export const BaseSelectField = (_ref2) => {
+export const BaseDateField = (_ref2) => {
+  let {
+    field,
+    form: {
+      touched,
+      errors,
+      values,
+      setFieldValue,
+      setFieldTouched
+    }
+  } = _ref2,
+      props = _objectWithoutProperties(_ref2, ["field", "form"]);
+
+  const {
+    id
+  } = useContext(FormContext);
+  const [currntValue, setCurrentValue] = useState(values[field.name]);
+
+  const handleChange = value => {
+    setFormValuesToCache(_objectSpread(_objectSpread({}, values), {}, {
+      [field.name]: value.toString()
+    }), id);
+    setCurrentValue(value);
+    setFieldTouched(field.name, true);
+  };
+
+  const handleBlur = () => {
+    setFieldTouched(field.name, true);
+  };
+
+  useEffect(() => {
+    setFieldValue(field.name, currntValue);
+  }, [currntValue, field.name, setFieldValue]);
+  return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
+    htmlFor: field.name
+  }, `${props.label}${props.required && '*' || ''}`), props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/React.createElement(DatePickerCore, {
+    placeholderText: props.placeholder,
+    required: props.required,
+    name: field.name,
+    selected: field.value ? new Date(field.value) : null,
+    onBlur: handleBlur,
+    onChange: handleChange
+  }), props.suffix && /*#__PURE__*/React.createElement(StyledInputSuffix, null, props.suffix), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/React.createElement(StyledError, null, errors[field.name]));
+};
+export const BaseSelectField = (_ref3) => {
   let {
     field,
     form: {
@@ -319,8 +364,8 @@ export const BaseSelectField = (_ref2) => {
       errors,
       values
     }
-  } = _ref2,
-      props = _objectWithoutProperties(_ref2, ["field", "form"]);
+  } = _ref3,
+      props = _objectWithoutProperties(_ref3, ["field", "form"]);
 
   const {
     id
@@ -354,7 +399,7 @@ export const BaseSelectField = (_ref2) => {
     placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
   }), props.options && options(props.options)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/React.createElement(StyledError, null, errors[field.name]));
 };
-export const BaseRangeField = (_ref3) => {
+export const BaseRangeField = (_ref4) => {
   let {
     field,
     form: {
@@ -363,8 +408,8 @@ export const BaseRangeField = (_ref3) => {
       values,
       setFieldValue
     }
-  } = _ref3,
-      props = _objectWithoutProperties(_ref3, ["field", "form"]);
+  } = _ref4,
+      props = _objectWithoutProperties(_ref4, ["field", "form"]);
 
   const {
     id

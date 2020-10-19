@@ -32,11 +32,20 @@
   display: ${props => props.hideOnMobile ? 'none' : 'flex'};
   justify-content: center;
   width: 100%;
-  margin: 0 auto 15px;
+  padding: ${props => props.theme.imageContainerPadding};
+  margin: 0 auto;
   align-items: flex-start;
   
   img {
     max-width: 100%;  
+    box-shadow: ${props => props.disableShadow ? 'none' : props.theme.imageBoxShadow};
+  }
+  
+  span {
+    position: absolute;
+    top: ${props => props.theme.imageContainerTextTopPosition};
+    font-size: ${props => props.theme.imageContainerTextFontSize};
+    font-weight: ${props => props.theme.imageContainerTextFontWeight};
   }
   
   @media ${_sizes.device.tablet} { 
@@ -47,13 +56,16 @@
   const Image = ({
     src,
     alt,
-    hideOnMobile
+    text,
+    hideOnMobile,
+    disableShadow
   }) => /*#__PURE__*/_react2.default.createElement(StyledContainer, {
-    hideOnMobile: hideOnMobile
+    hideOnMobile: hideOnMobile,
+    disableShadow: disableShadow
   }, /*#__PURE__*/_react2.default.createElement("img", {
     src: src,
     alt: alt
-  }));
+  }), text && /*#__PURE__*/_react2.default.createElement("span", null, text));
 
   exports.default = Image;
 });

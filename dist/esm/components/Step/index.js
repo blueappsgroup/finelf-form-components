@@ -65,12 +65,16 @@ const Step = ({
     errors
   } = useFormikContext();
   const mappedFields = useMemo(() => (Array.isArray(children) ? children : [children]).reduce((acc, item) => {
-    if (item.props.name && item.props.required) {
+    if (item.props.name && !item.props.children) {
       acc[item.props.name] = true;
     }
 
+    if (item.props.name && item.props.required) {
+      acc.requiredFields[item.props.name] = true;
+    }
+
     if (item.props && item.props.name === 'agreements') {
-      acc[item.props.name] = true;
+      acc.requiredFields[item.props.name] = true;
     }
 
     if (item.props.children) {
@@ -78,23 +82,30 @@ const Step = ({
 
       mappedChildrens.forEach(child => {
         if (child.props.name && child.props.required) {
-          if (item.props.name) {
-            acc[item.props.name][child.props.name] = true;
+          if (item.props.type === 'checkboxGroup') {
+            !acc.requiredFields[item.props.name] && (acc.requiredFields[item.props.name] = {});
+            acc.requiredFields[item.props.name][child.props.name] = true;
             return;
           }
 
+          acc.requiredFields[child.props.name] = true;
+        }
+
+        if (child.props.name) {
           acc[child.props.name] = true;
         }
       });
     }
 
     return acc;
-  }, {}), [children]);
+  }, {
+    requiredFields: {}
+  }), [children]);
   const [nextButtonDisabled, setNextButtonDisabled] = useState(JSON.stringify(mappedFields) !== JSON.stringify({}));
   const lastStepIndex = stepsLength ? stepsLength - 1 : 0;
   useEffect(() => {
     let hasError;
-    Object.keys(mappedFields).some(key => {
+    Object.keys(mappedFields.requiredFields).some(key => {
       if (!values[key] || values[key] === '' || errors[key]) {
         hasError = true;
         return true;
@@ -108,6 +119,17 @@ const Step = ({
       return false;
     });
 
+    if (!hasError) {
+      Object.keys(mappedFields).some(key => {
+        if (errors[key]) {
+          hasError = true;
+          return true;
+        }
+
+        return false;
+      });
+    }
+
     if (hasError) {
       setNextButtonDisabled(true);
     }
@@ -120,7 +142,7 @@ const Step = ({
     visible: stepIndex === currentStep
   }, /*#__PURE__*/React.createElement(StepHeaderWrapper, null, currentStep !== 0 && /*#__PURE__*/React.createElement(StepHeader, null, stepsTitleList && stepsTitleList[currentStep - 1]), stepIndex === currentStep && /*#__PURE__*/React.createElement(StepHeader, {
     activeStep: true
-  }, stepsTitleList && stepsTitleList[currentStep]), currentStep === 0 && stepsLength > 1 && /*#__PURE__*/React.createElement(StepHeader, null, stepsTitleList && stepsTitleList[currentStep + 1])), children, /*#__PURE__*/React.createElement(ButtonsWrapper, {
+  }, stepsTitleList && stepsTitleList[currentStep]), currentStep === 0 && stepsLength > 1 && /*#__PURE__*/React.createElement(StepHeader, null, stepsTitleList && stepsTitleList[currentStep + 1])), stepIndex === currentStep && children, /*#__PURE__*/React.createElement(ButtonsWrapper, {
     isFirstStep: currentStep === 0
   }, currentStep !== 0 && /*#__PURE__*/React.createElement(Button, {
     type: "button",

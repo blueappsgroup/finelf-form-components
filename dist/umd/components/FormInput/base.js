@@ -1,28 +1,30 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react", "react-rangeslider", "styled-components", "../../consts/sizes", "../../utils"], factory);
+    define(["exports", "react", "react-rangeslider", "styled-components", "../../consts/sizes", "../../utils", "./DatePickerCore"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"), require("react-rangeslider"), require("styled-components"), require("../../consts/sizes"), require("../../utils"));
+    factory(exports, require("react"), require("react-rangeslider"), require("styled-components"), require("../../consts/sizes"), require("../../utils"), require("./DatePickerCore"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.reactRangeslider, global.styledComponents, global.sizes, global.utils);
+    factory(mod.exports, global.react, global.reactRangeslider, global.styledComponents, global.sizes, global.utils, global.DatePickerCore);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _react, _reactRangeslider, _styledComponents, _sizes, _utils) {
+})(this, function (exports, _react, _reactRangeslider, _styledComponents, _sizes, _utils, _DatePickerCore) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.BaseRangeField = exports.BaseSelectField = exports.SliderRow = exports.Row = undefined;
+  exports.BaseRangeField = exports.BaseSelectField = exports.BaseDateField = exports.SliderRow = exports.Row = undefined;
 
   var _react2 = _interopRequireDefault(_react);
 
   var _reactRangeslider2 = _interopRequireDefault(_reactRangeslider);
 
   var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+  var _DatePickerCore2 = _interopRequireDefault(_DatePickerCore);
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -165,11 +167,11 @@
   const Row = exports.Row = _styledComponents2.default.div`
   display: flex;
   width: 100%;
+  margin: 15px auto;
   flex-direction: column;
   > * {
       flex-basis: 0;
       flex-grow: 1;
-      width: 0 !important;
   }
 
   @media ${_sizes.device.tablet} {
@@ -430,7 +432,52 @@
 
   exports.default = BaseField;
 
-  const BaseSelectField = exports.BaseSelectField = _ref2 => {
+  const BaseDateField = exports.BaseDateField = _ref2 => {
+    let {
+      field,
+      form: {
+        touched,
+        errors,
+        values,
+        setFieldValue,
+        setFieldTouched
+      }
+    } = _ref2,
+        props = _objectWithoutProperties(_ref2, ["field", "form"]);
+
+    const {
+      id
+    } = (0, _react.useContext)(_utils.FormContext);
+    const [currntValue, setCurrentValue] = (0, _react.useState)(values[field.name]);
+
+    const handleChange = value => {
+      (0, _utils.setFormValuesToCache)(_objectSpread(_objectSpread({}, values), {}, {
+        [field.name]: value.toString()
+      }), id);
+      setCurrentValue(value);
+      setFieldTouched(field.name, true);
+    };
+
+    const handleBlur = () => {
+      setFieldTouched(field.name, true);
+    };
+
+    (0, _react.useEffect)(() => {
+      setFieldValue(field.name, currntValue);
+    }, [currntValue, field.name, setFieldValue]);
+    return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
+      htmlFor: field.name
+    }, `${props.label}${props.required && '*' || ''}`), props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix), /*#__PURE__*/_react2.default.createElement(_DatePickerCore2.default, {
+      placeholderText: props.placeholder,
+      required: props.required,
+      name: field.name,
+      selected: field.value ? new Date(field.value) : null,
+      onBlur: handleBlur,
+      onChange: handleChange
+    }), props.suffix && /*#__PURE__*/_react2.default.createElement(StyledInputSuffix, null, props.suffix), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react2.default.createElement(StyledError, null, errors[field.name]));
+  };
+
+  const BaseSelectField = exports.BaseSelectField = _ref3 => {
     let {
       field,
       form: {
@@ -438,8 +485,8 @@
         errors,
         values
       }
-    } = _ref2,
-        props = _objectWithoutProperties(_ref2, ["field", "form"]);
+    } = _ref3,
+        props = _objectWithoutProperties(_ref3, ["field", "form"]);
 
     const {
       id
@@ -474,7 +521,7 @@
     }), props.options && options(props.options)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react2.default.createElement(StyledError, null, errors[field.name]));
   };
 
-  const BaseRangeField = exports.BaseRangeField = _ref3 => {
+  const BaseRangeField = exports.BaseRangeField = _ref4 => {
     let {
       field,
       form: {
@@ -483,8 +530,8 @@
         values,
         setFieldValue
       }
-    } = _ref3,
-        props = _objectWithoutProperties(_ref3, ["field", "form"]);
+    } = _ref4,
+        props = _objectWithoutProperties(_ref4, ["field", "form"]);
 
     const {
       id

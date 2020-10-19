@@ -128,10 +128,12 @@
 
   Agreemnets.propTypes = {
     linksForReplace: _propTypes2.default.objectOf(_propTypes2.default.string),
-    name: _propTypes2.default.string
+    name: _propTypes2.default.string,
+    groupType: _propTypes2.default.string
   };
   Agreemnets.defaultProps = {
-    name: 'agreements'
+    name: 'agreements',
+    groupType: 'checkboxGroup'
   };
   exports.default = Agreemnets;
 });
