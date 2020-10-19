@@ -45,11 +45,6 @@ const StyledDatePicker = styled(DatePicker)`
   &:focus {
     outline: none;
   }
-
-  .test {
-    display: flex !important;
-    width: 100% !important;
-  }
 `
 /* eslint-enable */
 
@@ -143,7 +138,6 @@ const DatePickerCore: FC<any> = ({ ...props }) => (
       renderCustomHeader={CustomHeader}
       dateFormat="dd-MM-yyyy"
       onFocus={(e): boolean => (e.target.readOnly = true)}
-      wrapperClassName="test"
     />
   </StyledWrapper>
 )
