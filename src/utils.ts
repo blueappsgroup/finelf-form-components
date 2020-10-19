@@ -65,9 +65,16 @@ export const handleSendDataToApi: (
   values: FormValuesType,
   apiUrl: string,
   formId: string,
-  fieldsForSkip: string[]
+  fieldsForSkip: string[],
+  dataWithUserAgent?: boolean
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-) => Promise<any> = (values, apiUrl, formId, fieldsForSkip) => {
+) => Promise<any> = (
+  values,
+  apiUrl,
+  formId,
+  fieldsForSkip,
+  dataWithUserAgent
+) => {
   const { agreements, ...rest } = values
   const filteredValues = Object.keys(rest).reduce((acc, key) => {
     if (!fieldsForSkip.includes(key)) {
@@ -76,13 +83,20 @@ export const handleSendDataToApi: (
     return acc
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }, {} as { [key: string]: any })
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const mappedAgreements = Object.keys(agreements).reduce<any>((acc, key) => {
-    if (key !== 'selectAll' && agreements[key]) {
-      acc.push(key)
-    }
-    return acc
-  }, [])
+  const mappedAgreements =
+    agreements &&
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Object.keys(agreements).reduce<any>((acc, key) => {
+      if (key !== 'selectAll' && agreements[key]) {
+        acc.push(key)
+      }
+      return acc
+    }, [])
+
+  if (dataWithUserAgent) {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    filteredValues.user_agent = window.navigator.userAgent
+  }
 
   return fetch(`${apiUrl}/forms/${formId}/data`, {
     method: 'POST',
