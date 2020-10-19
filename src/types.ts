@@ -69,7 +69,7 @@ export type SelectFieldProps = {
   showError?: boolean
 }
 
-export type TextFieldProps = {
+export interface TextFieldProps {
   id?: string
   label?: string
   placeholder?: string
@@ -77,6 +77,11 @@ export type TextFieldProps = {
   required?: boolean
   validate?: Function
   showError?: boolean
+}
+
+export interface TextFieldWithConditonProps extends TextFieldProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  requiredCondition?: { [key: string]: string[] }
 }
 
 export type RangeFieldProps = {

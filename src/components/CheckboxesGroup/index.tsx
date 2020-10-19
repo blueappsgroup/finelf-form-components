@@ -7,6 +7,7 @@ import CheckboxField from '../FormInput/CheckboxField'
 type CheckboxesGroupTypes = {
   name: string
   children: any
+  groupType?: string
 }
 
 const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
@@ -60,6 +61,10 @@ const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
       )}
     />
   )
+}
+
+CheckboxesGroup.defaultProps = {
+  groupType: 'checkboxGroup',
 }
 
 export default CheckboxesGroup

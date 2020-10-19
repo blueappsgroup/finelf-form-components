@@ -1,20 +1,31 @@
 import React, { FC } from 'react'
-import { Field } from 'formik'
 
-import { TextFieldProps } from '../../types'
+import { TextFieldWithConditonProps } from '../../types'
 import BaseField from './base'
 import { validateText } from './validate'
+import CustomFieldWithCondition from './CustomFieldWithCondition'
 
-const CompanyNameField: FC<TextFieldProps> = ({
+const CompanyNameField: FC<TextFieldWithConditonProps> = ({
   id,
   label = 'Nazwa pracodawcy',
   placeholder = 'Nazwa pracodawcy',
-  name,
+  name = 'company_name',
   required = false,
   validate = validateText,
   showError = true,
+  requiredCondition = {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    employment_type: [
+      'fixed',
+      'temporary',
+      'fixed_partial',
+      'government',
+      'agriculture',
+      'service_contract',
+    ],
+  },
 }) => (
-  <Field
+  <CustomFieldWithCondition
     id={id}
     label={label}
     placeholder={placeholder}
@@ -22,7 +33,8 @@ const CompanyNameField: FC<TextFieldProps> = ({
     required={required}
     showError={showError}
     name={name}
-    validate={validate(required)}
+    validate={validate}
+    requiredCondition={requiredCondition}
   />
 )
 

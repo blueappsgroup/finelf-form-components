@@ -167,7 +167,6 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   const [collapsed, setCollapsed] = useState(false)
   const [hasCollapse, setHasCollapse] = useState(false)
   const { id, addFieldForSkip } = useContext(FormContext)
-
   const handleOnMouseOut = (): void => {
     setFormValuesToCache(values, id)
   }
