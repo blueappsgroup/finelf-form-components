@@ -10,7 +10,8 @@ const IncomeField = ({
   errorMsg = 'Podana kwota jest nieprawidłowa',
   name,
   required = false,
-  showError = true
+  showError = true,
+  suffix
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,
@@ -20,7 +21,8 @@ const IncomeField = ({
   label: label,
   placeholder: placeholder,
   type: "text",
-  validate: validateIncome(errorMsg, required)
+  validate: validateIncome(errorMsg, required),
+  suffix: suffix
 });
 
 IncomeField.defaultProps = {

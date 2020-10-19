@@ -1,6 +1,5 @@
 import { ReactElement, ReactNode } from 'react'
 import { FieldProps } from 'formik'
-import { colors } from './consts/theme'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type FormValuesType = any
@@ -13,6 +12,7 @@ export type CheckboxFieldProps = {
   onChange?: Function
   children?: ReactElement | ReactElement[]
   HTMLcontent?: string
+  skipFieldForApi?: boolean
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -27,6 +27,7 @@ export type FieldWrapProps = FieldProps & {
   suffix?: string
   prefix?: string
   HTMLcontent?: string
+  skipFieldForApi?: boolean
 }
 
 export type FieldDateWrapProps = FieldProps & {
@@ -81,7 +82,7 @@ export type SelectFieldProps = {
   showError?: boolean
 }
 
-export type TextFieldProps = {
+export interface TextFieldProps {
   id?: string
   label?: string
   placeholder?: string
@@ -89,6 +90,11 @@ export type TextFieldProps = {
   required?: boolean
   validate?: Function
   showError?: boolean
+}
+
+export interface TextFieldWithConditonProps extends TextFieldProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  requiredCondition?: { [key: string]: string[] }
 }
 
 export type RangeFieldProps = {
@@ -99,6 +105,12 @@ export type RangeFieldProps = {
   required?: boolean
   showError?: boolean
   showMinMax?: boolean
+  min?: number
+  max?: number
+  step?: number
+  value?: number
+  suffix?: string
+  unit?: string
 }
 
 export type EmailFieldProps = {
@@ -129,6 +141,7 @@ export type IncomeFieldProps = {
   errorMsg?: string
   required?: boolean
   showError?: boolean
+  suffix?: string
 }
 
 export type BirthDateFieldProps = {
@@ -164,6 +177,8 @@ export type OtherLoanAmountFieldProps = {
 }
 
 export type CustomThemeType = {
+  formBoxShadow?: string
+  formMaxWidth?: string
   formBgColor?: string
   inputHeight?: string
   inputTextColor?: string
@@ -294,6 +309,7 @@ export type FormProps = {
   sendDataToApi?: boolean
   apiUrl?: string
   transactionName?: string
+  propertyNamesFromUrl?: string[]
 }
 
 export type RedirectPagePropsTypes = {
@@ -303,4 +319,12 @@ export type RedirectPagePropsTypes = {
   logoImg?: string
   timeToRedirect?: number
   redirectUrl?: string
+}
+
+export type ImageProps = {
+  src: string
+  alt: string
+  text?: string
+  hideOnMobile?: boolean
+  disableShadow?: boolean
 }

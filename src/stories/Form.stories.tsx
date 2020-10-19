@@ -12,8 +12,14 @@ import {
   Step,
   Row,
   Agreements,
+  OptionalGroup,
 } from '../'
 import { FormProps, FormValuesType } from '../types'
+import {
+  CompanyNameField,
+  EmploymentTypeField,
+  FirstNameField,
+} from '../components'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const onSubmit = (values: FormValuesType, props: any): void => {
@@ -37,7 +43,6 @@ const Template: Story<FormProps> = (args) => (
     <TextField required placeholder="Surname" name="lastName" />
     <TextField placeholder="City" name="city" />
     <Header text="Test title" type="subheader" />
-    <Agreements />
     <Button type="submit" text="Send" />
   </Form>
 )
@@ -45,11 +50,12 @@ const Template: Story<FormProps> = (args) => (
 export const Defualt = Template.bind({})
 
 Defualt.args = {
-  id: 'testForm',
+  id: 'zwrot-prowizji-bankowej1',
   onSubmit,
   transactionName: 'name',
   apiUrl: 'http://localhost:3000/api',
   sendDataToApi: true,
+  propertyNamesFromUrl: ['firstName'],
 }
 
 const TemplateSteps: Story<FormProps> = (args) => (
@@ -62,13 +68,16 @@ const TemplateSteps: Story<FormProps> = (args) => (
     <Step stepIndex={0}>
       <TextField required showError placeholder="Name1" name="firstName1" />
       <TextField required placeholder="Surname1" name="lastName" />
+      <OptionalGroup name="help_improve" label="Fill fild to improve">
+        <FirstNameField name="fName" />
+      </OptionalGroup>
     </Step>
     <Step stepIndex={1}>
       <TextField required showError placeholder="Name2" name="firstName2" />
       <TextField placeholder="City" name="city" />
       <Row>
-        <TextField required showError placeholder="Name4" name="firstName4" />
-        <TextField placeholder="City2" name="city2" />
+        <EmploymentTypeField />
+        <CompanyNameField name="company_name" />
       </Row>
     </Step>
     <Step stepIndex={2}>
@@ -77,16 +86,7 @@ const TemplateSteps: Story<FormProps> = (args) => (
     <Step stepIndex={3}>
       <TextField required showError placeholder="Name3" name="firstName3" />
       <Header text="Zgody" type="subheader" />
-      <CheckboxesGroup name="agreements">
-        <CheckboxField
-          name="agreement1"
-          label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
-        />
-        <CheckboxField
-          name="agreement2"
-          label="Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text Test agreement text"
-        />
-      </CheckboxesGroup>
+      <Agreements />
     </Step>
   </Form>
 )
@@ -94,9 +94,11 @@ const TemplateSteps: Story<FormProps> = (args) => (
 export const WithSteps = TemplateSteps.bind({})
 
 WithSteps.args = {
-  id: 'testForm',
+  id: 'zwrot-prowizji-bankowej',
   onSubmit,
+  apiUrl: 'http://localhost:3000/api',
   stepsLength: 4,
+  sendDataToApi: true,
   stepsTitles: ['1. Step', '2. Step', '3. Step', '4. Step'],
 }
 

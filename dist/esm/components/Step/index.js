@@ -69,6 +69,10 @@ const Step = ({
       acc[item.props.name] = true;
     }
 
+    if (item.props && item.props.name === 'agreements') {
+      acc[item.props.name] = true;
+    }
+
     if (item.props.children) {
       const mappedChildrens = Array.isArray(item.props.children) ? item.props.children : [item.props.children]; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
@@ -92,6 +96,11 @@ const Step = ({
     let hasError;
     Object.keys(mappedFields).some(key => {
       if (!values[key] || values[key] === '' || errors[key]) {
+        hasError = true;
+        return true;
+      }
+
+      if (key === 'agreements' && errors[key]) {
         hasError = true;
         return true;
       }

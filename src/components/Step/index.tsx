@@ -72,30 +72,45 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
 
   const mappedFields = useMemo(
     () =>
-      (Array.isArray(children) ? children : [children]).reduce((acc, item) => {
-        if (item.props.name && item.props.required) {
-          acc[item.props.name] = true
-        }
-        if (item.props.children) {
-          const mappedChildrens = Array.isArray(item.props.children)
-            ? item.props.children
-            : [item.props.children]
+      (Array.isArray(children) ? children : [children]).reduce(
+        (acc, item) => {
+          if (item.props.name && !item.props.children) {
+            acc[item.props.name] = true
+          }
+          if (item.props.name && item.props.required) {
+            acc.requiredFields[item.props.name] = true
+          }
+          if (item.props && item.props.name === 'agreements') {
+            acc.requiredFields[item.props.name] = true
+          }
 
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          mappedChildrens.forEach((child: any) => {
-            if (child.props.name && child.props.required) {
-              if (item.props.name) {
-                acc[item.props.name][child.props.name] = true
-                return
+          if (item.props.children) {
+            const mappedChildrens = Array.isArray(item.props.children)
+              ? item.props.children
+              : [item.props.children]
+
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            mappedChildrens.forEach((child: any) => {
+              if (child.props.name && child.props.required) {
+                if (item.props.type === 'checkboxGroup') {
+                  !acc.requiredFields[item.props.name] &&
+                    (acc.requiredFields[item.props.name] = {})
+                  acc.requiredFields[item.props.name][child.props.name] = true
+                  return
+                }
+
+                acc.requiredFields[child.props.name] = true
               }
+              if (child.props.name) {
+                acc[child.props.name] = true
+              }
+            })
+          }
 
-              acc[child.props.name] = true
-            }
-          })
-        }
-
-        return acc
-      }, {}),
+          return acc
+        },
+        { requiredFields: {} }
+      ),
     [children]
   )
   const [nextButtonDisabled, setNextButtonDisabled] = useState(
@@ -106,14 +121,30 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
   useEffect(() => {
     let hasError
 
-    Object.keys(mappedFields).some((key: string) => {
+    Object.keys(mappedFields.requiredFields).some((key: string) => {
       if (!values[key] || values[key] === '' || errors[key]) {
+        hasError = true
+        return true
+      }
+
+      if (key === 'agreements' && errors[key]) {
         hasError = true
         return true
       }
 
       return false
     })
+
+    if (!hasError) {
+      Object.keys(mappedFields).some((key: string) => {
+        if (errors[key]) {
+          hasError = true
+          return true
+        }
+
+        return false
+      })
+    }
 
     if (hasError) {
       setNextButtonDisabled(true)
@@ -143,7 +174,7 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
           </StepHeader>
         )}
       </StepHeaderWrapper>
-      {children}
+      {stepIndex === currentStep && children}
       <ButtonsWrapper isFirstStep={currentStep === 0}>
         {currentStep !== 0 && (
           <Button

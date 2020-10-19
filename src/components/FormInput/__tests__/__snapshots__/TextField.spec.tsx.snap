@@ -4,7 +4,7 @@ exports[`<TextField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input
@@ -12,18 +12,21 @@ exports[`<TextField /> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="textField"
-        name="name"
-        placeholder="Text"
-        type="text"
-        value="test"
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="textField"
+          name="name"
+          type="text"
+          value="test"
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         Bad name
       </span>
@@ -34,10 +37,9 @@ exports[`<TextField /> input field with custom validation 1`] = `
 
 exports[`<TextField /> matches snapshot 1`] = `
 <input
-  class="sc-iqAbSa jrHUfY"
+  class="sc-crzoUp kUQhja"
   id="textField"
   name="name"
-  placeholder="Text"
   type="text"
   value=""
 />
@@ -47,7 +49,7 @@ exports[`<TextField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input
@@ -55,25 +57,28 @@ exports[`<TextField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="name"
       >
         Test*
       </label>
-      <input
-        class="sc-iqAbSa fdLqwF"
-        id="textField"
-        label="Test"
-        name="name"
-        placeholder="Text*"
-        required=""
-        type="text"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp jQLlWv"
+          id="textField"
+          label="Test"
+          name="name"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
       <span
-        class="sc-kEqYlL lmrtkS"
+        class="sc-iqAbSa dmIjtF"
       >
         To pole jest wymagane
       </span>
@@ -86,7 +91,7 @@ exports[`<TextField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd caNEXe"
+    class="sc-fujyUd lIvqK"
     id="testForm"
   >
     <input
@@ -94,22 +99,25 @@ exports[`<TextField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx guHpUh"
+      class="sc-pNWxx iTQnTB"
     >
       <label
         for="name"
       >
         Test
       </label>
-      <input
-        class="sc-iqAbSa jrHUfY"
-        id="textField"
-        label="Test"
-        name="name"
-        placeholder="Text"
-        type="text"
-        value=""
-      />
+      <div
+        class="sc-dIvqjp iaFmok"
+      >
+        <input
+          class="sc-crzoUp kUQhja"
+          id="textField"
+          label="Test"
+          name="name"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </form>
 </div>

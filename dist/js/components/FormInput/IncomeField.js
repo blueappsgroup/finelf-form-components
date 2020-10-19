@@ -26,7 +26,8 @@ var IncomeField = function IncomeField(_ref) {
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       _ref$showError = _ref.showError,
-      showError = _ref$showError === void 0 ? true : _ref$showError;
+      showError = _ref$showError === void 0 ? true : _ref$showError,
+      suffix = _ref.suffix;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -36,7 +37,8 @@ var IncomeField = function IncomeField(_ref) {
     label: label,
     placeholder: placeholder,
     type: "text",
-    validate: (0, _validate.validateIncome)(errorMsg, required)
+    validate: (0, _validate.validateIncome)(errorMsg, required),
+    suffix: suffix
   });
 };
 

@@ -4,19 +4,19 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Formik, Form } from 'formik';
 import styled from 'styled-components';
 import { ThemeProvider } from '../../consts/theme';
 import { device } from '../../consts/sizes';
 import RedirectPage from '../RedirectPage';
 import TransactionId from '../TransactionId';
-import { FormContext, getFormValuesFromCache, resetFormValueCache, handleSendDataToApi } from '../../utils';
+import { FormContext, getFormValuesFromCache, resetFormValueCache, handleSendDataToApi, getFieldsValuesFromUrl } from '../../utils';
 import { formStatuses } from '../../consts/form';
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: ${props => props.theme.formMaxWidth};
   justify-self: center;
   margin: 0 10px;
   background: ${props => props.theme.formBgColor};
@@ -49,14 +49,19 @@ const FormWrapper = ({
   redirectBgImg,
   sendDataToApi,
   apiUrl,
-  transactionName
+  transactionName,
+  propertyNamesFromUrl
 }) => {
   const trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
-  const [initialValues, setInitialValues] = useState(_objectSpread(_objectSpread({}, getFormValuesFromCache(id)), {}, {
+  const intialValuesFromUrl = useMemo(() => propertyNamesFromUrl && propertyNamesFromUrl.length > 0 && getFieldsValuesFromUrl(propertyNamesFromUrl) || {}, [propertyNamesFromUrl]);
+  const [initialValues, setInitialValues] = useState(_objectSpread(_objectSpread(_objectSpread({}, intialValuesFromUrl), getFormValuesFromCache(id)), {}, {
     // eslint-disable-next-line @typescript-eslint/camelcase
     trasaction_id: trasationIdValue
   }));
   const [currentStep, setCurrentStep] = useState(0);
+  const [fieldsForSkip, setFieldsForSkip] = useState([]);
+
+  const addFieldForSkip = key => setFieldsForSkip([...fieldsForSkip, key]);
 
   const handleSubmit = async (values, props) => {
     if (onSubmit) {
@@ -65,7 +70,7 @@ const FormWrapper = ({
 
     try {
       if (sendDataToApi && apiUrl) {
-        await handleSendDataToApi(values, apiUrl, id);
+        await handleSendDataToApi(values, apiUrl, id, fieldsForSkip);
       }
 
       props.resetForm();
@@ -94,7 +99,9 @@ const FormWrapper = ({
       currentStep,
       stepsTitleList: stepsTitles,
       nextStep,
-      prevStep
+      prevStep,
+      fieldsForSkip,
+      addFieldForSkip
     }
   }, /*#__PURE__*/React.createElement(ThemeProvider, {
     customTheme: _objectSpread({}, customTheme)

@@ -13,6 +13,7 @@ const IncomeField: FC<IncomeFieldProps> = ({
   name,
   required = false,
   showError = true,
+  suffix,
 }) => (
   <Field
     required={required}
@@ -24,6 +25,7 @@ const IncomeField: FC<IncomeFieldProps> = ({
     placeholder={placeholder}
     type="text"
     validate={validateIncome(errorMsg, required)}
+    suffix={suffix}
   />
 )
 

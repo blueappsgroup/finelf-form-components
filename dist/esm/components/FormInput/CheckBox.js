@@ -5,7 +5,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 /* eslint-disable indent */
-import React, { useState, useLayoutEffect, useRef, useContext } from 'react';
+import React, { useState, useLayoutEffect, useRef, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { FormContext, setFormValuesToCache } from '../../utils';
 const StyledRow = styled.div`
@@ -15,6 +15,10 @@ const StyledRow = styled.div`
   position: relative;
   height: ${props => props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${props => props.collapsed ? 'none' : 'hidden'};
+
+  a {
+    color: ${props => props.theme.checkboxLinkColor};
+  }
 `;
 const StyledArrow = styled.span`
   display: ${props => props.hasCollapse ? 'flex' : 'none'};
@@ -86,7 +90,7 @@ const StyledText = styled.span`
   display: inline;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: ${props => props.theme.checkboxLabelFontSize};
   line-height: calc(
     16px + 2 *
       ${props => props.theme.checkboxBorderWidth}
@@ -140,7 +144,8 @@ export const CheckboxBase = (_ref2) => {
   const [collapsed, setCollapsed] = useState(false);
   const [hasCollapse, setHasCollapse] = useState(false);
   const {
-    id
+    id,
+    addFieldForSkip
   } = useContext(FormContext);
 
   const handleOnMouseOut = () => {
@@ -160,6 +165,9 @@ export const CheckboxBase = (_ref2) => {
       setHasCollapse(true);
     }
   }, [targetRef]);
+  useEffect(() => {
+    props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return /*#__PURE__*/React.createElement(StyledRow, {
     hasCollapse: hasCollapse,
     collapsed: collapsed

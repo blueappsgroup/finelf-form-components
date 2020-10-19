@@ -23,7 +23,19 @@ var AmountField = function AmountField(_ref) {
       _ref$showError = _ref.showError,
       showError = _ref$showError === void 0 ? true : _ref$showError,
       _ref$showMinMax = _ref.showMinMax,
-      showMinMax = _ref$showMinMax === void 0 ? true : _ref$showMinMax;
+      showMinMax = _ref$showMinMax === void 0 ? true : _ref$showMinMax,
+      _ref$min = _ref.min,
+      min = _ref$min === void 0 ? 300 : _ref$min,
+      _ref$max = _ref.max,
+      max = _ref$max === void 0 ? 10000 : _ref$max,
+      _ref$step = _ref.step,
+      step = _ref$step === void 0 ? 100 : _ref$step,
+      _ref$value = _ref.value,
+      value = _ref$value === void 0 ? 2000 : _ref$value,
+      _ref$suffix = _ref.suffix,
+      suffix = _ref$suffix === void 0 ? 'PLN' : _ref$suffix,
+      _ref$unit = _ref.unit,
+      unit = _ref$unit === void 0 ? 'zł' : _ref$unit;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -33,12 +45,12 @@ var AmountField = function AmountField(_ref) {
     component: _base.BaseRangeField,
     label: label,
     type: "text",
-    min: 300,
-    max: 10000,
-    step: 100,
-    value: 2000,
-    suffix: 'PLN',
-    unit: 'zł'
+    min: min,
+    max: max,
+    step: step,
+    value: value,
+    suffix: suffix,
+    unit: unit
   });
 };
 

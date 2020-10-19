@@ -6,6 +6,7 @@ import React, {
   useRef,
   useContext,
   ChangeEvent,
+  useEffect,
 } from 'react'
 import { FormikErrors } from 'formik'
 import styled from 'styled-components'
@@ -34,6 +35,10 @@ const StyledRow = styled.div<StyledProps>`
       : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${(props: StyledProps): string =>
     props.collapsed ? 'none' : 'hidden'};
+
+  a {
+    color: ${(props: StyledProps): string => props.theme.checkboxLinkColor};
+  }
 `
 
 const StyledArrow = styled.span<StyledProps>`
@@ -120,7 +125,8 @@ const StyledText = styled.span<any>`
   display: inline;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: ${(props: StyledProps): string =>
+    props.theme.checkboxLabelFontSize};
   line-height: calc(
     16px + 2 *
       ${(props: StyledProps): string => props.theme.checkboxBorderWidth}
@@ -160,8 +166,7 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   const targetRef = useRef<HTMLDivElement>(null)
   const [collapsed, setCollapsed] = useState(false)
   const [hasCollapse, setHasCollapse] = useState(false)
-  const { id } = useContext(FormContext)
-
+  const { id, addFieldForSkip } = useContext(FormContext)
   const handleOnMouseOut = (): void => {
     setFormValuesToCache(values, id)
   }
@@ -179,6 +184,11 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
       setHasCollapse(true)
     }
   }, [targetRef])
+
+  useEffect(() => {
+    props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <StyledRow hasCollapse={hasCollapse} collapsed={collapsed}>

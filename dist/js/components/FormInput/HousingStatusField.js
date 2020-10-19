@@ -17,7 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable @typescript-eslint/camelcase */
 var options = {
-  propety: 'mieszkanie własne',
+  property: 'mieszkanie własne',
   with_parent: 'mieszkanie rodziców',
   rental: 'mieszkanie wynajmowane',
   room: 'pokój'

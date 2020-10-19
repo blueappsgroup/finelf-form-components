@@ -8,7 +8,13 @@ const PeriodField = ({
   name,
   required = false,
   showError = true,
-  showMinMax = true
+  showMinMax = true,
+  min = 3,
+  max = 60,
+  step = 1,
+  value = 12,
+  suffix = 'Dni',
+  unit = 'Dni'
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,
@@ -18,12 +24,12 @@ const PeriodField = ({
   component: BaseRangeField,
   label: label,
   type: "text",
-  min: 3,
-  max: 60,
-  step: 1,
-  value: 12,
-  suffix: 'Dni',
-  unit: 'Dni'
+  min: min,
+  max: max,
+  step: step,
+  value: value,
+  suffix: suffix,
+  unit: unit
 });
 
 PeriodField.defaultProps = {

@@ -18,6 +18,7 @@ type AgreementType = {
 type AgreementsPropTypes = {
   linksForReplace?: { [key: string]: string }
   name?: string
+  groupType?: string
 }
 
 const Agreemnets: React.FC<AgreementsPropTypes> = ({
@@ -49,11 +50,13 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
   )
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const fetchAgreements = useCallback(async (): Promise<any> => {
-    const response = await fetch(`${apiUrl}/forms/${id}/agreements`)
-
-    const data = await response.json()
-
-    setAgreements((linksForReplace && replaceLinkInAgreements(data)) || data)
+    try {
+      const response = await fetch(`${apiUrl}/forms/${id}/agreements`)
+      const data = await response.json()
+      setAgreements((linksForReplace && replaceLinkInAgreements(data)) || data)
+    } catch (e) {
+      console.log(e)
+    }
   }, [linksForReplace, apiUrl, replaceLinkInAgreements, id])
 
   useLayoutEffect(() => {
@@ -63,21 +66,26 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
   }, [agreements, fetchAgreements])
 
   return (
-    <CheckboxesGroup name={name}>
-      {agreements.map((item) => (
-        <CheckboxField
-          key={item.id}
-          name={`${item.id}`}
-          HTMLcontent={item.content}
-          required={item.required}
-        />
-      ))}
-    </CheckboxesGroup>
+    <>
+      {Array.isArray(agreements) && agreements.length > 0 && (
+        <CheckboxesGroup name={name}>
+          {agreements.map((item) => (
+            <CheckboxField
+              key={item.id}
+              name={`${item.id}`}
+              HTMLcontent={item.content}
+              required={item.required}
+            />
+          ))}
+        </CheckboxesGroup>
+      )}
+    </>
   )
 }
 
 Agreemnets.defaultProps = {
   name: 'agreements',
+  groupType: 'checkboxGroup',
 }
 
 export default Agreemnets

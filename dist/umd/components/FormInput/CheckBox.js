@@ -91,6 +91,10 @@
   position: relative;
   height: ${props => props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${props => props.collapsed ? 'none' : 'hidden'};
+
+  a {
+    color: ${props => props.theme.checkboxLinkColor};
+  }
 `;
   const StyledArrow = _styledComponents2.default.span`
   display: ${props => props.hasCollapse ? 'flex' : 'none'};
@@ -162,7 +166,7 @@
   display: inline;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: ${props => props.theme.checkboxLabelFontSize};
   line-height: calc(
     16px + 2 *
       ${props => props.theme.checkboxBorderWidth}
@@ -217,7 +221,8 @@
     const [collapsed, setCollapsed] = (0, _react.useState)(false);
     const [hasCollapse, setHasCollapse] = (0, _react.useState)(false);
     const {
-      id
+      id,
+      addFieldForSkip
     } = (0, _react.useContext)(_utils.FormContext);
 
     const handleOnMouseOut = () => {
@@ -237,6 +242,9 @@
         setHasCollapse(true);
       }
     }, [targetRef]);
+    (0, _react.useEffect)(() => {
+      props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     return /*#__PURE__*/_react2.default.createElement(StyledRow, {
       hasCollapse: hasCollapse,
       collapsed: collapsed

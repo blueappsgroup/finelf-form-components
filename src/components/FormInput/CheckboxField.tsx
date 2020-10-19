@@ -13,6 +13,7 @@ const CheckboxFormField: FC<CheckboxFieldProps> = ({
   onChange,
   children,
   HTMLcontent,
+  skipFieldForApi,
 }) => (
   <Field
     required={required}
@@ -25,6 +26,7 @@ const CheckboxFormField: FC<CheckboxFieldProps> = ({
     onChange={onChange}
     childrenBody={children}
     HTMLcontent={HTMLcontent}
+    skipFieldForApi={skipFieldForApi}
   />
 )
 

@@ -114,6 +114,10 @@ var Step = function Step(_ref) {
         acc[item.props.name] = true;
       }
 
+      if (item.props && item.props.name === 'agreements') {
+        acc[item.props.name] = true;
+      }
+
       if (item.props.children) {
         var mappedChildrens = Array.isArray(item.props.children) ? item.props.children : [item.props.children]; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
@@ -143,6 +147,11 @@ var Step = function Step(_ref) {
     var hasError;
     Object.keys(mappedFields).some(function (key) {
       if (!values[key] || values[key] === '' || errors[key]) {
+        hasError = true;
+        return true;
+      }
+
+      if (key === 'agreements' && errors[key]) {
         hasError = true;
         return true;
       }

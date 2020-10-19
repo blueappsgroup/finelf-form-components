@@ -35,6 +35,14 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -54,7 +62,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: 600px;\n  justify-self: center;\n  margin: 0 10px;\n  background: ", ";\n  font-family: 'Manrope', BlinkMacSystemFont, -apple-system, 'Segoe UI',\n    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;\n  padding: 20px 15px;\n  border-radius: 6px;\n  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);\n\n  @media ", " {\n    padding: 20px 30px;\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  margin: 0 10px;\n  background: ", ";\n  font-family: 'Manrope', BlinkMacSystemFont, -apple-system, 'Segoe UI',\n    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;\n  padding: 20px 15px;\n  border-radius: 6px;\n  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);\n\n  @media ", " {\n    padding: 20px 30px;\n    margin: 0 auto;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -66,6 +74,8 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var StyledForm = (0, _styledComponents.default)(_formik.Form)(_templateObject(), function (props) {
+  return props.theme.formMaxWidth;
+}, function (props) {
   return props.theme.formBgColor;
 }, _sizes.device.tablet);
 
@@ -85,10 +95,14 @@ var FormWrapper = function FormWrapper(_ref) {
       redirectBgImg = _ref.redirectBgImg,
       sendDataToApi = _ref.sendDataToApi,
       apiUrl = _ref.apiUrl,
-      transactionName = _ref.transactionName;
+      transactionName = _ref.transactionName,
+      propertyNamesFromUrl = _ref.propertyNamesFromUrl;
   var trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
+  var intialValuesFromUrl = (0, _react.useMemo)(function () {
+    return propertyNamesFromUrl && propertyNamesFromUrl.length > 0 && (0, _utils.getFieldsValuesFromUrl)(propertyNamesFromUrl) || {};
+  }, [propertyNamesFromUrl]);
 
-  var _useState = (0, _react.useState)(_objectSpread(_objectSpread({}, (0, _utils.getFormValuesFromCache)(id)), {}, {
+  var _useState = (0, _react.useState)(_objectSpread(_objectSpread(_objectSpread({}, intialValuesFromUrl), (0, _utils.getFormValuesFromCache)(id)), {}, {
     // eslint-disable-next-line @typescript-eslint/camelcase
     trasaction_id: trasationIdValue
   })),
@@ -100,6 +114,15 @@ var FormWrapper = function FormWrapper(_ref) {
       _useState4 = _slicedToArray(_useState3, 2),
       currentStep = _useState4[0],
       setCurrentStep = _useState4[1];
+
+  var _useState5 = (0, _react.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      fieldsForSkip = _useState6[0],
+      setFieldsForSkip = _useState6[1];
+
+  var addFieldForSkip = function addFieldForSkip(key) {
+    return setFieldsForSkip([].concat(_toConsumableArray(fieldsForSkip), [key]));
+  };
 
   var handleSubmit = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(values, props) {
@@ -119,7 +142,7 @@ var FormWrapper = function FormWrapper(_ref) {
               }
 
               _context.next = 5;
-              return (0, _utils.handleSendDataToApi)(values, apiUrl, id);
+              return (0, _utils.handleSendDataToApi)(values, apiUrl, id, fieldsForSkip);
 
             case 5:
               props.resetForm();
@@ -168,7 +191,9 @@ var FormWrapper = function FormWrapper(_ref) {
       currentStep: currentStep,
       stepsTitleList: stepsTitles,
       nextStep: nextStep,
-      prevStep: prevStep
+      prevStep: prevStep,
+      fieldsForSkip: fieldsForSkip,
+      addFieldForSkip: addFieldForSkip
     }
   }, /*#__PURE__*/_react.default.createElement(_theme.ThemeProvider, {
     customTheme: _objectSpread({}, customTheme)

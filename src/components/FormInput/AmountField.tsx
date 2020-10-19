@@ -11,6 +11,12 @@ const AmountField: FC<RangeFieldProps> = ({
   required = false,
   showError = true,
   showMinMax = true,
+  min = 300,
+  max = 10000,
+  step = 100,
+  value = 2000,
+  suffix = 'PLN',
+  unit = 'zł',
 }) => (
   <Field
     required={required}
@@ -21,12 +27,12 @@ const AmountField: FC<RangeFieldProps> = ({
     component={BaseRangeField}
     label={label}
     type="text"
-    min={300}
-    max={10000}
-    step={100}
-    value={2000}
-    suffix={'PLN'}
-    unit={'zł'}
+    min={min}
+    max={max}
+    step={step}
+    value={value}
+    suffix={suffix}
+    unit={unit}
   />
 )
 

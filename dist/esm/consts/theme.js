@@ -21,6 +21,7 @@ export const colors = {
   black: '#000'
 };
 export const theme = {
+  formMaxWidth: '600px',
   formBgColor: colors.white,
   inputHeight: '63px',
   inputTextColor: colors.mainGrey,
@@ -70,15 +71,19 @@ export const theme = {
   checkboxBgColor: colors.white,
   checkboxBorderColor: colors.black,
   checkboxBorderWidth: '1px',
+  checkboxLabelFontSize: '12px',
+  checkboxLinkColor: colors.mediumRed,
   checkboxBorderErrorColor: colors.errorRed,
   checkboxLabelTextColor: colors.darkGrey,
   checkboxMarkColor: colors.lightRed,
   headerTextColor: colors.black,
   headerBorderColor: colors.errorRed,
   headerFontSize: '25px',
+  headerLineHeight: '24px',
   headerMargin: '0px 0px 20px 0px',
   subheaderBorderColor: colors.black,
   subheaderFontSize: '16px',
+  subheaderLineHeight: '18px',
   subheaderMargin: '10px 0px 20px 0px',
   buttonTextColor: colors.white,
   buttonBgColor: colors.mediumRed,
@@ -118,7 +123,8 @@ export const theme = {
   styledInputSuffixFontSize: '14px',
   styledInputSuffixFontWeight: 'bold',
   styledInputSuffixBorderRadius: '0 5px 5px 0',
-  styledInputPrefixPadding: '0 15px'
+  styledInputPrefixPadding: '0 15px',
+  marginBetweenRowChildren: '5px'
 };
 export const ThemeProvider = ({
   children,

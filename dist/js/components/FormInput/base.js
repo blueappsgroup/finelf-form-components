@@ -58,7 +58,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n padding-bottom: 25px;\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: 0;\n   bottom: 0;\n   margin: auto;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
+  var data = _taggedTemplateLiteral(["\n padding-bottom: 25px;\n width: 100%;\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: 0;\n   bottom: 0;\n   margin: auto;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -68,7 +68,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  left: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n  padding: ", ";\n  color: ", ";\n  font-weight: ", ";  \n  border-top-color: ", ";\n  border-bottom-color: ", ";\n  border-left-color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  position: relative;\n  left: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n  padding: ", ";\n  color: ", ";\n  font-weight: ", ";  \n  border-top-color: ", ";\n  border-bottom-color: ", ";\n  border-left-color: ", ";\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -158,7 +158,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  flex-direction: column;\n\n  @media ", " {\n    flex-direction: row;\n    justify-content: space-between;\n    & ", ":first-of-type {\n      flex-grow: 1;\n      margin-right: 5px;\n    }\n\n    & ", ":last-child {\n      flex-grow: 1;\n      margin-left: 5px;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  flex-direction: column;\n  > * {\n      flex-basis: 0;\n      flex-grow: 1;\n      width: 0 !important;\n  }\n\n  @media ", " {\n    flex-direction: row;\n    justify-content: space-between;\n    & ", ":first-of-type:not(:last-child) {\n      margin-right: ", ";\n    }\n\n    & ", ":last-child:not(:first-of-type) {\n      margin-left: ", ";\n    }\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -168,7 +168,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-bottom: ", ";\n  position: relative;\n  flex-wrap: ", ";\n  justify-content: space-between;\n  label {\n    font-size: ", ";\n    padding: ", ";\n    color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-bottom: ", ";\n  position: relative;\n  flex-wrap: nowrap;\n  width: 100%;\n  justify-content: space-between;\n  label {\n    font-size: ", ";\n    padding: ", ";\n    color: ", ";\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -205,18 +205,20 @@ var StyledRow = _styledComponents.default.div(_templateObject(), function (props
 var StyledRowRangeField = _styledComponents.default.div(_templateObject2(), function (props) {
   return props.theme.styledRowMarginBottom;
 }, function (props) {
-  return props.theme.styledRowFlexWrap;
-}, function (props) {
   return props.theme.labelFontSize;
 }, function (props) {
   return props.theme.styledRowLabelPadding;
 }, function (props) {
   return props.theme.styledRowLabelFontColor;
 });
+
+var Row = _styledComponents.default.div(_templateObject3(), _sizes.device.tablet, StyledRow, function (props) {
+  return props.theme.marginBetweenRowChildren;
+}, StyledRow, function (props) {
+  return props.theme.marginBetweenRowChildren;
+});
 /* eslint-enable */
 
-
-var Row = _styledComponents.default.div(_templateObject3(), _sizes.device.tablet, StyledRow, StyledRow);
 
 exports.Row = Row;
 
@@ -377,6 +379,8 @@ var StyledSliderInputSuffix = _styledComponents.default.span(_templateObject11()
 });
 
 var StyledInputPrefix = _styledComponents.default.span(_templateObject12(), function (props) {
+  return props.theme.inputBgColor;
+}, function (props) {
   return props.theme.inputHeight;
 }, function (props) {
   return props.theme.inputHeight;
@@ -572,7 +576,7 @@ var BaseRangeField = function BaseRangeField(_ref3) {
   (0, _react.useLayoutEffect)(function () {
     setFieldValue(field.name, value);
   }, [field.name, value, setFieldValue]);
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(StyledRowRangeField, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
+  return /*#__PURE__*/_react.default.createElement(StyledRow, null, /*#__PURE__*/_react.default.createElement(StyledRowRangeField, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
   }, props.label), /*#__PURE__*/_react.default.createElement(SliderRow, null, /*#__PURE__*/_react.default.createElement(SliderInput, _extends({}, field, props, {
     onChange: handleOnChange,

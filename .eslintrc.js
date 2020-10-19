@@ -18,6 +18,7 @@ module.exports = {
     "browser": true,
     "jest": true 
   },
+  plugins: ["react", "react-hooks",],
   extends: [
     "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
     "plugin:@typescript-eslint/recommended", // Uses the recommended rules from @typescript-eslint/eslint-plugin
@@ -78,6 +79,7 @@ module.exports = {
     'eol-last': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
     'react/display-name': 0,
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'react-hooks/exhaustive-deps': 1
   }
 };

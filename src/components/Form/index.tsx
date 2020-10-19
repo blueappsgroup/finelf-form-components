@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState } from 'react'
+import React, { FC, ReactElement, useMemo, useState } from 'react'
 import { Formik, Form } from 'formik'
 import styled from 'styled-components'
 
@@ -12,13 +12,14 @@ import {
   getFormValuesFromCache,
   resetFormValueCache,
   handleSendDataToApi,
+  getFieldsValuesFromUrl,
 } from '../../utils'
 import { formStatuses } from '../../consts/form'
 
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: ${(props): string => props.theme.formMaxWidth};
   justify-self: center;
   margin: 0 10px;
   background: ${(props): string => props.theme.formBgColor};
@@ -27,7 +28,7 @@ const StyledForm = styled(Form)`
     'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   padding: 20px 15px;
   border-radius: 6px;
-  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: ${(props): string => props.theme.formBoxShadow};
 
   @media ${device.tablet} {
     padding: 20px 30px;
@@ -52,17 +53,31 @@ const FormWrapper: FC<FormProps> = ({
   sendDataToApi,
   apiUrl,
   transactionName,
+  propertyNamesFromUrl,
 }) => {
   const trasationIdValue =
     transactionName &&
     new URLSearchParams(window.location.search).get(transactionName)
+  const intialValuesFromUrl = useMemo(
+    () =>
+      (propertyNamesFromUrl &&
+        propertyNamesFromUrl.length > 0 &&
+        getFieldsValuesFromUrl(propertyNamesFromUrl)) ||
+      {},
+    [propertyNamesFromUrl]
+  )
 
   const [initialValues, setInitialValues] = useState({
+    ...intialValuesFromUrl,
     ...getFormValuesFromCache(id),
     // eslint-disable-next-line @typescript-eslint/camelcase
     trasaction_id: trasationIdValue,
   })
   const [currentStep, setCurrentStep] = useState(0)
+  const [fieldsForSkip, setFieldsForSkip] = useState<string[]>([])
+
+  const addFieldForSkip = (key: string): void =>
+    setFieldsForSkip([...fieldsForSkip, key])
 
   const handleSubmit = async (
     values: FormValuesType,
@@ -78,7 +93,7 @@ const FormWrapper: FC<FormProps> = ({
 
     try {
       if (sendDataToApi && apiUrl) {
-        await handleSendDataToApi(values, apiUrl, id)
+        await handleSendDataToApi(values, apiUrl, id, fieldsForSkip)
       }
 
       props.resetForm()
@@ -108,6 +123,8 @@ const FormWrapper: FC<FormProps> = ({
         stepsTitleList: stepsTitles,
         nextStep,
         prevStep,
+        fieldsForSkip,
+        addFieldForSkip,
       }}
     >
       <ThemeProvider customTheme={{ ...customTheme }}>

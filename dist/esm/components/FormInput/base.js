@@ -35,7 +35,8 @@ const StyledRowRangeField = styled.div`
   align-items: center;
   margin-bottom: ${props => props.theme.styledRowMarginBottom};
   position: relative;
-  flex-wrap: ${props => props.theme.styledRowFlexWrap};
+  flex-wrap: nowrap;
+  width: 100%;
   justify-content: space-between;
   label {
     font-size: ${props => props.theme.labelFontSize};
@@ -43,27 +44,30 @@ const StyledRowRangeField = styled.div`
     color: ${props => props.theme.styledRowLabelFontColor};
   }
 `;
-/* eslint-enable */
-
 export const Row = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  > * {
+      flex-basis: 0;
+      flex-grow: 1;
+      width: 0 !important;
+  }
 
   @media ${device.tablet} {
     flex-direction: row;
     justify-content: space-between;
-    & ${StyledRow}:first-of-type {
-      flex-grow: 1;
-      margin-right: 5px;
+    & ${StyledRow}:first-of-type:not(:last-child) {
+      margin-right: ${props => props.theme.marginBetweenRowChildren};
     }
 
-    & ${StyledRow}:last-child {
-      flex-grow: 1;
-      margin-left: 5px;
+    & ${StyledRow}:last-child:not(:first-of-type) {
+      margin-left: ${props => props.theme.marginBetweenRowChildren};
     }
   }
 `;
+/* eslint-enable */
+
 const StyledError = styled.span`
   color: ${props => props.theme.inputErrorColor};
   text-align: ${props => props.theme.inputErrorTextAlign};
@@ -198,6 +202,7 @@ const StyledSliderInputSuffix = styled.span`
   justify-content: center;
 `;
 const StyledInputPrefix = styled.span`
+  background: ${props => props.theme.inputBgColor};
   position: relative;
   left: 0px;
   height: ${props => props.theme.inputHeight};
@@ -217,6 +222,7 @@ const StyledInputPrefix = styled.span`
 `;
 const SliderWrapper = styled.div`
  padding-bottom: 25px;
+ width: 100%;
  .rangeslider {
   position: relative;
   width: 100%;
@@ -403,7 +409,7 @@ export const BaseRangeField = (_ref3) => {
   useLayoutEffect(() => {
     setFieldValue(field.name, value);
   }, [field.name, value, setFieldValue]);
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledRowRangeField, null, props.label && /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/React.createElement(StyledRow, null, /*#__PURE__*/React.createElement(StyledRowRangeField, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
   }, props.label), /*#__PURE__*/React.createElement(SliderRow, null, /*#__PURE__*/React.createElement(SliderInput, _extends({}, field, props, {
     onChange: handleOnChange,
