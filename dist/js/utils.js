@@ -58,7 +58,7 @@ var sendDataToAwsSQS = function sendDataToAwsSQS(values, queueUrl) {
 
 exports.sendDataToAwsSQS = sendDataToAwsSQS;
 
-var handleSendDataToApi = function handleSendDataToApi(values, apiUrl, formId, fieldsForSkip) {
+var handleSendDataToApi = function handleSendDataToApi(values, apiUrl, formId, fieldsForSkip, dataWithUserAgent) {
   var agreements = values.agreements,
       rest = _objectWithoutProperties(values, ["agreements"]);
 
@@ -68,15 +68,21 @@ var handleSendDataToApi = function handleSendDataToApi(values, apiUrl, formId, f
     }
 
     return acc; // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  }, {}); // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-  var mappedAgreements = Object.keys(agreements).reduce(function (acc, key) {
+  }, {});
+  var mappedAgreements = agreements && // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Object.keys(agreements).reduce(function (acc, key) {
     if (key !== 'selectAll' && agreements[key]) {
       acc.push(key);
     }
 
     return acc;
   }, []);
+
+  if (dataWithUserAgent) {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    filteredValues.user_agent = window.navigator.userAgent;
+  }
+
   return fetch("".concat(apiUrl, "/forms/").concat(formId, "/data"), {
     method: 'POST',
     headers: {

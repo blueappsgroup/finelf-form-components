@@ -98,29 +98,35 @@ var FormWrapper = function FormWrapper(_ref) {
       sendDataToApi = _ref.sendDataToApi,
       apiUrl = _ref.apiUrl,
       transactionName = _ref.transactionName,
-      propertyNamesFromUrl = _ref.propertyNamesFromUrl;
+      propertyNamesFromUrl = _ref.propertyNamesFromUrl,
+      dataWithUserAgent = _ref.dataWithUserAgent;
   var trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
   var intialValuesFromUrl = (0, _react.useMemo)(function () {
     return propertyNamesFromUrl && propertyNamesFromUrl.length > 0 && (0, _utils.getFieldsValuesFromUrl)(propertyNamesFromUrl) || {};
   }, [propertyNamesFromUrl]);
 
-  var _useState = (0, _react.useState)(_objectSpread(_objectSpread(_objectSpread({}, intialValuesFromUrl), (0, _utils.getFormValuesFromCache)(id)), {}, {
+  var _useState = (0, _react.useState)(redirectUrl),
+      _useState2 = _slicedToArray(_useState, 2),
+      redirectUrlPath = _useState2[0],
+      setRedirectUrlPath = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(_objectSpread(_objectSpread(_objectSpread({}, intialValuesFromUrl), (0, _utils.getFormValuesFromCache)(id)), {}, {
     // eslint-disable-next-line @typescript-eslint/camelcase
     trasaction_id: trasationIdValue
   })),
-      _useState2 = _slicedToArray(_useState, 2),
-      initialValues = _useState2[0],
-      setInitialValues = _useState2[1];
-
-  var _useState3 = (0, _react.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
-      currentStep = _useState4[0],
-      setCurrentStep = _useState4[1];
+      initialValues = _useState4[0],
+      setInitialValues = _useState4[1];
 
-  var _useState5 = (0, _react.useState)([]),
+  var _useState5 = (0, _react.useState)(0),
       _useState6 = _slicedToArray(_useState5, 2),
-      fieldsForSkip = _useState6[0],
-      setFieldsForSkip = _useState6[1];
+      currentStep = _useState6[0],
+      setCurrentStep = _useState6[1];
+
+  var _useState7 = (0, _react.useState)([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      fieldsForSkip = _useState8[0],
+      setFieldsForSkip = _useState8[1];
 
   var addFieldForSkip = function addFieldForSkip(key) {
     return setFieldsForSkip([].concat(_toConsumableArray(fieldsForSkip), [key]));
@@ -128,6 +134,8 @@ var FormWrapper = function FormWrapper(_ref) {
 
   var handleSubmit = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(values, props) {
+      var response, _yield$response$json, urlFromApi;
+
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -139,31 +147,41 @@ var FormWrapper = function FormWrapper(_ref) {
               _context.prev = 1;
 
               if (!(sendDataToApi && apiUrl)) {
-                _context.next = 5;
+                _context.next = 11;
                 break;
               }
 
               _context.next = 5;
-              return (0, _utils.handleSendDataToApi)(values, apiUrl, id, fieldsForSkip);
+              return (0, _utils.handleSendDataToApi)(values, apiUrl, id, fieldsForSkip, dataWithUserAgent);
 
             case 5:
+              response = _context.sent;
+              _context.next = 8;
+              return response.json();
+
+            case 8:
+              _yield$response$json = _context.sent;
+              urlFromApi = _yield$response$json.redirectUrl;
+              urlFromApi && setRedirectUrlPath(urlFromApi);
+
+            case 11:
               props.resetForm();
               props.setStatus(_form.formStatuses.submited);
-              _context.next = 13;
+              _context.next = 19;
               break;
 
-            case 9:
-              _context.prev = 9;
+            case 15:
+              _context.prev = 15;
               _context.t0 = _context["catch"](1);
               console.log(_context.t0);
               props.setStatus(_form.formStatuses.error);
 
-            case 13:
+            case 19:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 9]]);
+      }, _callee, null, [[1, 15]]);
     }));
 
     return function handleSubmit(_x, _x2) {
@@ -206,7 +224,7 @@ var FormWrapper = function FormWrapper(_ref) {
     onReset: handleReset
   }, function (props) {
     return hasRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react.default.createElement(_RedirectPage.default, {
-      redirectUrl: redirectUrl,
+      redirectUrl: redirectUrlPath,
       backgroundImage: redirectBgImg,
       logoImg: logoImg,
       headerText: redirectHeaderText,

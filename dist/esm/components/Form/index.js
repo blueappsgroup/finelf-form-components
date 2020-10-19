@@ -50,10 +50,12 @@ const FormWrapper = ({
   sendDataToApi,
   apiUrl,
   transactionName,
-  propertyNamesFromUrl
+  propertyNamesFromUrl,
+  dataWithUserAgent
 }) => {
   const trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
   const intialValuesFromUrl = useMemo(() => propertyNamesFromUrl && propertyNamesFromUrl.length > 0 && getFieldsValuesFromUrl(propertyNamesFromUrl) || {}, [propertyNamesFromUrl]);
+  const [redirectUrlPath, setRedirectUrlPath] = useState(redirectUrl);
   const [initialValues, setInitialValues] = useState(_objectSpread(_objectSpread(_objectSpread({}, intialValuesFromUrl), getFormValuesFromCache(id)), {}, {
     // eslint-disable-next-line @typescript-eslint/camelcase
     trasaction_id: trasationIdValue
@@ -70,7 +72,11 @@ const FormWrapper = ({
 
     try {
       if (sendDataToApi && apiUrl) {
-        await handleSendDataToApi(values, apiUrl, id, fieldsForSkip);
+        const response = await handleSendDataToApi(values, apiUrl, id, fieldsForSkip, dataWithUserAgent);
+        const {
+          redirectUrl: urlFromApi
+        } = await response.json();
+        urlFromApi && setRedirectUrlPath(urlFromApi);
       }
 
       props.resetForm();
@@ -111,7 +117,7 @@ const FormWrapper = ({
     onSubmit: handleSubmit,
     onReset: handleReset
   }, props => hasRedirect && props.status === formStatuses.submited && /*#__PURE__*/React.createElement(RedirectPage, {
-    redirectUrl: redirectUrl,
+    redirectUrl: redirectUrlPath,
     backgroundImage: redirectBgImg,
     logoImg: logoImg,
     headerText: redirectHeaderText,

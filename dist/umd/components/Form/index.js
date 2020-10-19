@@ -117,10 +117,12 @@
     sendDataToApi,
     apiUrl,
     transactionName,
-    propertyNamesFromUrl
+    propertyNamesFromUrl,
+    dataWithUserAgent
   }) => {
     const trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
     const intialValuesFromUrl = (0, _react.useMemo)(() => propertyNamesFromUrl && propertyNamesFromUrl.length > 0 && (0, _utils.getFieldsValuesFromUrl)(propertyNamesFromUrl) || {}, [propertyNamesFromUrl]);
+    const [redirectUrlPath, setRedirectUrlPath] = (0, _react.useState)(redirectUrl);
     const [initialValues, setInitialValues] = (0, _react.useState)(_objectSpread(_objectSpread(_objectSpread({}, intialValuesFromUrl), (0, _utils.getFormValuesFromCache)(id)), {}, {
       // eslint-disable-next-line @typescript-eslint/camelcase
       trasaction_id: trasationIdValue
@@ -137,7 +139,11 @@
 
       try {
         if (sendDataToApi && apiUrl) {
-          await (0, _utils.handleSendDataToApi)(values, apiUrl, id, fieldsForSkip);
+          const response = await (0, _utils.handleSendDataToApi)(values, apiUrl, id, fieldsForSkip, dataWithUserAgent);
+          const {
+            redirectUrl: urlFromApi
+          } = await response.json();
+          urlFromApi && setRedirectUrlPath(urlFromApi);
         }
 
         props.resetForm();
@@ -178,7 +184,7 @@
       onSubmit: handleSubmit,
       onReset: handleReset
     }, props => hasRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react2.default.createElement(_RedirectPage2.default, {
-      redirectUrl: redirectUrl,
+      redirectUrl: redirectUrlPath,
       backgroundImage: redirectBgImg,
       logoImg: logoImg,
       headerText: redirectHeaderText,

@@ -20,7 +20,7 @@ export declare const getFormValuesFromCache: (id?: string) => {
 export declare const resetFormValueCache: (id: string) => void;
 export declare const encodeData: (data: FormValuesType) => string | undefined;
 export declare const sendDataToAwsSQS: (values: FormValuesType, queueUrl?: string) => Promise<any>;
-export declare const handleSendDataToApi: (values: FormValuesType, apiUrl: string, formId: string, fieldsForSkip: string[]) => Promise<any>;
+export declare const handleSendDataToApi: (values: FormValuesType, apiUrl: string, formId: string, fieldsForSkip: string[], dataWithUserAgent?: boolean) => Promise<any>;
 export declare const getFieldsValuesFromUrl: (paramsList: string[]) => {
     [key: string]: string;
 };

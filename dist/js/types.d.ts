@@ -284,6 +284,7 @@ export declare type FormProps = {
     apiUrl?: string;
     transactionName?: string;
     propertyNamesFromUrl?: string[];
+    dataWithUserAgent?: boolean;
 };
 export declare type RedirectPagePropsTypes = {
     headerText?: string;

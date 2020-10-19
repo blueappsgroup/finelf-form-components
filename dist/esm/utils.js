@@ -22,7 +22,7 @@ export const sendDataToAwsSQS = (values, queueUrl) => fetch(queueUrl || 'https:/
     MessageBody: JSON.stringify(values)
   })
 });
-export const handleSendDataToApi = (values, apiUrl, formId, fieldsForSkip) => {
+export const handleSendDataToApi = (values, apiUrl, formId, fieldsForSkip, dataWithUserAgent) => {
   const {
     agreements
   } = values,
@@ -34,15 +34,21 @@ export const handleSendDataToApi = (values, apiUrl, formId, fieldsForSkip) => {
     }
 
     return acc; // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  }, {}); // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-  const mappedAgreements = Object.keys(agreements).reduce((acc, key) => {
+  }, {});
+  const mappedAgreements = agreements && // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Object.keys(agreements).reduce((acc, key) => {
     if (key !== 'selectAll' && agreements[key]) {
       acc.push(key);
     }
 
     return acc;
   }, []);
+
+  if (dataWithUserAgent) {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    filteredValues.user_agent = window.navigator.userAgent;
+  }
+
   return fetch(`${apiUrl}/forms/${formId}/data`, {
     method: 'POST',
     headers: {
