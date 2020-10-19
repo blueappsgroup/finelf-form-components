@@ -1,7 +1,9 @@
 import React, { FC } from 'react'
+import { Field } from 'formik'
 
-import { DatePickerField } from './base'
+import { BaseDateField } from './base'
 import { BirthDateFieldProps } from '../../types'
+import { validateDate } from './validate'
 
 const BirthDateField: FC<BirthDateFieldProps> = ({
   id,
@@ -11,13 +13,15 @@ const BirthDateField: FC<BirthDateFieldProps> = ({
   required = false,
   showError = true,
 }) => (
-  <DatePickerField
+  <Field
     required={required}
     showError={showError}
     id={id}
+    component={BaseDateField}
     name={name}
     label={label}
     placeholder={placeholder}
+    validate={validateDate(required)}
   />
 )
 

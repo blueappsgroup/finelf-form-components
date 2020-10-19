@@ -3,12 +3,11 @@ import React, {
   ChangeEvent,
   ReactElement,
   useContext,
+  useEffect,
   useLayoutEffect,
   useState,
 } from 'react'
 import Slider from 'react-rangeslider'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
 import styled from 'styled-components'
 
 import { device } from '../../consts/sizes'
@@ -20,8 +19,9 @@ import {
   SelectFieldWrapProps,
 } from '../../types'
 import { FormContext, setFormValuesToCache } from '../../utils'
+import DatePickerCore from './DatePickerCore'
 
-type StyledProps = {
+export type StyledProps = {
   theme: {
     submitButtonBgColor: string
     inputHeight: string
@@ -249,38 +249,6 @@ const SliderInput = styled.input<any>`
 `
 
 /* eslint-disable */
-const StyledDatePicker = styled(DatePicker)`
-  background: ${(props: StyledProps): string => props.theme.datePickerBgColor};
-  border: 1px solid
-    ${(props: StyledProps): string => props.theme.datePickerBorderColor};
-  box-sizing: border-box;
-  box-shadow: ${(props: StyledProps): string => props.theme.datePickerBoxShadow};
-  border-radius: ${(props: StyledProps): string =>
-    props.theme.datePickerBorderRadius};
-  width: 100%;
-  height: ${(props: StyledProps): string => props.theme.datePickerHeight};
-  display: flex;
-  align-items: center;
-  font-style: ${(props: StyledProps): string => props.theme.datePickerFontStyle};
-  font-weight: ${(props: StyledProps): string => props.theme.datePickerFontWeight};
-  font-size: ${(props: StyledProps): string => props.theme.datePickerFontSize};
-  line-height: ${(props: StyledProps): string => props.theme.datePickerLineHeight};
-  padding: ${(props: StyledProps): string => props.theme.datePickerPadding};
-  border-color: ${(props: StyledProps): string =>
-    props.error ? props.theme.inputErrorColor : props.theme.datePickerBorderColor};
-  color: ${(props: any): string =>
-    props.error ? props.theme.inputErrorColor : props.theme.datePickerTextColor};
-
-  &::placeholder {
-    color: ${(props: StyledProps): string => props.theme.datePickerPlaceHolderColor};
-  }
-
-  &:focus {
-    outline: none;
-  }
-`
-
-/* eslint-disable */
 const StyledSelect = styled.select<any>`
   background: ${(props: StyledProps): string => props.theme.styledSelectBgColor};
   border: ${(props: StyledProps): string => props.theme.styledSelectBorderWidth} ${(props: StyledProps): string => props.theme.styledSelectBorderStyle}
@@ -474,14 +442,29 @@ export default BaseField
 
 export const BaseDateField: (props: FieldDateWrapProps) => ReactElement = ({
   field,
-  form: { touched, errors, values },
+  form: { touched, errors, values, setFieldValue, setFieldTouched },
   ...props
 }) => {
   const { id } = useContext(FormContext)
-  const handleOnBlur = (e: ChangeEvent<HTMLInputElement>): void => {
-    setFormValuesToCache(values, id)
-    field.onBlur && field.onBlur(e)
+  const [currntValue, setCurrentValue] = useState(values[field.name])
+  const handleChange = (value: Date): void => {
+    setFormValuesToCache(
+      {
+        ...values,
+        [field.name]: value.toString(),
+      },
+      id
+    )
+    setCurrentValue(value)
+    setFieldTouched(field.name, true)
   }
+  const handleBlur = (): void => {
+    setFieldTouched(field.name, true)
+  }
+
+  useEffect(() => {
+    setFieldValue(field.name, currntValue)
+  }, [currntValue, field.name, setFieldValue])
 
   return (
     <StyledRow>
@@ -491,15 +474,12 @@ export const BaseDateField: (props: FieldDateWrapProps) => ReactElement = ({
         }`}</label>
       )}
       {props.prefix && <StyledInputPrefix>{props.prefix}</StyledInputPrefix>}
-      <StyledDatePicker
-        {...field}
-        {...props}
-        selected={(field.value && new Date(field.value)) || new Date()}
-        onBlur={handleOnBlur}
-        onChange={(e) => {
-          setFormValuesToCache(values, id)
-          field.onBlur && field.onBlur(e)
-        }}
+      <DatePickerCore
+        required={props.required}
+        name={field.name}
+        selected={field.value ? new Date(field.value) : null}
+        onBlur={handleBlur}
+        onChange={handleChange}
       />
       {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
       {props.showError && touched[field.name] && errors[field.name] && (

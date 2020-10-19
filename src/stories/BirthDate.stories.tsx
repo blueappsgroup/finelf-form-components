@@ -11,7 +11,7 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <BirthDateField required showError />
+    <BirthDateField required showError label="Data urodzenia" />
   </Form>
 )
 
