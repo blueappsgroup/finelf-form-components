@@ -482,6 +482,7 @@ export const BaseDateField: (props: FieldDateWrapProps) => ReactElement = ({
       )}
       {props.prefix && <StyledInputPrefix>{props.prefix}</StyledInputPrefix>}
       <DatePickerCore
+        placeholderText={props.placeholder}
         required={props.required}
         name={field.name}
         selected={field.value ? new Date(field.value) : null}
