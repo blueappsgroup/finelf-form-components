@@ -66,6 +66,8 @@ export type StyledProps = {
     styledSelectErrorTextAlign: string
     styledSelectBgColor: string
     styledSelectPlaceHolderColor: string
+    styledSelectArrowColor: string
+    styledSelectArrowRightPosition: string
     styledSelectBorderColor: string
     styledSelectBorderWidth: string
     styledSelectBorderStyle: string
@@ -77,8 +79,6 @@ export type StyledProps = {
     styledSelectBoxShadow: string
     styledSelectLineHeight: string
     styledSelectPadding: string
-    styledSelectVerticalPadding: string
-    styledSelectHorizontalPadding: string
     styledSpanFontSize: string
     styledSpanFontColor: string
     styledSpanFontWeight: string
@@ -100,6 +100,7 @@ export type StyledProps = {
     sliderHandleAfterWidth: string
     sliderHandleAfterHeight: string
     sliderHandleAfterBorderRadius: string
+    styledInputSuffixWidth: string
     styledInputSuffixBgColor: string
     styledInputSuffixTextColor: string
     styledInputSuffixFontSize: string
@@ -107,8 +108,18 @@ export type StyledProps = {
     styledInputSuffixBorderRadius: string
     styledInputPrefixPadding: string
     marginBetweenRowChildren: string
+    inputIconLeft: string
+    inputWithIconPadding: string
   }
   error?: string | boolean
+}
+
+export type InputWrapperProps = {
+  withIcon?: boolean
+  theme: {
+    inputPadding: string
+    inputWithIconPadding: string
+  }
 }
 
 /* eslint-disable */
@@ -143,7 +154,7 @@ const StyledRowRangeField = styled.div`
 export const Row = styled.div`
   display: flex;
   width: 100%;
-  margin: 15px auto;
+  margin: 0 auto;
   flex-direction: column;
   > * {
       flex-basis: 0;
@@ -254,7 +265,13 @@ const SliderInput = styled.input<any>`
 `
 
 /* eslint-disable */
+const StyledSelectContainer = styled.div`
+  position: relative;
+  width: 100%;
+`
+
 const StyledSelect = styled.select<any>`
+  position: relative;
   background: ${(props: StyledProps): string => props.theme.styledSelectBgColor};
   border: ${(props: StyledProps): string => props.theme.styledSelectBorderWidth} ${(props: StyledProps): string => props.theme.styledSelectBorderStyle}
     ${(props: StyledProps): string => props.theme.styledSelectBorderColor};
@@ -269,11 +286,12 @@ const StyledSelect = styled.select<any>`
   font-weight: ${(props: StyledProps): string => props.theme.styledSelectFontWeight};
   font-size: ${(props: StyledProps): string => props.theme.styledSelectFontSize};
   line-height: ${(props: StyledProps): string => props.theme.styledSelectLineHeight};
-  padding: ${(props: StyledProps): string => props.theme.styledSelectVerticalPadding} ${(props: StyledProps): string => props.theme.styledSelectHorizontalPadding};
+  padding: ${(props: StyledProps): string => props.theme.styledSelectPadding};
   border-color: ${(props: StyledProps): string =>
     props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
   color: ${(props: any): string =>
     props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
+  appearance: none;
 
   option:disabled {
     color: ${(props: StyledProps): string => props.theme.styledSelectPlaceHolderColor};
@@ -282,6 +300,23 @@ const StyledSelect = styled.select<any>`
   &:focus {
     outline: none;
   }
+`
+
+const StyledSelectArrow = styled.span`
+  position: absolute;
+  border: solid;
+  border-width: 0 2px 2px 0;
+  border-color: ${(props: StyledProps): string => props.theme.styledSelectArrowColor}; 
+  display: inline-block;
+  padding: 4px;
+  vertical-align: middle;
+  content: ' ';
+  right: ${(props: StyledProps): string => props.theme.styledSelectArrowRightPosition};
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 0;
+  transform: rotate(45deg);
 `
 
 const StyledSpan = styled.span`
@@ -294,7 +329,7 @@ const StyledInputSuffix = styled.span`
   display: flex;
   align-items: center;
   height: ${(props: StyledProps): string => props.theme.inputHeight};
-  width: ${(props: StyledProps): string => props.theme.inputHeight};
+  width: ${(props: StyledProps): string => props.theme.styledInputSuffixWidth};
   box-sizing: border-box;
   background-color: ${(props: StyledProps): string => props.theme.styledInputSuffixBgColor};
   border-radius: ${(props: StyledProps): string => props.theme.styledInputSuffixBorderRadius};
@@ -308,7 +343,7 @@ const StyledSliderInputSuffix = styled.span`
   display: flex;
   align-items: center;
   height: ${(props: StyledProps): string => props.theme.sliderInputHeight};
-  width: ${(props: StyledProps): string => props.theme.sliderInputHeight};
+  width: ${(props: StyledProps): string => props.theme.styledInputSuffixWidth};
   box-sizing: border-box;
   background-color: ${(props: StyledProps): string => props.theme.styledInputSuffixBgColor};
   border-radius: ${(props: StyledProps): string => props.theme.styledInputSuffixBorderRadius};
@@ -382,11 +417,21 @@ const SliderWrapper = styled.div`
  }
 `
 
-const InputWrapper = styled.div`
+const InputWrapper = styled.div<InputWrapperProps>`
   position: relative;
   display: flex;
   width:100%;
   flex-direction: row;
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: ${(props: StyledProps): string => props.theme.inputIconLeft};
+    margin: auto;
+  }
+  input {
+    padding: ${(props: InputWrapperProps): string => props.withIcon ? props.theme.inputWithIconPadding : props.theme.inputPadding};
+  }
 `
 
 /* eslint-enable */
@@ -409,12 +454,13 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
           (props.required && '*') || ''
         }`}</label>
       )}
-      <InputWrapper>
+      <InputWrapper withIcon={props.icon !== undefined}>
         {props.prefix && (
           <StyledInputPrefix error={touched[field.name] && errors[field.name]}>
             {props.prefix}
           </StyledInputPrefix>
         )}
+        {props.icon && <img src={props.icon} />}
         <StyledInput
           {...field}
           {...props}
@@ -531,20 +577,23 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
           (props.required && '*') || ''
         }`}</label>
       )}
-      <StyledSelect
-        {...field}
-        {...props}
-        onBlur={handleOnBlur}
-        type="text"
-        value={(field.value && field.value) || 'select'}
-        error={touched[field.name] && errors[field.name]}
-        placeholder={
-          props.placeholder &&
-          `${props.placeholder}${(props.required && '*') || ''}`
-        }
-      >
-        {props.options && options(props.options)}
-      </StyledSelect>
+      <StyledSelectContainer>
+        <StyledSelect
+          {...field}
+          {...props}
+          onBlur={handleOnBlur}
+          type="text"
+          value={(field.value && field.value) || 'select'}
+          error={touched[field.name] && errors[field.name]}
+          placeholder={
+            props.placeholder &&
+            `${props.placeholder}${(props.required && '*') || ''}`
+          }
+        >
+          {props.options && options(props.options)}
+        </StyledSelect>
+        <StyledSelectArrow />
+      </StyledSelectContainer>
       {props.showError && touched[field.name] && errors[field.name] && (
         <StyledError>{errors[field.name]}</StyledError>
       )}

@@ -13,6 +13,7 @@ const EmailField: FC<EmailFieldProps> = ({
   name,
   required = false,
   showError = true,
+  icon,
 }) => (
   <Field
     required={required}
@@ -23,6 +24,7 @@ const EmailField: FC<EmailFieldProps> = ({
     label={label}
     placeholder={placeholder}
     type="email"
+    icon={icon}
     validate={validateEmail(errorMsg, required)}
   />
 )
