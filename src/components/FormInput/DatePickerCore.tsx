@@ -17,29 +17,31 @@ const StyledWrapper = styled.div`
 
 /* eslint-disable */
 const StyledDatePicker = styled(DatePicker)`
-  background: ${(props: StyledProps): string => props.theme.datePickerBgColor};
+  background: ${(props: StyledProps): string => props.theme.inputBgColor};
   border: 1px solid
-    ${(props: StyledProps): string => props.theme.datePickerBorderColor};
+    ${(props: StyledProps): string => props.theme.inputBorderColor};
   box-sizing: border-box;
-  box-shadow: ${(props: StyledProps): string => props.theme.datePickerBoxShadow};
+  box-shadow: ${(props: StyledProps): string => props.theme.inputBoxShadow};
   border-radius: ${(props: StyledProps): string =>
-    props.theme.datePickerBorderRadius};
+    props.theme.inputBorderRadius};
   width: 100%;
-  height: ${(props: StyledProps): string => props.theme.datePickerHeight};
+  height: ${(props: StyledProps): string => props.theme.inputHeight};
   display: flex;
   align-items: center;
-  font-style: ${(props: StyledProps): string => props.theme.datePickerFontStyle};
-  font-weight: ${(props: StyledProps): string => props.theme.datePickerFontWeight};
-  font-size: ${(props: StyledProps): string => props.theme.datePickerFontSize};
-  line-height: ${(props: StyledProps): string => props.theme.datePickerLineHeight};
-  padding: ${(props: StyledProps): string => props.theme.datePickerPadding};
+  font-style: ${(props: StyledProps): string => props.theme.inputFontStyle};
+  font-weight: ${(props: StyledProps): string => props.theme.inputFontWeight};
+  font-size: ${(props: StyledProps): string => props.theme.inputFontSize};
+  line-height: ${(props: StyledProps): string => props.theme.inputLineHeight};
+  text-align: ${(props: StyledProps): string => props.theme.inputTextAlign};
+  padding: ${(props: StyledProps): string => props.theme.inputPadding};
   border-color: ${(props: StyledProps): string =>
-    props.error ? props.theme.inputErrorColor : props.theme.datePickerBorderColor};
+    props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${(props: any): string =>
-    props.error ? props.theme.inputErrorColor : props.theme.datePickerTextColor};
+    props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
   &::placeholder {
-    color: ${(props: StyledProps): string => props.theme.datePickerPlaceHolderColor};
+    color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
+    font-size: ${(props: StyledProps): string => props.theme.inputFontSize};
   }
 
   &:focus {

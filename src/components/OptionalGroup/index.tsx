@@ -54,7 +54,13 @@ const OptionalGroup: React.FC<Props> = ({
 
   return (
     <>
-      <CheckboxField skipFieldForApi id={name} name={name} label={label} />
+      <CheckboxField
+        disableCollapse
+        skipFieldForApi
+        id={name}
+        name={name}
+        label={label}
+      />
       {groupVisible && <>{children}</>}
     </>
   )

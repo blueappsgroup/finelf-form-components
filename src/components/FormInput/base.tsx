@@ -136,6 +136,11 @@ const StyledRow = styled.div`
   }
 `
 
+/* eslint-disable */
+const StyledInputRow = styled(StyledRow)<{ visible: boolean }>`
+  display: ${props => props.visible ? 'flex' : 'none'};
+`
+
 const StyledRowRangeField = styled.div`
   display: flex;
   align-items: center;
@@ -175,7 +180,7 @@ export const Row = styled.div`
 `
 /* eslint-enable */
 
-const StyledError = styled.span`
+export const StyledError = styled.span`
   color: ${(props: StyledProps): string => props.theme.inputErrorColor};
   text-align: ${(props: StyledProps): string =>
     props.theme.inputErrorTextAlign};
@@ -185,7 +190,7 @@ const StyledError = styled.span`
   bottom: ${(props: StyledProps): string => props.theme.inputErrorBottom};
 `
 
-const StyledInput = styled.input<any>`
+export const StyledInput = styled.input<any>`
   background: ${(props: StyledProps): string => props.theme.inputBgColor};
   border: 1px solid
     ${(props: StyledProps): string => props.theme.inputBorderColor};
@@ -448,7 +453,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
   }
 
   return (
-    <StyledRow>
+    <StyledInputRow visible={props.visible !== false}>
       {props.label && (
         <label htmlFor={field.name}>{`${props.label}${
           (props.required && '*') || ''
@@ -487,7 +492,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
       {props.showError && touched[field.name] && errors[field.name] && (
         <StyledError>{errors[field.name]}</StyledError>
       )}
-    </StyledRow>
+    </StyledInputRow>
   )
 }
 

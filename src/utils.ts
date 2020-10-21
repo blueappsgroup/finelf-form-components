@@ -77,7 +77,7 @@ export const handleSendDataToApi: (
 ) => {
   const { agreements, ...rest } = values
   const filteredValues = Object.keys(rest).reduce((acc, key) => {
-    if (!fieldsForSkip.includes(key)) {
+    if (!fieldsForSkip.includes(key) && rest[key]) {
       acc[key] = rest[key]
     }
     return acc

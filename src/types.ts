@@ -13,6 +13,7 @@ export type CheckboxFieldProps = {
   children?: ReactElement | ReactElement[]
   HTMLcontent?: string
   skipFieldForApi?: boolean
+  disableCollapse?: boolean
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -28,6 +29,8 @@ export type FieldWrapProps = FieldProps & {
   prefix?: string
   HTMLcontent?: string
   skipFieldForApi?: boolean
+  disableCollapse?: boolean
+  visible?: boolean
   icon?: string
 }
 
@@ -96,6 +99,8 @@ export interface TextFieldProps {
 export interface TextFieldWithConditonProps extends TextFieldProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   requiredCondition?: { [key: string]: string[] }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  visibleCondition?: { [key: string]: any }
 }
 
 export type RangeFieldProps = {
