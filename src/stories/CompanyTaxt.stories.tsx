@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Story, Meta } from '@storybook/react'
 
-import { Form, CompanyTaxField } from '../'
+import { Form, CompanyTaxField, EmploymentTypeField } from '../'
 import { FormProps } from '../types'
 
 export default {
@@ -11,7 +11,12 @@ export default {
 
 const Template: Story<FormProps> = (args) => (
   <Form {...args}>
-    <CompanyTaxField name="company_tax_id" />
+    <EmploymentTypeField />
+    <CompanyTaxField
+      required
+      name="company_tax_id"
+      visibleCondition={undefined}
+    />
   </Form>
 )
 

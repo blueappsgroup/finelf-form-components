@@ -72,7 +72,10 @@ const TemplateSteps: Story<FormProps> = (args) => (
     <Step stepIndex={0}>
       <TextField required showError placeholder="Name1" name="firstName1" />
       <TextField required placeholder="Surname1" name="lastName" />
-      <OptionalGroup name="help_improve" label="Fill fild to improve">
+      <OptionalGroup
+        name="help_improve"
+        label="Fill fild to improve your chance to get money gosh"
+      >
         <FirstNameField name="fName" />
       </OptionalGroup>
     </Step>

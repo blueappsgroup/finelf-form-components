@@ -13,7 +13,8 @@ const CompanyNameField: FC<TextFieldWithConditonProps> = ({
   required = false,
   validate = validateText,
   showError = true,
-  requiredCondition = {
+  requiredCondition,
+  visibleCondition = {
     // eslint-disable-next-line @typescript-eslint/camelcase
     employment_type: [
       'fixed',
@@ -35,6 +36,7 @@ const CompanyNameField: FC<TextFieldWithConditonProps> = ({
     name={name}
     validate={validate}
     requiredCondition={requiredCondition}
+    visibleCondition={visibleCondition}
   />
 )
 

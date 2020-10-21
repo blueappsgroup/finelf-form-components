@@ -6,11 +6,16 @@ type Props = {
   [key: string]: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   requiredCondition?: { [key: string]: any }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  visibleCondition?: { [key: string]: any }
 }
 const CustomFieldWithCondition: FC<Props> = (props) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { values, setFieldError } = useFormikContext<any>()
+  const { values, errors, setErrors, setFieldValue } = useFormikContext<any>()
   const [required, setRequired] = useState(props.required || false)
+  const [visible, setVisible] = useState<boolean>(
+    (props.visibleCondition && false) || true
+  )
 
   useEffect(() => {
     if (!props.required && props.requiredCondition) {
@@ -32,17 +37,53 @@ const CustomFieldWithCondition: FC<Props> = (props) => {
         setRequired(isRequired)
       }
     }
+  }, [values, props.required, props.requiredCondition, required, props.name])
+
+  useEffect(() => {
+    if (props.visibleCondition) {
+      let isVisible = false
+
+      Object.keys(props.visibleCondition).some((key) => {
+        if (
+          props.visibleCondition &&
+          props.visibleCondition[key].includes(values[key])
+        ) {
+          isVisible = true
+
+          return true
+        }
+
+        return false
+      })
+
+      if (!isVisible && isVisible !== visible) {
+        setErrors({ ...errors, [props.name]: undefined })
+        console.log('dd')
+        setFieldValue(props.name, '', false)
+        setVisible(isVisible)
+      }
+
+      if (isVisible && isVisible !== visible) {
+        setVisible(isVisible)
+      }
+    }
   }, [
     values,
-    props.required,
-    props.requiredCondition,
-    required,
+    setFieldValue,
+    props.visibleCondition,
     props.name,
-    setFieldError,
+    visible,
+    errors,
+    setErrors,
   ])
 
   return (
-    <Field {...props} required={required} validate={props.validate(required)} />
+    <Field
+      {...props}
+      required={required}
+      validate={props.validate(required)}
+      visible={visible}
+    />
   )
 }
 

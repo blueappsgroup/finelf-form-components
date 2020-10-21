@@ -14,6 +14,7 @@ const CheckboxFormField: FC<CheckboxFieldProps> = ({
   children,
   HTMLcontent,
   skipFieldForApi,
+  disableCollapse,
 }) => (
   <Field
     required={required}
@@ -27,6 +28,7 @@ const CheckboxFormField: FC<CheckboxFieldProps> = ({
     childrenBody={children}
     HTMLcontent={HTMLcontent}
     skipFieldForApi={skipFieldForApi}
+    disableCollapse={disableCollapse}
   />
 )
 
