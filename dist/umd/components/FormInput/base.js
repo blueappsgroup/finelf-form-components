@@ -167,7 +167,7 @@
   const Row = exports.Row = _styledComponents2.default.div`
   display: flex;
   width: 100%;
-  margin: 15px auto;
+  margin: 0 auto;
   flex-direction: column;
   > * {
       flex-basis: 0;
@@ -263,7 +263,12 @@
 `;
   /* eslint-disable */
 
+  const StyledSelectContainer = _styledComponents2.default.div`
+  position: relative;
+  width: 100%;
+`;
   const StyledSelect = _styledComponents2.default.select`
+  position: relative;
   background: ${props => props.theme.styledSelectBgColor};
   border: ${props => props.theme.styledSelectBorderWidth} ${props => props.theme.styledSelectBorderStyle}
     ${props => props.theme.styledSelectBorderColor};
@@ -278,9 +283,10 @@
   font-weight: ${props => props.theme.styledSelectFontWeight};
   font-size: ${props => props.theme.styledSelectFontSize};
   line-height: ${props => props.theme.styledSelectLineHeight};
-  padding: ${props => props.theme.styledSelectVerticalPadding} ${props => props.theme.styledSelectHorizontalPadding};
+  padding: ${props => props.theme.styledSelectPadding};
   border-color: ${props => props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
   color: ${props => props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
+  appearance: none;
 
   option:disabled {
     color: ${props => props.theme.styledSelectPlaceHolderColor};
@@ -289,6 +295,22 @@
   &:focus {
     outline: none;
   }
+`;
+  const StyledSelectArrow = _styledComponents2.default.span`
+  position: absolute;
+  border: solid;
+  border-width: 0 2px 2px 0;
+  border-color: ${props => props.theme.styledSelectArrowColor}; 
+  display: inline-block;
+  padding: 4px;
+  vertical-align: middle;
+  content: ' ';
+  right: ${props => props.theme.styledSelectArrowRightPosition};
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 0;
+  transform: rotate(45deg);
 `;
   const StyledSpan = _styledComponents2.default.span`
   font-size: ${props => props.theme.styledSpanFontSize};
@@ -299,7 +321,7 @@
   display: flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
-  width: ${props => props.theme.inputHeight};
+  width: ${props => props.theme.styledInputSuffixWidth};
   box-sizing: border-box;
   background-color: ${props => props.theme.styledInputSuffixBgColor};
   border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
@@ -312,7 +334,7 @@
   display: flex;
   align-items: center;
   height: ${props => props.theme.sliderInputHeight};
-  width: ${props => props.theme.sliderInputHeight};
+  width: ${props => props.theme.styledInputSuffixWidth};
   box-sizing: border-box;
   background-color: ${props => props.theme.styledInputSuffixBgColor};
   border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
@@ -387,6 +409,16 @@
   display: flex;
   width:100%;
   flex-direction: row;
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: ${props => props.theme.inputIconLeft};
+    margin: auto;
+  }
+  input {
+    padding: ${props => props.withIcon ? props.theme.inputWithIconPadding : props.theme.inputPadding};
+  }
 `;
   /* eslint-enable */
 
@@ -412,9 +444,13 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(InputWrapper, null, props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, {
+    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(InputWrapper, {
+      withIcon: props.icon !== undefined
+    }, props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, {
       error: touched[field.name] && errors[field.name]
-    }, props.prefix), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+    }, props.prefix), props.icon && /*#__PURE__*/_react2.default.createElement("img", {
+      src: props.icon
+    }), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
       required: props.required,
       hasPrefix: !!props.prefix,
       hasSufix: !!props.suffix,
@@ -512,13 +548,13 @@
 
     return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
-    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(StyledSelect, _extends({}, field, props, {
+    }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(StyledSelectContainer, null, /*#__PURE__*/_react2.default.createElement(StyledSelect, _extends({}, field, props, {
       onBlur: handleOnBlur,
       type: "text",
       value: field.value && field.value || 'select',
       error: touched[field.name] && errors[field.name],
       placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
-    }), props.options && options(props.options)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react2.default.createElement(StyledError, null, errors[field.name]));
+    }), props.options && options(props.options)), /*#__PURE__*/_react2.default.createElement(StyledSelectArrow, null)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react2.default.createElement(StyledError, null, errors[field.name]));
   };
 
   const BaseRangeField = exports.BaseRangeField = _ref4 => {

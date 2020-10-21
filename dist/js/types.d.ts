@@ -24,6 +24,7 @@ export declare type FieldWrapProps = FieldProps & {
     prefix?: string;
     HTMLcontent?: string;
     skipFieldForApi?: boolean;
+    icon?: string;
 };
 export declare type FieldDateWrapProps = FieldProps & {
     label?: string;
@@ -109,6 +110,7 @@ export declare type EmailFieldProps = {
     errorMsg?: string;
     required?: boolean;
     showError?: boolean;
+    icon?: string;
 };
 export declare type AmountOfChildrenFieldProps = {
     id?: string;
@@ -204,6 +206,7 @@ export declare type CustomThemeType = {
     styledRowMarginBottom?: string;
     checkboxLabelArrowColor?: string;
     checkboxBgColor?: string;
+    checkboxCheckedBgColor?: string;
     checkboxBorderColor?: string;
     checkboxBorderErrorColor?: string;
     checkboxLabelTextColor?: string;

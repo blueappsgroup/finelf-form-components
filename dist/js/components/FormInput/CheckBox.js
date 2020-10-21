@@ -148,7 +148,7 @@ var HiddenCheckbox = _styledComponents.default.input.attrs({
 })(_templateObject5());
 
 var StyledCheckbox = _styledComponents.default.div(_templateObject6(), function (props) {
-  return props.theme.checkboxBgColor;
+  return props.checked ? props.theme.checkboxCheckedBgColor : props.theme.checkboxBgColor;
 }, function (props) {
   return props.theme.checkboxBorderWidth;
 }, function (props) {

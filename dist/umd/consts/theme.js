@@ -133,6 +133,8 @@
     styledSelectHeight: '63px',
     styledSelectTextColor: colors.mainGrey,
     styledSelectPlaceHolderColor: colors.mainGrey,
+    styledSelectArrowColor: colors.black,
+    styledSelectArrowRightPosition: '20px',
     styledSelectErrorColor: colors.errorRed,
     styledSelectErrorTextAlign: 'left',
     styledSelectBorderColor: colors.ligthGrey,
@@ -145,14 +147,14 @@
     styledSelectFontWeight: '500',
     styledSelectFontStyle: 'normal',
     styledSelectLineHeight: '24px',
-    styledSelectVerticalPadding: '0px',
-    styledSelectHorizontalPadding: '20px',
+    styledSelectPadding: '0 40px 0 20px',
     styledSpanFontSize: '16px',
     styledSpanFontColor: colors.black,
     styledSpanFontWeight: 'bold',
     styledRowMarginBottom: '12px',
     checkboxLabelArrowColor: colors.mediumGrey,
     checkboxBgColor: colors.white,
+    checkboxCheckedBgColor: colors.white,
     checkboxBorderColor: colors.black,
     checkboxBorderWidth: '1px',
     checkboxLabelFontSize: '12px',
@@ -202,6 +204,7 @@
     sliderHandleAfterWidth: '7px',
     sliderHandleAfterHeight: '7px',
     sliderHandleAfterBorderRadius: '50%',
+    styledInputSuffixWidth: '70px',
     styledInputSuffixBgColor: colors.mediumRed,
     styledInputSuffixTextColor: colors.white,
     styledInputSuffixFontSize: '14px',
@@ -215,7 +218,9 @@
     imageContainerTextTopPosition: '25%',
     imageContainerTextFontSize: '45px',
     imageContainerTextFontWeight: '900',
-    imageBoxShadow: 'none'
+    imageBoxShadow: 'none',
+    inputIconLeft: '10px',
+    inputWithIconPadding: '0 20px 0 44px'
   };
 
   const ThemeProvider = exports.ThemeProvider = ({
