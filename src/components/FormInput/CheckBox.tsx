@@ -93,7 +93,10 @@ const StyledCheckbox = styled.div<StyledProps>`
   position: relative;
   width: 18px;
   height: 18px;
-  background: ${(props): string => props.theme.checkboxBgColor};
+  background: ${(props): string =>
+    props.checked
+      ? props.theme.checkboxCheckedBgColor
+      : props.theme.checkboxBgColor};
   border-radius: 3px;
   border: ${(props): string => props.theme.checkboxBorderWidth} solid;
   border-color: ${(props: StyledProps): string =>

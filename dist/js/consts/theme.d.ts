@@ -56,6 +56,8 @@ export declare const theme: {
     styledSelectHeight: string;
     styledSelectTextColor: string;
     styledSelectPlaceHolderColor: string;
+    styledSelectArrowColor: string;
+    styledSelectArrowRightPosition: string;
     styledSelectErrorColor: string;
     styledSelectErrorTextAlign: string;
     styledSelectBorderColor: string;
@@ -68,14 +70,14 @@ export declare const theme: {
     styledSelectFontWeight: string;
     styledSelectFontStyle: string;
     styledSelectLineHeight: string;
-    styledSelectVerticalPadding: string;
-    styledSelectHorizontalPadding: string;
+    styledSelectPadding: string;
     styledSpanFontSize: string;
     styledSpanFontColor: string;
     styledSpanFontWeight: string;
     styledRowMarginBottom: string;
     checkboxLabelArrowColor: string;
     checkboxBgColor: string;
+    checkboxCheckedBgColor: string;
     checkboxBorderColor: string;
     checkboxBorderWidth: string;
     checkboxLabelFontSize: string;
@@ -125,6 +127,7 @@ export declare const theme: {
     sliderHandleAfterWidth: string;
     sliderHandleAfterHeight: string;
     sliderHandleAfterBorderRadius: string;
+    styledInputSuffixWidth: string;
     styledInputSuffixBgColor: string;
     styledInputSuffixTextColor: string;
     styledInputSuffixFontSize: string;
@@ -139,6 +142,8 @@ export declare const theme: {
     imageContainerTextFontSize: string;
     imageContainerTextFontWeight: string;
     imageBoxShadow: string;
+    inputIconLeft: string;
+    inputWithIconPadding: string;
 };
 declare type ThemeProviderPops = {
     children: ReactElement | ReactElement[];
