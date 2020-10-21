@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "prop-types", "react", "../CheckboxesGroup", "../", "../../utils"], factory);
+    define(["exports", "prop-types", "react", "styled-components", "../CheckboxesGroup", "../", "../../utils", "../FormInput/base"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("prop-types"), require("react"), require("../CheckboxesGroup"), require("../"), require("../../utils"));
+    factory(exports, require("prop-types"), require("react"), require("styled-components"), require("../CheckboxesGroup"), require("../"), require("../../utils"), require("../FormInput/base"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.propTypes, global.react, global.CheckboxesGroup, global._, global.utils);
+    factory(mod.exports, global.propTypes, global.react, global.styledComponents, global.CheckboxesGroup, global._, global.utils, global.base);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _propTypes, _react, _CheckboxesGroup, _, _utils) {
+})(this, function (exports, _propTypes, _react, _styledComponents, _CheckboxesGroup, _, _utils, _base) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -20,6 +20,8 @@
   var _propTypes2 = _interopRequireDefault(_propTypes);
 
   var _react2 = _interopRequireDefault(_react);
+
+  var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
   var _CheckboxesGroup2 = _interopRequireDefault(_CheckboxesGroup);
 
@@ -78,15 +80,21 @@
     return obj;
   }
 
+  const StyledErrorText = (0, _styledComponents2.default)(_base.StyledError)`
+  position: static;
+`;
+
   const Agreemnets = ({
     linksForReplace,
-    name = 'agreements'
+    name = 'agreements',
+    requiredErorText = '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.'
   }) => {
     const {
       id,
       apiUrl
     } = (0, _react.useContext)(_utils.FormContext);
     const [agreements, setAgreements] = (0, _react.useState)([]);
+    const [error, setError] = (0, _react.useState)(false);
     const replaceLinkInAgreements = (0, _react.useCallback)(agreements => {
       const replacedAgreements = agreements.map(item => {
         let newContent = item.content;
@@ -115,21 +123,38 @@
       if (agreements.length === 0) {
         fetchAgreements();
       }
-    }, [agreements, fetchAgreements]);
-    return /*#__PURE__*/_react2.default.createElement(_react2.default.Fragment, null, Array.isArray(agreements) && agreements.length > 0 && /*#__PURE__*/_react2.default.createElement(_CheckboxesGroup2.default, {
+
+      if (agreements.length > 0 && !error) {
+        let hasRequired = false;
+        agreements.some(agreement => {
+          if (agreement.required) {
+            hasRequired = true;
+            return true;
+          }
+
+          return false;
+        });
+
+        if (hasRequired !== error) {
+          setError(hasRequired);
+        }
+      }
+    }, [agreements, error, fetchAgreements]);
+    return /*#__PURE__*/_react2.default.createElement(_react2.default.Fragment, null, Array.isArray(agreements) && agreements.length > 0 && /*#__PURE__*/_react2.default.createElement(_react2.default.Fragment, null, /*#__PURE__*/_react2.default.createElement(_CheckboxesGroup2.default, {
       name: name
     }, agreements.map(item => /*#__PURE__*/_react2.default.createElement(_.CheckboxField, {
       key: item.id,
       name: `${item.id}`,
       HTMLcontent: item.content,
       required: item.required
-    }))));
+    }))), error && /*#__PURE__*/_react2.default.createElement(StyledErrorText, null, requiredErorText)));
   };
 
   Agreemnets.propTypes = {
     linksForReplace: _propTypes2.default.objectOf(_propTypes2.default.string),
     name: _propTypes2.default.string,
-    groupType: _propTypes2.default.string
+    groupType: _propTypes2.default.string,
+    requiredErorText: _propTypes2.default.string
   };
   Agreemnets.defaultProps = {
     name: 'agreements',

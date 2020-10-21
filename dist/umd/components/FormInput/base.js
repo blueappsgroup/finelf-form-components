@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.BaseRangeField = exports.BaseSelectField = exports.BaseDateField = exports.SliderRow = exports.Row = undefined;
+  exports.BaseRangeField = exports.BaseSelectField = exports.BaseDateField = exports.SliderRow = exports.StyledInput = exports.StyledError = exports.Row = undefined;
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -150,6 +150,11 @@
     color: ${props => props.theme.styledRowLabelFontColor};
   }
 `;
+  /* eslint-disable */
+
+  const StyledInputRow = (0, _styledComponents2.default)(StyledRow)`
+  display: ${props => props.visible ? 'flex' : 'none'};
+`;
   const StyledRowRangeField = _styledComponents2.default.div`
   display: flex;
   align-items: center;
@@ -188,7 +193,7 @@
 `;
   /* eslint-enable */
 
-  const StyledError = _styledComponents2.default.span`
+  const StyledError = exports.StyledError = _styledComponents2.default.span`
   color: ${props => props.theme.inputErrorColor};
   text-align: ${props => props.theme.inputErrorTextAlign};
   position: absolute;
@@ -196,7 +201,7 @@
   font-size: ${props => props.theme.inputErrorFontSize};
   bottom: ${props => props.theme.inputErrorBottom};
 `;
-  const StyledInput = _styledComponents2.default.input`
+  const StyledInput = exports.StyledInput = _styledComponents2.default.input`
   background: ${props => props.theme.inputBgColor};
   border: 1px solid
     ${props => props.theme.inputBorderColor};
@@ -442,7 +447,9 @@
       field.onBlur && field.onBlur(e);
     };
 
-    return /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
+    return /*#__PURE__*/_react2.default.createElement(StyledInputRow, {
+      visible: props.visible !== false
+    }, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
     }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(InputWrapper, {
       withIcon: props.icon !== undefined

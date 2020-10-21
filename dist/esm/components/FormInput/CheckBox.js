@@ -161,16 +161,16 @@ export const CheckboxBase = (_ref2) => {
   const onCollapseClick = () => setCollapsed(!collapsed);
 
   useLayoutEffect(() => {
-    if (targetRef.current && targetRef.current.offsetHeight > 22) {
+    if (targetRef.current && targetRef.current.offsetHeight > 22 && !props.disableCollapse) {
       setHasCollapse(true);
     }
-  }, [targetRef]);
+  }, [props.disableCollapse, targetRef]);
   useEffect(() => {
     props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return /*#__PURE__*/React.createElement(StyledRow, {
-    hasCollapse: hasCollapse,
-    collapsed: collapsed
+    hasCollapse: hasCollapse && !props.disableCollapse,
+    collapsed: collapsed || props.disableCollapse
   }, /*#__PURE__*/React.createElement(Wrapper, {
     ref: targetRef,
     onMouseOut: handleOnMouseOut

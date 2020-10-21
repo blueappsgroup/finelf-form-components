@@ -26,7 +26,8 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
       onChange = _ref.onChange,
       children = _ref.children,
       HTMLcontent = _ref.HTMLcontent,
-      skipFieldForApi = _ref.skipFieldForApi;
+      skipFieldForApi = _ref.skipFieldForApi,
+      disableCollapse = _ref.disableCollapse;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     id: id,
@@ -38,7 +39,8 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
     onChange: onChange,
     childrenBody: children,
     HTMLcontent: HTMLcontent,
-    skipFieldForApi: skipFieldForApi
+    skipFieldForApi: skipFieldForApi,
+    disableCollapse: disableCollapse
   });
 };
 

@@ -4,6 +4,9 @@ declare type Props = {
     requiredCondition?: {
         [key: string]: any;
     };
+    visibleCondition?: {
+        [key: string]: any;
+    };
 };
 declare const CustomFieldWithCondition: FC<Props>;
 export default CustomFieldWithCondition;

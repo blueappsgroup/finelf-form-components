@@ -35,7 +35,8 @@
     onChange,
     children,
     HTMLcontent,
-    skipFieldForApi
+    skipFieldForApi,
+    disableCollapse
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     id: id,
@@ -47,7 +48,8 @@
     onChange: onChange,
     childrenBody: children,
     HTMLcontent: HTMLcontent,
-    skipFieldForApi: skipFieldForApi
+    skipFieldForApi: skipFieldForApi,
+    disableCollapse: disableCollapse
   });
 
   CheckboxFormField.defaultProps = {

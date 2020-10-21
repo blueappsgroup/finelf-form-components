@@ -10,6 +10,7 @@ export declare type CheckboxFieldProps = {
     children?: ReactElement | ReactElement[];
     HTMLcontent?: string;
     skipFieldForApi?: boolean;
+    disableCollapse?: boolean;
 };
 export declare type FieldWrapProps = FieldProps & {
     label?: string;
@@ -24,6 +25,8 @@ export declare type FieldWrapProps = FieldProps & {
     prefix?: string;
     HTMLcontent?: string;
     skipFieldForApi?: boolean;
+    disableCollapse?: boolean;
+    visible?: boolean;
     icon?: string;
 };
 export declare type FieldDateWrapProps = FieldProps & {
@@ -85,6 +88,9 @@ export interface TextFieldProps {
 export interface TextFieldWithConditonProps extends TextFieldProps {
     requiredCondition?: {
         [key: string]: string[];
+    };
+    visibleCondition?: {
+        [key: string]: any;
     };
 }
 export declare type RangeFieldProps = {

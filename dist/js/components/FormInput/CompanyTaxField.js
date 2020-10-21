@@ -7,11 +7,11 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _formik = require("formik");
-
 var _base = _interopRequireDefault(require("./base"));
 
 var _validate = require("./validate");
+
+var _CustomFieldWithCondition = _interopRequireDefault(require("./CustomFieldWithCondition"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29,12 +29,13 @@ var CompanyTaxField = function CompanyTaxField(_ref) {
       validate = _ref$validate === void 0 ? _validate.validateCompanyTax : _ref$validate,
       _ref$showError = _ref.showError,
       showError = _ref$showError === void 0 ? true : _ref$showError,
-      _ref$requiredConditio = _ref.requiredCondition,
-      requiredCondition = _ref$requiredConditio === void 0 ? {
+      requiredCondition = _ref.requiredCondition,
+      _ref$visibleCondition = _ref.visibleCondition,
+      visibleCondition = _ref$visibleCondition === void 0 ? {
     // eslint-disable-next-line @typescript-eslint/camelcase
     employment_type: ['self_employed']
-  } : _ref$requiredConditio;
-  return /*#__PURE__*/_react.default.createElement(_formik.Field, {
+  } : _ref$visibleCondition;
+  return /*#__PURE__*/_react.default.createElement(_CustomFieldWithCondition.default, {
     id: id,
     label: label,
     placeholder: placeholder,
@@ -43,7 +44,8 @@ var CompanyTaxField = function CompanyTaxField(_ref) {
     showError: showError,
     name: name,
     validate: validate,
-    requiredCondition: requiredCondition
+    requiredCondition: requiredCondition,
+    visibleCondition: visibleCondition
   });
 };
 

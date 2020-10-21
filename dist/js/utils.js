@@ -63,7 +63,7 @@ var handleSendDataToApi = function handleSendDataToApi(values, apiUrl, formId, f
       rest = _objectWithoutProperties(values, ["agreements"]);
 
   var filteredValues = Object.keys(rest).reduce(function (acc, key) {
-    if (!fieldsForSkip.includes(key)) {
+    if (!fieldsForSkip.includes(key) && rest[key]) {
       acc[key] = rest[key];
     }
 

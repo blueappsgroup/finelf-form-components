@@ -31,6 +31,11 @@ const StyledRow = styled.div`
     color: ${props => props.theme.styledRowLabelFontColor};
   }
 `;
+/* eslint-disable */
+
+const StyledInputRow = styled(StyledRow)`
+  display: ${props => props.visible ? 'flex' : 'none'};
+`;
 const StyledRowRangeField = styled.div`
   display: flex;
   align-items: center;
@@ -69,7 +74,7 @@ export const Row = styled.div`
 `;
 /* eslint-enable */
 
-const StyledError = styled.span`
+export const StyledError = styled.span`
   color: ${props => props.theme.inputErrorColor};
   text-align: ${props => props.theme.inputErrorTextAlign};
   position: absolute;
@@ -77,7 +82,7 @@ const StyledError = styled.span`
   font-size: ${props => props.theme.inputErrorFontSize};
   bottom: ${props => props.theme.inputErrorBottom};
 `;
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   background: ${props => props.theme.inputBgColor};
   border: 1px solid
     ${props => props.theme.inputBorderColor};
@@ -323,7 +328,9 @@ const BaseField = (_ref) => {
     field.onBlur && field.onBlur(e);
   };
 
-  return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/React.createElement(StyledInputRow, {
+    visible: props.visible !== false
+  }, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
   }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(InputWrapper, {
     withIcon: props.icon !== undefined

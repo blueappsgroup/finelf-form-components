@@ -11,11 +11,15 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
 var _CheckboxesGroup = _interopRequireDefault(require("../CheckboxesGroup"));
 
 var _ = require("../");
 
 var _utils = require("../../utils");
+
+var _base = require("../FormInput/base");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -45,10 +49,26 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  position: static;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var StyledErrorText = (0, _styledComponents.default)(_base.StyledError)(_templateObject());
+
 var Agreemnets = function Agreemnets(_ref) {
   var linksForReplace = _ref.linksForReplace,
       _ref$name = _ref.name,
-      name = _ref$name === void 0 ? 'agreements' : _ref$name;
+      name = _ref$name === void 0 ? 'agreements' : _ref$name,
+      _ref$requiredErorText = _ref.requiredErorText,
+      requiredErorText = _ref$requiredErorText === void 0 ? '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.' : _ref$requiredErorText;
 
   var _useContext = (0, _react.useContext)(_utils.FormContext),
       id = _useContext.id,
@@ -58,6 +78,11 @@ var Agreemnets = function Agreemnets(_ref) {
       _useState2 = _slicedToArray(_useState, 2),
       agreements = _useState2[0],
       setAgreements = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      error = _useState4[0],
+      setError = _useState4[1];
 
   var replaceLinkInAgreements = (0, _react.useCallback)(function (agreements) {
     var replacedAgreements = agreements.map(function (item) {
@@ -113,8 +138,24 @@ var Agreemnets = function Agreemnets(_ref) {
     if (agreements.length === 0) {
       fetchAgreements();
     }
-  }, [agreements, fetchAgreements]);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, Array.isArray(agreements) && agreements.length > 0 && /*#__PURE__*/_react.default.createElement(_CheckboxesGroup.default, {
+
+    if (agreements.length > 0 && !error) {
+      var hasRequired = false;
+      agreements.some(function (agreement) {
+        if (agreement.required) {
+          hasRequired = true;
+          return true;
+        }
+
+        return false;
+      });
+
+      if (hasRequired !== error) {
+        setError(hasRequired);
+      }
+    }
+  }, [agreements, error, fetchAgreements]);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, Array.isArray(agreements) && agreements.length > 0 && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_CheckboxesGroup.default, {
     name: name
   }, agreements.map(function (item) {
     return /*#__PURE__*/_react.default.createElement(_.CheckboxField, {
@@ -123,13 +164,14 @@ var Agreemnets = function Agreemnets(_ref) {
       HTMLcontent: item.content,
       required: item.required
     });
-  })));
+  })), error && /*#__PURE__*/_react.default.createElement(StyledErrorText, null, requiredErorText)));
 };
 
 Agreemnets.propTypes = {
   linksForReplace: _propTypes.default.objectOf(_propTypes.default.string),
   name: _propTypes.default.string,
-  groupType: _propTypes.default.string
+  groupType: _propTypes.default.string,
+  requiredErorText: _propTypes.default.string
 };
 Agreemnets.defaultProps = {
   name: 'agreements',

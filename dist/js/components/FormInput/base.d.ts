@@ -100,6 +100,8 @@ export declare type InputWrapperProps = {
     };
 };
 export declare const Row: import("styled-components").StyledComponent<"div", any, {}, never>;
+export declare const StyledError: import("styled-components").StyledComponent<"span", any, {}, never>;
+export declare const StyledInput: import("styled-components").StyledComponent<"input", any, any, never>;
 export declare const SliderRow: import("styled-components").StyledComponent<"div", any, {}, never>;
 declare const BaseField: (props: FieldWrapProps) => ReactElement;
 export default BaseField;

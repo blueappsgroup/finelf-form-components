@@ -36,7 +36,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n    font-size: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -62,31 +62,35 @@ var StyledWrapper = _styledComponents.default.div(_templateObject());
 
 
 var StyledDatePicker = (0, _styledComponents.default)(_reactDatepicker.default)(_templateObject2(), function (props) {
-  return props.theme.datePickerBgColor;
+  return props.theme.inputBgColor;
 }, function (props) {
-  return props.theme.datePickerBorderColor;
+  return props.theme.inputBorderColor;
 }, function (props) {
-  return props.theme.datePickerBoxShadow;
+  return props.theme.inputBoxShadow;
 }, function (props) {
-  return props.theme.datePickerBorderRadius;
+  return props.theme.inputBorderRadius;
 }, function (props) {
-  return props.theme.datePickerHeight;
+  return props.theme.inputHeight;
 }, function (props) {
-  return props.theme.datePickerFontStyle;
+  return props.theme.inputFontStyle;
 }, function (props) {
-  return props.theme.datePickerFontWeight;
+  return props.theme.inputFontWeight;
 }, function (props) {
-  return props.theme.datePickerFontSize;
+  return props.theme.inputFontSize;
 }, function (props) {
-  return props.theme.datePickerLineHeight;
+  return props.theme.inputLineHeight;
 }, function (props) {
-  return props.theme.datePickerPadding;
+  return props.theme.inputTextAlign;
 }, function (props) {
-  return props.error ? props.theme.inputErrorColor : props.theme.datePickerBorderColor;
+  return props.theme.inputPadding;
 }, function (props) {
-  return props.error ? props.theme.inputErrorColor : props.theme.datePickerTextColor;
+  return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
 }, function (props) {
-  return props.theme.datePickerPlaceHolderColor;
+  return props.error ? props.theme.inputErrorColor : props.theme.inputTextColor;
+}, function (props) {
+  return props.theme.inputPlaceHolderColor;
+}, function (props) {
+  return props.theme.inputFontSize;
 });
 /* eslint-enable */
 

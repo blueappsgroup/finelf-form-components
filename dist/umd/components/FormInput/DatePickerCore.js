@@ -59,26 +59,28 @@
   /* eslint-disable */
 
   const StyledDatePicker = (0, _styledComponents2.default)(_reactDatepicker2.default)`
-  background: ${props => props.theme.datePickerBgColor};
+  background: ${props => props.theme.inputBgColor};
   border: 1px solid
-    ${props => props.theme.datePickerBorderColor};
+    ${props => props.theme.inputBorderColor};
   box-sizing: border-box;
-  box-shadow: ${props => props.theme.datePickerBoxShadow};
-  border-radius: ${props => props.theme.datePickerBorderRadius};
+  box-shadow: ${props => props.theme.inputBoxShadow};
+  border-radius: ${props => props.theme.inputBorderRadius};
   width: 100%;
-  height: ${props => props.theme.datePickerHeight};
+  height: ${props => props.theme.inputHeight};
   display: flex;
   align-items: center;
-  font-style: ${props => props.theme.datePickerFontStyle};
-  font-weight: ${props => props.theme.datePickerFontWeight};
-  font-size: ${props => props.theme.datePickerFontSize};
-  line-height: ${props => props.theme.datePickerLineHeight};
-  padding: ${props => props.theme.datePickerPadding};
-  border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.datePickerBorderColor};
-  color: ${props => props.error ? props.theme.inputErrorColor : props.theme.datePickerTextColor};
+  font-style: ${props => props.theme.inputFontStyle};
+  font-weight: ${props => props.theme.inputFontWeight};
+  font-size: ${props => props.theme.inputFontSize};
+  line-height: ${props => props.theme.inputLineHeight};
+  text-align: ${props => props.theme.inputTextAlign};
+  padding: ${props => props.theme.inputPadding};
+  border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
   &::placeholder {
-    color: ${props => props.theme.datePickerPlaceHolderColor};
+    color: ${props => props.theme.inputPlaceHolderColor};
+    font-size: ${props => props.theme.inputFontSize};
   }
 
   &:focus {

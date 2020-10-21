@@ -11,7 +11,8 @@ const CheckboxFormField = ({
   onChange,
   children,
   HTMLcontent,
-  skipFieldForApi
+  skipFieldForApi,
+  disableCollapse
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   id: id,
@@ -23,7 +24,8 @@ const CheckboxFormField = ({
   onChange: onChange,
   childrenBody: children,
   HTMLcontent: HTMLcontent,
-  skipFieldForApi: skipFieldForApi
+  skipFieldForApi: skipFieldForApi,
+  disableCollapse: disableCollapse
 });
 
 CheckboxFormField.defaultProps = {

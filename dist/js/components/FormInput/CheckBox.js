@@ -231,16 +231,16 @@ var CheckboxBase = function CheckboxBase(_ref2) {
   };
 
   (0, _react.useLayoutEffect)(function () {
-    if (targetRef.current && targetRef.current.offsetHeight > 22) {
+    if (targetRef.current && targetRef.current.offsetHeight > 22 && !props.disableCollapse) {
       setHasCollapse(true);
     }
-  }, [targetRef]);
+  }, [props.disableCollapse, targetRef]);
   (0, _react.useEffect)(function () {
     props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return /*#__PURE__*/_react.default.createElement(StyledRow, {
-    hasCollapse: hasCollapse,
-    collapsed: collapsed
+    hasCollapse: hasCollapse && !props.disableCollapse,
+    collapsed: collapsed || props.disableCollapse
   }, /*#__PURE__*/_react.default.createElement(Wrapper, {
     ref: targetRef,
     onMouseOut: handleOnMouseOut
