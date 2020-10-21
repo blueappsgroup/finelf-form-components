@@ -1,5 +1,6 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useContext, useEffect, useState } from 'react'
 import { Field, useFormikContext } from 'formik'
+import { FormContext, setFormValuesToCache } from '../../utils'
 
 type Props = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -11,7 +12,8 @@ type Props = {
 }
 const CustomFieldWithCondition: FC<Props> = (props) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { values, errors, setErrors, setFieldValue } = useFormikContext<any>()
+  const { values, errors, setErrors, setValues } = useFormikContext<any>()
+  const { id } = useContext(FormContext)
   const [required, setRequired] = useState(props.required || false)
   const [visible, setVisible] = useState<boolean>(
     (props.visibleCondition && false) || true
@@ -57,9 +59,9 @@ const CustomFieldWithCondition: FC<Props> = (props) => {
       })
 
       if (!isVisible && isVisible !== visible) {
+        setValues({ ...values, [props.name]: undefined }, false)
         setErrors({ ...errors, [props.name]: undefined })
-        console.log('dd')
-        setFieldValue(props.name, '', false)
+        setFormValuesToCache({ ...values, [props.name]: undefined }, id)
         setVisible(isVisible)
       }
 
@@ -69,19 +71,20 @@ const CustomFieldWithCondition: FC<Props> = (props) => {
     }
   }, [
     values,
-    setFieldValue,
+    setValues,
     props.visibleCondition,
     props.name,
     visible,
     errors,
     setErrors,
+    id,
   ])
 
   return (
     <Field
       {...props}
-      required={required}
-      validate={props.validate(required)}
+      required={required && visible}
+      validate={props.validate(required && visible)}
       visible={visible}
     />
   )
