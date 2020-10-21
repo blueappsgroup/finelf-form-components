@@ -11,9 +11,7 @@ type StyledProps = {
 }
 
 const PageWrapper = styled.div<{ backgroundImage?: string }>`
-  font-family: 'Manrope', BlinkMacSystemFont, -apple-system, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: ${(props): string => props.theme.fontFamily};
   text-align: center;
   ${(props): string | undefined =>
     props.backgroundImage && `background-image: url(${props.backgroundImage});`}

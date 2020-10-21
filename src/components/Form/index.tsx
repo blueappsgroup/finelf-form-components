@@ -23,9 +23,7 @@ const StyledForm = styled(Form)`
   justify-self: center;
   margin: 0 10px;
   background: ${(props): string => props.theme.formBgColor};
-  font-family: 'Manrope', BlinkMacSystemFont, -apple-system, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: ${(props): string => props.theme.fontFamily};
   padding: 20px 15px;
   border-radius: 6px;
   box-shadow: ${(props): string => props.theme.formBoxShadow};

@@ -6,6 +6,7 @@ import { HeaderProps } from '../../types'
 type StyledProps = {
   theme: {
     headerTextColor: string
+    headerFontWeight: string
     headerFontSize: string
     headerLineHeight: string
     headerBorderColor: string
@@ -20,7 +21,7 @@ type StyledProps = {
 
 // prettier-ignore
 const StyledMainHeader = styled.h2<StyledProps>`
-  font-weight: 600;
+  font-weight: ${(props: StyledProps): string => props.theme.headerFontWeight};
   font-size: ${(props: StyledProps): string => props.theme.headerFontSize};
   line-height: ${(props: StyledProps): string => props.theme.headerLineHeight};
   text-align: center;

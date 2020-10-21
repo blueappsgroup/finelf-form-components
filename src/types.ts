@@ -179,6 +179,7 @@ export type OtherLoanAmountFieldProps = {
 }
 
 export type CustomThemeType = {
+  fontFamily?: string
   formBoxShadow?: string
   formMaxWidth?: string
   formBgColor?: string

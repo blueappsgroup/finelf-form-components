@@ -110,6 +110,7 @@ export type StyledProps = {
     marginBetweenRowChildren: string
     inputIconLeft: string
     inputWithIconPadding: string
+    rowWithFixedColumnHorizontalMargin: string
   }
   error?: string | boolean
 }
@@ -173,6 +174,26 @@ export const Row = styled.div`
     }
   }
 `
+
+export const RowWithFixedColumn = styled.div` 
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  
+  @media ${device.laptopL} {
+    & > :first-child {
+      position: fixed;
+      left: ${(props: StyledProps): string => props.theme.rowWithFixedColumnHorizontalMargin};
+      width: calc(50% - ${(props: StyledProps): string => props.theme.rowWithFixedColumnHorizontalMargin});
+    }
+    
+    & > :last-child { 
+      position: absolute;
+      right: ${(props: StyledProps): string => props.theme.rowWithFixedColumnHorizontalMargin};
+      width: calc(50% - ${(props: StyledProps): string => props.theme.rowWithFixedColumnHorizontalMargin});
+    }
+  }
+`
 /* eslint-enable */
 
 const StyledError = styled.span`
@@ -207,6 +228,13 @@ const StyledInput = styled.input<any>`
     props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${(props: any): string =>
     props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+
+  ${(props: any) =>
+    props.hasPrefix &&
+    'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
+  ${(props: any) =>
+    props.hasSuffix &&
+    'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
 
   &::placeholder {
     color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
@@ -252,7 +280,7 @@ const SliderInput = styled.input<any>`
     props.hasPrefix &&
     'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
   ${(props: any) =>
-    props.hasSufix &&
+    props.hasSuffix &&
     'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
 
   &::placeholder {
@@ -466,7 +494,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
           {...props}
           required={props.required}
           hasPrefix={!!props.prefix}
-          hasSufix={!!props.suffix}
+          hasSuffix={!!props.suffix}
           onBlur={handleOnBlur}
           type={props.type}
           value={(field.value && field.value) || ''}
@@ -670,6 +698,7 @@ export const BaseRangeField: (props: RangeFieldWrapProps) => ReactElement = ({
               props.placeholder &&
               `${props.placeholder}${(props.required && '*') || ''}`
             }
+            hasSuffix={props.suffix !== undefined}
           />
           {props.suffix && (
             <StyledSliderInputSuffix>{props.suffix}</StyledSliderInputSuffix>
