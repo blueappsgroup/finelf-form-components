@@ -110,7 +110,6 @@ export type StyledProps = {
     marginBetweenRowChildren: string
     inputIconLeft: string
     inputWithIconPadding: string
-    rowWithFixedColumnHorizontalMargin: string
   }
   error?: string | boolean
 }
@@ -170,11 +169,11 @@ export const Row = styled.div`
   @media ${device.tablet} {
     flex-direction: row;
     justify-content: space-between;
-    & ${StyledRow}:first-of-type:not(:last-child) {
+    & > :first-child:not(:last-child) {
       margin-right: ${(props: StyledProps): string => props.theme.marginBetweenRowChildren};
     }
 
-    & ${StyledRow}:last-child:not(:first-of-type) {
+    & > :last-child:not(:first-child) {
       margin-left: ${(props: StyledProps): string => props.theme.marginBetweenRowChildren};
     }
   }
@@ -188,15 +187,25 @@ export const RowWithFixedColumn = styled.div`
   @media ${device.laptopL} {
     & > :first-child {
       position: fixed;
-      left: ${(props: StyledProps): string => props.theme.rowWithFixedColumnHorizontalMargin};
-      width: calc(50% - ${(props: StyledProps): string => props.theme.rowWithFixedColumnHorizontalMargin});
+      left: 0;
+      width: 50%;
+      padding-top: 0;
     }
     
     & > :last-child { 
       position: absolute;
-      right: ${(props: StyledProps): string => props.theme.rowWithFixedColumnHorizontalMargin};
-      width: calc(50% - ${(props: StyledProps): string => props.theme.rowWithFixedColumnHorizontalMargin});
+      right: 0;
+      width: 50%;
     }
+  }
+`
+
+export const StyledContainer = styled.div`
+  box-sizing: border-box;
+  padding: ${(props): string => props.theme.styledContainerMobilePadding};
+
+  @media ${device.tablet} {
+    padding: ${(props): string => props.theme.styledContainerPadding};
   }
 `
 /* eslint-enable */
@@ -386,7 +395,7 @@ const StyledSliderInputSuffix = styled.span`
   justify-content: center;
 `
 
-const StyledInputPrefix = styled.span<any>`
+const StyledInputPrefixContainer = styled.div<any>`
   background: ${(props: StyledProps): string => props.theme.inputBgColor};
   position: relative;
   left: 0px;
@@ -395,16 +404,19 @@ const StyledInputPrefix = styled.span<any>`
   display: inline-flex;
   align-items: center;
   height: ${(props: StyledProps): string => props.theme.inputHeight};
-  border: 1px solid ${(props: StyledProps): string => props.theme.inputBorderColor};
+  border: 1px solid ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-right: none;
   border-top-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
-  padding: ${(props: StyledProps): string => props.theme.styledInputPrefixPadding};
   color: ${(props: any): string =>
     props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+  font-size: ${(props: StyledProps): string => props.theme.inputFontSize};
   font-weight: ${(props: StyledProps): string => props.theme.inputFontWeight};  
-  border-top-color: ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
-  border-bottom-color: ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
-  border-left-color: ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+`
+
+const StyledInputPrefix = styled.span<any>`
+  padding: ${(props: StyledProps): string => props.theme.styledInputPrefixPadding};
+  border-right: 1px solid ${(props: StyledProps): string => props.theme.inputBorderColor};
 `
 
 const SliderWrapper = styled.div`
@@ -455,18 +467,19 @@ const InputWrapper = styled.div<InputWrapperProps>`
   display: flex;
   width:100%;
   flex-direction: row;
-  img {
+  svg {
     position: absolute;
     top: 0;
     bottom: 0;
     left: ${(props: StyledProps): string => props.theme.inputIconLeft};
     margin: auto;
+    padding-right: 20px;
+    border-right: 1px solid ${(props: StyledProps): string => props.theme.inputBorderColor};
   }
   input {
     padding: ${(props: InputWrapperProps): string => props.withIcon ? props.theme.inputWithIconPadding : props.theme.inputPadding};
   }
 `
-
 /* eslint-enable */
 
 const BaseField: (props: FieldWrapProps) => ReactElement = ({
@@ -489,11 +502,13 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
       )}
       <InputWrapper withIcon={props.icon !== undefined}>
         {props.prefix && (
-          <StyledInputPrefix error={touched[field.name] && errors[field.name]}>
-            {props.prefix}
-          </StyledInputPrefix>
+          <StyledInputPrefixContainer
+            error={touched[field.name] && errors[field.name]}
+          >
+            <StyledInputPrefix>{props.prefix}</StyledInputPrefix>
+          </StyledInputPrefixContainer>
         )}
-        {props.icon && <img src={props.icon} alt="icon" />}
+        {props.icon}
         <StyledInput
           {...field}
           {...props}
