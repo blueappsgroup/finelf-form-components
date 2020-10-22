@@ -17,12 +17,14 @@ type StyledProps = {
 
 // prettier-ignore
 const StyledContainer = styled.div<StyledProps>`
+  position: relative;
   display: ${(props: StyledProps): string => props.hideOnMobile ? 'none' : 'flex'};
   justify-content: center;
   width: 100%;
   padding: ${(props): string => props.theme.imageContainerPadding};
   margin: 0 auto;
   align-items: flex-start;
+  box-sizing: border-box;
   
   img {
     max-width: 100%;  
@@ -36,7 +38,7 @@ const StyledContainer = styled.div<StyledProps>`
     font-weight: ${(props): string => props.theme.imageContainerTextFontWeight};
   }
   
-  @media ${device.tablet} { 
+  @media ${device.laptopL} { 
     display: flex;
   }
 `
