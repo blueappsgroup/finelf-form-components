@@ -25,6 +25,9 @@ const StyledContainer = styled.div<StyledProps>`
   margin: 0 auto;
   align-items: flex-start;
   box-sizing: border-box;
+  ${(props: StyledProps) =>
+    !props.disableShadow &&
+    'padding-right: 30px;'}
   
   img {
     max-width: 100%;  

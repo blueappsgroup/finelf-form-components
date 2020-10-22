@@ -24,12 +24,12 @@ const StyledForm = styled(Form)`
   margin: 0 10px;
   background: ${(props): string => props.theme.formBgColor};
   font-family: ${(props): string => props.theme.fontFamily};
-  padding: 20px 15px;
+  padding: ${(props): string => props.theme.formPaddingMobile};
   border-radius: 6px;
   box-shadow: ${(props): string => props.theme.formBoxShadow};
 
   @media ${device.tablet} {
-    padding: 20px 30px;
+    padding: ${(props): string => props.theme.formPadding};
     margin: 0 auto;
   }
 `
