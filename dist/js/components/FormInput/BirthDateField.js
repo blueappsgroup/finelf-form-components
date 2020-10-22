@@ -24,7 +24,8 @@ var BirthDateField = function BirthDateField(_ref) {
       _ref$required = _ref.required,
       required = _ref$required === void 0 ? false : _ref$required,
       _ref$showError = _ref.showError,
-      showError = _ref$showError === void 0 ? true : _ref$showError;
+      showError = _ref$showError === void 0 ? true : _ref$showError,
+      dateFormat = _ref.dateFormat;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -33,7 +34,8 @@ var BirthDateField = function BirthDateField(_ref) {
     name: name,
     label: label,
     placeholder: placeholder,
-    validate: (0, _validate.validateDate)(required)
+    validate: (0, _validate.validateDate)(required),
+    dateFormat: dateFormat
   });
 };
 

@@ -107,6 +107,7 @@
 
     }, [groupVisible, itemsForResetValues, setValues, values[name]]);
     return /*#__PURE__*/_react2.default.createElement(_react2.default.Fragment, null, /*#__PURE__*/_react2.default.createElement(_.CheckboxField, {
+      disableCollapse: true,
       skipFieldForApi: true,
       id: name,
       name: name,

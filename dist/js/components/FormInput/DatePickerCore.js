@@ -25,6 +25,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _templateObject3() {
   var data = _taggedTemplateLiteral(["\n  margin: 10px;\n  display: flex;\n  justify-content: center;\n"]);
 
@@ -36,7 +40,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n    font-size: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -62,31 +66,35 @@ var StyledWrapper = _styledComponents.default.div(_templateObject());
 
 
 var StyledDatePicker = (0, _styledComponents.default)(_reactDatepicker.default)(_templateObject2(), function (props) {
-  return props.theme.datePickerBgColor;
+  return props.theme.inputBgColor;
 }, function (props) {
-  return props.theme.datePickerBorderColor;
+  return props.theme.inputBorderColor;
 }, function (props) {
-  return props.theme.datePickerBoxShadow;
+  return props.theme.inputBoxShadow;
 }, function (props) {
-  return props.theme.datePickerBorderRadius;
+  return props.theme.inputBorderRadius;
 }, function (props) {
-  return props.theme.datePickerHeight;
+  return props.theme.inputHeight;
 }, function (props) {
-  return props.theme.datePickerFontStyle;
+  return props.theme.inputFontStyle;
 }, function (props) {
-  return props.theme.datePickerFontWeight;
+  return props.theme.inputFontWeight;
 }, function (props) {
-  return props.theme.datePickerFontSize;
+  return props.theme.inputFontSize;
 }, function (props) {
-  return props.theme.datePickerLineHeight;
+  return props.theme.inputLineHeight;
 }, function (props) {
-  return props.theme.datePickerPadding;
+  return props.theme.inputTextAlign;
 }, function (props) {
-  return props.error ? props.theme.inputErrorColor : props.theme.datePickerBorderColor;
+  return props.theme.inputPadding;
 }, function (props) {
-  return props.error ? props.theme.inputErrorColor : props.theme.datePickerTextColor;
+  return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
 }, function (props) {
-  return props.theme.datePickerPlaceHolderColor;
+  return props.error ? props.theme.inputErrorColor : props.theme.inputTextColor;
+}, function (props) {
+  return props.theme.inputPlaceHolderColor;
+}, function (props) {
+  return props.theme.inputFontSize;
 });
 /* eslint-enable */
 
@@ -94,11 +102,11 @@ var StyledHeader = _styledComponents.default.div(_templateObject3());
 
 var range = function range(start, end) {
   return new Array(end - start).fill(0).map(function (_, i) {
-    return i + start;
+    return end - i;
   });
 };
 
-var years = range(1940, (0, _getYear.default)(new Date()) + 1);
+var years = range(1940, (0, _getYear.default)(new Date()) - 15);
 var months = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
 var days = ['pon', 'wt', 'śr', 'czw', 'pt', 'sob', 'niedz'];
 (0, _reactDatepicker.registerLocale)('pl', {
@@ -155,12 +163,14 @@ var CustomHeader = function CustomHeader(_ref) {
 
 
 var DatePickerCore = function DatePickerCore(_ref4) {
-  var props = _extends({}, _ref4);
+  var _ref4$dateFormat = _ref4.dateFormat,
+      dateFormat = _ref4$dateFormat === void 0 ? 'dd/MM/yyyy' : _ref4$dateFormat,
+      props = _objectWithoutProperties(_ref4, ["dateFormat"]);
 
   return /*#__PURE__*/_react.default.createElement(StyledWrapper, null, /*#__PURE__*/_react.default.createElement(StyledDatePicker, _extends({}, props, {
+    dateFormat: dateFormat,
     locale: "pl",
     renderCustomHeader: CustomHeader,
-    dateFormat: "dd-MM-yyyy",
     onFocus: function onFocus(e) {
       return e.target.readOnly = true;
     }

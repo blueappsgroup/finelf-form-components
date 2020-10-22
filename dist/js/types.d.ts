@@ -10,6 +10,7 @@ export declare type CheckboxFieldProps = {
     children?: ReactElement | ReactElement[];
     HTMLcontent?: string;
     skipFieldForApi?: boolean;
+    disableCollapse?: boolean;
 };
 export declare type FieldWrapProps = FieldProps & {
     label?: string;
@@ -24,6 +25,9 @@ export declare type FieldWrapProps = FieldProps & {
     prefix?: string;
     HTMLcontent?: string;
     skipFieldForApi?: boolean;
+    disableCollapse?: boolean;
+    visible?: boolean;
+    icon?: string;
 };
 export declare type FieldDateWrapProps = FieldProps & {
     label?: string;
@@ -36,6 +40,7 @@ export declare type FieldDateWrapProps = FieldProps & {
     type?: string;
     suffix?: string;
     prefix?: string;
+    dateFormat?: string;
 };
 export declare type SelectFieldOptions = {
     [key: string]: string;
@@ -85,6 +90,9 @@ export interface TextFieldWithConditonProps extends TextFieldProps {
     requiredCondition?: {
         [key: string]: string[];
     };
+    visibleCondition?: {
+        [key: string]: any;
+    };
 }
 export declare type RangeFieldProps = {
     id?: string;
@@ -109,6 +117,7 @@ export declare type EmailFieldProps = {
     errorMsg?: string;
     required?: boolean;
     showError?: boolean;
+    icon?: string;
 };
 export declare type AmountOfChildrenFieldProps = {
     id?: string;
@@ -137,6 +146,7 @@ export declare type BirthDateFieldProps = {
     errorMsg?: string;
     required?: boolean;
     showError?: boolean;
+    dateFormat?: string;
 };
 export declare type TelephoneFieldProps = {
     id?: string;
@@ -159,6 +169,7 @@ export declare type OtherLoanAmountFieldProps = {
     validate?: Function;
 };
 export declare type CustomThemeType = {
+    fontFamily?: string;
     formBoxShadow?: string;
     formMaxWidth?: string;
     formBgColor?: string;
@@ -204,6 +215,7 @@ export declare type CustomThemeType = {
     styledRowMarginBottom?: string;
     checkboxLabelArrowColor?: string;
     checkboxBgColor?: string;
+    checkboxCheckedBgColor?: string;
     checkboxBorderColor?: string;
     checkboxBorderErrorColor?: string;
     checkboxLabelTextColor?: string;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { device } from '../../consts/sizes';
 // prettier-ignore
 const StyledMainHeader = styled.h2`
-  font-weight: 600;
+  font-weight: ${props => props.theme.headerFontWeight};
   font-size: ${props => props.theme.headerFontSize};
   line-height: ${props => props.theme.headerLineHeight};
   text-align: center;

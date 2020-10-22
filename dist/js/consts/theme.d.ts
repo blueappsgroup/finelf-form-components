@@ -13,6 +13,7 @@ export declare const colors: {
     black: string;
 };
 export declare const theme: {
+    fontFamily: string;
     formBoxShadow: string;
     formMaxWidth: string;
     formBgColor: string;
@@ -36,26 +37,14 @@ export declare const theme: {
     inputTextAlign: string;
     inputPadding: string;
     labelFontSize: string;
-    datePickerHeight: string;
-    datePickerTextColor: string;
-    datePickerPlaceHolderColor: string;
-    datePickerBorderColor: string;
-    datePickerBorderWidth: string;
-    datePickerBorderStyle: string;
-    datePickerBorderRadius: string;
-    datePickerBgColor: string;
-    datePickerBoxShadow: string;
-    datePickerFontSize: string;
-    datePickerFontWeight: string;
-    datePickerFontStyle: string;
-    datePickerLineHeight: string;
-    datePickerPadding: string;
     styledRowFlexWrap: string;
     styledRowLabelPadding: string;
     styledRowLabelFontColor: string;
     styledSelectHeight: string;
     styledSelectTextColor: string;
     styledSelectPlaceHolderColor: string;
+    styledSelectArrowColor: string;
+    styledSelectArrowRightPosition: string;
     styledSelectErrorColor: string;
     styledSelectErrorTextAlign: string;
     styledSelectBorderColor: string;
@@ -68,14 +57,14 @@ export declare const theme: {
     styledSelectFontWeight: string;
     styledSelectFontStyle: string;
     styledSelectLineHeight: string;
-    styledSelectVerticalPadding: string;
-    styledSelectHorizontalPadding: string;
+    styledSelectPadding: string;
     styledSpanFontSize: string;
     styledSpanFontColor: string;
     styledSpanFontWeight: string;
     styledRowMarginBottom: string;
     checkboxLabelArrowColor: string;
     checkboxBgColor: string;
+    checkboxCheckedBgColor: string;
     checkboxBorderColor: string;
     checkboxBorderWidth: string;
     checkboxLabelFontSize: string;
@@ -85,6 +74,7 @@ export declare const theme: {
     checkboxMarkColor: string;
     headerTextColor: string;
     headerBorderColor: string;
+    headerFontWeight: string;
     headerFontSize: string;
     headerLineHeight: string;
     headerMargin: string;
@@ -125,6 +115,7 @@ export declare const theme: {
     sliderHandleAfterWidth: string;
     sliderHandleAfterHeight: string;
     sliderHandleAfterBorderRadius: string;
+    styledInputSuffixWidth: string;
     styledInputSuffixBgColor: string;
     styledInputSuffixTextColor: string;
     styledInputSuffixFontSize: string;
@@ -139,6 +130,9 @@ export declare const theme: {
     imageContainerTextFontSize: string;
     imageContainerTextFontWeight: string;
     imageBoxShadow: string;
+    inputIconLeft: string;
+    inputWithIconPadding: string;
+    rowWithFixedColumnHorizontalMargin: string;
 };
 declare type ThemeProviderPops = {
     children: ReactElement | ReactElement[];

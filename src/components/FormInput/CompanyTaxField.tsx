@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
-import { Field } from 'formik'
 
 import { TextFieldWithConditonProps } from '../../types'
 import BaseField from './base'
 import { validateCompanyTax } from './validate'
+import CustomFieldWithCondition from './CustomFieldWithCondition'
 
 const CompanyTaxField: FC<TextFieldWithConditonProps> = ({
   id,
@@ -13,12 +13,13 @@ const CompanyTaxField: FC<TextFieldWithConditonProps> = ({
   required = false,
   validate = validateCompanyTax,
   showError = true,
-  requiredCondition = {
+  requiredCondition,
+  visibleCondition = {
     // eslint-disable-next-line @typescript-eslint/camelcase
     employment_type: ['self_employed'],
   },
 }) => (
-  <Field
+  <CustomFieldWithCondition
     id={id}
     label={label}
     placeholder={placeholder}
@@ -28,6 +29,7 @@ const CompanyTaxField: FC<TextFieldWithConditonProps> = ({
     name={name}
     validate={validate}
     requiredCondition={requiredCondition}
+    visibleCondition={visibleCondition}
   />
 )
 

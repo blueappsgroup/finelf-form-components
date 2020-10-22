@@ -13,6 +13,7 @@ export type CheckboxFieldProps = {
   children?: ReactElement | ReactElement[]
   HTMLcontent?: string
   skipFieldForApi?: boolean
+  disableCollapse?: boolean
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -29,6 +30,8 @@ export type FieldWrapProps = FieldProps & {
   HTMLcontent?: string
   skipFieldForApi?: boolean
   icon?: object
+  disableCollapse?: boolean
+  visible?: boolean
 }
 
 export type FieldDateWrapProps = FieldProps & {
@@ -42,6 +45,7 @@ export type FieldDateWrapProps = FieldProps & {
   type?: string
   suffix?: string
   prefix?: string
+  dateFormat?: string
 }
 
 export type SelectFieldOptions = {
@@ -96,6 +100,8 @@ export interface TextFieldProps {
 export interface TextFieldWithConditonProps extends TextFieldProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   requiredCondition?: { [key: string]: string[] }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  visibleCondition?: { [key: string]: any }
 }
 
 export type RangeFieldProps = {
@@ -154,6 +160,7 @@ export type BirthDateFieldProps = {
   errorMsg?: string
   required?: boolean
   showError?: boolean
+  dateFormat?: string
 }
 
 export type TelephoneFieldProps = {

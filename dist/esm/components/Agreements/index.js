@@ -7,19 +7,26 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { useCallback, useContext, useLayoutEffect, useState } from 'react';
+import styled from 'styled-components';
 import CheckboxesGroup from '../CheckboxesGroup';
 import { CheckboxField } from '../';
 import { FormContext } from '../../utils';
+import { StyledError } from '../FormInput/base';
+const StyledErrorText = styled(StyledError)`
+  position: static;
+`;
 
 const Agreemnets = ({
   linksForReplace,
-  name = 'agreements'
+  name = 'agreements',
+  requiredErorText = '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.'
 }) => {
   const {
     id,
     apiUrl
   } = useContext(FormContext);
   const [agreements, setAgreements] = useState([]);
+  const [error, setError] = useState(false);
   const replaceLinkInAgreements = useCallback(agreements => {
     const replacedAgreements = agreements.map(item => {
       let newContent = item.content;
@@ -48,21 +55,38 @@ const Agreemnets = ({
     if (agreements.length === 0) {
       fetchAgreements();
     }
-  }, [agreements, fetchAgreements]);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, Array.isArray(agreements) && agreements.length > 0 && /*#__PURE__*/React.createElement(CheckboxesGroup, {
+
+    if (agreements.length > 0 && !error) {
+      let hasRequired = false;
+      agreements.some(agreement => {
+        if (agreement.required) {
+          hasRequired = true;
+          return true;
+        }
+
+        return false;
+      });
+
+      if (hasRequired !== error) {
+        setError(hasRequired);
+      }
+    }
+  }, [agreements, error, fetchAgreements]);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, Array.isArray(agreements) && agreements.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CheckboxesGroup, {
     name: name
   }, agreements.map(item => /*#__PURE__*/React.createElement(CheckboxField, {
     key: item.id,
     name: `${item.id}`,
     HTMLcontent: item.content,
     required: item.required
-  }))));
+  }))), error && /*#__PURE__*/React.createElement(StyledErrorText, null, requiredErorText)));
 };
 
 Agreemnets.propTypes = {
   linksForReplace: _pt.objectOf(_pt.string),
   name: _pt.string,
-  groupType: _pt.string
+  groupType: _pt.string,
+  requiredErorText: _pt.string
 };
 Agreemnets.defaultProps = {
   name: 'agreements',

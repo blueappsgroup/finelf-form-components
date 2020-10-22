@@ -42,6 +42,7 @@ const OptionalGroup = ({
 
   }, [groupVisible, itemsForResetValues, setValues, values[name]]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CheckboxField, {
+    disableCollapse: true,
     skipFieldForApi: true,
     id: name,
     name: name,

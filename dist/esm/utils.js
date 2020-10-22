@@ -29,7 +29,7 @@ export const handleSendDataToApi = (values, apiUrl, formId, fieldsForSkip, dataW
         rest = _objectWithoutProperties(values, ["agreements"]);
 
   const filteredValues = Object.keys(rest).reduce((acc, key) => {
-    if (!fieldsForSkip.includes(key)) {
+    if (!fieldsForSkip.includes(key) && rest[key]) {
       acc[key] = rest[key];
     }
 

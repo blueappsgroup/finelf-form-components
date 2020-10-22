@@ -4,11 +4,11 @@ import React, {
   useLayoutEffect,
   useState,
 } from 'react'
-
+import styled from 'styled-components'
 import CheckboxesGroup from '../CheckboxesGroup'
 import { CheckboxField } from '../'
 import { FormContext } from '../../utils'
-
+import { StyledError } from '../FormInput/base'
 type AgreementType = {
   id: string
   content: string
@@ -19,14 +19,21 @@ type AgreementsPropTypes = {
   linksForReplace?: { [key: string]: string }
   name?: string
   groupType?: string
+  requiredErorText?: string
 }
+
+const StyledErrorText = styled(StyledError)`
+  position: static;
+`
 
 const Agreemnets: React.FC<AgreementsPropTypes> = ({
   linksForReplace,
   name = 'agreements',
+  requiredErorText = '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.',
 }) => {
   const { id, apiUrl } = useContext(FormContext)
   const [agreements, setAgreements] = useState<AgreementType[]>([])
+  const [error, setError] = useState<boolean>(false)
   const replaceLinkInAgreements = useCallback(
     (agreements: AgreementType[]): AgreementType[] => {
       const replacedAgreements = agreements.map((item) => {
@@ -63,21 +70,40 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
     if (agreements.length === 0) {
       fetchAgreements()
     }
-  }, [agreements, fetchAgreements])
+
+    if (agreements.length > 0 && !error) {
+      let hasRequired = false
+      agreements.some((agreement) => {
+        if (agreement.required) {
+          hasRequired = true
+          return true
+        }
+
+        return false
+      })
+
+      if (hasRequired !== error) {
+        setError(hasRequired)
+      }
+    }
+  }, [agreements, error, fetchAgreements])
 
   return (
     <>
       {Array.isArray(agreements) && agreements.length > 0 && (
-        <CheckboxesGroup name={name}>
-          {agreements.map((item) => (
-            <CheckboxField
-              key={item.id}
-              name={`${item.id}`}
-              HTMLcontent={item.content}
-              required={item.required}
-            />
-          ))}
-        </CheckboxesGroup>
+        <>
+          <CheckboxesGroup name={name}>
+            {agreements.map((item) => (
+              <CheckboxField
+                key={item.id}
+                name={`${item.id}`}
+                HTMLcontent={item.content}
+                required={item.required}
+              />
+            ))}
+          </CheckboxesGroup>
+          {error && <StyledErrorText>{requiredErorText}</StyledErrorText>}
+        </>
       )}
     </>
   )

@@ -12,6 +12,7 @@ const BirthDateField: FC<BirthDateFieldProps> = ({
   name,
   required = false,
   showError = true,
+  dateFormat,
 }) => (
   <Field
     required={required}
@@ -22,6 +23,7 @@ const BirthDateField: FC<BirthDateFieldProps> = ({
     label={label}
     placeholder={placeholder}
     validate={validateDate(required)}
+    dateFormat={dateFormat}
   />
 )
 

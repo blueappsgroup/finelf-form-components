@@ -11,7 +11,8 @@ const CompanyNameField = ({
   required = false,
   validate = validateText,
   showError = true,
-  requiredCondition = {
+  requiredCondition,
+  visibleCondition = {
     // eslint-disable-next-line @typescript-eslint/camelcase
     employment_type: ['fixed', 'temporary', 'fixed_partial', 'government', 'agriculture', 'service_contract']
   }
@@ -24,7 +25,8 @@ const CompanyNameField = ({
   showError: showError,
   name: name,
   validate: validate,
-  requiredCondition: requiredCondition
+  requiredCondition: requiredCondition,
+  visibleCondition: visibleCondition
 });
 
 CompanyNameField.defaultProps = {

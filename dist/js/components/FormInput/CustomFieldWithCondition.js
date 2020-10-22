@@ -13,6 +13,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _formik = require("formik");
 
+var _utils = require("../../utils");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -20,6 +22,12 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -37,12 +45,22 @@ var CustomFieldWithCondition = function CustomFieldWithCondition(props) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   var _useFormikContext = (0, _formik.useFormikContext)(),
       values = _useFormikContext.values,
-      setFieldError = _useFormikContext.setFieldError;
+      errors = _useFormikContext.errors,
+      setErrors = _useFormikContext.setErrors,
+      setValues = _useFormikContext.setValues;
+
+  var _useContext = (0, _react.useContext)(_utils.FormContext),
+      id = _useContext.id;
 
   var _useState = (0, _react.useState)(props.required || false),
       _useState2 = _slicedToArray(_useState, 2),
       required = _useState2[0],
       setRequired = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(props.visibleCondition && false || true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      visible = _useState4[0],
+      setVisible = _useState4[1];
 
   (0, _react.useEffect)(function () {
     if (!props.required && props.requiredCondition) {
@@ -60,15 +78,41 @@ var CustomFieldWithCondition = function CustomFieldWithCondition(props) {
         setRequired(isRequired);
       }
     }
-  }, [values, props.required, props.requiredCondition, required, props.name, setFieldError]);
+  }, [values, props.required, props.requiredCondition, required, props.name]);
+  (0, _react.useEffect)(function () {
+    if (props.visibleCondition) {
+      var isVisible = false;
+      Object.keys(props.visibleCondition).some(function (key) {
+        if (props.visibleCondition && props.visibleCondition[key].includes(values[key])) {
+          isVisible = true;
+          return true;
+        }
+
+        return false;
+      });
+
+      if (!isVisible && isVisible !== visible) {
+        setValues(_objectSpread(_objectSpread({}, values), {}, _defineProperty({}, props.name, undefined)), false);
+        setErrors(_objectSpread(_objectSpread({}, errors), {}, _defineProperty({}, props.name, undefined)));
+        (0, _utils.setFormValuesToCache)(_objectSpread(_objectSpread({}, values), {}, _defineProperty({}, props.name, undefined)), id);
+        setVisible(isVisible);
+      }
+
+      if (isVisible && isVisible !== visible) {
+        setVisible(isVisible);
+      }
+    }
+  }, [values, setValues, props.visibleCondition, props.name, visible, errors, setErrors, id]);
   return /*#__PURE__*/_react.default.createElement(_formik.Field, _extends({}, props, {
-    required: required,
-    validate: props.validate(required)
+    required: required && visible,
+    validate: props.validate(required && visible),
+    visible: visible
   }));
 };
 
 CustomFieldWithCondition.propTypes = {
-  requiredCondition: _propTypes.default.objectOf(_propTypes.default.any)
+  requiredCondition: _propTypes.default.objectOf(_propTypes.default.any),
+  visibleCondition: _propTypes.default.objectOf(_propTypes.default.any)
 };
 var _default = CustomFieldWithCondition;
 exports.default = _default;

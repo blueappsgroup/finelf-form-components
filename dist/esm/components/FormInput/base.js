@@ -31,6 +31,11 @@ const StyledRow = styled.div`
     color: ${props => props.theme.styledRowLabelFontColor};
   }
 `;
+/* eslint-disable */
+
+const StyledInputRow = styled(StyledRow)`
+  display: ${props => props.visible ? 'flex' : 'none'};
+`;
 const StyledRowRangeField = styled.div`
   display: flex;
   align-items: center;
@@ -48,7 +53,7 @@ const StyledRowRangeField = styled.div`
 export const Row = styled.div`
   display: flex;
   width: 100%;
-  margin: 15px auto;
+  margin: 0 auto;
   flex-direction: column;
   > * {
       flex-basis: 0;
@@ -67,9 +72,28 @@ export const Row = styled.div`
     }
   }
 `;
+export const RowWithFixedColumn = styled.div` 
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  
+  @media ${device.laptopL} {
+    & > :first-child {
+      position: fixed;
+      left: ${props => props.theme.rowWithFixedColumnHorizontalMargin};
+      width: calc(50% - ${props => props.theme.rowWithFixedColumnHorizontalMargin});
+    }
+    
+    & > :last-child { 
+      position: absolute;
+      right: ${props => props.theme.rowWithFixedColumnHorizontalMargin};
+      width: calc(50% - ${props => props.theme.rowWithFixedColumnHorizontalMargin});
+    }
+  }
+`;
 /* eslint-enable */
 
-const StyledError = styled.span`
+export const StyledError = styled.span`
   color: ${props => props.theme.inputErrorColor};
   text-align: ${props => props.theme.inputErrorTextAlign};
   position: absolute;
@@ -77,7 +101,7 @@ const StyledError = styled.span`
   font-size: ${props => props.theme.inputErrorFontSize};
   bottom: ${props => props.theme.inputErrorBottom};
 `;
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   background: ${props => props.theme.inputBgColor};
   border: 1px solid
     ${props => props.theme.inputBorderColor};
@@ -96,6 +120,9 @@ const StyledInput = styled.input`
   padding: ${props => props.theme.inputPadding};
   border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+
+  ${props => props.hasPrefix && 'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
+  ${props => props.hasSuffix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
 
   &::placeholder {
     color: ${props => props.theme.inputPlaceHolderColor};
@@ -132,7 +159,7 @@ const SliderInput = styled.input`
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
   ${props => props.hasPrefix && 'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
-  ${props => props.hasSufix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
+  ${props => props.hasSuffix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
 
   &::placeholder {
     color: ${props => props.theme.inputPlaceHolderColor};
@@ -144,7 +171,12 @@ const SliderInput = styled.input`
 `;
 /* eslint-disable */
 
+const StyledSelectContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
 const StyledSelect = styled.select`
+  position: relative;
   background: ${props => props.theme.styledSelectBgColor};
   border: ${props => props.theme.styledSelectBorderWidth} ${props => props.theme.styledSelectBorderStyle}
     ${props => props.theme.styledSelectBorderColor};
@@ -159,9 +191,10 @@ const StyledSelect = styled.select`
   font-weight: ${props => props.theme.styledSelectFontWeight};
   font-size: ${props => props.theme.styledSelectFontSize};
   line-height: ${props => props.theme.styledSelectLineHeight};
-  padding: ${props => props.theme.styledSelectVerticalPadding} ${props => props.theme.styledSelectHorizontalPadding};
+  padding: ${props => props.theme.styledSelectPadding};
   border-color: ${props => props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectBorderColor};
   color: ${props => props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
+  appearance: none;
 
   option:disabled {
     color: ${props => props.theme.styledSelectPlaceHolderColor};
@@ -170,6 +203,22 @@ const StyledSelect = styled.select`
   &:focus {
     outline: none;
   }
+`;
+const StyledSelectArrow = styled.span`
+  position: absolute;
+  border: solid;
+  border-width: 0 2px 2px 0;
+  border-color: ${props => props.theme.styledSelectArrowColor}; 
+  display: inline-block;
+  padding: 4px;
+  vertical-align: middle;
+  content: ' ';
+  right: ${props => props.theme.styledSelectArrowRightPosition};
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 0;
+  transform: rotate(45deg);
 `;
 const StyledSpan = styled.span`
   font-size: ${props => props.theme.styledSpanFontSize};
@@ -180,7 +229,7 @@ const StyledInputSuffix = styled.span`
   display: flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
-  width: ${props => props.theme.inputHeight};
+  width: ${props => props.theme.styledInputSuffixWidth};
   box-sizing: border-box;
   background-color: ${props => props.theme.styledInputSuffixBgColor};
   border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
@@ -193,7 +242,7 @@ const StyledSliderInputSuffix = styled.span`
   display: flex;
   align-items: center;
   height: ${props => props.theme.sliderInputHeight};
-  width: ${props => props.theme.sliderInputHeight};
+  width: ${props => props.theme.styledInputSuffixWidth};
   box-sizing: border-box;
   background-color: ${props => props.theme.styledInputSuffixBgColor};
   border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
@@ -268,6 +317,16 @@ const InputWrapper = styled.div`
   display: flex;
   width:100%;
   flex-direction: row;
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: ${props => props.theme.inputIconLeft};
+    margin: auto;
+  }
+  input {
+    padding: ${props => props.withIcon ? props.theme.inputWithIconPadding : props.theme.inputPadding};
+  }
 `;
 /* eslint-enable */
 
@@ -291,14 +350,21 @@ const BaseField = (_ref) => {
     field.onBlur && field.onBlur(e);
   };
 
-  return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/React.createElement(StyledInputRow, {
+    visible: props.visible !== false
+  }, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
-  }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(InputWrapper, null, props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, {
+  }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(InputWrapper, {
+    withIcon: props.icon !== undefined
+  }, props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, {
     error: touched[field.name] && errors[field.name]
-  }, props.prefix), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
+  }, props.prefix), props.icon && /*#__PURE__*/React.createElement("img", {
+    src: props.icon,
+    alt: "icon"
+  }), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
     required: props.required,
     hasPrefix: !!props.prefix,
-    hasSufix: !!props.suffix,
+    hasSuffix: !!props.suffix,
     onBlur: handleOnBlur,
     type: props.type,
     value: field.value && field.value || '',
@@ -391,13 +457,13 @@ export const BaseSelectField = (_ref3) => {
 
   return /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
-  }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(StyledSelect, _extends({}, field, props, {
+  }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(StyledSelectContainer, null, /*#__PURE__*/React.createElement(StyledSelect, _extends({}, field, props, {
     onBlur: handleOnBlur,
     type: "text",
     value: field.value && field.value || 'select',
     error: touched[field.name] && errors[field.name],
     placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
-  }), props.options && options(props.options)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/React.createElement(StyledError, null, errors[field.name]));
+  }), props.options && options(props.options)), /*#__PURE__*/React.createElement(StyledSelectArrow, null)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/React.createElement(StyledError, null, errors[field.name]));
 };
 export const BaseRangeField = (_ref4) => {
   let {
@@ -462,7 +528,8 @@ export const BaseRangeField = (_ref4) => {
     type: props.type,
     value: value,
     error: touched[field.name] && errors[field.name],
-    placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
+    placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`,
+    hasSuffix: props.suffix !== undefined
   })), props.suffix && /*#__PURE__*/React.createElement(StyledSliderInputSuffix, null, props.suffix))), /*#__PURE__*/React.createElement(SliderWrapper, null, /*#__PURE__*/React.createElement(Slider, {
     min: props.min,
     max: props.max,

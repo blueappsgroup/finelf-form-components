@@ -45,6 +45,8 @@ export declare type StyledProps = {
         styledSelectErrorTextAlign: string;
         styledSelectBgColor: string;
         styledSelectPlaceHolderColor: string;
+        styledSelectArrowColor: string;
+        styledSelectArrowRightPosition: string;
         styledSelectBorderColor: string;
         styledSelectBorderWidth: string;
         styledSelectBorderStyle: string;
@@ -56,8 +58,6 @@ export declare type StyledProps = {
         styledSelectBoxShadow: string;
         styledSelectLineHeight: string;
         styledSelectPadding: string;
-        styledSelectVerticalPadding: string;
-        styledSelectHorizontalPadding: string;
         styledSpanFontSize: string;
         styledSpanFontColor: string;
         styledSpanFontWeight: string;
@@ -79,6 +79,7 @@ export declare type StyledProps = {
         sliderHandleAfterWidth: string;
         sliderHandleAfterHeight: string;
         sliderHandleAfterBorderRadius: string;
+        styledInputSuffixWidth: string;
         styledInputSuffixBgColor: string;
         styledInputSuffixTextColor: string;
         styledInputSuffixFontSize: string;
@@ -86,10 +87,23 @@ export declare type StyledProps = {
         styledInputSuffixBorderRadius: string;
         styledInputPrefixPadding: string;
         marginBetweenRowChildren: string;
+        inputIconLeft: string;
+        inputWithIconPadding: string;
+        rowWithFixedColumnHorizontalMargin: string;
     };
     error?: string | boolean;
 };
+export declare type InputWrapperProps = {
+    withIcon?: boolean;
+    theme: {
+        inputPadding: string;
+        inputWithIconPadding: string;
+    };
+};
 export declare const Row: import("styled-components").StyledComponent<"div", any, {}, never>;
+export declare const RowWithFixedColumn: import("styled-components").StyledComponent<"div", any, {}, never>;
+export declare const StyledError: import("styled-components").StyledComponent<"span", any, {}, never>;
+export declare const StyledInput: import("styled-components").StyledComponent<"input", any, any, never>;
 export declare const SliderRow: import("styled-components").StyledComponent<"div", any, {}, never>;
 declare const BaseField: (props: FieldWrapProps) => ReactElement;
 export default BaseField;

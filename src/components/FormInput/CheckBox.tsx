@@ -183,10 +183,14 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   const onCollapseClick = (): void => setCollapsed(!collapsed)
 
   useLayoutEffect(() => {
-    if (targetRef.current && targetRef.current.offsetHeight > 22) {
+    if (
+      targetRef.current &&
+      targetRef.current.offsetHeight > 22 &&
+      !props.disableCollapse
+    ) {
       setHasCollapse(true)
     }
-  }, [targetRef])
+  }, [props.disableCollapse, targetRef])
 
   useEffect(() => {
     props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name)
@@ -194,7 +198,10 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   }, [])
 
   return (
-    <StyledRow hasCollapse={hasCollapse} collapsed={collapsed}>
+    <StyledRow
+      hasCollapse={hasCollapse && !props.disableCollapse}
+      collapsed={collapsed || props.disableCollapse}
+    >
       <Wrapper ref={targetRef} onMouseOut={handleOnMouseOut}>
         <Checkbox
           {...field}

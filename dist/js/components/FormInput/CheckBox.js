@@ -148,7 +148,7 @@ var HiddenCheckbox = _styledComponents.default.input.attrs({
 })(_templateObject5());
 
 var StyledCheckbox = _styledComponents.default.div(_templateObject6(), function (props) {
-  return props.theme.checkboxBgColor;
+  return props.checked ? props.theme.checkboxCheckedBgColor : props.theme.checkboxBgColor;
 }, function (props) {
   return props.theme.checkboxBorderWidth;
 }, function (props) {
@@ -231,16 +231,16 @@ var CheckboxBase = function CheckboxBase(_ref2) {
   };
 
   (0, _react.useLayoutEffect)(function () {
-    if (targetRef.current && targetRef.current.offsetHeight > 22) {
+    if (targetRef.current && targetRef.current.offsetHeight > 22 && !props.disableCollapse) {
       setHasCollapse(true);
     }
-  }, [targetRef]);
+  }, [props.disableCollapse, targetRef]);
   (0, _react.useEffect)(function () {
     props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return /*#__PURE__*/_react.default.createElement(StyledRow, {
-    hasCollapse: hasCollapse,
-    collapsed: collapsed
+    hasCollapse: hasCollapse && !props.disableCollapse,
+    collapsed: collapsed || props.disableCollapse
   }, /*#__PURE__*/_react.default.createElement(Wrapper, {
     ref: targetRef,
     onMouseOut: handleOnMouseOut

@@ -10,7 +10,8 @@ const EmailField = ({
   errorMsg = 'Podany email jest nieprawidłowy',
   name,
   required = false,
-  showError = true
+  showError = true,
+  icon
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,
@@ -20,6 +21,7 @@ const EmailField = ({
   label: label,
   placeholder: placeholder,
   type: "email",
+  icon: icon,
   validate: validateEmail(errorMsg, required)
 });
 
