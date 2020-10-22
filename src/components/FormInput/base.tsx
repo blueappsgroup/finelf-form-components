@@ -465,7 +465,7 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
             {props.prefix}
           </StyledInputPrefix>
         )}
-        {props.icon && <img src={props.icon} />}
+        {props.icon && <img src={props.icon} alt="icon" />}
         <StyledInput
           {...field}
           {...props}

@@ -57,10 +57,10 @@ const StyledHeader = styled.div`
 `
 
 const range = (start: number, end: number): number[] => {
-  return new Array(end - start).fill(0).map((_, i) => i + start)
+  return new Array(end - start).fill(0).map((_, i) => end - i)
 }
 
-const years = range(1940, getYear(new Date()) + 1)
+const years = range(1940, getYear(new Date()) - 15)
 const months = [
   'Styczeń',
   'Luty',
@@ -132,13 +132,13 @@ const CustomHeader: FC<any> = ({
 )
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const DatePickerCore: FC<any> = ({ ...props }) => (
+const DatePickerCore: FC<any> = ({ dateFormat = 'dd/MM/yyyy', ...props }) => (
   <StyledWrapper>
     <StyledDatePicker
       {...props}
+      dateFormat={dateFormat}
       locale="pl"
       renderCustomHeader={CustomHeader}
-      dateFormat="dd-MM-yyyy"
       onFocus={(e): boolean => (e.target.readOnly = true)}
     />
   </StyledWrapper>
