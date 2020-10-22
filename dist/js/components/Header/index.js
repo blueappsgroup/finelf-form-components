@@ -24,7 +24,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: ", ";\n  line-height: ", ";\n  text-align: center;\n  margin: ", ";\n  padding-bottom: 28px;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n  position: relative;\n  \n  @media ", " {\n    margin: 0px 0px 30px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: ", ";\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: center;\n  margin: ", ";\n  padding-bottom: 28px;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n  position: relative;\n  \n  @media ", " {\n    margin: 0px 0px 30px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: ", ";\n    margin: 0 auto;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -37,6 +37,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 // prettier-ignore
 var StyledMainHeader = _styledComponents.default.h2(_templateObject(), function (props) {
+  return props.theme.headerFontWeight;
+}, function (props) {
   return props.theme.headerFontSize;
 }, function (props) {
   return props.theme.headerLineHeight;

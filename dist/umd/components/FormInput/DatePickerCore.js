@@ -49,6 +49,42 @@
     return _extends.apply(this, arguments);
   }
 
+  function _objectWithoutProperties(source, excluded) {
+    if (source == null) return {};
+
+    var target = _objectWithoutPropertiesLoose(source, excluded);
+
+    var key, i;
+
+    if (Object.getOwnPropertySymbols) {
+      var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+      for (i = 0; i < sourceSymbolKeys.length; i++) {
+        key = sourceSymbolKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+        target[key] = source[key];
+      }
+    }
+
+    return target;
+  }
+
+  function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+
+    for (i = 0; i < sourceKeys.length; i++) {
+      key = sourceKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+
+    return target;
+  }
+
   const StyledWrapper = _styledComponents2.default.div`
   width: 100%;
 
@@ -96,10 +132,10 @@
 `;
 
   const range = (start, end) => {
-    return new Array(end - start).fill(0).map((_, i) => i + start);
+    return new Array(end - start).fill(0).map((_, i) => end - i);
   };
 
-  const years = range(1940, (0, _getYear2.default)(new Date()) + 1);
+  const years = range(1940, (0, _getYear2.default)(new Date()) - 15);
   const months = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
   const days = ['pon', 'wt', 'śr', 'czw', 'pt', 'sob', 'niedz'];
   (0, _reactDatepicker.registerLocale)('pl', {
@@ -149,12 +185,15 @@
 
 
   const DatePickerCore = _ref => {
-    let props = _extends({}, _ref);
+    let {
+      dateFormat = 'dd/MM/yyyy'
+    } = _ref,
+        props = _objectWithoutProperties(_ref, ["dateFormat"]);
 
     return /*#__PURE__*/_react2.default.createElement(StyledWrapper, null, /*#__PURE__*/_react2.default.createElement(StyledDatePicker, _extends({}, props, {
+      dateFormat: dateFormat,
       locale: "pl",
       renderCustomHeader: CustomHeader,
-      dateFormat: "dd-MM-yyyy",
       onFocus: e => e.target.readOnly = true
     })));
   };

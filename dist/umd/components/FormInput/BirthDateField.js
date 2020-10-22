@@ -31,7 +31,8 @@
     placeholder = 'Data urodzenia',
     name,
     required = false,
-    showError = true
+    showError = true,
+    dateFormat
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -40,7 +41,8 @@
     name: name,
     label: label,
     placeholder: placeholder,
-    validate: (0, _validate.validateDate)(required)
+    validate: (0, _validate.validateDate)(required),
+    dateFormat: dateFormat
   });
 
   BirthDateField.defaultProps = {

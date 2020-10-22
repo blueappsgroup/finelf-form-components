@@ -90,6 +90,7 @@
     black: '#000'
   };
   const theme = exports.theme = {
+    fontFamily: '"Manrope", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
     formBoxShadow: '0px 20px 60px rgba(0, 0, 0, 0.08)',
     formMaxWidth: '600px',
     formBgColor: colors.white,
@@ -150,6 +151,7 @@
     checkboxMarkColor: colors.lightRed,
     headerTextColor: colors.black,
     headerBorderColor: colors.errorRed,
+    headerFontWeight: '600',
     headerFontSize: '25px',
     headerLineHeight: '24px',
     headerMargin: '0px 0px 20px 0px',
@@ -201,12 +203,13 @@
     hrColor: colors.mainGrey,
     hrSize: '1px',
     imageContainerPadding: '0px',
-    imageContainerTextTopPosition: '25%',
+    imageContainerTextTopPosition: '15%',
     imageContainerTextFontSize: '45px',
     imageContainerTextFontWeight: '900',
     imageBoxShadow: 'none',
     inputIconLeft: '10px',
-    inputWithIconPadding: '0 20px 0 44px'
+    inputWithIconPadding: '0 20px 0 44px',
+    rowWithFixedColumnHorizontalMargin: '30px'
   };
 
   const ThemeProvider = exports.ThemeProvider = ({

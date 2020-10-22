@@ -40,6 +40,7 @@ export declare type FieldDateWrapProps = FieldProps & {
     type?: string;
     suffix?: string;
     prefix?: string;
+    dateFormat?: string;
 };
 export declare type SelectFieldOptions = {
     [key: string]: string;
@@ -145,6 +146,7 @@ export declare type BirthDateFieldProps = {
     errorMsg?: string;
     required?: boolean;
     showError?: boolean;
+    dateFormat?: string;
 };
 export declare type TelephoneFieldProps = {
     id?: string;
@@ -167,6 +169,7 @@ export declare type OtherLoanAmountFieldProps = {
     validate?: Function;
 };
 export declare type CustomThemeType = {
+    fontFamily?: string;
     formBoxShadow?: string;
     formMaxWidth?: string;
     formBgColor?: string;

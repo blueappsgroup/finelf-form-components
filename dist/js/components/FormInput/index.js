@@ -189,6 +189,12 @@ Object.defineProperty(exports, "Row", {
     return _base.Row;
   }
 });
+Object.defineProperty(exports, "RowWithFixedColumn", {
+  enumerable: true,
+  get: function get() {
+    return _base.RowWithFixedColumn;
+  }
+});
 
 var _EmailField = _interopRequireDefault(require("./EmailField"));
 

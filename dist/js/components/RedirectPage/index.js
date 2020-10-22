@@ -90,7 +90,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Manrope', BlinkMacSystemFont, -apple-system, 'Segoe UI',\n    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',\n    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;\n  text-align: center;\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: ", ";\n  text-align: center;\n  ", "\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -102,6 +102,8 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var PageWrapper = _styledComponents.default.div(_templateObject(), function (props) {
+  return props.theme.fontFamily;
+}, function (props) {
   return props.backgroundImage && "background-image: url(".concat(props.backgroundImage, ");");
 });
 

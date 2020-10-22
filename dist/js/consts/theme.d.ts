@@ -13,6 +13,7 @@ export declare const colors: {
     black: string;
 };
 export declare const theme: {
+    fontFamily: string;
     formBoxShadow: string;
     formMaxWidth: string;
     formBgColor: string;
@@ -73,6 +74,7 @@ export declare const theme: {
     checkboxMarkColor: string;
     headerTextColor: string;
     headerBorderColor: string;
+    headerFontWeight: string;
     headerFontSize: string;
     headerLineHeight: string;
     headerMargin: string;
@@ -130,6 +132,7 @@ export declare const theme: {
     imageBoxShadow: string;
     inputIconLeft: string;
     inputWithIconPadding: string;
+    rowWithFixedColumnHorizontalMargin: string;
 };
 declare type ThemeProviderPops = {
     children: ReactElement | ReactElement[];

@@ -29,12 +29,14 @@
 
   // prettier-ignore
   const StyledContainer = _styledComponents2.default.div`
+  position: relative;
   display: ${props => props.hideOnMobile ? 'none' : 'flex'};
   justify-content: center;
   width: 100%;
   padding: ${props => props.theme.imageContainerPadding};
   margin: 0 auto;
   align-items: flex-start;
+  box-sizing: border-box;
   
   img {
     max-width: 100%;  
@@ -48,7 +50,7 @@
     font-weight: ${props => props.theme.imageContainerTextFontWeight};
   }
   
-  @media ${_sizes.device.tablet} { 
+  @media ${_sizes.device.laptopL} { 
     display: flex;
   }
 `;

@@ -1,9 +1,7 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react';
 import styled from 'styled-components';
 const PageWrapper = styled.div`
-  font-family: 'Manrope', BlinkMacSystemFont, -apple-system, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: ${props => props.theme.fontFamily};
   text-align: center;
   ${props => props.backgroundImage && `background-image: url(${props.backgroundImage});`}
 `;

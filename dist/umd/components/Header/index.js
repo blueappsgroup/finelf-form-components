@@ -29,7 +29,7 @@
 
   // prettier-ignore
   const StyledMainHeader = _styledComponents2.default.h2`
-  font-weight: 600;
+  font-weight: ${props => props.theme.headerFontWeight};
   font-size: ${props => props.theme.headerFontSize};
   line-height: ${props => props.theme.headerLineHeight};
   text-align: center;

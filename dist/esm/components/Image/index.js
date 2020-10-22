@@ -3,12 +3,14 @@ import styled from 'styled-components';
 import { device } from '../../consts/sizes';
 // prettier-ignore
 const StyledContainer = styled.div`
+  position: relative;
   display: ${props => props.hideOnMobile ? 'none' : 'flex'};
   justify-content: center;
   width: 100%;
   padding: ${props => props.theme.imageContainerPadding};
   margin: 0 auto;
   align-items: flex-start;
+  box-sizing: border-box;
   
   img {
     max-width: 100%;  
@@ -22,7 +24,7 @@ const StyledContainer = styled.div`
     font-weight: ${props => props.theme.imageContainerTextFontWeight};
   }
   
-  @media ${device.tablet} { 
+  @media ${device.laptopL} { 
     display: flex;
   }
 `;

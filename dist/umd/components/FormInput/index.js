@@ -202,6 +202,12 @@
       return _base.Row;
     }
   });
+  Object.defineProperty(exports, "RowWithFixedColumn", {
+    enumerable: true,
+    get: function () {
+      return _base.RowWithFixedColumn;
+    }
+  });
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {

@@ -72,6 +72,25 @@ export const Row = styled.div`
     }
   }
 `;
+export const RowWithFixedColumn = styled.div` 
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  
+  @media ${device.laptopL} {
+    & > :first-child {
+      position: fixed;
+      left: ${props => props.theme.rowWithFixedColumnHorizontalMargin};
+      width: calc(50% - ${props => props.theme.rowWithFixedColumnHorizontalMargin});
+    }
+    
+    & > :last-child { 
+      position: absolute;
+      right: ${props => props.theme.rowWithFixedColumnHorizontalMargin};
+      width: calc(50% - ${props => props.theme.rowWithFixedColumnHorizontalMargin});
+    }
+  }
+`;
 /* eslint-enable */
 
 export const StyledError = styled.span`
@@ -101,6 +120,9 @@ export const StyledInput = styled.input`
   padding: ${props => props.theme.inputPadding};
   border-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+
+  ${props => props.hasPrefix && 'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
+  ${props => props.hasSuffix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
 
   &::placeholder {
     color: ${props => props.theme.inputPlaceHolderColor};
@@ -137,7 +159,7 @@ const SliderInput = styled.input`
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
 
   ${props => props.hasPrefix && 'border-left: none; border-top-left-radius: 0px; border-bottom-left-radius: 0px;'}
-  ${props => props.hasSufix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
+  ${props => props.hasSuffix && 'border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;'}
 
   &::placeholder {
     color: ${props => props.theme.inputPlaceHolderColor};
@@ -337,11 +359,12 @@ const BaseField = (_ref) => {
   }, props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, {
     error: touched[field.name] && errors[field.name]
   }, props.prefix), props.icon && /*#__PURE__*/React.createElement("img", {
-    src: props.icon
+    src: props.icon,
+    alt: "icon"
   }), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
     required: props.required,
     hasPrefix: !!props.prefix,
-    hasSufix: !!props.suffix,
+    hasSuffix: !!props.suffix,
     onBlur: handleOnBlur,
     type: props.type,
     value: field.value && field.value || '',
@@ -505,7 +528,8 @@ export const BaseRangeField = (_ref4) => {
     type: props.type,
     value: value,
     error: touched[field.name] && errors[field.name],
-    placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`
+    placeholder: props.placeholder && `${props.placeholder}${props.required && '*' || ''}`,
+    hasSuffix: props.suffix !== undefined
   })), props.suffix && /*#__PURE__*/React.createElement(StyledSliderInputSuffix, null, props.suffix))), /*#__PURE__*/React.createElement(SliderWrapper, null, /*#__PURE__*/React.createElement(Slider, {
     min: props.min,
     max: props.max,
