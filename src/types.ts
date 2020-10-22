@@ -45,6 +45,7 @@ export type FieldDateWrapProps = FieldProps & {
   type?: string
   suffix?: string
   prefix?: string
+  dateFormat?: string
 }
 
 export type SelectFieldOptions = {
@@ -159,6 +160,7 @@ export type BirthDateFieldProps = {
   errorMsg?: string
   required?: boolean
   showError?: boolean
+  dateFormat?: string
 }
 
 export type TelephoneFieldProps = {
