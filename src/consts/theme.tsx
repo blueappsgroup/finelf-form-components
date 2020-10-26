@@ -120,6 +120,7 @@ export const theme = {
   sliderHandleBorderRadius: '50%',
   sliderHandleWidth: '24px',
   sliderHandleHeight: '24px',
+  sliderHandleAfterBgColor: colors.mediumRed,
   sliderHandleAfterWidth: '7px',
   sliderHandleAfterHeight: '7px',
   sliderHandleAfterBorderRadius: '50%',
