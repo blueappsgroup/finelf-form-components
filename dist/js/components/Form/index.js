@@ -62,7 +62,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  margin: 0 10px;\n  background: ", ";\n  font-family: ", ";\n  padding: 20px 15px;\n  border-radius: 6px;\n  box-shadow: ", ";\n\n  @media ", " {\n    padding: 20px 30px;\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  margin: 0 10px;\n  background: ", ";\n  font-family: ", ";\n  padding: ", ";\n  border-radius: 6px;\n  box-shadow: ", ";\n\n  @media ", " {\n    padding: ", ";\n    margin: 0 auto;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -80,8 +80,12 @@ var StyledForm = (0, _styledComponents.default)(_formik.Form)(_templateObject(),
 }, function (props) {
   return props.theme.fontFamily;
 }, function (props) {
+  return props.theme.formPaddingMobile;
+}, function (props) {
   return props.theme.formBoxShadow;
-}, _sizes.device.tablet);
+}, _sizes.device.tablet, function (props) {
+  return props.theme.formPadding;
+});
 
 var FormWrapper = function FormWrapper(_ref) {
   var children = _ref.children,

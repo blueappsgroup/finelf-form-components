@@ -208,6 +208,12 @@
       return _base.RowWithFixedColumn;
     }
   });
+  Object.defineProperty(exports, "StyledContainer", {
+    enumerable: true,
+    get: function () {
+      return _base.StyledContainer;
+    }
+  });
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {

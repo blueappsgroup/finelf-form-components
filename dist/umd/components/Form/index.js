@@ -88,12 +88,12 @@
   margin: 0 10px;
   background: ${props => props.theme.formBgColor};
   font-family: ${props => props.theme.fontFamily};
-  padding: 20px 15px;
+  padding: ${props => props.theme.formPaddingMobile};
   border-radius: 6px;
   box-shadow: ${props => props.theme.formBoxShadow};
 
   @media ${_sizes.device.tablet} {
-    padding: 20px 30px;
+    padding: ${props => props.theme.formPadding};
     margin: 0 auto;
   }
 `;

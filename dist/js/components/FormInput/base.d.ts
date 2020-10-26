@@ -76,6 +76,7 @@ export declare type StyledProps = {
         sliderHandleBorderRadius: string;
         sliderHandleWidth: string;
         sliderHandleHeight: string;
+        sliderHandleAfterBgColor: string;
         sliderHandleAfterWidth: string;
         sliderHandleAfterHeight: string;
         sliderHandleAfterBorderRadius: string;
@@ -89,7 +90,6 @@ export declare type StyledProps = {
         marginBetweenRowChildren: string;
         inputIconLeft: string;
         inputWithIconPadding: string;
-        rowWithFixedColumnHorizontalMargin: string;
     };
     error?: string | boolean;
 };
@@ -102,6 +102,7 @@ export declare type InputWrapperProps = {
 };
 export declare const Row: import("styled-components").StyledComponent<"div", any, {}, never>;
 export declare const RowWithFixedColumn: import("styled-components").StyledComponent<"div", any, {}, never>;
+export declare const StyledContainer: import("styled-components").StyledComponent<"div", any, {}, never>;
 export declare const StyledError: import("styled-components").StyledComponent<"span", any, {}, never>;
 export declare const StyledInput: import("styled-components").StyledComponent<"input", any, any, never>;
 export declare const SliderRow: import("styled-components").StyledComponent<"div", any, {}, never>;
