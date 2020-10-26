@@ -97,6 +97,7 @@ export type StyledProps = {
     sliderHandleBorderRadius: string
     sliderHandleWidth: string
     sliderHandleHeight: string
+    sliderHandleAfterBgColor: string
     sliderHandleAfterWidth: string
     sliderHandleAfterHeight: string
     sliderHandleAfterBorderRadius: string
@@ -448,7 +449,7 @@ const SliderWrapper = styled.div`
    &::after {
     width: ${(props: StyledProps): string => props.theme.sliderHandleAfterWidth};
     height: ${(props: StyledProps): string => props.theme.sliderHandleAfterHeight};
-    background-color: ${(props: StyledProps): string => props.theme.sliderFillBgColor};
+    background-color: ${(props: StyledProps): string => props.theme.sliderHandleAfterBgColor};
     border-radius: ${(props: StyledProps): string => props.theme.sliderHandleAfterBorderRadius};
     position: absolute;
     content: '';
