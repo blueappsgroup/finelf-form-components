@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.BaseRangeField = exports.BaseSelectField = exports.BaseDateField = exports.SliderRow = exports.StyledInput = exports.StyledError = exports.RowWithFixedColumn = exports.Row = undefined;
+  exports.BaseRangeField = exports.BaseSelectField = exports.BaseDateField = exports.SliderRow = exports.StyledInput = exports.StyledError = exports.StyledContainer = exports.RowWithFixedColumn = exports.Row = undefined;
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -182,11 +182,11 @@
   @media ${_sizes.device.tablet} {
     flex-direction: row;
     justify-content: space-between;
-    & ${StyledRow}:first-of-type:not(:last-child) {
+    & > :first-child:not(:last-child) {
       margin-right: ${props => props.theme.marginBetweenRowChildren};
     }
 
-    & ${StyledRow}:last-child:not(:first-of-type) {
+    & > :last-child:not(:first-child) {
       margin-left: ${props => props.theme.marginBetweenRowChildren};
     }
   }
@@ -199,15 +199,24 @@
   @media ${_sizes.device.laptopL} {
     & > :first-child {
       position: fixed;
-      left: ${props => props.theme.rowWithFixedColumnHorizontalMargin};
-      width: calc(50% - ${props => props.theme.rowWithFixedColumnHorizontalMargin});
+      left: 0;
+      width: 50%;
+      padding-top: 0;
     }
     
     & > :last-child { 
       position: absolute;
-      right: ${props => props.theme.rowWithFixedColumnHorizontalMargin};
-      width: calc(50% - ${props => props.theme.rowWithFixedColumnHorizontalMargin});
+      right: 0;
+      width: 50%;
     }
+  }
+`;
+  const StyledContainer = exports.StyledContainer = _styledComponents2.default.div`
+  box-sizing: border-box;
+  padding: ${props => props.theme.styledContainerMobilePadding};
+
+  @media ${_sizes.device.tablet} {
+    padding: ${props => props.theme.styledContainerPadding};
   }
 `;
   /* eslint-enable */
@@ -370,7 +379,7 @@
   color: ${props => props.theme.styledInputSuffixTextColor};
   justify-content: center;
 `;
-  const StyledInputPrefix = _styledComponents2.default.span`
+  const StyledInputPrefixContainer = _styledComponents2.default.div`
   background: ${props => props.theme.inputBgColor};
   position: relative;
   left: 0px;
@@ -379,15 +388,17 @@
   display: inline-flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
-  border: 1px solid ${props => props.theme.inputBorderColor};
+  border: 1px solid ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-right: none;
   border-top-left-radius: ${props => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${props => props.theme.inputBorderRadius};
-  padding: ${props => props.theme.styledInputPrefixPadding};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+  font-size: ${props => props.theme.inputFontSize};
   font-weight: ${props => props.theme.inputFontWeight};  
-  border-top-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
-  border-bottom-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
-  border-left-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+`;
+  const StyledInputPrefix = _styledComponents2.default.span`
+  padding: ${props => props.theme.styledInputPrefixPadding};
+  border-right: 1px solid ${props => props.theme.inputBorderColor};
 `;
   const SliderWrapper = _styledComponents2.default.div`
  padding-bottom: 25px;
@@ -418,7 +429,7 @@
    &::after {
     width: ${props => props.theme.sliderHandleAfterWidth};
     height: ${props => props.theme.sliderHandleAfterHeight};
-    background-color: ${props => props.theme.sliderFillBgColor};
+    background-color: ${props => props.theme.sliderHandleAfterBgColor};
     border-radius: ${props => props.theme.sliderHandleAfterBorderRadius};
     position: absolute;
     content: '';
@@ -436,12 +447,14 @@
   display: flex;
   width:100%;
   flex-direction: row;
-  img {
+  svg {
     position: absolute;
     top: 0;
     bottom: 0;
     left: ${props => props.theme.inputIconLeft};
     margin: auto;
+    padding-right: 20px;
+    border-right: 1px solid ${props => props.theme.inputBorderColor};
   }
   input {
     padding: ${props => props.withIcon ? props.theme.inputWithIconPadding : props.theme.inputPadding};
@@ -475,12 +488,9 @@
       htmlFor: field.name
     }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(InputWrapper, {
       withIcon: props.icon !== undefined
-    }, props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, {
+    }, props.prefix && /*#__PURE__*/_react2.default.createElement(StyledInputPrefixContainer, {
       error: touched[field.name] && errors[field.name]
-    }, props.prefix), props.icon && /*#__PURE__*/_react2.default.createElement("img", {
-      src: props.icon,
-      alt: "icon"
-    }), /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
+    }, /*#__PURE__*/_react2.default.createElement(StyledInputPrefix, null, props.prefix)), props.icon, /*#__PURE__*/_react2.default.createElement(StyledInput, _extends({}, field, props, {
       required: props.required,
       hasPrefix: !!props.prefix,
       hasSuffix: !!props.suffix,

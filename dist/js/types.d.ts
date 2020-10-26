@@ -25,9 +25,9 @@ export declare type FieldWrapProps = FieldProps & {
     prefix?: string;
     HTMLcontent?: string;
     skipFieldForApi?: boolean;
+    icon?: object;
     disableCollapse?: boolean;
     visible?: boolean;
-    icon?: string;
 };
 export declare type FieldDateWrapProps = FieldProps & {
     label?: string;
@@ -117,7 +117,7 @@ export declare type EmailFieldProps = {
     errorMsg?: string;
     required?: boolean;
     showError?: boolean;
-    icon?: string;
+    icon?: object;
 };
 export declare type AmountOfChildrenFieldProps = {
     id?: string;
@@ -172,7 +172,11 @@ export declare type CustomThemeType = {
     fontFamily?: string;
     formBoxShadow?: string;
     formMaxWidth?: string;
+    formPaddingMobile?: string;
+    formPadding?: string;
     formBgColor?: string;
+    styledContainerMobilePadding?: string;
+    styledContainerPadding?: string;
     inputHeight?: string;
     inputTextColor?: string;
     inputPlaceHolderColor?: string;

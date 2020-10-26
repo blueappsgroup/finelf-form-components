@@ -28,4 +28,4 @@ export { default as OtherLoanAmountField } from './OtherLoanAmountField';
 export { default as AmountOfChildrenField } from './AmountOfChildrenField';
 export { default as IncomeField } from './IncomeField';
 export { default as CustomFieldWithCondition } from './CustomFieldWithCondition';
-export { Row, RowWithFixedColumn } from './base';
+export { Row, RowWithFixedColumn, StyledContainer } from './base';

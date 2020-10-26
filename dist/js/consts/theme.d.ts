@@ -16,6 +16,10 @@ export declare const theme: {
     fontFamily: string;
     formBoxShadow: string;
     formMaxWidth: string;
+    formPaddingMobile: string;
+    formPadding: string;
+    styledContainerMobilePadding: string;
+    styledContainerPadding: string;
     formBgColor: string;
     inputHeight: string;
     inputTextColor: string;
@@ -112,6 +116,7 @@ export declare const theme: {
     sliderHandleBorderRadius: string;
     sliderHandleWidth: string;
     sliderHandleHeight: string;
+    sliderHandleAfterBgColor: string;
     sliderHandleAfterWidth: string;
     sliderHandleAfterHeight: string;
     sliderHandleAfterBorderRadius: string;
@@ -132,7 +137,6 @@ export declare const theme: {
     imageBoxShadow: string;
     inputIconLeft: string;
     inputWithIconPadding: string;
-    rowWithFixedColumnHorizontalMargin: string;
 };
 declare type ThemeProviderPops = {
     children: ReactElement | ReactElement[];

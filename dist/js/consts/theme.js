@@ -36,6 +36,10 @@ var theme = {
   fontFamily: '"Manrope", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
   formBoxShadow: '0px 20px 60px rgba(0, 0, 0, 0.08)',
   formMaxWidth: '600px',
+  formPaddingMobile: '20px 15px',
+  formPadding: '20px 30px',
+  styledContainerMobilePadding: '20px 15px',
+  styledContainerPadding: '20px 30px',
   formBgColor: colors.white,
   inputHeight: '63px',
   inputTextColor: colors.mainGrey,
@@ -132,6 +136,7 @@ var theme = {
   sliderHandleBorderRadius: '50%',
   sliderHandleWidth: '24px',
   sliderHandleHeight: '24px',
+  sliderHandleAfterBgColor: colors.mediumRed,
   sliderHandleAfterWidth: '7px',
   sliderHandleAfterHeight: '7px',
   sliderHandleAfterBorderRadius: '50%',
@@ -146,13 +151,12 @@ var theme = {
   hrColor: colors.mainGrey,
   hrSize: '1px',
   imageContainerPadding: '0px',
-  imageContainerTextTopPosition: '15%',
+  imageContainerTextTopPosition: '230px',
   imageContainerTextFontSize: '45px',
   imageContainerTextFontWeight: '900',
   imageBoxShadow: 'none',
-  inputIconLeft: '10px',
-  inputWithIconPadding: '0 20px 0 44px',
-  rowWithFixedColumnHorizontalMargin: '30px'
+  inputIconLeft: '20px',
+  inputWithIconPadding: '0 20px 0 85px'
 };
 exports.theme = theme;
 

@@ -63,11 +63,11 @@ export const Row = styled.div`
   @media ${device.tablet} {
     flex-direction: row;
     justify-content: space-between;
-    & ${StyledRow}:first-of-type:not(:last-child) {
+    & > :first-child:not(:last-child) {
       margin-right: ${props => props.theme.marginBetweenRowChildren};
     }
 
-    & ${StyledRow}:last-child:not(:first-of-type) {
+    & > :last-child:not(:first-child) {
       margin-left: ${props => props.theme.marginBetweenRowChildren};
     }
   }
@@ -80,15 +80,24 @@ export const RowWithFixedColumn = styled.div`
   @media ${device.laptopL} {
     & > :first-child {
       position: fixed;
-      left: ${props => props.theme.rowWithFixedColumnHorizontalMargin};
-      width: calc(50% - ${props => props.theme.rowWithFixedColumnHorizontalMargin});
+      left: 0;
+      width: 50%;
+      padding-top: 0;
     }
     
     & > :last-child { 
       position: absolute;
-      right: ${props => props.theme.rowWithFixedColumnHorizontalMargin};
-      width: calc(50% - ${props => props.theme.rowWithFixedColumnHorizontalMargin});
+      right: 0;
+      width: 50%;
     }
+  }
+`;
+export const StyledContainer = styled.div`
+  box-sizing: border-box;
+  padding: ${props => props.theme.styledContainerMobilePadding};
+
+  @media ${device.tablet} {
+    padding: ${props => props.theme.styledContainerPadding};
   }
 `;
 /* eslint-enable */
@@ -251,7 +260,7 @@ const StyledSliderInputSuffix = styled.span`
   color: ${props => props.theme.styledInputSuffixTextColor};
   justify-content: center;
 `;
-const StyledInputPrefix = styled.span`
+const StyledInputPrefixContainer = styled.div`
   background: ${props => props.theme.inputBgColor};
   position: relative;
   left: 0px;
@@ -260,15 +269,17 @@ const StyledInputPrefix = styled.span`
   display: inline-flex;
   align-items: center;
   height: ${props => props.theme.inputHeight};
-  border: 1px solid ${props => props.theme.inputBorderColor};
+  border: 1px solid ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+  border-right: none;
   border-top-left-radius: ${props => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${props => props.theme.inputBorderRadius};
-  padding: ${props => props.theme.styledInputPrefixPadding};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
+  font-size: ${props => props.theme.inputFontSize};
   font-weight: ${props => props.theme.inputFontWeight};  
-  border-top-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
-  border-bottom-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
-  border-left-color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
+`;
+const StyledInputPrefix = styled.span`
+  padding: ${props => props.theme.styledInputPrefixPadding};
+  border-right: 1px solid ${props => props.theme.inputBorderColor};
 `;
 const SliderWrapper = styled.div`
  padding-bottom: 25px;
@@ -299,7 +310,7 @@ const SliderWrapper = styled.div`
    &::after {
     width: ${props => props.theme.sliderHandleAfterWidth};
     height: ${props => props.theme.sliderHandleAfterHeight};
-    background-color: ${props => props.theme.sliderFillBgColor};
+    background-color: ${props => props.theme.sliderHandleAfterBgColor};
     border-radius: ${props => props.theme.sliderHandleAfterBorderRadius};
     position: absolute;
     content: '';
@@ -317,12 +328,14 @@ const InputWrapper = styled.div`
   display: flex;
   width:100%;
   flex-direction: row;
-  img {
+  svg {
     position: absolute;
     top: 0;
     bottom: 0;
     left: ${props => props.theme.inputIconLeft};
     margin: auto;
+    padding-right: 20px;
+    border-right: 1px solid ${props => props.theme.inputBorderColor};
   }
   input {
     padding: ${props => props.withIcon ? props.theme.inputWithIconPadding : props.theme.inputPadding};
@@ -356,12 +369,9 @@ const BaseField = (_ref) => {
     htmlFor: field.name
   }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(InputWrapper, {
     withIcon: props.icon !== undefined
-  }, props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefix, {
+  }, props.prefix && /*#__PURE__*/React.createElement(StyledInputPrefixContainer, {
     error: touched[field.name] && errors[field.name]
-  }, props.prefix), props.icon && /*#__PURE__*/React.createElement("img", {
-    src: props.icon,
-    alt: "icon"
-  }), /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
+  }, /*#__PURE__*/React.createElement(StyledInputPrefix, null, props.prefix)), props.icon, /*#__PURE__*/React.createElement(StyledInput, _extends({}, field, props, {
     required: props.required,
     hasPrefix: !!props.prefix,
     hasSuffix: !!props.suffix,
