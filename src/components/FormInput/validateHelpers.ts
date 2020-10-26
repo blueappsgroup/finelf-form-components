@@ -12,7 +12,7 @@ export const isNotValidEmail = (value: string): boolean =>
 export const isNotValidNumberBetween1And10Digits = (value: string): boolean =>
   !/^[0-9]{1,10}$/.test(value)
 
-export const isNotLetter = (value: string): boolean => !/[A-Za-z]$/.test(value)
+export const isNotLetter = (value: string): boolean => !/[A-Za-z.]$/.test(value)
 
 export const isNotNumber = (value: string): boolean => !/[0-9]$/.test(value)
 

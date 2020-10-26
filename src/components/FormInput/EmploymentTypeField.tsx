@@ -10,7 +10,7 @@ const options = {
   fixed: 'umowa o pracę na czas nieokreślony',
   temporary: 'umowa o pracę na czas określony',
   self_employed: 'samozatrudnienie',
-  fixed_partial: 'wdowa/wdowiec',
+  fixed_partial: 'umowa o pracę na czas nieokreślony (niepełny etat)',
   government: 'stanowisko rządowe',
   unemployed: 'bezrobotny',
   pension: 'emeryt/rencista',
