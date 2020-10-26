@@ -77,7 +77,11 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
           if (item.props.name && !item.props.children) {
             acc[item.props.name] = true
           }
-          if (item.props.name && item.props.required) {
+          if (
+            item.props.name &&
+            item.props.required &&
+            !item.props.visibleCondition
+          ) {
             acc.requiredFields[item.props.name] = true
           }
           if (item.props && item.props.name === 'agreements') {
@@ -91,7 +95,11 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
 
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             mappedChildrens.forEach((child: any) => {
-              if (child.props.name && child.props.required) {
+              if (
+                child.props.name &&
+                child.props.required &&
+                !child.props.visibleCondition
+              ) {
                 if (item.props.type === 'checkboxGroup') {
                   !acc.requiredFields[item.props.name] &&
                     (acc.requiredFields[item.props.name] = {})
@@ -113,6 +121,7 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
       ),
     [children]
   )
+
   const [nextButtonDisabled, setNextButtonDisabled] = useState(
     JSON.stringify(mappedFields) !== JSON.stringify({})
   )
