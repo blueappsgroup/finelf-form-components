@@ -182,7 +182,7 @@ export const validateCompanyTax: (
   }
 
   if (!isValidNIP(value)) {
-    return 'Podany NIP jest nieprawidłowy1'
+    return 'Podany NIP jest nieprawidłowy'
   }
 }
 
