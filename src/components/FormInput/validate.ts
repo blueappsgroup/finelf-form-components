@@ -181,13 +181,6 @@ export const validateCompanyTax: (
     return 'To pole jest wymagane'
   }
 
-  if (isNotNumber(value)) {
-    return 'Podany NIP jest nieprawidłowy'
-  }
-
-  if (isNotValidLength(value, 10, 10)) {
-    return 'Podany NIP jest nieprawidłowy'
-  }
   if (!isValidNIP(value)) {
     return 'Podany NIP jest nieprawidłowy'
   }

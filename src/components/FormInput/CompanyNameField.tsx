@@ -14,17 +14,7 @@ const CompanyNameField: FC<TextFieldWithConditonProps> = ({
   validate = validateText,
   showError = true,
   requiredCondition,
-  visibleCondition = {
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    employment_type: [
-      'fixed',
-      'temporary',
-      'fixed_partial',
-      'government',
-      'agriculture',
-      'service_contract',
-    ],
-  },
+  visibleCondition,
 }) => (
   <CustomFieldWithCondition
     id={id}
@@ -42,6 +32,17 @@ const CompanyNameField: FC<TextFieldWithConditonProps> = ({
 
 CompanyNameField.defaultProps = {
   name: 'company_name',
+  visibleCondition: {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    employment_type: [
+      'fixed',
+      'temporary',
+      'fixed_partial',
+      'government',
+      'agriculture',
+      'service_contract',
+    ],
+  },
 }
 
 export default CompanyNameField

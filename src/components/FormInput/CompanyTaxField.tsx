@@ -14,10 +14,7 @@ const CompanyTaxField: FC<TextFieldWithConditonProps> = ({
   validate = validateCompanyTax,
   showError = true,
   requiredCondition,
-  visibleCondition = {
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    employment_type: ['self_employed'],
-  },
+  visibleCondition,
 }) => (
   <CustomFieldWithCondition
     id={id}
@@ -35,6 +32,10 @@ const CompanyTaxField: FC<TextFieldWithConditonProps> = ({
 
 CompanyTaxField.defaultProps = {
   name: 'company_tax_id',
+  visibleCondition: {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    employment_type: ['self_employed'],
+  },
 }
 
 export default CompanyTaxField

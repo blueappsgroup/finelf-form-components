@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {
   ChangeEvent,
+  FC,
   ReactElement,
   useContext,
   useEffect,
   useLayoutEffect,
+  useRef,
   useState,
 } from 'react'
 import Slider from 'react-rangeslider'
@@ -138,9 +140,6 @@ const StyledRow = styled.div`
 `
 
 /* eslint-disable */
-const StyledInputRow = styled(StyledRow)<{ visible: boolean }>`
-  display: ${props => props.visible ? 'flex' : 'none'};
-`
 
 const StyledRowRangeField = styled.div`
   display: flex;
@@ -483,7 +482,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
 `
 /* eslint-enable */
 
-const BaseField: (props: FieldWrapProps) => ReactElement = ({
+const BaseField: FC<FieldWrapProps> = ({
   field,
   form: { touched, errors, values },
   ...props
@@ -495,48 +494,52 @@ const BaseField: (props: FieldWrapProps) => ReactElement = ({
   }
 
   return (
-    <StyledInputRow visible={props.visible !== false}>
-      {props.label && (
-        <label htmlFor={field.name}>{`${props.label}${
-          (props.required && '*') || ''
-        }`}</label>
-      )}
-      <InputWrapper withIcon={props.icon !== undefined}>
-        {props.prefix && (
-          <StyledInputPrefixContainer
-            error={touched[field.name] && errors[field.name]}
-          >
-            <StyledInputPrefix>{props.prefix}</StyledInputPrefix>
-          </StyledInputPrefixContainer>
+    (props.visible !== false && (
+      <StyledRow>
+        {props.label && (
+          <label htmlFor={field.name}>{`${props.label}${
+            (props.required && '*') || ''
+          }`}</label>
         )}
-        {props.icon}
-        <StyledInput
-          {...field}
-          {...props}
-          required={props.required}
-          hasPrefix={!!props.prefix}
-          hasSuffix={!!props.suffix}
-          onBlur={handleOnBlur}
-          type={props.type}
-          value={(field.value && field.value) || ''}
-          error={touched[field.name] && errors[field.name]}
-          placeholder={
-            props.placeholder &&
-            `${props.placeholder}${(props.required && '*') || ''}`
-          }
-          style={
-            props.prefix && {
-              borderBottomLeftRadius: '0px',
-              borderTopLeftRadius: '0px',
+        <InputWrapper withIcon={props.icon !== undefined}>
+          {props.prefix && (
+            <StyledInputPrefixContainer
+              error={touched[field.name] && errors[field.name]}
+            >
+              <StyledInputPrefix>{props.prefix}</StyledInputPrefix>
+            </StyledInputPrefixContainer>
+          )}
+          {props.icon}
+          <StyledInput
+            {...field}
+            {...props}
+            required={props.required}
+            hasPrefix={!!props.prefix}
+            hasSuffix={!!props.suffix}
+            onBlur={handleOnBlur}
+            type={props.type}
+            value={(field.value && field.value) || ''}
+            error={touched[field.name] && errors[field.name]}
+            placeholder={
+              props.placeholder &&
+              `${props.placeholder}${(props.required && '*') || ''}`
             }
-          }
-        />
-        {props.suffix && <StyledInputSuffix>{props.suffix}</StyledInputSuffix>}
-      </InputWrapper>
-      {props.showError && touched[field.name] && errors[field.name] && (
-        <StyledError>{errors[field.name]}</StyledError>
-      )}
-    </StyledInputRow>
+            style={
+              props.prefix && {
+                borderBottomLeftRadius: '0px',
+                borderTopLeftRadius: '0px',
+              }
+            }
+          />
+          {props.suffix && (
+            <StyledInputSuffix>{props.suffix}</StyledInputSuffix>
+          )}
+        </InputWrapper>
+        {props.showError && touched[field.name] && errors[field.name] && (
+          <StyledError>{errors[field.name]}</StyledError>
+        )}
+      </StyledRow>
+    )) || <></>
   )
 }
 
@@ -597,9 +600,9 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
   form: { touched, errors, values },
   ...props
 }) => {
-  const { id } = useContext(FormContext)
   const handleOnBlur = (e: ChangeEvent<HTMLInputElement>): void => {
     setFormValuesToCache(values, id)
+    console.log('blur')
     field.onBlur && field.onBlur(e)
   }
 
