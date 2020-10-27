@@ -162,7 +162,7 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
     if (!hasError) {
       setNextButtonDisabled(false)
     }
-  }, [values, errors, mappedFields])
+  }, [values, errors, mappedFields, children])
 
   return (
     <Wrapper visible={stepIndex === currentStep}>

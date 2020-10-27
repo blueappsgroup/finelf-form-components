@@ -134,7 +134,7 @@ const CustomHeader: FC<any> = ({
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const DatePickerCore: FC<any> = ({
   dateFormat = 'dd/MM/yyyy',
-  openToDate = new Date('01/01/2005'),
+  openToDate = new Date(`01/01/${getYear(new Date()) - 18}`),
   ...props
 }) => (
   <StyledWrapper>
