@@ -32,7 +32,8 @@
     name,
     required = false,
     showError = true,
-    dateFormat
+    dateFormat,
+    openToDate
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     showError: showError,
@@ -42,7 +43,8 @@
     label: label,
     placeholder: placeholder,
     validate: (0, _validate.validateDate)(required),
-    dateFormat: dateFormat
+    dateFormat: dateFormat,
+    openToDate: openToDate
   });
 
   BirthDateField.defaultProps = {

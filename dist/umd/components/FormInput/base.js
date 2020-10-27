@@ -152,9 +152,6 @@
 `;
   /* eslint-disable */
 
-  const StyledInputRow = (0, _styledComponents2.default)(StyledRow)`
-  display: ${props => props.visible ? 'flex' : 'none'};
-`;
   const StyledRowRangeField = _styledComponents2.default.div`
   display: flex;
   align-items: center;
@@ -482,9 +479,7 @@
       field.onBlur && field.onBlur(e);
     };
 
-    return /*#__PURE__*/_react2.default.createElement(StyledInputRow, {
-      visible: props.visible !== false
-    }, props.label && /*#__PURE__*/_react2.default.createElement("label", {
+    return props.visible !== false && /*#__PURE__*/_react2.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react2.default.createElement("label", {
       htmlFor: field.name
     }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/_react2.default.createElement(InputWrapper, {
       withIcon: props.icon !== undefined
@@ -503,7 +498,7 @@
         borderBottomLeftRadius: '0px',
         borderTopLeftRadius: '0px'
       }
-    })), props.suffix && /*#__PURE__*/_react2.default.createElement(StyledInputSuffix, null, props.suffix)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react2.default.createElement(StyledError, null, errors[field.name]));
+    })), props.suffix && /*#__PURE__*/_react2.default.createElement(StyledInputSuffix, null, props.suffix)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react2.default.createElement(StyledError, null, errors[field.name])) || /*#__PURE__*/_react2.default.createElement(_react2.default.Fragment, null);
   };
 
   exports.default = BaseField;
@@ -570,6 +565,7 @@
 
     const handleOnBlur = e => {
       (0, _utils.setFormValuesToCache)(values, id);
+      console.log('blur');
       field.onBlur && field.onBlur(e);
     };
 

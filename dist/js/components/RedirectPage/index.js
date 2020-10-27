@@ -127,7 +127,7 @@ var StyledMainImg = _styledComponents.default.img(_templateObject7());
 
 var RedirectPage = function RedirectPage(_ref) {
   var _ref$headerText = _ref.headerText,
-      headerText = _ref$headerText === void 0 ? 'Dziękujemy za przesłanie wniosku! Szukamy dla Ciebie idealnej oferty.' : _ref$headerText,
+      headerText = _ref$headerText === void 0 ? 'Dziękujemy za przesłanie wniosku! Szukamy dla Ciebie idealnej oferty.' : _ref$headerText,
       backgroundImage = _ref.backgroundImage,
       logoImg = _ref.logoImg,
       mainImg = _ref.mainImg,

@@ -165,12 +165,15 @@ var CustomHeader = function CustomHeader(_ref) {
 var DatePickerCore = function DatePickerCore(_ref4) {
   var _ref4$dateFormat = _ref4.dateFormat,
       dateFormat = _ref4$dateFormat === void 0 ? 'dd/MM/yyyy' : _ref4$dateFormat,
-      props = _objectWithoutProperties(_ref4, ["dateFormat"]);
+      _ref4$openToDate = _ref4.openToDate,
+      openToDate = _ref4$openToDate === void 0 ? new Date("01/01/".concat((0, _getYear.default)(new Date()) - 18)) : _ref4$openToDate,
+      props = _objectWithoutProperties(_ref4, ["dateFormat", "openToDate"]);
 
   return /*#__PURE__*/_react.default.createElement(StyledWrapper, null, /*#__PURE__*/_react.default.createElement(StyledDatePicker, _extends({}, props, {
     dateFormat: dateFormat,
     locale: "pl",
     renderCustomHeader: CustomHeader,
+    openToDate: openToDate,
     onFocus: function onFocus(e) {
       return e.target.readOnly = true;
     }

@@ -30,11 +30,7 @@ var CompanyTaxField = function CompanyTaxField(_ref) {
       _ref$showError = _ref.showError,
       showError = _ref$showError === void 0 ? true : _ref$showError,
       requiredCondition = _ref.requiredCondition,
-      _ref$visibleCondition = _ref.visibleCondition,
-      visibleCondition = _ref$visibleCondition === void 0 ? {
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    employment_type: ['self_employed']
-  } : _ref$visibleCondition;
+      visibleCondition = _ref.visibleCondition;
   return /*#__PURE__*/_react.default.createElement(_CustomFieldWithCondition.default, {
     id: id,
     label: label,
@@ -50,7 +46,11 @@ var CompanyTaxField = function CompanyTaxField(_ref) {
 };
 
 CompanyTaxField.defaultProps = {
-  name: 'company_tax_id'
+  name: 'company_tax_id',
+  visibleCondition: {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    employment_type: ['self_employed']
+  }
 };
 var _default = CompanyTaxField;
 exports.default = _default;

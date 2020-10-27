@@ -12,10 +12,7 @@ const CompanyNameField = ({
   validate = validateText,
   showError = true,
   requiredCondition,
-  visibleCondition = {
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    employment_type: ['fixed', 'temporary', 'fixed_partial', 'government', 'agriculture', 'service_contract']
-  }
+  visibleCondition
 }) => /*#__PURE__*/React.createElement(CustomFieldWithCondition, {
   id: id,
   label: label,
@@ -30,7 +27,11 @@ const CompanyNameField = ({
 });
 
 CompanyNameField.defaultProps = {
-  name: 'company_name'
+  name: 'company_name',
+  visibleCondition: {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    employment_type: ['fixed', 'temporary', 'fixed_partial', 'government', 'agriculture', 'service_contract']
+  }
 };
 export default CompanyNameField;
 //# sourceMappingURL=CompanyNameField.js.map

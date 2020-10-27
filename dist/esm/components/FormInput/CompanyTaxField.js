@@ -12,10 +12,7 @@ const CompanyTaxField = ({
   validate = validateCompanyTax,
   showError = true,
   requiredCondition,
-  visibleCondition = {
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    employment_type: ['self_employed']
-  }
+  visibleCondition
 }) => /*#__PURE__*/React.createElement(CustomFieldWithCondition, {
   id: id,
   label: label,
@@ -30,7 +27,11 @@ const CompanyTaxField = ({
 });
 
 CompanyTaxField.defaultProps = {
-  name: 'company_tax_id'
+  name: 'company_tax_id',
+  visibleCondition: {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    employment_type: ['self_employed']
+  }
 };
 export default CompanyTaxField;
 //# sourceMappingURL=CompanyTaxField.js.map

@@ -38,10 +38,7 @@
     validate = _validate.validateText,
     showError = true,
     requiredCondition,
-    visibleCondition = {
-      // eslint-disable-next-line @typescript-eslint/camelcase
-      employment_type: ['fixed', 'temporary', 'fixed_partial', 'government', 'agriculture', 'service_contract']
-    }
+    visibleCondition
   }) => /*#__PURE__*/_react2.default.createElement(_CustomFieldWithCondition2.default, {
     id: id,
     label: label,
@@ -56,7 +53,11 @@
   });
 
   CompanyNameField.defaultProps = {
-    name: 'company_name'
+    name: 'company_name',
+    visibleCondition: {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      employment_type: ['fixed', 'temporary', 'fixed_partial', 'government', 'agriculture', 'service_contract']
+    }
   };
   exports.default = CompanyNameField;
 });

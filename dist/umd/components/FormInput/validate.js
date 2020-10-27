@@ -143,14 +143,6 @@
       return 'To pole jest wymagane';
     }
 
-    if ((0, _validateHelpers.isNotNumber)(value)) {
-      return 'Podany NIP jest nieprawidłowy';
-    }
-
-    if ((0, _validateHelpers.isNotValidLength)(value, 10, 10)) {
-      return 'Podany NIP jest nieprawidłowy';
-    }
-
     if (!(0, _validateHelpers.isValidNIP)(value)) {
       return 'Podany NIP jest nieprawidłowy';
     }

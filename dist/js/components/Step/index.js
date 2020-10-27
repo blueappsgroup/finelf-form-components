@@ -114,7 +114,7 @@ var Step = function Step(_ref) {
         acc[item.props.name] = true;
       }
 
-      if (item.props.name && item.props.required) {
+      if (item.props.name && item.props.required && !item.props.visibleCondition) {
         acc.requiredFields[item.props.name] = true;
       }
 
@@ -126,7 +126,7 @@ var Step = function Step(_ref) {
         var mappedChildrens = Array.isArray(item.props.children) ? item.props.children : [item.props.children]; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
         mappedChildrens.forEach(function (child) {
-          if (child.props.name && child.props.required) {
+          if (child.props.name && child.props.required && !child.props.visibleCondition) {
             if (item.props.type === 'checkboxGroup') {
               !acc.requiredFields[item.props.name] && (acc.requiredFields[item.props.name] = {});
               acc.requiredFields[item.props.name][child.props.name] = true;
@@ -188,7 +188,7 @@ var Step = function Step(_ref) {
     if (!hasError) {
       setNextButtonDisabled(false);
     }
-  }, [values, errors, mappedFields]);
+  }, [values, errors, mappedFields, children]);
   return /*#__PURE__*/_react.default.createElement(Wrapper, {
     visible: stepIndex === currentStep
   }, /*#__PURE__*/_react.default.createElement(StepHeaderWrapper, null, currentStep !== 0 && /*#__PURE__*/_react.default.createElement(_StepHeader.default, null, stepsTitleList && stepsTitleList[currentStep - 1]), stepIndex === currentStep && /*#__PURE__*/_react.default.createElement(_StepHeader.default, {

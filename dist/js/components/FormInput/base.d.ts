@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 import { FieldWrapProps, FieldDateWrapProps, RangeFieldWrapProps, SelectFieldWrapProps } from '../../types';
 export declare type StyledProps = {
     theme: {
@@ -106,7 +106,7 @@ export declare const StyledContainer: import("styled-components").StyledComponen
 export declare const StyledError: import("styled-components").StyledComponent<"span", any, {}, never>;
 export declare const StyledInput: import("styled-components").StyledComponent<"input", any, any, never>;
 export declare const SliderRow: import("styled-components").StyledComponent<"div", any, {}, never>;
-declare const BaseField: (props: FieldWrapProps) => ReactElement;
+declare const BaseField: FC<FieldWrapProps>;
 export default BaseField;
 export declare const BaseDateField: (props: FieldDateWrapProps) => ReactElement;
 export declare const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement;

@@ -33,9 +33,6 @@ const StyledRow = styled.div`
 `;
 /* eslint-disable */
 
-const StyledInputRow = styled(StyledRow)`
-  display: ${props => props.visible ? 'flex' : 'none'};
-`;
 const StyledRowRangeField = styled.div`
   display: flex;
   align-items: center;
@@ -363,9 +360,7 @@ const BaseField = (_ref) => {
     field.onBlur && field.onBlur(e);
   };
 
-  return /*#__PURE__*/React.createElement(StyledInputRow, {
-    visible: props.visible !== false
-  }, props.label && /*#__PURE__*/React.createElement("label", {
+  return props.visible !== false && /*#__PURE__*/React.createElement(StyledRow, null, props.label && /*#__PURE__*/React.createElement("label", {
     htmlFor: field.name
   }, `${props.label}${props.required && '*' || ''}`), /*#__PURE__*/React.createElement(InputWrapper, {
     withIcon: props.icon !== undefined
@@ -384,7 +379,7 @@ const BaseField = (_ref) => {
       borderBottomLeftRadius: '0px',
       borderTopLeftRadius: '0px'
     }
-  })), props.suffix && /*#__PURE__*/React.createElement(StyledInputSuffix, null, props.suffix)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/React.createElement(StyledError, null, errors[field.name]));
+  })), props.suffix && /*#__PURE__*/React.createElement(StyledInputSuffix, null, props.suffix)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/React.createElement(StyledError, null, errors[field.name])) || /*#__PURE__*/React.createElement(React.Fragment, null);
 };
 
 export default BaseField;
@@ -449,6 +444,7 @@ export const BaseSelectField = (_ref3) => {
 
   const handleOnBlur = e => {
     setFormValuesToCache(values, id);
+    console.log('blur');
     field.onBlur && field.onBlur(e);
   };
 

@@ -10,7 +10,8 @@ const BirthDateField = ({
   name,
   required = false,
   showError = true,
-  dateFormat
+  dateFormat,
+  openToDate
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   showError: showError,
@@ -20,7 +21,8 @@ const BirthDateField = ({
   label: label,
   placeholder: placeholder,
   validate: validateDate(required),
-  dateFormat: dateFormat
+  dateFormat: dateFormat,
+  openToDate: openToDate
 });
 
 BirthDateField.defaultProps = {

@@ -38,7 +38,7 @@ var isNotValidNumberBetween1And10Digits = function isNotValidNumberBetween1And10
 exports.isNotValidNumberBetween1And10Digits = isNotValidNumberBetween1And10Digits;
 
 var isNotLetter = function isNotLetter(value) {
-  return !/[A-Za-z]$/.test(value);
+  return !/[A-Za-z.]$/.test(value);
 };
 
 exports.isNotLetter = isNotLetter;
@@ -85,12 +85,14 @@ var isNotValidZipCode = function isNotValidZipCode(value) {
 exports.isNotValidZipCode = isNotValidZipCode;
 
 var isValidNIP = function isValidNIP(nip) {
-  if (nip.length === 10) {
+  var trimedNip = nip.trim();
+
+  if (trimedNip.length === 10) {
     var weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];
-    var controlNumber = parseInt(nip.substring(9, 10));
+    var controlNumber = parseInt(trimedNip.substring(9, 10));
     var sum = 0;
-    weights.filter(function (weight, index) {
-      return sum += parseInt(nip.substring(index, index + 1)) * weight;
+    weights.forEach(function (weight, index) {
+      return sum += parseInt(trimedNip.substring(index, index + 1)) * weight;
     });
     return sum % 11 === controlNumber;
   }

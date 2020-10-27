@@ -30,11 +30,7 @@ var CompanyNameField = function CompanyNameField(_ref) {
       _ref$showError = _ref.showError,
       showError = _ref$showError === void 0 ? true : _ref$showError,
       requiredCondition = _ref.requiredCondition,
-      _ref$visibleCondition = _ref.visibleCondition,
-      visibleCondition = _ref$visibleCondition === void 0 ? {
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    employment_type: ['fixed', 'temporary', 'fixed_partial', 'government', 'agriculture', 'service_contract']
-  } : _ref$visibleCondition;
+      visibleCondition = _ref.visibleCondition;
   return /*#__PURE__*/_react.default.createElement(_CustomFieldWithCondition.default, {
     id: id,
     label: label,
@@ -50,7 +46,11 @@ var CompanyNameField = function CompanyNameField(_ref) {
 };
 
 CompanyNameField.defaultProps = {
-  name: 'company_name'
+  name: 'company_name',
+  visibleCondition: {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    employment_type: ['fixed', 'temporary', 'fixed_partial', 'government', 'agriculture', 'service_contract']
+  }
 };
 var _default = CompanyNameField;
 exports.default = _default;

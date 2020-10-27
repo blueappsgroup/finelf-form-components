@@ -61,7 +61,7 @@
 `;
 
   const RedirectPage = ({
-    headerText = 'Dziękujemy za przesłanie wniosku! Szukamy dla Ciebie idealnej oferty.',
+    headerText = 'Dziękujemy za przesłanie wniosku! Szukamy dla Ciebie idealnej oferty.',
     backgroundImage,
     logoImg,
     mainImg,

@@ -49,18 +49,8 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _templateObject20() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  width:100%;\n  flex-direction: row;\n  svg {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: ", ";\n    margin: auto;\n    padding-right: 20px;\n    border-right: 1px solid ", ";\n  }\n  input {\n    padding: ", ";\n  }\n"]);
-
-  _templateObject20 = function _templateObject20() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject19() {
-  var data = _taggedTemplateLiteral(["\n padding-bottom: 25px;\n width: 100%;\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: 0;\n   bottom: 0;\n   margin: auto;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  width:100%;\n  flex-direction: row;\n  svg {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: ", ";\n    margin: auto;\n    padding-right: 20px;\n    border-right: 1px solid ", ";\n  }\n  input {\n    padding: ", ";\n  }\n"]);
 
   _templateObject19 = function _templateObject19() {
     return data;
@@ -70,7 +60,7 @@ function _templateObject19() {
 }
 
 function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n  padding: ", ";\n  border-right: 1px solid ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n padding-bottom: 25px;\n width: 100%;\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: 0;\n   bottom: 0;\n   margin: auto;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
 
   _templateObject18 = function _templateObject18() {
     return data;
@@ -80,7 +70,7 @@ function _templateObject18() {
 }
 
 function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  position: relative;\n  left: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-right: none;\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";  \n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: ", ";\n  border-right: 1px solid ", ";\n"]);
 
   _templateObject17 = function _templateObject17() {
     return data;
@@ -90,7 +80,7 @@ function _templateObject17() {
 }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  height: ", ";\n  width: ", ";\n  box-sizing: border-box;\n  background-color: ", ";\n  border-radius: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  position: relative;\n  left: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-right: none;\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";  \n"]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -110,7 +100,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  font-weight: ", ";\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  height: ", ";\n  width: ", ";\n  box-sizing: border-box;\n  background-color: ", ";\n  border-radius: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n  justify-content: center;\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -120,7 +110,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  border: solid;\n  border-width: 0 2px 2px 0;\n  border-color: ", "; \n  display: inline-block;\n  padding: 4px;\n  vertical-align: middle;\n  content: ' ';\n  right: ", ";\n  top: 0;\n  bottom: 0;\n  margin: auto;\n  height: 0;\n  transform: rotate(45deg);\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  font-weight: ", ";\n  color: ", ";\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -130,7 +120,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  background: ", ";\n  border: ", " ", "\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n  appearance: none;\n\n  option:disabled {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  border: solid;\n  border-width: 0 2px 2px 0;\n  border-color: ", "; \n  display: inline-block;\n  padding: 4px;\n  vertical-align: middle;\n  content: ' ';\n  right: ", ";\n  top: 0;\n  bottom: 0;\n  margin: auto;\n  height: 0;\n  transform: rotate(45deg);\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -140,7 +130,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  background: ", ";\n  border: ", " ", "\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n  appearance: none;\n\n  option:disabled {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -150,7 +140,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100px;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  ", "\n  ", "\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100%;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -160,7 +150,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  padding: 25px 0;\n  flex-direction: row;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100px;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  ", "\n  ", "\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -170,7 +160,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  ", "\n  ", "\n\n  &::placeholder {\n    color: ", ";\n    font-size: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  padding: 25px 0;\n  flex-direction: row;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -180,7 +170,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  text-align: ", ";\n  position: absolute;\n  width: 100%;\n  font-size: ", ";\n  bottom: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  ", "\n  ", "\n\n  &::placeholder {\n    color: ", ";\n    font-size: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -190,7 +180,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  padding: ", ";\n\n  @media ", " {\n    padding: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  text-align: ", ";\n  position: absolute;\n  width: 100%;\n  font-size: ", ";\n  bottom: ", ";\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -200,7 +190,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral([" \n  display: flex;\n  width: 100%;\n  margin: 0 auto;\n  \n  @media ", " {\n    & > :first-child {\n      position: fixed;\n      left: 0;\n      width: 50%;\n      padding-top: 0;\n    }\n    \n    & > :last-child { \n      position: absolute;\n      right: 0;\n      width: 50%;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  padding: ", ";\n\n  @media ", " {\n    padding: ", ";\n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -210,7 +200,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  margin: 0 auto;\n  flex-direction: column;\n  > * {\n      flex-basis: 0;\n      flex-grow: 1;\n  }\n\n  @media ", " {\n    flex-direction: row;\n    justify-content: space-between;\n    & > :first-child:not(:last-child) {\n      margin-right: ", ";\n    }\n\n    & > :last-child:not(:first-child) {\n      margin-left: ", ";\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral([" \n  display: flex;\n  width: 100%;\n  margin: 0 auto;\n  \n  @media ", " {\n    & > :first-child {\n      position: fixed;\n      left: 0;\n      width: 50%;\n      padding-top: 0;\n    }\n    \n    & > :last-child { \n      position: absolute;\n      right: 0;\n      width: 50%;\n    }\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -220,7 +210,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-bottom: ", ";\n  position: relative;\n  flex-wrap: nowrap;\n  width: 100%;\n  justify-content: space-between;\n  label {\n    font-size: ", ";\n    padding: ", ";\n    color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  margin: 0 auto;\n  flex-direction: column;\n  > * {\n      flex-basis: 0;\n      flex-grow: 1;\n  }\n\n  @media ", " {\n    flex-direction: row;\n    justify-content: space-between;\n    & > :first-child:not(:last-child) {\n      margin-right: ", ";\n    }\n\n    & > :last-child:not(:first-child) {\n      margin-left: ", ";\n    }\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -230,7 +220,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-bottom: ", ";\n  position: relative;\n  flex-wrap: nowrap;\n  width: 100%;\n  justify-content: space-between;\n  label {\n    font-size: ", ";\n    padding: ", ";\n    color: ", ";\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -266,11 +256,7 @@ var StyledRow = _styledComponents.default.div(_templateObject(), function (props
 /* eslint-disable */
 
 
-var StyledInputRow = (0, _styledComponents.default)(StyledRow)(_templateObject2(), function (props) {
-  return props.visible ? 'flex' : 'none';
-});
-
-var StyledRowRangeField = _styledComponents.default.div(_templateObject3(), function (props) {
+var StyledRowRangeField = _styledComponents.default.div(_templateObject2(), function (props) {
   return props.theme.styledRowMarginBottom;
 }, function (props) {
   return props.theme.labelFontSize;
@@ -280,7 +266,7 @@ var StyledRowRangeField = _styledComponents.default.div(_templateObject3(), func
   return props.theme.styledRowLabelFontColor;
 });
 
-var Row = _styledComponents.default.div(_templateObject4(), _sizes.device.tablet, function (props) {
+var Row = _styledComponents.default.div(_templateObject3(), _sizes.device.tablet, function (props) {
   return props.theme.marginBetweenRowChildren;
 }, function (props) {
   return props.theme.marginBetweenRowChildren;
@@ -288,11 +274,11 @@ var Row = _styledComponents.default.div(_templateObject4(), _sizes.device.tablet
 
 exports.Row = Row;
 
-var RowWithFixedColumn = _styledComponents.default.div(_templateObject5(), _sizes.device.laptopL);
+var RowWithFixedColumn = _styledComponents.default.div(_templateObject4(), _sizes.device.laptopL);
 
 exports.RowWithFixedColumn = RowWithFixedColumn;
 
-var StyledContainer = _styledComponents.default.div(_templateObject6(), function (props) {
+var StyledContainer = _styledComponents.default.div(_templateObject5(), function (props) {
   return props.theme.styledContainerMobilePadding;
 }, _sizes.device.tablet, function (props) {
   return props.theme.styledContainerPadding;
@@ -302,7 +288,7 @@ var StyledContainer = _styledComponents.default.div(_templateObject6(), function
 
 exports.StyledContainer = StyledContainer;
 
-var StyledError = _styledComponents.default.span(_templateObject7(), function (props) {
+var StyledError = _styledComponents.default.span(_templateObject6(), function (props) {
   return props.theme.inputErrorColor;
 }, function (props) {
   return props.theme.inputErrorTextAlign;
@@ -314,7 +300,7 @@ var StyledError = _styledComponents.default.span(_templateObject7(), function (p
 
 exports.StyledError = StyledError;
 
-var StyledInput = _styledComponents.default.input(_templateObject8(), function (props) {
+var StyledInput = _styledComponents.default.input(_templateObject7(), function (props) {
   return props.theme.inputBgColor;
 }, function (props) {
   return props.theme.inputBorderColor;
@@ -352,11 +338,11 @@ var StyledInput = _styledComponents.default.input(_templateObject8(), function (
 
 exports.StyledInput = StyledInput;
 
-var SliderRow = _styledComponents.default.div(_templateObject9());
+var SliderRow = _styledComponents.default.div(_templateObject8());
 
 exports.SliderRow = SliderRow;
 
-var SliderInput = _styledComponents.default.input(_templateObject10(), function (props) {
+var SliderInput = _styledComponents.default.input(_templateObject9(), function (props) {
   return props.theme.inputBgColor;
 }, function (props) {
   return props.theme.inputBorderColor;
@@ -392,9 +378,9 @@ var SliderInput = _styledComponents.default.input(_templateObject10(), function 
 /* eslint-disable */
 
 
-var StyledSelectContainer = _styledComponents.default.div(_templateObject11());
+var StyledSelectContainer = _styledComponents.default.div(_templateObject10());
 
-var StyledSelect = _styledComponents.default.select(_templateObject12(), function (props) {
+var StyledSelect = _styledComponents.default.select(_templateObject11(), function (props) {
   return props.theme.styledSelectBgColor;
 }, function (props) {
   return props.theme.styledSelectBorderWidth;
@@ -426,13 +412,13 @@ var StyledSelect = _styledComponents.default.select(_templateObject12(), functio
   return props.theme.styledSelectPlaceHolderColor;
 });
 
-var StyledSelectArrow = _styledComponents.default.span(_templateObject13(), function (props) {
+var StyledSelectArrow = _styledComponents.default.span(_templateObject12(), function (props) {
   return props.theme.styledSelectArrowColor;
 }, function (props) {
   return props.theme.styledSelectArrowRightPosition;
 });
 
-var StyledSpan = _styledComponents.default.span(_templateObject14(), function (props) {
+var StyledSpan = _styledComponents.default.span(_templateObject13(), function (props) {
   return props.theme.styledSpanFontSize;
 }, function (props) {
   return props.theme.styledSpanFontWeight;
@@ -440,7 +426,7 @@ var StyledSpan = _styledComponents.default.span(_templateObject14(), function (p
   return props.theme.styledSpanFontColor;
 });
 
-var StyledInputSuffix = _styledComponents.default.span(_templateObject15(), function (props) {
+var StyledInputSuffix = _styledComponents.default.span(_templateObject14(), function (props) {
   return props.theme.inputHeight;
 }, function (props) {
   return props.theme.styledInputSuffixWidth;
@@ -456,7 +442,7 @@ var StyledInputSuffix = _styledComponents.default.span(_templateObject15(), func
   return props.theme.styledInputSuffixTextColor;
 });
 
-var StyledSliderInputSuffix = _styledComponents.default.span(_templateObject16(), function (props) {
+var StyledSliderInputSuffix = _styledComponents.default.span(_templateObject15(), function (props) {
   return props.theme.sliderInputHeight;
 }, function (props) {
   return props.theme.styledInputSuffixWidth;
@@ -472,7 +458,7 @@ var StyledSliderInputSuffix = _styledComponents.default.span(_templateObject16()
   return props.theme.styledInputSuffixTextColor;
 });
 
-var StyledInputPrefixContainer = _styledComponents.default.div(_templateObject17(), function (props) {
+var StyledInputPrefixContainer = _styledComponents.default.div(_templateObject16(), function (props) {
   return props.theme.inputBgColor;
 }, function (props) {
   return props.theme.inputHeight;
@@ -492,13 +478,13 @@ var StyledInputPrefixContainer = _styledComponents.default.div(_templateObject17
   return props.theme.inputFontWeight;
 });
 
-var StyledInputPrefix = _styledComponents.default.span(_templateObject18(), function (props) {
+var StyledInputPrefix = _styledComponents.default.span(_templateObject17(), function (props) {
   return props.theme.styledInputPrefixPadding;
 }, function (props) {
   return props.theme.inputBorderColor;
 });
 
-var SliderWrapper = _styledComponents.default.div(_templateObject19(), function (props) {
+var SliderWrapper = _styledComponents.default.div(_templateObject18(), function (props) {
   return props.theme.sliderHeight;
 }, function (props) {
   return props.theme.sliderBorderRadius;
@@ -534,7 +520,7 @@ var SliderWrapper = _styledComponents.default.div(_templateObject19(), function 
   return props.theme.sliderHandleAfterBorderRadius;
 });
 
-var InputWrapper = _styledComponents.default.div(_templateObject20(), function (props) {
+var InputWrapper = _styledComponents.default.div(_templateObject19(), function (props) {
   return props.theme.inputIconLeft;
 }, function (props) {
   return props.theme.inputBorderColor;
@@ -560,9 +546,7 @@ var BaseField = function BaseField(_ref) {
     field.onBlur && field.onBlur(e);
   };
 
-  return /*#__PURE__*/_react.default.createElement(StyledInputRow, {
-    visible: props.visible !== false
-  }, props.label && /*#__PURE__*/_react.default.createElement("label", {
+  return props.visible !== false && /*#__PURE__*/_react.default.createElement(StyledRow, null, props.label && /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: field.name
   }, "".concat(props.label).concat(props.required && '*' || '')), /*#__PURE__*/_react.default.createElement(InputWrapper, {
     withIcon: props.icon !== undefined
@@ -581,7 +565,7 @@ var BaseField = function BaseField(_ref) {
       borderBottomLeftRadius: '0px',
       borderTopLeftRadius: '0px'
     }
-  })), props.suffix && /*#__PURE__*/_react.default.createElement(StyledInputSuffix, null, props.suffix)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react.default.createElement(StyledError, null, errors[field.name]));
+  })), props.suffix && /*#__PURE__*/_react.default.createElement(StyledInputSuffix, null, props.suffix)), props.showError && touched[field.name] && errors[field.name] && /*#__PURE__*/_react.default.createElement(StyledError, null, errors[field.name])) || /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
 };
 
 var _default = BaseField;
@@ -645,6 +629,7 @@ var BaseSelectField = function BaseSelectField(_ref3) {
 
   var handleOnBlur = function handleOnBlur(e) {
     (0, _utils.setFormValuesToCache)(values, id);
+    console.log('blur');
     field.onBlur && field.onBlur(e);
   };
 
