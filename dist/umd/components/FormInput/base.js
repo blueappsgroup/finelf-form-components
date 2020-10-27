@@ -171,14 +171,19 @@
   width: 100%;
   margin: 0 auto;
   flex-direction: column;
-  > * {
-      flex-basis: 0;
+  & > * {
+      flex-basis: auto;
       flex-grow: 1;
   }
 
   @media ${_sizes.device.tablet} {
     flex-direction: row;
     justify-content: space-between;
+
+    & > * {
+      flex-basis: 0;
+    }
+
     & > :first-child:not(:last-child) {
       margin-right: ${props => props.theme.marginBetweenRowChildren};
     }
