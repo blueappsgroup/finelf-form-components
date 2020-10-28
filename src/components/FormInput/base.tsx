@@ -6,7 +6,6 @@ import React, {
   useContext,
   useEffect,
   useLayoutEffect,
-  useRef,
   useState,
 } from 'react'
 import Slider from 'react-rangeslider'

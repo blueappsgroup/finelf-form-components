@@ -19,6 +19,9 @@ import {
   CompanyNameField,
   EmploymentTypeField,
   FirstNameField,
+  CompanyTaxField,
+  BirthDateField,
+  GenderField,
 } from '../components'
 import Agreemnets from '../components/Agreements'
 
@@ -78,13 +81,16 @@ const TemplateSteps: Story<FormProps> = (args) => (
       >
         <FirstNameField name="fName" />
       </OptionalGroup>
+      <BirthDateField />
+      <GenderField required />
     </Step>
     <Step stepIndex={1}>
       <TextField required showError placeholder="Name2" name="firstName2" />
       <TextField placeholder="City" name="city" />
       <Row>
         <EmploymentTypeField />
-        <CompanyNameField name="company_name" />
+        <CompanyNameField required name="company_name" />
+        <CompanyTaxField required name="company_tax_id" />
       </Row>
     </Step>
     <Step stepIndex={2}>

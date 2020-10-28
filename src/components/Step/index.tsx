@@ -1,4 +1,11 @@
-import React, { FC, useContext, useEffect, useMemo, useState } from 'react'
+import React, {
+  FC,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import styled from 'styled-components'
 import { useFormikContext } from 'formik'
 
@@ -60,6 +67,7 @@ type Props = {
 }
 
 const Step: FC<Props> = ({ children, stepIndex }) => {
+  const wrapperRef = useRef<any>(null)
   const {
     currentStep = 0,
     stepsLength = 1,
@@ -164,8 +172,15 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
     }
   }, [values, errors, mappedFields, children])
 
+  useEffect(() => {
+    if (stepIndex === currentStep) {
+      wrapperRef.current !== null &&
+        window.scrollTo(0, wrapperRef.current.offsetTop)
+    }
+  }, [currentStep, stepIndex])
+
   return (
-    <Wrapper visible={stepIndex === currentStep}>
+    <Wrapper ref={wrapperRef} visible={stepIndex === currentStep}>
       <StepHeaderWrapper>
         {currentStep !== 0 && (
           <StepHeader>

@@ -14,6 +14,7 @@ import {
   isValidIDCard,
   isNotValidIDCard,
   isNotValidOption,
+  isAdult,
 } from './validateHelpers'
 
 export const validateText: (
@@ -21,19 +22,20 @@ export const validateText: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidLength(value)) {
+  if (isNotValidLength(trimedValue)) {
     return 'Pole musi zawierać między 2 - 100 znaków'
   }
 
-  if (isNotLetter(value)) {
+  if (isNotLetter(trimedValue)) {
     return 'Podane dane są nieprawidłowe'
   }
 }
@@ -45,15 +47,16 @@ export const validateEmail: (
   customErrorMsg = 'Niepoprawny adres email',
   required: boolean
 ) => (value: string): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidEmail(value)) {
+  if (isNotValidEmail(trimedValue)) {
     return customErrorMsg
   }
 }
@@ -65,15 +68,16 @@ export const validateTelNumber: (
   required: boolean,
   customErrorMsg
 ) => (value: string): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidPhoneNumber(value)) {
+  if (isNotValidPhoneNumber(trimedValue)) {
     return customErrorMsg
   }
 }
@@ -89,19 +93,20 @@ export const validatePesel: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotNumber(value)) {
+  if (isNotNumber(trimedValue)) {
     return 'Podany PESEL jest nieprawidłowy'
   }
 
-  if (!isValidPesel(value)) {
+  if (!isValidPesel(trimedValue)) {
     return 'Podany PESEL jest nieprawidłowy'
   }
 }
@@ -111,15 +116,16 @@ export const validateHouseNumber: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidLength(value, 1, 10)) {
+  if (isNotValidLength(trimedValue, 1, 10)) {
     return 'Podany numer mieszkania jest nieprawidłowy'
   }
 }
@@ -129,19 +135,20 @@ export const validateCityName: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidLength(value)) {
+  if (isNotValidLength(trimedValue)) {
     return 'Pole musi zawierać między 2 - 100 znaków'
   }
 
-  if (haveSpecialChars(value)) {
+  if (haveSpecialChars(trimedValue)) {
     return 'Podane dane są nieprawidłowe'
   }
 }
@@ -151,19 +158,20 @@ export const validateZipCode: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidLength(value, 1, 10)) {
+  if (isNotValidLength(trimedValue, 1, 10)) {
     return 'Pole musi zawierać między 1 - 10 znaków'
   }
 
-  if (isNotValidZipCode(value)) {
+  if (isNotValidZipCode(trimedValue)) {
     return 'Podane dane są nieprawidłowe'
   }
 }
@@ -191,22 +199,23 @@ export const validateBankAccountNumber: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotNumber(value)) {
+  if (isNotNumber(trimedValue)) {
     return 'Podany numer konta jest nieprawidłowy'
   }
 
-  if (isNotValidLength(value, 26, 26)) {
+  if (isNotValidLength(trimedValue, 26, 26)) {
     return 'Podany numer konta jest nieprawidłowy'
   }
-  if (!isValidBankAccountNumber(value)) {
+  if (!isValidBankAccountNumber(trimedValue)) {
     return 'Podany numer konta jest nieprawidłowy'
   }
 }
@@ -216,23 +225,24 @@ export const validateIDCardNumber: (
 ) => (value: string) => string | undefined = (required: boolean) => (
   value: string
 ): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidIDCard(value)) {
+  if (isNotValidIDCard(trimedValue)) {
     return 'Podany numer dowodu jest nieprawidłowy'
   }
 
-  if (!isValidIDCard(value)) {
+  if (!isValidIDCard(trimedValue)) {
     return 'Podany numer dowodu jest nieprawidłowy'
   }
 
-  if (isNotNumber(value)) {
+  if (isNotNumber(trimedValue)) {
     return 'Podany numer dowodu jest nieprawidłowy'
   }
 }
@@ -244,15 +254,16 @@ export const validateOtherLoanAmount: (
   customErrorMsg = 'Podana kwota jest nieprawidłowa',
   required: boolean
 ) => (value: string): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidNumberBetween1And10Digits(value)) {
+  if (isNotValidNumberBetween1And10Digits(trimedValue)) {
     return customErrorMsg
   }
 }
@@ -264,15 +275,16 @@ export const validateAmountOfChildren: (
   customErrorMsg = 'Podana liczba jest nieprawidłowa',
   required: boolean
 ) => (value: string): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidNumberBetween1And10Digits(value)) {
+  if (isNotValidNumberBetween1And10Digits(trimedValue)) {
     return customErrorMsg
   }
 }
@@ -284,15 +296,16 @@ export const validateIncome: (
   customErrorMsg = 'Podana kwota jest nieprawidłowa',
   required: boolean
 ) => (value: string): string | undefined => {
+  const trimedValue = value && value.trim()
   if (!required && !value) {
     return
   }
 
-  if (required && isEmpty(value)) {
+  if (required && isEmpty(trimedValue)) {
     return 'To pole jest wymagane'
   }
 
-  if (isNotValidNumberBetween1And10Digits(value)) {
+  if (isNotValidNumberBetween1And10Digits(trimedValue)) {
     return customErrorMsg
   }
 }
@@ -304,6 +317,10 @@ export const validateSelect: (
   required: boolean,
   options: object
 ) => (value: string): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
   }
@@ -324,5 +341,23 @@ export const validateDate: (
 
   if (required && isEmpty(value)) {
     return 'To pole jest wymagane'
+  }
+}
+
+export const validateBirthDate: (
+  required: boolean
+) => (value: string) => string | undefined = (required: boolean) => (
+  value: string
+): string | undefined => {
+  if (!required && !value) {
+    return
+  }
+
+  if (required && isEmpty(value)) {
+    return 'To pole jest wymagane'
+  }
+
+  if (!isAdult(value)) {
+    return 'Musisz mieć skończone 18 lat'
   }
 }
