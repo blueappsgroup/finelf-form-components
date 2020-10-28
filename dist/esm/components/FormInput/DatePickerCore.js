@@ -112,15 +112,17 @@ const CustomHeader = ({
 const DatePickerCore = (_ref) => {
   let {
     dateFormat = 'dd/MM/yyyy',
-    openToDate = new Date(`01/01/${getYear(new Date()) - 18}`)
+    openToDate = new Date(`01/01/${getYear(new Date()) - 18}`),
+    selected
   } = _ref,
-      props = _objectWithoutProperties(_ref, ["dateFormat", "openToDate"]);
+      props = _objectWithoutProperties(_ref, ["dateFormat", "openToDate", "selected"]);
 
   return /*#__PURE__*/React.createElement(StyledWrapper, null, /*#__PURE__*/React.createElement(StyledDatePicker, _extends({}, props, {
+    selected: selected,
     dateFormat: dateFormat,
     locale: "pl",
     renderCustomHeader: CustomHeader,
-    openToDate: openToDate,
+    openToDate: selected || openToDate,
     onFocus: e => e.target.readOnly = true
   })));
 };

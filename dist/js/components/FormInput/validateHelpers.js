@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.isNotValidOption = exports.isNotValidIDCard = exports.isValidIDCard = exports.isValidBankAccountNumber = exports.isValidNIP = exports.isNotValidZipCode = exports.isValidPesel = exports.haveSpecialChars = exports.isNotNumber = exports.isNotLetter = exports.isNotValidNumberBetween1And10Digits = exports.isNotValidEmail = exports.isNotValidPhoneNumber = exports.isNotValidLength = exports.isEmpty = void 0;
+exports.isAdult = exports.isNotValidOption = exports.isNotValidIDCard = exports.isValidIDCard = exports.isValidBankAccountNumber = exports.isValidNIP = exports.isNotValidZipCode = exports.isValidPesel = exports.haveSpecialChars = exports.isNotNumber = exports.isNotLetter = exports.isNotValidNumberBetween1And10Digits = exports.isNotValidEmail = exports.isNotValidPhoneNumber = exports.isNotValidLength = exports.isEmpty = void 0;
 
 var isEmpty = function isEmpty(value) {
   return !value;
@@ -154,4 +154,19 @@ var isNotValidOption = function isNotValidOption(value, options) {
 };
 
 exports.isNotValidOption = isNotValidOption;
+
+var isAdult = function isAdult(dateString) {
+  var today = new Date();
+  var birthDate = new Date(dateString);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+
+  if (m < 0 || m === 0 && today.getDate() < birthDate.getDate()) {
+    age--;
+  }
+
+  return age >= 18;
+};
+
+exports.isAdult = isAdult;
 //# sourceMappingURL=validateHelpers.js.map

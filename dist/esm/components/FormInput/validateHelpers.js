@@ -73,4 +73,16 @@ export const isValidIDCard = value => {
 };
 export const isNotValidIDCard = value => !/^[A-z]{3}[0-9]{6}$/.test(value);
 export const isNotValidOption = (value, options) => !options.hasOwnProperty(value);
+export const isAdult = dateString => {
+  const today = new Date();
+  const birthDate = new Date(dateString);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+
+  if (m < 0 || m === 0 && today.getDate() < birthDate.getDate()) {
+    age--;
+  }
+
+  return age >= 18;
+};
 //# sourceMappingURL=validateHelpers.js.map

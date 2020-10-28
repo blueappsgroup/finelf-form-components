@@ -93,6 +93,7 @@ var StepHeaderWrapper = _styledComponents.default.div(_templateObject3());
 var Step = function Step(_ref) {
   var children = _ref.children,
       stepIndex = _ref.stepIndex;
+  var wrapperRef = (0, _react.useRef)(null);
 
   var _useContext = (0, _react.useContext)(_utils.FormContext),
       _useContext$currentSt = _useContext.currentStep,
@@ -189,7 +190,13 @@ var Step = function Step(_ref) {
       setNextButtonDisabled(false);
     }
   }, [values, errors, mappedFields, children]);
+  (0, _react.useEffect)(function () {
+    if (stepIndex === currentStep) {
+      wrapperRef.current !== null && window.scrollTo(0, wrapperRef.current.offsetTop);
+    }
+  }, [currentStep, stepIndex]);
   return /*#__PURE__*/_react.default.createElement(Wrapper, {
+    ref: wrapperRef,
     visible: stepIndex === currentStep
   }, /*#__PURE__*/_react.default.createElement(StepHeaderWrapper, null, currentStep !== 0 && /*#__PURE__*/_react.default.createElement(_StepHeader.default, null, stepsTitleList && stepsTitleList[currentStep - 1]), stepIndex === currentStep && /*#__PURE__*/_react.default.createElement(_StepHeader.default, {
     activeStep: true

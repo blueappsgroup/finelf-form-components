@@ -100,7 +100,8 @@
       values,
       errors,
       setErrors,
-      setValues
+      setValues,
+      setFieldTouched
     } = (0, _formik.useFormikContext)();
     const {
       id
@@ -153,7 +154,7 @@
           setVisible(isVisible);
         }
       }
-    }, [values, setValues, props.visibleCondition, props.name, visible, errors, setErrors, id]);
+    }, [values, setValues, props.visibleCondition, props.name, visible, errors, setErrors, id, required, setFieldTouched]);
     return /*#__PURE__*/_react2.default.createElement(_formik.Field, _extends({}, props, {
       required: required && visible,
       validate: props.validate(required && visible),
