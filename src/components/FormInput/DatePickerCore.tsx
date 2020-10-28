@@ -135,15 +135,17 @@ const CustomHeader: FC<any> = ({
 const DatePickerCore: FC<any> = ({
   dateFormat = 'dd/MM/yyyy',
   openToDate = new Date(`01/01/${getYear(new Date()) - 18}`),
+  selected,
   ...props
 }) => (
   <StyledWrapper>
     <StyledDatePicker
       {...props}
+      selected={selected}
       dateFormat={dateFormat}
       locale="pl"
       renderCustomHeader={CustomHeader}
-      openToDate={openToDate}
+      openToDate={selected || openToDate}
       onFocus={(e): boolean => (e.target.readOnly = true)}
     />
   </StyledWrapper>

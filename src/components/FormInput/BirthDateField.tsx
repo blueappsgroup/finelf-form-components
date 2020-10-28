@@ -3,7 +3,7 @@ import { Field } from 'formik'
 
 import { BaseDateField } from './base'
 import { BirthDateFieldProps } from '../../types'
-import { validateDate } from './validate'
+import { validateBirthDate } from './validate'
 
 const BirthDateField: FC<BirthDateFieldProps> = ({
   id,
@@ -23,7 +23,7 @@ const BirthDateField: FC<BirthDateFieldProps> = ({
     name={name}
     label={label}
     placeholder={placeholder}
-    validate={validateDate(required)}
+    validate={validateBirthDate(required)}
     dateFormat={dateFormat}
     openToDate={openToDate}
   />
