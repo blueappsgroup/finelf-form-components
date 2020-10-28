@@ -6,8 +6,8 @@ const StyledInput = styled.input`
   display: none;
 `
 
-const TrasactionId: FC = () => (
-  <Field name="trasaction_id" component={StyledInput} />
+const TransactionId: FC = () => (
+  <Field name="transaction_id" component={StyledInput} />
 )
 
-export default TrasactionId
+export default TransactionId
