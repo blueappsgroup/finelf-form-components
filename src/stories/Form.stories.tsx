@@ -65,6 +65,14 @@ Defualt.args = {
   dataWithUserAgent: true,
 }
 
+const linksForReplace = {
+  RULES_URL: 'https://kredyt-dla-zadluzonych.pl/regulamin',
+  PRIVACY_POLICY_URL: 'https://kredyt-dla-zadluzonych.pl/polityka-prywatnosci/',
+  PARTNERS_URL:
+    'https://kredyt-dla-zadluzonych.pl/lista-firm-z-ktorymi-wspolpracujemy/',
+  SITE_NAME: 'Kredyt dla Zadłużonych',
+}
+
 const TemplateSteps: Story<FormProps> = (args) => (
   <Form {...args}>
     <Header text="Test title" />
@@ -83,6 +91,7 @@ const TemplateSteps: Story<FormProps> = (args) => (
       </OptionalGroup>
       <BirthDateField />
       <GenderField required />
+      <Agreements linksForReplace={linksForReplace} />
     </Step>
     <Step stepIndex={1}>
       <TextField required showError placeholder="Name2" name="firstName2" />
@@ -99,7 +108,6 @@ const TemplateSteps: Story<FormProps> = (args) => (
     <Step stepIndex={3}>
       <TextField required showError placeholder="Name3" name="firstName3" />
       <Header text="Zgody" type="subheader" />
-      <Agreements />
     </Step>
   </Form>
 )
