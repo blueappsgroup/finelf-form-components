@@ -75,7 +75,7 @@ const FormWrapper: FC<FormProps> = ({
   const [currentStep, setCurrentStep] = useState(0)
   const [fieldsForSkip, setFieldsForSkip] = useState<string[]>([])
   const [errorFromApi, setErrorFromApi] = useState<boolean>(false)
-  const shouldRediredt = !errorFromApi && hasRedirect
+  const shouldRedirect = !errorFromApi && hasRedirect
   const addFieldForSkip = (key: string): void =>
     setFieldsForSkip([...fieldsForSkip, key])
 
@@ -153,7 +153,7 @@ const FormWrapper: FC<FormProps> = ({
           onReset={handleReset}
         >
           {(props): ReactElement =>
-            (shouldRediredt && props.status === formStatuses.submited && (
+            (shouldRedirect && props.status === formStatuses.submited && (
               <RedirectPage
                 redirectUrl={redirectUrlPath}
                 backgroundImage={redirectBgImg}
