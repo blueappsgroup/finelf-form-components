@@ -41,7 +41,7 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
         if (linksForReplace) {
           Object.keys(linksForReplace).forEach(
             (key) =>
-              (newContent = newContent.replace(
+              (newContent = newContent.replaceAll(
                 `${key}`,
                 `${linksForReplace[key]}`
               ))

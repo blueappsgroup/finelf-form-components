@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useFormikContext } from 'formik'
 import styled from 'styled-components'
 import { formStatuses } from '../../consts/form'
+import { FormContext } from '../../utils'
 
 type StyledProps = {
   theme: {
@@ -31,8 +32,9 @@ type Props = {
 }
 
 const FormStatusText: React.FC<Props> = ({ successText, errorText }) => {
+  const { errorFromApi } = useContext(FormContext)
   const { status, dirty } = useFormikContext()
-  const isError = status === formStatuses.error
+  const isError = status === formStatuses.error || errorFromApi === true
   const showStatusText = (status === formStatuses.submited && !dirty) || isError
   return (
     <StyledText show={showStatusText} isError={isError}>

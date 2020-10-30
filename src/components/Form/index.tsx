@@ -74,7 +74,8 @@ const FormWrapper: FC<FormProps> = ({
   })
   const [currentStep, setCurrentStep] = useState(0)
   const [fieldsForSkip, setFieldsForSkip] = useState<string[]>([])
-
+  const [errorFromApi, setErrorFromApi] = useState<boolean>(false)
+  const shouldRedirect = !errorFromApi && hasRedirect
   const addFieldForSkip = (key: string): void =>
     setFieldsForSkip([...fieldsForSkip, key])
 
@@ -99,7 +100,15 @@ const FormWrapper: FC<FormProps> = ({
           fieldsForSkip,
           dataWithUserAgent
         )
-        const { redirectUrl: urlFromApi } = await response.json()
+        const {
+          redirectUrl: urlFromApi,
+          status: statusFromApi,
+        } = await response.json()
+
+        if (statusFromApi === false) {
+          setErrorFromApi(true)
+          return
+        }
 
         urlFromApi && setRedirectUrlPath(urlFromApi)
       }
@@ -133,6 +142,7 @@ const FormWrapper: FC<FormProps> = ({
         prevStep,
         fieldsForSkip,
         addFieldForSkip,
+        errorFromApi,
       }}
     >
       <ThemeProvider customTheme={{ ...customTheme }}>
@@ -143,7 +153,7 @@ const FormWrapper: FC<FormProps> = ({
           onReset={handleReset}
         >
           {(props): ReactElement =>
-            (hasRedirect && props.status === formStatuses.submited && (
+            (shouldRedirect && props.status === formStatuses.submited && (
               <RedirectPage
                 redirectUrl={redirectUrlPath}
                 backgroundImage={redirectBgImg}

@@ -365,6 +365,10 @@ const StyledSelectArrow = styled.span`
   transform: rotate(45deg);
 `
 
+const StyledSelectValueOption = styled.option`
+  color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
+`
+
 const StyledSpan = styled.span`
   font-size: ${(props: StyledProps): string => props.theme.styledSpanFontSize};
   font-weight: ${(props: StyledProps): string => props.theme.styledSpanFontWeight};
@@ -613,9 +617,9 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
 
   const options = (options: SelectFieldOptions): Array<JSX.Element> => {
     return [
-      <option key="select" value="select" disabled>
+      <StyledSelectValueOption key="select" value="select" disabled>
         {`wybierz ${(props.required && '*') || ''}`}
-      </option>,
+      </StyledSelectValueOption>,
     ].concat(
       Object.keys(options).map((option) => {
         return (
