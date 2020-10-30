@@ -1,8 +1,9 @@
 import _pt from "prop-types";
-import React from 'react';
+import React, { useContext } from 'react';
 import { useFormikContext } from 'formik';
 import styled from 'styled-components';
 import { formStatuses } from '../../consts/form';
+import { FormContext } from '../../utils';
 const StyledText = styled.span`
   display: ${props => props.show ? 'block' : 'none'};
   color: ${props => props.isError ? props.theme.errorStatusTextColor : props.theme.successStatusTextColor};
@@ -18,10 +19,13 @@ const FormStatusText = ({
   errorText
 }) => {
   const {
+    errorFromApi
+  } = useContext(FormContext);
+  const {
     status,
     dirty
   } = useFormikContext();
-  const isError = status === formStatuses.error;
+  const isError = status === formStatuses.error || errorFromApi === true;
   const showStatusText = status === formStatuses.submited && !dirty || isError;
   return /*#__PURE__*/React.createElement(StyledText, {
     show: showStatusText,

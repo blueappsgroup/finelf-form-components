@@ -127,6 +127,8 @@
     }));
     const [currentStep, setCurrentStep] = (0, _react.useState)(0);
     const [fieldsForSkip, setFieldsForSkip] = (0, _react.useState)([]);
+    const [errorFromApi, setErrorFromApi] = (0, _react.useState)(false);
+    const shouldRedirect = !errorFromApi && hasRedirect;
 
     const addFieldForSkip = key => setFieldsForSkip([...fieldsForSkip, key]);
 
@@ -139,8 +141,15 @@
         if (sendDataToApi && apiUrl) {
           const response = await (0, _utils.handleSendDataToApi)(values, apiUrl, id, fieldsForSkip, dataWithUserAgent);
           const {
-            redirectUrl: urlFromApi
+            redirectUrl: urlFromApi,
+            status: statusFromApi
           } = await response.json();
+
+          if (statusFromApi === false) {
+            setErrorFromApi(true);
+            return;
+          }
+
           urlFromApi && setRedirectUrlPath(urlFromApi);
         }
 
@@ -172,7 +181,8 @@
         nextStep,
         prevStep,
         fieldsForSkip,
-        addFieldForSkip
+        addFieldForSkip,
+        errorFromApi
       }
     }, /*#__PURE__*/_react2.default.createElement(_theme.ThemeProvider, {
       customTheme: _objectSpread({}, customTheme)
@@ -181,7 +191,7 @@
       initialValues: initialValues,
       onSubmit: handleSubmit,
       onReset: handleReset
-    }, props => hasRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react2.default.createElement(_RedirectPage2.default, {
+    }, props => shouldRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react2.default.createElement(_RedirectPage2.default, {
       redirectUrl: redirectUrlPath,
       backgroundImage: redirectBgImg,
       logoImg: logoImg,

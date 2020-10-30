@@ -350,6 +350,9 @@
   height: 0;
   transform: rotate(45deg);
 `;
+  const StyledSelectValueOption = _styledComponents2.default.option`
+  color: ${props => props.theme.inputPlaceHolderColor};
+`;
   const StyledSpan = _styledComponents2.default.span`
   font-size: ${props => props.theme.styledSpanFontSize};
   font-weight: ${props => props.theme.styledSpanFontWeight};
@@ -575,7 +578,7 @@
     };
 
     const options = options => {
-      return [/*#__PURE__*/_react2.default.createElement("option", {
+      return [/*#__PURE__*/_react2.default.createElement(StyledSelectValueOption, {
         key: "select",
         value: "select",
         disabled: true

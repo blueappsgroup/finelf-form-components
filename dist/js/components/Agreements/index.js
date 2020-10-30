@@ -90,7 +90,9 @@ var Agreemnets = function Agreemnets(_ref) {
 
       if (linksForReplace) {
         Object.keys(linksForReplace).forEach(function (key) {
-          return newContent = newContent.replace("".concat(key), "".concat(linksForReplace[key]));
+          var regxp = new RegExp(key, 'g');
+          newContent = newContent.replace(regxp, linksForReplace[key]);
+          return newContent;
         });
       }
 

@@ -134,13 +134,20 @@ var FormWrapper = function FormWrapper(_ref) {
       fieldsForSkip = _useState8[0],
       setFieldsForSkip = _useState8[1];
 
+  var _useState9 = (0, _react.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      errorFromApi = _useState10[0],
+      setErrorFromApi = _useState10[1];
+
+  var shouldRedirect = !errorFromApi && hasRedirect;
+
   var addFieldForSkip = function addFieldForSkip(key) {
     return setFieldsForSkip([].concat(_toConsumableArray(fieldsForSkip), [key]));
   };
 
   var handleSubmit = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(values, props) {
-      var response, _yield$response$json, urlFromApi;
+      var response, _yield$response$json, urlFromApi, statusFromApi;
 
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
@@ -153,7 +160,7 @@ var FormWrapper = function FormWrapper(_ref) {
               _context.prev = 1;
 
               if (!(sendDataToApi && apiUrl)) {
-                _context.next = 11;
+                _context.next = 15;
                 break;
               }
 
@@ -168,26 +175,37 @@ var FormWrapper = function FormWrapper(_ref) {
             case 8:
               _yield$response$json = _context.sent;
               urlFromApi = _yield$response$json.redirectUrl;
+              statusFromApi = _yield$response$json.status;
+
+              if (!(statusFromApi === false)) {
+                _context.next = 14;
+                break;
+              }
+
+              setErrorFromApi(true);
+              return _context.abrupt("return");
+
+            case 14:
               urlFromApi && setRedirectUrlPath(urlFromApi);
 
-            case 11:
+            case 15:
               props.resetForm();
               props.setStatus(_form.formStatuses.submited);
-              _context.next = 19;
+              _context.next = 23;
               break;
 
-            case 15:
-              _context.prev = 15;
+            case 19:
+              _context.prev = 19;
               _context.t0 = _context["catch"](1);
               console.log(_context.t0);
               props.setStatus(_form.formStatuses.error);
 
-            case 19:
+            case 23:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 15]]);
+      }, _callee, null, [[1, 19]]);
     }));
 
     return function handleSubmit(_x, _x2) {
@@ -219,7 +237,8 @@ var FormWrapper = function FormWrapper(_ref) {
       nextStep: nextStep,
       prevStep: prevStep,
       fieldsForSkip: fieldsForSkip,
-      addFieldForSkip: addFieldForSkip
+      addFieldForSkip: addFieldForSkip,
+      errorFromApi: errorFromApi
     }
   }, /*#__PURE__*/_react.default.createElement(_theme.ThemeProvider, {
     customTheme: _objectSpread({}, customTheme)
@@ -229,7 +248,7 @@ var FormWrapper = function FormWrapper(_ref) {
     onSubmit: handleSubmit,
     onReset: handleReset
   }, function (props) {
-    return hasRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react.default.createElement(_RedirectPage.default, {
+    return shouldRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react.default.createElement(_RedirectPage.default, {
       redirectUrl: redirectUrlPath,
       backgroundImage: redirectBgImg,
       logoImg: logoImg,

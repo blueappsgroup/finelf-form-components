@@ -231,6 +231,9 @@ const StyledSelectArrow = styled.span`
   height: 0;
   transform: rotate(45deg);
 `;
+const StyledSelectValueOption = styled.option`
+  color: ${props => props.theme.inputPlaceHolderColor};
+`;
 const StyledSpan = styled.span`
   font-size: ${props => props.theme.styledSpanFontSize};
   font-weight: ${props => props.theme.styledSpanFontWeight};
@@ -454,7 +457,7 @@ export const BaseSelectField = (_ref3) => {
   };
 
   const options = options => {
-    return [/*#__PURE__*/React.createElement("option", {
+    return [/*#__PURE__*/React.createElement(StyledSelectValueOption, {
       key: "select",
       value: "select",
       disabled: true

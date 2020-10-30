@@ -1,6 +1,6 @@
 {
   "name": "tomasz-b-finelf-form-components",
-  "version": "1.9.5",
+  "version": "1.9.6",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",

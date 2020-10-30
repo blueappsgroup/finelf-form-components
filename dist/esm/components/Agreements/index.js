@@ -32,7 +32,11 @@ const Agreemnets = ({
       let newContent = item.content;
 
       if (linksForReplace) {
-        Object.keys(linksForReplace).forEach(key => newContent = newContent.replace(`${key}`, `${linksForReplace[key]}`));
+        Object.keys(linksForReplace).forEach(key => {
+          const regxp = new RegExp(key, 'g');
+          newContent = newContent.replace(regxp, linksForReplace[key]);
+          return newContent;
+        });
       }
 
       return _objectSpread(_objectSpread({}, item), {}, {

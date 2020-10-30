@@ -60,6 +60,8 @@ const FormWrapper = ({
   }));
   const [currentStep, setCurrentStep] = useState(0);
   const [fieldsForSkip, setFieldsForSkip] = useState([]);
+  const [errorFromApi, setErrorFromApi] = useState(false);
+  const shouldRedirect = !errorFromApi && hasRedirect;
 
   const addFieldForSkip = key => setFieldsForSkip([...fieldsForSkip, key]);
 
@@ -72,8 +74,15 @@ const FormWrapper = ({
       if (sendDataToApi && apiUrl) {
         const response = await handleSendDataToApi(values, apiUrl, id, fieldsForSkip, dataWithUserAgent);
         const {
-          redirectUrl: urlFromApi
+          redirectUrl: urlFromApi,
+          status: statusFromApi
         } = await response.json();
+
+        if (statusFromApi === false) {
+          setErrorFromApi(true);
+          return;
+        }
+
         urlFromApi && setRedirectUrlPath(urlFromApi);
       }
 
@@ -105,7 +114,8 @@ const FormWrapper = ({
       nextStep,
       prevStep,
       fieldsForSkip,
-      addFieldForSkip
+      addFieldForSkip,
+      errorFromApi
     }
   }, /*#__PURE__*/React.createElement(ThemeProvider, {
     customTheme: _objectSpread({}, customTheme)
@@ -114,7 +124,7 @@ const FormWrapper = ({
     initialValues: initialValues,
     onSubmit: handleSubmit,
     onReset: handleReset
-  }, props => hasRedirect && props.status === formStatuses.submited && /*#__PURE__*/React.createElement(RedirectPage, {
+  }, props => shouldRedirect && props.status === formStatuses.submited && /*#__PURE__*/React.createElement(RedirectPage, {
     redirectUrl: redirectUrlPath,
     backgroundImage: redirectBgImg,
     logoImg: logoImg,

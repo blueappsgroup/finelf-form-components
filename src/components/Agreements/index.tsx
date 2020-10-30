@@ -39,13 +39,12 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
       const replacedAgreements = agreements.map((item) => {
         let newContent = item.content
         if (linksForReplace) {
-          Object.keys(linksForReplace).forEach(
-            (key) =>
-              (newContent = newContent.replaceAll(
-                `${key}`,
-                `${linksForReplace[key]}`
-              ))
-          )
+          Object.keys(linksForReplace).forEach((key) => {
+            const regxp = new RegExp(key, 'g')
+            newContent = newContent.replace(regxp, linksForReplace[key])
+
+            return newContent
+          })
         }
 
         return { ...item, content: newContent }
