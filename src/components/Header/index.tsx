@@ -42,7 +42,7 @@ const StyledMainHeader = styled.h2<StyledProps>`
     position: absolute;
     bottom: 0px;
     border: ${(props: StyledProps): string => props.withBorder ? `3px solid ${props.theme.headerBorderColor}` : 'none'};
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
   }
 `
 
