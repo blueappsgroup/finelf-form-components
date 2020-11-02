@@ -221,7 +221,6 @@ export type CustomThemeType = {
   inputPadding?: string
   styledRowFlexWrap?: string
   styledRowLabelPadding?: string
-  styledSelectHeight?: string
   styledSelectTextColor?: string
   styledSelectPlaceHolderColor?: string
   styledSelectErrorColor?: string

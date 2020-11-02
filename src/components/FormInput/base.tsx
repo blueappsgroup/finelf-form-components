@@ -61,7 +61,6 @@ export type StyledProps = {
     styledRowFlexWrap: string
     styledRowLabelPadding: string
     styledRowLabelFontColor: string
-    styledSelectHeight: string
     styledSelectErrorColor: string
     styledSelectErrorTextAlign: string
     styledSelectBgColor: string
@@ -322,7 +321,6 @@ const StyledSelect = styled.select<any>`
   box-shadow: ${(props: StyledProps): string => props.theme.styledSelectBoxShadow};
   border-radius: ${(props: StyledProps): string => props.theme.styledSelectBorderRadius};
   width: 100%;
-  height: ${(props: StyledProps): string => props.theme.styledSelectHeight};
   display: flex;
   align-items: center;
   font-style: ${(props: StyledProps): string => props.theme.styledSelectFontStyle};
@@ -389,7 +387,7 @@ const StyledSliderInputSuffix = styled.span`
   display: flex;
   align-items: center;
   height: ${(props: StyledProps): string => props.theme.sliderInputHeight};
-  wpadding: 0 20px;
+  padding: 0 20px;
   box-sizing: border-box;
   background-color: ${(props: StyledProps): string => props.theme.styledInputSuffixBgColor};
   border-radius: ${(props: StyledProps): string => props.theme.styledInputSuffixBorderRadius};

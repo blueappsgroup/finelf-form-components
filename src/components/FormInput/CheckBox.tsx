@@ -126,7 +126,7 @@ const StyledCheckbox = styled.div<StyledProps>`
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StyledText = styled.span<any>`
-  display: inline;
+  display: inline-block;
   font-style: normal;
   font-weight: 500;
   font-size: ${(props: StyledProps): string =>
@@ -138,6 +138,7 @@ const StyledText = styled.span<any>`
   color: ${(props: StyledProps): string => props.theme.checkboxLabelTextColor};
   padding-left: 15px;
   padding-right: 25px;
+  margin-top: 2px;
 `
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -167,7 +168,7 @@ const StyledReadMore = styled<any>(StyledText)`
   color: ${(props: StyledProps): string => props.theme.checkboxBorderColor};
   cursor: pointer;
   padding: 0;
-  margin-left: -23px;
+  margin-left: 133px;
 `
 
 const StyledContentWrapper = styled.div<StyledProps>`

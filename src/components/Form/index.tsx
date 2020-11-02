@@ -6,7 +6,6 @@ import { ThemeProvider } from '../../consts/theme'
 import { device } from '../../consts/sizes'
 import { FormProps, FormValuesType } from '../../types'
 import RedirectPage from '../RedirectPage'
-import TransactionId from '../TransactionId'
 import {
   FormContext,
   getFormValuesFromCache,
@@ -164,7 +163,6 @@ const FormWrapper: FC<FormProps> = ({
               />
             )) || (
               <StyledForm id={id}>
-                <TransactionId />
                 {children}
               </StyledForm>
             )
