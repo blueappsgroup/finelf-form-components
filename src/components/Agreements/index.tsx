@@ -20,6 +20,7 @@ type AgreementsPropTypes = {
   name?: string
   groupType?: string
   requiredErorText?: string
+  hasReadMore?: boolean
 }
 
 const StyledErrorText = styled(StyledError)`
@@ -30,6 +31,7 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
   linksForReplace,
   name = 'agreements',
   requiredErorText = '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.',
+  hasReadMore,
 }) => {
   const { id, apiUrl } = useContext(FormContext)
   const [agreements, setAgreements] = useState<AgreementType[]>([])
@@ -98,6 +100,7 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
                 name={`${item.id}`}
                 HTMLcontent={item.content}
                 required={item.required}
+                hasReadMore={hasReadMore}
               />
             ))}
           </CheckboxesGroup>

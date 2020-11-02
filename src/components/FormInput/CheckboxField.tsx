@@ -15,6 +15,9 @@ const CheckboxFormField: FC<CheckboxFieldProps> = ({
   HTMLcontent,
   skipFieldForApi,
   disableCollapse,
+  hasReadMore,
+  showMoreText = '( Więcej )',
+  showLessText = '( Zwiń )',
 }) => (
   <Field
     required={required}
@@ -29,6 +32,9 @@ const CheckboxFormField: FC<CheckboxFieldProps> = ({
     HTMLcontent={HTMLcontent}
     skipFieldForApi={skipFieldForApi}
     disableCollapse={disableCollapse}
+    hasReadMore={hasReadMore}
+    showMoreText={showMoreText}
+    showLessText={showLessText}
   />
 )
 
