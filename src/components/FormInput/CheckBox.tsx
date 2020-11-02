@@ -22,6 +22,7 @@ type StyledProps = {
   checked?: boolean
   theme: { [k: string]: string }
   required?: boolean
+  hasReadMore?: boolean
 }
 
 const StyledRow = styled.div<StyledProps>`
@@ -161,6 +162,19 @@ const Wrapper = styled.label<any>`
   }
 `
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const StyledReadMore = styled<any>(StyledText)`
+  color: ${(props: StyledProps): string => props.theme.checkboxBorderColor};
+  cursor: pointer;
+  padding: 0;
+  margin-left: -23px;
+`
+
+const StyledContentWrapper = styled.div<StyledProps>`
+  padding-right: ${(props: StyledProps): string =>
+    props.hasReadMore ? '0px' : '25px'};
+`
+
 export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   field,
   form: { touched, errors, values },
@@ -173,7 +187,9 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   const handleOnMouseOut = (): void => {
     setFormValuesToCache(values, id)
   }
-
+  const [showMoreCollapsed, setShowMoreCollapsed] = useState(false)
+  const htmlContentList =
+    props.HTMLcontent && props.HTMLcontent.split('--MORE--')
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
     props.onChange && props.onChange(e)
     field.onChange && field.onChange(e)
@@ -182,15 +198,19 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
 
   const onCollapseClick = (): void => setCollapsed(!collapsed)
 
+  const showMoreCollapseToggle = (): void =>
+    setShowMoreCollapsed(!showMoreCollapsed)
+
   useLayoutEffect(() => {
     if (
       targetRef.current &&
       targetRef.current.offsetHeight > 22 &&
-      !props.disableCollapse
+      !props.disableCollapse &&
+      !props.hasReadMore
     ) {
       setHasCollapse(true)
     }
-  }, [props.disableCollapse, targetRef])
+  }, [props.disableCollapse, props.hasReadMore, targetRef])
 
   useEffect(() => {
     props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name)
@@ -199,8 +219,8 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
 
   return (
     <StyledRow
-      hasCollapse={hasCollapse && !props.disableCollapse}
-      collapsed={collapsed || props.disableCollapse}
+      hasCollapse={hasCollapse && !props.disableCollapse && !props.hasReadMore}
+      collapsed={collapsed || props.disableCollapse || props.hasReadMore}
     >
       <Wrapper ref={targetRef} onMouseOut={handleOnMouseOut}>
         <Checkbox
@@ -216,9 +236,41 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
           }
         />
         {props.label && <StyledText>{props.label}</StyledText>}
-        {props.HTMLcontent && (
-          <StyledText dangerouslySetInnerHTML={{ __html: props.HTMLcontent }} />
-        )}
+        <StyledContentWrapper hasReadMore={props.hasReadMore}>
+          {props.HTMLcontent && htmlContentList && (
+            <StyledText
+              dangerouslySetInnerHTML={{
+                __html: props.hasReadMore
+                  ? htmlContentList[0]
+                  : props.HTMLcontent,
+              }}
+            />
+          )}
+          {props.hasReadMore &&
+            htmlContentList &&
+            htmlContentList[1] &&
+            !showMoreCollapsed && (
+              <StyledReadMore onClick={showMoreCollapseToggle}>
+                {props.showMoreText}
+              </StyledReadMore>
+            )}
+          {props.hasReadMore &&
+            htmlContentList &&
+            htmlContentList[1] &&
+            showMoreCollapsed && (
+              <StyledText
+                dangerouslySetInnerHTML={{ __html: htmlContentList[1] }}
+              />
+            )}
+          {props.hasReadMore &&
+            htmlContentList &&
+            htmlContentList[1] &&
+            showMoreCollapsed && (
+              <StyledReadMore onClick={showMoreCollapseToggle}>
+                {props.showLessText}
+              </StyledReadMore>
+            )}
+        </StyledContentWrapper>
         {props.childrenBody && <StyledText>{props.childrenBody}</StyledText>}
       </Wrapper>
       <StyledArrow
