@@ -12,7 +12,10 @@ const CheckboxFormField = ({
   children,
   HTMLcontent,
   skipFieldForApi,
-  disableCollapse
+  disableCollapse,
+  hasReadMore,
+  showMoreText = '( Więcej )',
+  showLessText = '( Zwiń )'
 }) => /*#__PURE__*/React.createElement(Field, {
   required: required,
   id: id,
@@ -25,7 +28,10 @@ const CheckboxFormField = ({
   childrenBody: children,
   HTMLcontent: HTMLcontent,
   skipFieldForApi: skipFieldForApi,
-  disableCollapse: disableCollapse
+  disableCollapse: disableCollapse,
+  hasReadMore: hasReadMore,
+  showMoreText: showMoreText,
+  showLessText: showLessText
 });
 
 CheckboxFormField.defaultProps = {

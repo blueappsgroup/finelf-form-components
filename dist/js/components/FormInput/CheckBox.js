@@ -31,6 +31,26 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  padding-right: ", ";\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  cursor: pointer;\n  padding: 0;\n  margin-left: -23px;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject8() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  line-height: 18px;\n\n  &:hover {\n    cursor: pointer;\n  }\n"]);
 
@@ -190,7 +210,16 @@ var Checkbox = function Checkbox(_ref) {
 }; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 
-var Wrapper = _styledComponents.default.label(_templateObject8());
+var Wrapper = _styledComponents.default.label(_templateObject8()); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+var StyledReadMore = (0, _styledComponents.default)(StyledText)(_templateObject9(), function (props) {
+  return props.theme.checkboxBorderColor;
+});
+
+var StyledContentWrapper = _styledComponents.default.div(_templateObject10(), function (props) {
+  return props.hasReadMore ? '0px' : '25px';
+});
 
 var CheckboxBase = function CheckboxBase(_ref2) {
   var field = _ref2.field,
@@ -220,6 +249,13 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     (0, _utils.setFormValuesToCache)(values, id);
   };
 
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      showMoreCollapsed = _useState6[0],
+      setShowMoreCollapsed = _useState6[1];
+
+  var htmlContentList = props.HTMLcontent && props.HTMLcontent.split('--MORE--');
+
   var handleOnChange = function handleOnChange(e) {
     props.onChange && props.onChange(e);
     field.onChange && field.onChange(e);
@@ -230,17 +266,21 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     return setCollapsed(!collapsed);
   };
 
+  var showMoreCollapseToggle = function showMoreCollapseToggle() {
+    return setShowMoreCollapsed(!showMoreCollapsed);
+  };
+
   (0, _react.useLayoutEffect)(function () {
-    if (targetRef.current && targetRef.current.offsetHeight > 22 && !props.disableCollapse) {
+    if (targetRef.current && targetRef.current.offsetHeight > 22 && !props.disableCollapse && !props.hasReadMore) {
       setHasCollapse(true);
     }
-  }, [props.disableCollapse, targetRef]);
+  }, [props.disableCollapse, props.hasReadMore, targetRef]);
   (0, _react.useEffect)(function () {
     props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return /*#__PURE__*/_react.default.createElement(StyledRow, {
-    hasCollapse: hasCollapse && !props.disableCollapse,
-    collapsed: collapsed || props.disableCollapse
+    hasCollapse: hasCollapse && !props.disableCollapse && !props.hasReadMore,
+    collapsed: collapsed || props.disableCollapse || props.hasReadMore
   }, /*#__PURE__*/_react.default.createElement(Wrapper, {
     ref: targetRef,
     onMouseOut: handleOnMouseOut
@@ -249,11 +289,21 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     checked: field.value,
     value: field.value || false,
     error: touched[field.name] && errors[field.name]
-  })), props.label && /*#__PURE__*/_react.default.createElement(StyledText, null, props.label), props.HTMLcontent && /*#__PURE__*/_react.default.createElement(StyledText, {
+  })), props.label && /*#__PURE__*/_react.default.createElement(StyledText, null, props.label), /*#__PURE__*/_react.default.createElement(StyledContentWrapper, {
+    hasReadMore: props.hasReadMore
+  }, props.HTMLcontent && htmlContentList && /*#__PURE__*/_react.default.createElement(StyledText, {
     dangerouslySetInnerHTML: {
-      __html: props.HTMLcontent
+      __html: props.hasReadMore ? htmlContentList[0] : props.HTMLcontent
     }
-  }), props.childrenBody && /*#__PURE__*/_react.default.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/_react.default.createElement(StyledArrow, {
+  }), props.hasReadMore && htmlContentList && htmlContentList[1] && !showMoreCollapsed && /*#__PURE__*/_react.default.createElement(StyledReadMore, {
+    onClick: showMoreCollapseToggle
+  }, props.showMoreText), props.hasReadMore && htmlContentList && htmlContentList[1] && showMoreCollapsed && /*#__PURE__*/_react.default.createElement(StyledText, {
+    dangerouslySetInnerHTML: {
+      __html: htmlContentList[1]
+    }
+  }), props.hasReadMore && htmlContentList && htmlContentList[1] && showMoreCollapsed && /*#__PURE__*/_react.default.createElement(StyledReadMore, {
+    onClick: showMoreCollapseToggle
+  }, props.showLessText)), props.childrenBody && /*#__PURE__*/_react.default.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/_react.default.createElement(StyledArrow, {
     hasCollapse: hasCollapse,
     collapsed: collapsed,
     onClick: onCollapseClick

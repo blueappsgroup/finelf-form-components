@@ -87,7 +87,8 @@
   const Agreemnets = ({
     linksForReplace,
     name = 'agreements',
-    requiredErorText = '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.'
+    requiredErorText = '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.',
+    hasReadMore
   }) => {
     const {
       id,
@@ -150,7 +151,8 @@
       key: item.id,
       name: `${item.id}`,
       HTMLcontent: item.content,
-      required: item.required
+      required: item.required,
+      hasReadMore: hasReadMore
     }))), error && /*#__PURE__*/_react2.default.createElement(StyledErrorText, null, requiredErorText)));
   };
 
@@ -158,7 +160,8 @@
     linksForReplace: _propTypes2.default.objectOf(_propTypes2.default.string),
     name: _propTypes2.default.string,
     groupType: _propTypes2.default.string,
-    requiredErorText: _propTypes2.default.string
+    requiredErorText: _propTypes2.default.string,
+    hasReadMore: _propTypes2.default.bool
   };
   Agreemnets.defaultProps = {
     name: 'agreements',

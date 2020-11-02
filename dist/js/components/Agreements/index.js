@@ -68,7 +68,8 @@ var Agreemnets = function Agreemnets(_ref) {
       _ref$name = _ref.name,
       name = _ref$name === void 0 ? 'agreements' : _ref$name,
       _ref$requiredErorText = _ref.requiredErorText,
-      requiredErorText = _ref$requiredErorText === void 0 ? '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.' : _ref$requiredErorText;
+      requiredErorText = _ref$requiredErorText === void 0 ? '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.' : _ref$requiredErorText,
+      hasReadMore = _ref.hasReadMore;
 
   var _useContext = (0, _react.useContext)(_utils.FormContext),
       id = _useContext.id,
@@ -164,7 +165,8 @@ var Agreemnets = function Agreemnets(_ref) {
       key: item.id,
       name: "".concat(item.id),
       HTMLcontent: item.content,
-      required: item.required
+      required: item.required,
+      hasReadMore: hasReadMore
     });
   })), error && /*#__PURE__*/_react.default.createElement(StyledErrorText, null, requiredErorText)));
 };
@@ -173,7 +175,8 @@ Agreemnets.propTypes = {
   linksForReplace: _propTypes.default.objectOf(_propTypes.default.string),
   name: _propTypes.default.string,
   groupType: _propTypes.default.string,
-  requiredErorText: _propTypes.default.string
+  requiredErorText: _propTypes.default.string,
+  hasReadMore: _propTypes.default.bool
 };
 Agreemnets.defaultProps = {
   name: 'agreements',

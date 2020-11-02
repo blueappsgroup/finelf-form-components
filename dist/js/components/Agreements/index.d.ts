@@ -6,6 +6,7 @@ declare type AgreementsPropTypes = {
     name?: string;
     groupType?: string;
     requiredErorText?: string;
+    hasReadMore?: boolean;
 };
 declare const Agreemnets: React.FC<AgreementsPropTypes>;
 export default Agreemnets;

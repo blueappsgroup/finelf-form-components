@@ -11,6 +11,9 @@ export declare type CheckboxFieldProps = {
     HTMLcontent?: string;
     skipFieldForApi?: boolean;
     disableCollapse?: boolean;
+    hasReadMore?: boolean;
+    showMoreText?: string;
+    showLessText?: string;
 };
 export declare type FieldWrapProps = FieldProps & {
     label?: string;
@@ -28,6 +31,9 @@ export declare type FieldWrapProps = FieldProps & {
     icon?: object;
     disableCollapse?: boolean;
     visible?: boolean;
+    hasReadMore?: boolean;
+    showMoreText?: string;
+    showLessText?: string;
 };
 export declare type FieldDateWrapProps = FieldProps & {
     label?: string;

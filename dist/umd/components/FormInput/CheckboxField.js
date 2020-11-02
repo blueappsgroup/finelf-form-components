@@ -36,7 +36,10 @@
     children,
     HTMLcontent,
     skipFieldForApi,
-    disableCollapse
+    disableCollapse,
+    hasReadMore,
+    showMoreText = '( Więcej )',
+    showLessText = '( Zwiń )'
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     id: id,
@@ -49,7 +52,10 @@
     childrenBody: children,
     HTMLcontent: HTMLcontent,
     skipFieldForApi: skipFieldForApi,
-    disableCollapse: disableCollapse
+    disableCollapse: disableCollapse,
+    hasReadMore: hasReadMore,
+    showMoreText: showMoreText,
+    showLessText: showLessText
   });
 
   CheckboxFormField.defaultProps = {
