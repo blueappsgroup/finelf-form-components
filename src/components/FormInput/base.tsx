@@ -25,7 +25,6 @@ import DatePickerCore from './DatePickerCore'
 export type StyledProps = {
   theme: {
     submitButtonBgColor: string
-    inputHeight: string
     inputErrorColor: string
     inputErrorTextAlign: string
     inputErrorFontSize: string
@@ -102,7 +101,6 @@ export type StyledProps = {
     sliderHandleAfterWidth: string
     sliderHandleAfterHeight: string
     sliderHandleAfterBorderRadius: string
-    styledInputSuffixWidth: string
     styledInputSuffixBgColor: string
     styledInputSuffixTextColor: string
     styledInputSuffixFontSize: string
@@ -233,7 +231,6 @@ export const StyledInput = styled.input<any>`
   border-radius: ${(props: StyledProps): string =>
     props.theme.inputBorderRadius};
   width: 100%;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
   display: flex;
   align-items: center;
   font-style: ${(props: StyledProps): string => props.theme.inputFontStyle};
@@ -378,8 +375,7 @@ const StyledSpan = styled.span`
 const StyledInputSuffix = styled.span`
   display: flex;
   align-items: center;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
-  width: ${(props: StyledProps): string => props.theme.styledInputSuffixWidth};
+  padding: 0 20px;
   box-sizing: border-box;
   background-color: ${(props: StyledProps): string => props.theme.styledInputSuffixBgColor};
   border-radius: ${(props: StyledProps): string => props.theme.styledInputSuffixBorderRadius};
@@ -393,7 +389,7 @@ const StyledSliderInputSuffix = styled.span`
   display: flex;
   align-items: center;
   height: ${(props: StyledProps): string => props.theme.sliderInputHeight};
-  width: ${(props: StyledProps): string => props.theme.styledInputSuffixWidth};
+  wpadding: 0 20px;
   box-sizing: border-box;
   background-color: ${(props: StyledProps): string => props.theme.styledInputSuffixBgColor};
   border-radius: ${(props: StyledProps): string => props.theme.styledInputSuffixBorderRadius};
@@ -407,11 +403,9 @@ const StyledInputPrefixContainer = styled.div<any>`
   background: ${(props: StyledProps): string => props.theme.inputBgColor};
   position: relative;
   left: 0px;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
   border: 1px solid ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   border-right: none;
   border-top-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};

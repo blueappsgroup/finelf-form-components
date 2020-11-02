@@ -202,7 +202,6 @@ export type CustomThemeType = {
   formBgColor?: string
   styledContainerMobilePadding?: string
   styledContainerPadding?: string
-  inputHeight?: string
   inputTextColor?: string
   inputPlaceHolderColor?: string
   inputErrorColor?: string
