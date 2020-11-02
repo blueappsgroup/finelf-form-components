@@ -26,7 +26,6 @@ const StyledMainHeader = styled.h2<StyledProps>`
   line-height: ${(props: StyledProps): string => props.theme.headerLineHeight};
   text-align: center;
   margin: ${(props: StyledProps): string => props.theme.headerMargin};
-  padding-bottom: 28px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -34,7 +33,7 @@ const StyledMainHeader = styled.h2<StyledProps>`
   position: relative;
   
   @media ${device.tablet} {
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 50px 0px;
   }
 
   &::after {

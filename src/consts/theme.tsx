@@ -64,7 +64,6 @@ export const theme = {
   styledSelectFontStyle: 'normal',
   styledSelectLineHeight: '24px',
   styledSelectPadding: '15px 40px 15px 20px',
-  styledSpanFontSize: '16px',
   styledSpanFontColor: colors.black,
   styledSpanFontWeight: 'bold',
   styledRowMarginBottom: '12px',
@@ -83,11 +82,11 @@ export const theme = {
   headerFontWeight: '600',
   headerFontSize: '25px',
   headerLineHeight: '24px',
-  headerMargin: '0px 0px 20px 0px',
+  headerMargin: '0px 0px 30px 0px',
   subheaderBorderColor: colors.black,
   subheaderFontSize: '16px',
   subheaderLineHeight: '18px',
-  subheaderMargin: '10px 0px 20px 0px',
+  subheaderMargin: '10px 0px 30px 0px',
   buttonTextColor: colors.white,
   buttonBgColor: colors.mediumRed,
   buttonBorderColor: colors.mediumRed,
@@ -105,7 +104,6 @@ export const theme = {
   successStatusTextColor: colors.black,
   errorStatusTextColor: colors.errorRed,
   sliderHeight: '12px',
-  sliderInputHeight: '63px',
   sliderInputTextAlign: 'left',
   sliderBorderRadius: '10px',
   sliderBgColor: colors.mainGrey,
@@ -137,7 +135,7 @@ export const theme = {
   imageContainerTextFontWeight: '900',
   imageBoxShadow: 'none',
   inputIconLeft: '20px',
-  inputWithIconPadding: '0 20px 0 85px',
+  inputWithIconPadding: '15px 20px 15px 85px',
 }
 
 type ThemeProviderPops = {

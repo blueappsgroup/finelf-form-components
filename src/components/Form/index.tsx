@@ -20,7 +20,6 @@ const StyledForm = styled(Form)`
   flex-direction: column;
   max-width: ${(props): string => props.theme.formMaxWidth};
   justify-self: center;
-  margin: 0 10px;
   background: ${(props): string => props.theme.formBgColor};
   font-family: ${(props): string => props.theme.fontFamily};
   padding: ${(props): string => props.theme.formPaddingMobile};
@@ -29,7 +28,6 @@ const StyledForm = styled(Form)`
 
   @media ${device.tablet} {
     padding: ${(props): string => props.theme.formPadding};
-    margin: 0 auto;
   }
 `
 
