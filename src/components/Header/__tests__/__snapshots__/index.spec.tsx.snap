@@ -4,7 +4,7 @@ exports[`<Header /> main header matches snapshot 1`] = `
 <body>
   <div>
     <h2
-      class="sc-bdnylx gLBJqa"
+      class="sc-bdnylx dIsRVf"
     >
       Header
     </h2>
@@ -16,7 +16,7 @@ exports[`<Header /> main header with border matches snapshot 1`] = `
 <body>
   <div>
     <h2
-      class="sc-bdnylx cGdwTc"
+      class="sc-bdnylx ea-DsHd"
     >
       Header
     </h2>

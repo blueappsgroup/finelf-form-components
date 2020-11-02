@@ -2,7 +2,7 @@
 
 exports[`<CarStatusField /> matches snapshot 1`] = `
 <select
-  class="sc-ksluoS cwGMZt"
+  class="sc-dIvqjp cnqptG"
   id="carStatusField"
   name="name"
   type="text"
@@ -30,7 +30,7 @@ exports[`<CarStatusField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -38,40 +38,47 @@ exports[`<CarStatusField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="name"
       >
         Test*
       </label>
-      <select
-        class="sc-ksluoS cjitXk"
-        id="carStatusField"
-        label="Test"
-        name="name"
-        required=""
-        type="text"
+      <div
+        class="sc-iemXMA clxLOp"
       >
-        <option
-          disabled=""
-          value="select"
+        <select
+          class="sc-dIvqjp gBHSSD"
+          id="carStatusField"
+          label="Test"
+          name="name"
+          required=""
+          type="text"
         >
-          wybierz *
-        </option>
-        <option
-          value="yes"
-        >
-          tak
-        </option>
-        <option
-          value="no"
-        >
-          nie
-        </option>
-      </select>
+          <option
+            disabled=""
+            value="select"
+          >
+            wybierz *
+          </option>
+          <option
+            value="yes"
+          >
+            tak
+          </option>
+          <option
+            value="no"
+          >
+            nie
+          </option>
+        </select>
+        <span
+          class="sc-hHEjAm gimkwY"
+        />
+      </div>
       <span
-        class="sc-iqAbSa dmIjtF"
+        class="sc-hBMVcZ kROtfw"
       >
         To pole jest wymagane
       </span>
@@ -84,7 +91,7 @@ exports[`<CarStatusField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -92,37 +99,44 @@ exports[`<CarStatusField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="name"
       >
         Test
       </label>
-      <select
-        class="sc-ksluoS cwGMZt"
-        id="carStatusField"
-        label="Test"
-        name="name"
-        type="text"
+      <div
+        class="sc-iemXMA clxLOp"
       >
-        <option
-          disabled=""
-          value="select"
+        <select
+          class="sc-dIvqjp cnqptG"
+          id="carStatusField"
+          label="Test"
+          name="name"
+          type="text"
         >
-          wybierz 
-        </option>
-        <option
-          value="yes"
-        >
-          tak
-        </option>
-        <option
-          value="no"
-        >
-          nie
-        </option>
-      </select>
+          <option
+            disabled=""
+            value="select"
+          >
+            wybierz 
+          </option>
+          <option
+            value="yes"
+          >
+            tak
+          </option>
+          <option
+            value="no"
+          >
+            nie
+          </option>
+        </select>
+        <span
+          class="sc-hHEjAm gimkwY"
+        />
+      </div>
     </div>
   </form>
 </div>
@@ -132,7 +146,7 @@ exports[`<CarStatusField /> select field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -140,33 +154,40 @@ exports[`<CarStatusField /> select field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
-      <select
-        class="sc-ksluoS cjitXk"
-        id="carStatusField"
-        name="name"
-        type="text"
+      <div
+        class="sc-iemXMA clxLOp"
       >
-        <option
-          disabled=""
-          value="select"
+        <select
+          class="sc-dIvqjp gBHSSD"
+          id="carStatusField"
+          name="name"
+          type="text"
         >
-          wybierz 
-        </option>
-        <option
-          value="yes"
-        >
-          tak
-        </option>
-        <option
-          value="no"
-        >
-          nie
-        </option>
-      </select>
+          <option
+            disabled=""
+            value="select"
+          >
+            wybierz 
+          </option>
+          <option
+            value="yes"
+          >
+            tak
+          </option>
+          <option
+            value="no"
+          >
+            nie
+          </option>
+        </select>
+        <span
+          class="sc-hHEjAm gimkwY"
+        />
+      </div>
       <span
-        class="sc-iqAbSa dmIjtF"
+        class="sc-hBMVcZ kROtfw"
       >
         Podane dane są nieprawidłowe
       </span>

@@ -2,7 +2,7 @@
 
 exports[`<HousingStatusField /> matches snapshot 1`] = `
 <select
-  class="sc-ksluoS cwGMZt"
+  class="sc-dIvqjp cnqptG"
   id="housingStatusField"
   name="name"
   type="text"
@@ -40,7 +40,7 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -48,50 +48,57 @@ exports[`<HousingStatusField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="name"
       >
         Test*
       </label>
-      <select
-        class="sc-ksluoS cjitXk"
-        id="housingStatusField"
-        label="Test"
-        name="name"
-        required=""
-        type="text"
+      <div
+        class="sc-iemXMA clxLOp"
       >
-        <option
-          disabled=""
-          value="select"
+        <select
+          class="sc-dIvqjp gBHSSD"
+          id="housingStatusField"
+          label="Test"
+          name="name"
+          required=""
+          type="text"
         >
-          wybierz *
-        </option>
-        <option
-          value="property"
-        >
-          mieszkanie własne
-        </option>
-        <option
-          value="with_parent"
-        >
-          mieszkanie rodziców
-        </option>
-        <option
-          value="rental"
-        >
-          mieszkanie wynajmowane
-        </option>
-        <option
-          value="room"
-        >
-          pokój
-        </option>
-      </select>
+          <option
+            disabled=""
+            value="select"
+          >
+            wybierz *
+          </option>
+          <option
+            value="property"
+          >
+            mieszkanie własne
+          </option>
+          <option
+            value="with_parent"
+          >
+            mieszkanie rodziców
+          </option>
+          <option
+            value="rental"
+          >
+            mieszkanie wynajmowane
+          </option>
+          <option
+            value="room"
+          >
+            pokój
+          </option>
+        </select>
+        <span
+          class="sc-hHEjAm gimkwY"
+        />
+      </div>
       <span
-        class="sc-iqAbSa dmIjtF"
+        class="sc-hBMVcZ kROtfw"
       >
         To pole jest wymagane
       </span>
@@ -104,7 +111,7 @@ exports[`<HousingStatusField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -112,47 +119,54 @@ exports[`<HousingStatusField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="name"
       >
         Test
       </label>
-      <select
-        class="sc-ksluoS cwGMZt"
-        id="housingStatusField"
-        label="Test"
-        name="name"
-        type="text"
+      <div
+        class="sc-iemXMA clxLOp"
       >
-        <option
-          disabled=""
-          value="select"
+        <select
+          class="sc-dIvqjp cnqptG"
+          id="housingStatusField"
+          label="Test"
+          name="name"
+          type="text"
         >
-          wybierz 
-        </option>
-        <option
-          value="property"
-        >
-          mieszkanie własne
-        </option>
-        <option
-          value="with_parent"
-        >
-          mieszkanie rodziców
-        </option>
-        <option
-          value="rental"
-        >
-          mieszkanie wynajmowane
-        </option>
-        <option
-          value="room"
-        >
-          pokój
-        </option>
-      </select>
+          <option
+            disabled=""
+            value="select"
+          >
+            wybierz 
+          </option>
+          <option
+            value="property"
+          >
+            mieszkanie własne
+          </option>
+          <option
+            value="with_parent"
+          >
+            mieszkanie rodziców
+          </option>
+          <option
+            value="rental"
+          >
+            mieszkanie wynajmowane
+          </option>
+          <option
+            value="room"
+          >
+            pokój
+          </option>
+        </select>
+        <span
+          class="sc-hHEjAm gimkwY"
+        />
+      </div>
     </div>
   </form>
 </div>
@@ -162,7 +176,7 @@ exports[`<HousingStatusField /> select field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -170,43 +184,50 @@ exports[`<HousingStatusField /> select field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
-      <select
-        class="sc-ksluoS cjitXk"
-        id="housingStatusField"
-        name="name"
-        type="text"
+      <div
+        class="sc-iemXMA clxLOp"
       >
-        <option
-          disabled=""
-          value="select"
+        <select
+          class="sc-dIvqjp gBHSSD"
+          id="housingStatusField"
+          name="name"
+          type="text"
         >
-          wybierz 
-        </option>
-        <option
-          value="property"
-        >
-          mieszkanie własne
-        </option>
-        <option
-          value="with_parent"
-        >
-          mieszkanie rodziców
-        </option>
-        <option
-          value="rental"
-        >
-          mieszkanie wynajmowane
-        </option>
-        <option
-          value="room"
-        >
-          pokój
-        </option>
-      </select>
+          <option
+            disabled=""
+            value="select"
+          >
+            wybierz 
+          </option>
+          <option
+            value="property"
+          >
+            mieszkanie własne
+          </option>
+          <option
+            value="with_parent"
+          >
+            mieszkanie rodziców
+          </option>
+          <option
+            value="rental"
+          >
+            mieszkanie wynajmowane
+          </option>
+          <option
+            value="room"
+          >
+            pokój
+          </option>
+        </select>
+        <span
+          class="sc-hHEjAm gimkwY"
+        />
+      </div>
       <span
-        class="sc-iqAbSa dmIjtF"
+        class="sc-hBMVcZ kROtfw"
       >
         Podane dane są nieprawidłowe
       </span>

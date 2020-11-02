@@ -2,7 +2,7 @@
 
 exports[`<AmountField /> matches snapshot 1`] = `
 <input
-  class="sc-bqGHjH bZbIfE"
+  class="sc-bkbjAj htnojK"
   id="amountField"
   label="Kwota pożyczki"
   max="10000"
@@ -18,7 +18,7 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -26,10 +26,10 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <div
-        class="sc-jrsJCI gRaWaU"
+        class="sc-crzoUp bYnLau"
       >
         <label
           for="name"
@@ -37,10 +37,10 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
           Test
         </label>
         <div
-          class="sc-dIsAE esAFLE"
+          class="sc-fFSRdu KJBYa"
         >
           <input
-            class="sc-bqGHjH bZbIfE"
+            class="sc-bkbjAj htnojK"
             id="amountField"
             label="Test"
             max="10000"
@@ -51,14 +51,14 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
             value="2000"
           />
           <span
-            class="sc-fFSRdu bULHRF"
+            class="sc-fKgIGh kAuZOL"
           >
             PLN
           </span>
         </div>
       </div>
       <div
-        class="sc-iemXMA ijBKWi"
+        class="sc-cxNIbT hVZAQV"
       >
         <div
           aria-orientation="horizontal"
@@ -86,10 +86,10 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
         </div>
       </div>
       <div
-        class="sc-jrsJCI gRaWaU"
+        class="sc-crzoUp bYnLau"
       >
         <span
-          class="sc-hBMVcZ kVKZky"
+          class="sc-dlMBXb iTcyvH"
         >
           Min. 
           300
@@ -97,7 +97,7 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
           zł
         </span>
         <span
-          class="sc-hBMVcZ kVKZky"
+          class="sc-dlMBXb iTcyvH"
         >
           Max. 
           10000

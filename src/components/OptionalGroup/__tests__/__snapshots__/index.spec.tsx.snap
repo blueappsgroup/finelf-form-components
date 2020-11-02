@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base <OptionalGroup /> matches snapshot 1`] = `
+<input
+  class="sc-kLokih QhdbU"
+  id="optional_group"
+  label="optional group test"
+  name="optional_group"
+  type="checkbox"
+  value="false"
+/>
+`;

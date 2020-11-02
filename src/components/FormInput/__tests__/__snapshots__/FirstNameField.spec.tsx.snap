@@ -4,7 +4,7 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -12,7 +12,7 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="first_name"
@@ -20,10 +20,10 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
         Imię
       </label>
       <div
-        class="sc-dIvqjp iaFmok"
+        class="sc-lmgQde iscgnI"
       >
         <input
-          class="sc-crzoUp jQLlWv"
+          class="sc-fnVYJo cMeJLu"
           id="testId"
           label="Imię"
           name="first_name"
@@ -32,7 +32,7 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
         />
       </div>
       <span
-        class="sc-iqAbSa dmIjtF"
+        class="sc-hBMVcZ kROtfw"
       >
         Podane dane są nieprawidłowe
       </span>
@@ -43,7 +43,7 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
 
 exports[`<FirstNameField /> matches snapshot 1`] = `
 <input
-  class="sc-crzoUp kUQhja"
+  class="sc-fnVYJo csxChD"
   id="testId"
   label="Imię"
   name="first_name"
@@ -56,7 +56,7 @@ exports[`<FirstNameField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -64,7 +64,7 @@ exports[`<FirstNameField /> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="first_name"
@@ -72,10 +72,10 @@ exports[`<FirstNameField /> matches snapshot with error 1`] = `
         FirstName1*
       </label>
       <div
-        class="sc-dIvqjp iaFmok"
+        class="sc-lmgQde iscgnI"
       >
         <input
-          class="sc-crzoUp jQLlWv"
+          class="sc-fnVYJo cMeJLu"
           id="testId"
           label="FirstName1"
           name="first_name"
@@ -85,7 +85,7 @@ exports[`<FirstNameField /> matches snapshot with error 1`] = `
         />
       </div>
       <span
-        class="sc-iqAbSa dmIjtF"
+        class="sc-hBMVcZ kROtfw"
       >
         To pole jest wymagane
       </span>
@@ -98,7 +98,7 @@ exports[`<FirstNameField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -106,7 +106,7 @@ exports[`<FirstNameField /> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="first_name"
@@ -114,10 +114,10 @@ exports[`<FirstNameField /> matches snapshot with label 1`] = `
         FirstName
       </label>
       <div
-        class="sc-dIvqjp iaFmok"
+        class="sc-lmgQde iscgnI"
       >
         <input
-          class="sc-crzoUp kUQhja"
+          class="sc-fnVYJo csxChD"
           id="testId"
           label="FirstName"
           name="first_name"

@@ -4,7 +4,7 @@ exports[`<CompanyTaxField/> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -12,7 +12,7 @@ exports[`<CompanyTaxField/> input field with custom validation 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="company_tax_id"
@@ -20,10 +20,10 @@ exports[`<CompanyTaxField/> input field with custom validation 1`] = `
         NIP firmy
       </label>
       <div
-        class="sc-dIvqjp iaFmok"
+        class="sc-lmgQde iscgnI"
       >
         <input
-          class="sc-crzoUp jQLlWv"
+          class="sc-fnVYJo cMeJLu"
           id="testId"
           label="NIP firmy"
           name="company_tax_id"
@@ -32,7 +32,7 @@ exports[`<CompanyTaxField/> input field with custom validation 1`] = `
         />
       </div>
       <span
-        class="sc-iqAbSa dmIjtF"
+        class="sc-hBMVcZ kROtfw"
       >
         Podany NIP jest nieprawidłowy
       </span>
@@ -43,7 +43,7 @@ exports[`<CompanyTaxField/> input field with custom validation 1`] = `
 
 exports[`<CompanyTaxField/> matches snapshot 1`] = `
 <input
-  class="sc-crzoUp kUQhja"
+  class="sc-fnVYJo csxChD"
   id="testId"
   label="NIP firmy"
   name="company_tax_id"
@@ -56,7 +56,7 @@ exports[`<CompanyTaxField/> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -64,7 +64,7 @@ exports[`<CompanyTaxField/> matches snapshot with error 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="company_tax_id"
@@ -72,10 +72,10 @@ exports[`<CompanyTaxField/> matches snapshot with error 1`] = `
         CompanyTax*
       </label>
       <div
-        class="sc-dIvqjp iaFmok"
+        class="sc-lmgQde iscgnI"
       >
         <input
-          class="sc-crzoUp jQLlWv"
+          class="sc-fnVYJo cMeJLu"
           id="testId"
           label="CompanyTax"
           name="company_tax_id"
@@ -85,7 +85,7 @@ exports[`<CompanyTaxField/> matches snapshot with error 1`] = `
         />
       </div>
       <span
-        class="sc-iqAbSa dmIjtF"
+        class="sc-hBMVcZ kROtfw"
       >
         To pole jest wymagane
       </span>
@@ -98,7 +98,7 @@ exports[`<CompanyTaxField/> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-fujyUd bFqltC"
     id="testForm"
   >
     <input
@@ -106,7 +106,7 @@ exports[`<CompanyTaxField/> matches snapshot with label 1`] = `
       form="[object Object]"
     />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-iqAbSa VlpJw"
     >
       <label
         for="company_tax_id"
@@ -114,10 +114,10 @@ exports[`<CompanyTaxField/> matches snapshot with label 1`] = `
         Company Tax
       </label>
       <div
-        class="sc-dIvqjp iaFmok"
+        class="sc-lmgQde iscgnI"
       >
         <input
-          class="sc-crzoUp kUQhja"
+          class="sc-fnVYJo csxChD"
           id="testId"
           label="Company Tax"
           name="company_tax_id"

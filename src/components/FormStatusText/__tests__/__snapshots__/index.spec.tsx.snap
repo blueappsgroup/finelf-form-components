@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BirthDateField /> matches snapshot 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd bFqltC"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <span
+      class="sc-pNWxx hEhyTe"
+    >
+      Dziękujemy, twoje dane zostały przesłane.
+    </span>
+  </form>
+</div>
+`;
