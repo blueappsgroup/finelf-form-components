@@ -34,12 +34,6 @@ const StyledForm = styled(Form)`
   }
 `
 
-declare global {
-  interface Window {
-    dataLayer: any
-  }
-}
-
 const FormWrapper: FC<FormProps> = ({
   children,
   onSubmit,
