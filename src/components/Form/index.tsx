@@ -43,6 +43,7 @@ declare global {
 const FormWrapper: FC<FormProps> = ({
   children,
   onSubmit,
+  onStepComplete,
   customTheme,
   id,
   stepsLength,
@@ -81,7 +82,6 @@ const FormWrapper: FC<FormProps> = ({
   const [currentStep, setCurrentStep] = useState(0)
   const [fieldsForSkip, setFieldsForSkip] = useState<string[]>([])
   const [errorFromApi, setErrorFromApi] = useState<boolean>(false)
-  const [stepFirstCompleted, setStepFirstCompleted] = useState<boolean>(false)
   const shouldRedirect = !errorFromApi && hasRedirect
   const addFieldForSkip = (key: string): void =>
     setFieldsForSkip([...fieldsForSkip, key])
@@ -122,9 +122,6 @@ const FormWrapper: FC<FormProps> = ({
 
       props.resetForm()
       props.setStatus(formStatuses.submited)
-      if (window.dataLayer !== undefined) {
-        window.dataLayer.push({ event: 'send-form' })
-      }
     } catch (e) {
       console.log(e)
       props.setStatus(formStatuses.error)
@@ -139,10 +136,7 @@ const FormWrapper: FC<FormProps> = ({
   const prevStep: Function = () => setCurrentStep(currentStep - 1)
 
   const nextStep: Function = () => {
-    if (!stepFirstCompleted && window.dataLayer !== undefined) {
-      window.dataLayer.push({ event: 'step1-complete' })
-      setStepFirstCompleted(true)
-    }
+    onStepComplete(currentStep)
     setCurrentStep(currentStep + 1)
   }
 

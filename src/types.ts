@@ -315,6 +315,7 @@ export type FormProps = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     props?: any
   ) => void
+  onStepComplete: (currentStep: number) => void
   children: ReactNode
   customTheme?: CustomThemeType
   id: string
