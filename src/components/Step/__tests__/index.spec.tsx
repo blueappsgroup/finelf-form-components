@@ -1,19 +1,18 @@
 import * as React from 'react'
 import { render, act, fireEvent } from '@testing-library/react'
-import LastNameField from '../../FormInput/LastNameField'
 import FirstNameField from '../../FormInput/FirstNameField'
 import Form from '../../Form'
+import LastNameField from '../../FormInput/LastNameField'
 import Step from '../index'
 import StepHeader from '../StepHeader'
 
 describe('base <Step />', () => {
   const onSubmit = jest.fn()
+  // const setNextButtonDisabled = jest.fn()
   const stepsLength = 2
   const stepsTitles = ['1. Podstawowe dane', '2. Szczegółowe dane']
   const setupWrapper = ({
     formId = 'testForm',
-    fName = 'fName',
-    lName = 'lName',
     ...rest
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }): any => {
@@ -25,23 +24,25 @@ describe('base <Step />', () => {
         stepsTitles={stepsTitles}
       >
         <Step stepIndex={0}>
-          <FirstNameField name={fName} required />
+          <FirstNameField name="fName" required />
         </Step>
         <Step stepIndex={1}>
-          <LastNameField name={lName} required />
+          <LastNameField name="lName" required />
         </Step>
       </Form>
     )
     const { container } = wrapper
-    const firstName = container.querySelector(`[name="${fName}"]`)
-    const lastName = container.querySelector(`[name="${lName}"]`)
+    const firstName = container.querySelector('[name="fName"]')
 
     return {
       firstName,
-      lastName,
       ...wrapper,
     }
   }
+
+  beforeEach(() => {
+    // jest.spyOn(React, 'useState').mockImplementation(nextButtonDisabled => [nextButtonDisabled, setNextButtonDisabled])
+  })
 
   it('matches snapshot', () => {
     const wrapper = setupWrapper({})
@@ -56,6 +57,19 @@ describe('base <Step />', () => {
     const button = container.querySelector('button[disabled]')
 
     expect(button).toBeTruthy()
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('setNextButtonDisabled have been called after fill step fields', async () => {
+    const wrapper = setupWrapper({})
+    const { container, firstName } = wrapper
+
+    await act(async () => {
+      fireEvent.change(firstName, { target: { value: 'test' } })
+    })
+
+    expect(container.querySelector('button:not([disabled])')).toBeTruthy()
+    // expect(setNextButtonDisabled).toHaveBeenCalledTimes(8)
     expect(wrapper).toMatchSnapshot()
   })
 })

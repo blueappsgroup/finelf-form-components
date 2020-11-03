@@ -12,7 +12,7 @@ exports[`<RedirectPage /> matches snapshot 1`] = `
         <h1
           class="sc-dlnjPT kaHCaK"
         >
-          thank you text
+          Dziękujemy za przesłanie wniosku! Szukamy dla Ciebie idealnej oferty.
         </h1>
         <h3
           class="sc-hKFyIo fItDnD"
@@ -22,6 +22,76 @@ exports[`<RedirectPage /> matches snapshot 1`] = `
             class="sc-eCApGN eAXOzQ"
           >
             5
+            s
+          </span>
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`<RedirectPage /> matches snapshot with props 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bdnylx dMUDiq"
+    >
+      <div
+        class="sc-gtssRu bNNyTY"
+      >
+        <img
+          class="sc-jSFkmK cTnIxj"
+          src="logo.png"
+        />
+        <h1
+          class="sc-dlnjPT kaHCaK"
+        >
+          header text
+        </h1>
+        <h3
+          class="sc-hKFyIo fItDnD"
+        >
+          Zostaniesz przekierowany za 
+          <span
+            class="sc-eCApGN eAXOzQ"
+          >
+            5
+            s
+          </span>
+        </h3>
+        <img
+          class="sc-gKAblj dYffOh"
+          src="main.png"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`<RedirectPage /> matches snapshot with redirect 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bdnylx iboAmE"
+    >
+      <div
+        class="sc-gtssRu bNNyTY"
+      >
+        <h1
+          class="sc-dlnjPT kaHCaK"
+        >
+          thank you text
+        </h1>
+        <h3
+          class="sc-hKFyIo fItDnD"
+        >
+          Zostaniesz przekierowany za 
+          <span
+            class="sc-eCApGN eAXOzQ"
+          >
+            0
             s
           </span>
         </h3>

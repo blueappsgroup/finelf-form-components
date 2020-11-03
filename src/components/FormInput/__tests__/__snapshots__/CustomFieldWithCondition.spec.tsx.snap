@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CustomFieldWithCondition /> matches snapshot 1`] = `
+<input
+  class="sc-fnVYJo csxChD"
+  id="customFieldWithCondition"
+  name="customFieldWithCondition"
+  value=""
+/>
+`;
+
+exports[`<CustomFieldWithCondition /> matches snapshot with requiredCondition met 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd bFqltC"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-iqAbSa VlpJw"
+    >
+      <div
+        class="sc-iemXMA clxLOp"
+      >
+        <select
+          class="sc-dIvqjp cnqptG"
+          name="employment_type"
+          type="text"
+        >
+          <option
+            disabled=""
+            value="select"
+          >
+            wybierz 
+          </option>
+          <option
+            value="fixed"
+          >
+            umowa o pracę na czas nieokreślony
+          </option>
+          <option
+            value="temporary"
+          >
+            umowa o pracę na czas określony
+          </option>
+          <option
+            value="self_employed"
+          >
+            samozatrudnienie
+          </option>
+          <option
+            value="fixed_partial"
+          >
+            umowa o pracę na czas nieokreślony (niepełny etat)
+          </option>
+          <option
+            value="government"
+          >
+            stanowisko rządowe
+          </option>
+          <option
+            value="unemployed"
+          >
+            bezrobotny
+          </option>
+          <option
+            value="pension"
+          >
+            emeryt/rencista
+          </option>
+          <option
+            value="agriculture"
+          >
+            gospodarstwo rolne
+          </option>
+          <option
+            value="student"
+          >
+            student
+          </option>
+          <option
+            value="housewife"
+          >
+            gospodyni domowa
+          </option>
+          <option
+            value="other"
+          >
+            inne
+          </option>
+          <option
+            value="service_contract"
+          >
+            umowa zlecenie / umowa o dzieło
+          </option>
+        </select>
+        <span
+          class="sc-hHEjAm gimkwY"
+        />
+      </div>
+    </div>
+    <div
+      class="sc-iqAbSa VlpJw"
+    >
+      <div
+        class="sc-lmgQde iscgnI"
+      >
+        <input
+          class="sc-fnVYJo csxChD"
+          id="customFieldWithCondition"
+          name="customFieldWithCondition"
+          required=""
+          value=""
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<CustomFieldWithCondition /> matches snapshot with visibleCondition met 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd bFqltC"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-iqAbSa VlpJw"
+    >
+      <div
+        class="sc-iemXMA clxLOp"
+      >
+        <select
+          class="sc-dIvqjp cnqptG"
+          name="employment_type"
+          type="text"
+        >
+          <option
+            disabled=""
+            value="select"
+          >
+            wybierz 
+          </option>
+          <option
+            value="fixed"
+          >
+            umowa o pracę na czas nieokreślony
+          </option>
+          <option
+            value="temporary"
+          >
+            umowa o pracę na czas określony
+          </option>
+          <option
+            value="self_employed"
+          >
+            samozatrudnienie
+          </option>
+          <option
+            value="fixed_partial"
+          >
+            umowa o pracę na czas nieokreślony (niepełny etat)
+          </option>
+          <option
+            value="government"
+          >
+            stanowisko rządowe
+          </option>
+          <option
+            value="unemployed"
+          >
+            bezrobotny
+          </option>
+          <option
+            value="pension"
+          >
+            emeryt/rencista
+          </option>
+          <option
+            value="agriculture"
+          >
+            gospodarstwo rolne
+          </option>
+          <option
+            value="student"
+          >
+            student
+          </option>
+          <option
+            value="housewife"
+          >
+            gospodyni domowa
+          </option>
+          <option
+            value="other"
+          >
+            inne
+          </option>
+          <option
+            value="service_contract"
+          >
+            umowa zlecenie / umowa o dzieło
+          </option>
+        </select>
+        <span
+          class="sc-hHEjAm gimkwY"
+        />
+      </div>
+    </div>
+    <div
+      class="sc-iqAbSa VlpJw"
+    >
+      <div
+        class="sc-lmgQde iscgnI"
+      >
+        <input
+          class="sc-fnVYJo csxChD"
+          id="customFieldWithCondition"
+          name="customFieldWithCondition"
+          value=""
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<CustomFieldWithCondition /> matches snapshot without requiredCondition met 1`] = `null`;
+
+exports[`<CustomFieldWithCondition /> matches snapshot without visibleCondition met 1`] = `null`;

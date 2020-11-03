@@ -1,17 +1,25 @@
 import * as React from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 import { formStatuses } from '../../../consts/form'
+import { FormValuesType } from '../../../types'
 
 import Form from '../../Form'
 import FormStatusText from '../index'
 describe('<BirthDateField />', () => {
-  const onSubmit = jest.fn()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const setupWrapper: (config: any) => any = ({ formId = 'testForm' }) => {
+  const setupWrapper: (config: any) => any = ({
+    formId = 'testForm',
+    onSubmit = jest.fn(),
+  }) => {
     const wrapper = render(
-      <Form id={formId} onSubmit={onSubmit}>
+      <Form
+        id={formId}
+        onSubmit={onSubmit}
+        apiUrl="http://localhost"
+        sendDataToApi
+      >
         <FormStatusText
-          successText="Dziękujemy, twoje dane zostały przesłane."
+          successText="Dziękujemy, twoje dane zostały przesłane"
           errorText="Coś poszło nie tak spróbuj ponownie"
         />
       </Form>
@@ -28,15 +36,32 @@ describe('<BirthDateField />', () => {
 
   it('matches snapshot', async () => {
     const wrapper = setupWrapper({})
-    const { container, form } = wrapper
+    const { form } = wrapper
 
     await act(async () => {
       fireEvent.submit(form)
     })
 
-    expect(container).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
     expect(
-      wrapper.getByText('Dziękujemy, twoje dane zostały przesłane.')
+      wrapper.getByText('Dziękujemy, twoje dane zostały przesłane')
+    ).toBeTruthy()
+  })
+
+  it('matches snapshot error', async () => {
+    const onSubmit = (values: FormValuesType, props: any) => {
+      props.setStatus(formStatuses.error)
+    }
+    const wrapper = setupWrapper({ onSubmit })
+    const { form } = wrapper
+
+    await act(async () => {
+      fireEvent.submit(form)
+    })
+
+    expect(wrapper).toMatchSnapshot()
+    expect(
+      wrapper.getByText('Coś poszło nie tak spróbuj ponownie')
     ).toBeTruthy()
   })
 })

@@ -1,0 +1,859 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fujyUd bFqltC"
+    id="testForm"
+  >
+    <input
+      class="sc-iCoHVE gEjxKq"
+      form="[object Object]"
+    />
+    <div
+      class="sc-pNWxx spkep"
+    >
+      <div
+        class="react-datepicker-wrapper"
+      >
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            class="sc-jrsJCI gMTPZI react-datepicker-ignore-onclickoutside"
+            name="name"
+            placeholder="dd/MM/yyyy"
+            readonly=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="react-datepicker__tab-loop"
+      >
+        <div
+          class="react-datepicker__tab-loop__start"
+          tabindex="0"
+        />
+        <div
+          class="react-datepicker-popper"
+          data-placement="bottom-start"
+          style="position: absolute; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+        >
+          <div>
+            <div
+              class="react-datepicker"
+            >
+              <div
+                class="react-datepicker__triangle"
+              />
+              <div
+                class="react-datepicker__month-container"
+              >
+                <div
+                  class="react-datepicker__header react-datepicker__header--custom"
+                >
+                  <div
+                    class="sc-kEqYlL faooxx"
+                  >
+                    <button>
+                      &lt;
+                    </button>
+                    <select>
+                      <option
+                        value="2005"
+                      >
+                        2005
+                      </option>
+                      <option
+                        value="2004"
+                      >
+                        2004
+                      </option>
+                      <option
+                        value="2003"
+                      >
+                        2003
+                      </option>
+                      <option
+                        value="2002"
+                      >
+                        2002
+                      </option>
+                      <option
+                        value="2001"
+                      >
+                        2001
+                      </option>
+                      <option
+                        value="2000"
+                      >
+                        2000
+                      </option>
+                      <option
+                        value="1999"
+                      >
+                        1999
+                      </option>
+                      <option
+                        value="1998"
+                      >
+                        1998
+                      </option>
+                      <option
+                        value="1997"
+                      >
+                        1997
+                      </option>
+                      <option
+                        value="1996"
+                      >
+                        1996
+                      </option>
+                      <option
+                        value="1995"
+                      >
+                        1995
+                      </option>
+                      <option
+                        value="1994"
+                      >
+                        1994
+                      </option>
+                      <option
+                        value="1993"
+                      >
+                        1993
+                      </option>
+                      <option
+                        value="1992"
+                      >
+                        1992
+                      </option>
+                      <option
+                        value="1991"
+                      >
+                        1991
+                      </option>
+                      <option
+                        value="1990"
+                      >
+                        1990
+                      </option>
+                      <option
+                        value="1989"
+                      >
+                        1989
+                      </option>
+                      <option
+                        value="1988"
+                      >
+                        1988
+                      </option>
+                      <option
+                        value="1987"
+                      >
+                        1987
+                      </option>
+                      <option
+                        value="1986"
+                      >
+                        1986
+                      </option>
+                      <option
+                        value="1985"
+                      >
+                        1985
+                      </option>
+                      <option
+                        value="1984"
+                      >
+                        1984
+                      </option>
+                      <option
+                        value="1983"
+                      >
+                        1983
+                      </option>
+                      <option
+                        value="1982"
+                      >
+                        1982
+                      </option>
+                      <option
+                        value="1981"
+                      >
+                        1981
+                      </option>
+                      <option
+                        value="1980"
+                      >
+                        1980
+                      </option>
+                      <option
+                        value="1979"
+                      >
+                        1979
+                      </option>
+                      <option
+                        value="1978"
+                      >
+                        1978
+                      </option>
+                      <option
+                        value="1977"
+                      >
+                        1977
+                      </option>
+                      <option
+                        value="1976"
+                      >
+                        1976
+                      </option>
+                      <option
+                        value="1975"
+                      >
+                        1975
+                      </option>
+                      <option
+                        value="1974"
+                      >
+                        1974
+                      </option>
+                      <option
+                        value="1973"
+                      >
+                        1973
+                      </option>
+                      <option
+                        value="1972"
+                      >
+                        1972
+                      </option>
+                      <option
+                        value="1971"
+                      >
+                        1971
+                      </option>
+                      <option
+                        value="1970"
+                      >
+                        1970
+                      </option>
+                      <option
+                        value="1969"
+                      >
+                        1969
+                      </option>
+                      <option
+                        value="1968"
+                      >
+                        1968
+                      </option>
+                      <option
+                        value="1967"
+                      >
+                        1967
+                      </option>
+                      <option
+                        value="1966"
+                      >
+                        1966
+                      </option>
+                      <option
+                        value="1965"
+                      >
+                        1965
+                      </option>
+                      <option
+                        value="1964"
+                      >
+                        1964
+                      </option>
+                      <option
+                        value="1963"
+                      >
+                        1963
+                      </option>
+                      <option
+                        value="1962"
+                      >
+                        1962
+                      </option>
+                      <option
+                        value="1961"
+                      >
+                        1961
+                      </option>
+                      <option
+                        value="1960"
+                      >
+                        1960
+                      </option>
+                      <option
+                        value="1959"
+                      >
+                        1959
+                      </option>
+                      <option
+                        value="1958"
+                      >
+                        1958
+                      </option>
+                      <option
+                        value="1957"
+                      >
+                        1957
+                      </option>
+                      <option
+                        value="1956"
+                      >
+                        1956
+                      </option>
+                      <option
+                        value="1955"
+                      >
+                        1955
+                      </option>
+                      <option
+                        value="1954"
+                      >
+                        1954
+                      </option>
+                      <option
+                        value="1953"
+                      >
+                        1953
+                      </option>
+                      <option
+                        value="1952"
+                      >
+                        1952
+                      </option>
+                      <option
+                        value="1951"
+                      >
+                        1951
+                      </option>
+                      <option
+                        value="1950"
+                      >
+                        1950
+                      </option>
+                      <option
+                        value="1949"
+                      >
+                        1949
+                      </option>
+                      <option
+                        value="1948"
+                      >
+                        1948
+                      </option>
+                      <option
+                        value="1947"
+                      >
+                        1947
+                      </option>
+                      <option
+                        value="1946"
+                      >
+                        1946
+                      </option>
+                      <option
+                        value="1945"
+                      >
+                        1945
+                      </option>
+                      <option
+                        value="1944"
+                      >
+                        1944
+                      </option>
+                      <option
+                        value="1943"
+                      >
+                        1943
+                      </option>
+                      <option
+                        value="1942"
+                      >
+                        1942
+                      </option>
+                      <option
+                        value="1941"
+                      >
+                        1941
+                      </option>
+                    </select>
+                    <select>
+                      <option
+                        value="Styczeń"
+                      >
+                        Styczeń
+                      </option>
+                      <option
+                        value="Luty"
+                      >
+                        Luty
+                      </option>
+                      <option
+                        value="Marzec"
+                      >
+                        Marzec
+                      </option>
+                      <option
+                        value="Kwiecień"
+                      >
+                        Kwiecień
+                      </option>
+                      <option
+                        value="Maj"
+                      >
+                        Maj
+                      </option>
+                      <option
+                        value="Czerwiec"
+                      >
+                        Czerwiec
+                      </option>
+                      <option
+                        value="Lipiec"
+                      >
+                        Lipiec
+                      </option>
+                      <option
+                        value="Sierpień"
+                      >
+                        Sierpień
+                      </option>
+                      <option
+                        value="Wrzesień"
+                      >
+                        Wrzesień
+                      </option>
+                      <option
+                        value="Październik"
+                      >
+                        Październik
+                      </option>
+                      <option
+                        value="Listopad"
+                      >
+                        Listopad
+                      </option>
+                      <option
+                        value="Grudzień"
+                      >
+                        Grudzień
+                      </option>
+                    </select>
+                    <button>
+                      &gt;
+                    </button>
+                  </div>
+                  <div
+                    class="react-datepicker__day-names"
+                  >
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      pon
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      wt
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      śr
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      czw
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      pt
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      sob
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      niedz
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-label="month  2002-01"
+                  class="react-datepicker__month"
+                >
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Sunday, December 30th, 2001"
+                      class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      30
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, December 31st, 2001"
+                      class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--outside-month"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      31
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Tuesday, January 1st, 2002"
+                      class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--keyboard-selected"
+                      role="button"
+                      tabindex="0"
+                    >
+                      1
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Wednesday, January 2nd, 2002"
+                      class="react-datepicker__day react-datepicker__day--002"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      2
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Thursday, January 3rd, 2002"
+                      class="react-datepicker__day react-datepicker__day--003"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      3
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Friday, January 4th, 2002"
+                      class="react-datepicker__day react-datepicker__day--004"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      4
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Saturday, January 5th, 2002"
+                      class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      5
+                    </div>
+                  </div>
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Sunday, January 6th, 2002"
+                      class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      6
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, January 7th, 2002"
+                      class="react-datepicker__day react-datepicker__day--007"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      7
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Tuesday, January 8th, 2002"
+                      class="react-datepicker__day react-datepicker__day--008"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      8
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Wednesday, January 9th, 2002"
+                      class="react-datepicker__day react-datepicker__day--009"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      9
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Thursday, January 10th, 2002"
+                      class="react-datepicker__day react-datepicker__day--010"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      10
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Friday, January 11th, 2002"
+                      class="react-datepicker__day react-datepicker__day--011"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      11
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Saturday, January 12th, 2002"
+                      class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Sunday, January 13th, 2002"
+                      class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      13
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, January 14th, 2002"
+                      class="react-datepicker__day react-datepicker__day--014"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      14
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Tuesday, January 15th, 2002"
+                      class="react-datepicker__day react-datepicker__day--015"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      15
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Wednesday, January 16th, 2002"
+                      class="react-datepicker__day react-datepicker__day--016"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      16
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Thursday, January 17th, 2002"
+                      class="react-datepicker__day react-datepicker__day--017"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      17
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Friday, January 18th, 2002"
+                      class="react-datepicker__day react-datepicker__day--018"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      18
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Saturday, January 19th, 2002"
+                      class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      19
+                    </div>
+                  </div>
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Sunday, January 20th, 2002"
+                      class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      20
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, January 21st, 2002"
+                      class="react-datepicker__day react-datepicker__day--021"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      21
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Tuesday, January 22nd, 2002"
+                      class="react-datepicker__day react-datepicker__day--022"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      22
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Wednesday, January 23rd, 2002"
+                      class="react-datepicker__day react-datepicker__day--023"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      23
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Thursday, January 24th, 2002"
+                      class="react-datepicker__day react-datepicker__day--024"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      24
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Friday, January 25th, 2002"
+                      class="react-datepicker__day react-datepicker__day--025"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      25
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Saturday, January 26th, 2002"
+                      class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      26
+                    </div>
+                  </div>
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Sunday, January 27th, 2002"
+                      class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      27
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, January 28th, 2002"
+                      class="react-datepicker__day react-datepicker__day--028"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      28
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Tuesday, January 29th, 2002"
+                      class="react-datepicker__day react-datepicker__day--029"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      29
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Wednesday, January 30th, 2002"
+                      class="react-datepicker__day react-datepicker__day--030"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      30
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Thursday, January 31st, 2002"
+                      class="react-datepicker__day react-datepicker__day--031"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      31
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Friday, February 1st, 2002"
+                      class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--outside-month"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Saturday, February 2nd, 2002"
+                      class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      2
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="react-datepicker__tab-loop__end"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<DatePickerCore /> matches snapshot DatePickerCore 1`] = `
+<input
+  class="sc-jrsJCI gMTPZI"
+  name="name"
+  placeholder="dd/MM/yyyy"
+  type="text"
+  value=""
+/>
+`;
