@@ -37,7 +37,6 @@ const StyledForm = styled(Form)`
 const FormWrapper: FC<FormProps> = ({
   children,
   onSubmit,
-  onStepComplete,
   customTheme,
   id,
   stepsLength,
@@ -129,10 +128,7 @@ const FormWrapper: FC<FormProps> = ({
 
   const prevStep: Function = () => setCurrentStep(currentStep - 1)
 
-  const nextStep: Function = () => {
-    onStepComplete(currentStep)
-    setCurrentStep(currentStep + 1)
-  }
+  const nextStep: Function = () => setCurrentStep(currentStep + 1)
 
   return (
     <FormContext.Provider
