@@ -197,12 +197,9 @@ export type CustomThemeType = {
   fontFamily?: string
   formBoxShadow?: string
   formMaxWidth?: string
-  formPaddingMobile?: string
-  formPadding?: string
   formBgColor?: string
   styledContainerMobilePadding?: string
   styledContainerPadding?: string
-  inputHeight?: string
   inputTextColor?: string
   inputPlaceHolderColor?: string
   inputErrorColor?: string
@@ -222,7 +219,6 @@ export type CustomThemeType = {
   inputPadding?: string
   styledRowFlexWrap?: string
   styledRowLabelPadding?: string
-  styledSelectHeight?: string
   styledSelectTextColor?: string
   styledSelectPlaceHolderColor?: string
   styledSelectErrorColor?: string

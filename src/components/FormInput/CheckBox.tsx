@@ -30,10 +30,6 @@ const StyledRow = styled.div<StyledProps>`
   align-items: flex-start;
   margin-bottom: 12px;
   position: relative;
-  height: ${(props: StyledProps): string =>
-    props.collapsed
-      ? 'auto'
-      : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${(props: StyledProps): string =>
     props.collapsed ? 'none' : 'hidden'};
 
@@ -68,6 +64,7 @@ const StyledArrow = styled.span<StyledProps>`
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
+  margin-right: 10px;
 `
 
 const Icon = styled.svg`
@@ -117,7 +114,8 @@ const StyledCheckbox = styled.div<StyledProps>`
     position: absolute;
     content: '*';
     top: 0px;
-    right: -13px;
+    right: -10px;
+    font-weight: bold;
     font-size: 15px;
     color: ${(props: StyledProps): string =>
       props.theme.checkboxBorderErrorColor};
@@ -129,15 +127,14 @@ const StyledText = styled.span<any>`
   display: inline;
   font-style: normal;
   font-weight: 500;
-  font-size: ${(props: StyledProps): string =>
-    props.theme.checkboxLabelFontSize};
+  font-size: ${(props: StyledProps): string => props.theme.checkboxLabelFontSize};
   line-height: calc(
-    16px + 2 *
-      ${(props: StyledProps): string => props.theme.checkboxBorderWidth}
+    5px + ${(props: StyledProps): string => props.theme.checkboxLabelFontSize}
   );
   color: ${(props: StyledProps): string => props.theme.checkboxLabelTextColor};
-  padding-left: 15px;
-  padding-right: 25px;
+  margin-top: 2px;
+
+
 `
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -164,15 +161,15 @@ const Wrapper = styled.label<any>`
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StyledReadMore = styled<any>(StyledText)`
-  color: ${(props: StyledProps): string => props.theme.checkboxBorderColor};
+  color: ${(props: StyledProps): string => props.theme.checkboxLabelTextColor};
   cursor: pointer;
   padding: 0;
-  margin-left: -23px;
+  margin-left: 5px;
+  font-weight: ${(props: StyledProps): string => props.theme.styledSpanFontWeight}
 `
 
 const StyledContentWrapper = styled.div<StyledProps>`
-  padding-right: ${(props: StyledProps): string =>
-    props.hasReadMore ? '0px' : '25px'};
+  padding-right: ${(props: StyledProps): string => props.hasReadMore ? '0px' : '25px'};
 `
 
 export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({

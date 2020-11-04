@@ -11,11 +11,11 @@ type StepHeaderProps = {
   }
 }
 
-const StepHeader = styled.h3<StepHeaderProps>`
+const StepHeader = styled.div<StepHeaderProps>`
   display: flex;
   justify-content: center;
   flex-grow: 1;
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 0px;
   font-weight: ${(props: StepHeaderProps): number =>
     props.activeStep ? 800 : 400};
@@ -39,25 +39,12 @@ const StepHeader = styled.h3<StepHeaderProps>`
   }
 
   @media ${device.mobileL} {
-    font-size: 22px;
-    margin: 0px 0px 40px;
-
     &:first-of-type {
       margin-right: 15px;
     }
 
     &:last-child {
       margin-left: 15px;
-    }
-  }
-
-  @media ${device.tablet} {
-    &:first-of-type {
-      margin-right: 30px;
-    }
-
-    &:last-child {
-      margin-left: 30px;
     }
   }
 `

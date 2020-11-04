@@ -16,8 +16,8 @@ const CheckboxFormField: FC<CheckboxFieldProps> = ({
   skipFieldForApi,
   disableCollapse,
   hasReadMore,
-  showMoreText = '( Więcej )',
-  showLessText = '( Zwiń )',
+  showMoreText = '(więcej)',
+  showLessText = '(zwiń)',
 }) => (
   <Field
     required={required}
