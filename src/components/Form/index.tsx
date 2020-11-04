@@ -22,13 +22,8 @@ const StyledForm = styled(Form)`
   justify-self: center;
   background: ${(props): string => props.theme.formBgColor};
   font-family: ${(props): string => props.theme.fontFamily};
-  padding: ${(props): string => props.theme.formPaddingMobile};
   border-radius: 6px;
   box-shadow: ${(props): string => props.theme.formBoxShadow};
-
-  @media ${device.tablet} {
-    padding: ${(props): string => props.theme.formPadding};
-  }
 `
 
 const FormWrapper: FC<FormProps> = ({
@@ -113,7 +108,6 @@ const FormWrapper: FC<FormProps> = ({
       props.resetForm()
       props.setStatus(formStatuses.submited)
     } catch (e) {
-      console.log(e)
       props.setStatus(formStatuses.error)
     }
   }

@@ -603,13 +603,13 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
   const { id } = useContext(FormContext)
   const handleOnBlur = (e: ChangeEvent<HTMLInputElement>): void => {
     setFormValuesToCache(values, id)
-    console.log('blur')
+
     field.onBlur && field.onBlur(e)
   }
 
   const options = (options: SelectFieldOptions): Array<JSX.Element> => {
     return [
-      <StyledSelectValueOption key="select" value="select" disabled>
+      <StyledSelectValueOption key="select" value="select" disabled selected>
         {`wybierz ${(props.required && '*') || ''}`}
       </StyledSelectValueOption>,
     ].concat(

@@ -197,8 +197,6 @@ export type CustomThemeType = {
   fontFamily?: string
   formBoxShadow?: string
   formMaxWidth?: string
-  formPaddingMobile?: string
-  formPadding?: string
   formBgColor?: string
   styledContainerMobilePadding?: string
   styledContainerPadding?: string
