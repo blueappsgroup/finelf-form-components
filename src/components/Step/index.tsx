@@ -174,13 +174,8 @@ const Step: FC<Props> = ({ children, stepIndex, onStepComplete }) => {
   }, [values, errors, mappedFields, children])
 
   const handleClick = () => {
-    if (onStepComplete !== undefined) {
-      onStepComplete()
-    }
-
-    if (nextStep !== undefined) {
-      nextStep()
-    }
+    onStepComplete && onStepComplete()
+    nextStep && nextStep()
   }
 
   useEffect(() => {
