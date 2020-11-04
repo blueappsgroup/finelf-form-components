@@ -50,7 +50,8 @@ const StepHeaderWrapper = styled.div`
 
 const Step = ({
   children,
-  stepIndex
+  stepIndex,
+  onStepComplete
 }) => {
   const wrapperRef = useRef(null);
   const {
@@ -139,6 +140,12 @@ const Step = ({
       setNextButtonDisabled(false);
     }
   }, [values, errors, mappedFields, children]);
+
+  const handleClick = () => {
+    onStepComplete && onStepComplete();
+    nextStep && nextStep();
+  };
+
   useEffect(() => {
     if (stepIndex === currentStep) {
       wrapperRef.current !== null && window.scrollTo(0, wrapperRef.current.offsetTop);
@@ -160,7 +167,7 @@ const Step = ({
     disabled: nextButtonDisabled,
     type: "button",
     text: "Dalej",
-    onClick: nextStep
+    onClick: handleClick
   }), currentStep === lastStepIndex && /*#__PURE__*/React.createElement(Button, {
     disabled: nextButtonDisabled,
     type: "submit",
@@ -170,7 +177,8 @@ const Step = ({
 
 Step.propTypes = {
   stepIndex: _pt.number.isRequired,
-  children: _pt.any.isRequired
+  children: _pt.any.isRequired,
+  onStepComplete: _pt.func
 };
 export default Step;
 //# sourceMappingURL=index.js.map

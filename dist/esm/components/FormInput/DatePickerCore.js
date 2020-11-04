@@ -27,7 +27,6 @@ const StyledDatePicker = styled(DatePicker)`
   box-shadow: ${props => props.theme.inputBoxShadow};
   border-radius: ${props => props.theme.inputBorderRadius};
   width: 100%;
-  height: ${props => props.theme.inputHeight};
   display: flex;
   align-items: center;
   font-style: ${props => props.theme.inputFontStyle};

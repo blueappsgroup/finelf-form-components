@@ -13,7 +13,6 @@ const StyledRow = styled.div`
   align-items: flex-start;
   margin-bottom: 12px;
   position: relative;
-  height: ${props => props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${props => props.collapsed ? 'none' : 'hidden'};
 
   a {
@@ -40,6 +39,7 @@ const StyledArrow = styled.span`
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
+  margin-right: 10px;
 `;
 const Icon = styled.svg`
   fill: none;
@@ -80,7 +80,8 @@ const StyledCheckbox = styled.div`
     position: absolute;
     content: '*';
     top: 0px;
-    right: -13px;
+    right: -10px;
+    font-weight: bold;
     font-size: 15px;
     color: ${props => props.theme.checkboxBorderErrorColor};
   }
@@ -92,12 +93,12 @@ const StyledText = styled.span`
   font-weight: 500;
   font-size: ${props => props.theme.checkboxLabelFontSize};
   line-height: calc(
-    16px + 2 *
-      ${props => props.theme.checkboxBorderWidth}
+    5px + ${props => props.theme.checkboxLabelFontSize}
   );
   color: ${props => props.theme.checkboxLabelTextColor};
-  padding-left: 15px;
-  padding-right: 25px;
+  margin-top: 2px;
+
+
 `; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 const Checkbox = (_ref) => {
@@ -131,10 +132,11 @@ const Wrapper = styled.label`
 `; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 const StyledReadMore = styled(StyledText)`
-  color: ${props => props.theme.checkboxBorderColor};
+  color: ${props => props.theme.checkboxLabelTextColor};
   cursor: pointer;
   padding: 0;
-  margin-left: -23px;
+  margin-left: 5px;
+  font-weight: ${props => props.theme.styledSpanFontWeight}
 `;
 const StyledContentWrapper = styled.div`
   padding-right: ${props => props.hasReadMore ? '0px' : '25px'};

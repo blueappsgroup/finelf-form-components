@@ -15,11 +15,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _theme = require("../../consts/theme");
 
-var _sizes = require("../../consts/sizes");
-
 var _RedirectPage = _interopRequireDefault(require("../RedirectPage"));
-
-var _TransactionId = _interopRequireDefault(require("../TransactionId"));
 
 var _utils = require("../../utils");
 
@@ -62,7 +58,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  margin: 0 10px;\n  background: ", ";\n  font-family: ", ";\n  padding: ", ";\n  border-radius: 6px;\n  box-shadow: ", ";\n\n  @media ", " {\n    padding: ", ";\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  background: ", ";\n  font-family: ", ";\n  border-radius: 6px;\n  box-shadow: ", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -80,11 +76,7 @@ var StyledForm = (0, _styledComponents.default)(_formik.Form)(_templateObject(),
 }, function (props) {
   return props.theme.fontFamily;
 }, function (props) {
-  return props.theme.formPaddingMobile;
-}, function (props) {
   return props.theme.formBoxShadow;
-}, _sizes.device.tablet, function (props) {
-  return props.theme.formPadding;
 });
 
 var FormWrapper = function FormWrapper(_ref) {
@@ -191,16 +183,15 @@ var FormWrapper = function FormWrapper(_ref) {
             case 15:
               props.resetForm();
               props.setStatus(_form.formStatuses.submited);
-              _context.next = 23;
+              _context.next = 22;
               break;
 
             case 19:
               _context.prev = 19;
               _context.t0 = _context["catch"](1);
-              console.log(_context.t0);
               props.setStatus(_form.formStatuses.error);
 
-            case 23:
+            case 22:
             case "end":
               return _context.stop();
           }
@@ -257,7 +248,7 @@ var FormWrapper = function FormWrapper(_ref) {
       mainImg: redirectMainImg
     }) || /*#__PURE__*/_react.default.createElement(StyledForm, {
       id: id
-    }, /*#__PURE__*/_react.default.createElement(_TransactionId.default, null), children);
+    }, children);
   })));
 };
 

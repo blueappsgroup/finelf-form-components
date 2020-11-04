@@ -77,7 +77,8 @@
 
   const Step = ({
     children,
-    stepIndex
+    stepIndex,
+    onStepComplete
   }) => {
     const wrapperRef = (0, _react.useRef)(null);
     const {
@@ -166,6 +167,12 @@
         setNextButtonDisabled(false);
       }
     }, [values, errors, mappedFields, children]);
+
+    const handleClick = () => {
+      onStepComplete && onStepComplete();
+      nextStep && nextStep();
+    };
+
     (0, _react.useEffect)(() => {
       if (stepIndex === currentStep) {
         wrapperRef.current !== null && window.scrollTo(0, wrapperRef.current.offsetTop);
@@ -187,7 +194,7 @@
       disabled: nextButtonDisabled,
       type: "button",
       text: "Dalej",
-      onClick: nextStep
+      onClick: handleClick
     }), currentStep === lastStepIndex && /*#__PURE__*/_react2.default.createElement(_Button2.default, {
       disabled: nextButtonDisabled,
       type: "submit",
@@ -197,7 +204,8 @@
 
   Step.propTypes = {
     stepIndex: _propTypes2.default.number.isRequired,
-    children: _propTypes2.default.any.isRequired
+    children: _propTypes2.default.any.isRequired,
+    onStepComplete: _propTypes2.default.func
   };
   exports.default = Step;
 });

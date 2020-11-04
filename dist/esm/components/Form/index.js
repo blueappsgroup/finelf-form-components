@@ -8,9 +8,7 @@ import React, { useMemo, useState } from 'react';
 import { Formik, Form } from 'formik';
 import styled from 'styled-components';
 import { ThemeProvider } from '../../consts/theme';
-import { device } from '../../consts/sizes';
 import RedirectPage from '../RedirectPage';
-import TransactionId from '../TransactionId';
 import { FormContext, getFormValuesFromCache, resetFormValueCache, handleSendDataToApi, getFieldsValuesFromUrl } from '../../utils';
 import { formStatuses } from '../../consts/form';
 const StyledForm = styled(Form)`
@@ -18,17 +16,10 @@ const StyledForm = styled(Form)`
   flex-direction: column;
   max-width: ${props => props.theme.formMaxWidth};
   justify-self: center;
-  margin: 0 10px;
   background: ${props => props.theme.formBgColor};
   font-family: ${props => props.theme.fontFamily};
-  padding: ${props => props.theme.formPaddingMobile};
   border-radius: 6px;
   box-shadow: ${props => props.theme.formBoxShadow};
-
-  @media ${device.tablet} {
-    padding: ${props => props.theme.formPadding};
-    margin: 0 auto;
-  }
 `;
 
 const FormWrapper = ({
@@ -89,7 +80,6 @@ const FormWrapper = ({
       props.resetForm();
       props.setStatus(formStatuses.submited);
     } catch (e) {
-      console.log(e);
       props.setStatus(formStatuses.error);
     }
   };
@@ -133,7 +123,7 @@ const FormWrapper = ({
     mainImg: redirectMainImg
   }) || /*#__PURE__*/React.createElement(StyledForm, {
     id: id
-  }, /*#__PURE__*/React.createElement(TransactionId, null), children))));
+  }, children))));
 };
 
 export default FormWrapper;

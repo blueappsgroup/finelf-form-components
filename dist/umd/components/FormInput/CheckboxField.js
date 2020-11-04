@@ -38,8 +38,8 @@
     skipFieldForApi,
     disableCollapse,
     hasReadMore,
-    showMoreText = '( Więcej )',
-    showLessText = '( Zwiń )'
+    showMoreText = '(więcej)',
+    showLessText = '(zwiń)'
   }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     required: required,
     id: id,

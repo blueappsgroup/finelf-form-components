@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react", "formik", "styled-components", "../../consts/theme", "../../consts/sizes", "../RedirectPage", "../TransactionId", "../../utils", "../../consts/form"], factory);
+    define(["exports", "react", "formik", "styled-components", "../../consts/theme", "../RedirectPage", "../../utils", "../../consts/form"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"), require("formik"), require("styled-components"), require("../../consts/theme"), require("../../consts/sizes"), require("../RedirectPage"), require("../TransactionId"), require("../../utils"), require("../../consts/form"));
+    factory(exports, require("react"), require("formik"), require("styled-components"), require("../../consts/theme"), require("../RedirectPage"), require("../../utils"), require("../../consts/form"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.formik, global.styledComponents, global.theme, global.sizes, global.RedirectPage, global.TransactionId, global.utils, global.form);
+    factory(mod.exports, global.react, global.formik, global.styledComponents, global.theme, global.RedirectPage, global.utils, global.form);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _react, _formik, _styledComponents, _theme, _sizes, _RedirectPage, _TransactionId, _utils, _form) {
+})(this, function (exports, _react, _formik, _styledComponents, _theme, _RedirectPage, _utils, _form) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -22,8 +22,6 @@
   var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
   var _RedirectPage2 = _interopRequireDefault(_RedirectPage);
-
-  var _TransactionId2 = _interopRequireDefault(_TransactionId);
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -85,17 +83,10 @@
   flex-direction: column;
   max-width: ${props => props.theme.formMaxWidth};
   justify-self: center;
-  margin: 0 10px;
   background: ${props => props.theme.formBgColor};
   font-family: ${props => props.theme.fontFamily};
-  padding: ${props => props.theme.formPaddingMobile};
   border-radius: 6px;
   box-shadow: ${props => props.theme.formBoxShadow};
-
-  @media ${_sizes.device.tablet} {
-    padding: ${props => props.theme.formPadding};
-    margin: 0 auto;
-  }
 `;
 
   const FormWrapper = ({
@@ -156,7 +147,6 @@
         props.resetForm();
         props.setStatus(_form.formStatuses.submited);
       } catch (e) {
-        console.log(e);
         props.setStatus(_form.formStatuses.error);
       }
     };
@@ -200,7 +190,7 @@
       mainImg: redirectMainImg
     }) || /*#__PURE__*/_react2.default.createElement(StyledForm, {
       id: id
-    }, /*#__PURE__*/_react2.default.createElement(_TransactionId2.default, null), children))));
+    }, children))));
   };
 
   exports.default = FormWrapper;

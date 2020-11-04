@@ -30,9 +30,9 @@ var CheckboxFormField = function CheckboxFormField(_ref) {
       disableCollapse = _ref.disableCollapse,
       hasReadMore = _ref.hasReadMore,
       _ref$showMoreText = _ref.showMoreText,
-      showMoreText = _ref$showMoreText === void 0 ? '( Więcej )' : _ref$showMoreText,
+      showMoreText = _ref$showMoreText === void 0 ? '(więcej)' : _ref$showMoreText,
       _ref$showLessText = _ref.showLessText,
-      showLessText = _ref$showLessText === void 0 ? '( Zwiń )' : _ref$showLessText;
+      showLessText = _ref$showLessText === void 0 ? '(zwiń)' : _ref$showLessText;
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     required: required,
     id: id,

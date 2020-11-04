@@ -42,7 +42,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  cursor: pointer;\n  padding: 0;\n  margin-left: -23px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  cursor: pointer;\n  padding: 0;\n  margin-left: 5px;\n  font-weight: ", "\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -68,7 +68,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: inline;\n  font-style: normal;\n  font-weight: 500;\n  font-size: ", ";\n  line-height: calc(\n    16px + 2 *\n      ", "\n  );\n  color: ", ";\n  padding-left: 15px;\n  padding-right: 25px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline;\n  font-style: normal;\n  font-weight: 500;\n  font-size: ", ";\n  line-height: calc(\n    5px + ", "\n  );\n  color: ", ";\n  margin-top: 2px;\n\n\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -78,7 +78,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  position: relative;\n  width: 18px;\n  height: 18px;\n  background: ", ";\n  border-radius: 3px;\n  border: ", " solid;\n  border-color: ", ";\n  transition: all 150ms;\n\n  ", " {\n    visibility: ", ";\n  }\n\n  &::after {\n    display: ", ";\n    position: absolute;\n    content: '*';\n    top: 0px;\n    right: -13px;\n    font-size: 15px;\n    color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  position: relative;\n  width: 18px;\n  height: 18px;\n  background: ", ";\n  border-radius: 3px;\n  border: ", " solid;\n  border-color: ", ";\n  transition: all 150ms;\n\n  ", " {\n    visibility: ", ";\n  }\n\n  &::after {\n    display: ", ";\n    position: absolute;\n    content: '*';\n    top: 0px;\n    right: -10px;\n    font-weight: bold;\n    font-size: 15px;\n    color: ", ";\n  }\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -108,7 +108,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  vertical-align: middle;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  vertical-align: middle;\n  margin-right: 10px;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -128,7 +128,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: flex-start;\n  margin-bottom: 12px;\n  position: relative;\n  height: ", ";\n  overflow: ", ";\n\n  a {\n    color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: flex-start;\n  margin-bottom: 12px;\n  position: relative;\n  overflow: ", ";\n\n  a {\n    color: ", ";\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -140,8 +140,6 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var StyledRow = _styledComponents.default.div(_templateObject(), function (props) {
-  return props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')';
-}, function (props) {
   return props.collapsed ? 'none' : 'hidden';
 }, function (props) {
   return props.theme.checkboxLinkColor;
@@ -185,7 +183,7 @@ var StyledCheckbox = _styledComponents.default.div(_templateObject6(), function 
 var StyledText = _styledComponents.default.span(_templateObject7(), function (props) {
   return props.theme.checkboxLabelFontSize;
 }, function (props) {
-  return props.theme.checkboxBorderWidth;
+  return props.theme.checkboxLabelFontSize;
 }, function (props) {
   return props.theme.checkboxLabelTextColor;
 }); // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -214,7 +212,9 @@ var Wrapper = _styledComponents.default.label(_templateObject8()); // eslint-dis
 
 
 var StyledReadMore = (0, _styledComponents.default)(StyledText)(_templateObject9(), function (props) {
-  return props.theme.checkboxBorderColor;
+  return props.theme.checkboxLabelTextColor;
+}, function (props) {
+  return props.theme.styledSpanFontWeight;
 });
 
 var StyledContentWrapper = _styledComponents.default.div(_templateObject10(), function (props) {
