@@ -64,6 +64,7 @@ const StyledArrow = styled.span<StyledProps>`
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
+  margin-right: 10px;
 `
 
 const Icon = styled.svg`
@@ -113,7 +114,8 @@ const StyledCheckbox = styled.div<StyledProps>`
     position: absolute;
     content: '*';
     top: 0px;
-    right: -13px;
+    right: -10px;
+    font-weight: bold;
     font-size: 15px;
     color: ${(props: StyledProps): string =>
       props.theme.checkboxBorderErrorColor};
@@ -122,18 +124,17 @@ const StyledCheckbox = styled.div<StyledProps>`
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StyledText = styled.span<any>`
-  display: inline-block;
+  display: inline;
   font-style: normal;
   font-weight: 500;
   font-size: ${(props: StyledProps): string => props.theme.checkboxLabelFontSize};
   line-height: calc(
-    16px + 2 *
-      ${(props: StyledProps): string => props.theme.checkboxBorderWidth}
+    5px + ${(props: StyledProps): string => props.theme.checkboxLabelFontSize}
   );
   color: ${(props: StyledProps): string => props.theme.checkboxLabelTextColor};
-  padding-left: 15px;
-  padding-right: 25px;
   margin-top: 2px;
+
+
 `
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -163,7 +164,7 @@ const StyledReadMore = styled<any>(StyledText)`
   color: ${(props: StyledProps): string => props.theme.checkboxLabelTextColor};
   cursor: pointer;
   padding: 0;
-  margin-left: 13px;
+  margin-left: 5px;
   font-weight: ${(props: StyledProps): string => props.theme.styledSpanFontWeight}
 `
 
