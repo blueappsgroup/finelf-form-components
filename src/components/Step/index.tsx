@@ -64,9 +64,10 @@ type Props = {
   stepIndex: number
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any
+  onStepComplete?: () => void
 }
 
-const Step: FC<Props> = ({ children, stepIndex }) => {
+const Step: FC<Props> = ({ children, stepIndex, onStepComplete }) => {
   const wrapperRef = useRef<any>(null)
   const {
     currentStep = 0,
@@ -172,6 +173,11 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
     }
   }, [values, errors, mappedFields, children])
 
+  const handleClick = () => {
+    onStepComplete && onStepComplete()
+    nextStep && nextStep()
+  }
+
   useEffect(() => {
     if (stepIndex === currentStep) {
       wrapperRef.current !== null &&
@@ -213,7 +219,7 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
             disabled={nextButtonDisabled}
             type="button"
             text="Dalej"
-            onClick={nextStep}
+            onClick={handleClick}
           />
         )}
         {currentStep === lastStepIndex && (
