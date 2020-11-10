@@ -29,10 +29,6 @@ jobs:
           name: Linters
           command: yarn lint
 
-      - run:
-          name: Build production version
-          command: yarn build:lib
-
 workflows:
   version: 2
   build and test:
