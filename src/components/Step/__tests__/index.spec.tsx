@@ -8,7 +8,6 @@ import StepHeader from '../StepHeader'
 
 describe('base <Step />', () => {
   const onSubmit = jest.fn()
-  // const setNextButtonDisabled = jest.fn()
   const stepsLength = 2
   const stepsTitles = ['1. Podstawowe dane', '2. Szczegółowe dane']
   const setupWrapper = ({
@@ -60,6 +59,20 @@ describe('base <Step />', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
+  it('buttons disabled if fields are filled improperly', async () => {
+    const wrapper = setupWrapper({})
+    const { container, firstName } = wrapper
+
+    await act(async () => {
+      fireEvent.change(firstName, { target: { value: '123' } })
+    })
+
+    const button = container.querySelector('button[disabled]')
+
+    expect(button).toBeTruthy()
+    expect(wrapper).toMatchSnapshot()
+  })
+
   it('setNextButtonDisabled have been called after fill step fields', async () => {
     const wrapper = setupWrapper({})
     const { container, firstName } = wrapper
@@ -69,7 +82,6 @@ describe('base <Step />', () => {
     })
 
     expect(container.querySelector('button:not([disabled])')).toBeTruthy()
-    // expect(setNextButtonDisabled).toHaveBeenCalledTimes(8)
     expect(wrapper).toMatchSnapshot()
   })
 })
