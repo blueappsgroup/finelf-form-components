@@ -22,7 +22,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
         >
           <input
             class="sc-jrsJCI gMTPZI react-datepicker-ignore-onclickoutside"
-            name="name"
+            name="date"
             placeholder="dd/MM/yyyy"
             readonly=""
             type="text"
@@ -851,7 +851,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
 exports[`<DatePickerCore /> matches snapshot DatePickerCore 1`] = `
 <input
   class="sc-jrsJCI gMTPZI"
-  name="name"
+  name="date"
   placeholder="dd/MM/yyyy"
   type="text"
   value=""
