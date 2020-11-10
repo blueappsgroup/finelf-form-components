@@ -6,8 +6,6 @@ import DatePickerCore from '../DatePickerCore'
 
 describe('<DatePickerCore />', () => {
   const onSubmit = jest.fn()
-  const onBlur = jest.fn()
-  const onChange = jest.fn()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const setupWrapper: (config: any) => any = ({
     formId = 'testForm',

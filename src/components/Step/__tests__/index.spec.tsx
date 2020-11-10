@@ -8,7 +8,6 @@ import StepHeader from '../StepHeader'
 
 describe('base <Step />', () => {
   const onSubmit = jest.fn()
-  // const setNextButtonDisabled = jest.fn()
   const stepsLength = 2
   const stepsTitles = ['1. Podstawowe dane', '2. Szczegółowe dane']
   const setupWrapper = ({
@@ -40,10 +39,6 @@ describe('base <Step />', () => {
     }
   }
 
-  beforeEach(() => {
-    // jest.spyOn(React, 'useState').mockImplementation(nextButtonDisabled => [nextButtonDisabled, setNextButtonDisabled])
-  })
-
   it('matches snapshot', () => {
     const wrapper = setupWrapper({})
 
@@ -69,7 +64,6 @@ describe('base <Step />', () => {
     })
 
     expect(container.querySelector('button:not([disabled])')).toBeTruthy()
-    // expect(setNextButtonDisabled).toHaveBeenCalledTimes(8)
     expect(wrapper).toMatchSnapshot()
   })
 })
