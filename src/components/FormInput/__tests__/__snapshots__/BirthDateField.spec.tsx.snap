@@ -2,11 +2,10 @@
 
 exports[`<BirthDateField /> matches snapshot 1`] = `
 <input
-  class="sc-crzoUp kUQhja"
-  id="birthDateField"
+  class="sc-pNWxx gayLBx"
   name="name"
   placeholder="Data urodzenia"
-  type="date"
+  type="text"
   value=""
 />
 `;
@@ -15,15 +14,11 @@ exports[`<BirthDateField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-kEqYlL dXeAFH"
     >
       <label
         for="name"
@@ -31,17 +26,23 @@ exports[`<BirthDateField /> matches snapshot with label 1`] = `
         Test
       </label>
       <div
-        class="sc-dIvqjp iaFmok"
+        class="sc-fujyUd jdPpAV"
       >
-        <input
-          class="sc-crzoUp kUQhja"
-          id="birthDateField"
-          label="Test"
-          name="name"
-          placeholder="Data urodzenia"
-          type="date"
-          value=""
-        />
+        <div
+          class="react-datepicker-wrapper"
+        >
+          <div
+            class="react-datepicker__input-container"
+          >
+            <input
+              class="sc-pNWxx gayLBx"
+              name="name"
+              placeholder="Data urodzenia"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
       </div>
     </div>
   </form>

@@ -4,7 +4,7 @@ exports[`<RedirectPage /> matches snapshot 1`] = `
 <body>
   <div>
     <div
-      class="sc-bdnylx eYlpll"
+      class="sc-bdnylx dMUDiq"
     >
       <div
         class="sc-gtssRu bNNyTY"
@@ -21,7 +21,7 @@ exports[`<RedirectPage /> matches snapshot 1`] = `
           <span
             class="sc-eCApGN eAXOzQ"
           >
-            5
+            3
             s
           </span>
         </h3>

@@ -153,11 +153,7 @@ const FormWrapper: FC<FormProps> = ({
                 timeToRedirect={timeToRedirect}
                 mainImg={redirectMainImg}
               />
-            )) || (
-              <StyledForm id={id}>
-                {children}
-              </StyledForm>
-            )
+            )) || <StyledForm id={id}>{children}</StyledForm>
           }
         </Formik>
       </ThemeProvider>

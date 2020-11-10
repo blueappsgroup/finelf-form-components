@@ -127,14 +127,13 @@ const StyledText = styled.span<any>`
   display: inline;
   font-style: normal;
   font-weight: 500;
-  font-size: ${(props: StyledProps): string => props.theme.checkboxLabelFontSize};
+  font-size: ${(props: StyledProps): string =>
+    props.theme.checkboxLabelFontSize};
   line-height: calc(
     5px + ${(props: StyledProps): string => props.theme.checkboxLabelFontSize}
   );
   color: ${(props: StyledProps): string => props.theme.checkboxLabelTextColor};
   margin-top: 2px;
-
-
 `
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -165,11 +164,13 @@ const StyledReadMore = styled<any>(StyledText)`
   cursor: pointer;
   padding: 0;
   margin-left: 5px;
-  font-weight: ${(props: StyledProps): string => props.theme.styledSpanFontWeight}
+  font-weight: ${(props: StyledProps): string =>
+    props.theme.styledSpanFontWeight};
 `
 
 const StyledContentWrapper = styled.div<StyledProps>`
-  padding-right: ${(props: StyledProps): string => props.hasReadMore ? '0px' : '25px'};
+  padding-right: ${(props: StyledProps): string =>
+    props.hasReadMore ? '0px' : '25px'};
 `
 
 export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({

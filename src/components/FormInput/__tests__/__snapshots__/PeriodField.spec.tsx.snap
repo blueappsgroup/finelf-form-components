@@ -2,7 +2,7 @@
 
 exports[`<PeriodField /> matches snapshot 1`] = `
 <input
-  class="sc-bqGHjH bZbIfE"
+  class="sc-fFSRdu kcSJhx"
   id="periodField"
   label="Okres spłaty"
   max="60"
@@ -18,18 +18,14 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd lIvqK"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-pNWxx iTQnTB"
+      class="sc-kEqYlL dXeAFH"
     >
       <div
-        class="sc-jrsJCI gRaWaU"
+        class="sc-iqAbSa kMNaRW"
       >
         <label
           for="name"
@@ -37,10 +33,10 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
           Test
         </label>
         <div
-          class="sc-dIsAE esAFLE"
+          class="sc-fnVYJo djjOXB"
         >
           <input
-            class="sc-bqGHjH bZbIfE"
+            class="sc-fFSRdu kcSJhx"
             id="periodField"
             label="Test"
             max="60"
@@ -51,14 +47,14 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
             value="12"
           />
           <span
-            class="sc-fFSRdu bULHRF"
+            class="sc-fKgIGh bYaAAt"
           >
             Dni
           </span>
         </div>
       </div>
       <div
-        class="sc-iemXMA ijBKWi"
+        class="sc-cxNIbT hVZAQV"
       >
         <div
           aria-orientation="horizontal"
@@ -86,10 +82,10 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
         </div>
       </div>
       <div
-        class="sc-jrsJCI gRaWaU"
+        class="sc-iqAbSa kMNaRW"
       >
         <span
-          class="sc-hBMVcZ kVKZky"
+          class="sc-dlMBXb hSWWLg"
         >
           Min. 
           3
@@ -97,7 +93,7 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
           Dni
         </span>
         <span
-          class="sc-hBMVcZ kVKZky"
+          class="sc-dlMBXb hSWWLg"
         >
           Max. 
           60
