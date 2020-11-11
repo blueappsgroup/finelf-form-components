@@ -29,6 +29,10 @@ jobs:
           name: Linters
           command: yarn lint
 
+      - run:
+          name: tests
+          command: yarn test a
+
 workflows:
   version: 2
   build and test:
