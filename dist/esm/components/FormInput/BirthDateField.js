@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field } from 'formik';
 import { BaseDateField } from './base';
-import { validateDate } from './validate';
+import { validateBirthDate } from './validate';
 
 const BirthDateField = ({
   id,
@@ -20,7 +20,7 @@ const BirthDateField = ({
   name: name,
   label: label,
   placeholder: placeholder,
-  validate: validateDate(required),
+  validate: validateBirthDate(required),
   dateFormat: dateFormat,
   openToDate: openToDate
 });

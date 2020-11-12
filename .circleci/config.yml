@@ -1,0 +1,40 @@
+version: 2.1
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:current-browsers
+
+jobs:
+  build_and_test:
+    <<: *defaults
+    environment:
+      CI: false
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Install dependencies with Yarn
+          command: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Linters
+          command: yarn lint
+
+      - run:
+          name: tests
+          command: yarn test a
+
+workflows:
+  version: 2
+  build and test:
+    jobs:
+      - build_and_test

@@ -74,11 +74,11 @@ export const Row = styled.div`
     }
   }
 `;
-export const RowWithFixedColumn = styled.div` 
+export const RowWithFixedColumn = styled.div`
   display: flex;
   width: 100%;
   margin: 0 auto;
-  
+
   @media ${device.laptopL} {
     & > :first-child {
       position: fixed;
@@ -86,8 +86,8 @@ export const RowWithFixedColumn = styled.div`
       width: 50%;
       padding-top: 0;
     }
-    
-    & > :last-child { 
+
+    & > :last-child {
       position: absolute;
       right: 0;
       width: 50%;
@@ -120,7 +120,6 @@ export const StyledInput = styled.input`
   box-shadow: ${props => props.theme.inputBoxShadow};
   border-radius: ${props => props.theme.inputBorderRadius};
   width: 100%;
-  height: ${props => props.theme.inputHeight};
   display: flex;
   align-items: center;
   font-style: ${props => props.theme.inputFontStyle};
@@ -146,7 +145,6 @@ export const StyledInput = styled.input`
 `;
 export const SliderRow = styled.div`
   display: flex;
-  padding: 25px 0;
   flex-direction: row;
 `;
 const SliderInput = styled.input`
@@ -195,7 +193,6 @@ const StyledSelect = styled.select`
   box-shadow: ${props => props.theme.styledSelectBoxShadow};
   border-radius: ${props => props.theme.styledSelectBorderRadius};
   width: 100%;
-  height: ${props => props.theme.styledSelectHeight};
   display: flex;
   align-items: center;
   font-style: ${props => props.theme.styledSelectFontStyle};
@@ -207,7 +204,9 @@ const StyledSelect = styled.select`
   color: ${props => props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
   appearance: none;
 
-  option:disabled {
+  [disabled],
+  option:disabled,
+  option:invalid{
     color: ${props => props.theme.styledSelectPlaceHolderColor};
   }
 
@@ -219,7 +218,7 @@ const StyledSelectArrow = styled.span`
   position: absolute;
   border: solid;
   border-width: 0 2px 2px 0;
-  border-color: ${props => props.theme.styledSelectArrowColor}; 
+  border-color: ${props => props.theme.styledSelectArrowColor};
   display: inline-block;
   padding: 4px;
   vertical-align: middle;
@@ -231,6 +230,9 @@ const StyledSelectArrow = styled.span`
   height: 0;
   transform: rotate(45deg);
 `;
+const StyledSelectValueOption = styled.option`
+  color: ${props => props.theme.inputPlaceHolderColor};
+`;
 const StyledSpan = styled.span`
   font-size: ${props => props.theme.styledSpanFontSize};
   font-weight: ${props => props.theme.styledSpanFontWeight};
@@ -239,8 +241,7 @@ const StyledSpan = styled.span`
 const StyledInputSuffix = styled.span`
   display: flex;
   align-items: center;
-  height: ${props => props.theme.inputHeight};
-  width: ${props => props.theme.styledInputSuffixWidth};
+  padding: 0 20px;
   box-sizing: border-box;
   background-color: ${props => props.theme.styledInputSuffixBgColor};
   border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
@@ -253,7 +254,7 @@ const StyledSliderInputSuffix = styled.span`
   display: flex;
   align-items: center;
   height: ${props => props.theme.sliderInputHeight};
-  width: ${props => props.theme.styledInputSuffixWidth};
+  padding: 0 15px;
   box-sizing: border-box;
   background-color: ${props => props.theme.styledInputSuffixBgColor};
   border-radius: ${props => props.theme.styledInputSuffixBorderRadius};
@@ -266,22 +267,21 @@ const StyledInputPrefixContainer = styled.div`
   background: ${props => props.theme.inputBgColor};
   position: relative;
   left: 0px;
-  height: ${props => props.theme.inputHeight};
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
-  height: ${props => props.theme.inputHeight};
   border: 1px solid ${props => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   border-right: none;
   border-top-left-radius: ${props => props.theme.inputBorderRadius};
   border-bottom-left-radius: ${props => props.theme.inputBorderRadius};
   color: ${props => props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
   font-size: ${props => props.theme.inputFontSize};
-  font-weight: ${props => props.theme.inputFontWeight};  
+  font-weight: ${props => props.theme.inputFontWeight};
 `;
 const StyledInputPrefix = styled.span`
   padding: ${props => props.theme.styledInputPrefixPadding};
   border-right: 1px solid ${props => props.theme.inputBorderColor};
+  color: ${props => props.theme.inputPlaceHolderColor};
 `;
 const SliderWrapper = styled.div`
  padding-bottom: 25px;
@@ -336,8 +336,9 @@ const InputWrapper = styled.div`
     bottom: 0;
     left: ${props => props.theme.inputIconLeft};
     margin: auto;
-    padding-right: 20px;
+    padding-right: ${props => props.theme.inputIconLeft};
     border-right: 1px solid ${props => props.theme.inputBorderColor};
+    fill: ${props => props.theme.inputPlaceHolderColor};
   }
   input {
     padding: ${props => props.withIcon ? props.theme.inputWithIconPadding : props.theme.inputPadding};
@@ -449,15 +450,15 @@ export const BaseSelectField = (_ref3) => {
 
   const handleOnBlur = e => {
     setFormValuesToCache(values, id);
-    console.log('blur');
     field.onBlur && field.onBlur(e);
   };
 
   const options = options => {
-    return [/*#__PURE__*/React.createElement("option", {
+    return [/*#__PURE__*/React.createElement(StyledSelectValueOption, {
       key: "select",
       value: "select",
-      disabled: true
+      disabled: true,
+      selected: true
     }, `wybierz ${props.required && '*' || ''}`)].concat(Object.keys(options).map(option => {
       return /*#__PURE__*/React.createElement("option", {
         key: option,

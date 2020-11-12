@@ -1,5 +1,5 @@
 import _pt from "prop-types";
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useFormikContext } from 'formik';
 import Button from '../Button';
@@ -50,8 +50,10 @@ const StepHeaderWrapper = styled.div`
 
 const Step = ({
   children,
-  stepIndex
+  stepIndex,
+  onStepComplete
 }) => {
+  const wrapperRef = useRef(null);
   const {
     currentStep = 0,
     stepsLength = 1,
@@ -138,7 +140,19 @@ const Step = ({
       setNextButtonDisabled(false);
     }
   }, [values, errors, mappedFields, children]);
+
+  const handleClick = () => {
+    onStepComplete && onStepComplete();
+    nextStep && nextStep();
+  };
+
+  useEffect(() => {
+    if (stepIndex === currentStep) {
+      wrapperRef.current !== null && window.scrollTo(0, wrapperRef.current.offsetTop);
+    }
+  }, [currentStep, stepIndex]);
   return /*#__PURE__*/React.createElement(Wrapper, {
+    ref: wrapperRef,
     visible: stepIndex === currentStep
   }, /*#__PURE__*/React.createElement(StepHeaderWrapper, null, currentStep !== 0 && /*#__PURE__*/React.createElement(StepHeader, null, stepsTitleList && stepsTitleList[currentStep - 1]), stepIndex === currentStep && /*#__PURE__*/React.createElement(StepHeader, {
     activeStep: true
@@ -153,7 +167,7 @@ const Step = ({
     disabled: nextButtonDisabled,
     type: "button",
     text: "Dalej",
-    onClick: nextStep
+    onClick: handleClick
   }), currentStep === lastStepIndex && /*#__PURE__*/React.createElement(Button, {
     disabled: nextButtonDisabled,
     type: "submit",
@@ -163,7 +177,8 @@ const Step = ({
 
 Step.propTypes = {
   stepIndex: _pt.number.isRequired,
-  children: _pt.any.isRequired
+  children: _pt.any.isRequired,
+  onStepComplete: _pt.func
 };
 export default Step;
 //# sourceMappingURL=index.js.map

@@ -16,12 +16,9 @@ export declare const theme: {
     fontFamily: string;
     formBoxShadow: string;
     formMaxWidth: string;
-    formPaddingMobile: string;
-    formPadding: string;
     styledContainerMobilePadding: string;
     styledContainerPadding: string;
     formBgColor: string;
-    inputHeight: string;
     inputTextColor: string;
     inputPlaceHolderColor: string;
     inputErrorColor: string;
@@ -35,6 +32,7 @@ export declare const theme: {
     inputBgColor: string;
     inputBoxShadow: string;
     inputFontSize: string;
+    datePickerFontSize: string;
     inputFontWeight: string;
     inputFontStyle: string;
     inputLineHeight: string;
@@ -44,7 +42,6 @@ export declare const theme: {
     styledRowFlexWrap: string;
     styledRowLabelPadding: string;
     styledRowLabelFontColor: string;
-    styledSelectHeight: string;
     styledSelectTextColor: string;
     styledSelectPlaceHolderColor: string;
     styledSelectArrowColor: string;
@@ -62,7 +59,6 @@ export declare const theme: {
     styledSelectFontStyle: string;
     styledSelectLineHeight: string;
     styledSelectPadding: string;
-    styledSpanFontSize: string;
     styledSpanFontColor: string;
     styledSpanFontWeight: string;
     styledRowMarginBottom: string;
@@ -103,7 +99,6 @@ export declare const theme: {
     successStatusTextColor: string;
     errorStatusTextColor: string;
     sliderHeight: string;
-    sliderInputHeight: string;
     sliderInputTextAlign: string;
     sliderBorderRadius: string;
     sliderBgColor: string;
@@ -120,7 +115,6 @@ export declare const theme: {
     sliderHandleAfterWidth: string;
     sliderHandleAfterHeight: string;
     sliderHandleAfterBorderRadius: string;
-    styledInputSuffixWidth: string;
     styledInputSuffixBgColor: string;
     styledInputSuffixTextColor: string;
     styledInputSuffixFontSize: string;

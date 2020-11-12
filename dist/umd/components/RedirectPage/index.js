@@ -65,7 +65,7 @@
     backgroundImage,
     logoImg,
     mainImg,
-    timeToRedirect = 5,
+    timeToRedirect = 3,
     redirectUrl
   }) => {
     const [counter, setCounter] = (0, _react.useState)(timeToRedirect);

@@ -59,7 +59,8 @@ var CheckboxesGroup = function CheckboxesGroup(_ref) {
         id: "".concat(name, ".selectAll"),
         name: "".concat(name, ".selectAll"),
         label: "Zaznacz wszystkie zgody",
-        onChange: handleOnChange
+        onChange: handleOnChange,
+        disableCollapse: true
       }), children && !hasManyCheckboxes && /*#__PURE__*/_react.default.createElement(_CheckboxField.default, _extends({}, children.props, {
         name: "".concat(name, ".").concat(children.props.name)
       })), children && hasManyCheckboxes && children.map(function (item) {

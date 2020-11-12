@@ -25,11 +25,11 @@
     };
   }
 
-  const StepHeader = _styledComponents2.default.h3`
+  const StepHeader = _styledComponents2.default.div`
   display: flex;
   justify-content: center;
   flex-grow: 1;
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 0px;
   font-weight: ${props => props.activeStep ? 800 : 400};
   color: ${props => props.activeStep ? props.theme.stepHeaderActiveColor : props.theme.stepHeaderInActiveColor};
@@ -46,25 +46,12 @@
   }
 
   @media ${_sizes.device.mobileL} {
-    font-size: 22px;
-    margin: 0px 0px 40px;
-
     &:first-of-type {
       margin-right: 15px;
     }
 
     &:last-child {
       margin-left: 15px;
-    }
-  }
-
-  @media ${_sizes.device.tablet} {
-    &:first-of-type {
-      margin-right: 30px;
-    }
-
-    &:last-child {
-      margin-left: 30px;
     }
   }
 `;

@@ -4,21 +4,17 @@ exports[`<IncomeField/> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-iqAbSa VlpJw"
+      class="sc-kEqYlL dXeAFH"
     >
       <div
-        class="sc-lmgQde iscgnI"
+        class="sc-lmgQde krpvJC"
       >
         <input
-          class="sc-fnVYJo cMeJLu"
+          class="sc-hBMVcZ kICbZw"
           id="testId"
           name="income"
           placeholder="Dochód"
@@ -27,7 +23,7 @@ exports[`<IncomeField/> input field with custom validation 1`] = `
         />
       </div>
       <span
-        class="sc-hBMVcZ kROtfw"
+        class="sc-ksluoS cNvzFC"
       >
         Podana kwota jest nieprawidłowa
       </span>
@@ -38,7 +34,7 @@ exports[`<IncomeField/> input field with custom validation 1`] = `
 
 exports[`<IncomeField/> matches snapshot 1`] = `
 <input
-  class="sc-fnVYJo csxChD"
+  class="sc-hBMVcZ hoeMOd"
   id="testId"
   name="income"
   placeholder="Dochód"
@@ -51,15 +47,11 @@ exports[`<IncomeField/> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-iqAbSa VlpJw"
+      class="sc-kEqYlL dXeAFH"
     >
       <label
         for="income"
@@ -67,10 +59,10 @@ exports[`<IncomeField/> matches snapshot with error 1`] = `
         Income*
       </label>
       <div
-        class="sc-lmgQde iscgnI"
+        class="sc-lmgQde krpvJC"
       >
         <input
-          class="sc-fnVYJo cMeJLu"
+          class="sc-hBMVcZ kICbZw"
           id="testId"
           label="Income"
           name="income"
@@ -81,7 +73,7 @@ exports[`<IncomeField/> matches snapshot with error 1`] = `
         />
       </div>
       <span
-        class="sc-hBMVcZ kROtfw"
+        class="sc-ksluoS cNvzFC"
       >
         To pole jest wymagane
       </span>
@@ -94,15 +86,11 @@ exports[`<IncomeField/> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-iqAbSa VlpJw"
+      class="sc-kEqYlL dXeAFH"
     >
       <label
         for="income"
@@ -110,10 +98,10 @@ exports[`<IncomeField/> matches snapshot with label 1`] = `
         Income
       </label>
       <div
-        class="sc-lmgQde iscgnI"
+        class="sc-lmgQde krpvJC"
       >
         <input
-          class="sc-fnVYJo csxChD"
+          class="sc-hBMVcZ hoeMOd"
           id="testId"
           label="Income"
           name="income"

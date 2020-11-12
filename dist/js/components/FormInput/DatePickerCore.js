@@ -40,7 +40,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n    font-size: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &::placeholder {\n    color: ", ";\n    font-size: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -73,8 +73,6 @@ var StyledDatePicker = (0, _styledComponents.default)(_reactDatepicker.default)(
   return props.theme.inputBoxShadow;
 }, function (props) {
   return props.theme.inputBorderRadius;
-}, function (props) {
-  return props.theme.inputHeight;
 }, function (props) {
   return props.theme.inputFontStyle;
 }, function (props) {
@@ -167,13 +165,15 @@ var DatePickerCore = function DatePickerCore(_ref4) {
       dateFormat = _ref4$dateFormat === void 0 ? 'dd/MM/yyyy' : _ref4$dateFormat,
       _ref4$openToDate = _ref4.openToDate,
       openToDate = _ref4$openToDate === void 0 ? new Date("01/01/".concat((0, _getYear.default)(new Date()) - 18)) : _ref4$openToDate,
-      props = _objectWithoutProperties(_ref4, ["dateFormat", "openToDate"]);
+      selected = _ref4.selected,
+      props = _objectWithoutProperties(_ref4, ["dateFormat", "openToDate", "selected"]);
 
   return /*#__PURE__*/_react.default.createElement(StyledWrapper, null, /*#__PURE__*/_react.default.createElement(StyledDatePicker, _extends({}, props, {
+    selected: selected,
     dateFormat: dateFormat,
     locale: "pl",
     renderCustomHeader: CustomHeader,
-    openToDate: openToDate,
+    openToDate: selected || openToDate,
     onFocus: function onFocus(e) {
       return e.target.readOnly = true;
     }

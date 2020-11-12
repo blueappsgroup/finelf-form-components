@@ -4,21 +4,17 @@ exports[`<TextField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-iqAbSa VlpJw"
+      class="sc-kEqYlL dXeAFH"
     >
       <div
-        class="sc-lmgQde iscgnI"
+        class="sc-lmgQde krpvJC"
       >
         <input
-          class="sc-fnVYJo cMeJLu"
+          class="sc-hBMVcZ kICbZw"
           id="textField"
           name="name"
           type="text"
@@ -26,7 +22,7 @@ exports[`<TextField /> input field with custom validation 1`] = `
         />
       </div>
       <span
-        class="sc-hBMVcZ kROtfw"
+        class="sc-ksluoS cNvzFC"
       >
         Bad name
       </span>
@@ -37,7 +33,7 @@ exports[`<TextField /> input field with custom validation 1`] = `
 
 exports[`<TextField /> matches snapshot 1`] = `
 <input
-  class="sc-fnVYJo csxChD"
+  class="sc-hBMVcZ hoeMOd"
   id="textField"
   name="name"
   type="text"
@@ -49,15 +45,11 @@ exports[`<TextField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-iqAbSa VlpJw"
+      class="sc-kEqYlL dXeAFH"
     >
       <label
         for="name"
@@ -65,10 +57,10 @@ exports[`<TextField /> matches snapshot with error 1`] = `
         Test*
       </label>
       <div
-        class="sc-lmgQde iscgnI"
+        class="sc-lmgQde krpvJC"
       >
         <input
-          class="sc-fnVYJo cMeJLu"
+          class="sc-hBMVcZ kICbZw"
           id="textField"
           label="Test"
           name="name"
@@ -78,7 +70,7 @@ exports[`<TextField /> matches snapshot with error 1`] = `
         />
       </div>
       <span
-        class="sc-hBMVcZ kROtfw"
+        class="sc-ksluoS cNvzFC"
       >
         To pole jest wymagane
       </span>
@@ -91,15 +83,11 @@ exports[`<TextField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-iqAbSa VlpJw"
+      class="sc-kEqYlL dXeAFH"
     >
       <label
         for="name"
@@ -107,10 +95,10 @@ exports[`<TextField /> matches snapshot with label 1`] = `
         Test
       </label>
       <div
-        class="sc-lmgQde iscgnI"
+        class="sc-lmgQde krpvJC"
       >
         <input
-          class="sc-fnVYJo csxChD"
+          class="sc-hBMVcZ hoeMOd"
           id="textField"
           label="Test"
           name="name"

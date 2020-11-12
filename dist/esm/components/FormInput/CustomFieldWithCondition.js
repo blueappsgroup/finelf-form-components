@@ -18,7 +18,8 @@ const CustomFieldWithCondition = props => {
     values,
     errors,
     setErrors,
-    setValues
+    setValues,
+    setFieldTouched
   } = useFormikContext();
   const {
     id
@@ -71,7 +72,7 @@ const CustomFieldWithCondition = props => {
         setVisible(isVisible);
       }
     }
-  }, [values, setValues, props.visibleCondition, props.name, visible, errors, setErrors, id]);
+  }, [values, setValues, props.visibleCondition, props.name, visible, errors, setErrors, id, required, setFieldTouched]);
   return /*#__PURE__*/React.createElement(Field, _extends({}, props, {
     required: required && visible,
     validate: props.validate(required && visible),

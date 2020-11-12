@@ -14,3 +14,4 @@ export declare const validateAmountOfChildren: (customErrorMsg: string | undefin
 export declare const validateIncome: (customErrorMsg: string | undefined, required: boolean) => (value: string) => string | undefined;
 export declare const validateSelect: (required: boolean, options: object) => (value: string) => string | undefined;
 export declare const validateDate: (required: boolean) => (value: string) => string | undefined;
+export declare const validateBirthDate: (required: boolean) => (value: string) => string | undefined;

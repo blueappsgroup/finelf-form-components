@@ -19,7 +19,8 @@ const StyledErrorText = styled(StyledError)`
 const Agreemnets = ({
   linksForReplace,
   name = 'agreements',
-  requiredErorText = '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.'
+  requiredErorText = '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.',
+  hasReadMore
 }) => {
   const {
     id,
@@ -32,7 +33,11 @@ const Agreemnets = ({
       let newContent = item.content;
 
       if (linksForReplace) {
-        Object.keys(linksForReplace).forEach(key => newContent = newContent.replace(`${key}`, `${linksForReplace[key]}`));
+        Object.keys(linksForReplace).forEach(key => {
+          const regxp = new RegExp(key, 'g');
+          newContent = newContent.replace(regxp, linksForReplace[key]);
+          return newContent;
+        });
       }
 
       return _objectSpread(_objectSpread({}, item), {}, {
@@ -78,7 +83,8 @@ const Agreemnets = ({
     key: item.id,
     name: `${item.id}`,
     HTMLcontent: item.content,
-    required: item.required
+    required: item.required,
+    hasReadMore: hasReadMore
   }))), error && /*#__PURE__*/React.createElement(StyledErrorText, null, requiredErorText)));
 };
 
@@ -86,7 +92,8 @@ Agreemnets.propTypes = {
   linksForReplace: _pt.objectOf(_pt.string),
   name: _pt.string,
   groupType: _pt.string,
-  requiredErorText: _pt.string
+  requiredErorText: _pt.string,
+  hasReadMore: _pt.bool
 };
 Agreemnets.defaultProps = {
   name: 'agreements',

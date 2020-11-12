@@ -40,6 +40,7 @@ const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
             name={`${name}.selectAll`}
             label="Zaznacz wszystkie zgody"
             onChange={handleOnChange}
+            disableCollapse
           />
           {children && !hasManyCheckboxes && (
             <CheckboxField

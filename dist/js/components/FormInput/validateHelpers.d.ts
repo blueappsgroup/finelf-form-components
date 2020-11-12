@@ -13,3 +13,4 @@ export declare const isValidBankAccountNumber: (value: string) => boolean;
 export declare const isValidIDCard: (value: string) => boolean;
 export declare const isNotValidIDCard: (value: string) => boolean;
 export declare const isNotValidOption: (value: string, options: object) => boolean;
+export declare const isAdult: (dateString: string) => boolean;

@@ -13,7 +13,6 @@ const StyledRow = styled.div`
   align-items: flex-start;
   margin-bottom: 12px;
   position: relative;
-  height: ${props => props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${props => props.collapsed ? 'none' : 'hidden'};
 
   a {
@@ -40,6 +39,7 @@ const StyledArrow = styled.span`
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
+  margin-right: 10px;
 `;
 const Icon = styled.svg`
   fill: none;
@@ -80,7 +80,8 @@ const StyledCheckbox = styled.div`
     position: absolute;
     content: '*';
     top: 0px;
-    right: -13px;
+    right: -10px;
+    font-weight: bold;
     font-size: 15px;
     color: ${props => props.theme.checkboxBorderErrorColor};
   }
@@ -92,12 +93,12 @@ const StyledText = styled.span`
   font-weight: 500;
   font-size: ${props => props.theme.checkboxLabelFontSize};
   line-height: calc(
-    16px + 2 *
-      ${props => props.theme.checkboxBorderWidth}
+    5px + ${props => props.theme.checkboxLabelFontSize}
   );
   color: ${props => props.theme.checkboxLabelTextColor};
-  padding-left: 15px;
-  padding-right: 25px;
+  margin-top: 2px;
+
+
 `; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 const Checkbox = (_ref) => {
@@ -128,6 +129,17 @@ const Wrapper = styled.label`
   &:hover {
     cursor: pointer;
   }
+`; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+const StyledReadMore = styled(StyledText)`
+  color: ${props => props.theme.checkboxLabelTextColor};
+  cursor: pointer;
+  padding: 0;
+  margin-left: 5px;
+  font-weight: ${props => props.theme.styledSpanFontWeight}
+`;
+const StyledContentWrapper = styled.div`
+  padding-right: ${props => props.hasReadMore ? '0px' : '25px'};
 `;
 export const CheckboxBase = (_ref2) => {
   let {
@@ -152,6 +164,9 @@ export const CheckboxBase = (_ref2) => {
     setFormValuesToCache(values, id);
   };
 
+  const [showMoreCollapsed, setShowMoreCollapsed] = useState(false);
+  const htmlContentList = props.HTMLcontent && props.HTMLcontent.split('--MORE--');
+
   const handleOnChange = e => {
     props.onChange && props.onChange(e);
     field.onChange && field.onChange(e);
@@ -160,17 +175,19 @@ export const CheckboxBase = (_ref2) => {
 
   const onCollapseClick = () => setCollapsed(!collapsed);
 
+  const showMoreCollapseToggle = () => setShowMoreCollapsed(!showMoreCollapsed);
+
   useLayoutEffect(() => {
-    if (targetRef.current && targetRef.current.offsetHeight > 22 && !props.disableCollapse) {
+    if (targetRef.current && targetRef.current.offsetHeight > 22 && !props.disableCollapse && !props.hasReadMore) {
       setHasCollapse(true);
     }
-  }, [props.disableCollapse, targetRef]);
+  }, [props.disableCollapse, props.hasReadMore, targetRef]);
   useEffect(() => {
     props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return /*#__PURE__*/React.createElement(StyledRow, {
-    hasCollapse: hasCollapse && !props.disableCollapse,
-    collapsed: collapsed || props.disableCollapse
+    hasCollapse: hasCollapse && !props.disableCollapse && !props.hasReadMore,
+    collapsed: collapsed || props.disableCollapse || props.hasReadMore
   }, /*#__PURE__*/React.createElement(Wrapper, {
     ref: targetRef,
     onMouseOut: handleOnMouseOut
@@ -179,11 +196,21 @@ export const CheckboxBase = (_ref2) => {
     checked: field.value,
     value: field.value || false,
     error: touched[field.name] && errors[field.name]
-  })), props.label && /*#__PURE__*/React.createElement(StyledText, null, props.label), props.HTMLcontent && /*#__PURE__*/React.createElement(StyledText, {
+  })), props.label && /*#__PURE__*/React.createElement(StyledText, null, props.label), /*#__PURE__*/React.createElement(StyledContentWrapper, {
+    hasReadMore: props.hasReadMore
+  }, props.HTMLcontent && htmlContentList && /*#__PURE__*/React.createElement(StyledText, {
     dangerouslySetInnerHTML: {
-      __html: props.HTMLcontent
+      __html: props.hasReadMore ? htmlContentList[0] : props.HTMLcontent
     }
-  }), props.childrenBody && /*#__PURE__*/React.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/React.createElement(StyledArrow, {
+  }), props.hasReadMore && htmlContentList && htmlContentList[1] && !showMoreCollapsed && /*#__PURE__*/React.createElement(StyledReadMore, {
+    onClick: showMoreCollapseToggle
+  }, props.showMoreText), props.hasReadMore && htmlContentList && htmlContentList[1] && showMoreCollapsed && /*#__PURE__*/React.createElement(StyledText, {
+    dangerouslySetInnerHTML: {
+      __html: htmlContentList[1]
+    }
+  }), props.hasReadMore && htmlContentList && htmlContentList[1] && showMoreCollapsed && /*#__PURE__*/React.createElement(StyledReadMore, {
+    onClick: showMoreCollapseToggle
+  }, props.showLessText)), props.childrenBody && /*#__PURE__*/React.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/React.createElement(StyledArrow, {
     hasCollapse: hasCollapse,
     collapsed: collapsed,
     onClick: onCollapseClick

@@ -25,7 +25,6 @@ const StyledDatePicker = styled(DatePicker)`
   border-radius: ${(props: StyledProps): string =>
     props.theme.inputBorderRadius};
   width: 100%;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
   display: flex;
   align-items: center;
   font-style: ${(props: StyledProps): string => props.theme.inputFontStyle};
@@ -135,15 +134,17 @@ const CustomHeader: FC<any> = ({
 const DatePickerCore: FC<any> = ({
   dateFormat = 'dd/MM/yyyy',
   openToDate = new Date(`01/01/${getYear(new Date()) - 18}`),
+  selected,
   ...props
 }) => (
   <StyledWrapper>
     <StyledDatePicker
       {...props}
+      selected={selected}
       dateFormat={dateFormat}
       locale="pl"
       renderCustomHeader={CustomHeader}
-      openToDate={openToDate}
+      openToDate={selected || openToDate}
       onFocus={(e): boolean => (e.target.readOnly = true)}
     />
   </StyledWrapper>

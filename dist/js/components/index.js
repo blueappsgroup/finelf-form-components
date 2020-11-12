@@ -11,7 +11,6 @@ var _exportNames = {
   FormStatusText: true,
   Step: true,
   RedirectPage: true,
-  TrasactionId: true,
   Agreements: true,
   Image: true,
   OptionalGroup: true,
@@ -57,12 +56,6 @@ Object.defineProperty(exports, "RedirectPage", {
   enumerable: true,
   get: function get() {
     return _RedirectPage.default;
-  }
-});
-Object.defineProperty(exports, "TrasactionId", {
-  enumerable: true,
-  get: function get() {
-    return _TransactionId.default;
   }
 });
 Object.defineProperty(exports, "Agreements", {
@@ -117,8 +110,6 @@ var _FormStatusText = _interopRequireDefault(require("./FormStatusText"));
 var _Step = _interopRequireDefault(require("./Step"));
 
 var _RedirectPage = _interopRequireDefault(require("./RedirectPage"));
-
-var _TransactionId = _interopRequireDefault(require("./TransactionId"));
 
 var _Agreements = _interopRequireDefault(require("./Agreements"));
 
