@@ -76,6 +76,8 @@ describe('<DatePickerCore />', () => {
     const monthSelect = select[1]
     const monthSelectOption = monthSelect.querySelector('select option')
 
+    jest.setTimeout(30000)
+
     await act(async () => {
       fireEvent.change(yearSelect, {
         target: { value: yearSelectOption.value },
