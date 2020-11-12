@@ -18,7 +18,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
         >
           <input
             class="sc-pNWxx gayLBx react-datepicker-ignore-onclickoutside"
-            name="name"
+            name="date"
             placeholder="dd/MM/yyyy"
             readonly=""
             type="text"
@@ -847,7 +847,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
 exports[`<DatePickerCore /> matches snapshot DatePickerCore 1`] = `
 <input
   class="sc-pNWxx gayLBx"
-  name="name"
+  name="date"
   placeholder="dd/MM/yyyy"
   type="text"
   value=""
