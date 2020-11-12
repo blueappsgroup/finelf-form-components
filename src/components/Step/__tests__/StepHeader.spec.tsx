@@ -6,7 +6,7 @@ describe('<StepHeader />', () => {
   it('matches snapshot', () => {
     const documentBody = render(<StepHeader />)
     const { baseElement } = documentBody
-    expect(baseElement.querySelector('h3')).toBeTruthy()
+    expect(baseElement.querySelector('div')).toBeTruthy()
     expect(baseElement).toMatchSnapshot()
   })
 })

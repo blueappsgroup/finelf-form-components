@@ -15,11 +15,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _theme = require("../../consts/theme");
 
-var _sizes = require("../../consts/sizes");
-
 var _RedirectPage = _interopRequireDefault(require("../RedirectPage"));
-
-var _TransactionId = _interopRequireDefault(require("../TransactionId"));
 
 var _utils = require("../../utils");
 
@@ -62,7 +58,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  margin: 0 10px;\n  background: ", ";\n  font-family: ", ";\n  padding: ", ";\n  border-radius: 6px;\n  box-shadow: ", ";\n\n  @media ", " {\n    padding: ", ";\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  background: ", ";\n  font-family: ", ";\n  border-radius: 6px;\n  box-shadow: ", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -80,11 +76,7 @@ var StyledForm = (0, _styledComponents.default)(_formik.Form)(_templateObject(),
 }, function (props) {
   return props.theme.fontFamily;
 }, function (props) {
-  return props.theme.formPaddingMobile;
-}, function (props) {
   return props.theme.formBoxShadow;
-}, _sizes.device.tablet, function (props) {
-  return props.theme.formPadding;
 });
 
 var FormWrapper = function FormWrapper(_ref) {
@@ -134,13 +126,20 @@ var FormWrapper = function FormWrapper(_ref) {
       fieldsForSkip = _useState8[0],
       setFieldsForSkip = _useState8[1];
 
+  var _useState9 = (0, _react.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      errorFromApi = _useState10[0],
+      setErrorFromApi = _useState10[1];
+
+  var shouldRedirect = !errorFromApi && hasRedirect;
+
   var addFieldForSkip = function addFieldForSkip(key) {
     return setFieldsForSkip([].concat(_toConsumableArray(fieldsForSkip), [key]));
   };
 
   var handleSubmit = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(values, props) {
-      var response, _yield$response$json, urlFromApi;
+      var response, _yield$response$json, urlFromApi, statusFromApi;
 
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
@@ -153,7 +152,7 @@ var FormWrapper = function FormWrapper(_ref) {
               _context.prev = 1;
 
               if (!(sendDataToApi && apiUrl)) {
-                _context.next = 11;
+                _context.next = 15;
                 break;
               }
 
@@ -168,26 +167,36 @@ var FormWrapper = function FormWrapper(_ref) {
             case 8:
               _yield$response$json = _context.sent;
               urlFromApi = _yield$response$json.redirectUrl;
+              statusFromApi = _yield$response$json.status;
+
+              if (!(statusFromApi === false)) {
+                _context.next = 14;
+                break;
+              }
+
+              setErrorFromApi(true);
+              return _context.abrupt("return");
+
+            case 14:
               urlFromApi && setRedirectUrlPath(urlFromApi);
 
-            case 11:
+            case 15:
               props.resetForm();
               props.setStatus(_form.formStatuses.submited);
-              _context.next = 19;
+              _context.next = 22;
               break;
 
-            case 15:
-              _context.prev = 15;
+            case 19:
+              _context.prev = 19;
               _context.t0 = _context["catch"](1);
-              console.log(_context.t0);
               props.setStatus(_form.formStatuses.error);
 
-            case 19:
+            case 22:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 15]]);
+      }, _callee, null, [[1, 19]]);
     }));
 
     return function handleSubmit(_x, _x2) {
@@ -219,7 +228,8 @@ var FormWrapper = function FormWrapper(_ref) {
       nextStep: nextStep,
       prevStep: prevStep,
       fieldsForSkip: fieldsForSkip,
-      addFieldForSkip: addFieldForSkip
+      addFieldForSkip: addFieldForSkip,
+      errorFromApi: errorFromApi
     }
   }, /*#__PURE__*/_react.default.createElement(_theme.ThemeProvider, {
     customTheme: _objectSpread({}, customTheme)
@@ -229,7 +239,7 @@ var FormWrapper = function FormWrapper(_ref) {
     onSubmit: handleSubmit,
     onReset: handleReset
   }, function (props) {
-    return hasRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react.default.createElement(_RedirectPage.default, {
+    return shouldRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react.default.createElement(_RedirectPage.default, {
       redirectUrl: redirectUrlPath,
       backgroundImage: redirectBgImg,
       logoImg: logoImg,
@@ -238,7 +248,7 @@ var FormWrapper = function FormWrapper(_ref) {
       mainImg: redirectMainImg
     }) || /*#__PURE__*/_react.default.createElement(StyledForm, {
       id: id
-    }, /*#__PURE__*/_react.default.createElement(_TransactionId.default, null), children);
+    }, children);
   })));
 };
 

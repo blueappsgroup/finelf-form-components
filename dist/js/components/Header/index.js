@@ -24,7 +24,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: center;\n  margin: ", ";\n  padding-bottom: 28px;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n  position: relative;\n  \n  @media ", " {\n    margin: 0px 0px 30px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: ", ";\n    margin: 0 auto;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: center;\n  margin: ", ";\n  position: relative;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n  position: relative;\n  \n  @media ", " {\n    margin: 0px 0px 50px 0px;\n  }\n\n  &::after {\n    width: 33%;\n    content: '';\n    position: absolute;\n    bottom: 0px;\n    border: ", ";\n    margin: 20px auto 0 auto;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;

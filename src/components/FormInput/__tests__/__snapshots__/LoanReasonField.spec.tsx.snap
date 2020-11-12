@@ -2,12 +2,13 @@
 
 exports[`<LoanReasonField /> matches snapshot 1`] = `
 <select
-  class="sc-dIvqjp cnqptG"
+  class="sc-iemXMA ezYUqe"
   id="loanReasonField"
   name="name"
   type="text"
 >
   <option
+    class="sc-hHEjAm hmYdyr"
     disabled=""
     value="select"
   >
@@ -80,15 +81,11 @@ exports[`<LoanReasonField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-iqAbSa VlpJw"
+      class="sc-kEqYlL dXeAFH"
     >
       <label
         for="name"
@@ -96,10 +93,10 @@ exports[`<LoanReasonField /> matches snapshot with error 1`] = `
         Test*
       </label>
       <div
-        class="sc-iemXMA clxLOp"
+        class="sc-bkbjAj gnGQfC"
       >
         <select
-          class="sc-dIvqjp gBHSSD"
+          class="sc-iemXMA varr"
           id="loanReasonField"
           label="Test"
           name="name"
@@ -107,6 +104,7 @@ exports[`<LoanReasonField /> matches snapshot with error 1`] = `
           type="text"
         >
           <option
+            class="sc-hHEjAm hmYdyr"
             disabled=""
             value="select"
           >
@@ -174,11 +172,11 @@ exports[`<LoanReasonField /> matches snapshot with error 1`] = `
           </option>
         </select>
         <span
-          class="sc-hHEjAm gimkwY"
+          class="sc-dIvqjp gGSLdt"
         />
       </div>
       <span
-        class="sc-hBMVcZ kROtfw"
+        class="sc-ksluoS cNvzFC"
       >
         To pole jest wymagane
       </span>
@@ -191,15 +189,11 @@ exports[`<LoanReasonField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-iqAbSa VlpJw"
+      class="sc-kEqYlL dXeAFH"
     >
       <label
         for="name"
@@ -207,16 +201,17 @@ exports[`<LoanReasonField /> matches snapshot with label 1`] = `
         Test
       </label>
       <div
-        class="sc-iemXMA clxLOp"
+        class="sc-bkbjAj gnGQfC"
       >
         <select
-          class="sc-dIvqjp cnqptG"
+          class="sc-iemXMA ezYUqe"
           id="loanReasonField"
           label="Test"
           name="name"
           type="text"
         >
           <option
+            class="sc-hHEjAm hmYdyr"
             disabled=""
             value="select"
           >
@@ -284,7 +279,7 @@ exports[`<LoanReasonField /> matches snapshot with label 1`] = `
           </option>
         </select>
         <span
-          class="sc-hHEjAm gimkwY"
+          class="sc-dIvqjp gGSLdt"
         />
       </div>
     </div>
@@ -296,26 +291,23 @@ exports[`<LoanReasonField /> select field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <div
-      class="sc-iqAbSa VlpJw"
+      class="sc-kEqYlL dXeAFH"
     >
       <div
-        class="sc-iemXMA clxLOp"
+        class="sc-bkbjAj gnGQfC"
       >
         <select
-          class="sc-dIvqjp gBHSSD"
+          class="sc-iemXMA varr"
           id="loanReasonField"
           name="name"
           type="text"
         >
           <option
+            class="sc-hHEjAm hmYdyr"
             disabled=""
             value="select"
           >
@@ -383,11 +375,11 @@ exports[`<LoanReasonField /> select field with custom validation 1`] = `
           </option>
         </select>
         <span
-          class="sc-hHEjAm gimkwY"
+          class="sc-dIvqjp gGSLdt"
         />
       </div>
       <span
-        class="sc-hBMVcZ kROtfw"
+        class="sc-ksluoS cNvzFC"
       >
         Podane dane są nieprawidłowe
       </span>

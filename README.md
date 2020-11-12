@@ -14,6 +14,32 @@ To start storybook and you can do changes and you will see changes. Use this to 
 
 To build static storybook.
 
+
+### Usign `Agreements` component
+
+To use agrements put `apiUrl` prop to from and very important is form `id` prop because it points which agreements will be fetched.
+
+```JSX
+<Form id="kdz" apiUrl="apiUrl">
+    <Header withBorder text="Test title" />
+    <Header text="Test title" type="subheader" />
+    <Agreemnets hasReadMore linksForReplace={linksForReplace} />
+    <Button type="submit" text="Send" />
+</Form>
+```
+
+To use agrements with 'read more collaspe' use `hasReadMore` prop in `Agreements` component.
+!Important agreement in data base should contain `--MORE--` string, agreement will be splited in the `--MORE--` place.
+
+```JSX
+<Form id="kdz" apiUrl="apiUrl">
+    <Header withBorder text="Test title" />
+    <Header text="Test title" type="subheader" />
+    <Agreemnets hasReadMore linksForReplace={linksForReplace} />
+    <Button type="submit" text="Send" />
+</Form>
+```
+
 ### Publishing
 
 made changes and commit it to `master`

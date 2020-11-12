@@ -14,6 +14,9 @@ export type CheckboxFieldProps = {
   HTMLcontent?: string
   skipFieldForApi?: boolean
   disableCollapse?: boolean
+  hasReadMore?: boolean
+  showMoreText?: string
+  showLessText?: string
 }
 
 export type FieldWrapProps = FieldProps & {
@@ -32,6 +35,9 @@ export type FieldWrapProps = FieldProps & {
   icon?: object
   disableCollapse?: boolean
   visible?: boolean
+  hasReadMore?: boolean
+  showMoreText?: string
+  showLessText?: string
 }
 
 export type FieldDateWrapProps = FieldProps & {
@@ -191,12 +197,9 @@ export type CustomThemeType = {
   fontFamily?: string
   formBoxShadow?: string
   formMaxWidth?: string
-  formPaddingMobile?: string
-  formPadding?: string
   formBgColor?: string
   styledContainerMobilePadding?: string
   styledContainerPadding?: string
-  inputHeight?: string
   inputTextColor?: string
   inputPlaceHolderColor?: string
   inputErrorColor?: string
@@ -216,7 +219,6 @@ export type CustomThemeType = {
   inputPadding?: string
   styledRowFlexWrap?: string
   styledRowLabelPadding?: string
-  styledSelectHeight?: string
   styledSelectTextColor?: string
   styledSelectPlaceHolderColor?: string
   styledSelectErrorColor?: string

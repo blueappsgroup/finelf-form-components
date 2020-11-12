@@ -4,7 +4,7 @@ exports[`<Button /> matches snapshot 1`] = `
 <body>
   <div>
     <button
-      class="sc-bdnylx ecdaBl"
+      class="sc-bdnylx bMLZUh"
       type="button"
     >
       Submit

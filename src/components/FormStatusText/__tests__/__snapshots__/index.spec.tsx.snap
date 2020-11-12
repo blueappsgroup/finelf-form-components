@@ -7,15 +7,11 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-fujyUd bFqltC"
+        class="sc-iCoHVE JvWob"
         id="testForm"
       >
-        <input
-          class="sc-iCoHVE gEjxKq"
-          form="[object Object]"
-        />
         <span
-          class="sc-pNWxx fBjAgt"
+          class="sc-fujyUd dkJRbp"
         >
           Dziękujemy, twoje dane zostały przesłane
         </span>
@@ -25,15 +21,11 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-fujyUd bFqltC"
+      class="sc-iCoHVE JvWob"
       id="testForm"
     >
-      <input
-        class="sc-iCoHVE gEjxKq"
-        form="[object Object]"
-      />
       <span
-        class="sc-pNWxx fBjAgt"
+        class="sc-fujyUd dkJRbp"
       >
         Dziękujemy, twoje dane zostały przesłane
       </span>
@@ -58,15 +50,11 @@ Object {
   "findByTitle": [Function],
   "form": <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <span
-      class="sc-pNWxx fBjAgt"
+      class="sc-fujyUd dkJRbp"
     >
       Dziękujemy, twoje dane zostały przesłane
     </span>
@@ -115,15 +103,11 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-fujyUd bFqltC"
+        class="sc-iCoHVE JvWob"
         id="testForm"
       >
-        <input
-          class="sc-iCoHVE gEjxKq"
-          form="[object Object]"
-        />
         <span
-          class="sc-pNWxx hRmYQq"
+          class="sc-fujyUd dCNWoi"
         >
           Coś poszło nie tak spróbuj ponownie
         </span>
@@ -133,15 +117,11 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-fujyUd bFqltC"
+      class="sc-iCoHVE JvWob"
       id="testForm"
     >
-      <input
-        class="sc-iCoHVE gEjxKq"
-        form="[object Object]"
-      />
       <span
-        class="sc-pNWxx hRmYQq"
+        class="sc-fujyUd dCNWoi"
       >
         Coś poszło nie tak spróbuj ponownie
       </span>
@@ -166,15 +146,11 @@ Object {
   "findByTitle": [Function],
   "form": <form
     action="#"
-    class="sc-fujyUd bFqltC"
+    class="sc-iCoHVE JvWob"
     id="testForm"
   >
-    <input
-      class="sc-iCoHVE gEjxKq"
-      form="[object Object]"
-    />
     <span
-      class="sc-pNWxx hRmYQq"
+      class="sc-fujyUd dCNWoi"
     >
       Coś poszło nie tak spróbuj ponownie
     </span>

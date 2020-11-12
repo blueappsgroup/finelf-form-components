@@ -6,7 +6,6 @@ import React, {
   useContext,
   useEffect,
   useLayoutEffect,
-  useRef,
   useState,
 } from 'react'
 import Slider from 'react-rangeslider'
@@ -26,7 +25,6 @@ import DatePickerCore from './DatePickerCore'
 export type StyledProps = {
   theme: {
     submitButtonBgColor: string
-    inputHeight: string
     inputErrorColor: string
     inputErrorTextAlign: string
     inputErrorFontSize: string
@@ -63,7 +61,6 @@ export type StyledProps = {
     styledRowFlexWrap: string
     styledRowLabelPadding: string
     styledRowLabelFontColor: string
-    styledSelectHeight: string
     styledSelectErrorColor: string
     styledSelectErrorTextAlign: string
     styledSelectBgColor: string
@@ -103,7 +100,6 @@ export type StyledProps = {
     sliderHandleAfterWidth: string
     sliderHandleAfterHeight: string
     sliderHandleAfterBorderRadius: string
-    styledInputSuffixWidth: string
     styledInputSuffixBgColor: string
     styledInputSuffixTextColor: string
     styledInputSuffixFontSize: string
@@ -184,11 +180,11 @@ export const Row = styled.div`
   }
 `
 
-export const RowWithFixedColumn = styled.div` 
+export const RowWithFixedColumn = styled.div`
   display: flex;
   width: 100%;
   margin: 0 auto;
-  
+
   @media ${device.laptopL} {
     & > :first-child {
       position: fixed;
@@ -196,8 +192,8 @@ export const RowWithFixedColumn = styled.div`
       width: 50%;
       padding-top: 0;
     }
-    
-    & > :last-child { 
+
+    & > :last-child {
       position: absolute;
       right: 0;
       width: 50%;
@@ -234,7 +230,6 @@ export const StyledInput = styled.input<any>`
   border-radius: ${(props: StyledProps): string =>
     props.theme.inputBorderRadius};
   width: 100%;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
   display: flex;
   align-items: center;
   font-style: ${(props: StyledProps): string => props.theme.inputFontStyle};
@@ -267,7 +262,6 @@ export const StyledInput = styled.input<any>`
 
 export const SliderRow = styled.div`
   display: flex;
-  padding: 25px 0;
   flex-direction: row;
 `
 
@@ -326,7 +320,6 @@ const StyledSelect = styled.select<any>`
   box-shadow: ${(props: StyledProps): string => props.theme.styledSelectBoxShadow};
   border-radius: ${(props: StyledProps): string => props.theme.styledSelectBorderRadius};
   width: 100%;
-  height: ${(props: StyledProps): string => props.theme.styledSelectHeight};
   display: flex;
   align-items: center;
   font-style: ${(props: StyledProps): string => props.theme.styledSelectFontStyle};
@@ -340,7 +333,9 @@ const StyledSelect = styled.select<any>`
     props.error ? props.theme.styledSelectErrorColor : props.theme.styledSelectTextColor};
   appearance: none;
 
-  option:disabled {
+  [disabled],
+  option:disabled,
+  option:invalid{
     color: ${(props: StyledProps): string => props.theme.styledSelectPlaceHolderColor};
   }
 
@@ -353,7 +348,7 @@ const StyledSelectArrow = styled.span`
   position: absolute;
   border: solid;
   border-width: 0 2px 2px 0;
-  border-color: ${(props: StyledProps): string => props.theme.styledSelectArrowColor}; 
+  border-color: ${(props: StyledProps): string => props.theme.styledSelectArrowColor};
   display: inline-block;
   padding: 4px;
   vertical-align: middle;
@@ -366,6 +361,10 @@ const StyledSelectArrow = styled.span`
   transform: rotate(45deg);
 `
 
+const StyledSelectValueOption = styled.option`
+  color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
+`
+
 const StyledSpan = styled.span`
   font-size: ${(props: StyledProps): string => props.theme.styledSpanFontSize};
   font-weight: ${(props: StyledProps): string => props.theme.styledSpanFontWeight};
@@ -375,8 +374,7 @@ const StyledSpan = styled.span`
 const StyledInputSuffix = styled.span`
   display: flex;
   align-items: center;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
-  width: ${(props: StyledProps): string => props.theme.styledInputSuffixWidth};
+  padding: 0 20px;
   box-sizing: border-box;
   background-color: ${(props: StyledProps): string => props.theme.styledInputSuffixBgColor};
   border-radius: ${(props: StyledProps): string => props.theme.styledInputSuffixBorderRadius};
@@ -390,7 +388,7 @@ const StyledSliderInputSuffix = styled.span`
   display: flex;
   align-items: center;
   height: ${(props: StyledProps): string => props.theme.sliderInputHeight};
-  width: ${(props: StyledProps): string => props.theme.styledInputSuffixWidth};
+  padding: 0 15px;
   box-sizing: border-box;
   background-color: ${(props: StyledProps): string => props.theme.styledInputSuffixBgColor};
   border-radius: ${(props: StyledProps): string => props.theme.styledInputSuffixBorderRadius};
@@ -404,11 +402,9 @@ const StyledInputPrefixContainer = styled.div<any>`
   background: ${(props: StyledProps): string => props.theme.inputBgColor};
   position: relative;
   left: 0px;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
-  height: ${(props: StyledProps): string => props.theme.inputHeight};
   border: 1px solid ${(props: StyledProps): string => props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor};
   border-right: none;
   border-top-left-radius: ${(props: StyledProps): string => props.theme.inputBorderRadius};
@@ -416,12 +412,13 @@ const StyledInputPrefixContainer = styled.div<any>`
   color: ${(props: any): string =>
     props.error ? props.theme.inputErrorColor : props.theme.inputTextColor};
   font-size: ${(props: StyledProps): string => props.theme.inputFontSize};
-  font-weight: ${(props: StyledProps): string => props.theme.inputFontWeight};  
+  font-weight: ${(props: StyledProps): string => props.theme.inputFontWeight};
 `
 
 const StyledInputPrefix = styled.span<any>`
   padding: ${(props: StyledProps): string => props.theme.styledInputPrefixPadding};
   border-right: 1px solid ${(props: StyledProps): string => props.theme.inputBorderColor};
+  color: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
 `
 
 const SliderWrapper = styled.div`
@@ -478,8 +475,9 @@ const InputWrapper = styled.div<InputWrapperProps>`
     bottom: 0;
     left: ${(props: StyledProps): string => props.theme.inputIconLeft};
     margin: auto;
-    padding-right: 20px;
+    padding-right: ${(props: StyledProps): string => props.theme.inputIconLeft};
     border-right: 1px solid ${(props: StyledProps): string => props.theme.inputBorderColor};
+    fill: ${(props: StyledProps): string => props.theme.inputPlaceHolderColor};
   }
   input {
     padding: ${(props: InputWrapperProps): string => props.withIcon ? props.theme.inputWithIconPadding : props.theme.inputPadding};
@@ -613,9 +611,9 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
 
   const options = (options: SelectFieldOptions): Array<JSX.Element> => {
     return [
-      <option key="select" value="select" disabled>
+      <StyledSelectValueOption key="select" value="select" disabled selected>
         {`wybierz ${(props.required && '*') || ''}`}
-      </option>,
+      </StyledSelectValueOption>,
     ].concat(
       Object.keys(options).map((option) => {
         return (

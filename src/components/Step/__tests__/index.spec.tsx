@@ -39,10 +39,6 @@ describe('base <Step />', () => {
     }
   }
 
-  beforeEach(() => {
-    // jest.spyOn(React, 'useState').mockImplementation(nextButtonDisabled => [nextButtonDisabled, setNextButtonDisabled])
-  })
-
   it('matches snapshot', () => {
     const wrapper = setupWrapper({})
 

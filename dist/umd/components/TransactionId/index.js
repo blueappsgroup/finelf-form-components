@@ -31,11 +31,11 @@
   display: none;
 `;
 
-  const TrasactionId = () => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
-    name: "trasaction_id",
+  const TransactionId = () => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
+    name: "transaction_id",
     component: StyledInput
   });
 
-  exports.default = TrasactionId;
+  exports.default = TransactionId;
 });
 //# sourceMappingURL=index.js.map

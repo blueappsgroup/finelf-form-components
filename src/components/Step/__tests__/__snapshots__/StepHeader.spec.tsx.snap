@@ -3,8 +3,8 @@
 exports[`<StepHeader /> matches snapshot 1`] = `
 <body>
   <div>
-    <h3
-      class="sc-bdnylx kcdjFi"
+    <div
+      class="sc-bdnylx kUhWLa"
     />
   </div>
 </body>

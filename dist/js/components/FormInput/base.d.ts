@@ -3,7 +3,6 @@ import { FieldWrapProps, FieldDateWrapProps, RangeFieldWrapProps, SelectFieldWra
 export declare type StyledProps = {
     theme: {
         submitButtonBgColor: string;
-        inputHeight: string;
         inputErrorColor: string;
         inputErrorTextAlign: string;
         inputErrorFontSize: string;
@@ -40,7 +39,6 @@ export declare type StyledProps = {
         styledRowFlexWrap: string;
         styledRowLabelPadding: string;
         styledRowLabelFontColor: string;
-        styledSelectHeight: string;
         styledSelectErrorColor: string;
         styledSelectErrorTextAlign: string;
         styledSelectBgColor: string;
@@ -80,7 +78,6 @@ export declare type StyledProps = {
         sliderHandleAfterWidth: string;
         sliderHandleAfterHeight: string;
         sliderHandleAfterBorderRadius: string;
-        styledInputSuffixWidth: string;
         styledInputSuffixBgColor: string;
         styledInputSuffixTextColor: string;
         styledInputSuffixFontSize: string;

@@ -37,7 +37,7 @@ const StyledButton = styled.button<StyledProps>`
   font-weight: 800;
   font-size: 20px;
   line-height: 16px;
-  padding: 28px;
+  padding: 20px;
   margin-top: 20px;
 
   &:disabled {

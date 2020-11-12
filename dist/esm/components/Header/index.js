@@ -8,7 +8,6 @@ const StyledMainHeader = styled.h2`
   line-height: ${props => props.theme.headerLineHeight};
   text-align: center;
   margin: ${props => props.theme.headerMargin};
-  padding-bottom: 28px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -16,7 +15,7 @@ const StyledMainHeader = styled.h2`
   position: relative;
   
   @media ${device.tablet} {
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 50px 0px;
   }
 
   &::after {
@@ -25,7 +24,7 @@ const StyledMainHeader = styled.h2`
     position: absolute;
     bottom: 0px;
     border: ${props => props.withBorder ? `3px solid ${props.theme.headerBorderColor}` : 'none'};
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
   }
 `;
 const StyledSubHeader = styled.h5`

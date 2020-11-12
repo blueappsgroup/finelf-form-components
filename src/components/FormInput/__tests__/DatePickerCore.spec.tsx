@@ -80,6 +80,9 @@ describe('<DatePickerCore />', () => {
       fireEvent.change(yearSelect, {
         target: { value: yearSelectOption.value },
       })
+    })
+
+    await act(async () => {
       fireEvent.change(monthSelect, {
         target: { value: monthSelectOption.value },
       })

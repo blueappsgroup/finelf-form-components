@@ -49,8 +49,18 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+function _templateObject20() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  width:100%;\n  flex-direction: row;\n  svg {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: ", ";\n    margin: auto;\n    padding-right: ", ";\n    border-right: 1px solid ", ";\n    fill: ", ";\n  }\n  input {\n    padding: ", ";\n  }\n"]);
+
+  _templateObject20 = function _templateObject20() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject19() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  width:100%;\n  flex-direction: row;\n  svg {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: ", ";\n    margin: auto;\n    padding-right: 20px;\n    border-right: 1px solid ", ";\n  }\n  input {\n    padding: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n padding-bottom: 25px;\n width: 100%;\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: 0;\n   bottom: 0;\n   margin: auto;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
 
   _templateObject19 = function _templateObject19() {
     return data;
@@ -60,7 +70,7 @@ function _templateObject19() {
 }
 
 function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n padding-bottom: 25px;\n width: 100%;\n .rangeslider {\n  position: relative;\n  width: 100%;\n  height: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n  .rangeslider__fill {\n   height: 100%;\n   background-color: ", ";\n   border-radius: ", ";\n  }\n  .rangeslider__handle {\n   top: 0;\n   bottom: 0;\n   margin: auto;\n   width: ", ";\n   height: ", ";\n   background-color: ", ";\n   position: absolute;\n   cursor: pointer;\n   box-shadow: ", ";\n   border: ", " ", " ", ";\n   border-radius: ", ";\n   &::after {\n    width: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-radius: ", ";\n    position: absolute;\n    content: '';\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n   }\n  }\n }\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: ", ";\n  border-right: 1px solid ", ";\n  color: ", ";\n"]);
 
   _templateObject18 = function _templateObject18() {
     return data;
@@ -70,7 +80,7 @@ function _templateObject18() {
 }
 
 function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n  padding: ", ";\n  border-right: 1px solid ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  position: relative;\n  left: 0px;\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  border: 1px solid ", ";\n  border-right: none;\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n"]);
 
   _templateObject17 = function _templateObject17() {
     return data;
@@ -80,7 +90,7 @@ function _templateObject17() {
 }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  position: relative;\n  left: 0px;\n  height: ", ";\n  box-sizing: border-box;\n  display: inline-flex;\n  align-items: center;\n  height: ", ";\n  border: 1px solid ", ";\n  border-right: none;\n  border-top-left-radius: ", ";\n  border-bottom-left-radius: ", ";\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";  \n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: 0 15px;\n  box-sizing: border-box;\n  background-color: ", ";\n  border-radius: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n  justify-content: center;\n"]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -90,7 +100,7 @@ function _templateObject16() {
 }
 
 function _templateObject15() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  height: ", ";\n  width: ", ";\n  box-sizing: border-box;\n  background-color: ", ";\n  border-radius: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  padding: 0 20px;\n  box-sizing: border-box;\n  background-color: ", ";\n  border-radius: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n  justify-content: center;\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -100,7 +110,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  height: ", ";\n  width: ", ";\n  box-sizing: border-box;\n  background-color: ", ";\n  border-radius: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  color: ", ";\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  font-weight: ", ";\n  color: ", ";\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -110,7 +120,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  font-weight: ", ";\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: ", ";\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -120,7 +130,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  border: solid;\n  border-width: 0 2px 2px 0;\n  border-color: ", "; \n  display: inline-block;\n  padding: 4px;\n  vertical-align: middle;\n  content: ' ';\n  right: ", ";\n  top: 0;\n  bottom: 0;\n  margin: auto;\n  height: 0;\n  transform: rotate(45deg);\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  border: solid;\n  border-width: 0 2px 2px 0;\n  border-color: ", ";\n  display: inline-block;\n  padding: 4px;\n  vertical-align: middle;\n  content: ' ';\n  right: ", ";\n  top: 0;\n  bottom: 0;\n  margin: auto;\n  height: 0;\n  transform: rotate(45deg);\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -130,7 +140,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  background: ", ";\n  border: ", " ", "\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n  appearance: none;\n\n  option:disabled {\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  background: ", ";\n  border: ", " ", "\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n  appearance: none;\n\n  [disabled],\n  option:disabled,\n  option:invalid{\n    color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -160,7 +170,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  padding: 25px 0;\n  flex-direction: row;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -170,7 +180,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  height: ", ";\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  ", "\n  ", "\n\n  &::placeholder {\n    color: ", ";\n    font-size: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border: 1px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: ", ";\n  border-radius: ", ";\n  width: 100%;\n  display: flex;\n  align-items: center;\n  font-style: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  line-height: ", ";\n  text-align: ", ";\n  padding: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  ", "\n  ", "\n\n  &::placeholder {\n    color: ", ";\n    font-size: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -200,7 +210,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral([" \n  display: flex;\n  width: 100%;\n  margin: 0 auto;\n  \n  @media ", " {\n    & > :first-child {\n      position: fixed;\n      left: 0;\n      width: 50%;\n      padding-top: 0;\n    }\n    \n    & > :last-child { \n      position: absolute;\n      right: 0;\n      width: 50%;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  margin: 0 auto;\n\n  @media ", " {\n    & > :first-child {\n      position: fixed;\n      left: 0;\n      width: 50%;\n      padding-top: 0;\n    }\n\n    & > :last-child {\n      position: absolute;\n      right: 0;\n      width: 50%;\n    }\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -309,8 +319,6 @@ var StyledInput = _styledComponents.default.input(_templateObject7(), function (
 }, function (props) {
   return props.theme.inputBorderRadius;
 }, function (props) {
-  return props.theme.inputHeight;
-}, function (props) {
   return props.theme.inputFontStyle;
 }, function (props) {
   return props.theme.inputFontWeight;
@@ -393,8 +401,6 @@ var StyledSelect = _styledComponents.default.select(_templateObject11(), functio
 }, function (props) {
   return props.theme.styledSelectBorderRadius;
 }, function (props) {
-  return props.theme.styledSelectHeight;
-}, function (props) {
   return props.theme.styledSelectFontStyle;
 }, function (props) {
   return props.theme.styledSelectFontWeight;
@@ -418,7 +424,11 @@ var StyledSelectArrow = _styledComponents.default.span(_templateObject12(), func
   return props.theme.styledSelectArrowRightPosition;
 });
 
-var StyledSpan = _styledComponents.default.span(_templateObject13(), function (props) {
+var StyledSelectValueOption = _styledComponents.default.option(_templateObject13(), function (props) {
+  return props.theme.inputPlaceHolderColor;
+});
+
+var StyledSpan = _styledComponents.default.span(_templateObject14(), function (props) {
   return props.theme.styledSpanFontSize;
 }, function (props) {
   return props.theme.styledSpanFontWeight;
@@ -426,11 +436,7 @@ var StyledSpan = _styledComponents.default.span(_templateObject13(), function (p
   return props.theme.styledSpanFontColor;
 });
 
-var StyledInputSuffix = _styledComponents.default.span(_templateObject14(), function (props) {
-  return props.theme.inputHeight;
-}, function (props) {
-  return props.theme.styledInputSuffixWidth;
-}, function (props) {
+var StyledInputSuffix = _styledComponents.default.span(_templateObject15(), function (props) {
   return props.theme.styledInputSuffixBgColor;
 }, function (props) {
   return props.theme.styledInputSuffixBorderRadius;
@@ -442,11 +448,9 @@ var StyledInputSuffix = _styledComponents.default.span(_templateObject14(), func
   return props.theme.styledInputSuffixTextColor;
 });
 
-var StyledSliderInputSuffix = _styledComponents.default.span(_templateObject15(), function (props) {
+var StyledSliderInputSuffix = _styledComponents.default.span(_templateObject16(), function (props) {
   return props.theme.sliderInputHeight;
 }, function (props) {
-  return props.theme.styledInputSuffixWidth;
-}, function (props) {
   return props.theme.styledInputSuffixBgColor;
 }, function (props) {
   return props.theme.styledInputSuffixBorderRadius;
@@ -458,12 +462,8 @@ var StyledSliderInputSuffix = _styledComponents.default.span(_templateObject15()
   return props.theme.styledInputSuffixTextColor;
 });
 
-var StyledInputPrefixContainer = _styledComponents.default.div(_templateObject16(), function (props) {
+var StyledInputPrefixContainer = _styledComponents.default.div(_templateObject17(), function (props) {
   return props.theme.inputBgColor;
-}, function (props) {
-  return props.theme.inputHeight;
-}, function (props) {
-  return props.theme.inputHeight;
 }, function (props) {
   return props.error ? props.theme.inputErrorColor : props.theme.inputBorderColor;
 }, function (props) {
@@ -478,13 +478,15 @@ var StyledInputPrefixContainer = _styledComponents.default.div(_templateObject16
   return props.theme.inputFontWeight;
 });
 
-var StyledInputPrefix = _styledComponents.default.span(_templateObject17(), function (props) {
+var StyledInputPrefix = _styledComponents.default.span(_templateObject18(), function (props) {
   return props.theme.styledInputPrefixPadding;
 }, function (props) {
   return props.theme.inputBorderColor;
+}, function (props) {
+  return props.theme.inputPlaceHolderColor;
 });
 
-var SliderWrapper = _styledComponents.default.div(_templateObject18(), function (props) {
+var SliderWrapper = _styledComponents.default.div(_templateObject19(), function (props) {
   return props.theme.sliderHeight;
 }, function (props) {
   return props.theme.sliderBorderRadius;
@@ -520,10 +522,14 @@ var SliderWrapper = _styledComponents.default.div(_templateObject18(), function 
   return props.theme.sliderHandleAfterBorderRadius;
 });
 
-var InputWrapper = _styledComponents.default.div(_templateObject19(), function (props) {
+var InputWrapper = _styledComponents.default.div(_templateObject20(), function (props) {
+  return props.theme.inputIconLeft;
+}, function (props) {
   return props.theme.inputIconLeft;
 }, function (props) {
   return props.theme.inputBorderColor;
+}, function (props) {
+  return props.theme.inputPlaceHolderColor;
 }, function (props) {
   return props.withIcon ? props.theme.inputWithIconPadding : props.theme.inputPadding;
 });
@@ -629,15 +635,15 @@ var BaseSelectField = function BaseSelectField(_ref3) {
 
   var handleOnBlur = function handleOnBlur(e) {
     (0, _utils.setFormValuesToCache)(values, id);
-    console.log('blur');
     field.onBlur && field.onBlur(e);
   };
 
   var options = function options(_options) {
-    return [/*#__PURE__*/_react.default.createElement("option", {
+    return [/*#__PURE__*/_react.default.createElement(StyledSelectValueOption, {
       key: "select",
       value: "select",
-      disabled: true
+      disabled: true,
+      selected: true
     }, "wybierz ".concat(props.required && '*' || ''))].concat(Object.keys(_options).map(function (option) {
       return /*#__PURE__*/_react.default.createElement("option", {
         key: option,

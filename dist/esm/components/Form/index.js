@@ -8,9 +8,7 @@ import React, { useMemo, useState } from 'react';
 import { Formik, Form } from 'formik';
 import styled from 'styled-components';
 import { ThemeProvider } from '../../consts/theme';
-import { device } from '../../consts/sizes';
 import RedirectPage from '../RedirectPage';
-import TransactionId from '../TransactionId';
 import { FormContext, getFormValuesFromCache, resetFormValueCache, handleSendDataToApi, getFieldsValuesFromUrl } from '../../utils';
 import { formStatuses } from '../../consts/form';
 const StyledForm = styled(Form)`
@@ -18,17 +16,10 @@ const StyledForm = styled(Form)`
   flex-direction: column;
   max-width: ${props => props.theme.formMaxWidth};
   justify-self: center;
-  margin: 0 10px;
   background: ${props => props.theme.formBgColor};
   font-family: ${props => props.theme.fontFamily};
-  padding: ${props => props.theme.formPaddingMobile};
   border-radius: 6px;
   box-shadow: ${props => props.theme.formBoxShadow};
-
-  @media ${device.tablet} {
-    padding: ${props => props.theme.formPadding};
-    margin: 0 auto;
-  }
 `;
 
 const FormWrapper = ({
@@ -60,6 +51,8 @@ const FormWrapper = ({
   }));
   const [currentStep, setCurrentStep] = useState(0);
   const [fieldsForSkip, setFieldsForSkip] = useState([]);
+  const [errorFromApi, setErrorFromApi] = useState(false);
+  const shouldRedirect = !errorFromApi && hasRedirect;
 
   const addFieldForSkip = key => setFieldsForSkip([...fieldsForSkip, key]);
 
@@ -72,15 +65,21 @@ const FormWrapper = ({
       if (sendDataToApi && apiUrl) {
         const response = await handleSendDataToApi(values, apiUrl, id, fieldsForSkip, dataWithUserAgent);
         const {
-          redirectUrl: urlFromApi
+          redirectUrl: urlFromApi,
+          status: statusFromApi
         } = await response.json();
+
+        if (statusFromApi === false) {
+          setErrorFromApi(true);
+          return;
+        }
+
         urlFromApi && setRedirectUrlPath(urlFromApi);
       }
 
       props.resetForm();
       props.setStatus(formStatuses.submited);
     } catch (e) {
-      console.log(e);
       props.setStatus(formStatuses.error);
     }
   };
@@ -105,7 +104,8 @@ const FormWrapper = ({
       nextStep,
       prevStep,
       fieldsForSkip,
-      addFieldForSkip
+      addFieldForSkip,
+      errorFromApi
     }
   }, /*#__PURE__*/React.createElement(ThemeProvider, {
     customTheme: _objectSpread({}, customTheme)
@@ -114,7 +114,7 @@ const FormWrapper = ({
     initialValues: initialValues,
     onSubmit: handleSubmit,
     onReset: handleReset
-  }, props => hasRedirect && props.status === formStatuses.submited && /*#__PURE__*/React.createElement(RedirectPage, {
+  }, props => shouldRedirect && props.status === formStatuses.submited && /*#__PURE__*/React.createElement(RedirectPage, {
     redirectUrl: redirectUrlPath,
     backgroundImage: redirectBgImg,
     logoImg: logoImg,
@@ -123,7 +123,7 @@ const FormWrapper = ({
     mainImg: redirectMainImg
   }) || /*#__PURE__*/React.createElement(StyledForm, {
     id: id
-  }, /*#__PURE__*/React.createElement(TransactionId, null), children))));
+  }, children))));
 };
 
 export default FormWrapper;

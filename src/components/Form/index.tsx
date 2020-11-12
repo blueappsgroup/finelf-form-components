@@ -6,7 +6,6 @@ import { ThemeProvider } from '../../consts/theme'
 import { device } from '../../consts/sizes'
 import { FormProps, FormValuesType } from '../../types'
 import RedirectPage from '../RedirectPage'
-import TransactionId from '../TransactionId'
 import {
   FormContext,
   getFormValuesFromCache,
@@ -21,17 +20,10 @@ const StyledForm = styled(Form)`
   flex-direction: column;
   max-width: ${(props): string => props.theme.formMaxWidth};
   justify-self: center;
-  margin: 0 10px;
   background: ${(props): string => props.theme.formBgColor};
   font-family: ${(props): string => props.theme.fontFamily};
-  padding: ${(props): string => props.theme.formPaddingMobile};
   border-radius: 6px;
   box-shadow: ${(props): string => props.theme.formBoxShadow};
-
-  @media ${device.tablet} {
-    padding: ${(props): string => props.theme.formPadding};
-    margin: 0 auto;
-  }
 `
 
 const FormWrapper: FC<FormProps> = ({
@@ -74,7 +66,8 @@ const FormWrapper: FC<FormProps> = ({
   })
   const [currentStep, setCurrentStep] = useState(0)
   const [fieldsForSkip, setFieldsForSkip] = useState<string[]>([])
-
+  const [errorFromApi, setErrorFromApi] = useState<boolean>(false)
+  const shouldRedirect = !errorFromApi && hasRedirect
   const addFieldForSkip = (key: string): void =>
     setFieldsForSkip([...fieldsForSkip, key])
 
@@ -99,7 +92,15 @@ const FormWrapper: FC<FormProps> = ({
           fieldsForSkip,
           dataWithUserAgent
         )
-        const { redirectUrl: urlFromApi } = await response.json()
+        const {
+          redirectUrl: urlFromApi,
+          status: statusFromApi,
+        } = await response.json()
+
+        if (statusFromApi === false) {
+          setErrorFromApi(true)
+          return
+        }
 
         urlFromApi && setRedirectUrlPath(urlFromApi)
       }
@@ -107,7 +108,6 @@ const FormWrapper: FC<FormProps> = ({
       props.resetForm()
       props.setStatus(formStatuses.submited)
     } catch (e) {
-      console.log(e)
       props.setStatus(formStatuses.error)
     }
   }
@@ -133,6 +133,7 @@ const FormWrapper: FC<FormProps> = ({
         prevStep,
         fieldsForSkip,
         addFieldForSkip,
+        errorFromApi,
       }}
     >
       <ThemeProvider customTheme={{ ...customTheme }}>
@@ -143,7 +144,7 @@ const FormWrapper: FC<FormProps> = ({
           onReset={handleReset}
         >
           {(props): ReactElement =>
-            (hasRedirect && props.status === formStatuses.submited && (
+            (shouldRedirect && props.status === formStatuses.submited && (
               <RedirectPage
                 redirectUrl={redirectUrlPath}
                 backgroundImage={redirectBgImg}
@@ -152,12 +153,7 @@ const FormWrapper: FC<FormProps> = ({
                 timeToRedirect={timeToRedirect}
                 mainImg={redirectMainImg}
               />
-            )) || (
-              <StyledForm id={id}>
-                <TransactionId />
-                {children}
-              </StyledForm>
-            )
+            )) || <StyledForm id={id}>{children}</StyledForm>
           }
         </Formik>
       </ThemeProvider>

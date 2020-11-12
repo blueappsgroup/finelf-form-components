@@ -31,6 +31,26 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  padding-right: ", ";\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  cursor: pointer;\n  padding: 0;\n  margin-left: 5px;\n  font-weight: ", "\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject8() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  line-height: 18px;\n\n  &:hover {\n    cursor: pointer;\n  }\n"]);
 
@@ -48,7 +68,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: inline;\n  font-style: normal;\n  font-weight: 500;\n  font-size: ", ";\n  line-height: calc(\n    16px + 2 *\n      ", "\n  );\n  color: ", ";\n  padding-left: 15px;\n  padding-right: 25px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline;\n  font-style: normal;\n  font-weight: 500;\n  font-size: ", ";\n  line-height: calc(\n    5px + ", "\n  );\n  color: ", ";\n  margin-top: 2px;\n\n\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -58,7 +78,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  position: relative;\n  width: 18px;\n  height: 18px;\n  background: ", ";\n  border-radius: 3px;\n  border: ", " solid;\n  border-color: ", ";\n  transition: all 150ms;\n\n  ", " {\n    visibility: ", ";\n  }\n\n  &::after {\n    display: ", ";\n    position: absolute;\n    content: '*';\n    top: 0px;\n    right: -13px;\n    font-size: 15px;\n    color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  position: relative;\n  width: 18px;\n  height: 18px;\n  background: ", ";\n  border-radius: 3px;\n  border: ", " solid;\n  border-color: ", ";\n  transition: all 150ms;\n\n  ", " {\n    visibility: ", ";\n  }\n\n  &::after {\n    display: ", ";\n    position: absolute;\n    content: '*';\n    top: 0px;\n    right: -10px;\n    font-weight: bold;\n    font-size: 15px;\n    color: ", ";\n  }\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -88,7 +108,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  vertical-align: middle;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  vertical-align: middle;\n  margin-right: 10px;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -108,7 +128,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: flex-start;\n  margin-bottom: 12px;\n  position: relative;\n  height: ", ";\n  overflow: ", ";\n\n  a {\n    color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: flex-start;\n  margin-bottom: 12px;\n  position: relative;\n  overflow: ", ";\n\n  a {\n    color: ", ";\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -120,8 +140,6 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var StyledRow = _styledComponents.default.div(_templateObject(), function (props) {
-  return props.collapsed ? 'auto' : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')';
-}, function (props) {
   return props.collapsed ? 'none' : 'hidden';
 }, function (props) {
   return props.theme.checkboxLinkColor;
@@ -165,7 +183,7 @@ var StyledCheckbox = _styledComponents.default.div(_templateObject6(), function 
 var StyledText = _styledComponents.default.span(_templateObject7(), function (props) {
   return props.theme.checkboxLabelFontSize;
 }, function (props) {
-  return props.theme.checkboxBorderWidth;
+  return props.theme.checkboxLabelFontSize;
 }, function (props) {
   return props.theme.checkboxLabelTextColor;
 }); // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -190,7 +208,18 @@ var Checkbox = function Checkbox(_ref) {
 }; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 
-var Wrapper = _styledComponents.default.label(_templateObject8());
+var Wrapper = _styledComponents.default.label(_templateObject8()); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+var StyledReadMore = (0, _styledComponents.default)(StyledText)(_templateObject9(), function (props) {
+  return props.theme.checkboxLabelTextColor;
+}, function (props) {
+  return props.theme.styledSpanFontWeight;
+});
+
+var StyledContentWrapper = _styledComponents.default.div(_templateObject10(), function (props) {
+  return props.hasReadMore ? '0px' : '25px';
+});
 
 var CheckboxBase = function CheckboxBase(_ref2) {
   var field = _ref2.field,
@@ -220,6 +249,13 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     (0, _utils.setFormValuesToCache)(values, id);
   };
 
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      showMoreCollapsed = _useState6[0],
+      setShowMoreCollapsed = _useState6[1];
+
+  var htmlContentList = props.HTMLcontent && props.HTMLcontent.split('--MORE--');
+
   var handleOnChange = function handleOnChange(e) {
     props.onChange && props.onChange(e);
     field.onChange && field.onChange(e);
@@ -230,17 +266,21 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     return setCollapsed(!collapsed);
   };
 
+  var showMoreCollapseToggle = function showMoreCollapseToggle() {
+    return setShowMoreCollapsed(!showMoreCollapsed);
+  };
+
   (0, _react.useLayoutEffect)(function () {
-    if (targetRef.current && targetRef.current.offsetHeight > 22 && !props.disableCollapse) {
+    if (targetRef.current && targetRef.current.offsetHeight > 22 && !props.disableCollapse && !props.hasReadMore) {
       setHasCollapse(true);
     }
-  }, [props.disableCollapse, targetRef]);
+  }, [props.disableCollapse, props.hasReadMore, targetRef]);
   (0, _react.useEffect)(function () {
     props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return /*#__PURE__*/_react.default.createElement(StyledRow, {
-    hasCollapse: hasCollapse && !props.disableCollapse,
-    collapsed: collapsed || props.disableCollapse
+    hasCollapse: hasCollapse && !props.disableCollapse && !props.hasReadMore,
+    collapsed: collapsed || props.disableCollapse || props.hasReadMore
   }, /*#__PURE__*/_react.default.createElement(Wrapper, {
     ref: targetRef,
     onMouseOut: handleOnMouseOut
@@ -249,11 +289,21 @@ var CheckboxBase = function CheckboxBase(_ref2) {
     checked: field.value,
     value: field.value || false,
     error: touched[field.name] && errors[field.name]
-  })), props.label && /*#__PURE__*/_react.default.createElement(StyledText, null, props.label), props.HTMLcontent && /*#__PURE__*/_react.default.createElement(StyledText, {
+  })), props.label && /*#__PURE__*/_react.default.createElement(StyledText, null, props.label), /*#__PURE__*/_react.default.createElement(StyledContentWrapper, {
+    hasReadMore: props.hasReadMore
+  }, props.HTMLcontent && htmlContentList && /*#__PURE__*/_react.default.createElement(StyledText, {
     dangerouslySetInnerHTML: {
-      __html: props.HTMLcontent
+      __html: props.hasReadMore ? htmlContentList[0] : props.HTMLcontent
     }
-  }), props.childrenBody && /*#__PURE__*/_react.default.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/_react.default.createElement(StyledArrow, {
+  }), props.hasReadMore && htmlContentList && htmlContentList[1] && !showMoreCollapsed && /*#__PURE__*/_react.default.createElement(StyledReadMore, {
+    onClick: showMoreCollapseToggle
+  }, props.showMoreText), props.hasReadMore && htmlContentList && htmlContentList[1] && showMoreCollapsed && /*#__PURE__*/_react.default.createElement(StyledText, {
+    dangerouslySetInnerHTML: {
+      __html: htmlContentList[1]
+    }
+  }), props.hasReadMore && htmlContentList && htmlContentList[1] && showMoreCollapsed && /*#__PURE__*/_react.default.createElement(StyledReadMore, {
+    onClick: showMoreCollapseToggle
+  }, props.showLessText)), props.childrenBody && /*#__PURE__*/_react.default.createElement(StyledText, null, props.childrenBody)), /*#__PURE__*/_react.default.createElement(StyledArrow, {
     hasCollapse: hasCollapse,
     collapsed: collapsed,
     onClick: onCollapseClick
