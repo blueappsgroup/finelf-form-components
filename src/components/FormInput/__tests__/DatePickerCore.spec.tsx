@@ -33,6 +33,10 @@ describe('<DatePickerCore />', () => {
     }
   }
 
+  beforeEach(() => {
+    jest.setTimeout(30000)
+  })
+
   it('matches snapshot DatePickerCore', () => {
     const { datePickerCore } = setupWrapper({})
 
@@ -75,8 +79,6 @@ describe('<DatePickerCore />', () => {
     const yearSelectOption = yearSelect.querySelector('select option')
     const monthSelect = select[1]
     const monthSelectOption = monthSelect.querySelector('select option')
-
-    jest.setTimeout(30000)
 
     await act(async () => {
       fireEvent.change(yearSelect, {
