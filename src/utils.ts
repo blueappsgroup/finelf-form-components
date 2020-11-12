@@ -11,6 +11,7 @@ export const FormContext: Context<{
   apiUrl?: string
   fieldsForSkip?: string[]
   addFieldForSkip?: (key: string) => void
+  errorFromApi?: boolean
 }> = React.createContext({})
 
 export const setFormValuesToCache = (

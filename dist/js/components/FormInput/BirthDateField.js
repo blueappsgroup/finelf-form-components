@@ -35,7 +35,7 @@ var BirthDateField = function BirthDateField(_ref) {
     name: name,
     label: label,
     placeholder: placeholder,
-    validate: (0, _validate.validateDate)(required),
+    validate: (0, _validate.validateBirthDate)(required),
     dateFormat: dateFormat,
     openToDate: openToDate
   });

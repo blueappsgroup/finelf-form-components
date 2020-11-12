@@ -40,7 +40,8 @@ const CheckboxesGroup = ({
       id: `${name}.selectAll`,
       name: `${name}.selectAll`,
       label: "Zaznacz wszystkie zgody",
-      onChange: handleOnChange
+      onChange: handleOnChange,
+      disableCollapse: true
     }), children && !hasManyCheckboxes && /*#__PURE__*/React.createElement(CheckboxField, _extends({}, children.props, {
       name: `${name}.${children.props.name}`
     })), children && hasManyCheckboxes && children.map(item => /*#__PURE__*/React.createElement(CheckboxField, _extends({}, item.props, {

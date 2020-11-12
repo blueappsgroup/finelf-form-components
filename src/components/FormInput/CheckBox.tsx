@@ -22,6 +22,7 @@ type StyledProps = {
   checked?: boolean
   theme: { [k: string]: string }
   required?: boolean
+  hasReadMore?: boolean
 }
 
 const StyledRow = styled.div<StyledProps>`
@@ -29,10 +30,6 @@ const StyledRow = styled.div<StyledProps>`
   align-items: flex-start;
   margin-bottom: 12px;
   position: relative;
-  height: ${(props: StyledProps): string =>
-    props.collapsed
-      ? 'auto'
-      : 'calc(18px + 2*' + props.theme.checkboxBorderWidth + ')'};
   overflow: ${(props: StyledProps): string =>
     props.collapsed ? 'none' : 'hidden'};
 
@@ -67,6 +64,7 @@ const StyledArrow = styled.span<StyledProps>`
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
+  margin-right: 10px;
 `
 
 const Icon = styled.svg`
@@ -116,7 +114,8 @@ const StyledCheckbox = styled.div<StyledProps>`
     position: absolute;
     content: '*';
     top: 0px;
-    right: -13px;
+    right: -10px;
+    font-weight: bold;
     font-size: 15px;
     color: ${(props: StyledProps): string =>
       props.theme.checkboxBorderErrorColor};
@@ -131,12 +130,10 @@ const StyledText = styled.span<any>`
   font-size: ${(props: StyledProps): string =>
     props.theme.checkboxLabelFontSize};
   line-height: calc(
-    16px + 2 *
-      ${(props: StyledProps): string => props.theme.checkboxBorderWidth}
+    5px + ${(props: StyledProps): string => props.theme.checkboxLabelFontSize}
   );
   color: ${(props: StyledProps): string => props.theme.checkboxLabelTextColor};
-  padding-left: 15px;
-  padding-right: 25px;
+  margin-top: 2px;
 `
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -161,6 +158,21 @@ const Wrapper = styled.label<any>`
   }
 `
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const StyledReadMore = styled<any>(StyledText)`
+  color: ${(props: StyledProps): string => props.theme.checkboxLabelTextColor};
+  cursor: pointer;
+  padding: 0;
+  margin-left: 5px;
+  font-weight: ${(props: StyledProps): string =>
+    props.theme.styledSpanFontWeight};
+`
+
+const StyledContentWrapper = styled.div<StyledProps>`
+  padding-right: ${(props: StyledProps): string =>
+    props.hasReadMore ? '0px' : '25px'};
+`
+
 export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   field,
   form: { touched, errors, values },
@@ -173,7 +185,9 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   const handleOnMouseOut = (): void => {
     setFormValuesToCache(values, id)
   }
-
+  const [showMoreCollapsed, setShowMoreCollapsed] = useState(false)
+  const htmlContentList =
+    props.HTMLcontent && props.HTMLcontent.split('--MORE--')
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
     props.onChange && props.onChange(e)
     field.onChange && field.onChange(e)
@@ -182,15 +196,19 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
 
   const onCollapseClick = (): void => setCollapsed(!collapsed)
 
+  const showMoreCollapseToggle = (): void =>
+    setShowMoreCollapsed(!showMoreCollapsed)
+
   useLayoutEffect(() => {
     if (
       targetRef.current &&
       targetRef.current.offsetHeight > 22 &&
-      !props.disableCollapse
+      !props.disableCollapse &&
+      !props.hasReadMore
     ) {
       setHasCollapse(true)
     }
-  }, [props.disableCollapse, targetRef])
+  }, [props.disableCollapse, props.hasReadMore, targetRef])
 
   useEffect(() => {
     props.skipFieldForApi && addFieldForSkip && addFieldForSkip(field.name)
@@ -199,8 +217,8 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
 
   return (
     <StyledRow
-      hasCollapse={hasCollapse && !props.disableCollapse}
-      collapsed={collapsed || props.disableCollapse}
+      hasCollapse={hasCollapse && !props.disableCollapse && !props.hasReadMore}
+      collapsed={collapsed || props.disableCollapse || props.hasReadMore}
     >
       <Wrapper ref={targetRef} onMouseOut={handleOnMouseOut}>
         <Checkbox
@@ -216,9 +234,41 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
           }
         />
         {props.label && <StyledText>{props.label}</StyledText>}
-        {props.HTMLcontent && (
-          <StyledText dangerouslySetInnerHTML={{ __html: props.HTMLcontent }} />
-        )}
+        <StyledContentWrapper hasReadMore={props.hasReadMore}>
+          {props.HTMLcontent && htmlContentList && (
+            <StyledText
+              dangerouslySetInnerHTML={{
+                __html: props.hasReadMore
+                  ? htmlContentList[0]
+                  : props.HTMLcontent,
+              }}
+            />
+          )}
+          {props.hasReadMore &&
+            htmlContentList &&
+            htmlContentList[1] &&
+            !showMoreCollapsed && (
+              <StyledReadMore onClick={showMoreCollapseToggle}>
+                {props.showMoreText}
+              </StyledReadMore>
+            )}
+          {props.hasReadMore &&
+            htmlContentList &&
+            htmlContentList[1] &&
+            showMoreCollapsed && (
+              <StyledText
+                dangerouslySetInnerHTML={{ __html: htmlContentList[1] }}
+              />
+            )}
+          {props.hasReadMore &&
+            htmlContentList &&
+            htmlContentList[1] &&
+            showMoreCollapsed && (
+              <StyledReadMore onClick={showMoreCollapseToggle}>
+                {props.showLessText}
+              </StyledReadMore>
+            )}
+        </StyledContentWrapper>
         {props.childrenBody && <StyledText>{props.childrenBody}</StyledText>}
       </Wrapper>
       <StyledArrow

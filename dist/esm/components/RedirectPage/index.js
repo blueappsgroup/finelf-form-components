@@ -38,7 +38,7 @@ const RedirectPage = ({
   backgroundImage,
   logoImg,
   mainImg,
-  timeToRedirect = 5,
+  timeToRedirect = 3,
   redirectUrl
 }) => {
   const [counter, setCounter] = useState(timeToRedirect);

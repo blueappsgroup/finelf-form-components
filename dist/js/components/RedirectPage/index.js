@@ -132,7 +132,7 @@ var RedirectPage = function RedirectPage(_ref) {
       logoImg = _ref.logoImg,
       mainImg = _ref.mainImg,
       _ref$timeToRedirect = _ref.timeToRedirect,
-      timeToRedirect = _ref$timeToRedirect === void 0 ? 5 : _ref$timeToRedirect,
+      timeToRedirect = _ref$timeToRedirect === void 0 ? 3 : _ref$timeToRedirect,
       redirectUrl = _ref.redirectUrl;
 
   var _useState = (0, _react.useState)(timeToRedirect),

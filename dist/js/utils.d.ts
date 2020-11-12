@@ -10,6 +10,7 @@ export declare const FormContext: Context<{
     apiUrl?: string;
     fieldsForSkip?: string[];
     addFieldForSkip?: (key: string) => void;
+    errorFromApi?: boolean;
 }>;
 export declare const setFormValuesToCache: (values: {
     [key: string]: string | boolean;

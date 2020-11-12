@@ -102,7 +102,6 @@
   box-shadow: ${props => props.theme.inputBoxShadow};
   border-radius: ${props => props.theme.inputBorderRadius};
   width: 100%;
-  height: ${props => props.theme.inputHeight};
   display: flex;
   align-items: center;
   font-style: ${props => props.theme.inputFontStyle};
@@ -187,15 +186,17 @@
   const DatePickerCore = _ref => {
     let {
       dateFormat = 'dd/MM/yyyy',
-      openToDate = new Date(`01/01/${(0, _getYear2.default)(new Date()) - 18}`)
+      openToDate = new Date(`01/01/${(0, _getYear2.default)(new Date()) - 18}`),
+      selected
     } = _ref,
-        props = _objectWithoutProperties(_ref, ["dateFormat", "openToDate"]);
+        props = _objectWithoutProperties(_ref, ["dateFormat", "openToDate", "selected"]);
 
     return /*#__PURE__*/_react2.default.createElement(StyledWrapper, null, /*#__PURE__*/_react2.default.createElement(StyledDatePicker, _extends({}, props, {
+      selected: selected,
       dateFormat: dateFormat,
       locale: "pl",
       renderCustomHeader: CustomHeader,
-      openToDate: openToDate,
+      openToDate: selected || openToDate,
       onFocus: e => e.target.readOnly = true
     })));
   };

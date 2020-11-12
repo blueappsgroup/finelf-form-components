@@ -7,5 +7,5 @@ declare type StepHeaderProps = {
         stepHeaderInActiveBorderColor: string;
     };
 };
-declare const StepHeader: import("styled-components").StyledComponent<"h3", any, StepHeaderProps, never>;
+declare const StepHeader: import("styled-components").StyledComponent<"div", any, StepHeaderProps, never>;
 export default StepHeader;

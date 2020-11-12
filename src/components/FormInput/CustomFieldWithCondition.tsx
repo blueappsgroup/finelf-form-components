@@ -12,7 +12,13 @@ type Props = {
 }
 const CustomFieldWithCondition: FC<Props> = (props) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { values, errors, setErrors, setValues } = useFormikContext<any>()
+  const {
+    values,
+    errors,
+    setErrors,
+    setValues,
+    setFieldTouched,
+  } = useFormikContext<any>()
   const { id } = useContext(FormContext)
   const [required, setRequired] = useState(props.required || false)
   const [visible, setVisible] = useState<boolean>(
@@ -78,6 +84,8 @@ const CustomFieldWithCondition: FC<Props> = (props) => {
     errors,
     setErrors,
     id,
+    required,
+    setFieldTouched,
   ])
 
   return (

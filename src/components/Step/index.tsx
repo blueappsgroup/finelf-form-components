@@ -1,4 +1,11 @@
-import React, { FC, useContext, useEffect, useMemo, useState } from 'react'
+import React, {
+  FC,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import styled from 'styled-components'
 import { useFormikContext } from 'formik'
 
@@ -57,9 +64,11 @@ type Props = {
   stepIndex: number
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: any
+  onStepComplete?: () => void
 }
 
-const Step: FC<Props> = ({ children, stepIndex }) => {
+const Step: FC<Props> = ({ children, stepIndex, onStepComplete }) => {
+  const wrapperRef = useRef<any>(null)
   const {
     currentStep = 0,
     stepsLength = 1,
@@ -164,8 +173,20 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
     }
   }, [values, errors, mappedFields, children])
 
+  const handleClick = () => {
+    onStepComplete && onStepComplete()
+    nextStep && nextStep()
+  }
+
+  useEffect(() => {
+    if (stepIndex === currentStep) {
+      wrapperRef.current !== null &&
+        window.scrollTo(0, wrapperRef.current.offsetTop)
+    }
+  }, [currentStep, stepIndex])
+
   return (
-    <Wrapper visible={stepIndex === currentStep}>
+    <Wrapper ref={wrapperRef} visible={stepIndex === currentStep}>
       <StepHeaderWrapper>
         {currentStep !== 0 && (
           <StepHeader>
@@ -198,7 +219,7 @@ const Step: FC<Props> = ({ children, stepIndex }) => {
             disabled={nextButtonDisabled}
             type="button"
             text="Dalej"
-            onClick={nextStep}
+            onClick={handleClick}
           />
         )}
         {currentStep === lastStepIndex && (

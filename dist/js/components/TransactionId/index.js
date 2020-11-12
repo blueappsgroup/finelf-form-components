@@ -27,13 +27,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var StyledInput = _styledComponents.default.input(_templateObject());
 
-var TrasactionId = function TrasactionId() {
+var TransactionId = function TransactionId() {
   return /*#__PURE__*/_react.default.createElement(_formik.Field, {
-    name: "trasaction_id",
+    name: "transaction_id",
     component: StyledInput
   });
 };
 
-var _default = TrasactionId;
+var _default = TransactionId;
 exports.default = _default;
 //# sourceMappingURL=index.js.map
