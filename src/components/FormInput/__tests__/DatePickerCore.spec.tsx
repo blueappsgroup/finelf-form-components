@@ -33,6 +33,10 @@ describe('<DatePickerCore />', () => {
     }
   }
 
+  beforeEach(() => {
+    jest.setTimeout(30000)
+  })
+
   it('matches snapshot DatePickerCore', () => {
     const { datePickerCore } = setupWrapper({})
 
