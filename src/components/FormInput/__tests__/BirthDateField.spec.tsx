@@ -42,39 +42,4 @@ describe('<BirthDateField />', () => {
     expect(input).toBeTruthy()
     expect(input).toMatchSnapshot()
   })
-
-  it('matches snapshot with label', () => {
-    const wrapper = setupWrapper({ label: 'Test' })
-    const { container } = wrapper
-
-    expect(wrapper.getByText('Test')).toBeTruthy()
-    expect(container).toMatchSnapshot()
-  })
-
-  it('changes input field', async () => {
-    const { input } = setupWrapper({})
-
-    await act(async () => {
-      fireEvent.change(input, { target: { value: '2020-01-01' } })
-    })
-
-    expect(input.value).toBe('2020-01-01')
-  })
-
-  it('input field onBlur save value to sessionStorage', async () => {
-    const { input } = setupWrapper({})
-
-    await act(async () => {
-      fireEvent.change(input, { target: { value: '2020-01-01' } })
-    })
-
-    await act(async () => {
-      fireEvent.blur(input, { target: { value: '2020-01-01' } })
-    })
-
-    expect(
-      JSON.parse(global.window.sessionStorage.getItem('form-testForm')).name
-    ).toBe('2020-01-01')
-    expect(input.value).toBe('2020-01-01')
-  })
 })

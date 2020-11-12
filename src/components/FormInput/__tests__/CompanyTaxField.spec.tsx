@@ -14,6 +14,7 @@ describe('<CompanyTaxField/>', () => {
     inputName = 'company_tax_id',
     required = false,
     validate,
+    visibleCondition = null,
     ...rest
   }) => {
     const wrapper = render(
@@ -23,6 +24,7 @@ describe('<CompanyTaxField/>', () => {
           name={inputName}
           validate={validate}
           required={required}
+          visibleCondition={visibleCondition}
           {...rest}
         />
       </Form>

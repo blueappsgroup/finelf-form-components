@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StepHeader /> matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bdnylx kUhWLa"
+    />
+  </div>
+</body>
+`;

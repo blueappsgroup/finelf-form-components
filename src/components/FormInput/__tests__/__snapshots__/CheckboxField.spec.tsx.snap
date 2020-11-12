@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CheckboxField /> matches snapshot 1`] = `
+<input
+  class="sc-iqAbSa fDlmPL"
+  id="checkboxField"
+  name="checkbox_field"
+  type="checkbox"
+  value="false"
+/>
+`;
+
+exports[`<CheckboxField /> matches snapshot with label 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-iCoHVE JvWob"
+    id="testForm"
+  >
+    <div
+      class="sc-fujyUd gpvmHg"
+    >
+      <label
+        class="sc-bqGHjH bosgEF"
+      >
+        <div
+          class="sc-jrsJCI gITIDJ"
+        >
+          <input
+            class="sc-iqAbSa fDlmPL"
+            id="checkboxField"
+            label="Test"
+            name="checkbox_field"
+            type="checkbox"
+            value="false"
+          />
+          <div
+            class="sc-crzoUp gkQMBo"
+          >
+            <svg
+              class="sc-kEqYlL fgFmCz"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                points="20 6 9 17 4 12"
+              />
+            </svg>
+          </div>
+        </div>
+        <span
+          class="sc-dIsAE eZymrI"
+        >
+          Test
+        </span>
+        <div
+          class="sc-hBMVcZ kHfrCg"
+        />
+      </label>
+      <span
+        class="sc-pNWxx jSqCaz"
+      />
+    </div>
+  </form>
+</div>
+`;

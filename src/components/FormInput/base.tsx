@@ -606,7 +606,6 @@ export const BaseSelectField: (props: SelectFieldWrapProps) => ReactElement = ({
   const { id } = useContext(FormContext)
   const handleOnBlur = (e: ChangeEvent<HTMLInputElement>): void => {
     setFormValuesToCache(values, id)
-
     field.onBlur && field.onBlur(e)
   }
 

@@ -1,0 +1,923 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base <Step /> buttons disabled if fields are filled improperly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        action="#"
+        class="sc-lmgQde QAGeb"
+        id="testForm"
+      >
+        <div
+          class="sc-ezzayL CbuIx"
+        >
+          <div
+            class="sc-kLokih glHjhv"
+          >
+            <div
+              class="sc-giAqnE fjgYLa"
+            >
+              1. Podstawowe dane
+            </div>
+            <div
+              class="sc-giAqnE ieexcw"
+            >
+              2. Szczegółowe dane
+            </div>
+          </div>
+          <div
+            class="sc-hKFyIo gtdXMP"
+          >
+            <label
+              for="fName"
+            >
+              Imię*
+            </label>
+            <div
+              class="sc-dIvqjp cDotIw"
+            >
+              <input
+                class="sc-pNWxx cxMLPE"
+                label="Imię"
+                name="fName"
+                placeholder="Imię*"
+                required=""
+                value="123"
+              />
+            </div>
+          </div>
+          <div
+            class="sc-bYwzba gA-DsVm"
+          >
+            <button
+              class="sc-iJCRLp eGLyug"
+              disabled=""
+              type="button"
+            >
+              Dalej
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-ezzayL cGVRGm"
+        >
+          <div
+            class="sc-kLokih glHjhv"
+          >
+            <div
+              class="sc-giAqnE ieexcw"
+            >
+              2. Szczegółowe dane
+            </div>
+          </div>
+          <div
+            class="sc-bYwzba gA-DsVm"
+          >
+            <button
+              class="sc-iJCRLp eGLyug"
+              disabled=""
+              type="button"
+            >
+              Dalej
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      action="#"
+      class="sc-lmgQde QAGeb"
+      id="testForm"
+    >
+      <div
+        class="sc-ezzayL CbuIx"
+      >
+        <div
+          class="sc-kLokih glHjhv"
+        >
+          <div
+            class="sc-giAqnE fjgYLa"
+          >
+            1. Podstawowe dane
+          </div>
+          <div
+            class="sc-giAqnE ieexcw"
+          >
+            2. Szczegółowe dane
+          </div>
+        </div>
+        <div
+          class="sc-hKFyIo gtdXMP"
+        >
+          <label
+            for="fName"
+          >
+            Imię*
+          </label>
+          <div
+            class="sc-dIvqjp cDotIw"
+          >
+            <input
+              class="sc-pNWxx cxMLPE"
+              label="Imię"
+              name="fName"
+              placeholder="Imię*"
+              required=""
+              value="123"
+            />
+          </div>
+        </div>
+        <div
+          class="sc-bYwzba gA-DsVm"
+        >
+          <button
+            class="sc-iJCRLp eGLyug"
+            disabled=""
+            type="button"
+          >
+            Dalej
+          </button>
+        </div>
+      </div>
+      <div
+        class="sc-ezzayL cGVRGm"
+      >
+        <div
+          class="sc-kLokih glHjhv"
+        >
+          <div
+            class="sc-giAqnE ieexcw"
+          >
+            2. Szczegółowe dane
+          </div>
+        </div>
+        <div
+          class="sc-bYwzba gA-DsVm"
+        >
+          <button
+            class="sc-iJCRLp eGLyug"
+            disabled=""
+            type="button"
+          >
+            Dalej
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "firstName": <input
+    class="sc-pNWxx cxMLPE"
+    label="Imię"
+    name="fName"
+    placeholder="Imię*"
+    required=""
+    value="123"
+  />,
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`base <Step /> buttons disabled if required fields are not filled 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        action="#"
+        class="sc-lmgQde QAGeb"
+        id="testForm"
+      >
+        <div
+          class="sc-ezzayL CbuIx"
+        >
+          <div
+            class="sc-kLokih glHjhv"
+          >
+            <div
+              class="sc-giAqnE fjgYLa"
+            >
+              1. Podstawowe dane
+            </div>
+            <div
+              class="sc-giAqnE ieexcw"
+            >
+              2. Szczegółowe dane
+            </div>
+          </div>
+          <div
+            class="sc-hKFyIo gtdXMP"
+          >
+            <label
+              for="fName"
+            >
+              Imię*
+            </label>
+            <div
+              class="sc-dIvqjp cDotIw"
+            >
+              <input
+                class="sc-pNWxx cxMLPE"
+                label="Imię"
+                name="fName"
+                placeholder="Imię*"
+                required=""
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="sc-bYwzba gA-DsVm"
+          >
+            <button
+              class="sc-iJCRLp eGLyug"
+              disabled=""
+              type="button"
+            >
+              Dalej
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-ezzayL cGVRGm"
+        >
+          <div
+            class="sc-kLokih glHjhv"
+          >
+            <div
+              class="sc-giAqnE ieexcw"
+            >
+              2. Szczegółowe dane
+            </div>
+          </div>
+          <div
+            class="sc-bYwzba gA-DsVm"
+          >
+            <button
+              class="sc-iJCRLp eGLyug"
+              disabled=""
+              type="button"
+            >
+              Dalej
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      action="#"
+      class="sc-lmgQde QAGeb"
+      id="testForm"
+    >
+      <div
+        class="sc-ezzayL CbuIx"
+      >
+        <div
+          class="sc-kLokih glHjhv"
+        >
+          <div
+            class="sc-giAqnE fjgYLa"
+          >
+            1. Podstawowe dane
+          </div>
+          <div
+            class="sc-giAqnE ieexcw"
+          >
+            2. Szczegółowe dane
+          </div>
+        </div>
+        <div
+          class="sc-hKFyIo gtdXMP"
+        >
+          <label
+            for="fName"
+          >
+            Imię*
+          </label>
+          <div
+            class="sc-dIvqjp cDotIw"
+          >
+            <input
+              class="sc-pNWxx cxMLPE"
+              label="Imię"
+              name="fName"
+              placeholder="Imię*"
+              required=""
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="sc-bYwzba gA-DsVm"
+        >
+          <button
+            class="sc-iJCRLp eGLyug"
+            disabled=""
+            type="button"
+          >
+            Dalej
+          </button>
+        </div>
+      </div>
+      <div
+        class="sc-ezzayL cGVRGm"
+      >
+        <div
+          class="sc-kLokih glHjhv"
+        >
+          <div
+            class="sc-giAqnE ieexcw"
+          >
+            2. Szczegółowe dane
+          </div>
+        </div>
+        <div
+          class="sc-bYwzba gA-DsVm"
+        >
+          <button
+            class="sc-iJCRLp eGLyug"
+            disabled=""
+            type="button"
+          >
+            Dalej
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "firstName": <input
+    class="sc-pNWxx cxMLPE"
+    label="Imię"
+    name="fName"
+    placeholder="Imię*"
+    required=""
+    value=""
+  />,
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`base <Step /> matches snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        action="#"
+        class="sc-lmgQde QAGeb"
+        id="testForm"
+      >
+        <div
+          class="sc-ezzayL CbuIx"
+        >
+          <div
+            class="sc-kLokih glHjhv"
+          >
+            <div
+              class="sc-giAqnE fjgYLa"
+            >
+              1. Podstawowe dane
+            </div>
+            <div
+              class="sc-giAqnE ieexcw"
+            >
+              2. Szczegółowe dane
+            </div>
+          </div>
+          <div
+            class="sc-hKFyIo gtdXMP"
+          >
+            <label
+              for="fName"
+            >
+              Imię*
+            </label>
+            <div
+              class="sc-dIvqjp cDotIw"
+            >
+              <input
+                class="sc-pNWxx cxMLPE"
+                label="Imię"
+                name="fName"
+                placeholder="Imię*"
+                required=""
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="sc-bYwzba gA-DsVm"
+          >
+            <button
+              class="sc-iJCRLp eGLyug"
+              disabled=""
+              type="button"
+            >
+              Dalej
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-ezzayL cGVRGm"
+        >
+          <div
+            class="sc-kLokih glHjhv"
+          >
+            <div
+              class="sc-giAqnE ieexcw"
+            >
+              2. Szczegółowe dane
+            </div>
+          </div>
+          <div
+            class="sc-bYwzba gA-DsVm"
+          >
+            <button
+              class="sc-iJCRLp eGLyug"
+              disabled=""
+              type="button"
+            >
+              Dalej
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      action="#"
+      class="sc-lmgQde QAGeb"
+      id="testForm"
+    >
+      <div
+        class="sc-ezzayL CbuIx"
+      >
+        <div
+          class="sc-kLokih glHjhv"
+        >
+          <div
+            class="sc-giAqnE fjgYLa"
+          >
+            1. Podstawowe dane
+          </div>
+          <div
+            class="sc-giAqnE ieexcw"
+          >
+            2. Szczegółowe dane
+          </div>
+        </div>
+        <div
+          class="sc-hKFyIo gtdXMP"
+        >
+          <label
+            for="fName"
+          >
+            Imię*
+          </label>
+          <div
+            class="sc-dIvqjp cDotIw"
+          >
+            <input
+              class="sc-pNWxx cxMLPE"
+              label="Imię"
+              name="fName"
+              placeholder="Imię*"
+              required=""
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="sc-bYwzba gA-DsVm"
+        >
+          <button
+            class="sc-iJCRLp eGLyug"
+            disabled=""
+            type="button"
+          >
+            Dalej
+          </button>
+        </div>
+      </div>
+      <div
+        class="sc-ezzayL cGVRGm"
+      >
+        <div
+          class="sc-kLokih glHjhv"
+        >
+          <div
+            class="sc-giAqnE ieexcw"
+          >
+            2. Szczegółowe dane
+          </div>
+        </div>
+        <div
+          class="sc-bYwzba gA-DsVm"
+        >
+          <button
+            class="sc-iJCRLp eGLyug"
+            disabled=""
+            type="button"
+          >
+            Dalej
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "firstName": <input
+    class="sc-pNWxx cxMLPE"
+    label="Imię"
+    name="fName"
+    placeholder="Imię*"
+    required=""
+    value=""
+  />,
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`base <Step /> setNextButtonDisabled have been called after fill step fields 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        action="#"
+        class="sc-lmgQde QAGeb"
+        id="testForm"
+      >
+        <div
+          class="sc-ezzayL CbuIx"
+        >
+          <div
+            class="sc-kLokih glHjhv"
+          >
+            <div
+              class="sc-giAqnE fjgYLa"
+            >
+              1. Podstawowe dane
+            </div>
+            <div
+              class="sc-giAqnE ieexcw"
+            >
+              2. Szczegółowe dane
+            </div>
+          </div>
+          <div
+            class="sc-hKFyIo gtdXMP"
+          >
+            <label
+              for="fName"
+            >
+              Imię*
+            </label>
+            <div
+              class="sc-dIvqjp cDotIw"
+            >
+              <input
+                class="sc-pNWxx cxMLPE"
+                label="Imię"
+                name="fName"
+                placeholder="Imię*"
+                required=""
+                value="test"
+              />
+            </div>
+          </div>
+          <div
+            class="sc-bYwzba gA-DsVm"
+          >
+            <button
+              class="sc-iJCRLp eGLyug"
+              type="button"
+            >
+              Dalej
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-ezzayL cGVRGm"
+        >
+          <div
+            class="sc-kLokih glHjhv"
+          >
+            <div
+              class="sc-giAqnE ieexcw"
+            >
+              2. Szczegółowe dane
+            </div>
+          </div>
+          <div
+            class="sc-bYwzba gA-DsVm"
+          >
+            <button
+              class="sc-iJCRLp eGLyug"
+              disabled=""
+              type="button"
+            >
+              Dalej
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      action="#"
+      class="sc-lmgQde QAGeb"
+      id="testForm"
+    >
+      <div
+        class="sc-ezzayL CbuIx"
+      >
+        <div
+          class="sc-kLokih glHjhv"
+        >
+          <div
+            class="sc-giAqnE fjgYLa"
+          >
+            1. Podstawowe dane
+          </div>
+          <div
+            class="sc-giAqnE ieexcw"
+          >
+            2. Szczegółowe dane
+          </div>
+        </div>
+        <div
+          class="sc-hKFyIo gtdXMP"
+        >
+          <label
+            for="fName"
+          >
+            Imię*
+          </label>
+          <div
+            class="sc-dIvqjp cDotIw"
+          >
+            <input
+              class="sc-pNWxx cxMLPE"
+              label="Imię"
+              name="fName"
+              placeholder="Imię*"
+              required=""
+              value="test"
+            />
+          </div>
+        </div>
+        <div
+          class="sc-bYwzba gA-DsVm"
+        >
+          <button
+            class="sc-iJCRLp eGLyug"
+            type="button"
+          >
+            Dalej
+          </button>
+        </div>
+      </div>
+      <div
+        class="sc-ezzayL cGVRGm"
+      >
+        <div
+          class="sc-kLokih glHjhv"
+        >
+          <div
+            class="sc-giAqnE ieexcw"
+          >
+            2. Szczegółowe dane
+          </div>
+        </div>
+        <div
+          class="sc-bYwzba gA-DsVm"
+        >
+          <button
+            class="sc-iJCRLp eGLyug"
+            disabled=""
+            type="button"
+          >
+            Dalej
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "firstName": <input
+    class="sc-pNWxx cxMLPE"
+    label="Imię"
+    name="fName"
+    placeholder="Imię*"
+    required=""
+    value="test"
+  />,
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

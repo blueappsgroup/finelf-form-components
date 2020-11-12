@@ -14,6 +14,7 @@ describe('<CompanyNameField />', () => {
     inputName = 'company_name',
     required = false,
     validate,
+    visibleCondition = null,
     ...rest
   }) => {
     const wrapper = render(
@@ -23,6 +24,7 @@ describe('<CompanyNameField />', () => {
           name={inputName}
           validate={validate}
           required={required}
+          visibleCondition={visibleCondition}
           {...rest}
         />
       </Form>
