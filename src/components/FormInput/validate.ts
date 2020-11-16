@@ -234,15 +234,15 @@ export const validateIDCardNumber: (
     return 'To pole jest wymagane'
   }
 
+  if (isNotNumber(trimedValue)) {
+    return 'Podany numer dowodu jest nieprawidłowy'
+  }
+
   if (isNotValidIDCard(trimedValue)) {
     return 'Podany numer dowodu jest nieprawidłowy'
   }
 
   if (!isValidIDCard(trimedValue)) {
-    return 'Podany numer dowodu jest nieprawidłowy'
-  }
-
-  if (isNotNumber(trimedValue)) {
     return 'Podany numer dowodu jest nieprawidłowy'
   }
 }

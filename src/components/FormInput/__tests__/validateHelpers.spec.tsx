@@ -1,4 +1,5 @@
 import {
+  isAdult,
   isEmpty,
   isNotLetter,
   isNotNumber,
@@ -165,5 +166,15 @@ describe('validateHelpers', () => {
       abc: 'test',
     }
     expect(isNotValidOption(value, options)).toBeFalsy()
+  })
+
+  it('isAdult true', () => {
+    const value = '1990-12-31'
+    expect(isAdult(value)).toBeTruthy()
+  })
+
+  it('isAdult false', () => {
+    const value = new Date().toDateString()
+    expect(isAdult(value)).toBeFalsy()
   })
 })
