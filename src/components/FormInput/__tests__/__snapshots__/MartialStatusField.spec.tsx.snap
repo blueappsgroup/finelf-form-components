@@ -2,13 +2,13 @@
 
 exports[`<MaritalStatusField /> matches snapshot 1`] = `
 <select
-  class="sc-iemXMA ezYUqe"
+  class="sc-idOhPF gSNtny"
   id="maritalStatusField"
   name="name"
   type="text"
 >
   <option
-    class="sc-hHEjAm hmYdyr"
+    class="sc-hHftDr bhxQtR"
     disabled=""
     value="select"
   >
@@ -46,11 +46,11 @@ exports[`<MaritalStatusField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <label
         for="name"
@@ -58,10 +58,10 @@ exports[`<MaritalStatusField /> matches snapshot with error 1`] = `
         Test*
       </label>
       <div
-        class="sc-bkbjAj gnGQfC"
+        class="sc-bkzZxe jbuFap"
       >
         <select
-          class="sc-iemXMA varr"
+          class="sc-idOhPF emkUjz"
           id="maritalStatusField"
           label="Test"
           name="name"
@@ -69,7 +69,7 @@ exports[`<MaritalStatusField /> matches snapshot with error 1`] = `
           type="text"
         >
           <option
-            class="sc-hHEjAm hmYdyr"
+            class="sc-hHftDr bhxQtR"
             disabled=""
             value="select"
           >
@@ -102,11 +102,11 @@ exports[`<MaritalStatusField /> matches snapshot with error 1`] = `
           </option>
         </select>
         <span
-          class="sc-dIvqjp gGSLdt"
+          class="sc-dIUggk hceYpr"
         />
       </div>
       <span
-        class="sc-ksluoS cNvzFC"
+        class="sc-kstrdz hYtgrW"
       >
         To pole jest wymagane
       </span>
@@ -119,11 +119,11 @@ exports[`<MaritalStatusField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <label
         for="name"
@@ -131,17 +131,17 @@ exports[`<MaritalStatusField /> matches snapshot with label 1`] = `
         Test
       </label>
       <div
-        class="sc-bkbjAj gnGQfC"
+        class="sc-bkzZxe jbuFap"
       >
         <select
-          class="sc-iemXMA ezYUqe"
+          class="sc-idOhPF gSNtny"
           id="maritalStatusField"
           label="Test"
           name="name"
           type="text"
         >
           <option
-            class="sc-hHEjAm hmYdyr"
+            class="sc-hHftDr bhxQtR"
             disabled=""
             value="select"
           >
@@ -174,7 +174,7 @@ exports[`<MaritalStatusField /> matches snapshot with label 1`] = `
           </option>
         </select>
         <span
-          class="sc-dIvqjp gGSLdt"
+          class="sc-dIUggk hceYpr"
         />
       </div>
     </div>
@@ -186,23 +186,23 @@ exports[`<MaritalStatusField /> select field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <div
-        class="sc-bkbjAj gnGQfC"
+        class="sc-bkzZxe jbuFap"
       >
         <select
-          class="sc-iemXMA varr"
+          class="sc-idOhPF emkUjz"
           id="maritalStatusField"
           name="name"
           type="text"
         >
           <option
-            class="sc-hHEjAm hmYdyr"
+            class="sc-hHftDr bhxQtR"
             disabled=""
             value="select"
           >
@@ -235,11 +235,11 @@ exports[`<MaritalStatusField /> select field with custom validation 1`] = `
           </option>
         </select>
         <span
-          class="sc-dIvqjp gGSLdt"
+          class="sc-dIUggk hceYpr"
         />
       </div>
       <span
-        class="sc-ksluoS cNvzFC"
+        class="sc-kstrdz hYtgrW"
       >
         Podane dane są nieprawidłowe
       </span>

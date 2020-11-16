@@ -2,7 +2,7 @@
 
 exports[`base <CheckboxesGroup /> matches snapshot 1`] = `
 <input
-  class="sc-kLokih QhdbU"
+  class="sc-kLgntA dDGvXM"
   id="checkboxes_group.selectAll"
   label="Zaznacz wszystkie zgody"
   name="checkboxes_group.selectAll"

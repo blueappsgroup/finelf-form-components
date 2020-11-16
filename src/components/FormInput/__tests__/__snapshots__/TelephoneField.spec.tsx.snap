@@ -4,26 +4,26 @@ exports[`<TelephoneField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-lmoMRL kywwk"
       >
         <div
-          class="sc-bCwgka ktnsAr"
+          class="sc-bBXqnf fTSkBg"
         >
           <span
-            class="sc-iwaifL gyLDXW"
+            class="sc-iwyYcG chHiVN"
           >
             +48
           </span>
         </div>
         <input
-          class="sc-hBMVcZ faAkmN"
+          class="sc-hBEYos LINIC"
           id="testId"
           name="telephone"
           placeholder="Numer telefonu"
@@ -34,7 +34,7 @@ exports[`<TelephoneField /> input field with custom validation 1`] = `
         />
       </div>
       <span
-        class="sc-ksluoS cNvzFC"
+        class="sc-kstrdz hYtgrW"
       >
         Podany numer telefonu jest nieprawidłowy
       </span>
@@ -45,7 +45,7 @@ exports[`<TelephoneField /> input field with custom validation 1`] = `
 
 exports[`<TelephoneField /> matches snapshot 1`] = `
 <input
-  class="sc-hBMVcZ ftraIU"
+  class="sc-hBEYos fZZGYn"
   id="testId"
   name="telephone"
   placeholder="Numer telefonu"
@@ -60,11 +60,11 @@ exports[`<TelephoneField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <label
         for="telephone"
@@ -72,19 +72,19 @@ exports[`<TelephoneField /> matches snapshot with error 1`] = `
         FirstName*
       </label>
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-lmoMRL kywwk"
       >
         <div
-          class="sc-bCwgka ktnsAr"
+          class="sc-bBXqnf fTSkBg"
         >
           <span
-            class="sc-iwaifL gyLDXW"
+            class="sc-iwyYcG chHiVN"
           >
             +48
           </span>
         </div>
         <input
-          class="sc-hBMVcZ faAkmN"
+          class="sc-hBEYos LINIC"
           id="testId"
           label="FirstName"
           name="telephone"
@@ -97,7 +97,7 @@ exports[`<TelephoneField /> matches snapshot with error 1`] = `
         />
       </div>
       <span
-        class="sc-ksluoS cNvzFC"
+        class="sc-kstrdz hYtgrW"
       >
         To pole jest wymagane
       </span>
@@ -110,11 +110,11 @@ exports[`<TelephoneField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <label
         for="telephone"
@@ -122,19 +122,19 @@ exports[`<TelephoneField /> matches snapshot with label 1`] = `
         Telephone
       </label>
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-lmoMRL kywwk"
       >
         <div
-          class="sc-bCwgka dywdlS"
+          class="sc-bBXqnf htyJEB"
         >
           <span
-            class="sc-iwaifL gyLDXW"
+            class="sc-iwyYcG chHiVN"
           >
             +48
           </span>
         </div>
         <input
-          class="sc-hBMVcZ ftraIU"
+          class="sc-hBEYos fZZGYn"
           id="testId"
           label="Telephone"
           name="telephone"

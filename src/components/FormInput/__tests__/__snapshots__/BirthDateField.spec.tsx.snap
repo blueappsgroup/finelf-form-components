@@ -2,7 +2,7 @@
 
 exports[`<BirthDateField /> matches snapshot 1`] = `
 <input
-  class="sc-pNWxx gayLBx"
+  class="sc-pFZIQ goCfKF"
   name="name"
   placeholder="Data urodzenia"
   type="text"

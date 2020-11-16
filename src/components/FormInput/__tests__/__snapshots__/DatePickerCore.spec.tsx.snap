@@ -4,11 +4,11 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <div
-      class="sc-fujyUd jdPpAV"
+      class="sc-fubCfw gRotOK"
     >
       <div
         class="react-datepicker-wrapper"
@@ -17,7 +17,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
           class="react-datepicker__input-container"
         >
           <input
-            class="sc-pNWxx gayLBx react-datepicker-ignore-onclickoutside"
+            class="sc-pFZIQ goCfKF react-datepicker-ignore-onclickoutside"
             name="date"
             placeholder="dd/MM/yyyy"
             readonly=""
@@ -52,7 +52,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                   class="react-datepicker__header react-datepicker__header--custom"
                 >
                   <div
-                    class="sc-jrsJCI bGhYOU"
+                    class="sc-jrAGrp hwJvxC"
                   >
                     <button>
                       &lt;
@@ -846,7 +846,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
 
 exports[`<DatePickerCore /> matches snapshot DatePickerCore 1`] = `
 <input
-  class="sc-pNWxx gayLBx"
+  class="sc-pFZIQ goCfKF"
   name="date"
   placeholder="dd/MM/yyyy"
   type="text"

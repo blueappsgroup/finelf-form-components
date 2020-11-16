@@ -7,11 +7,11 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-iCoHVE JvWob"
+        class="sc-iBPRYJ janqdG"
         id="testForm"
       >
         <span
-          class="sc-fujyUd dkJRbp"
+          class="sc-fubCfw dfzEy"
         >
           Dziękujemy, twoje dane zostały przesłane
         </span>
@@ -21,11 +21,11 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-iCoHVE JvWob"
+      class="sc-iBPRYJ janqdG"
       id="testForm"
     >
       <span
-        class="sc-fujyUd dkJRbp"
+        class="sc-fubCfw dfzEy"
       >
         Dziękujemy, twoje dane zostały przesłane
       </span>
@@ -50,11 +50,11 @@ Object {
   "findByTitle": [Function],
   "form": <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <span
-      class="sc-fujyUd dkJRbp"
+      class="sc-fubCfw dfzEy"
     >
       Dziękujemy, twoje dane zostały przesłane
     </span>
@@ -103,11 +103,11 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-iCoHVE JvWob"
+        class="sc-iBPRYJ janqdG"
         id="testForm"
       >
         <span
-          class="sc-fujyUd dCNWoi"
+          class="sc-fubCfw kUILuZ"
         >
           Coś poszło nie tak spróbuj ponownie
         </span>
@@ -117,11 +117,11 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-iCoHVE JvWob"
+      class="sc-iBPRYJ janqdG"
       id="testForm"
     >
       <span
-        class="sc-fujyUd dCNWoi"
+        class="sc-fubCfw kUILuZ"
       >
         Coś poszło nie tak spróbuj ponownie
       </span>
@@ -146,11 +146,11 @@ Object {
   "findByTitle": [Function],
   "form": <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <span
-      class="sc-fujyUd dCNWoi"
+      class="sc-fubCfw kUILuZ"
     >
       Coś poszło nie tak spróbuj ponownie
     </span>

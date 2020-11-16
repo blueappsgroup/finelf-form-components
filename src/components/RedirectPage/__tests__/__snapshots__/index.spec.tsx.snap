@@ -4,22 +4,22 @@ exports[`<RedirectPage /> matches snapshot 1`] = `
 <body>
   <div>
     <div
-      class="sc-bdnylx dMUDiq"
+      class="sc-bdfBwQ liRWSq"
     >
       <div
-        class="sc-gtssRu bNNyTY"
+        class="sc-gsTCUz juXqCF"
       >
         <h1
-          class="sc-dlnjPT kaHCaK"
+          class="sc-dlfnbm fUAJrE"
         >
           Dziękujemy za przesłanie wniosku! Szukamy dla Ciebie idealnej oferty.
         </h1>
         <h3
-          class="sc-hKFyIo fItDnD"
+          class="sc-hKgILt cJuSUN"
         >
           Zostaniesz przekierowany za 
           <span
-            class="sc-eCApGN eAXOzQ"
+            class="sc-eCssSg egxaJx"
           >
             3
             s
@@ -35,33 +35,33 @@ exports[`<RedirectPage /> matches snapshot with props 1`] = `
 <body>
   <div>
     <div
-      class="sc-bdnylx dMUDiq"
+      class="sc-bdfBwQ liRWSq"
     >
       <div
-        class="sc-gtssRu bNNyTY"
+        class="sc-gsTCUz juXqCF"
       >
         <img
-          class="sc-jSFkmK cTnIxj"
+          class="sc-jSgupP fzWcin"
           src="logo.png"
         />
         <h1
-          class="sc-dlnjPT kaHCaK"
+          class="sc-dlfnbm fUAJrE"
         >
           header text
         </h1>
         <h3
-          class="sc-hKFyIo fItDnD"
+          class="sc-hKgILt cJuSUN"
         >
           Zostaniesz przekierowany za 
           <span
-            class="sc-eCApGN eAXOzQ"
+            class="sc-eCssSg egxaJx"
           >
             3
             s
           </span>
         </h3>
         <img
-          class="sc-gKAblj dYffOh"
+          class="sc-gKsewC hzTIyX"
           src="main.png"
         />
       </div>
@@ -74,22 +74,22 @@ exports[`<RedirectPage /> matches snapshot with redirect 1`] = `
 <body>
   <div>
     <div
-      class="sc-bdnylx iboAmE"
+      class="sc-bdfBwQ gODjNY"
     >
       <div
-        class="sc-gtssRu bNNyTY"
+        class="sc-gsTCUz juXqCF"
       >
         <h1
-          class="sc-dlnjPT kaHCaK"
+          class="sc-dlfnbm fUAJrE"
         >
           thank you text
         </h1>
         <h3
-          class="sc-hKFyIo fItDnD"
+          class="sc-hKgILt cJuSUN"
         >
           Zostaniesz przekierowany za 
           <span
-            class="sc-eCApGN eAXOzQ"
+            class="sc-eCssSg egxaJx"
           >
             0
             s

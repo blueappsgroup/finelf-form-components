@@ -2,7 +2,7 @@
 
 exports[`<CustomFieldWithCondition /> matches snapshot 1`] = `
 <input
-  class="sc-hBMVcZ hoeMOd"
+  class="sc-hBEYos RGiG"
   id="customFieldWithCondition"
   name="customFieldWithCondition"
   value=""
@@ -13,22 +13,22 @@ exports[`<CustomFieldWithCondition /> matches snapshot with requiredCondition me
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <div
-        class="sc-bkbjAj gnGQfC"
+        class="sc-bkzZxe jbuFap"
       >
         <select
-          class="sc-iemXMA ezYUqe"
+          class="sc-idOhPF gSNtny"
           name="employment_type"
           type="text"
         >
           <option
-            class="sc-hHEjAm hmYdyr"
+            class="sc-hHftDr bhxQtR"
             disabled=""
             value="select"
           >
@@ -96,18 +96,18 @@ exports[`<CustomFieldWithCondition /> matches snapshot with requiredCondition me
           </option>
         </select>
         <span
-          class="sc-dIvqjp gGSLdt"
+          class="sc-dIUggk hceYpr"
         />
       </div>
     </div>
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-lmoMRL kywwk"
       >
         <input
-          class="sc-hBMVcZ hoeMOd"
+          class="sc-hBEYos RGiG"
           id="customFieldWithCondition"
           name="customFieldWithCondition"
           required=""
@@ -123,22 +123,22 @@ exports[`<CustomFieldWithCondition /> matches snapshot with visibleCondition met
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-iBPRYJ janqdG"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <div
-        class="sc-bkbjAj gnGQfC"
+        class="sc-bkzZxe jbuFap"
       >
         <select
-          class="sc-iemXMA ezYUqe"
+          class="sc-idOhPF gSNtny"
           name="employment_type"
           type="text"
         >
           <option
-            class="sc-hHEjAm hmYdyr"
+            class="sc-hHftDr bhxQtR"
             disabled=""
             value="select"
           >
@@ -206,18 +206,18 @@ exports[`<CustomFieldWithCondition /> matches snapshot with visibleCondition met
           </option>
         </select>
         <span
-          class="sc-dIvqjp gGSLdt"
+          class="sc-dIUggk hceYpr"
         />
       </div>
     </div>
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-kEjbxe lcGTJL"
     >
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-lmoMRL kywwk"
       >
         <input
-          class="sc-hBMVcZ hoeMOd"
+          class="sc-hBEYos RGiG"
           id="customFieldWithCondition"
           name="customFieldWithCondition"
           value=""

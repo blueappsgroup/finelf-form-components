@@ -7,28 +7,28 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-lmgQde QAGeb"
+        class="sc-lmoMRL dkiict"
         id="testForm"
       >
         <div
-          class="sc-ezzayL CbuIx"
+          class="sc-ezrdKe gBFqDK"
         >
           <div
-            class="sc-kLokih glHjhv"
+            class="sc-kLgntA gqMeOj"
           >
             <div
-              class="sc-giAqnE fjgYLa"
+              class="sc-giIncl gkzvNA"
             >
               1. Podstawowe dane
             </div>
             <div
-              class="sc-giAqnE ieexcw"
+              class="sc-giIncl kNgfLi"
             >
               2. Szczegółowe dane
             </div>
           </div>
           <div
-            class="sc-hKFyIo gtdXMP"
+            class="sc-hKgILt bckkbl"
           >
             <label
               for="fName"
@@ -36,10 +36,10 @@ Object {
               Imię*
             </label>
             <div
-              class="sc-dIvqjp cDotIw"
+              class="sc-dIUggk hEHKqS"
             >
               <input
-                class="sc-pNWxx cxMLPE"
+                class="sc-pFZIQ kIcSeo"
                 label="Imię"
                 name="fName"
                 placeholder="Imię*"
@@ -49,10 +49,10 @@ Object {
             </div>
           </div>
           <div
-            class="sc-bYwzba gA-DsVm"
+            class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJCRLp eGLyug"
+              class="sc-iJuUWI eufkVy"
               disabled=""
               type="button"
             >
@@ -61,22 +61,22 @@ Object {
           </div>
         </div>
         <div
-          class="sc-ezzayL cGVRGm"
+          class="sc-ezrdKe eflciR"
         >
           <div
-            class="sc-kLokih glHjhv"
+            class="sc-kLgntA gqMeOj"
           >
             <div
-              class="sc-giAqnE ieexcw"
+              class="sc-giIncl kNgfLi"
             >
               2. Szczegółowe dane
             </div>
           </div>
           <div
-            class="sc-bYwzba gA-DsVm"
+            class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJCRLp eGLyug"
+              class="sc-iJuUWI eufkVy"
               disabled=""
               type="button"
             >
@@ -90,28 +90,28 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-lmgQde QAGeb"
+      class="sc-lmoMRL dkiict"
       id="testForm"
     >
       <div
-        class="sc-ezzayL CbuIx"
+        class="sc-ezrdKe gBFqDK"
       >
         <div
-          class="sc-kLokih glHjhv"
+          class="sc-kLgntA gqMeOj"
         >
           <div
-            class="sc-giAqnE fjgYLa"
+            class="sc-giIncl gkzvNA"
           >
             1. Podstawowe dane
           </div>
           <div
-            class="sc-giAqnE ieexcw"
+            class="sc-giIncl kNgfLi"
           >
             2. Szczegółowe dane
           </div>
         </div>
         <div
-          class="sc-hKFyIo gtdXMP"
+          class="sc-hKgILt bckkbl"
         >
           <label
             for="fName"
@@ -119,10 +119,10 @@ Object {
             Imię*
           </label>
           <div
-            class="sc-dIvqjp cDotIw"
+            class="sc-dIUggk hEHKqS"
           >
             <input
-              class="sc-pNWxx cxMLPE"
+              class="sc-pFZIQ kIcSeo"
               label="Imię"
               name="fName"
               placeholder="Imię*"
@@ -132,10 +132,10 @@ Object {
           </div>
         </div>
         <div
-          class="sc-bYwzba gA-DsVm"
+          class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJCRLp eGLyug"
+            class="sc-iJuUWI eufkVy"
             disabled=""
             type="button"
           >
@@ -144,22 +144,22 @@ Object {
         </div>
       </div>
       <div
-        class="sc-ezzayL cGVRGm"
+        class="sc-ezrdKe eflciR"
       >
         <div
-          class="sc-kLokih glHjhv"
+          class="sc-kLgntA gqMeOj"
         >
           <div
-            class="sc-giAqnE ieexcw"
+            class="sc-giIncl kNgfLi"
           >
             2. Szczegółowe dane
           </div>
         </div>
         <div
-          class="sc-bYwzba gA-DsVm"
+          class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJCRLp eGLyug"
+            class="sc-iJuUWI eufkVy"
             disabled=""
             type="button"
           >
@@ -187,7 +187,7 @@ Object {
   "findByText": [Function],
   "findByTitle": [Function],
   "firstName": <input
-    class="sc-pNWxx cxMLPE"
+    class="sc-pFZIQ kIcSeo"
     label="Imię"
     name="fName"
     placeholder="Imię*"
@@ -238,28 +238,28 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-lmgQde QAGeb"
+        class="sc-lmoMRL dkiict"
         id="testForm"
       >
         <div
-          class="sc-ezzayL CbuIx"
+          class="sc-ezrdKe gBFqDK"
         >
           <div
-            class="sc-kLokih glHjhv"
+            class="sc-kLgntA gqMeOj"
           >
             <div
-              class="sc-giAqnE fjgYLa"
+              class="sc-giIncl gkzvNA"
             >
               1. Podstawowe dane
             </div>
             <div
-              class="sc-giAqnE ieexcw"
+              class="sc-giIncl kNgfLi"
             >
               2. Szczegółowe dane
             </div>
           </div>
           <div
-            class="sc-hKFyIo gtdXMP"
+            class="sc-hKgILt bckkbl"
           >
             <label
               for="fName"
@@ -267,10 +267,10 @@ Object {
               Imię*
             </label>
             <div
-              class="sc-dIvqjp cDotIw"
+              class="sc-dIUggk hEHKqS"
             >
               <input
-                class="sc-pNWxx cxMLPE"
+                class="sc-pFZIQ kIcSeo"
                 label="Imię"
                 name="fName"
                 placeholder="Imię*"
@@ -280,10 +280,10 @@ Object {
             </div>
           </div>
           <div
-            class="sc-bYwzba gA-DsVm"
+            class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJCRLp eGLyug"
+              class="sc-iJuUWI eufkVy"
               disabled=""
               type="button"
             >
@@ -292,22 +292,22 @@ Object {
           </div>
         </div>
         <div
-          class="sc-ezzayL cGVRGm"
+          class="sc-ezrdKe eflciR"
         >
           <div
-            class="sc-kLokih glHjhv"
+            class="sc-kLgntA gqMeOj"
           >
             <div
-              class="sc-giAqnE ieexcw"
+              class="sc-giIncl kNgfLi"
             >
               2. Szczegółowe dane
             </div>
           </div>
           <div
-            class="sc-bYwzba gA-DsVm"
+            class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJCRLp eGLyug"
+              class="sc-iJuUWI eufkVy"
               disabled=""
               type="button"
             >
@@ -321,28 +321,28 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-lmgQde QAGeb"
+      class="sc-lmoMRL dkiict"
       id="testForm"
     >
       <div
-        class="sc-ezzayL CbuIx"
+        class="sc-ezrdKe gBFqDK"
       >
         <div
-          class="sc-kLokih glHjhv"
+          class="sc-kLgntA gqMeOj"
         >
           <div
-            class="sc-giAqnE fjgYLa"
+            class="sc-giIncl gkzvNA"
           >
             1. Podstawowe dane
           </div>
           <div
-            class="sc-giAqnE ieexcw"
+            class="sc-giIncl kNgfLi"
           >
             2. Szczegółowe dane
           </div>
         </div>
         <div
-          class="sc-hKFyIo gtdXMP"
+          class="sc-hKgILt bckkbl"
         >
           <label
             for="fName"
@@ -350,10 +350,10 @@ Object {
             Imię*
           </label>
           <div
-            class="sc-dIvqjp cDotIw"
+            class="sc-dIUggk hEHKqS"
           >
             <input
-              class="sc-pNWxx cxMLPE"
+              class="sc-pFZIQ kIcSeo"
               label="Imię"
               name="fName"
               placeholder="Imię*"
@@ -363,10 +363,10 @@ Object {
           </div>
         </div>
         <div
-          class="sc-bYwzba gA-DsVm"
+          class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJCRLp eGLyug"
+            class="sc-iJuUWI eufkVy"
             disabled=""
             type="button"
           >
@@ -375,22 +375,22 @@ Object {
         </div>
       </div>
       <div
-        class="sc-ezzayL cGVRGm"
+        class="sc-ezrdKe eflciR"
       >
         <div
-          class="sc-kLokih glHjhv"
+          class="sc-kLgntA gqMeOj"
         >
           <div
-            class="sc-giAqnE ieexcw"
+            class="sc-giIncl kNgfLi"
           >
             2. Szczegółowe dane
           </div>
         </div>
         <div
-          class="sc-bYwzba gA-DsVm"
+          class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJCRLp eGLyug"
+            class="sc-iJuUWI eufkVy"
             disabled=""
             type="button"
           >
@@ -418,7 +418,7 @@ Object {
   "findByText": [Function],
   "findByTitle": [Function],
   "firstName": <input
-    class="sc-pNWxx cxMLPE"
+    class="sc-pFZIQ kIcSeo"
     label="Imię"
     name="fName"
     placeholder="Imię*"
@@ -469,28 +469,28 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-lmgQde QAGeb"
+        class="sc-lmoMRL dkiict"
         id="testForm"
       >
         <div
-          class="sc-ezzayL CbuIx"
+          class="sc-ezrdKe gBFqDK"
         >
           <div
-            class="sc-kLokih glHjhv"
+            class="sc-kLgntA gqMeOj"
           >
             <div
-              class="sc-giAqnE fjgYLa"
+              class="sc-giIncl gkzvNA"
             >
               1. Podstawowe dane
             </div>
             <div
-              class="sc-giAqnE ieexcw"
+              class="sc-giIncl kNgfLi"
             >
               2. Szczegółowe dane
             </div>
           </div>
           <div
-            class="sc-hKFyIo gtdXMP"
+            class="sc-hKgILt bckkbl"
           >
             <label
               for="fName"
@@ -498,10 +498,10 @@ Object {
               Imię*
             </label>
             <div
-              class="sc-dIvqjp cDotIw"
+              class="sc-dIUggk hEHKqS"
             >
               <input
-                class="sc-pNWxx cxMLPE"
+                class="sc-pFZIQ kIcSeo"
                 label="Imię"
                 name="fName"
                 placeholder="Imię*"
@@ -511,10 +511,10 @@ Object {
             </div>
           </div>
           <div
-            class="sc-bYwzba gA-DsVm"
+            class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJCRLp eGLyug"
+              class="sc-iJuUWI eufkVy"
               disabled=""
               type="button"
             >
@@ -523,22 +523,22 @@ Object {
           </div>
         </div>
         <div
-          class="sc-ezzayL cGVRGm"
+          class="sc-ezrdKe eflciR"
         >
           <div
-            class="sc-kLokih glHjhv"
+            class="sc-kLgntA gqMeOj"
           >
             <div
-              class="sc-giAqnE ieexcw"
+              class="sc-giIncl kNgfLi"
             >
               2. Szczegółowe dane
             </div>
           </div>
           <div
-            class="sc-bYwzba gA-DsVm"
+            class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJCRLp eGLyug"
+              class="sc-iJuUWI eufkVy"
               disabled=""
               type="button"
             >
@@ -552,28 +552,28 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-lmgQde QAGeb"
+      class="sc-lmoMRL dkiict"
       id="testForm"
     >
       <div
-        class="sc-ezzayL CbuIx"
+        class="sc-ezrdKe gBFqDK"
       >
         <div
-          class="sc-kLokih glHjhv"
+          class="sc-kLgntA gqMeOj"
         >
           <div
-            class="sc-giAqnE fjgYLa"
+            class="sc-giIncl gkzvNA"
           >
             1. Podstawowe dane
           </div>
           <div
-            class="sc-giAqnE ieexcw"
+            class="sc-giIncl kNgfLi"
           >
             2. Szczegółowe dane
           </div>
         </div>
         <div
-          class="sc-hKFyIo gtdXMP"
+          class="sc-hKgILt bckkbl"
         >
           <label
             for="fName"
@@ -581,10 +581,10 @@ Object {
             Imię*
           </label>
           <div
-            class="sc-dIvqjp cDotIw"
+            class="sc-dIUggk hEHKqS"
           >
             <input
-              class="sc-pNWxx cxMLPE"
+              class="sc-pFZIQ kIcSeo"
               label="Imię"
               name="fName"
               placeholder="Imię*"
@@ -594,10 +594,10 @@ Object {
           </div>
         </div>
         <div
-          class="sc-bYwzba gA-DsVm"
+          class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJCRLp eGLyug"
+            class="sc-iJuUWI eufkVy"
             disabled=""
             type="button"
           >
@@ -606,22 +606,22 @@ Object {
         </div>
       </div>
       <div
-        class="sc-ezzayL cGVRGm"
+        class="sc-ezrdKe eflciR"
       >
         <div
-          class="sc-kLokih glHjhv"
+          class="sc-kLgntA gqMeOj"
         >
           <div
-            class="sc-giAqnE ieexcw"
+            class="sc-giIncl kNgfLi"
           >
             2. Szczegółowe dane
           </div>
         </div>
         <div
-          class="sc-bYwzba gA-DsVm"
+          class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJCRLp eGLyug"
+            class="sc-iJuUWI eufkVy"
             disabled=""
             type="button"
           >
@@ -649,7 +649,7 @@ Object {
   "findByText": [Function],
   "findByTitle": [Function],
   "firstName": <input
-    class="sc-pNWxx cxMLPE"
+    class="sc-pFZIQ kIcSeo"
     label="Imię"
     name="fName"
     placeholder="Imię*"
@@ -700,28 +700,28 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-lmgQde QAGeb"
+        class="sc-lmoMRL dkiict"
         id="testForm"
       >
         <div
-          class="sc-ezzayL CbuIx"
+          class="sc-ezrdKe gBFqDK"
         >
           <div
-            class="sc-kLokih glHjhv"
+            class="sc-kLgntA gqMeOj"
           >
             <div
-              class="sc-giAqnE fjgYLa"
+              class="sc-giIncl gkzvNA"
             >
               1. Podstawowe dane
             </div>
             <div
-              class="sc-giAqnE ieexcw"
+              class="sc-giIncl kNgfLi"
             >
               2. Szczegółowe dane
             </div>
           </div>
           <div
-            class="sc-hKFyIo gtdXMP"
+            class="sc-hKgILt bckkbl"
           >
             <label
               for="fName"
@@ -729,10 +729,10 @@ Object {
               Imię*
             </label>
             <div
-              class="sc-dIvqjp cDotIw"
+              class="sc-dIUggk hEHKqS"
             >
               <input
-                class="sc-pNWxx cxMLPE"
+                class="sc-pFZIQ kIcSeo"
                 label="Imię"
                 name="fName"
                 placeholder="Imię*"
@@ -742,10 +742,10 @@ Object {
             </div>
           </div>
           <div
-            class="sc-bYwzba gA-DsVm"
+            class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJCRLp eGLyug"
+              class="sc-iJuUWI eufkVy"
               type="button"
             >
               Dalej
@@ -753,22 +753,22 @@ Object {
           </div>
         </div>
         <div
-          class="sc-ezzayL cGVRGm"
+          class="sc-ezrdKe eflciR"
         >
           <div
-            class="sc-kLokih glHjhv"
+            class="sc-kLgntA gqMeOj"
           >
             <div
-              class="sc-giAqnE ieexcw"
+              class="sc-giIncl kNgfLi"
             >
               2. Szczegółowe dane
             </div>
           </div>
           <div
-            class="sc-bYwzba gA-DsVm"
+            class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJCRLp eGLyug"
+              class="sc-iJuUWI eufkVy"
               disabled=""
               type="button"
             >
@@ -782,28 +782,28 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-lmgQde QAGeb"
+      class="sc-lmoMRL dkiict"
       id="testForm"
     >
       <div
-        class="sc-ezzayL CbuIx"
+        class="sc-ezrdKe gBFqDK"
       >
         <div
-          class="sc-kLokih glHjhv"
+          class="sc-kLgntA gqMeOj"
         >
           <div
-            class="sc-giAqnE fjgYLa"
+            class="sc-giIncl gkzvNA"
           >
             1. Podstawowe dane
           </div>
           <div
-            class="sc-giAqnE ieexcw"
+            class="sc-giIncl kNgfLi"
           >
             2. Szczegółowe dane
           </div>
         </div>
         <div
-          class="sc-hKFyIo gtdXMP"
+          class="sc-hKgILt bckkbl"
         >
           <label
             for="fName"
@@ -811,10 +811,10 @@ Object {
             Imię*
           </label>
           <div
-            class="sc-dIvqjp cDotIw"
+            class="sc-dIUggk hEHKqS"
           >
             <input
-              class="sc-pNWxx cxMLPE"
+              class="sc-pFZIQ kIcSeo"
               label="Imię"
               name="fName"
               placeholder="Imię*"
@@ -824,10 +824,10 @@ Object {
           </div>
         </div>
         <div
-          class="sc-bYwzba gA-DsVm"
+          class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJCRLp eGLyug"
+            class="sc-iJuUWI eufkVy"
             type="button"
           >
             Dalej
@@ -835,22 +835,22 @@ Object {
         </div>
       </div>
       <div
-        class="sc-ezzayL cGVRGm"
+        class="sc-ezrdKe eflciR"
       >
         <div
-          class="sc-kLokih glHjhv"
+          class="sc-kLgntA gqMeOj"
         >
           <div
-            class="sc-giAqnE ieexcw"
+            class="sc-giIncl kNgfLi"
           >
             2. Szczegółowe dane
           </div>
         </div>
         <div
-          class="sc-bYwzba gA-DsVm"
+          class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJCRLp eGLyug"
+            class="sc-iJuUWI eufkVy"
             disabled=""
             type="button"
           >
@@ -878,7 +878,7 @@ Object {
   "findByText": [Function],
   "findByTitle": [Function],
   "firstName": <input
-    class="sc-pNWxx cxMLPE"
+    class="sc-pFZIQ kIcSeo"
     label="Imię"
     name="fName"
     placeholder="Imię*"
