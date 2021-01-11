@@ -12,21 +12,31 @@ export const FormContext: Context<{
   fieldsForSkip?: string[]
   addFieldForSkip?: (key: string) => void
   errorFromApi?: boolean
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  initialValues?: any
+  handleSubmit?: Function
+  setInitialValues?: Function
+  formStatus?: string
+  setFormStatus?: Function
 }> = React.createContext({})
-
-export const setFormValuesToCache = (
-  values: { [key: string]: string | boolean | undefined },
-  formId?: string
-): void => {
-  formId &&
-    window.sessionStorage.setItem(`form-${formId}`, JSON.stringify(values))
-}
 
 export const getFormValuesFromCache = (
   id?: string
 ): { [key: string]: string | boolean } =>
   (id && JSON.parse(window.sessionStorage.getItem(`form-${id}`) as string)) ||
   {}
+
+export const setFormValuesToCache = (
+  values: { [key: string]: string | boolean | undefined },
+  formId?: string
+): void => {
+  const allValues = getFormValuesFromCache(formId)
+  formId &&
+    window.sessionStorage.setItem(
+      `form-${formId}`,
+      JSON.stringify({ ...allValues, ...values })
+    )
+}
 
 export const resetFormValueCache = (id: string): void =>
   window.sessionStorage.setItem(`form-${id}`, '{}')

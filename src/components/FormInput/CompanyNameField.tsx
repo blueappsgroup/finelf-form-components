@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { TextFieldWithConditonProps } from '../../types'
 import BaseField from './base'
 import { validateText } from './validate'
-import CustomFieldWithCondition from './CustomFieldWithCondition'
+import { Field } from 'formik'
 
 const CompanyNameField: FC<TextFieldWithConditonProps> = ({
   id,
@@ -13,10 +13,8 @@ const CompanyNameField: FC<TextFieldWithConditonProps> = ({
   required = false,
   validate = validateText,
   showError = true,
-  requiredCondition,
-  visibleCondition,
 }) => (
-  <CustomFieldWithCondition
+  <Field
     id={id}
     label={label}
     placeholder={placeholder}
@@ -24,25 +22,12 @@ const CompanyNameField: FC<TextFieldWithConditonProps> = ({
     required={required}
     showError={showError}
     name={name}
-    validate={validate}
-    requiredCondition={requiredCondition}
-    visibleCondition={visibleCondition}
+    validate={validate(required)}
   />
 )
 
 CompanyNameField.defaultProps = {
   name: 'company_name',
-  visibleCondition: {
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    employment_type: [
-      'fixed',
-      'temporary',
-      'fixed_partial',
-      'government',
-      'agriculture',
-      'service_contract',
-    ],
-  },
 }
 
 export default CompanyNameField

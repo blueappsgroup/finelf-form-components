@@ -22,12 +22,17 @@ const CheckboxesGroup: FC<CheckboxesGroupTypes> = ({ name, children }) => {
   )
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const selectAllValue = e.target.value === 'true' ? false : true
     const fieldsToUpdate = checkboxesNames.reduce((acc, item) => {
-      acc[item] = e.target.value === 'true' ? false : true
+      acc[item] = selectAllValue
+
       return acc
     }, {} as { [key: string]: boolean | undefined })
 
-    setValues({ ...(values as any), [name]: fieldsToUpdate })
+    setValues({
+      ...(values as any),
+      [name]: { ...fieldsToUpdate, selectAll: selectAllValue },
+    })
   }
 
   return (
