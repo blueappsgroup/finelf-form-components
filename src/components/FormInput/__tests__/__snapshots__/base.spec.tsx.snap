@@ -2,7 +2,7 @@
 
 exports[`base <BaseField /> matches snapshot 1`] = `
 <input
-  class="sc-hBMVcZ hoeMOd"
+  class="sc-fodVxV kubVCF"
   id="baseField"
   name="baseField"
   value=""
@@ -13,11 +13,11 @@ exports[`base <BaseField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="baseField"
@@ -25,10 +25,10 @@ exports[`base <BaseField /> matches snapshot with error 1`] = `
         Test*
       </label>
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBMVcZ kICbZw"
+          class="sc-fodVxV gZGAuo"
           id="baseField"
           label="Test"
           name="baseField"
@@ -37,11 +37,18 @@ exports[`base <BaseField /> matches snapshot with error 1`] = `
         />
       </div>
       <span
-        class="sc-ksluoS cNvzFC"
+        class="sc-hBEYos kIOtFs"
       >
         To pole jest wymagane
       </span>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
@@ -50,11 +57,11 @@ exports[`base <BaseField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="baseField"
@@ -62,10 +69,10 @@ exports[`base <BaseField /> matches snapshot with label 1`] = `
         Test
       </label>
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBMVcZ hoeMOd"
+          class="sc-fodVxV kubVCF"
           id="baseField"
           label="Test"
           name="baseField"
@@ -73,13 +80,19 @@ exports[`base <BaseField /> matches snapshot with label 1`] = `
         />
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
 
 exports[`base <BaseRangeField /> matches snapshot 1`] = `
 <input
-  class="sc-fFSRdu kcSJhx"
+  class="sc-bkzZxe hpQztk"
   id="baseRangeField"
   max="10000"
   min="300"
@@ -93,14 +106,14 @@ exports[`base <BaseRangeField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-iqHYGH jWqqni"
     >
       <div
-        class="sc-iqAbSa kMNaRW"
+        class="sc-crrsfI ieBApp"
       >
         <label
           for="baseRangeField"
@@ -108,10 +121,10 @@ exports[`base <BaseRangeField /> matches snapshot with label 1`] = `
           Test
         </label>
         <div
-          class="sc-fnVYJo djjOXB"
+          class="sc-fFubgz fJyOdk"
         >
           <input
-            class="sc-fFSRdu kcSJhx"
+            class="sc-bkzZxe hpQztk"
             id="baseRangeField"
             label="Test"
             max="10000"
@@ -121,14 +134,14 @@ exports[`base <BaseRangeField /> matches snapshot with label 1`] = `
             value="2000"
           />
           <span
-            class="sc-fKgIGh bYaAAt"
+            class="sc-bBXqnf bwzWoF"
           >
             PLN
           </span>
         </div>
       </div>
       <div
-        class="sc-cxNIbT hVZAQV"
+        class="sc-lmoMRL hIjsuX"
       >
         <div
           aria-orientation="horizontal"
@@ -156,19 +169,25 @@ exports[`base <BaseRangeField /> matches snapshot with label 1`] = `
         </div>
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
 
 exports[`base <BaseSelectField /> matches snapshot 1`] = `
 <select
-  class="sc-iemXMA ezYUqe"
+  class="sc-dIUggk hhFmtN"
   id="baseSelectField"
   name="baseSelectField"
   type="text"
 >
   <option
-    class="sc-hHEjAm hmYdyr"
+    class="sc-dmlrTW hequYp"
     disabled=""
     value="select"
   >
@@ -191,11 +210,11 @@ exports[`base <BaseSelectField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="baseSelectField"
@@ -203,17 +222,17 @@ exports[`base <BaseSelectField /> matches snapshot with label 1`] = `
         Test
       </label>
       <div
-        class="sc-bkbjAj gnGQfC"
+        class="sc-idOhPF buAmNl"
       >
         <select
-          class="sc-iemXMA ezYUqe"
+          class="sc-dIUggk hhFmtN"
           id="baseSelectField"
           label="Test"
           name="baseSelectField"
           type="text"
         >
           <option
-            class="sc-hHEjAm hmYdyr"
+            class="sc-dmlrTW hequYp"
             disabled=""
             value="select"
           >
@@ -231,10 +250,16 @@ exports[`base <BaseSelectField /> matches snapshot with label 1`] = `
           </option>
         </select>
         <span
-          class="sc-dIvqjp gGSLdt"
+          class="sc-hHftDr jmpDvw"
         />
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;

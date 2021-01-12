@@ -4,11 +4,11 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-fujyUd jdPpAV"
+      class="sc-pFZIQ bJxyVx"
     >
       <div
         class="react-datepicker-wrapper"
@@ -17,7 +17,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
           class="react-datepicker__input-container"
         >
           <input
-            class="sc-pNWxx gayLBx react-datepicker-ignore-onclickoutside"
+            class="sc-jrAGrp dRgKzJ react-datepicker-ignore-onclickoutside"
             name="date"
             placeholder="dd/MM/yyyy"
             readonly=""
@@ -52,12 +52,17 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                   class="react-datepicker__header react-datepicker__header--custom"
                 >
                   <div
-                    class="sc-jrsJCI bGhYOU"
+                    class="sc-kEjbxe dScsVt"
                   >
                     <button>
                       &lt;
                     </button>
                     <select>
+                      <option
+                        value="2006"
+                      >
+                        2006
+                      </option>
                       <option
                         value="2005"
                       >
@@ -491,7 +496,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                   </div>
                 </div>
                 <div
-                  aria-label="month  2002-01"
+                  aria-label="month  2003-01"
                   class="react-datepicker__month"
                 >
                   <div
@@ -499,8 +504,17 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                   >
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Sunday, December 30th, 2001"
-                      class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                      aria-label="Choose Sunday, December 29th, 2002"
+                      class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      29
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, December 30th, 2002"
+                      class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
                       role="button"
                       tabindex="-1"
                     >
@@ -508,7 +522,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Monday, December 31st, 2001"
+                      aria-label="Choose Tuesday, December 31st, 2002"
                       class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--outside-month"
                       role="button"
                       tabindex="-1"
@@ -517,7 +531,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Tuesday, January 1st, 2002"
+                      aria-label="Choose Wednesday, January 1st, 2003"
                       class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--keyboard-selected"
                       role="button"
                       tabindex="0"
@@ -526,7 +540,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Wednesday, January 2nd, 2002"
+                      aria-label="Choose Thursday, January 2nd, 2003"
                       class="react-datepicker__day react-datepicker__day--002"
                       role="button"
                       tabindex="-1"
@@ -535,7 +549,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Thursday, January 3rd, 2002"
+                      aria-label="Choose Friday, January 3rd, 2003"
                       class="react-datepicker__day react-datepicker__day--003"
                       role="button"
                       tabindex="-1"
@@ -544,21 +558,12 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Friday, January 4th, 2002"
-                      class="react-datepicker__day react-datepicker__day--004"
+                      aria-label="Choose Saturday, January 4th, 2003"
+                      class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--weekend"
                       role="button"
                       tabindex="-1"
                     >
                       4
-                    </div>
-                    <div
-                      aria-disabled="false"
-                      aria-label="Choose Saturday, January 5th, 2002"
-                      class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--weekend"
-                      role="button"
-                      tabindex="-1"
-                    >
-                      5
                     </div>
                   </div>
                   <div
@@ -566,8 +571,17 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                   >
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Sunday, January 6th, 2002"
-                      class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--weekend"
+                      aria-label="Choose Sunday, January 5th, 2003"
+                      class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      5
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, January 6th, 2003"
+                      class="react-datepicker__day react-datepicker__day--006"
                       role="button"
                       tabindex="-1"
                     >
@@ -575,7 +589,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Monday, January 7th, 2002"
+                      aria-label="Choose Tuesday, January 7th, 2003"
                       class="react-datepicker__day react-datepicker__day--007"
                       role="button"
                       tabindex="-1"
@@ -584,7 +598,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Tuesday, January 8th, 2002"
+                      aria-label="Choose Wednesday, January 8th, 2003"
                       class="react-datepicker__day react-datepicker__day--008"
                       role="button"
                       tabindex="-1"
@@ -593,7 +607,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Wednesday, January 9th, 2002"
+                      aria-label="Choose Thursday, January 9th, 2003"
                       class="react-datepicker__day react-datepicker__day--009"
                       role="button"
                       tabindex="-1"
@@ -602,7 +616,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Thursday, January 10th, 2002"
+                      aria-label="Choose Friday, January 10th, 2003"
                       class="react-datepicker__day react-datepicker__day--010"
                       role="button"
                       tabindex="-1"
@@ -611,21 +625,12 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Friday, January 11th, 2002"
-                      class="react-datepicker__day react-datepicker__day--011"
+                      aria-label="Choose Saturday, January 11th, 2003"
+                      class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--weekend"
                       role="button"
                       tabindex="-1"
                     >
                       11
-                    </div>
-                    <div
-                      aria-disabled="false"
-                      aria-label="Choose Saturday, January 12th, 2002"
-                      class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--weekend"
-                      role="button"
-                      tabindex="-1"
-                    >
-                      12
                     </div>
                   </div>
                   <div
@@ -633,8 +638,17 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                   >
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Sunday, January 13th, 2002"
-                      class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--weekend"
+                      aria-label="Choose Sunday, January 12th, 2003"
+                      class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      12
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, January 13th, 2003"
+                      class="react-datepicker__day react-datepicker__day--013"
                       role="button"
                       tabindex="-1"
                     >
@@ -642,7 +656,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Monday, January 14th, 2002"
+                      aria-label="Choose Tuesday, January 14th, 2003"
                       class="react-datepicker__day react-datepicker__day--014"
                       role="button"
                       tabindex="-1"
@@ -651,7 +665,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Tuesday, January 15th, 2002"
+                      aria-label="Choose Wednesday, January 15th, 2003"
                       class="react-datepicker__day react-datepicker__day--015"
                       role="button"
                       tabindex="-1"
@@ -660,7 +674,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Wednesday, January 16th, 2002"
+                      aria-label="Choose Thursday, January 16th, 2003"
                       class="react-datepicker__day react-datepicker__day--016"
                       role="button"
                       tabindex="-1"
@@ -669,7 +683,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Thursday, January 17th, 2002"
+                      aria-label="Choose Friday, January 17th, 2003"
                       class="react-datepicker__day react-datepicker__day--017"
                       role="button"
                       tabindex="-1"
@@ -678,21 +692,12 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Friday, January 18th, 2002"
-                      class="react-datepicker__day react-datepicker__day--018"
+                      aria-label="Choose Saturday, January 18th, 2003"
+                      class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--weekend"
                       role="button"
                       tabindex="-1"
                     >
                       18
-                    </div>
-                    <div
-                      aria-disabled="false"
-                      aria-label="Choose Saturday, January 19th, 2002"
-                      class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend"
-                      role="button"
-                      tabindex="-1"
-                    >
-                      19
                     </div>
                   </div>
                   <div
@@ -700,8 +705,17 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                   >
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Sunday, January 20th, 2002"
-                      class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--weekend"
+                      aria-label="Choose Sunday, January 19th, 2003"
+                      class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      19
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, January 20th, 2003"
+                      class="react-datepicker__day react-datepicker__day--020"
                       role="button"
                       tabindex="-1"
                     >
@@ -709,7 +723,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Monday, January 21st, 2002"
+                      aria-label="Choose Tuesday, January 21st, 2003"
                       class="react-datepicker__day react-datepicker__day--021"
                       role="button"
                       tabindex="-1"
@@ -718,7 +732,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Tuesday, January 22nd, 2002"
+                      aria-label="Choose Wednesday, January 22nd, 2003"
                       class="react-datepicker__day react-datepicker__day--022"
                       role="button"
                       tabindex="-1"
@@ -727,7 +741,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Wednesday, January 23rd, 2002"
+                      aria-label="Choose Thursday, January 23rd, 2003"
                       class="react-datepicker__day react-datepicker__day--023"
                       role="button"
                       tabindex="-1"
@@ -736,7 +750,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Thursday, January 24th, 2002"
+                      aria-label="Choose Friday, January 24th, 2003"
                       class="react-datepicker__day react-datepicker__day--024"
                       role="button"
                       tabindex="-1"
@@ -745,21 +759,12 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Friday, January 25th, 2002"
-                      class="react-datepicker__day react-datepicker__day--025"
+                      aria-label="Choose Saturday, January 25th, 2003"
+                      class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--weekend"
                       role="button"
                       tabindex="-1"
                     >
                       25
-                    </div>
-                    <div
-                      aria-disabled="false"
-                      aria-label="Choose Saturday, January 26th, 2002"
-                      class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend"
-                      role="button"
-                      tabindex="-1"
-                    >
-                      26
                     </div>
                   </div>
                   <div
@@ -767,8 +772,17 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                   >
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Sunday, January 27th, 2002"
-                      class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--weekend"
+                      aria-label="Choose Sunday, January 26th, 2003"
+                      class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      26
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, January 27th, 2003"
+                      class="react-datepicker__day react-datepicker__day--027"
                       role="button"
                       tabindex="-1"
                     >
@@ -776,7 +790,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Monday, January 28th, 2002"
+                      aria-label="Choose Tuesday, January 28th, 2003"
                       class="react-datepicker__day react-datepicker__day--028"
                       role="button"
                       tabindex="-1"
@@ -785,7 +799,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Tuesday, January 29th, 2002"
+                      aria-label="Choose Wednesday, January 29th, 2003"
                       class="react-datepicker__day react-datepicker__day--029"
                       role="button"
                       tabindex="-1"
@@ -794,7 +808,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Wednesday, January 30th, 2002"
+                      aria-label="Choose Thursday, January 30th, 2003"
                       class="react-datepicker__day react-datepicker__day--030"
                       role="button"
                       tabindex="-1"
@@ -803,7 +817,7 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Thursday, January 31st, 2002"
+                      aria-label="Choose Friday, January 31st, 2003"
                       class="react-datepicker__day react-datepicker__day--031"
                       role="button"
                       tabindex="-1"
@@ -812,21 +826,12 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
                     </div>
                     <div
                       aria-disabled="false"
-                      aria-label="Choose Friday, February 1st, 2002"
-                      class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--outside-month"
+                      aria-label="Choose Saturday, February 1st, 2003"
+                      class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--weekend react-datepicker__day--outside-month"
                       role="button"
                       tabindex="-1"
                     >
                       1
-                    </div>
-                    <div
-                      aria-disabled="false"
-                      aria-label="Choose Saturday, February 2nd, 2002"
-                      class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend react-datepicker__day--outside-month"
-                      role="button"
-                      tabindex="-1"
-                    >
-                      2
                     </div>
                   </div>
                 </div>
@@ -840,13 +845,19 @@ exports[`<DatePickerCore /> DatePickerCore show CustomHeader onFocus 1`] = `
         />
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
 
 exports[`<DatePickerCore /> matches snapshot DatePickerCore 1`] = `
 <input
-  class="sc-pNWxx gayLBx"
+  class="sc-jrAGrp dRgKzJ"
   name="date"
   placeholder="dd/MM/yyyy"
   type="text"

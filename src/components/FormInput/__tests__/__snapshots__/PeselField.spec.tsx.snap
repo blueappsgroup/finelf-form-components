@@ -4,11 +4,11 @@ exports[`<PeselField/> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="id_code"
@@ -16,10 +16,10 @@ exports[`<PeselField/> input field with custom validation 1`] = `
         Pesel
       </label>
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBMVcZ kICbZw"
+          class="sc-fodVxV gZGAuo"
           id="testId"
           label="Pesel"
           name="id_code"
@@ -28,18 +28,25 @@ exports[`<PeselField/> input field with custom validation 1`] = `
         />
       </div>
       <span
-        class="sc-ksluoS cNvzFC"
+        class="sc-hBEYos kIOtFs"
       >
         Podany PESEL jest nieprawidłowy
       </span>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
 
 exports[`<PeselField/> matches snapshot 1`] = `
 <input
-  class="sc-hBMVcZ hoeMOd"
+  class="sc-fodVxV kubVCF"
   id="testId"
   label="Pesel"
   name="id_code"
@@ -52,11 +59,11 @@ exports[`<PeselField/> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="id_code"
@@ -64,10 +71,10 @@ exports[`<PeselField/> matches snapshot with error 1`] = `
         Pesel*
       </label>
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBMVcZ kICbZw"
+          class="sc-fodVxV gZGAuo"
           id="testId"
           label="Pesel"
           name="id_code"
@@ -77,11 +84,18 @@ exports[`<PeselField/> matches snapshot with error 1`] = `
         />
       </div>
       <span
-        class="sc-ksluoS cNvzFC"
+        class="sc-hBEYos kIOtFs"
       >
         To pole jest wymagane
       </span>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
@@ -90,11 +104,11 @@ exports[`<PeselField/> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iCoHVE JvWob"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEqYlL dXeAFH"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="id_code"
@@ -102,10 +116,10 @@ exports[`<PeselField/> matches snapshot with label 1`] = `
         Pesel
       </label>
       <div
-        class="sc-lmgQde krpvJC"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBMVcZ hoeMOd"
+          class="sc-fodVxV kubVCF"
           id="testId"
           label="Pesel"
           name="id_code"
@@ -114,6 +128,12 @@ exports[`<PeselField/> matches snapshot with label 1`] = `
         />
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;

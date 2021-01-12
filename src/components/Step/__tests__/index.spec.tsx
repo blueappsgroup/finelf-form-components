@@ -10,6 +10,7 @@ describe('base <Step />', () => {
   const onSubmit = jest.fn()
   const stepsLength = 2
   const stepsTitles = ['1. Podstawowe dane', '2. Szczegółowe dane']
+  window.scrollTo = jest.fn()
   const setupWrapper = ({
     formId = 'testForm',
     ...rest
@@ -46,12 +47,22 @@ describe('base <Step />', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('buttons disabled if required fields are not filled', () => {
+  it('buttons disabled if required fields are not filled', async () => {
     const wrapper = setupWrapper({})
-    const { container } = wrapper
-    const button = container.querySelector('button[disabled]')
+    const { container, firstName } = wrapper
 
-    expect(button).toBeTruthy()
+    await act(async () => {
+      fireEvent.focus(firstName, { target: { value: 'test' } })
+      fireEvent.blur(firstName, { target: { value: '' } })
+    })
+
+    await act(async () => {
+      fireEvent.blur(firstName, { target: { value: '' } })
+    })
+
+    expect(
+      container.querySelector('form').querySelector('button')
+    ).toHaveAttribute('disabled')
     expect(wrapper).toMatchSnapshot()
   })
 
@@ -63,9 +74,9 @@ describe('base <Step />', () => {
       fireEvent.change(firstName, { target: { value: '123' } })
     })
 
-    const button = container.querySelector('button[disabled]')
+    const button = container.querySelector('form').querySelector('button')
 
-    expect(button).toBeTruthy()
+    expect(button).toHaveAttribute('disabled')
     expect(wrapper).toMatchSnapshot()
   })
 
