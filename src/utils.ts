@@ -89,7 +89,7 @@ export const handleSendDataToApi: (
   const { agreements, ...rest } = values
   const filteredValues = Object.keys(rest).reduce((acc, key) => {
     if (!fieldsForSkip.includes(key) && rest[key]) {
-      acc[key] = rest[key]
+      acc[key] = typeof rest[key] === 'string' ? rest[key].trim() : rest[key]
     }
     return acc
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from 'react'
+import React, { FC, ReactElement, useMemo, useState } from 'react'
 import { Formik, Form } from 'formik'
 import styled from 'styled-components'
 
@@ -13,6 +13,7 @@ import {
   getFieldsValuesFromUrl,
 } from '../../utils'
 import { formStatuses } from '../../consts/form'
+import Button from '../Button'
 
 export const StyledForm = styled(Form)`
   display: flex;
@@ -25,7 +26,7 @@ export const StyledForm = styled(Form)`
   box-shadow: ${(props): string => props.theme.formBoxShadow};
 `
 
-const FormWrapper2: FC<FormProps> = ({
+const FormWrapper: FC<FormProps> = ({
   children,
   onSubmit,
   customTheme,
@@ -44,6 +45,7 @@ const FormWrapper2: FC<FormProps> = ({
   transactionName,
   propertyNamesFromUrl,
   dataWithUserAgent,
+  sumitButtonText = 'Wyślij',
 }) => {
   const trasationIdValue =
     transactionName &&
@@ -165,9 +167,19 @@ const FormWrapper2: FC<FormProps> = ({
             enableReinitialize
             initialValues={initialValues}
             onSubmit={handleSubmit}
-          >
-            <StyledForm id={id}>{children}</StyledForm>
-          </Formik>
+            render={({ isValid }): ReactElement => (
+              <StyledForm id={id}>
+                {children}
+                {formStatus !== formStatuses.agrrementsError && (
+                  <Button
+                    disabled={!isValid}
+                    text={sumitButtonText}
+                    type="submit"
+                  />
+                )}
+              </StyledForm>
+            )}
+          />
         )}
         {stepsLength && showForm && children}
       </ThemeProvider>
@@ -175,4 +187,4 @@ const FormWrapper2: FC<FormProps> = ({
   )
 }
 
-export default FormWrapper2
+export default FormWrapper

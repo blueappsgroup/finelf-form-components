@@ -8,6 +8,7 @@ import { FormContext, setFormValuesToCache } from '../../utils'
 import { device } from '../../consts/sizes'
 import { StyledForm } from '../Form'
 import { FormValuesType } from '../../types'
+import { formStatuses } from '../../consts/form'
 
 const Wrapper = styled.div<{ visible: boolean }>`
   display: ${(props): string => (props.visible ? 'block' : 'none')};
@@ -63,6 +64,7 @@ type Props = {
 }
 
 const Step: FC<Props> = ({ children, stepIndex, onStepComplete }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const wrapperRef = useRef<any>(null)
   const {
     id,
@@ -73,10 +75,11 @@ const Step: FC<Props> = ({ children, stepIndex, onStepComplete }) => {
     nextStep,
     initialValues,
     handleSubmit,
+    formStatus,
   } = useContext(FormContext)
 
   const lastStepIndex = stepsLength ? stepsLength - 1 : 0
-
+  const hideSubmitButton = formStatus === formStatuses.agrrementsError
   const handleStepSubmit = ({ values }: FormValuesType): void => {
     if (currentStep === lastStepIndex) {
       return handleSubmit && handleSubmit()
@@ -91,7 +94,7 @@ const Step: FC<Props> = ({ children, stepIndex, onStepComplete }) => {
       wrapperRef.current !== null &&
         window.scrollTo(0, wrapperRef.current.offsetTop)
     }
-  }, [currentStep, stepIndex])
+  }, [currentStep, stepIndex, formStatus])
 
   return (
     (stepIndex === currentStep && (
@@ -132,10 +135,10 @@ const Step: FC<Props> = ({ children, stepIndex, onStepComplete }) => {
                       onClick={prevStep}
                     />
                   )}
-                  {currentStep !== lastStepIndex && (
+                  {currentStep !== lastStepIndex && !hideSubmitButton && (
                     <Button disabled={!isValid} type="submit" text="Dalej" />
                   )}
-                  {currentStep === lastStepIndex && (
+                  {currentStep === lastStepIndex && !hideSubmitButton && (
                     <Button disabled={!isValid} type="submit" text="Wyślij" />
                   )}
                 </ButtonsWrapper>
