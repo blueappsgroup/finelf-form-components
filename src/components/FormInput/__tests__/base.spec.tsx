@@ -207,7 +207,6 @@ describe('base <BaseRangeField />', () => {
           id={inputId}
           name={inputName}
           component={component}
-          validate={validateText(required)}
           required={required}
           min={min}
           max={max}
