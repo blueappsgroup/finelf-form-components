@@ -90,7 +90,7 @@ describe('base <Step />', () => {
 
     expect(
       container.querySelector('form').querySelector('button:not([disabled])')
-    )
+    ).toBeTruthy()
     expect(wrapper).toMatchSnapshot()
   })
 })
