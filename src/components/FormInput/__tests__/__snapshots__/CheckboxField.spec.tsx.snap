@@ -2,7 +2,7 @@
 
 exports[`<CheckboxField /> matches snapshot 1`] = `
 <input
-  class="sc-iqHYGH eXUgkp"
+  class="sc-crrsfI ljDaNc"
   id="checkboxField"
   name="checkbox_field"
   type="checkbox"
@@ -14,20 +14,20 @@ exports[`<CheckboxField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-fubCfw krrqIb"
+      class="sc-pFZIQ kFwajQ"
     >
       <label
-        class="sc-bqyKva cyvhyU"
+        class="sc-kstrdz irJNIW"
       >
         <div
-          class="sc-jrAGrp bNKtyb"
+          class="sc-kEjbxe kzwsDs"
         >
           <input
-            class="sc-iqHYGH eXUgkp"
+            class="sc-crrsfI ljDaNc"
             id="checkboxField"
             label="Test"
             name="checkbox_field"
@@ -35,10 +35,10 @@ exports[`<CheckboxField /> matches snapshot with label 1`] = `
             value="false"
           />
           <div
-            class="sc-crrsfI jYgHay"
+            class="sc-dQppl fMeTOd"
           >
             <svg
-              class="sc-kEjbxe fkpYrb"
+              class="sc-iqHYGH dFoDCi"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -48,18 +48,24 @@ exports[`<CheckboxField /> matches snapshot with label 1`] = `
           </div>
         </div>
         <span
-          class="sc-dQppl lbCxfG"
+          class="sc-bqyKva hFXhsJ"
         >
           Test
         </span>
         <div
-          class="sc-hBEYos eXyhIn"
+          class="sc-fodVxV fFWVU"
         />
       </label>
       <span
-        class="sc-pFZIQ lowQPr"
+        class="sc-jrAGrp ebhOan"
       />
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;

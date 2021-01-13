@@ -4,11 +4,11 @@ exports[`<BankAccountNumberField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="name"
@@ -16,10 +16,10 @@ exports[`<BankAccountNumberField /> input field with custom validation 1`] = `
         Numer konta bankowego
       </label>
       <div
-        class="sc-lmoMRL kywwk"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBEYos hKnQgj"
+          class="sc-fodVxV gZGAuo"
           id="bankAccountNumberField"
           label="Numer konta bankowego"
           name="name"
@@ -28,18 +28,25 @@ exports[`<BankAccountNumberField /> input field with custom validation 1`] = `
         />
       </div>
       <span
-        class="sc-kstrdz hYtgrW"
+        class="sc-hBEYos kIOtFs"
       >
         Podany numer konta jest nieprawidłowy
       </span>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
 
 exports[`<BankAccountNumberField /> matches snapshot 1`] = `
 <input
-  class="sc-hBEYos RGiG"
+  class="sc-fodVxV kubVCF"
   id="bankAccountNumberField"
   label="Numer konta bankowego"
   name="name"
@@ -52,11 +59,11 @@ exports[`<BankAccountNumberField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="name"
@@ -64,10 +71,10 @@ exports[`<BankAccountNumberField /> matches snapshot with error 1`] = `
         Test*
       </label>
       <div
-        class="sc-lmoMRL kywwk"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBEYos hKnQgj"
+          class="sc-fodVxV gZGAuo"
           id="bankAccountNumberField"
           label="Test"
           name="name"
@@ -77,11 +84,18 @@ exports[`<BankAccountNumberField /> matches snapshot with error 1`] = `
         />
       </div>
       <span
-        class="sc-kstrdz hYtgrW"
+        class="sc-hBEYos kIOtFs"
       >
         To pole jest wymagane
       </span>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
@@ -90,11 +104,11 @@ exports[`<BankAccountNumberField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="name"
@@ -102,10 +116,10 @@ exports[`<BankAccountNumberField /> matches snapshot with label 1`] = `
         Test
       </label>
       <div
-        class="sc-lmoMRL kywwk"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBEYos RGiG"
+          class="sc-fodVxV kubVCF"
           id="bankAccountNumberField"
           label="Test"
           name="name"
@@ -114,6 +128,12 @@ exports[`<BankAccountNumberField /> matches snapshot with label 1`] = `
         />
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;

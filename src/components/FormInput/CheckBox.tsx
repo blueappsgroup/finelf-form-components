@@ -189,8 +189,8 @@ export const CheckboxBase: (props: FieldWrapProps) => ReactElement = ({
   const htmlContentList =
     props.HTMLcontent && props.HTMLcontent.split('--MORE--')
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    props.onChange && props.onChange(e)
     field.onChange && field.onChange(e)
+    props.onChange && props.onChange(e)
     setFormValuesToCache(values, id)
   }
 

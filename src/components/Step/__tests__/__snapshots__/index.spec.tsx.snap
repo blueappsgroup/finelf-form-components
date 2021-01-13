@@ -7,8 +7,8 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-lmoMRL dkiict"
-        id="testForm"
+        class="sc-iJuUWI ktGqPh"
+        id="0"
       >
         <div
           class="sc-ezrdKe gBFqDK"
@@ -52,33 +52,9 @@ Object {
             class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJuUWI eufkVy"
+              class="sc-lmoMRL dBVOGK"
               disabled=""
-              type="button"
-            >
-              Dalej
-            </button>
-          </div>
-        </div>
-        <div
-          class="sc-ezrdKe eflciR"
-        >
-          <div
-            class="sc-kLgntA gqMeOj"
-          >
-            <div
-              class="sc-giIncl kNgfLi"
-            >
-              2. Szczegółowe dane
-            </div>
-          </div>
-          <div
-            class="sc-bYEvPH iVCcgK"
-          >
-            <button
-              class="sc-iJuUWI eufkVy"
-              disabled=""
-              type="button"
+              type="submit"
             >
               Dalej
             </button>
@@ -90,8 +66,8 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-lmoMRL dkiict"
-      id="testForm"
+      class="sc-iJuUWI ktGqPh"
+      id="0"
     >
       <div
         class="sc-ezrdKe gBFqDK"
@@ -135,33 +111,9 @@ Object {
           class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJuUWI eufkVy"
+            class="sc-lmoMRL dBVOGK"
             disabled=""
-            type="button"
-          >
-            Dalej
-          </button>
-        </div>
-      </div>
-      <div
-        class="sc-ezrdKe eflciR"
-      >
-        <div
-          class="sc-kLgntA gqMeOj"
-        >
-          <div
-            class="sc-giIncl kNgfLi"
-          >
-            2. Szczegółowe dane
-          </div>
-        </div>
-        <div
-          class="sc-bYEvPH iVCcgK"
-        >
-          <button
-            class="sc-iJuUWI eufkVy"
-            disabled=""
-            type="button"
+            type="submit"
           >
             Dalej
           </button>
@@ -238,8 +190,8 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-lmoMRL dkiict"
-        id="testForm"
+        class="sc-iJuUWI ktGqPh"
+        id="0"
       >
         <div
           class="sc-ezrdKe gBFqDK"
@@ -270,7 +222,7 @@ Object {
               class="sc-dIUggk hEHKqS"
             >
               <input
-                class="sc-pFZIQ kIcSeo"
+                class="sc-pFZIQ iEBZyV"
                 label="Imię"
                 name="fName"
                 placeholder="Imię*"
@@ -278,38 +230,19 @@ Object {
                 value=""
               />
             </div>
+            <span
+              class="sc-fubCfw dgzMHt"
+            >
+              To pole jest wymagane
+            </span>
           </div>
           <div
             class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJuUWI eufkVy"
+              class="sc-lmoMRL dBVOGK"
               disabled=""
-              type="button"
-            >
-              Dalej
-            </button>
-          </div>
-        </div>
-        <div
-          class="sc-ezrdKe eflciR"
-        >
-          <div
-            class="sc-kLgntA gqMeOj"
-          >
-            <div
-              class="sc-giIncl kNgfLi"
-            >
-              2. Szczegółowe dane
-            </div>
-          </div>
-          <div
-            class="sc-bYEvPH iVCcgK"
-          >
-            <button
-              class="sc-iJuUWI eufkVy"
-              disabled=""
-              type="button"
+              type="submit"
             >
               Dalej
             </button>
@@ -321,8 +254,8 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-lmoMRL dkiict"
-      id="testForm"
+      class="sc-iJuUWI ktGqPh"
+      id="0"
     >
       <div
         class="sc-ezrdKe gBFqDK"
@@ -353,7 +286,7 @@ Object {
             class="sc-dIUggk hEHKqS"
           >
             <input
-              class="sc-pFZIQ kIcSeo"
+              class="sc-pFZIQ iEBZyV"
               label="Imię"
               name="fName"
               placeholder="Imię*"
@@ -361,38 +294,19 @@ Object {
               value=""
             />
           </div>
+          <span
+            class="sc-fubCfw dgzMHt"
+          >
+            To pole jest wymagane
+          </span>
         </div>
         <div
           class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJuUWI eufkVy"
+            class="sc-lmoMRL dBVOGK"
             disabled=""
-            type="button"
-          >
-            Dalej
-          </button>
-        </div>
-      </div>
-      <div
-        class="sc-ezrdKe eflciR"
-      >
-        <div
-          class="sc-kLgntA gqMeOj"
-        >
-          <div
-            class="sc-giIncl kNgfLi"
-          >
-            2. Szczegółowe dane
-          </div>
-        </div>
-        <div
-          class="sc-bYEvPH iVCcgK"
-        >
-          <button
-            class="sc-iJuUWI eufkVy"
-            disabled=""
-            type="button"
+            type="submit"
           >
             Dalej
           </button>
@@ -418,7 +332,7 @@ Object {
   "findByText": [Function],
   "findByTitle": [Function],
   "firstName": <input
-    class="sc-pFZIQ kIcSeo"
+    class="sc-pFZIQ iEBZyV"
     label="Imię"
     name="fName"
     placeholder="Imię*"
@@ -469,8 +383,8 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-lmoMRL dkiict"
-        id="testForm"
+        class="sc-iJuUWI ktGqPh"
+        id="0"
       >
         <div
           class="sc-ezrdKe gBFqDK"
@@ -514,33 +428,8 @@ Object {
             class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJuUWI eufkVy"
-              disabled=""
-              type="button"
-            >
-              Dalej
-            </button>
-          </div>
-        </div>
-        <div
-          class="sc-ezrdKe eflciR"
-        >
-          <div
-            class="sc-kLgntA gqMeOj"
-          >
-            <div
-              class="sc-giIncl kNgfLi"
-            >
-              2. Szczegółowe dane
-            </div>
-          </div>
-          <div
-            class="sc-bYEvPH iVCcgK"
-          >
-            <button
-              class="sc-iJuUWI eufkVy"
-              disabled=""
-              type="button"
+              class="sc-lmoMRL dBVOGK"
+              type="submit"
             >
               Dalej
             </button>
@@ -552,8 +441,8 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-lmoMRL dkiict"
-      id="testForm"
+      class="sc-iJuUWI ktGqPh"
+      id="0"
     >
       <div
         class="sc-ezrdKe gBFqDK"
@@ -597,33 +486,8 @@ Object {
           class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJuUWI eufkVy"
-            disabled=""
-            type="button"
-          >
-            Dalej
-          </button>
-        </div>
-      </div>
-      <div
-        class="sc-ezrdKe eflciR"
-      >
-        <div
-          class="sc-kLgntA gqMeOj"
-        >
-          <div
-            class="sc-giIncl kNgfLi"
-          >
-            2. Szczegółowe dane
-          </div>
-        </div>
-        <div
-          class="sc-bYEvPH iVCcgK"
-        >
-          <button
-            class="sc-iJuUWI eufkVy"
-            disabled=""
-            type="button"
+            class="sc-lmoMRL dBVOGK"
+            type="submit"
           >
             Dalej
           </button>
@@ -700,8 +564,8 @@ Object {
     <div>
       <form
         action="#"
-        class="sc-lmoMRL dkiict"
-        id="testForm"
+        class="sc-iJuUWI ktGqPh"
+        id="0"
       >
         <div
           class="sc-ezrdKe gBFqDK"
@@ -745,32 +609,8 @@ Object {
             class="sc-bYEvPH iVCcgK"
           >
             <button
-              class="sc-iJuUWI eufkVy"
-              type="button"
-            >
-              Dalej
-            </button>
-          </div>
-        </div>
-        <div
-          class="sc-ezrdKe eflciR"
-        >
-          <div
-            class="sc-kLgntA gqMeOj"
-          >
-            <div
-              class="sc-giIncl kNgfLi"
-            >
-              2. Szczegółowe dane
-            </div>
-          </div>
-          <div
-            class="sc-bYEvPH iVCcgK"
-          >
-            <button
-              class="sc-iJuUWI eufkVy"
-              disabled=""
-              type="button"
+              class="sc-lmoMRL dBVOGK"
+              type="submit"
             >
               Dalej
             </button>
@@ -782,8 +622,8 @@ Object {
   "container": <div>
     <form
       action="#"
-      class="sc-lmoMRL dkiict"
-      id="testForm"
+      class="sc-iJuUWI ktGqPh"
+      id="0"
     >
       <div
         class="sc-ezrdKe gBFqDK"
@@ -827,32 +667,8 @@ Object {
           class="sc-bYEvPH iVCcgK"
         >
           <button
-            class="sc-iJuUWI eufkVy"
-            type="button"
-          >
-            Dalej
-          </button>
-        </div>
-      </div>
-      <div
-        class="sc-ezrdKe eflciR"
-      >
-        <div
-          class="sc-kLgntA gqMeOj"
-        >
-          <div
-            class="sc-giIncl kNgfLi"
-          >
-            2. Szczegółowe dane
-          </div>
-        </div>
-        <div
-          class="sc-bYEvPH iVCcgK"
-        >
-          <button
-            class="sc-iJuUWI eufkVy"
-            disabled=""
-            type="button"
+            class="sc-lmoMRL dBVOGK"
+            type="submit"
           >
             Dalej
           </button>

@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC } from 'react'
 import { ThemeProvider as MainThemeProvider } from 'styled-components'
 import { CustomThemeType } from '../types'
 
@@ -138,7 +138,8 @@ export const theme = {
 }
 
 type ThemeProviderPops = {
-  children: ReactElement | ReactElement[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  children: any
   customTheme?: CustomThemeType
 }
 
@@ -147,6 +148,6 @@ export const ThemeProvider: FC<ThemeProviderPops> = ({
   customTheme,
 }) => (
   <MainThemeProvider theme={{ ...theme, ...customTheme }}>
-    {children}
+    {children && children}
   </MainThemeProvider>
 )

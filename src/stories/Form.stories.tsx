@@ -4,7 +4,6 @@ import { Story, Meta } from '@storybook/react'
 import {
   Header,
   TextField,
-  Button,
   CheckboxField,
   FormStatusText,
   Form,
@@ -16,10 +15,8 @@ import {
 } from '../'
 import { FormProps, FormValuesType } from '../types'
 import {
-  CompanyNameField,
   EmploymentTypeField,
   FirstNameField,
-  CompanyTaxField,
   BirthDateField,
   GenderField,
 } from '../components'
@@ -48,7 +45,6 @@ const Template: Story<FormProps> = (args) => (
     <TextField placeholder="City" name="city" />
     <Header text="Test title" type="subheader" />
     <Agreemnets />
-    <Button type="submit" text="Send" />
   </Form>
 )
 
@@ -97,9 +93,7 @@ const TemplateSteps: Story<FormProps> = (args) => (
       <TextField required showError placeholder="Name2" name="firstName2" />
       <TextField placeholder="City" name="city" />
       <Row>
-        <EmploymentTypeField />
-        <CompanyNameField required name="company_name" />
-        <CompanyTaxField required name="company_tax_id" />
+        <EmploymentTypeField required />
       </Row>
     </Step>
     <Step stepIndex={2}>
@@ -149,7 +143,6 @@ const TemplateWithRedirect: Story<FormProps> = (args) => (
         </a>
       </CheckboxField>
     </CheckboxesGroup>
-    <Button type="submit" text="Send" />
   </Form>
 )
 

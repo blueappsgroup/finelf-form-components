@@ -1,4 +1,4 @@
-import { FC, ReactElement } from 'react';
+import { FC } from 'react';
 import { CustomThemeType } from '../types';
 export declare const colors: {
     mainGrey: string;
@@ -133,7 +133,7 @@ export declare const theme: {
     inputWithIconPadding: string;
 };
 declare type ThemeProviderPops = {
-    children: ReactElement | ReactElement[];
+    children: any;
     customTheme?: CustomThemeType;
 };
 export declare const ThemeProvider: FC<ThemeProviderPops>;

@@ -2,7 +2,7 @@
 
 exports[`<AmountField /> matches snapshot 1`] = `
 <input
-  class="sc-fFubgz gyiaZm"
+  class="sc-bkzZxe hpQztk"
   id="amountField"
   label="Kwota pożyczki"
   max="10000"
@@ -18,14 +18,14 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <div
-        class="sc-iqHYGH ciYcwk"
+        class="sc-crrsfI ieBApp"
       >
         <label
           for="name"
@@ -33,10 +33,10 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
           Test
         </label>
         <div
-          class="sc-fodVxV dfTXMr"
+          class="sc-fFubgz fJyOdk"
         >
           <input
-            class="sc-fFubgz gyiaZm"
+            class="sc-bkzZxe hpQztk"
             id="amountField"
             label="Test"
             max="10000"
@@ -47,14 +47,14 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
             value="2000"
           />
           <span
-            class="sc-fKFyDc bcrhWt"
+            class="sc-bBXqnf bwzWoF"
           >
             PLN
           </span>
         </div>
       </div>
       <div
-        class="sc-cxFLnm dGwOXA"
+        class="sc-lmoMRL hIjsuX"
       >
         <div
           aria-orientation="horizontal"
@@ -82,10 +82,10 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
         </div>
       </div>
       <div
-        class="sc-iqHYGH ciYcwk"
+        class="sc-crrsfI ieBApp"
       >
         <span
-          class="sc-dmlrTW bJiSpw"
+          class="sc-kfzAmx jbFYGv"
         >
           Min. 
           300
@@ -93,7 +93,7 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
           zł
         </span>
         <span
-          class="sc-dmlrTW bJiSpw"
+          class="sc-kfzAmx jbFYGv"
         >
           Max. 
           10000
@@ -102,6 +102,12 @@ exports[`<AmountField /> matches snapshot with label 1`] = `
         </span>
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;

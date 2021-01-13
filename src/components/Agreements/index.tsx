@@ -5,10 +5,13 @@ import React, {
   useState,
 } from 'react'
 import styled from 'styled-components'
+import { useFormikContext } from 'formik'
+
 import CheckboxesGroup from '../CheckboxesGroup'
 import { CheckboxField } from '../'
 import { FormContext } from '../../utils'
 import { StyledError } from '../FormInput/base'
+import { formStatuses } from '../../consts/form'
 type AgreementType = {
   id: string
   content: string
@@ -33,7 +36,14 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
   requiredErorText = '* Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.',
   hasReadMore,
 }) => {
-  const { id, apiUrl } = useContext(FormContext)
+  const {
+    id,
+    apiUrl,
+    setInitialValues,
+    initialValues,
+    setFormStatus,
+  } = useContext(FormContext)
+  const { errors, setErrors } = useFormikContext()
   const [agreements, setAgreements] = useState<AgreementType[]>([])
   const [error, setError] = useState<boolean>(false)
   const replaceLinkInAgreements = useCallback(
@@ -61,11 +71,50 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
     try {
       const response = await fetch(`${apiUrl}/forms/${id}/agreements`)
       const data = await response.json()
+      let hasError = false
+      const dataForInitialize = data.reduce(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (acc: any, item: AgreementType) => {
+          acc.values[item.id] = false
+          if (item.required) {
+            acc.required.push('required')
+            if (
+              !hasError &&
+              (!initialValues ||
+                !initialValues[name] ||
+                !initialValues[name][item.id])
+            ) {
+              hasError = true
+            }
+          } else {
+            acc.required.push(null)
+          }
+          return acc
+        },
+        { values: {}, required: [] }
+      )
       setAgreements((linksForReplace && replaceLinkInAgreements(data)) || data)
+      setInitialValues &&
+        setInitialValues({ [name]: dataForInitialize.values, ...initialValues })
+      if (hasError) {
+        setErrors({ [name]: dataForInitialize.required, ...errors })
+      }
     } catch (e) {
+      setFormStatus && setFormStatus(formStatuses.agrrementsError)
       console.log(e)
     }
-  }, [linksForReplace, apiUrl, replaceLinkInAgreements, id])
+  }, [
+    apiUrl,
+    errors,
+    id,
+    initialValues,
+    linksForReplace,
+    name,
+    replaceLinkInAgreements,
+    setErrors,
+    setFormStatus,
+    setInitialValues,
+  ])
 
   useLayoutEffect(() => {
     if (agreements.length === 0) {

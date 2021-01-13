@@ -4,11 +4,11 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="first_name"
@@ -16,10 +16,10 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
         Imię
       </label>
       <div
-        class="sc-lmoMRL kywwk"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBEYos hKnQgj"
+          class="sc-fodVxV gZGAuo"
           id="testId"
           label="Imię"
           name="first_name"
@@ -28,18 +28,25 @@ exports[`<FirstNameField /> input field with custom validation 1`] = `
         />
       </div>
       <span
-        class="sc-kstrdz hYtgrW"
+        class="sc-hBEYos kIOtFs"
       >
         Podane dane są nieprawidłowe
       </span>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
 
 exports[`<FirstNameField /> matches snapshot 1`] = `
 <input
-  class="sc-hBEYos RGiG"
+  class="sc-fodVxV kubVCF"
   id="testId"
   label="Imię"
   name="first_name"
@@ -52,11 +59,11 @@ exports[`<FirstNameField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="first_name"
@@ -64,10 +71,10 @@ exports[`<FirstNameField /> matches snapshot with error 1`] = `
         FirstName1*
       </label>
       <div
-        class="sc-lmoMRL kywwk"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBEYos hKnQgj"
+          class="sc-fodVxV gZGAuo"
           id="testId"
           label="FirstName1"
           name="first_name"
@@ -77,11 +84,18 @@ exports[`<FirstNameField /> matches snapshot with error 1`] = `
         />
       </div>
       <span
-        class="sc-kstrdz hYtgrW"
+        class="sc-hBEYos kIOtFs"
       >
         To pole jest wymagane
       </span>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
@@ -90,11 +104,11 @@ exports[`<FirstNameField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="first_name"
@@ -102,10 +116,10 @@ exports[`<FirstNameField /> matches snapshot with label 1`] = `
         FirstName
       </label>
       <div
-        class="sc-lmoMRL kywwk"
+        class="sc-iJuUWI cFUPqY"
       >
         <input
-          class="sc-hBEYos RGiG"
+          class="sc-fodVxV kubVCF"
           id="testId"
           label="FirstName"
           name="first_name"
@@ -114,6 +128,12 @@ exports[`<FirstNameField /> matches snapshot with label 1`] = `
         />
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;

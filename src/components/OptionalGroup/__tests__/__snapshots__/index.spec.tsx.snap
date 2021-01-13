@@ -2,7 +2,7 @@
 
 exports[`base <OptionalGroup /> matches snapshot 1`] = `
 <input
-  class="sc-kLgntA dDGvXM"
+  class="sc-iktFzd bNeliV"
   id="optional_group"
   label="optional group test"
   name="optional_group"

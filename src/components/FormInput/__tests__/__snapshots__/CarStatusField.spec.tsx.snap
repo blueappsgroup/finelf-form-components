@@ -2,13 +2,13 @@
 
 exports[`<CarStatusField /> matches snapshot 1`] = `
 <select
-  class="sc-idOhPF gSNtny"
+  class="sc-dIUggk hhFmtN"
   id="carStatusField"
   name="name"
   type="text"
 >
   <option
-    class="sc-hHftDr bhxQtR"
+    class="sc-dmlrTW hequYp"
     disabled=""
     value="select"
   >
@@ -31,11 +31,11 @@ exports[`<CarStatusField /> matches snapshot with error 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="name"
@@ -43,10 +43,10 @@ exports[`<CarStatusField /> matches snapshot with error 1`] = `
         Test*
       </label>
       <div
-        class="sc-bkzZxe jbuFap"
+        class="sc-idOhPF buAmNl"
       >
         <select
-          class="sc-idOhPF emkUjz"
+          class="sc-dIUggk jigzeI"
           id="carStatusField"
           label="Test"
           name="name"
@@ -54,7 +54,7 @@ exports[`<CarStatusField /> matches snapshot with error 1`] = `
           type="text"
         >
           <option
-            class="sc-hHftDr bhxQtR"
+            class="sc-dmlrTW hequYp"
             disabled=""
             value="select"
           >
@@ -72,15 +72,22 @@ exports[`<CarStatusField /> matches snapshot with error 1`] = `
           </option>
         </select>
         <span
-          class="sc-dIUggk hceYpr"
+          class="sc-hHftDr jmpDvw"
         />
       </div>
       <span
-        class="sc-kstrdz hYtgrW"
+        class="sc-hBEYos kIOtFs"
       >
         To pole jest wymagane
       </span>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
@@ -89,11 +96,11 @@ exports[`<CarStatusField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <label
         for="name"
@@ -101,17 +108,17 @@ exports[`<CarStatusField /> matches snapshot with label 1`] = `
         Test
       </label>
       <div
-        class="sc-bkzZxe jbuFap"
+        class="sc-idOhPF buAmNl"
       >
         <select
-          class="sc-idOhPF gSNtny"
+          class="sc-dIUggk hhFmtN"
           id="carStatusField"
           label="Test"
           name="name"
           type="text"
         >
           <option
-            class="sc-hHftDr bhxQtR"
+            class="sc-dmlrTW hequYp"
             disabled=""
             value="select"
           >
@@ -129,10 +136,16 @@ exports[`<CarStatusField /> matches snapshot with label 1`] = `
           </option>
         </select>
         <span
-          class="sc-dIUggk hceYpr"
+          class="sc-hHftDr jmpDvw"
         />
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
@@ -141,23 +154,23 @@ exports[`<CarStatusField /> select field with custom validation 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <div
-        class="sc-bkzZxe jbuFap"
+        class="sc-idOhPF buAmNl"
       >
         <select
-          class="sc-idOhPF emkUjz"
+          class="sc-dIUggk jigzeI"
           id="carStatusField"
           name="name"
           type="text"
         >
           <option
-            class="sc-hHftDr bhxQtR"
+            class="sc-dmlrTW hequYp"
             disabled=""
             value="select"
           >
@@ -175,15 +188,22 @@ exports[`<CarStatusField /> select field with custom validation 1`] = `
           </option>
         </select>
         <span
-          class="sc-dIUggk hceYpr"
+          class="sc-hHftDr jmpDvw"
         />
       </div>
       <span
-        class="sc-kstrdz hYtgrW"
+        class="sc-hBEYos kIOtFs"
       >
         Podane dane są nieprawidłowe
       </span>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;

@@ -2,7 +2,7 @@
 
 exports[`<PeriodField /> matches snapshot 1`] = `
 <input
-  class="sc-fFubgz gyiaZm"
+  class="sc-bkzZxe hpQztk"
   id="periodField"
   label="Okres spłaty"
   max="60"
@@ -18,14 +18,14 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
 <div>
   <form
     action="#"
-    class="sc-iBPRYJ janqdG"
+    class="sc-fubCfw clDFWv"
     id="testForm"
   >
     <div
-      class="sc-kEjbxe lcGTJL"
+      class="sc-iqHYGH jWqqni"
     >
       <div
-        class="sc-iqHYGH ciYcwk"
+        class="sc-crrsfI ieBApp"
       >
         <label
           for="name"
@@ -33,10 +33,10 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
           Test
         </label>
         <div
-          class="sc-fodVxV dfTXMr"
+          class="sc-fFubgz fJyOdk"
         >
           <input
-            class="sc-fFubgz gyiaZm"
+            class="sc-bkzZxe hpQztk"
             id="periodField"
             label="Test"
             max="60"
@@ -47,14 +47,14 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
             value="12"
           />
           <span
-            class="sc-fKFyDc bcrhWt"
+            class="sc-bBXqnf bwzWoF"
           >
             Dni
           </span>
         </div>
       </div>
       <div
-        class="sc-cxFLnm dGwOXA"
+        class="sc-lmoMRL hIjsuX"
       >
         <div
           aria-orientation="horizontal"
@@ -82,10 +82,10 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
         </div>
       </div>
       <div
-        class="sc-iqHYGH ciYcwk"
+        class="sc-crrsfI ieBApp"
       >
         <span
-          class="sc-dmlrTW bJiSpw"
+          class="sc-kfzAmx jbFYGv"
         >
           Min. 
           3
@@ -93,7 +93,7 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
           Dni
         </span>
         <span
-          class="sc-dmlrTW bJiSpw"
+          class="sc-kfzAmx jbFYGv"
         >
           Max. 
           60
@@ -102,6 +102,12 @@ exports[`<PeriodField /> matches snapshot with label 1`] = `
         </span>
       </div>
     </div>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      type="submit"
+    >
+      Wyślij
+    </button>
   </form>
 </div>
 `;
