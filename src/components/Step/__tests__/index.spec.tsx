@@ -88,9 +88,7 @@ describe('base <Step />', () => {
       fireEvent.change(firstName, { target: { value: 'test' } })
     })
 
-    expect(
-      container.querySelector('form').querySelector('button:not([disabled])')
-    ).toBeTruthy()
+    expect(container.querySelector('form').querySelector('button')).toBeTruthy()
     expect(wrapper).toMatchSnapshot()
   })
 })
