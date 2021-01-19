@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormStatusText /> shows custom error messages when form status is error 1`] = `
+<div>
+  <span
+    class="sc-bdfBwQ kfuCoF"
+  >
+    Some bad thing happens
+  </span>
+</div>
+`;
+
+exports[`<FormStatusText /> shows custom success messages when form status is submited 1`] = `
+<div>
+  <span
+    class="sc-bdfBwQ kfuCoF"
+  >
+    Thank u for submiting
+  </span>
+</div>
+`;
+
+exports[`<FormStatusText /> shows error messages when agrrements not fetched 1`] = `
+<div>
+  <span
+    class="sc-bdfBwQ kfuCoF"
+  >
+    Błąd serwera! Spróbuj ponowanie później
+  </span>
+</div>
+`;
+
+exports[`<FormStatusText /> shows error messages when form status is error 1`] = `
+<div>
+  <span
+    class="sc-bdfBwQ kfuCoF"
+  >
+    Error from api
+  </span>
+</div>
+`;
+
+exports[`<FormStatusText /> shows success messages when form status is submited 1`] = `
+<div>
+  <span
+    class="sc-bdfBwQ kfuCoF"
+  >
+    Submited
+  </span>
+</div>
+`;

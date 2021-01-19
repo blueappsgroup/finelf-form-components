@@ -1,0 +1,425 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Agreements /> matches snapshot 1`] = `
+<div>
+  <form
+    action="#"
+    class="sc-fubCfw clDFWv"
+    id="testForm"
+  >
+    <div
+      class="sc-pFZIQ hlPOqE"
+    >
+      <label
+        class="sc-kstrdz irJNIW"
+      >
+        <div
+          class="sc-kEjbxe kzwsDs"
+        >
+          <input
+            class="sc-crrsfI ljDaNc"
+            id="agreements.selectAll"
+            label="Zaznacz wszystkie zgody"
+            name="agreements.selectAll"
+            type="checkbox"
+            value="false"
+          />
+          <div
+            class="sc-dQppl fMeTOd"
+          >
+            <svg
+              class="sc-iqHYGH dFoDCi"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                points="20 6 9 17 4 12"
+              />
+            </svg>
+          </div>
+        </div>
+        <span
+          class="sc-bqyKva hFXhsJ"
+        >
+          Zaznacz wszystkie zgody
+        </span>
+        <div
+          class="sc-fodVxV fFWVU"
+        />
+      </label>
+      <span
+        class="sc-jrAGrp ebhOan"
+      />
+    </div>
+    <div
+      class="sc-pFZIQ kFwajQ"
+    >
+      <label
+        class="sc-kstrdz irJNIW"
+      >
+        <div
+          class="sc-kEjbxe kzwsDs"
+        >
+          <input
+            class="sc-crrsfI ljDaNc"
+            id="agreements.1"
+            name="agreements.1"
+            required=""
+            type="checkbox"
+            value="false"
+          />
+          <div
+            class="sc-dQppl gPlrmW"
+            required=""
+          >
+            <svg
+              class="sc-iqHYGH dFoDCi"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                points="20 6 9 17 4 12"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="sc-fodVxV fFWVU"
+        >
+          <span
+            class="sc-bqyKva hFXhsJ"
+          >
+            Oświadczam, że zapoznałem/am się z 
+            <a
+              href="RULES_URL"
+              title="Regulamin serwisu "
+            >
+              Regulaminem Serwisu
+            </a>
+             oraz 
+            <a
+              href="PRIVACY_POLICY_URL"
+              title="Polityka prywatności"
+            >
+              Polityką Prywatności
+            </a>
+            . Podane przez Ciebie dane przetwarzane będą w zakresie niezbędnym do realizacji określonego żądania zgodnie z art. 6 ust. 1 lit. b) RODO tj. do podjęcia działań przed zawarciem umowy, podejmowania działań w związku z jej wykonywaniem lub na podstawie art. 6 ust. 1 lit. f) RODO tj. w celu realizacji uzasadnionego interesu administratora. Szczegóły w Polityce Prywatności.
+          </span>
+        </div>
+      </label>
+      <span
+        class="sc-jrAGrp ebhOan"
+      />
+    </div>
+    <div
+      class="sc-pFZIQ kFwajQ"
+    >
+      <label
+        class="sc-kstrdz irJNIW"
+      >
+        <div
+          class="sc-kEjbxe kzwsDs"
+        >
+          <input
+            class="sc-crrsfI ljDaNc"
+            id="agreements.2"
+            name="agreements.2"
+            type="checkbox"
+            value="false"
+          />
+          <div
+            class="sc-dQppl fMeTOd"
+          >
+            <svg
+              class="sc-iqHYGH dFoDCi"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                points="20 6 9 17 4 12"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="sc-fodVxV fFWVU"
+        >
+          <span
+            class="sc-bqyKva hFXhsJ"
+          >
+            Wyrażam zgodę na otrzymywanie od Usługodawcy tj. Da Vinci Investment sp. z o.o. z siedzibą w Bydgoszczy przy ul. Krzysztofa Gotowskiego 6, 85-030 Bydgoszcz (numer KRS: 0000728065) na podane przeze mnie dane kontaktowe informacji handlowych i marketingu bezpośredniego za pomocą poczty elektronicznej, wiadomości sms/mms i połączeń telefonicznych w celu przedstawienia dedykowanych dla mnie ofert lub usług Usługodawcy. Zgoda obejmuje także profilowanie danych, które ma na celu dopasowanie oferty do moich oczekiwań. Wyrażenie zgody jest dobrowolne. Wiem, że mam prawo do cofnięcia zgody w dowolnym momencie. Przyjmuję do wiadomości, że wyrażenie powyższej zgody oznacza jednocześnie zgodę na przetwarzanie przez Usługodawcę moich danych osobowych w celu promocji oraz marketingu bezpośredniego własnych produktów i usług.
+          </span>
+        </div>
+      </label>
+      <span
+        class="sc-jrAGrp ebhOan"
+      />
+    </div>
+    <div
+      class="sc-pFZIQ kFwajQ"
+    >
+      <label
+        class="sc-kstrdz irJNIW"
+      >
+        <div
+          class="sc-kEjbxe kzwsDs"
+        >
+          <input
+            class="sc-crrsfI ljDaNc"
+            id="agreements.3"
+            name="agreements.3"
+            type="checkbox"
+            value="false"
+          />
+          <div
+            class="sc-dQppl fMeTOd"
+          >
+            <svg
+              class="sc-iqHYGH dFoDCi"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                points="20 6 9 17 4 12"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="sc-fodVxV fFWVU"
+        >
+          <span
+            class="sc-bqyKva hFXhsJ"
+          >
+            Wyrażam zgodę na otrzymywanie od partnerów serwisu SITE_NAME (wymienionych na stronie internetowej w linku: PARTNERS_URL) na podane przeze mnie dane kontaktowe informacji handlowych i marketingu bezpośredniego za pomocą poczty elektronicznej, wiadomości sms/mms i połączeń telefonicznych w celu przedstawienia przez nich dedykowanych dla mnie ofert lub usług, związanych z produktami pożyczkowymi. Zgoda obejmuje także profilowanie danych, które ma na celu dopasowanie oferty do moich oczekiwań. Wyrażenie zgody jest dobrowolne. Wiem, że mam prawo do cofnięcia zgody w dowolnym momencie. Przyjmuję do wiadomości, że wyrażenie powyższej zgody oznacza jednocześnie zgodę na przetwarzanie przez powyższych partnerów moich danych osobowych w celu promocji oraz marketingu bezpośredniego ich produktów i usług.
+          </span>
+        </div>
+      </label>
+      <span
+        class="sc-jrAGrp ebhOan"
+      />
+    </div>
+    <span
+      class="sc-bBXqnf sc-cOajty dTtkZj leWBTa"
+    >
+      * Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.
+    </span>
+    <button
+      class="sc-iBPRYJ hcYpVh"
+      disabled=""
+      type="submit"
+    >
+      Wyślij
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<Agreements /> will agreements link replace 1`] = `
+<body>
+  <div>
+    <form
+      action="#"
+      class="sc-fubCfw clDFWv"
+      id="testForm"
+    >
+      <div
+        class="sc-pFZIQ hlPOqE"
+      >
+        <label
+          class="sc-kstrdz irJNIW"
+        >
+          <div
+            class="sc-kEjbxe kzwsDs"
+          >
+            <input
+              class="sc-crrsfI ljDaNc"
+              id="agreements.selectAll"
+              label="Zaznacz wszystkie zgody"
+              name="agreements.selectAll"
+              type="checkbox"
+              value="false"
+            />
+            <div
+              class="sc-dQppl fMeTOd"
+            >
+              <svg
+                class="sc-iqHYGH dFoDCi"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  points="20 6 9 17 4 12"
+                />
+              </svg>
+            </div>
+          </div>
+          <span
+            class="sc-bqyKva hFXhsJ"
+          >
+            Zaznacz wszystkie zgody
+          </span>
+          <div
+            class="sc-fodVxV fFWVU"
+          />
+        </label>
+        <span
+          class="sc-jrAGrp ebhOan"
+        />
+      </div>
+      <div
+        class="sc-pFZIQ kFwajQ"
+      >
+        <label
+          class="sc-kstrdz irJNIW"
+        >
+          <div
+            class="sc-kEjbxe kzwsDs"
+          >
+            <input
+              class="sc-crrsfI ljDaNc"
+              id="agreements.1"
+              name="agreements.1"
+              required=""
+              type="checkbox"
+              value="false"
+            />
+            <div
+              class="sc-dQppl gPlrmW"
+              required=""
+            >
+              <svg
+                class="sc-iqHYGH dFoDCi"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  points="20 6 9 17 4 12"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-fodVxV fFWVU"
+          >
+            <span
+              class="sc-bqyKva hFXhsJ"
+            >
+              Oświadczam, że zapoznałem/am się z 
+              <a
+                href="https://kredyt-dla-zadluzonych.pl/regulamin"
+                title="Regulamin serwisu "
+              >
+                Regulaminem Serwisu
+              </a>
+               oraz 
+              <a
+                href="https://kredyt-dla-zadluzonych.pl/polityka-prywatnosci/"
+                title="Polityka prywatności"
+              >
+                Polityką Prywatności
+              </a>
+              . Podane przez Ciebie dane przetwarzane będą w zakresie niezbędnym do realizacji określonego żądania zgodnie z art. 6 ust. 1 lit. b) RODO tj. do podjęcia działań przed zawarciem umowy, podejmowania działań w związku z jej wykonywaniem lub na podstawie art. 6 ust. 1 lit. f) RODO tj. w celu realizacji uzasadnionego interesu administratora. Szczegóły w Polityce Prywatności.
+            </span>
+          </div>
+        </label>
+        <span
+          class="sc-jrAGrp ebhOan"
+        />
+      </div>
+      <div
+        class="sc-pFZIQ kFwajQ"
+      >
+        <label
+          class="sc-kstrdz irJNIW"
+        >
+          <div
+            class="sc-kEjbxe kzwsDs"
+          >
+            <input
+              class="sc-crrsfI ljDaNc"
+              id="agreements.2"
+              name="agreements.2"
+              type="checkbox"
+              value="false"
+            />
+            <div
+              class="sc-dQppl fMeTOd"
+            >
+              <svg
+                class="sc-iqHYGH dFoDCi"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  points="20 6 9 17 4 12"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-fodVxV fFWVU"
+          >
+            <span
+              class="sc-bqyKva hFXhsJ"
+            >
+              Wyrażam zgodę na otrzymywanie od Usługodawcy tj. Da Vinci Investment sp. z o.o. z siedzibą w Bydgoszczy przy ul. Krzysztofa Gotowskiego 6, 85-030 Bydgoszcz (numer KRS: 0000728065) na podane przeze mnie dane kontaktowe informacji handlowych i marketingu bezpośredniego za pomocą poczty elektronicznej, wiadomości sms/mms i połączeń telefonicznych w celu przedstawienia dedykowanych dla mnie ofert lub usług Usługodawcy. Zgoda obejmuje także profilowanie danych, które ma na celu dopasowanie oferty do moich oczekiwań. Wyrażenie zgody jest dobrowolne. Wiem, że mam prawo do cofnięcia zgody w dowolnym momencie. Przyjmuję do wiadomości, że wyrażenie powyższej zgody oznacza jednocześnie zgodę na przetwarzanie przez Usługodawcę moich danych osobowych w celu promocji oraz marketingu bezpośredniego własnych produktów i usług.
+            </span>
+          </div>
+        </label>
+        <span
+          class="sc-jrAGrp ebhOan"
+        />
+      </div>
+      <div
+        class="sc-pFZIQ kFwajQ"
+      >
+        <label
+          class="sc-kstrdz irJNIW"
+        >
+          <div
+            class="sc-kEjbxe kzwsDs"
+          >
+            <input
+              class="sc-crrsfI ljDaNc"
+              id="agreements.3"
+              name="agreements.3"
+              type="checkbox"
+              value="false"
+            />
+            <div
+              class="sc-dQppl fMeTOd"
+            >
+              <svg
+                class="sc-iqHYGH dFoDCi"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  points="20 6 9 17 4 12"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-fodVxV fFWVU"
+          >
+            <span
+              class="sc-bqyKva hFXhsJ"
+            >
+              Wyrażam zgodę na otrzymywanie od partnerów serwisu SITE_NAME (wymienionych na stronie internetowej w linku: PARTNERS_URL) na podane przeze mnie dane kontaktowe informacji handlowych i marketingu bezpośredniego za pomocą poczty elektronicznej, wiadomości sms/mms i połączeń telefonicznych w celu przedstawienia przez nich dedykowanych dla mnie ofert lub usług, związanych z produktami pożyczkowymi. Zgoda obejmuje także profilowanie danych, które ma na celu dopasowanie oferty do moich oczekiwań. Wyrażenie zgody jest dobrowolne. Wiem, że mam prawo do cofnięcia zgody w dowolnym momencie. Przyjmuję do wiadomości, że wyrażenie powyższej zgody oznacza jednocześnie zgodę na przetwarzanie przez powyższych partnerów moich danych osobowych w celu promocji oraz marketingu bezpośredniego ich produktów i usług.
+            </span>
+          </div>
+        </label>
+        <span
+          class="sc-jrAGrp ebhOan"
+        />
+      </div>
+      <span
+        class="sc-bBXqnf sc-cOajty dTtkZj leWBTa"
+      >
+        * Zapoznanie się z treścią regulaminu serwisu oraz polityką prywatności jest wymagane.
+      </span>
+      <button
+        class="sc-iBPRYJ hcYpVh"
+        disabled=""
+        type="submit"
+      >
+        Wyślij
+      </button>
+    </form>
+  </div>
+</body>
+`;

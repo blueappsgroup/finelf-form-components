@@ -107,7 +107,9 @@
       "src/**/*.{ts,tsx}",
       "!src/**/*.stories.{ts,tsx}",
       "!src/index.ts",
+      "!src/**/index.ts",
       "!src/type.ts",
+      "!src/types.ts",
       "!src/react-app-env.d.ts"
     ]
   },

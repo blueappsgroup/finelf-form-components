@@ -13,7 +13,6 @@ describe('base <Step />', () => {
   window.scrollTo = jest.fn()
   const setupWrapper = ({
     formId = 'testForm',
-    ...rest
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }): any => {
     const wrapper = render(
@@ -89,6 +88,80 @@ describe('base <Step />', () => {
     })
 
     expect(container.querySelector('form').querySelector('button')).toBeTruthy()
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('setNextButtonDisabled have been called after fill step fields', async () => {
+    const wrapper = setupWrapper({})
+    const { container, firstName } = wrapper
+
+    await act(async () => {
+      fireEvent.change(firstName, { target: { value: 'test' } })
+    })
+
+    expect(container.querySelector('form').querySelector('button')).toBeTruthy()
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('it should through steps properly', async () => {
+    const wrapper = setupWrapper({})
+    const { container, firstName } = wrapper
+    let currentFormButton = container
+      .querySelector('form')
+      .querySelector('button')
+    await act(async () => {
+      fireEvent.change(firstName, { target: { value: 'test' } })
+    })
+
+    expect(currentFormButton.innerHTML).toEqual('Dalej')
+
+    await act(async () => {
+      currentFormButton.click()
+    })
+
+    const lastName = wrapper.container.querySelector('[name="lName"]')
+
+    await act(async () => {
+      fireEvent.change(lastName, { target: { value: 'test' } })
+    })
+
+    currentFormButton = container
+      .querySelector('form')
+      .querySelector('button[type=submit]')
+
+    expect(currentFormButton.innerHTML).toEqual('Wyślij')
+
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('it should go next and back in steps properly', async () => {
+    const wrapper = setupWrapper({})
+    const { container, firstName } = wrapper
+    let currentFormButton = container
+      .querySelector('form')
+      .querySelector('button')
+    await act(async () => {
+      fireEvent.change(firstName, { target: { value: 'test' } })
+    })
+
+    expect(currentFormButton.innerHTML).toEqual('Dalej')
+
+    await act(async () => {
+      currentFormButton.click()
+    })
+
+    currentFormButton = container.querySelector('form').querySelector('button')
+
+    expect(currentFormButton.innerHTML).toEqual('Cofnij')
+
+    await act(async () => {
+      currentFormButton.click()
+    })
+
+    currentFormButton = container.querySelector('form').querySelector('button')
+
+    expect(currentFormButton.innerHTML).toEqual('Dalej')
+
     expect(wrapper).toMatchSnapshot()
   })
 })
