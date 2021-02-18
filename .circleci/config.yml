@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: Run tests
-          command: yarn test -w -u
+          command: yarn test -u --logHeapUsage -w 1
 
 workflows:
   version: 2
