@@ -303,6 +303,7 @@ export type ButtonProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick?: any
   disabled?: boolean
+  form?: string
 }
 
 export type FormProps = {

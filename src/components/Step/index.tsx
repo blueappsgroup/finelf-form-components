@@ -136,7 +136,12 @@ const Step: FC<Props> = ({ children, stepIndex, onStepComplete }) => {
                     />
                   )}
                   {currentStep !== lastStepIndex && !hideSubmitButton && (
-                    <Button disabled={!isValid} type="submit" text="Dalej" />
+                    <Button
+                      form={stepIndex.toString()}
+                      disabled={!isValid}
+                      type="submit"
+                      text="Dalej"
+                    />
                   )}
                   {currentStep === lastStepIndex && !hideSubmitButton && (
                     <Button disabled={!isValid} type="submit" text="Wyślij" />

@@ -34,7 +34,11 @@ describe('<RedirectPage />', () => {
   })
 
   it('matches snapshot with redirect', () => {
-    window.location.replace = jest.fn()
+    Object.defineProperty(window, 'location', {
+      writable: true,
+      value: { replace: jest.fn() },
+    })
+
     const documentBody = render(
       <RedirectPage
         backgroundImage="test.png"
