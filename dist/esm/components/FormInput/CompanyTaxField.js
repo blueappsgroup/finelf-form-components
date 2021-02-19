@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseField from './base';
 import { validateCompanyTax } from './validate';
-import CustomFieldWithCondition from './CustomFieldWithCondition';
+import { Field } from 'formik';
 
 const CompanyTaxField = ({
   id,
@@ -10,10 +10,8 @@ const CompanyTaxField = ({
   name = 'company_tax_id',
   required = false,
   validate = validateCompanyTax,
-  showError = true,
-  requiredCondition,
-  visibleCondition
-}) => /*#__PURE__*/React.createElement(CustomFieldWithCondition, {
+  showError = true
+}) => /*#__PURE__*/React.createElement(Field, {
   id: id,
   label: label,
   placeholder: placeholder,
@@ -21,17 +19,11 @@ const CompanyTaxField = ({
   required: required,
   showError: showError,
   name: name,
-  validate: validate,
-  requiredCondition: requiredCondition,
-  visibleCondition: visibleCondition
+  validate: validate(required)
 });
 
 CompanyTaxField.defaultProps = {
-  name: 'company_tax_id',
-  visibleCondition: {
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    employment_type: ['self_employed']
-  }
+  name: 'company_tax_id'
 };
 export default CompanyTaxField;
 //# sourceMappingURL=CompanyTaxField.js.map

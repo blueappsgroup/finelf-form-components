@@ -11,7 +11,8 @@ import { ThemeProvider } from '../../consts/theme';
 import RedirectPage from '../RedirectPage';
 import { FormContext, getFormValuesFromCache, resetFormValueCache, handleSendDataToApi, getFieldsValuesFromUrl } from '../../utils';
 import { formStatuses } from '../../consts/form';
-const StyledForm = styled(Form)`
+import Button from '../Button';
+export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   max-width: ${props => props.theme.formMaxWidth};
@@ -40,7 +41,8 @@ const FormWrapper = ({
   apiUrl,
   transactionName,
   propertyNamesFromUrl,
-  dataWithUserAgent
+  dataWithUserAgent,
+  sumitButtonText = 'Wyślij'
 }) => {
   const trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
   const intialValuesFromUrl = useMemo(() => propertyNamesFromUrl && propertyNamesFromUrl.length > 0 && getFieldsValuesFromUrl(propertyNamesFromUrl) || {}, [propertyNamesFromUrl]);
@@ -52,18 +54,31 @@ const FormWrapper = ({
   const [currentStep, setCurrentStep] = useState(0);
   const [fieldsForSkip, setFieldsForSkip] = useState([]);
   const [errorFromApi, setErrorFromApi] = useState(false);
+  const [formStatus, setFormStatus] = useState();
   const shouldRedirect = !errorFromApi && hasRedirect;
+  const showForm = formStatus !== formStatuses.submited || !shouldRedirect;
 
   const addFieldForSkip = key => setFieldsForSkip([...fieldsForSkip, key]);
 
-  const handleSubmit = async (values, props) => {
+  const handleReset = () => {
+    resetFormValueCache(id); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+    setInitialValues(_objectSpread(_objectSpread({}, intialValuesFromUrl), {}, {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      trasaction_id: trasationIdValue
+    }));
+  };
+
+  const handleSubmit = async (_, props) => {
+    const valuesForSubmit = _objectSpread(_objectSpread({}, initialValues), getFormValuesFromCache(id));
+
     if (onSubmit) {
-      onSubmit(values, props);
+      onSubmit(valuesForSubmit, props);
     }
 
     try {
       if (sendDataToApi && apiUrl) {
-        const response = await handleSendDataToApi(values, apiUrl, id, fieldsForSkip, dataWithUserAgent);
+        const response = await handleSendDataToApi(valuesForSubmit, apiUrl, id, fieldsForSkip, dataWithUserAgent);
         const {
           redirectUrl: urlFromApi,
           status: statusFromApi
@@ -77,17 +92,11 @@ const FormWrapper = ({
         urlFromApi && setRedirectUrlPath(urlFromApi);
       }
 
-      props.resetForm();
-      props.setStatus(formStatuses.submited);
+      handleReset();
+      setFormStatus(formStatuses.submited);
     } catch (e) {
-      props.setStatus(formStatuses.error);
+      setFormStatus(formStatuses.error);
     }
-  };
-
-  const handleReset = () => {
-    resetFormValueCache(id); // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-    setInitialValues({});
   };
 
   const prevStep = () => setCurrentStep(currentStep - 1);
@@ -105,25 +114,37 @@ const FormWrapper = ({
       prevStep,
       fieldsForSkip,
       addFieldForSkip,
-      errorFromApi
+      errorFromApi,
+      initialValues,
+      setInitialValues,
+      handleSubmit,
+      formStatus,
+      setFormStatus
     }
   }, /*#__PURE__*/React.createElement(ThemeProvider, {
     customTheme: _objectSpread({}, customTheme)
-  }, /*#__PURE__*/React.createElement(Formik, {
-    enableReinitialize: true,
-    initialValues: initialValues,
-    onSubmit: handleSubmit,
-    onReset: handleReset
-  }, props => shouldRedirect && props.status === formStatuses.submited && /*#__PURE__*/React.createElement(RedirectPage, {
+  }, shouldRedirect && formStatus === formStatuses.submited && /*#__PURE__*/React.createElement(RedirectPage, {
     redirectUrl: redirectUrlPath,
     backgroundImage: redirectBgImg,
     logoImg: logoImg,
     headerText: redirectHeaderText,
     timeToRedirect: timeToRedirect,
     mainImg: redirectMainImg
-  }) || /*#__PURE__*/React.createElement(StyledForm, {
-    id: id
-  }, children))));
+  }), !stepsLength && showForm && /*#__PURE__*/React.createElement(Formik, {
+    validateOnMount: true,
+    enableReinitialize: true,
+    initialValues: initialValues,
+    onSubmit: handleSubmit,
+    render: ({
+      isValid
+    }) => /*#__PURE__*/React.createElement(StyledForm, {
+      id: id
+    }, children, formStatus !== formStatuses.agrrementsError && /*#__PURE__*/React.createElement(Button, {
+      disabled: !isValid,
+      text: sumitButtonText,
+      type: "submit"
+    }))
+  }), stepsLength && showForm && children));
 };
 
 export default FormWrapper;

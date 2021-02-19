@@ -45,11 +45,14 @@ var CheckboxesGroup = function CheckboxesGroup(_ref) {
   }, [hasManyCheckboxes, children]);
 
   var handleOnChange = function handleOnChange(e) {
+    var selectAllValue = e.target.value === 'true' ? false : true;
     var fieldsToUpdate = checkboxesNames.reduce(function (acc, item) {
-      acc[item] = e.target.value === 'true' ? false : true;
+      acc[item] = selectAllValue;
       return acc;
     }, {});
-    setValues(_objectSpread(_objectSpread({}, values), {}, _defineProperty({}, name, fieldsToUpdate)));
+    setValues(_objectSpread(_objectSpread({}, values), {}, _defineProperty({}, name, _objectSpread(_objectSpread({}, fieldsToUpdate), {}, {
+      selectAll: selectAllValue
+    }))));
   };
 
   return /*#__PURE__*/_react.default.createElement(_formik.FieldArray, {

@@ -10,5 +10,3 @@ export { default as Image } from './Image';
 export { default as OptionalGroup } from './OptionalGroup';
 export { default as Hr } from './Hr';
 export { default as Form } from './Form';
-export { default as Form2 } from './Form2';
-export { default as Step2 } from './Step2';

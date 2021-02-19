@@ -42,7 +42,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  cursor: pointer;\n  padding: 0;\n  margin-left: 5px;\n  font-weight: ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: ", ";\n  cursor: pointer;\n  padding: 0;\n  margin-left: 5px;\n  font-weight: ", ";\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -68,7 +68,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: inline;\n  font-style: normal;\n  font-weight: 500;\n  font-size: ", ";\n  line-height: calc(\n    5px + ", "\n  );\n  color: ", ";\n  margin-top: 2px;\n\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline;\n  font-style: normal;\n  font-weight: 500;\n  font-size: ", ";\n  line-height: calc(\n    5px + ", "\n  );\n  color: ", ";\n  margin-top: 2px;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -257,8 +257,8 @@ var CheckboxBase = function CheckboxBase(_ref2) {
   var htmlContentList = props.HTMLcontent && props.HTMLcontent.split('--MORE--');
 
   var handleOnChange = function handleOnChange(e) {
-    props.onChange && props.onChange(e);
     field.onChange && field.onChange(e);
+    props.onChange && props.onChange(e);
     (0, _utils.setFormValuesToCache)(values, id);
   };
 

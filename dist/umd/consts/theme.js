@@ -215,10 +215,10 @@
     customTheme
   }) => /*#__PURE__*/_react2.default.createElement(_styledComponents.ThemeProvider, {
     theme: _objectSpread(_objectSpread({}, theme), customTheme)
-  }, children);
+  }, children && children);
 
   ThemeProvider.propTypes = {
-    children: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.arrayOf(_propTypes2.default.element)]).isRequired
+    children: _propTypes2.default.any.isRequired
   };
 });
 //# sourceMappingURL=theme.js.map

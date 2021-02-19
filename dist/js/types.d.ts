@@ -283,6 +283,7 @@ export declare type ButtonProps = {
     size?: 'large | medium | small';
     onClick?: any;
     disabled?: boolean;
+    form?: string;
 };
 export declare type FormProps = {
     onSubmit: (values: FormValuesType, props?: any) => void;
@@ -305,6 +306,7 @@ export declare type FormProps = {
     transactionName?: string;
     propertyNamesFromUrl?: string[];
     dataWithUserAgent?: boolean;
+    sumitButtonText?: string;
 };
 export declare type RedirectPagePropsTypes = {
     headerText?: string;

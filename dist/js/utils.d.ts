@@ -11,16 +11,19 @@ export declare const FormContext: Context<{
     fieldsForSkip?: string[];
     addFieldForSkip?: (key: string) => void;
     errorFromApi?: boolean;
+    initialValues?: any;
+    handleSubmit?: Function;
+    setInitialValues?: Function;
+    formStatus?: string;
+    setFormStatus?: Function;
 }>;
-export declare const setFormValuesToCache: (values: {
-    [key: string]: string | boolean;
-}, formId?: string) => void;
 export declare const getFormValuesFromCache: (id?: string) => {
     [key: string]: string | boolean;
 };
+export declare const setFormValuesToCache: (values: {
+    [key: string]: string | boolean;
+}, formId?: string) => void;
 export declare const resetFormValueCache: (id: string) => void;
-export declare const encodeData: (data: FormValuesType) => string | undefined;
-export declare const sendDataToAwsSQS: (values: FormValuesType, queueUrl?: string) => Promise<any>;
 export declare const handleSendDataToApi: (values: FormValuesType, apiUrl: string, formId: string, fieldsForSkip: string[], dataWithUserAgent?: boolean) => Promise<any>;
 export declare const getFieldsValuesFromUrl: (paramsList: string[]) => {
     [key: string]: string;

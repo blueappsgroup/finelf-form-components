@@ -1,6 +1,5 @@
 import _pt from "prop-types";
 import React, { useContext } from 'react';
-import { useFormikContext } from 'formik';
 import styled from 'styled-components';
 import { formStatuses } from '../../consts/form';
 import { FormContext } from '../../utils';
@@ -19,18 +18,16 @@ const FormStatusText = ({
   errorText
 }) => {
   const {
-    errorFromApi
+    errorFromApi,
+    formStatus
   } = useContext(FormContext);
-  const {
-    status,
-    dirty
-  } = useFormikContext();
-  const isError = status === formStatuses.error || errorFromApi === true;
-  const showStatusText = status === formStatuses.submited && !dirty || isError;
+  const isError = formStatus === formStatuses.error || formStatus === formStatuses.agrrementsError || errorFromApi === true;
+  const showStatusText = formStatus === formStatuses.submited || isError;
+  const showAgreementsError = formStatus === formStatuses.agrrementsError;
   return /*#__PURE__*/React.createElement(StyledText, {
     show: showStatusText,
     isError: isError
-  }, isError ? errorText : successText);
+  }, !isError && successText, !showAgreementsError && isError && errorText, showAgreementsError && formStatuses.agrrementsError);
 };
 
 FormStatusText.propTypes = {

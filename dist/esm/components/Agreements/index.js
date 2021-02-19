@@ -8,10 +8,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { useCallback, useContext, useLayoutEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useFormikContext } from 'formik';
 import CheckboxesGroup from '../CheckboxesGroup';
 import { CheckboxField } from '../';
 import { FormContext } from '../../utils';
 import { StyledError } from '../FormInput/base';
+import { formStatuses } from '../../consts/form';
 const StyledErrorText = styled(StyledError)`
   position: static;
 `;
@@ -24,8 +26,15 @@ const Agreemnets = ({
 }) => {
   const {
     id,
-    apiUrl
+    apiUrl,
+    setInitialValues,
+    initialValues,
+    setFormStatus
   } = useContext(FormContext);
+  const {
+    errors,
+    setErrors
+  } = useFormikContext();
   const [agreements, setAgreements] = useState([]);
   const [error, setError] = useState(false);
   const replaceLinkInAgreements = useCallback(agreements => {
@@ -51,11 +60,41 @@ const Agreemnets = ({
     try {
       const response = await fetch(`${apiUrl}/forms/${id}/agreements`);
       const data = await response.json();
+      let hasError = false;
+      const dataForInitialize = data.reduce( // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (acc, item) => {
+        acc.values[item.id] = false;
+
+        if (item.required) {
+          acc.required.push('required');
+
+          if (!hasError && (!initialValues || !initialValues[name] || !initialValues[name][item.id])) {
+            hasError = true;
+          }
+        } else {
+          acc.required.push(null);
+        }
+
+        return acc;
+      }, {
+        values: {},
+        required: []
+      });
       setAgreements(linksForReplace && replaceLinkInAgreements(data) || data);
+      setInitialValues && setInitialValues(_objectSpread({
+        [name]: dataForInitialize.values
+      }, initialValues));
+
+      if (hasError) {
+        setErrors(_objectSpread({
+          [name]: dataForInitialize.required
+        }, errors));
+      }
     } catch (e) {
+      setFormStatus && setFormStatus(formStatuses.agrrementsError);
       console.log(e);
     }
-  }, [linksForReplace, apiUrl, replaceLinkInAgreements, id]);
+  }, [apiUrl, errors, id, initialValues, linksForReplace, name, replaceLinkInAgreements, setErrors, setFormStatus, setInitialValues]);
   useLayoutEffect(() => {
     if (agreements.length === 0) {
       fetchAgreements();

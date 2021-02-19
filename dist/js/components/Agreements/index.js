@@ -13,6 +13,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _formik = require("formik");
+
 var _CheckboxesGroup = _interopRequireDefault(require("../CheckboxesGroup"));
 
 var _ = require("../");
@@ -20,6 +22,8 @@ var _ = require("../");
 var _utils = require("../../utils");
 
 var _base = require("../FormInput/base");
+
+var _form = require("../../consts/form");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -73,7 +77,14 @@ var Agreemnets = function Agreemnets(_ref) {
 
   var _useContext = (0, _react.useContext)(_utils.FormContext),
       id = _useContext.id,
-      apiUrl = _useContext.apiUrl;
+      apiUrl = _useContext.apiUrl,
+      setInitialValues = _useContext.setInitialValues,
+      initialValues = _useContext.initialValues,
+      setFormStatus = _useContext.setFormStatus;
+
+  var _useFormikContext = (0, _formik.useFormikContext)(),
+      errors = _useFormikContext.errors,
+      setErrors = _useFormikContext.setErrors;
 
   var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -105,7 +116,7 @@ var Agreemnets = function Agreemnets(_ref) {
   }, [linksForReplace]); // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   var fetchAgreements = (0, _react.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var response, data;
+    var response, data, hasError, dataForInitialize;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -121,22 +132,49 @@ var Agreemnets = function Agreemnets(_ref) {
 
           case 6:
             data = _context.sent;
+            hasError = false;
+            dataForInitialize = data.reduce( // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            function (acc, item) {
+              acc.values[item.id] = false;
+
+              if (item.required) {
+                acc.required.push('required');
+
+                if (!hasError && (!initialValues || !initialValues[name] || !initialValues[name][item.id])) {
+                  hasError = true;
+                }
+              } else {
+                acc.required.push(null);
+              }
+
+              return acc;
+            }, {
+              values: {},
+              required: []
+            });
             setAgreements(linksForReplace && replaceLinkInAgreements(data) || data);
-            _context.next = 13;
+            setInitialValues && setInitialValues(_objectSpread(_defineProperty({}, name, dataForInitialize.values), initialValues));
+
+            if (hasError) {
+              setErrors(_objectSpread(_defineProperty({}, name, dataForInitialize.required), errors));
+            }
+
+            _context.next = 18;
             break;
 
-          case 10:
-            _context.prev = 10;
+          case 14:
+            _context.prev = 14;
             _context.t0 = _context["catch"](0);
+            setFormStatus && setFormStatus(_form.formStatuses.agrrementsError);
             console.log(_context.t0);
 
-          case 13:
+          case 18:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 10]]);
-  })), [linksForReplace, apiUrl, replaceLinkInAgreements, id]);
+    }, _callee, null, [[0, 14]]);
+  })), [apiUrl, errors, id, initialValues, linksForReplace, name, replaceLinkInAgreements, setErrors, setFormStatus, setInitialValues]);
   (0, _react.useLayoutEffect)(function () {
     if (agreements.length === 0) {
       fetchAgreements();

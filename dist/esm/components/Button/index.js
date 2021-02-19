@@ -28,12 +28,14 @@ const Button = ({
   type = 'button',
   variant = 'primary',
   onClick,
-  disabled
+  disabled,
+  form
 }) => /*#__PURE__*/React.createElement(StyledButton, {
   disabled: disabled,
   variant: variant,
   type: type,
-  onClick: onClick
+  onClick: onClick,
+  form: form
 }, text);
 
 export default Button;

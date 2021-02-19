@@ -2,26 +2,20 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 import React from 'react';
 export const FormContext = /*#__PURE__*/React.createContext({});
-export const setFormValuesToCache = (values, formId) => {
-  formId && window.sessionStorage.setItem(`form-${formId}`, JSON.stringify(values));
-};
 export const getFormValuesFromCache = id => id && JSON.parse(window.sessionStorage.getItem(`form-${id}`)) || {};
-export const resetFormValueCache = id => window.sessionStorage.setItem(`form-${id}`, '{}');
-export const encodeData = data => {
-  return Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+export const setFormValuesToCache = (values, formId) => {
+  const allValues = getFormValuesFromCache(formId);
+  formId && window.sessionStorage.setItem(`form-${formId}`, JSON.stringify(_objectSpread(_objectSpread({}, allValues), values)));
 };
-export const sendDataToAwsSQS = (values, queueUrl) => fetch(queueUrl || 'https://sqs.eu-central-1.amazonaws.com/031738021372/finelf-users-queue', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded'
-  },
-  body: encodeData({
-    Action: 'SendMessage',
-    MessageBody: JSON.stringify(values)
-  })
-});
+export const resetFormValueCache = id => window.sessionStorage.setItem(`form-${id}`, '{}');
 export const handleSendDataToApi = (values, apiUrl, formId, fieldsForSkip, dataWithUserAgent) => {
   const {
     agreements
@@ -30,7 +24,7 @@ export const handleSendDataToApi = (values, apiUrl, formId, fieldsForSkip, dataW
 
   const filteredValues = Object.keys(rest).reduce((acc, key) => {
     if (!fieldsForSkip.includes(key) && rest[key]) {
-      acc[key] = rest[key];
+      acc[key] = typeof rest[key] === 'string' ? rest[key].trim() : rest[key];
     }
 
     return acc; // eslint-disable-next-line @typescript-eslint/no-explicit-any

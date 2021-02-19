@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "prop-types", "react", "styled-components", "../CheckboxesGroup", "../", "../../utils", "../FormInput/base"], factory);
+    define(["exports", "prop-types", "react", "styled-components", "formik", "../CheckboxesGroup", "../", "../../utils", "../FormInput/base", "../../consts/form"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("prop-types"), require("react"), require("styled-components"), require("../CheckboxesGroup"), require("../"), require("../../utils"), require("../FormInput/base"));
+    factory(exports, require("prop-types"), require("react"), require("styled-components"), require("formik"), require("../CheckboxesGroup"), require("../"), require("../../utils"), require("../FormInput/base"), require("../../consts/form"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.propTypes, global.react, global.styledComponents, global.CheckboxesGroup, global._, global.utils, global.base);
+    factory(mod.exports, global.propTypes, global.react, global.styledComponents, global.formik, global.CheckboxesGroup, global._, global.utils, global.base, global.form);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _propTypes, _react, _styledComponents, _CheckboxesGroup, _, _utils, _base) {
+})(this, function (exports, _propTypes, _react, _styledComponents, _formik, _CheckboxesGroup, _, _utils, _base, _form) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -92,8 +92,15 @@
   }) => {
     const {
       id,
-      apiUrl
+      apiUrl,
+      setInitialValues,
+      initialValues,
+      setFormStatus
     } = (0, _react.useContext)(_utils.FormContext);
+    const {
+      errors,
+      setErrors
+    } = (0, _formik.useFormikContext)();
     const [agreements, setAgreements] = (0, _react.useState)([]);
     const [error, setError] = (0, _react.useState)(false);
     const replaceLinkInAgreements = (0, _react.useCallback)(agreements => {
@@ -119,11 +126,41 @@
       try {
         const response = await fetch(`${apiUrl}/forms/${id}/agreements`);
         const data = await response.json();
+        let hasError = false;
+        const dataForInitialize = data.reduce( // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (acc, item) => {
+          acc.values[item.id] = false;
+
+          if (item.required) {
+            acc.required.push('required');
+
+            if (!hasError && (!initialValues || !initialValues[name] || !initialValues[name][item.id])) {
+              hasError = true;
+            }
+          } else {
+            acc.required.push(null);
+          }
+
+          return acc;
+        }, {
+          values: {},
+          required: []
+        });
         setAgreements(linksForReplace && replaceLinkInAgreements(data) || data);
+        setInitialValues && setInitialValues(_objectSpread({
+          [name]: dataForInitialize.values
+        }, initialValues));
+
+        if (hasError) {
+          setErrors(_objectSpread({
+            [name]: dataForInitialize.required
+          }, errors));
+        }
       } catch (e) {
+        setFormStatus && setFormStatus(_form.formStatuses.agrrementsError);
         console.log(e);
       }
-    }, [linksForReplace, apiUrl, replaceLinkInAgreements, id]);
+    }, [apiUrl, errors, id, initialValues, linksForReplace, name, replaceLinkInAgreements, setErrors, setFormStatus, setInitialValues]);
     (0, _react.useLayoutEffect)(() => {
       if (agreements.length === 0) {
         fetchAgreements();

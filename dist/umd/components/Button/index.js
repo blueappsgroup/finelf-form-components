@@ -55,12 +55,14 @@
     type = 'button',
     variant = 'primary',
     onClick,
-    disabled
+    disabled,
+    form
   }) => /*#__PURE__*/_react2.default.createElement(StyledButton, {
     disabled: disabled,
     variant: variant,
     type: type,
-    onClick: onClick
+    onClick: onClick,
+    form: form
   }, text);
 
   exports.default = Button;

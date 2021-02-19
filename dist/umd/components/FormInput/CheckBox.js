@@ -173,8 +173,6 @@
   );
   color: ${props => props.theme.checkboxLabelTextColor};
   margin-top: 2px;
-
-
 `; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   const Checkbox = _ref => {
@@ -212,7 +210,7 @@
   cursor: pointer;
   padding: 0;
   margin-left: 5px;
-  font-weight: ${props => props.theme.styledSpanFontWeight}
+  font-weight: ${props => props.theme.styledSpanFontWeight};
 `;
   const StyledContentWrapper = _styledComponents2.default.div`
   padding-right: ${props => props.hasReadMore ? '0px' : '25px'};
@@ -245,8 +243,8 @@
     const htmlContentList = props.HTMLcontent && props.HTMLcontent.split('--MORE--');
 
     const handleOnChange = e => {
-      props.onChange && props.onChange(e);
       field.onChange && field.onChange(e);
+      props.onChange && props.onChange(e);
       (0, _utils.setFormValuesToCache)(values, id);
     };
 

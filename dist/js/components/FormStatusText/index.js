@@ -11,8 +11,6 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _formik = require("formik");
-
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _form = require("../../consts/form");
@@ -48,18 +46,16 @@ var FormStatusText = function FormStatusText(_ref) {
       errorText = _ref.errorText;
 
   var _useContext = (0, _react.useContext)(_utils.FormContext),
-      errorFromApi = _useContext.errorFromApi;
+      errorFromApi = _useContext.errorFromApi,
+      formStatus = _useContext.formStatus;
 
-  var _useFormikContext = (0, _formik.useFormikContext)(),
-      status = _useFormikContext.status,
-      dirty = _useFormikContext.dirty;
-
-  var isError = status === _form.formStatuses.error || errorFromApi === true;
-  var showStatusText = status === _form.formStatuses.submited && !dirty || isError;
+  var isError = formStatus === _form.formStatuses.error || formStatus === _form.formStatuses.agrrementsError || errorFromApi === true;
+  var showStatusText = formStatus === _form.formStatuses.submited || isError;
+  var showAgreementsError = formStatus === _form.formStatuses.agrrementsError;
   return /*#__PURE__*/_react.default.createElement(StyledText, {
     show: showStatusText,
     isError: isError
-  }, isError ? errorText : successText);
+  }, !isError && successText, !showAgreementsError && isError && errorText, showAgreementsError && _form.formStatuses.agrrementsError);
 };
 
 FormStatusText.propTypes = {

@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react", "./base", "./validate", "./CustomFieldWithCondition"], factory);
+    define(["exports", "react", "./base", "./validate", "formik"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"), require("./base"), require("./validate"), require("./CustomFieldWithCondition"));
+    factory(exports, require("react"), require("./base"), require("./validate"), require("formik"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.base, global.validate, global.CustomFieldWithCondition);
+    factory(mod.exports, global.react, global.base, global.validate, global.formik);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _react, _base, _validate, _CustomFieldWithCondition) {
+})(this, function (exports, _react, _base, _validate, _formik) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -20,8 +20,6 @@
   var _react2 = _interopRequireDefault(_react);
 
   var _base2 = _interopRequireDefault(_base);
-
-  var _CustomFieldWithCondition2 = _interopRequireDefault(_CustomFieldWithCondition);
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -36,10 +34,8 @@
     name = 'company_tax_id',
     required = false,
     validate = _validate.validateCompanyTax,
-    showError = true,
-    requiredCondition,
-    visibleCondition
-  }) => /*#__PURE__*/_react2.default.createElement(_CustomFieldWithCondition2.default, {
+    showError = true
+  }) => /*#__PURE__*/_react2.default.createElement(_formik.Field, {
     id: id,
     label: label,
     placeholder: placeholder,
@@ -47,17 +43,11 @@
     required: required,
     showError: showError,
     name: name,
-    validate: validate,
-    requiredCondition: requiredCondition,
-    visibleCondition: visibleCondition
+    validate: validate(required)
   });
 
   CompanyTaxField.defaultProps = {
-    name: 'company_tax_id',
-    visibleCondition: {
-      // eslint-disable-next-line @typescript-eslint/camelcase
-      employment_type: ['self_employed']
-    }
+    name: 'company_tax_id'
   };
   exports.default = CompanyTaxField;
 });

@@ -197,15 +197,15 @@
       return 'To pole jest wymagane';
     }
 
+    if ((0, _validateHelpers.isNotNumber)(trimedValue)) {
+      return 'Podany numer dowodu jest nieprawidłowy';
+    }
+
     if ((0, _validateHelpers.isNotValidIDCard)(trimedValue)) {
       return 'Podany numer dowodu jest nieprawidłowy';
     }
 
     if (!(0, _validateHelpers.isValidIDCard)(trimedValue)) {
-      return 'Podany numer dowodu jest nieprawidłowy';
-    }
-
-    if ((0, _validateHelpers.isNotNumber)(trimedValue)) {
       return 'Podany numer dowodu jest nieprawidłowy';
     }
   };

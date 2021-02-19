@@ -97,8 +97,6 @@ const StyledText = styled.span`
   );
   color: ${props => props.theme.checkboxLabelTextColor};
   margin-top: 2px;
-
-
 `; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 const Checkbox = (_ref) => {
@@ -136,7 +134,7 @@ const StyledReadMore = styled(StyledText)`
   cursor: pointer;
   padding: 0;
   margin-left: 5px;
-  font-weight: ${props => props.theme.styledSpanFontWeight}
+  font-weight: ${props => props.theme.styledSpanFontWeight};
 `;
 const StyledContentWrapper = styled.div`
   padding-right: ${props => props.hasReadMore ? '0px' : '25px'};
@@ -168,8 +166,8 @@ export const CheckboxBase = (_ref2) => {
   const htmlContentList = props.HTMLcontent && props.HTMLcontent.split('--MORE--');
 
   const handleOnChange = e => {
-    props.onChange && props.onChange(e);
     field.onChange && field.onChange(e);
+    props.onChange && props.onChange(e);
     setFormValuesToCache(values, id);
   };
 

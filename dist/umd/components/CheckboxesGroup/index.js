@@ -110,12 +110,15 @@
     const checkboxesNames = (0, _react.useMemo)(() => hasManyCheckboxes ? children && children.map(item => item.props.name) : [children.props.name], [hasManyCheckboxes, children]);
 
     const handleOnChange = e => {
+      const selectAllValue = e.target.value === 'true' ? false : true;
       const fieldsToUpdate = checkboxesNames.reduce((acc, item) => {
-        acc[item] = e.target.value === 'true' ? false : true;
+        acc[item] = selectAllValue;
         return acc;
       }, {});
       setValues(_objectSpread(_objectSpread({}, values), {}, {
-        [name]: fieldsToUpdate
+        [name]: _objectSpread(_objectSpread({}, fieldsToUpdate), {}, {
+          selectAll: selectAllValue
+        })
       }));
     };
 

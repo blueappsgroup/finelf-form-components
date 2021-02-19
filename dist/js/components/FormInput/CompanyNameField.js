@@ -11,7 +11,7 @@ var _base = _interopRequireDefault(require("./base"));
 
 var _validate = require("./validate");
 
-var _CustomFieldWithCondition = _interopRequireDefault(require("./CustomFieldWithCondition"));
+var _formik = require("formik");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,10 +28,8 @@ var CompanyNameField = function CompanyNameField(_ref) {
       _ref$validate = _ref.validate,
       validate = _ref$validate === void 0 ? _validate.validateText : _ref$validate,
       _ref$showError = _ref.showError,
-      showError = _ref$showError === void 0 ? true : _ref$showError,
-      requiredCondition = _ref.requiredCondition,
-      visibleCondition = _ref.visibleCondition;
-  return /*#__PURE__*/_react.default.createElement(_CustomFieldWithCondition.default, {
+      showError = _ref$showError === void 0 ? true : _ref$showError;
+  return /*#__PURE__*/_react.default.createElement(_formik.Field, {
     id: id,
     label: label,
     placeholder: placeholder,
@@ -39,18 +37,12 @@ var CompanyNameField = function CompanyNameField(_ref) {
     required: required,
     showError: showError,
     name: name,
-    validate: validate,
-    requiredCondition: requiredCondition,
-    visibleCondition: visibleCondition
+    validate: validate(required)
   });
 };
 
 CompanyNameField.defaultProps = {
-  name: 'company_name',
-  visibleCondition: {
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    employment_type: ['fixed', 'temporary', 'fixed_partial', 'government', 'agriculture', 'service_contract']
-  }
+  name: 'company_name'
 };
 var _default = CompanyNameField;
 exports.default = _default;

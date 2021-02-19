@@ -145,8 +145,8 @@ export const ThemeProvider = ({
   customTheme
 }) => /*#__PURE__*/React.createElement(MainThemeProvider, {
   theme: _objectSpread(_objectSpread({}, theme), customTheme)
-}, children);
+}, children && children);
 ThemeProvider.propTypes = {
-  children: _pt.oneOfType([_pt.element, _pt.arrayOf(_pt.element)]).isRequired
+  children: _pt.any.isRequired
 };
 //# sourceMappingURL=theme.js.map

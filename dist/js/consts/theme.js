@@ -159,11 +159,11 @@ var ThemeProvider = function ThemeProvider(_ref) {
       customTheme = _ref.customTheme;
   return /*#__PURE__*/_react.default.createElement(_styledComponents.ThemeProvider, {
     theme: _objectSpread(_objectSpread({}, theme), customTheme)
-  }, children);
+  }, children && children);
 };
 
 exports.ThemeProvider = ThemeProvider;
 ThemeProvider.propTypes = {
-  children: _propTypes.default.oneOfType([_propTypes.default.element, _propTypes.default.arrayOf(_propTypes.default.element)]).isRequired
+  children: _propTypes.default.any.isRequired
 };
 //# sourceMappingURL=theme.js.map

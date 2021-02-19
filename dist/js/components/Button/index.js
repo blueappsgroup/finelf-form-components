@@ -38,12 +38,14 @@ var Button = function Button(_ref) {
       _ref$variant = _ref.variant,
       variant = _ref$variant === void 0 ? 'primary' : _ref$variant,
       onClick = _ref.onClick,
-      disabled = _ref.disabled;
+      disabled = _ref.disabled,
+      form = _ref.form;
   return /*#__PURE__*/_react.default.createElement(StyledButton, {
     disabled: disabled,
     variant: variant,
     type: type,
-    onClick: onClick
+    onClick: onClick,
+    form: form
   }, text);
 };
 

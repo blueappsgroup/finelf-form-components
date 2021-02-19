@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.default = exports.StyledForm = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -20,6 +20,8 @@ var _RedirectPage = _interopRequireDefault(require("../RedirectPage"));
 var _utils = require("../../utils");
 
 var _form = require("../../consts/form");
+
+var _Button = _interopRequireDefault(require("../Button"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -78,6 +80,7 @@ var StyledForm = (0, _styledComponents.default)(_formik.Form)(_templateObject(),
 }, function (props) {
   return props.theme.formBoxShadow;
 });
+exports.StyledForm = StyledForm;
 
 var FormWrapper = function FormWrapper(_ref) {
   var children = _ref.children,
@@ -97,7 +100,9 @@ var FormWrapper = function FormWrapper(_ref) {
       apiUrl = _ref.apiUrl,
       transactionName = _ref.transactionName,
       propertyNamesFromUrl = _ref.propertyNamesFromUrl,
-      dataWithUserAgent = _ref.dataWithUserAgent;
+      dataWithUserAgent = _ref.dataWithUserAgent,
+      _ref$sumitButtonText = _ref.sumitButtonText,
+      sumitButtonText = _ref$sumitButtonText === void 0 ? 'Wyślij' : _ref$sumitButtonText;
   var trasationIdValue = transactionName && new URLSearchParams(window.location.search).get(transactionName);
   var intialValuesFromUrl = (0, _react.useMemo)(function () {
     return propertyNamesFromUrl && propertyNamesFromUrl.length > 0 && (0, _utils.getFieldsValuesFromUrl)(propertyNamesFromUrl) || {};
@@ -131,84 +136,95 @@ var FormWrapper = function FormWrapper(_ref) {
       errorFromApi = _useState10[0],
       setErrorFromApi = _useState10[1];
 
+  var _useState11 = (0, _react.useState)(),
+      _useState12 = _slicedToArray(_useState11, 2),
+      formStatus = _useState12[0],
+      setFormStatus = _useState12[1];
+
   var shouldRedirect = !errorFromApi && hasRedirect;
+  var showForm = formStatus !== _form.formStatuses.submited || !shouldRedirect;
 
   var addFieldForSkip = function addFieldForSkip(key) {
     return setFieldsForSkip([].concat(_toConsumableArray(fieldsForSkip), [key]));
   };
 
+  var handleReset = function handleReset() {
+    (0, _utils.resetFormValueCache)(id); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+    setInitialValues(_objectSpread(_objectSpread({}, intialValuesFromUrl), {}, {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      trasaction_id: trasationIdValue
+    }));
+  };
+
   var handleSubmit = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(values, props) {
-      var response, _yield$response$json, urlFromApi, statusFromApi;
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_, props) {
+      var valuesForSubmit, response, _yield$response$json, urlFromApi, statusFromApi;
 
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              valuesForSubmit = _objectSpread(_objectSpread({}, initialValues), (0, _utils.getFormValuesFromCache)(id));
+
               if (onSubmit) {
-                onSubmit(values, props);
+                onSubmit(valuesForSubmit, props);
               }
 
-              _context.prev = 1;
+              _context.prev = 2;
 
               if (!(sendDataToApi && apiUrl)) {
-                _context.next = 15;
+                _context.next = 16;
                 break;
               }
 
-              _context.next = 5;
-              return (0, _utils.handleSendDataToApi)(values, apiUrl, id, fieldsForSkip, dataWithUserAgent);
+              _context.next = 6;
+              return (0, _utils.handleSendDataToApi)(valuesForSubmit, apiUrl, id, fieldsForSkip, dataWithUserAgent);
 
-            case 5:
+            case 6:
               response = _context.sent;
-              _context.next = 8;
+              _context.next = 9;
               return response.json();
 
-            case 8:
+            case 9:
               _yield$response$json = _context.sent;
               urlFromApi = _yield$response$json.redirectUrl;
               statusFromApi = _yield$response$json.status;
 
               if (!(statusFromApi === false)) {
-                _context.next = 14;
+                _context.next = 15;
                 break;
               }
 
               setErrorFromApi(true);
               return _context.abrupt("return");
 
-            case 14:
+            case 15:
               urlFromApi && setRedirectUrlPath(urlFromApi);
 
-            case 15:
-              props.resetForm();
-              props.setStatus(_form.formStatuses.submited);
-              _context.next = 22;
+            case 16:
+              handleReset();
+              setFormStatus(_form.formStatuses.submited);
+              _context.next = 23;
               break;
 
-            case 19:
-              _context.prev = 19;
-              _context.t0 = _context["catch"](1);
-              props.setStatus(_form.formStatuses.error);
+            case 20:
+              _context.prev = 20;
+              _context.t0 = _context["catch"](2);
+              setFormStatus(_form.formStatuses.error);
 
-            case 22:
+            case 23:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 19]]);
+      }, _callee, null, [[2, 20]]);
     }));
 
     return function handleSubmit(_x, _x2) {
       return _ref2.apply(this, arguments);
     };
   }();
-
-  var handleReset = function handleReset() {
-    (0, _utils.resetFormValueCache)(id); // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-    setInitialValues({});
-  };
 
   var prevStep = function prevStep() {
     return setCurrentStep(currentStep - 1);
@@ -229,27 +245,38 @@ var FormWrapper = function FormWrapper(_ref) {
       prevStep: prevStep,
       fieldsForSkip: fieldsForSkip,
       addFieldForSkip: addFieldForSkip,
-      errorFromApi: errorFromApi
+      errorFromApi: errorFromApi,
+      initialValues: initialValues,
+      setInitialValues: setInitialValues,
+      handleSubmit: handleSubmit,
+      formStatus: formStatus,
+      setFormStatus: setFormStatus
     }
   }, /*#__PURE__*/_react.default.createElement(_theme.ThemeProvider, {
     customTheme: _objectSpread({}, customTheme)
-  }, /*#__PURE__*/_react.default.createElement(_formik.Formik, {
+  }, shouldRedirect && formStatus === _form.formStatuses.submited && /*#__PURE__*/_react.default.createElement(_RedirectPage.default, {
+    redirectUrl: redirectUrlPath,
+    backgroundImage: redirectBgImg,
+    logoImg: logoImg,
+    headerText: redirectHeaderText,
+    timeToRedirect: timeToRedirect,
+    mainImg: redirectMainImg
+  }), !stepsLength && showForm && /*#__PURE__*/_react.default.createElement(_formik.Formik, {
+    validateOnMount: true,
     enableReinitialize: true,
     initialValues: initialValues,
     onSubmit: handleSubmit,
-    onReset: handleReset
-  }, function (props) {
-    return shouldRedirect && props.status === _form.formStatuses.submited && /*#__PURE__*/_react.default.createElement(_RedirectPage.default, {
-      redirectUrl: redirectUrlPath,
-      backgroundImage: redirectBgImg,
-      logoImg: logoImg,
-      headerText: redirectHeaderText,
-      timeToRedirect: timeToRedirect,
-      mainImg: redirectMainImg
-    }) || /*#__PURE__*/_react.default.createElement(StyledForm, {
-      id: id
-    }, children);
-  })));
+    render: function render(_ref3) {
+      var isValid = _ref3.isValid;
+      return /*#__PURE__*/_react.default.createElement(StyledForm, {
+        id: id
+      }, children, formStatus !== _form.formStatuses.agrrementsError && /*#__PURE__*/_react.default.createElement(_Button.default, {
+        disabled: !isValid,
+        text: sumitButtonText,
+        type: "submit"
+      }));
+    }
+  }), stepsLength && showForm && children));
 };
 
 var _default = FormWrapper;
