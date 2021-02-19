@@ -71,6 +71,7 @@ const Agreemnets: React.FC<AgreementsPropTypes> = ({
     try {
       const response = await fetch(`${apiUrl}/forms/${id}/agreements`)
       const data = await response.json()
+
       let hasError = false
       const dataForInitialize = data.reduce(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any

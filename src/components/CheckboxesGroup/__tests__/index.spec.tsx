@@ -13,7 +13,6 @@ describe('base <CheckboxesGroup />', () => {
     checkboxesGroupName = 'checkboxes_group',
     checkboxesGroupFirstCheckboxName = 'checkbox1',
     checkboxesGroupSecondCheckboxName = 'checkbox2',
-    ...rest
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }): any => {
     const wrapper = render(

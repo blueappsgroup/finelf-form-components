@@ -15,6 +15,7 @@ type StyledProps = {
   variant: 'primary' | 'secondary'
   size?: 'large | medium | small'
   onClick?: Function
+  form?: string
 }
 
 const StyledButton = styled.button<StyledProps>`
@@ -55,12 +56,14 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   onClick,
   disabled,
+  form,
 }) => (
   <StyledButton
     disabled={disabled}
     variant={variant}
     type={type}
     onClick={onClick}
+    form={form}
   >
     {text}
   </StyledButton>

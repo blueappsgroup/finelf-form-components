@@ -2,12 +2,11 @@ import * as React from 'react'
 import { render, act, waitFor, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import FirstNameField from '../../FormInput/FirstNameField'
-import Form from '../../Form'
+import Step from '../../Step'
 import LastNameField from '../../FormInput/LastNameField'
-import Step from '../index'
-import StepHeader from '../StepHeader'
+import Form from '../index'
 
-describe('base <Step />', () => {
+describe('base <Form />', () => {
   const onSubmit = jest.fn()
   const stepsLength = 2
   const stepsTitles = ['1. Podstawowe dane', '2. Szczegółowe dane']
@@ -38,10 +37,50 @@ describe('base <Step />', () => {
     return wrapper
   }
 
-  it('matches snapshot', async () => {
+  const setupSingleFormWrapper = async ({
+    formId = 'testForm',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  }) => {
+    let wrapper
+    await act(
+      async () =>
+        (wrapper = render(
+          <Form id={formId} onSubmit={onSubmit}>
+            <FirstNameField name="fName" required />
+          </Form>
+        ))
+    )
+    return wrapper
+  }
+
+  it('without matches snapshot', async () => {
+    const wrapper = await setupSingleFormWrapper({})
+
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('buttons disabled if fields are filled improperly form without steps', async () => {
+    const wrapper = await setupSingleFormWrapper({})
+
+    userEvent.type(screen.getByRole('textbox'), '123')
+
+    expect(screen.getByRole('button')).toBeDisabled()
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('buttons enabled fields are filled properly form without steps', async () => {
+    await setupSingleFormWrapper({})
+
+    userEvent.type(screen.getByRole('textbox'), 'John')
+
+    await waitFor(() => {
+      expect(screen.getByText('Wyślij')).not.toBeDisabled()
+    })
+  })
+
+  it('multi step matches snapshot', async () => {
     const wrapper = await setupWrapper({})
 
-    expect(StepHeader).toBeTruthy()
     expect(wrapper).toMatchSnapshot()
   })
 
