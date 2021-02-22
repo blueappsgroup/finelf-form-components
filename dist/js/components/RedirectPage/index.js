@@ -73,7 +73,8 @@ var RedirectPage = function RedirectPage(_ref) {
       setCounter = _useState2[1];
 
   var decraseCounter = (0, _react.useCallback)(function () {
-    setTimeout(setTimeout(function () {
+    setTimeout( // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setTimeout(function () {
       return setCounter(function (counter) {
         return counter - 1;
       });

@@ -70,7 +70,8 @@
   }) => {
     const [counter, setCounter] = (0, _react.useState)(timeToRedirect);
     const decraseCounter = (0, _react.useCallback)(() => {
-      setTimeout(setTimeout(() => setCounter(counter => counter - 1), 1000));
+      setTimeout( // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      setTimeout(() => setCounter(counter => counter - 1), 1000));
     }, [setCounter]);
     (0, _react.useLayoutEffect)(() => {
       if (counter > 0) {

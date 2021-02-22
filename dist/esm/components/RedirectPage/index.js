@@ -43,7 +43,8 @@ const RedirectPage = ({
 }) => {
   const [counter, setCounter] = useState(timeToRedirect);
   const decraseCounter = useCallback(() => {
-    setTimeout(setTimeout(() => setCounter(counter => counter - 1), 1000));
+    setTimeout( // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setTimeout(() => setCounter(counter => counter - 1), 1000));
   }, [setCounter]);
   useLayoutEffect(() => {
     if (counter > 0) {
