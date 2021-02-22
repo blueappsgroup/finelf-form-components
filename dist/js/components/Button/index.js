@@ -9,21 +9,13 @@ var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _templateObject;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  background: ", ";\n  border-radius: 4px;\n  border: ", ";\n  color: ", ";\n  outline: 0;\n  letter-spacing: 0.5px;\n  font-style: normal;\n  font-weight: 800;\n  font-size: 20px;\n  line-height: 16px;\n  padding: 20px;\n  margin-top: 20px;\n\n  &:disabled {\n    background: silver;\n  }\n\n  &:hover {\n    cursor: pointer;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StyledButton = _styledComponents.default.button(_templateObject(), function (props) {
+var StyledButton = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background: ", ";\n  border-radius: 4px;\n  border: ", ";\n  color: ", ";\n  outline: 0;\n  letter-spacing: 0.5px;\n  font-style: normal;\n  font-weight: 800;\n  font-size: 20px;\n  line-height: 16px;\n  padding: 20px;\n  margin-top: 20px;\n\n  &:disabled {\n    background: silver;\n  }\n\n  &:hover {\n    cursor: pointer;\n  }\n"])), function (props) {
   return props.variant === 'primary' ? props.theme.buttonBgColor : props.theme.buttonSecondaryBgColor;
 }, function (props) {
   return props.variant === 'primary' ? 'none' : "4px solid ".concat(props.theme.buttonSecondaryBorderColor);

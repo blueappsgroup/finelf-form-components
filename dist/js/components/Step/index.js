@@ -27,50 +27,22 @@ var _Form = require("../Form");
 
 var _form = require("../../consts/form");
 
+var _templateObject, _templateObject2, _templateObject3;
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  \n  & button {\n    flex-grow: 1;\n  }\n\n  @media ", " {\n    flex-direction: row;\n\n    & button {\n      &:first-of-type {\n        margin-right: ", ";\n      }\n\n      &:last-child {\n        margin-left: ", ";\n      }\n    }\n  }\n\n  @media ", " {\n    & button {\n      &:first-of-type {\n        margin-right: ", ";\n      }\n\n      &:last-child {\n        margin-left: ", ";\n      }\n    }\n  }\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: ", ";\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Wrapper = _styledComponents.default.div(_templateObject(), function (props) {
+var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: ", ";\n"])), function (props) {
   return props.visible ? 'block' : 'none';
 });
 
 // prettier-ignore
-var ButtonsWrapper = _styledComponents.default.div(_templateObject2(), _sizes.device.mobileL, function (props) {
+var ButtonsWrapper = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  \n  & button {\n    flex-grow: 1;\n  }\n\n  @media ", " {\n    flex-direction: row;\n\n    & button {\n      &:first-of-type {\n        margin-right: ", ";\n      }\n\n      &:last-child {\n        margin-left: ", ";\n      }\n    }\n  }\n\n  @media ", " {\n    & button {\n      &:first-of-type {\n        margin-right: ", ";\n      }\n\n      &:last-child {\n        margin-left: ", ";\n      }\n    }\n  }\n"])), _sizes.device.mobileL, function (props) {
   return props.isFirstStep ? '0px' : '15px';
 }, function (props) {
   return props.isFirstStep ? '0px' : '15px';
@@ -80,7 +52,7 @@ var ButtonsWrapper = _styledComponents.default.div(_templateObject2(), _sizes.de
   return props.isFirstStep ? '0px' : '30px';
 });
 
-var StepHeaderWrapper = _styledComponents.default.div(_templateObject3());
+var StepHeaderWrapper = _styledComponents.default.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n"])));
 
 var Step = function Step(_ref) {
   var children = _ref.children,

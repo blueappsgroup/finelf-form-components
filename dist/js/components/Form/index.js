@@ -23,6 +23,8 @@ var _form = require("../../consts/form");
 
 var _Button = _interopRequireDefault(require("../Button"));
 
+var _templateObject;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -59,19 +61,9 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  background: ", ";\n  font-family: ", ";\n  border-radius: 6px;\n  box-shadow: ", ";\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StyledForm = (0, _styledComponents.default)(_formik.Form)(_templateObject(), function (props) {
+var StyledForm = (0, _styledComponents.default)(_formik.Form)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  max-width: ", ";\n  justify-self: center;\n  background: ", ";\n  font-family: ", ";\n  border-radius: 6px;\n  box-shadow: ", ";\n"])), function (props) {
   return props.theme.formMaxWidth;
 }, function (props) {
   return props.theme.formBgColor;

@@ -11,6 +11,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -29,101 +31,31 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  margin: 45px auto 0px;\n"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  margin: 90px auto 45px;\n"]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  color: ", ";\n"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 35px;\n  font-weight: 700;\n  line-height: 50px;\n  margin: 0px;\n  color: ", ";\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 45px;\n  font-weight: 900;\n  line-height: 64px;\n  margin: 0px 0px 45px 0px;\n  color: ", ";\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  max-width: 1000px;\n  margin: 0 auto;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  font-family: ", ";\n  text-align: center;\n  ", "\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var PageWrapper = _styledComponents.default.div(_templateObject(), function (props) {
+var PageWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  font-family: ", ";\n  text-align: center;\n  ", "\n"])), function (props) {
   return props.theme.fontFamily;
 }, function (props) {
   return props.backgroundImage && "background-image: url(".concat(props.backgroundImage, ");");
 });
 
-var Wrapper = _styledComponents.default.div(_templateObject2());
+var Wrapper = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  max-width: 1000px;\n  margin: 0 auto;\n"])));
 
-var StyledHeader = _styledComponents.default.h1(_templateObject3(), function (props) {
+var StyledHeader = _styledComponents.default.h1(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  font-size: 45px;\n  font-weight: 900;\n  line-height: 64px;\n  margin: 0px 0px 45px 0px;\n  color: ", ";\n"])), function (props) {
   return props.theme.redirectPageHeaderTextColor;
 });
 
-var RedirectText = _styledComponents.default.h3(_templateObject4(), function (props) {
+var RedirectText = _styledComponents.default.h3(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  font-size: 35px;\n  font-weight: 700;\n  line-height: 50px;\n  margin: 0px;\n  color: ", ";\n"])), function (props) {
   return props.theme.redirectPageRedirectTextColor;
 });
 
-var CounterText = _styledComponents.default.span(_templateObject5(), function (props) {
+var CounterText = _styledComponents.default.span(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  color: ", ";\n"])), function (props) {
   return props.theme.redirectPageCounterTextColor;
 });
 
-var StyledLogo = _styledComponents.default.img(_templateObject6());
+var StyledLogo = _styledComponents.default.img(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  margin: 90px auto 45px;\n"])));
 
-var StyledMainImg = _styledComponents.default.img(_templateObject7());
+var StyledMainImg = _styledComponents.default.img(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  margin: 45px auto 0px;\n"])));
 
 var RedirectPage = function RedirectPage(_ref) {
   var _ref$headerText = _ref.headerText,
