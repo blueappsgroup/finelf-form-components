@@ -19,7 +19,7 @@ const OptionalGroup: React.FC<Props> = ({
   hideChecked,
 }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { values, setValues } = useFormikContext<any>()
+  const { values, setValues, validateForm } = useFormikContext<any>()
   const { id } = useContext(FormContext)
   const hasManyItems = Array.isArray(children)
   const itemsNames: string[] = useMemo(
@@ -51,6 +51,11 @@ const OptionalGroup: React.FC<Props> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [groupVisible, itemsForResetValues, setValues, values[name]])
+
+  useEffect(() => {
+    validateForm()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values[name]])
 
   return (
     <>
