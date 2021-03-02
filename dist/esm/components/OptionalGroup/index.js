@@ -20,7 +20,8 @@ const OptionalGroup = ({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const {
     values,
-    setValues
+    setValues,
+    validateForm
   } = useFormikContext();
   const {
     id
@@ -41,6 +42,9 @@ const OptionalGroup = ({
     } // eslint-disable-next-line react-hooks/exhaustive-deps
 
   }, [groupVisible, itemsForResetValues, setValues, values[name]]);
+  useEffect(() => {
+    validateForm(); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values[name]]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CheckboxField, {
     disableCollapse: true,
     skipFieldForApi: true,

@@ -38,7 +38,8 @@ var OptionalGroup = function OptionalGroup(_ref) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   var _useFormikContext = (0, _formik.useFormikContext)(),
       values = _useFormikContext.values,
-      setValues = _useFormikContext.setValues;
+      setValues = _useFormikContext.setValues,
+      validateForm = _useFormikContext.validateForm;
 
   var _useContext = (0, _react.useContext)(_utils.FormContext),
       id = _useContext.id;
@@ -65,6 +66,9 @@ var OptionalGroup = function OptionalGroup(_ref) {
     } // eslint-disable-next-line react-hooks/exhaustive-deps
 
   }, [groupVisible, itemsForResetValues, setValues, values[name]]);
+  (0, _react.useEffect)(function () {
+    validateForm(); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values[name]]);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_.CheckboxField, {
     disableCollapse: true,
     skipFieldForApi: true,

@@ -85,7 +85,8 @@
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const {
       values,
-      setValues
+      setValues,
+      validateForm
     } = (0, _formik.useFormikContext)();
     const {
       id
@@ -106,6 +107,9 @@
       } // eslint-disable-next-line react-hooks/exhaustive-deps
 
     }, [groupVisible, itemsForResetValues, setValues, values[name]]);
+    (0, _react.useEffect)(() => {
+      validateForm(); // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [values[name]]);
     return /*#__PURE__*/_react2.default.createElement(_react2.default.Fragment, null, /*#__PURE__*/_react2.default.createElement(_.CheckboxField, {
       disableCollapse: true,
       skipFieldForApi: true,

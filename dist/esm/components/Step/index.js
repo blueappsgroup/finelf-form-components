@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Formik } from 'formik';
 import Button from '../Button';
 import StepHeader from './StepHeader';
-import { FormContext, setFormValuesToCache } from '../../utils';
+import { FormContext, setFormValuesToCache, getFormValuesFromCache } from '../../utils';
 import { device } from '../../consts/sizes';
 import { StyledForm } from '../Form';
 import { formStatuses } from '../../consts/form';
@@ -65,6 +65,7 @@ const Step = ({
     prevStep,
     nextStep,
     initialValues,
+    setInitialValues,
     handleSubmit,
     formStatus
   } = useContext(FormContext);
@@ -79,6 +80,7 @@ const Step = ({
     }
 
     setFormValuesToCache(values, id);
+    setInitialValues && setInitialValues(getFormValuesFromCache(id));
     onStepComplete && onStepComplete();
     nextStep && nextStep();
   };

@@ -90,6 +90,7 @@
       prevStep,
       nextStep,
       initialValues,
+      setInitialValues,
       handleSubmit,
       formStatus
     } = (0, _react.useContext)(_utils.FormContext);
@@ -104,6 +105,7 @@
       }
 
       (0, _utils.setFormValuesToCache)(values, id);
+      setInitialValues && setInitialValues((0, _utils.getFormValuesFromCache)(id));
       onStepComplete && onStepComplete();
       nextStep && nextStep();
     };

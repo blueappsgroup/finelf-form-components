@@ -71,6 +71,7 @@ var Step = function Step(_ref) {
       prevStep = _useContext.prevStep,
       nextStep = _useContext.nextStep,
       initialValues = _useContext.initialValues,
+      setInitialValues = _useContext.setInitialValues,
       handleSubmit = _useContext.handleSubmit,
       formStatus = _useContext.formStatus;
 
@@ -85,6 +86,7 @@ var Step = function Step(_ref) {
     }
 
     (0, _utils.setFormValuesToCache)(values, id);
+    setInitialValues && setInitialValues((0, _utils.getFormValuesFromCache)(id));
     onStepComplete && onStepComplete();
     nextStep && nextStep();
   };
